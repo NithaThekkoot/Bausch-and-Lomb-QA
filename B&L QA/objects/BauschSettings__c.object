@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <description>Used to store Generic Vules to be used in Formulas</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>LineFeed__c</fullName>
+        <description>Line Feed</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Line Feed Can be used to concatenate a line feed into a text field to display text on multiple lines.</inlineHelpText>
+        <label>LineFeed</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <label>Bausch Settings</label>
+    <visibility>Public</visibility>
+</CustomObject>

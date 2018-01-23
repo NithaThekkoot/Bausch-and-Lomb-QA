@@ -1,0 +1,520 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>To store profile questions related to Sales Asset like Fit Sets, Digital Displays</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>Date_Shipped__c</fullName>
+        <externalId>false</externalId>
+        <label>Date Shipped</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Date_of_Entry__c</fullName>
+        <externalId>false</externalId>
+        <label>Date of Entry</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <length>1000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Doorway_Account_Id__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>This will be SFDC Doorway Account Id</description>
+        <externalId>false</externalId>
+        <label>Doorway</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Sales Assets</relationshipLabel>
+        <relationshipName>Sales_Assets</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Installation_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Installation Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Legacy_System_Id__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>true</externalId>
+        <label>Legacy System Id</label>
+        <length>25</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Legacy_System_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Legacy System Name</label>
+        <length>25</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Operator_ID_of_Entry__c</fullName>
+        <externalId>false</externalId>
+        <label>Operator ID of Entry</label>
+        <length>25</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PeopleSoft_Order_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>PeopleSoft Order Number</label>
+        <length>16</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Removal_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Removal Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Removal_Reason__c</fullName>
+        <externalId>false</externalId>
+        <label>Removal Reason</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Destroyed</fullName>
+                    <default>false</default>
+                    <label>Destroyed</label>
+                </value>
+                <value>
+                    <fullName>Moved to Account</fullName>
+                    <default>false</default>
+                    <label>Moved to Account</label>
+                </value>
+                <value>
+                    <fullName>Moved to Storage</fullName>
+                    <default>false</default>
+                    <label>Moved to Storage</label>
+                </value>
+                <value>
+                    <fullName>Unknown</fullName>
+                    <default>false</default>
+                    <label>Unknown</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Sales_Asset_Sub_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Sales Asset Sub Type</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Sales_Asset_Type__c</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>TBD</fullName>
+                    <default>false</default>
+                    <label>TBD</label>
+                </value>
+                <value>
+                    <fullName>PVSVS</fullName>
+                    <default>false</default>
+                    <label>PVSVS</label>
+                </value>
+                <value>
+                    <fullName>PVT</fullName>
+                    <default>false</default>
+                    <label>PVT</label>
+                </value>
+                <value>
+                    <fullName>PVMF</fullName>
+                    <default>false</default>
+                    <label>PVMF</label>
+                </value>
+                <value>
+                    <fullName>SLT</fullName>
+                    <default>false</default>
+                    <label>SLT</label>
+                </value>
+                <value>
+                    <fullName>SLMF</fullName>
+                    <default>false</default>
+                    <label>SLMF</label>
+                </value>
+                <value>
+                    <fullName>SLDD</fullName>
+                    <default>false</default>
+                    <label>SLDD</label>
+                </value>
+                <value>
+                    <fullName>SL38</fullName>
+                    <default>false</default>
+                    <label>SL38</label>
+                </value>
+                <value>
+                    <fullName>SDDA</fullName>
+                    <default>false</default>
+                    <label>SDDA</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Fit Set</controllingFieldValue>
+                <valueName>PVSVS</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Fit Set</controllingFieldValue>
+                <valueName>PVT</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Fit Set</controllingFieldValue>
+                <valueName>PVMF</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Fit Set</controllingFieldValue>
+                <valueName>SLT</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Fit Set</controllingFieldValue>
+                <valueName>SLMF</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Fit Set</controllingFieldValue>
+                <valueName>SLDD</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Fit Set</controllingFieldValue>
+                <valueName>SL38</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Fit Set</controllingFieldValue>
+                <valueName>SDDA</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Sales_Asset_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Sales Asset Type</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Digital Display</fullName>
+                    <default>false</default>
+                    <label>Digital Display</label>
+                </value>
+                <value>
+                    <fullName>Fit Set</fullName>
+                    <default>false</default>
+                    <label>Fit Set</label>
+                </value>
+                <value>
+                    <fullName>Care Kits</fullName>
+                    <default>false</default>
+                    <label>Care Kits</label>
+                </value>
+                <value>
+                    <fullName>Easy Fit Kit</fullName>
+                    <default>false</default>
+                    <label>Easy Fit Kit</label>
+                </value>
+                <value>
+                    <fullName>Fitting Asst. Installed</fullName>
+                    <default>false</default>
+                    <label>Fitting Asst. Installed</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Serial_ID__c</fullName>
+        <externalId>false</externalId>
+        <label>Serial ID</label>
+        <length>25</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Sales Asset</label>
+    <nameField>
+        <displayFormat>SA{0000000000}</displayFormat>
+        <label>Sales Asset Number</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Sales Assets</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>CANVC</fullName>
+        <active>true</active>
+        <description>Record Type for CANVC</description>
+        <label>CANVC</label>
+        <picklistValues>
+            <picklist>Removal_Reason__c</picklist>
+            <values>
+                <fullName>Destroyed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Moved to Account</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Moved to Storage</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sales_Asset_Sub_Type__c</picklist>
+            <values>
+                <fullName>PVMF</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PVSVS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PVT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SL38</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SLDD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SLMF</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SLT</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sales_Asset_Type__c</picklist>
+            <values>
+                <fullName>Digital Display</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fit Set</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>USASL</fullName>
+        <active>true</active>
+        <description>Record Type for USASL Group</description>
+        <label>USASL</label>
+        <picklistValues>
+            <picklist>Removal_Reason__c</picklist>
+            <values>
+                <fullName>Destroyed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Moved to Account</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Moved to Storage</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sales_Asset_Sub_Type__c</picklist>
+            <values>
+                <fullName>PVMF</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PVSVS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PVT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SDDA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SL38</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SLDD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SLMF</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SLT</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Sales_Asset_Type__c</picklist>
+            <values>
+                <fullName>Digital Display</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Easy Fit Kit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fit Set</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fitting Asst%2E Installed</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <lookupDialogsAdditionalFields>RECORDTYPE</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Doorway_Account_Id__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Sales_Asset_Type__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Sales_Asset_Sub_Type__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Serial_ID__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>PeopleSoft_Order_Number__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Installation_Date__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Removal_Date__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Removal_Reason__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>RECORDTYPE</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Doorway_Account_Id__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Sales_Asset_Type__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Sales_Asset_Sub_Type__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Serial_ID__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>PeopleSoft_Order_Number__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Installation_Date__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Removal_Date__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Removal_Reason__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>RECORDTYPE</searchFilterFields>
+        <searchFilterFields>Doorway_Account_Id__c</searchFilterFields>
+        <searchFilterFields>Sales_Asset_Type__c</searchFilterFields>
+        <searchFilterFields>Sales_Asset_Sub_Type__c</searchFilterFields>
+        <searchFilterFields>Serial_ID__c</searchFilterFields>
+        <searchFilterFields>PeopleSoft_Order_Number__c</searchFilterFields>
+        <searchFilterFields>Installation_Date__c</searchFilterFields>
+        <searchFilterFields>Removal_Date__c</searchFilterFields>
+        <searchFilterFields>Removal_Reason__c</searchFilterFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

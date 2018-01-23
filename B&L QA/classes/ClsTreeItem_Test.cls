@@ -1,0 +1,43 @@
+/**
+ * This class contains unit tests for validating the behavior of Apex classes
+ * and triggers.
+ *
+ * Unit tests are class methods that verify whether a particular piece
+ * of code is working properly. Unit test methods take no arguments,
+ * commit no data to the database, and are flagged with the testMethod
+ * keyword in the method definition.
+ *
+ * All test methods in an organization are executed whenever Apex code is deployed
+ * to a production organization to confirm correctness, ensure code
+ * coverage, and prevent regressions. All Apex classes are
+ * required to have at least 75% code coverage in order to be deployed
+ * to a production organization. In addition, all triggers must have some code coverage.
+ * 
+ * The @isTest class annotation indicates this class only contains test
+ * methods. Classes defined with the @isTest annotation do not count against
+ * the organization size limit for all Apex scripts.
+ *
+ * See the Apex Language Reference for more information about Testing and Code Coverage.
+ *
+ *
+ *  	Author		     |Author-Email			   	     	|Date		|Comment
+ *  	-----------------|----------------------------------|-----------|--------------------------------------------------
+ *  	Dennis Flüchter  |dennis.fluechter@itbconsult.com 	|20.10.2009 |First draft
+ **/
+ 
+@isTest
+private class ClsTreeItem_Test {
+
+    static testMethod void ClsTreeItem_Test() {
+        ClsTreeItem clsTest = new ClsTreeItem();
+        ClsTreeShipment clsShipment = new ClsTreeShipment();
+        clsTest.list_shipments.add(clsShipment);
+        List<Order_Line_Item__c> list_olis = clsTest.getitemList();
+        Boolean hasChild = clsTest.gethasChild();
+        clsTest.item.Unit_Price__c = 1;
+        clsTest.item.Extended_Price__c = 1;
+        clsTest.item.CurrencyIsoCode = 'USD';
+        String custUnitPrice = clsTest.getcustUnitPrice(); 
+        String custExtendedPrice = clsTest.getcustExtendedPrice();
+    }
+}

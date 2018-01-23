@@ -1,0 +1,21 @@
+<apex:component access="global" controller="CtrlNotifyPhysicianVisitsManagersAES">
+   <apex:dataTable value="{!listUserPhysicianVisits}" var="UserPhysicianVisit" border="1">
+           <apex:column headerValue="Sr. No" style=" white-space:nowrap; text-align: left;"> 
+                <apex:outputText value="{!UserPhysicianVisit.serialNum}" style="white-space:nowrap;"></apex:outputText>
+            </apex:column>
+           <apex:column headerValue="Sales Representative" style=" white-space:nowrap; text-align: left;"> 
+                <apex:outputText value="{!UserPhysicianVisit.userName}" style="white-space:nowrap;"></apex:outputText>
+            </apex:column>
+            <apex:column headerValue="Region" headerClass="align: center;" style="white-space:nowrap; text-align: left;">                    
+                <apex:outputText value="{!UserPhysicianVisit.region}" style="white-space:nowrap;"></apex:outputText>                
+            </apex:column>
+            <apex:column headerValue="Manager"  headerClass="align: center;" style="white-space:nowrap; text-align: left;">                    
+                <apex:outputText value="{!UserPhysicianVisit.managerName}" style="white-space:nowrap;"></apex:outputText>                
+            </apex:column>
+            <apex:column headerValue="Open Physician Visits"  headerClass="align: center;" style="white-space:nowrap; text-align: center;">
+                <apex:outputText value="{!UserPhysicianVisit.storeVisitsCount}" style="white-space:nowrap;"></apex:outputText>                
+            </apex:column>           
+   </apex:dataTable> 
+     
+      
+</apex:component>

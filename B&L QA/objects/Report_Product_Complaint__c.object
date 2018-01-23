@@ -1,0 +1,606 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Tool for field users to report product complaints via their mobile device, which are then routed to the appropriate email address to be logged in CATSWEB. 
+(Reuse of DASRX object - used to be Pharma Covigilance). 
+Used by EMEA SU.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Additional_Medical_Intervention_Required__c</fullName>
+        <description>Adverse Event. Used by EMEA SU.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Adverse Event.</inlineHelpText>
+        <label>Additional Medical Intervention Required</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Type_of_complaint__c</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Patient Impact / No Product Returned</controllingFieldValue>
+                <controllingFieldValue>Patient Impact / Product Returned</controllingFieldValue>
+                <valueName>Yes</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Patient Impact / No Product Returned</controllingFieldValue>
+                <controllingFieldValue>Patient Impact / Product Returned</controllingFieldValue>
+                <valueName>No</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Age_of_Patient__c</fullName>
+        <externalId>false</externalId>
+        <label>Age of Patient</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact_Department__c</fullName>
+        <description>EMEASU</description>
+        <externalId>false</externalId>
+        <label>Contact Name</label>
+        <length>254</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact_Phone_Email__c</fullName>
+        <description>Used by EMEA SU.</description>
+        <externalId>false</externalId>
+        <formula>Contact__r.Phone &amp; &apos;, &apos; &amp; HYPERLINK( &apos;mailto:&apos; &amp; Contact__r.Email, &apos;Email &apos; &amp; Contact__r.FirstName &amp; &apos; &apos; &amp; Contact__r.LastName)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Contact Phone &amp; Email</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact_Phone_Number__c</fullName>
+        <description>EMEASU</description>
+        <externalId>false</externalId>
+        <label>Department for Collection</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Individual at the customer who reported the complaint to B&amp;L. Used by EMEA SU.</description>
+        <externalId>false</externalId>
+        <label>Complaint Originator</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Report Product Complaints</relationshipLabel>
+        <relationshipName>Report_Product_Complaints</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Customer__c</fullName>
+        <externalId>false</externalId>
+        <label>Customer</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipName>Pharma_Covigilance</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Date_Report_Received__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter date when doctor reported event</inlineHelpText>
+        <label>Date Report Received</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Date_of_Event__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Please enter the date when the event occurred</inlineHelpText>
+        <label>Date of Event</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Please enter a description of the event and the patient&apos;s reactions</inlineHelpText>
+        <label>Description</label>
+        <length>4000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Evaluation_Report_Required__c</fullName>
+        <description>Used by EMEA SU.</description>
+        <externalId>false</externalId>
+        <label>Evaluation Report Required</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes, to customer</fullName>
+                    <default>false</default>
+                    <label>Yes, to customer</label>
+                </value>
+                <value>
+                    <fullName>To B+L Representative</fullName>
+                    <default>false</default>
+                    <label>To B+L Representative</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Gender_of_Patient__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Please select a gender for the patient</inlineHelpText>
+        <label>Gender of Patient</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Female</fullName>
+                    <default>true</default>
+                    <label>Female</label>
+                </value>
+                <value>
+                    <fullName>Male</fullName>
+                    <default>false</default>
+                    <label>Male</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Lot_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Lot Number</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Code__c</fullName>
+        <description>EMEA SU free text field for entering product code/ details for a product complaint</description>
+        <externalId>false</externalId>
+        <label>Product Code</label>
+        <length>45</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Returned__c</fullName>
+        <description>Used by EMEA SU.</description>
+        <externalId>false</externalId>
+        <label>Product Returned</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Product discarded by customer</fullName>
+                    <default>false</default>
+                    <label>Product discarded by customer</label>
+                </value>
+                <value>
+                    <fullName>Product to be returned by customer (non-contaminated only)</fullName>
+                    <default>false</default>
+                    <label>Product to be returned by customer (non-contaminated only)</label>
+                </value>
+                <value>
+                    <fullName>Product to be returned by TM (non-contaminated only)</fullName>
+                    <default>false</default>
+                    <label>Product to be returned by TM (non-contaminated only)</label>
+                </value>
+                <value>
+                    <fullName>Please arrange Collection (contaminated)</fullName>
+                    <default>false</default>
+                    <label>Please arrange Collection (contaminated)</label>
+                </value>
+                <value>
+                    <fullName>Please arrange Collection (non-contaminated)</fullName>
+                    <default>false</default>
+                    <label>Please arrange Collection (non-contaminated)</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Replacement_Product_Required__c</fullName>
+        <description>Used by EMEA SU.</description>
+        <externalId>false</externalId>
+        <label>Replacement Product Required</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Send_form_to__c</fullName>
+        <description>Email address to send the adverse event form to. EMEA SU.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>You must enter an email address if an adverse event form is required.</inlineHelpText>
+        <label>Send adverse event form to</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Serial_Number__c</fullName>
+        <description>Used by EMEA SU.</description>
+        <externalId>false</externalId>
+        <label>Serial Number</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Type_of_complaint__c</fullName>
+        <description>Used by EMEA SU.</description>
+        <externalId>false</externalId>
+        <label>Type of complaint</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>No Patient Impact / No Product Returned</fullName>
+                    <default>false</default>
+                    <label>No Patient Impact / No Product Returned</label>
+                </value>
+                <value>
+                    <fullName>No Patient Impact / Product Returned</fullName>
+                    <default>false</default>
+                    <label>No Patient Impact / Product Returned</label>
+                </value>
+                <value>
+                    <fullName>Patient Impact / No Product Returned</fullName>
+                    <default>false</default>
+                    <label>Patient Impact / No Product Returned</label>
+                </value>
+                <value>
+                    <fullName>Patient Impact / Product Returned</fullName>
+                    <default>false</default>
+                    <label>Patient Impact / Product Returned</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Report Product Complaint</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>{YYYY}-{MM}-{DD}-{0}</displayFormat>
+        <label>Product Complaint Id</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Report Product Complaints</pluralLabel>
+    <recordTypes>
+        <fullName>EMEA_SU_Complaint</fullName>
+        <active>true</active>
+        <description>Recordtype for EMEA Surgical Product Complaints</description>
+        <label>EMEA SU Complaint</label>
+        <picklistValues>
+            <picklist>Additional_Medical_Intervention_Required__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Evaluation_Report_Required__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes%2C to customer</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Gender_of_Patient__c</picklist>
+            <values>
+                <fullName>Female</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Male</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Product_Returned__c</picklist>
+            <values>
+                <fullName>Please arrange Collection %28contaminated%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Please arrange Collection %28non-contaminated%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product discarded by customer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product to be returned by TM %28non-contaminated only%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product to be returned by customer %28non-contaminated only%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Replacement_Product_Required__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_of_complaint__c</picklist>
+            <values>
+                <fullName>No Patient Impact %2F No Product Returned</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Patient Impact %2F Product Returned</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Patient Impact %2F No Product Returned</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Patient Impact %2F Product Returned</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>EMEA_UK_SU_Complaint</fullName>
+        <active>true</active>
+        <description>Recordtype for EMEA UK Surgical Product Complaints</description>
+        <label>EMEA UK SU Complaint</label>
+        <picklistValues>
+            <picklist>Additional_Medical_Intervention_Required__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Evaluation_Report_Required__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes%2C to customer</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Gender_of_Patient__c</picklist>
+            <values>
+                <fullName>Female</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Male</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Product_Returned__c</picklist>
+            <values>
+                <fullName>Please arrange Collection %28contaminated%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Please arrange Collection %28non-contaminated%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product discarded by customer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product to be returned by TM %28non-contaminated only%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product to be returned by customer %28non-contaminated only%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Replacement_Product_Required__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_of_complaint__c</picklist>
+            <values>
+                <fullName>No Patient Impact %2F No Product Returned</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Patient Impact %2F Product Returned</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Patient Impact %2F No Product Returned</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Patient Impact %2F Product Returned</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <lookupDialogsAdditionalFields>Customer__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Contact__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Date_Report_Received__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Date_of_Event__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Evaluation_Report_Required__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Product_Returned__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Type_of_complaint__c</lookupDialogsAdditionalFields>
+        <searchResultsAdditionalFields>Customer__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Contact__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Date_Report_Received__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Date_of_Event__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Evaluation_Report_Required__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Product_Returned__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Type_of_complaint__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Email_is_Required_For_Adverse_Event_Form</fullName>
+        <active>true</active>
+        <description>If adverse event report is required then an email address must be entered.</description>
+        <errorConditionFormula>IF( AND ($RecordType.Name = &apos;EMEA SU Complaint&apos;, OR(ISPICKVAL( Type_of_complaint__c , &apos;Patient Impact / No Product Returned&apos;),ISPICKVAL( Type_of_complaint__c , &apos;Patient Impact / Product Returned&apos;)), Send_form_to__c = &apos;&apos; ) , true, false)</errorConditionFormula>
+        <errorMessage>If an adverse event form is needed, you must provide an email address to mail it to.</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

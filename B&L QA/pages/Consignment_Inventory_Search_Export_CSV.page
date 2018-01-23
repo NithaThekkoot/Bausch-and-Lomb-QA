@@ -1,0 +1,20 @@
+<apex:page controller="exportExcel" cache="true" action="{!exportToExcel}" readOnly="true" contentType="application/vnd.ms-excel#ConsignmentSearchData.csv">{!header}
+
+ <apex:repeat value="{!lstwrapper}" var="x">     
+       <apex:panelGroup rendered="{!IF(headerValue='SearchConsignmentResult',True, False)}">         
+           {!x.shipTo},{!x.accountName},{!x.Location},{!x.ProductID},{!x.SerialNumber},{!x.expirationDate},{!x.implantDate},{!x.PhysicianId}
+       </apex:panelGroup>                        
+       <apex:panelGroup rendered="{!IF(headerValue='SearchBilledConsignmentResult',True, False)}">          
+           {!x.shipTo},{!x.invoiceNumber},{!x.invoiceDate},{!x.PONumber},{!x.OrderNumber},{!x.ProductID},{!x.SerialNumber},{!x.implantDate},{!x.PhysicianId}
+       </apex:panelGroup>
+       <apex:panelGroup rendered="{!IF(headerValue='SearchTransactionHistoryResult',True, False)}">          
+           {!x.dateval},{!x.shipTo},{!x.PONumber},{!x.OrderNumber},{!x.ProductID},{!x.SerialNumber},{!x.businessUnit},{!x.Location},{!x.ToLocation},{!x.UserName},{!x.type},{!x.implantDate},{!x.PhysicianId}
+       </apex:panelGroup>
+       <apex:panelGroup rendered="{!IF(headerValue='SearchUnbilledConsignmentResult',True, False)}">          
+          {!x.shipTo},{!x.accountName},{!x.Location},{!x.ProductID},{!x.SerialNumber},{!x.expirationDate},{!x.implantDate},{!x.PhysicianId}
+       </apex:panelGroup>
+        
+ </apex:repeat>
+  
+  
+</apex:page>

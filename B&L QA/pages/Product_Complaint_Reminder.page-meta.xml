@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApexPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>23.0</apiVersion>
+    <availableInTouch>false</availableInTouch>
+    <confirmationTokenRequired>false</confirmationTokenRequired>
+    <description>For Product Cases, shows reminder at the top of the page when Product is not associated with the Case</description>
+    <label>Product_Complaint_Reminder</label>
+</ApexPage>

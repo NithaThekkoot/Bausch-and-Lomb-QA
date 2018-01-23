@@ -1,0 +1,1868 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Used to detail the customers key products for BSS Phaco, custom pack etc.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Used by EMEASU</description>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Key Products Other</relationshipLabel>
+        <relationshipName>Key_Products_Other</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Comments__c</fullName>
+        <description>Used  by EMEASU</description>
+        <externalId>false</externalId>
+        <label>Comments</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Prescription_Ship_to__c</fullName>
+        <description>Used by EMEASU</description>
+        <externalId>false</externalId>
+        <label>Prescription Ship to</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Price_Type__c</fullName>
+        <description>Used by EMEASU. Used to detail the price type of a given price.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Only required for Germany.</inlineHelpText>
+        <label>Price Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Private Only</fullName>
+                    <default>false</default>
+                    <label>Private Only</label>
+                </value>
+                <value>
+                    <fullName>Private Ambulant</fullName>
+                    <default>false</default>
+                    <label>Private Ambulant</label>
+                </value>
+                <value>
+                    <fullName>Private Stationaer</fullName>
+                    <default>false</default>
+                    <label>Private Stationaer</label>
+                </value>
+                <value>
+                    <fullName>Kasse Only</fullName>
+                    <default>false</default>
+                    <label>Kasse Only</label>
+                </value>
+                <value>
+                    <fullName>Kasse Ambulant</fullName>
+                    <default>false</default>
+                    <label>Kasse Ambulant</label>
+                </value>
+                <value>
+                    <fullName>Kasse Stationaer</fullName>
+                    <default>false</default>
+                    <label>Kasse Stationaer</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Prescription</fullName>
+                    <default>false</default>
+                    <label>Prescription</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Product_Price__c</fullName>
+        <description>Used by EMEASU</description>
+        <externalId>false</externalId>
+        <label>Product Price</label>
+        <precision>7</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_SKU__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Used by EMEASU. Enter product ID when the option is not available in the product picklist</description>
+        <externalId>false</externalId>
+        <label>Product SKU</label>
+        <referenceTo>Product2</referenceTo>
+        <relationshipLabel>Key Products Other</relationshipLabel>
+        <relationshipName>Key_Products_Other</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Product_Type__c</fullName>
+        <description>used by EMEASU</description>
+        <externalId>false</externalId>
+        <label>Product Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>BSS</fullName>
+                    <default>false</default>
+                    <label>BSS</label>
+                </value>
+                <value>
+                    <fullName>Custom Packs</fullName>
+                    <default>false</default>
+                    <label>Custom Packs</label>
+                </value>
+                <value>
+                    <fullName>Instruments</fullName>
+                    <default>false</default>
+                    <label>Instruments</label>
+                </value>
+                <value>
+                    <fullName>IOL Inserters</fullName>
+                    <default>false</default>
+                    <label>IOL Inserters</label>
+                </value>
+                <value>
+                    <fullName>Knives</fullName>
+                    <default>false</default>
+                    <label>Knives</label>
+                </value>
+                <value>
+                    <fullName>Needles</fullName>
+                    <default>false</default>
+                    <label>Needles</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>PFCL (Perflurocarbon Liquid)</fullName>
+                    <default>false</default>
+                    <label>PFCL (Perflurocarbon Liquid)</label>
+                </value>
+                <value>
+                    <fullName>Phaco - Millenium</fullName>
+                    <default>false</default>
+                    <label>Phaco - Millenium</label>
+                </value>
+                <value>
+                    <fullName>Phaco - Stellaris</fullName>
+                    <default>false</default>
+                    <label>Phaco - Stellaris</label>
+                </value>
+                <value>
+                    <fullName>Silicone Oil</fullName>
+                    <default>false</default>
+                    <label>Silicone Oil</label>
+                </value>
+                <value>
+                    <fullName>Viscoelastics</fullName>
+                    <default>false</default>
+                    <label>Viscoelastics</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Product__c</fullName>
+        <description>Used by EMEASU</description>
+        <externalId>false</externalId>
+        <label>Product</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Product_Type__c</controllingField>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>00035N - EYE SWABS W/HANDLE STER.200/BX</fullName>
+                    <default>false</default>
+                    <label>00035N - EYE SWABS W/HANDLE STER.200/BX</label>
+                </value>
+                <value>
+                    <fullName>1105723 - EINM.PHAKOKL.ABGEZ.2.8MM</fullName>
+                    <default>false</default>
+                    <label>1105723 - EINM.PHAKOKL.ABGEZ.2.8MM</label>
+                </value>
+                <value>
+                    <fullName>1107178 - Erweiterungsklinge 4.0 unsteri</fullName>
+                    <default>false</default>
+                    <label>1107178 - Erweiterungsklinge 4.0 unsteri</label>
+                </value>
+                <value>
+                    <fullName>1275G - RETROBULB.25G 0.5X28MM 10/B</fullName>
+                    <default>false</default>
+                    <label>1275G - RETROBULB.25G 0.5X28MM 10/B</label>
+                </value>
+                <value>
+                    <fullName>16110 - SPECIAL BLADE K STERILE 100/BX</fullName>
+                    <default>false</default>
+                    <label>16110 - SPECIAL BLADE K STERILE 100/BX</label>
+                </value>
+                <value>
+                    <fullName>16140 2.8 - PHACO BLADE STERILE 2.8MM 50/B</fullName>
+                    <default>false</default>
+                    <label>16140 2.8 - PHACO BLADE STERILE 2.8MM 50/B</label>
+                </value>
+                <value>
+                    <fullName>16145 2.5 - PHACOBLADE SHORT 2.5MM ST.50/B</fullName>
+                    <default>false</default>
+                    <label>16145 2.5 - PHACOBLADE SHORT 2.5MM ST.50/B</label>
+                </value>
+                <value>
+                    <fullName>16145 2.8 - PHACOBLADE SHORT 2.8MM ST.50/B</fullName>
+                    <default>false</default>
+                    <label>16145 2.8 - PHACOBLADE SHORT 2.8MM ST.50/B</label>
+                </value>
+                <value>
+                    <fullName>16145 3.0 - PHACOBLADE SHORT 3.0MM ST.50/B</fullName>
+                    <default>false</default>
+                    <label>16145 3.0 - PHACOBLADE SHORT 3.0MM ST.50/B</label>
+                </value>
+                <value>
+                    <fullName>16160 3.6 - IOL BLADE STERILE 3.6MM 50/BOX</fullName>
+                    <default>false</default>
+                    <label>16160 3.6 - IOL BLADE STERILE 3.6MM 50/BOX</label>
+                </value>
+                <value>
+                    <fullName>22CMICSAFS - 2.2mm Co-axial Advanced Flow Kit - Box/12</fullName>
+                    <default>false</default>
+                    <label>22CMICSAFS - 2.2mm Co-axial Advanced Flow Kit - Box/12</label>
+                </value>
+                <value>
+                    <fullName>22CMICSVENTURI - 2.2mm Co-axial Venturi Kit - Box/12</fullName>
+                    <default>false</default>
+                    <label>22CMICSVENTURI - 2.2mm Co-axial Venturi Kit - Box/12</label>
+                </value>
+                <value>
+                    <fullName>59081 - Amvisc - 0.8ml</fullName>
+                    <default>false</default>
+                    <label>59081 - Amvisc - 0.8ml</label>
+                </value>
+                <value>
+                    <fullName>59081L - AMVISC, 0.8ML</fullName>
+                    <default>false</default>
+                    <label>59081L - AMVISC, 0.8ML</label>
+                </value>
+                <value>
+                    <fullName>60081 - Amvisc Plus - 0.8ml</fullName>
+                    <default>false</default>
+                    <label>60081 - Amvisc Plus - 0.8ml</label>
+                </value>
+                <value>
+                    <fullName>60081L - AMVISC PLUS, 0.8ML</fullName>
+                    <default>false</default>
+                    <label>60081L - AMVISC PLUS, 0.8ML</label>
+                </value>
+                <value>
+                    <fullName>85302Y2 - DISPOSABLE-ASPIRATG.CAN.STRGHT</fullName>
+                    <default>false</default>
+                    <label>85302Y2 - DISPOSABLE-ASPIRATG.CAN.STRGHT</label>
+                </value>
+                <value>
+                    <fullName>85761 - I/A-HANDPIECE STRAIGHT SILICON</fullName>
+                    <default>false</default>
+                    <label>85761 - I/A-HANDPIECE STRAIGHT SILICON</label>
+                </value>
+                <value>
+                    <fullName>85795ST - I/A HDP 45dg W SLVE 1.8 12/BX</fullName>
+                    <default>false</default>
+                    <label>85795ST - I/A HDP 45dg W SLVE 1.8 12/BX</label>
+                </value>
+                <value>
+                    <fullName>93100S - DONOR CORNEA HOLDER STER.10/B</fullName>
+                    <default>false</default>
+                    <label>93100S - DONOR CORNEA HOLDER STER.10/B</label>
+                </value>
+                <value>
+                    <fullName>99991S - SET F. INTRAVITR. INJECT. 10/P</fullName>
+                    <default>false</default>
+                    <label>99991S - SET F. INTRAVITR. INJECT. 10/P</label>
+                </value>
+                <value>
+                    <fullName>AQ019 - Aqsia (Plastic Vials) - 12 x 19ml</fullName>
+                    <default>false</default>
+                    <label>AQ019 - Aqsia (Plastic Vials) - 12 x 19ml</label>
+                </value>
+                <value>
+                    <fullName>AQ500G - Aqsia (Glass Bottle) - 12 x 500ml</fullName>
+                    <default>false</default>
+                    <label>AQ500G - Aqsia (Glass Bottle) - 12 x 500ml</label>
+                </value>
+                <value>
+                    <fullName>AQ500P - Aqsia (Plastic Bottle) - 12 x 500ml</fullName>
+                    <default>false</default>
+                    <label>AQ500P - Aqsia (Plastic Bottle) - 12 x 500ml</label>
+                </value>
+                <value>
+                    <fullName>BL5110 - STELLARIS Prem. Vacuum phaco pack (6/box)</fullName>
+                    <default>false</default>
+                    <label>BL5110 - STELLARIS Prem. Vacuum phaco pack (6/box)</label>
+                </value>
+                <value>
+                    <fullName>BL5111 - STELLARIS Basic Vacuum phaco pack (6/box)</fullName>
+                    <default>false</default>
+                    <label>BL5111 - STELLARIS Basic Vacuum phaco pack (6/box)</label>
+                </value>
+                <value>
+                    <fullName>BL5112 - STELLARIS Premium Stablechamber VFM phaco pack (t</fullName>
+                    <default>false</default>
+                    <label>BL5112 - STELLARIS Premium Stablechamber VFM phaco pack (t</label>
+                </value>
+                <value>
+                    <fullName>BL5113A - MICRO INCISION VACUUM PK ANG</fullName>
+                    <default>false</default>
+                    <label>BL5113A - MICRO INCISION VACUUM PK ANG</label>
+                </value>
+                <value>
+                    <fullName>BL5113 - STELLARIS MICS 1.8mm VFM pack (stable chamber and</fullName>
+                    <default>false</default>
+                    <label>BL5113 - STELLARIS MICS 1.8mm VFM pack (stable chamber and</label>
+                </value>
+                <value>
+                    <fullName>BL5114A - PREMIUM PHACO PACK-1.8MM ANG</fullName>
+                    <default>false</default>
+                    <label>BL5114A - PREMIUM PHACO PACK-1.8MM ANG</label>
+                </value>
+                <value>
+                    <fullName>BL5114 - PREMIUM PHACO PACK - 1.8MM ST</fullName>
+                    <default>false</default>
+                    <label>BL5114 - PREMIUM PHACO PACK - 1.8MM ST</label>
+                </value>
+                <value>
+                    <fullName>BL5120 - STELLARIS Premium AFM pack (6/box)</fullName>
+                    <default>false</default>
+                    <label>BL5120 - STELLARIS Premium AFM pack (6/box)</label>
+                </value>
+                <value>
+                    <fullName>BL5121 - Standard AFM pack (6/box)</fullName>
+                    <default>false</default>
+                    <label>BL5121 - Standard AFM pack (6/box)</label>
+                </value>
+                <value>
+                    <fullName>BL5123A - MICRO INCISION AFS PHACO PKANG</fullName>
+                    <default>false</default>
+                    <label>BL5123A - MICRO INCISION AFS PHACO PKANG</label>
+                </value>
+                <value>
+                    <fullName>BL5123 - STELLARIS MICS AFM pack (6/box)</fullName>
+                    <default>false</default>
+                    <label>BL5123 - STELLARIS MICS AFM pack (6/box)</label>
+                </value>
+                <value>
+                    <fullName>BL5220 - 20GA Posterior Procedural Pack</fullName>
+                    <default>false</default>
+                    <label>BL5220 - 20GA Posterior Procedural Pack</label>
+                </value>
+                <value>
+                    <fullName>BL5223 - 23GA Posterior Procedural Pack</fullName>
+                    <default>false</default>
+                    <label>BL5223 - 23GA Posterior Procedural Pack</label>
+                </value>
+                <value>
+                    <fullName>BL5225 - 25GA Posterior Procedural Pack</fullName>
+                    <default>false</default>
+                    <label>BL5225 - 25GA Posterior Procedural Pack</label>
+                </value>
+                <value>
+                    <fullName>BL5320 - 20GA Combined Procedural Pack</fullName>
+                    <default>false</default>
+                    <label>BL5320 - 20GA Combined Procedural Pack</label>
+                </value>
+                <value>
+                    <fullName>BL5323 - 23GA Combined Procedural Pack</fullName>
+                    <default>false</default>
+                    <label>BL5323 - 23GA Combined Procedural Pack</label>
+                </value>
+                <value>
+                    <fullName>BL5325 - 25GA Combined Procedural Pack</fullName>
+                    <default>false</default>
+                    <label>BL5325 - 25GA Combined Procedural Pack</label>
+                </value>
+                <value>
+                    <fullName>BL5420 - 20GA Posterior Procedural Pack includes Integrate</fullName>
+                    <default>false</default>
+                    <label>BL5420 - 20GA Posterior Procedural Pack includes Integrate</label>
+                </value>
+                <value>
+                    <fullName>BL5423 - 23GA Posterior Procedural Pack includes Integrate</fullName>
+                    <default>false</default>
+                    <label>BL5423 - 23GA Posterior Procedural Pack includes Integrate</label>
+                </value>
+                <value>
+                    <fullName>BL5425 - 25GA Posterior Procedural Pack includes Integrate</fullName>
+                    <default>false</default>
+                    <label>BL5425 - 25GA Posterior Procedural Pack includes Integrate</label>
+                </value>
+                <value>
+                    <fullName>BL5520 - 20GA Combined Procedural Pack includes Integrated</fullName>
+                    <default>false</default>
+                    <label>BL5520 - 20GA Combined Procedural Pack includes Integrated</label>
+                </value>
+                <value>
+                    <fullName>BL5523 - 23GA Combined Procedural Pack includes Integrated</fullName>
+                    <default>false</default>
+                    <label>BL5523 - 23GA Combined Procedural Pack includes Integrated</label>
+                </value>
+                <value>
+                    <fullName>BL5525 - 25GA Combined Procedural Pack includes Integrated</fullName>
+                    <default>false</default>
+                    <label>BL5525 - 25GA Combined Procedural Pack includes Integrated</label>
+                </value>
+                <value>
+                    <fullName>BL5623 - 23G  VIT CUTTER 6/BX</fullName>
+                    <default>false</default>
+                    <label>BL5623 - 23G  VIT CUTTER 6/BX</label>
+                </value>
+                <value>
+                    <fullName>BL5723 - STELLARIS PC 23GA LIGHT PIPE</fullName>
+                    <default>false</default>
+                    <label>BL5723 - STELLARIS PC 23GA LIGHT PIPE</label>
+                </value>
+                <value>
+                    <fullName>BL5725 - STELLARIS PC 25GA LIGHT PIPE</fullName>
+                    <default>false</default>
+                    <label>BL5725 - STELLARIS PC 25GA LIGHT PIPE</label>
+                </value>
+                <value>
+                    <fullName>BMICSAFM - 1.8mm Bi-axial Advanced Flow Kit - Box/6</fullName>
+                    <default>false</default>
+                    <label>BMICSAFM - 1.8mm Bi-axial Advanced Flow Kit - Box/6</label>
+                </value>
+                <value>
+                    <fullName>BMICSAFS - 1.8mm Bi-axial Advanced Flow Kit - Box/6</fullName>
+                    <default>false</default>
+                    <label>BMICSAFS - 1.8mm Bi-axial Advanced Flow Kit - Box/6</label>
+                </value>
+                <value>
+                    <fullName>BMICSVENTURI - 1.8mm Bi-axial Venturi Kit - Box/6</fullName>
+                    <default>false</default>
+                    <label>BMICSVENTURI - 1.8mm Bi-axial Venturi Kit - Box/6</label>
+                </value>
+                <value>
+                    <fullName>BMICSVFM - 1.8mm Bi-axial Vacuum Kit - Box/6</fullName>
+                    <default>false</default>
+                    <label>BMICSVFM - 1.8mm Bi-axial Vacuum Kit - Box/6</label>
+                </value>
+                <value>
+                    <fullName>CC050 - OCUCOAT 1.0ML SINGLE PACK</fullName>
+                    <default>false</default>
+                    <label>CC050 - OCUCOAT 1.0ML SINGLE PACK</label>
+                </value>
+                <value>
+                    <fullName>CC050S - Ocucoat Syringe 1ml Single</fullName>
+                    <default>false</default>
+                    <label>CC050S - Ocucoat Syringe 1ml Single</label>
+                </value>
+                <value>
+                    <fullName>CC065 - OCUCOAT 1.0ML 6/BX</fullName>
+                    <default>false</default>
+                    <label>CC065 - OCUCOAT 1.0ML 6/BX</label>
+                </value>
+                <value>
+                    <fullName>CC065S - Ocucoat Syringe 1ml 6Pk</fullName>
+                    <default>false</default>
+                    <label>CC065S - Ocucoat Syringe 1ml 6Pk</label>
+                </value>
+                <value>
+                    <fullName>CC100SL - OCUCOAT, 2ML SYRINGE</fullName>
+                    <default>false</default>
+                    <label>CC100SL - OCUCOAT, 2ML SYRINGE</label>
+                </value>
+                <value>
+                    <fullName>CC100S - Ocucoat (HPMC) - 2ml</fullName>
+                    <default>false</default>
+                    <label>CC100S - Ocucoat (HPMC) - 2ml</label>
+                </value>
+                <value>
+                    <fullName>CMICSAFM - 1.8mm Co-axial Advanced Flow Kit - Box/6</fullName>
+                    <default>false</default>
+                    <label>CMICSAFM - 1.8mm Co-axial Advanced Flow Kit - Box/6</label>
+                </value>
+                <value>
+                    <fullName>CMICSVFM - 1.8mm Co-axial Vacuum Kit - Box/6</fullName>
+                    <default>false</default>
+                    <label>CMICSVFM - 1.8mm Co-axial Vacuum Kit - Box/6</label>
+                </value>
+                <value>
+                    <fullName>COAXIALAFM+ - 2.85mm Co-axial Advanced Flow with Microflow</fullName>
+                    <default>false</default>
+                    <label>COAXIALAFM+ - 2.85mm Co-axial Advanced Flow with Microflow</label>
+                </value>
+                <value>
+                    <fullName>COAXIALAFM - 2.85mm Co-axial Advanced Flow with Microflow</fullName>
+                    <default>false</default>
+                    <label>COAXIALAFM - 2.85mm Co-axial Advanced Flow with Microflow</label>
+                </value>
+                <value>
+                    <fullName>COAXIALSC - Coaxial Vacuum with Stable Chamber - Box/6</fullName>
+                    <default>false</default>
+                    <label>COAXIALSC - Coaxial Vacuum with Stable Chamber - Box/6</label>
+                </value>
+                <value>
+                    <fullName>COAXIALVFM+ - 2.85mm Co-axial Vacuum Kit with Microflow+ N</fullName>
+                    <default>false</default>
+                    <label>COAXIALVFM+ - 2.85mm Co-axial Vacuum Kit with Microflow+ N</label>
+                </value>
+                <value>
+                    <fullName>COAXIALVFM - 2.85mm Co-axial Vacuum Kit with Microflow Nee</fullName>
+                    <default>false</default>
+                    <label>COAXIALVFM - 2.85mm Co-axial Vacuum Kit with Microflow Nee</label>
+                </value>
+                <value>
+                    <fullName>Custom Pack See Comments for Product ID</fullName>
+                    <default>false</default>
+                    <label>Custom Pack See Comments for Product ID</label>
+                </value>
+                <value>
+                    <fullName>CX4320KIT - Micro Incision Vacuum Pack with Stable Chamber</fullName>
+                    <default>false</default>
+                    <label>CX4320KIT - Micro Incision Vacuum Pack with Stable Chamber</label>
+                </value>
+                <value>
+                    <fullName>CX4320 - Micro Incision vacuum pack 6/box</fullName>
+                    <default>false</default>
+                    <label>CX4320 - Micro Incision vacuum pack 6/box</label>
+                </value>
+                <value>
+                    <fullName>CX4804 - Lightning High Speed Vit Cutte 6/Box</fullName>
+                    <default>false</default>
+                    <label>CX4804 - Lightning High Speed Vit Cutte 6/Box</label>
+                </value>
+                <value>
+                    <fullName>CX4820 - VR Pack 20G Pheumatic  6/Box</fullName>
+                    <default>false</default>
+                    <label>CX4820 - VR Pack 20G Pheumatic  6/Box</label>
+                </value>
+                <value>
+                    <fullName>CX4920 - VR Pack 20G High Speed Vit 6/Box</fullName>
+                    <default>false</default>
+                    <label>CX4920 - VR Pack 20G High Speed Vit 6/Box</label>
+                </value>
+                <value>
+                    <fullName>CX4925 - VR Pack 25G High Speed Vit 6/Box</fullName>
+                    <default>false</default>
+                    <label>CX4925 - VR Pack 25G High Speed Vit 6/Box</label>
+                </value>
+                <value>
+                    <fullName>CX5310 - Advanced Flow System Pack - Box/6</fullName>
+                    <default>false</default>
+                    <label>CX5310 - Advanced Flow System Pack - Box/6</label>
+                </value>
+                <value>
+                    <fullName>CX5310KITCS - Advanced Flow System Pack with Microflow+ Ne</fullName>
+                    <default>false</default>
+                    <label>CX5310KITCS - Advanced Flow System Pack with Microflow+ Ne</label>
+                </value>
+                <value>
+                    <fullName>CX5310KITS - Advanced Flow System Pack with Microflow Need</fullName>
+                    <default>false</default>
+                    <label>CX5310KITS - Advanced Flow System Pack with Microflow Need</label>
+                </value>
+                <value>
+                    <fullName>CX5825 - HS VITRECTOMEY CUTTER 6/BOX</fullName>
+                    <default>false</default>
+                    <label>CX5825 - HS VITRECTOMEY CUTTER 6/BOX</label>
+                </value>
+                <value>
+                    <fullName>CX6920 - 20G HSV Procedure Pack (with cutter) 6/Box</fullName>
+                    <default>false</default>
+                    <label>CX6920 - 20G HSV Procedure Pack (with cutter) 6/Box</label>
+                </value>
+                <value>
+                    <fullName>CX6920A - Produkt Kit 20 G mit Lichtleiter</fullName>
+                    <default>false</default>
+                    <label>CX6920A - Produkt Kit 20 G mit Lichtleiter</label>
+                </value>
+                <value>
+                    <fullName>CX6923 - 23G HSV Procedure Pack (with cutter) 6/Box</fullName>
+                    <default>false</default>
+                    <label>CX6923 - 23G HSV Procedure Pack (with cutter) 6/Box</label>
+                </value>
+                <value>
+                    <fullName>CX6923A - 23G pack and light 6/B</fullName>
+                    <default>false</default>
+                    <label>CX6923A - 23G pack and light 6/B</label>
+                </value>
+                <value>
+                    <fullName>CX6925 - 25G HSV Procedure Pack (with cutter) 6/Box</fullName>
+                    <default>false</default>
+                    <label>CX6925 - 25G HSV Procedure Pack (with cutter) 6/Box</label>
+                </value>
+                <value>
+                    <fullName>CX9623 - 23G Light Pipe</fullName>
+                    <default>false</default>
+                    <label>CX9623 - 23G Light Pipe</label>
+                </value>
+                <value>
+                    <fullName>CX9625 - FIBEROPTIC LIGHT PIPE 6/BOX</fullName>
+                    <default>false</default>
+                    <label>CX9625 - FIBEROPTIC LIGHT PIPE 6/BOX</label>
+                </value>
+                <value>
+                    <fullName>CX9626 - ESA SYSTEM 25G SYS TROCAR 6/CS</fullName>
+                    <default>false</default>
+                    <label>CX9626 - ESA SYSTEM 25G SYS TROCAR 6/CS</label>
+                </value>
+                <value>
+                    <fullName>DP4305 - Basic Venturi Phaco Pack - Box/12</fullName>
+                    <default>false</default>
+                    <label>DP4305 - Basic Venturi Phaco Pack - Box/12</label>
+                </value>
+                <value>
+                    <fullName>DP4305 EACH - BASIC VENTURI PHACO PACK EACH</fullName>
+                    <default>false</default>
+                    <label>DP4305 EACH - BASIC VENTURI PHACO PACK EACH</label>
+                </value>
+                <value>
+                    <fullName>DP4305KIT45-Venturi Phaco Pack + Microflow 45deg Needles</fullName>
+                    <default>false</default>
+                    <label>DP4305KIT45-Venturi Phaco Pack + Microflow 45deg Needles</label>
+                </value>
+                <value>
+                    <fullName>DP4305KITCS - Basic Venturi Phaco Pack with Microflow+ Nee</fullName>
+                    <default>false</default>
+                    <label>DP4305KITCS - Basic Venturi Phaco Pack with Microflow+ Nee</label>
+                </value>
+                <value>
+                    <fullName>DP4305KITS - Basic Venturi Phaco Pack with Microflow Needl</fullName>
+                    <default>false</default>
+                    <label>DP4305KITS - Basic Venturi Phaco Pack with Microflow Needl</label>
+                </value>
+                <value>
+                    <fullName>DP4310KITCS - Venturi Phaco Pack with Microflow+ Needle -</fullName>
+                    <default>false</default>
+                    <label>DP4310KITCS - Venturi Phaco Pack with Microflow+ Needle -</label>
+                </value>
+                <value>
+                    <fullName>DP4310KITS - Venturi Phaco Pack with Microflow Needle - Bo</fullName>
+                    <default>false</default>
+                    <label>DP4310KITS - Venturi Phaco Pack with Microflow Needle - Bo</label>
+                </value>
+                <value>
+                    <fullName>DP4310 - Venturi Phaco Pack - Box/6</fullName>
+                    <default>false</default>
+                    <label>DP4310 - Venturi Phaco Pack - Box/6</label>
+                </value>
+                <value>
+                    <fullName>DP4400-6 - ANTERIOR VIT CUTTER PACK 6/CS</fullName>
+                    <default>false</default>
+                    <label>DP4400-6 - ANTERIOR VIT CUTTER PACK 6/CS</label>
+                </value>
+                <value>
+                    <fullName>DP4600 - ANT IOP TUBE SET 6/BX</fullName>
+                    <default>false</default>
+                    <label>DP4600 - ANT IOP TUBE SET 6/BX</label>
+                </value>
+                <value>
+                    <fullName>DP4801 - POST PACK W.REFLUX BASIC 6/Box</fullName>
+                    <default>false</default>
+                    <label>DP4801 - POST PACK W.REFLUX BASIC 6/Box</label>
+                </value>
+                <value>
+                    <fullName>DP4803 - POSTERIOR VITRECTOMY CUTTER 6</fullName>
+                    <default>false</default>
+                    <label>DP4803 - POSTERIOR VITRECTOMY CUTTER 6</label>
+                </value>
+                <value>
+                    <fullName>DP5200A - IRRIGATION ADM. SET 6/BX</fullName>
+                    <default>false</default>
+                    <label>DP5200A - IRRIGATION ADM. SET 6/BX</label>
+                </value>
+                <value>
+                    <fullName>DP8130 - NEEDLE TAPERED HUB 30 DEG. 6/B</fullName>
+                    <default>false</default>
+                    <label>DP8130 - NEEDLE TAPERED HUB 30 DEG. 6/B</label>
+                </value>
+                <value>
+                    <fullName>DP8130S - NEEDLE TAPER HUB 30 DEG. STER</fullName>
+                    <default>false</default>
+                    <label>DP8130S - NEEDLE TAPER HUB 30 DEG. STER</label>
+                </value>
+                <value>
+                    <fullName>DP8145 - NEEDLE TAPERED HUB 45 DEG. 6/B</fullName>
+                    <default>false</default>
+                    <label>DP8145 - NEEDLE TAPERED HUB 45 DEG. 6/B</label>
+                </value>
+                <value>
+                    <fullName>DP8145S - STANDARD NEEDLE, 45 DEG, GOLD</fullName>
+                    <default>false</default>
+                    <label>DP8145S - STANDARD NEEDLE, 45 DEG, GOLD</label>
+                </value>
+                <value>
+                    <fullName>DP8215 - MICROFLOW PHACO NEEDLE 15 DEG.</fullName>
+                    <default>false</default>
+                    <label>DP8215 - MICROFLOW PHACO NEEDLE 15 DEG.</label>
+                </value>
+                <value>
+                    <fullName>DP8230A - MICROFLOW NDL.ANGLD.30DEG. TIP</fullName>
+                    <default>false</default>
+                    <label>DP8230A - MICROFLOW NDL.ANGLD.30DEG. TIP</label>
+                </value>
+                <value>
+                    <fullName>DP8230 - NEEDLE MICROFLOW 30 DEGREE 6/B</fullName>
+                    <default>false</default>
+                    <label>DP8230 - NEEDLE MICROFLOW 30 DEGREE 6/B</label>
+                </value>
+                <value>
+                    <fullName>DP8230S - MICROFLW.NDL.30DEG.STER.6/B</fullName>
+                    <default>false</default>
+                    <label>DP8230S - MICROFLW.NDL.30DEG.STER.6/B</label>
+                </value>
+                <value>
+                    <fullName>DP8245 - NEEDLE MICROFLOW 45 DEG. 6/BOX</fullName>
+                    <default>false</default>
+                    <label>DP8245 - NEEDLE MICROFLOW 45 DEG. 6/BOX</label>
+                </value>
+                <value>
+                    <fullName>DP8245S - MICROFLOW, 45 DEGREE, GREEN</fullName>
+                    <default>false</default>
+                    <label>DP8245S - MICROFLOW, 45 DEGREE, GREEN</label>
+                </value>
+                <value>
+                    <fullName>DP8315 - NEEDLE MICROFLOW PLUS 15 DEG.</fullName>
+                    <default>false</default>
+                    <label>DP8315 - NEEDLE MICROFLOW PLUS 15 DEG.</label>
+                </value>
+                <value>
+                    <fullName>DP8330A - MICROFLOW PLUS ANG 30 DEG, 6/B</fullName>
+                    <default>false</default>
+                    <label>DP8330A - MICROFLOW PLUS ANG 30 DEG, 6/B</label>
+                </value>
+                <value>
+                    <fullName>DP8330 - NEEDLE MICROFLOW PLUS 30 DEG.</fullName>
+                    <default>false</default>
+                    <label>DP8330 - NEEDLE MICROFLOW PLUS 30 DEG.</label>
+                </value>
+                <value>
+                    <fullName>DP8330S - MICROFLOW PLUS 30 DEG,STER, 6/</fullName>
+                    <default>false</default>
+                    <label>DP8330S - MICROFLOW PLUS 30 DEG,STER, 6/</label>
+                </value>
+                <value>
+                    <fullName>DP8345 - NEEDLE MICROFLOW PLUS 45 DEG.</fullName>
+                    <default>false</default>
+                    <label>DP8345 - NEEDLE MICROFLOW PLUS 45 DEG.</label>
+                </value>
+                <value>
+                    <fullName>DP8430AS - Phaco Needle Pack, DP8430AS</fullName>
+                    <default>false</default>
+                    <label>DP8430AS - Phaco Needle Pack, DP8430AS</label>
+                </value>
+                <value>
+                    <fullName>DP8430 - NEEDLE THIN TIP 30 DEG.  6/BOX</fullName>
+                    <default>false</default>
+                    <label>DP8430 - NEEDLE THIN TIP 30 DEG.  6/BOX</label>
+                </value>
+                <value>
+                    <fullName>DP8430S - Phaco Needle Pack, DP8430S</fullName>
+                    <default>false</default>
+                    <label>DP8430S - Phaco Needle Pack, DP8430S</label>
+                </value>
+                <value>
+                    <fullName>DP8730 - Needle, Microflow 2.2</fullName>
+                    <default>false</default>
+                    <label>DP8730 - Needle, Microflow 2.2</label>
+                </value>
+                <value>
+                    <fullName>DP8730S - Needle, Microflow 2.2</fullName>
+                    <default>false</default>
+                    <label>DP8730S - Needle, Microflow 2.2</label>
+                </value>
+                <value>
+                    <fullName>DP8930AS - NDL,PHACO,20G,30D,ANG,VORTX,ST</fullName>
+                    <default>false</default>
+                    <label>DP8930AS - NDL,PHACO,20G,30D,ANG,VORTX,ST</label>
+                </value>
+                <value>
+                    <fullName>DP9604 - MADLAB-CANNONBALL 6/BoX</fullName>
+                    <default>false</default>
+                    <label>DP9604 - MADLAB-CANNONBALL 6/BoX</label>
+                </value>
+                <value>
+                    <fullName>E0750 NS - RETRACTOR IRIS MADLAB 5/PK</fullName>
+                    <default>false</default>
+                    <label>E0750 NS - RETRACTOR IRIS MADLAB 5/PK</label>
+                </value>
+                <value>
+                    <fullName>E2006 - LIVERNOIS-RUPRE. CAPSULORHEXIS</fullName>
+                    <default>false</default>
+                    <label>E2006 - LIVERNOIS-RUPRE. CAPSULORHEXIS</label>
+                </value>
+                <value>
+                    <fullName>E4800 T - TUBING FOR E4800 HNDPC</fullName>
+                    <default>false</default>
+                    <label>E4800 T - TUBING FOR E4800 HNDPC</label>
+                </value>
+                <value>
+                    <fullName>E7112 - CYSTOTOME FORMED 23GA 5/BOX</fullName>
+                    <default>false</default>
+                    <label>E7112 - CYSTOTOME FORMED 23GA 5/BOX</label>
+                </value>
+                <value>
+                    <fullName>E7112EAN - CYSTOTOME FORMED 23GA 5/BOX</fullName>
+                    <default>false</default>
+                    <label>E7112EAN - CYSTOTOME FORMED 23GA 5/BOX</label>
+                </value>
+                <value>
+                    <fullName>E7131 - ATKINSON RETRO NDL 23GA 5/BOX</fullName>
+                    <default>false</default>
+                    <label>E7131 - ATKINSON RETRO NDL 23GA 5/BOX</label>
+                </value>
+                <value>
+                    <fullName>E7131EAN - NEEDLE RETROBULBAR 23G, 5/Box</fullName>
+                    <default>false</default>
+                    <label>E7131EAN - NEEDLE RETROBULBAR 23G, 5/Box</label>
+                </value>
+                <value>
+                    <fullName>E7132EAN - ATKINSON PERIBULB.NDL.23GA 5/B</fullName>
+                    <default>false</default>
+                    <label>E7132EAN - ATKINSON PERIBULB.NDL.23GA 5/B</label>
+                </value>
+                <value>
+                    <fullName>E7153 - 27 GA CAPSULE POLISHER 5/BOX</fullName>
+                    <default>false</default>
+                    <label>E7153 - 27 GA CAPSULE POLISHER 5/BOX</label>
+                </value>
+                <value>
+                    <fullName>E7155EAN - C.NULA HDRODISSECTION25G B/5&apos;s</fullName>
+                    <default>false</default>
+                    <label>E7155EAN - C.NULA HDRODISSECTION25G B/5&apos;s</label>
+                </value>
+                <value>
+                    <fullName>E7510 - CRESCENT BLADE  ANG BEVUP , 6</fullName>
+                    <default>false</default>
+                    <label>E7510 - CRESCENT BLADE  ANG BEVUP , 6</label>
+                </value>
+                <value>
+                    <fullName>E7515 - 15 DEG. STAB BLADE 6/BOX</fullName>
+                    <default>false</default>
+                    <label>E7515 - 15 DEG. STAB BLADE 6/BOX</label>
+                </value>
+                <value>
+                    <fullName>E7519 - 19 GAUGE MVR BLADE 6/B</fullName>
+                    <default>false</default>
+                    <label>E7519 - 19 GAUGE MVR BLADE 6/B</label>
+                </value>
+                <value>
+                    <fullName>E7520 - MVR (STILLETTO) 20 GA KNF 6/BX</fullName>
+                    <default>false</default>
+                    <label>E7520 - MVR (STILLETTO) 20 GA KNF 6/BX</label>
+                </value>
+                <value>
+                    <fullName>E7522 - 22.5 DEG. STAB BLADE 6/BOX</fullName>
+                    <default>false</default>
+                    <label>E7522 - 22.5 DEG. STAB BLADE 6/BOX</label>
+                </value>
+                <value>
+                    <fullName>E7527 - knf clear cor 2.75mm ang 6/bx</fullName>
+                    <default>false</default>
+                    <label>E7527 - knf clear cor 2.75mm ang 6/bx</label>
+                </value>
+                <value>
+                    <fullName>E7528 - CLEAR CORNEAL ANG 2.85 6/BOX</fullName>
+                    <default>false</default>
+                    <label>E7528 - CLEAR CORNEAL ANG 2.85 6/BOX</label>
+                </value>
+                <value>
+                    <fullName>E7529 - knf clear cor 3.00mm ang 6/bx</fullName>
+                    <default>false</default>
+                    <label>E7529 - knf clear cor 3.00mm ang 6/bx</label>
+                </value>
+                <value>
+                    <fullName>E7530 - 30 DEG. STAB BLADE 6/BOX</fullName>
+                    <default>false</default>
+                    <label>E7530 - 30 DEG. STAB BLADE 6/BOX</label>
+                </value>
+                <value>
+                    <fullName>E7545 - 45 DEG. STAB BLADE 6/BOX</fullName>
+                    <default>false</default>
+                    <label>E7545 - 45 DEG. STAB BLADE 6/BOX</label>
+                </value>
+                <value>
+                    <fullName>E7550A - 2.5MM SLIT KNIFE ANG BEVUP, 6/</fullName>
+                    <default>false</default>
+                    <label>E7550A - 2.5MM SLIT KNIFE ANG BEVUP, 6/</label>
+                </value>
+                <value>
+                    <fullName>E7551A - 2.65MM SLIT KNIFE ANG BEVUP, 6</fullName>
+                    <default>false</default>
+                    <label>E7551A - 2.65MM SLIT KNIFE ANG BEVUP, 6</label>
+                </value>
+                <value>
+                    <fullName>E7551ADB - 2.65MM SLIT KNF ANG BI-BV, 6/B</fullName>
+                    <default>false</default>
+                    <label>E7551ADB - 2.65MM SLIT KNF ANG BI-BV, 6/B</label>
+                </value>
+                <value>
+                    <fullName>E7552ADB - 2.8MM SLIT KNF ANG DBL BEV ,6/</fullName>
+                    <default>false</default>
+                    <label>E7552ADB - 2.8MM SLIT KNF ANG DBL BEV ,6/</label>
+                </value>
+                <value>
+                    <fullName>E7553A - 2.85MM SLIT KNIFE ANG, 6/B</fullName>
+                    <default>false</default>
+                    <label>E7553A - 2.85MM SLIT KNIFE ANG, 6/B</label>
+                </value>
+                <value>
+                    <fullName>E7556A - 3.0MM SLIT KNIFE ANG BEVUP, 6/</fullName>
+                    <default>false</default>
+                    <label>E7556A - 3.0MM SLIT KNIFE ANG BEVUP, 6/</label>
+                </value>
+                <value>
+                    <fullName>E7556ADB - 3.0MM SLIT KNF ANG DBL BEV</fullName>
+                    <default>false</default>
+                    <label>E7556ADB - 3.0MM SLIT KNF ANG DBL BEV</label>
+                </value>
+                <value>
+                    <fullName>E7557A - 3.2MM SLIT KNF BV UP ANG 6/BX</fullName>
+                    <default>false</default>
+                    <label>E7557A - 3.2MM SLIT KNF BV UP ANG 6/BX</label>
+                </value>
+                <value>
+                    <fullName>E7559A - SLIT BLD 2.75MM ANG UP 6/BX</fullName>
+                    <default>false</default>
+                    <label>E7559A - SLIT BLD 2.75MM ANG UP 6/BX</label>
+                </value>
+                <value>
+                    <fullName>E7560A - 4.0MM IMP BLADE ANG BEVUP,6/B</fullName>
+                    <default>false</default>
+                    <label>E7560A - 4.0MM IMP BLADE ANG BEVUP,6/B</label>
+                </value>
+                <value>
+                    <fullName>E7561A - 5.2MM IMP BLADE ANG BEVUP,6/B</fullName>
+                    <default>false</default>
+                    <label>E7561A - 5.2MM IMP BLADE ANG BEVUP,6/B</label>
+                </value>
+                <value>
+                    <fullName>E7562 - 3.5MM IMP BLADE ROUND TIP,6/B</fullName>
+                    <default>false</default>
+                    <label>E7562 - 3.5MM IMP BLADE ROUND TIP,6/B</label>
+                </value>
+                <value>
+                    <fullName>E7572 - 2.75-3.2MM TRAP KNIFE,ANG. 6/B</fullName>
+                    <default>false</default>
+                    <label>E7572 - 2.75-3.2MM TRAP KNIFE,ANG. 6/B</label>
+                </value>
+                <value>
+                    <fullName>E7575 - 2.75MM CLEAR CORNEAL ANG, 6/B</fullName>
+                    <default>false</default>
+                    <label>E7575 - 2.75MM CLEAR CORNEAL ANG, 6/B</label>
+                </value>
+                <value>
+                    <fullName>E7582 - knf cc&amp;Trap 2.85/3.2 Ang 6/bx</fullName>
+                    <default>false</default>
+                    <label>E7582 - knf cc&amp;Trap 2.85/3.2 Ang 6/bx</label>
+                </value>
+                <value>
+                    <fullName>E7590 - LASEREDGE BLADE TIP HANDLE</fullName>
+                    <default>false</default>
+                    <label>E7590 - LASEREDGE BLADE TIP HANDLE</label>
+                </value>
+                <value>
+                    <fullName>E7594 - 1.3MM Clear Corneal Ang 6/BX</fullName>
+                    <default>false</default>
+                    <label>E7594 - 1.3MM Clear Corneal Ang 6/BX</label>
+                </value>
+                <value>
+                    <fullName>E7596 - 1.5x2.0MM Parallel SD Ang 6/BX</fullName>
+                    <default>false</default>
+                    <label>E7596 - 1.5x2.0MM Parallel SD Ang 6/BX</label>
+                </value>
+                <value>
+                    <fullName>E7599 - 1.5MMX1.7MM TRAPEZOID ANG 6/BX</fullName>
+                    <default>false</default>
+                    <label>E7599 - 1.5MMX1.7MM TRAPEZOID ANG 6/BX</label>
+                </value>
+                <value>
+                    <fullName>E7600 - 1.6 mm x 1.8 mm Trapezoid Ang</fullName>
+                    <default>false</default>
+                    <label>E7600 - 1.6 mm x 1.8 mm Trapezoid Ang</label>
+                </value>
+                <value>
+                    <fullName>E7601 - 2.0 mm x 2.2 mm Trapezoid Ang</fullName>
+                    <default>false</default>
+                    <label>E7601 - 2.0 mm x 2.2 mm Trapezoid Ang</label>
+                </value>
+                <value>
+                    <fullName>LP604350 - Viscoject 1.8 Injector Set 10/</fullName>
+                    <default>false</default>
+                    <label>LP604350 - Viscoject 1.8 Injector Set 10/</label>
+                </value>
+                <value>
+                    <fullName>MVS1011C - B&amp;L LIGHT PIPE 20GA 6/BX</fullName>
+                    <default>false</default>
+                    <label>MVS1011C - B&amp;L LIGHT PIPE 20GA 6/BX</label>
+                </value>
+                <value>
+                    <fullName>MVS1011C - LIGHT PIPE, 20GA, 6/BOX</fullName>
+                    <default>false</default>
+                    <label>MVS1011C - LIGHT PIPE, 20GA, 6/BOX</label>
+                </value>
+                <value>
+                    <fullName>MVS 1061L - MVS I/A HANDPIECE LUER  ADAPTO</fullName>
+                    <default>false</default>
+                    <label>MVS 1061L - MVS I/A HANDPIECE LUER  ADAPTO</label>
+                </value>
+                <value>
+                    <fullName>MVS1093 20 - BRAGA MELE 20GA SIDEOUT CHOPPE</fullName>
+                    <default>false</default>
+                    <label>MVS1093 20 - BRAGA MELE 20GA SIDEOUT CHOPPE</label>
+                </value>
+                <value>
+                    <fullName>Other - See Comments field</fullName>
+                    <default>false</default>
+                    <label>Other - See Comments field</label>
+                </value>
+                <value>
+                    <fullName>PPTR035 - PPT SGLE USE DR.SELL DAS 1B</fullName>
+                    <default>false</default>
+                    <label>PPTR035 - PPT SGLE USE DR.SELL DAS 1B</label>
+                </value>
+                <value>
+                    <fullName>Q4002916/2 - KATARAKT TRAY DRK KRANKENHAUS</fullName>
+                    <default>false</default>
+                    <label>Q4002916/2 - KATARAKT TRAY DRK KRANKENHAUS</label>
+                </value>
+                <value>
+                    <fullName>SX6-0047 - FORCEPS 63050 MOD.+DIAMOND</fullName>
+                    <default>false</default>
+                    <label>SX6-0047 - FORCEPS 63050 MOD.+DIAMOND</label>
+                </value>
+                <value>
+                    <fullName>THP2570240-HD - TAKE HOME PACK + HYAL DROPS</fullName>
+                    <default>false</default>
+                    <label>THP2570240-HD - TAKE HOME PACK + HYAL DROPS</label>
+                </value>
+                <value>
+                    <fullName>VRL100 - DK Line - 5ml</fullName>
+                    <default>false</default>
+                    <label>VRL100 - DK Line - 5ml</label>
+                </value>
+                <value>
+                    <fullName>VRL110 - DK Line - 7ml</fullName>
+                    <default>false</default>
+                    <label>VRL110 - DK Line - 7ml</label>
+                </value>
+                <value>
+                    <fullName>VRL200 - Okta Line - 5ml</fullName>
+                    <default>false</default>
+                    <label>VRL200 - Okta Line - 5ml</label>
+                </value>
+                <value>
+                    <fullName>VRL500 - Oxane 1300 - 10ml</fullName>
+                    <default>false</default>
+                    <label>VRL500 - Oxane 1300 - 10ml</label>
+                </value>
+                <value>
+                    <fullName>VRL600 - Oxane 5700 - 10ml</fullName>
+                    <default>false</default>
+                    <label>VRL600 - Oxane 5700 - 10ml</label>
+                </value>
+                <value>
+                    <fullName>VRL700 - Oxane HD* - 10ml</fullName>
+                    <default>false</default>
+                    <label>VRL700 - Oxane HD* - 10ml</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Instruments</controllingFieldValue>
+                <valueName>1105723 - EINM.PHAKOKL.ABGEZ.2.8MM</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Instruments</controllingFieldValue>
+                <valueName>1107178 - Erweiterungsklinge 4.0 unsteri</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Instruments</controllingFieldValue>
+                <valueName>1275G - RETROBULB.25G 0.5X28MM 10/B</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Instruments</controllingFieldValue>
+                <valueName>16110 - SPECIAL BLADE K STERILE 100/BX</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Instruments</controllingFieldValue>
+                <valueName>16140 2.8 - PHACO BLADE STERILE 2.8MM 50/B</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Instruments</controllingFieldValue>
+                <valueName>16145 2.5 - PHACOBLADE SHORT 2.5MM ST.50/B</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Instruments</controllingFieldValue>
+                <valueName>16145 2.8 - PHACOBLADE SHORT 2.8MM ST.50/B</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Instruments</controllingFieldValue>
+                <valueName>16145 3.0 - PHACOBLADE SHORT 3.0MM ST.50/B</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Instruments</controllingFieldValue>
+                <valueName>16160 3.6 - IOL BLADE STERILE 3.6MM 50/BOX</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Instruments</controllingFieldValue>
+                <valueName>85302Y2 - DISPOSABLE-ASPIRATG.CAN.STRGHT</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Instruments</controllingFieldValue>
+                <valueName>85761 - I/A-HANDPIECE STRAIGHT SILICON</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Instruments</controllingFieldValue>
+                <valueName>85795ST - I/A HDP 45dg W SLVE 1.8 12/BX</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Instruments</controllingFieldValue>
+                <valueName>99991S - SET F. INTRAVITR. INJECT. 10/P</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Instruments</controllingFieldValue>
+                <valueName>E2006 - LIVERNOIS-RUPRE. CAPSULORHEXIS</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Instruments</controllingFieldValue>
+                <valueName>E4800 T - TUBING FOR E4800 HNDPC</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Instruments</controllingFieldValue>
+                <valueName>E7112 - CYSTOTOME FORMED 23GA 5/BOX</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Instruments</controllingFieldValue>
+                <valueName>E7131 - ATKINSON RETRO NDL 23GA 5/BOX</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Instruments</controllingFieldValue>
+                <valueName>E7153 - 27 GA CAPSULE POLISHER 5/BOX</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Instruments</controllingFieldValue>
+                <valueName>E7155EAN - C.NULA HDRODISSECTION25G B/5&apos;s</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Instruments</controllingFieldValue>
+                <valueName>MVS1093 20 - BRAGA MELE 20GA SIDEOUT CHOPPE</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Instruments</controllingFieldValue>
+                <valueName>PPTR035 - PPT SGLE USE DR.SELL DAS 1B</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Instruments</controllingFieldValue>
+                <valueName>SX6-0047 - FORCEPS 63050 MOD.+DIAMOND</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>BSS</controllingFieldValue>
+                <valueName>AQ019 - Aqsia (Plastic Vials) - 12 x 19ml</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>BSS</controllingFieldValue>
+                <valueName>AQ500G - Aqsia (Glass Bottle) - 12 x 500ml</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>BSS</controllingFieldValue>
+                <valueName>AQ500P - Aqsia (Plastic Bottle) - 12 x 500ml</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IOL Inserters</controllingFieldValue>
+                <valueName>LP604350 - Viscoject 1.8 Injector Set 10/</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco - Millenium</controllingFieldValue>
+                <valueName>22CMICSAFS - 2.2mm Co-axial Advanced Flow Kit - Box/12</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco - Millenium</controllingFieldValue>
+                <valueName>22CMICSVENTURI - 2.2mm Co-axial Venturi Kit - Box/12</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco - Millenium</controllingFieldValue>
+                <valueName>BMICSAFS - 1.8mm Bi-axial Advanced Flow Kit - Box/6</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco - Millenium</controllingFieldValue>
+                <valueName>BMICSVENTURI - 1.8mm Bi-axial Venturi Kit - Box/6</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco - Millenium</controllingFieldValue>
+                <valueName>CX4320KIT - Micro Incision Vacuum Pack with Stable Chamber</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco - Millenium</controllingFieldValue>
+                <valueName>CX4320 - Micro Incision vacuum pack 6/box</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco - Millenium</controllingFieldValue>
+                <valueName>CX4804 - Lightning High Speed Vit Cutte 6/Box</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco - Millenium</controllingFieldValue>
+                <valueName>CX4820 - VR Pack 20G Pheumatic  6/Box</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco - Millenium</controllingFieldValue>
+                <valueName>CX4920 - VR Pack 20G High Speed Vit 6/Box</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco - Millenium</controllingFieldValue>
+                <valueName>CX4925 - VR Pack 25G High Speed Vit 6/Box</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco - Millenium</controllingFieldValue>
+                <valueName>CX5310 - Advanced Flow System Pack - Box/6</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco - Millenium</controllingFieldValue>
+                <valueName>CX5310KITCS - Advanced Flow System Pack with Microflow+ Ne</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco - Millenium</controllingFieldValue>
+                <valueName>CX5310KITS - Advanced Flow System Pack with Microflow Need</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco - Millenium</controllingFieldValue>
+                <valueName>CX5825 - HS VITRECTOMEY CUTTER 6/BOX</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco - Millenium</controllingFieldValue>
+                <valueName>CX6920 - 20G HSV Procedure Pack (with cutter) 6/Box</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco - Millenium</controllingFieldValue>
+                <valueName>CX6920A - Produkt Kit 20 G mit Lichtleiter</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco - Millenium</controllingFieldValue>
+                <valueName>CX6923 - 23G HSV Procedure Pack (with cutter) 6/Box</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco - Millenium</controllingFieldValue>
+                <valueName>CX6923A - 23G pack and light 6/B</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco - Millenium</controllingFieldValue>
+                <valueName>CX6925 - 25G HSV Procedure Pack (with cutter) 6/Box</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco - Millenium</controllingFieldValue>
+                <valueName>CX9623 - 23G Light Pipe</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco - Millenium</controllingFieldValue>
+                <valueName>CX9625 - FIBEROPTIC LIGHT PIPE 6/BOX</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco - Millenium</controllingFieldValue>
+                <valueName>DP4305 - Basic Venturi Phaco Pack - Box/12</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco - Millenium</controllingFieldValue>
+                <valueName>DP4305 EACH - BASIC VENTURI PHACO PACK EACH</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco - Millenium</controllingFieldValue>
+                <valueName>DP4305KIT45-Venturi Phaco Pack + Microflow 45deg Needles</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco - Millenium</controllingFieldValue>
+                <valueName>DP4305KITCS - Basic Venturi Phaco Pack with Microflow+ Nee</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco - Millenium</controllingFieldValue>
+                <valueName>DP4305KITS - Basic Venturi Phaco Pack with Microflow Needl</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco - Millenium</controllingFieldValue>
+                <valueName>DP4310KITCS - Venturi Phaco Pack with Microflow+ Needle -</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco - Millenium</controllingFieldValue>
+                <valueName>DP4310KITS - Venturi Phaco Pack with Microflow Needle - Bo</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco - Millenium</controllingFieldValue>
+                <valueName>DP4310 - Venturi Phaco Pack - Box/6</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco - Millenium</controllingFieldValue>
+                <valueName>DP4600 - ANT IOP TUBE SET 6/BX</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco - Millenium</controllingFieldValue>
+                <valueName>DP4801 - POST PACK W.REFLUX BASIC 6/Box</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco - Millenium</controllingFieldValue>
+                <valueName>DP4803 - POSTERIOR VITRECTOMY CUTTER 6</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco - Millenium</controllingFieldValue>
+                <valueName>DP5200A - IRRIGATION ADM. SET 6/BX</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco - Millenium</controllingFieldValue>
+                <valueName>DP9604 - MADLAB-CANNONBALL 6/BoX</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco - Millenium</controllingFieldValue>
+                <valueName>E0750 NS - RETRACTOR IRIS MADLAB 5/PK</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco - Millenium</controllingFieldValue>
+                <valueName>MVS1011C - B&amp;L LIGHT PIPE 20GA 6/BX</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco - Millenium</controllingFieldValue>
+                <valueName>MVS1011C - LIGHT PIPE, 20GA, 6/BOX</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco - Millenium</controllingFieldValue>
+                <valueName>MVS 1061L - MVS I/A HANDPIECE LUER  ADAPTO</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco - Stellaris</controllingFieldValue>
+                <valueName>BL5110 - STELLARIS Prem. Vacuum phaco pack (6/box)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco - Stellaris</controllingFieldValue>
+                <valueName>BL5111 - STELLARIS Basic Vacuum phaco pack (6/box)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco - Stellaris</controllingFieldValue>
+                <valueName>BL5112 - STELLARIS Premium Stablechamber VFM phaco pack (t</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco - Stellaris</controllingFieldValue>
+                <valueName>BL5113A - MICRO INCISION VACUUM PK ANG</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco - Stellaris</controllingFieldValue>
+                <valueName>BL5113 - STELLARIS MICS 1.8mm VFM pack (stable chamber and</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco - Stellaris</controllingFieldValue>
+                <valueName>BL5114A - PREMIUM PHACO PACK-1.8MM ANG</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco - Stellaris</controllingFieldValue>
+                <valueName>BL5114 - PREMIUM PHACO PACK - 1.8MM ST</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco - Stellaris</controllingFieldValue>
+                <valueName>BL5120 - STELLARIS Premium AFM pack (6/box)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco - Stellaris</controllingFieldValue>
+                <valueName>BL5121 - Standard AFM pack (6/box)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco - Stellaris</controllingFieldValue>
+                <valueName>BL5123A - MICRO INCISION AFS PHACO PKANG</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco - Stellaris</controllingFieldValue>
+                <valueName>BL5123 - STELLARIS MICS AFM pack (6/box)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco - Stellaris</controllingFieldValue>
+                <valueName>BL5220 - 20GA Posterior Procedural Pack</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco - Stellaris</controllingFieldValue>
+                <valueName>BL5223 - 23GA Posterior Procedural Pack</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco - Stellaris</controllingFieldValue>
+                <valueName>BL5225 - 25GA Posterior Procedural Pack</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco - Stellaris</controllingFieldValue>
+                <valueName>BL5320 - 20GA Combined Procedural Pack</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco - Stellaris</controllingFieldValue>
+                <valueName>BL5323 - 23GA Combined Procedural Pack</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco - Stellaris</controllingFieldValue>
+                <valueName>BL5325 - 25GA Combined Procedural Pack</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco - Stellaris</controllingFieldValue>
+                <valueName>BL5420 - 20GA Posterior Procedural Pack includes Integrate</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco - Stellaris</controllingFieldValue>
+                <valueName>BL5423 - 23GA Posterior Procedural Pack includes Integrate</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco - Stellaris</controllingFieldValue>
+                <valueName>BL5425 - 25GA Posterior Procedural Pack includes Integrate</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco - Stellaris</controllingFieldValue>
+                <valueName>BL5520 - 20GA Combined Procedural Pack includes Integrated</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco - Stellaris</controllingFieldValue>
+                <valueName>BL5523 - 23GA Combined Procedural Pack includes Integrated</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco - Stellaris</controllingFieldValue>
+                <valueName>BL5525 - 25GA Combined Procedural Pack includes Integrated</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco - Stellaris</controllingFieldValue>
+                <valueName>BL5623 - 23G  VIT CUTTER 6/BX</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco - Stellaris</controllingFieldValue>
+                <valueName>BL5723 - STELLARIS PC 23GA LIGHT PIPE</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco - Stellaris</controllingFieldValue>
+                <valueName>BL5725 - STELLARIS PC 25GA LIGHT PIPE</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco - Stellaris</controllingFieldValue>
+                <valueName>BMICSAFM - 1.8mm Bi-axial Advanced Flow Kit - Box/6</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco - Stellaris</controllingFieldValue>
+                <valueName>BMICSVFM - 1.8mm Bi-axial Vacuum Kit - Box/6</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco - Stellaris</controllingFieldValue>
+                <valueName>CMICSAFM - 1.8mm Co-axial Advanced Flow Kit - Box/6</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco - Stellaris</controllingFieldValue>
+                <valueName>CMICSVFM - 1.8mm Co-axial Vacuum Kit - Box/6</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco - Stellaris</controllingFieldValue>
+                <valueName>COAXIALAFM+ - 2.85mm Co-axial Advanced Flow with Microflow</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco - Stellaris</controllingFieldValue>
+                <valueName>COAXIALAFM - 2.85mm Co-axial Advanced Flow with Microflow</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco - Stellaris</controllingFieldValue>
+                <valueName>COAXIALSC - Coaxial Vacuum with Stable Chamber - Box/6</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco - Stellaris</controllingFieldValue>
+                <valueName>COAXIALVFM+ - 2.85mm Co-axial Vacuum Kit with Microflow+ N</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco - Stellaris</controllingFieldValue>
+                <valueName>COAXIALVFM - 2.85mm Co-axial Vacuum Kit with Microflow Nee</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco - Stellaris</controllingFieldValue>
+                <valueName>CX9626 - ESA SYSTEM 25G SYS TROCAR 6/CS</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Custom Packs</controllingFieldValue>
+                <valueName>Custom Pack See Comments for Product ID</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Custom Packs</controllingFieldValue>
+                <valueName>Q4002916/2 - KATARAKT TRAY DRK KRANKENHAUS</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>PFCL (Perflurocarbon Liquid)</controllingFieldValue>
+                <valueName>VRL100 - DK Line - 5ml</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>PFCL (Perflurocarbon Liquid)</controllingFieldValue>
+                <valueName>VRL110 - DK Line - 7ml</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>PFCL (Perflurocarbon Liquid)</controllingFieldValue>
+                <valueName>VRL200 - Okta Line - 5ml</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Viscoelastics</controllingFieldValue>
+                <valueName>59081 - Amvisc - 0.8ml</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Viscoelastics</controllingFieldValue>
+                <valueName>59081L - AMVISC, 0.8ML</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Viscoelastics</controllingFieldValue>
+                <valueName>60081 - Amvisc Plus - 0.8ml</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Viscoelastics</controllingFieldValue>
+                <valueName>60081L - AMVISC PLUS, 0.8ML</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Viscoelastics</controllingFieldValue>
+                <valueName>CC050 - OCUCOAT 1.0ML SINGLE PACK</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Viscoelastics</controllingFieldValue>
+                <valueName>CC050S - Ocucoat Syringe 1ml Single</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Viscoelastics</controllingFieldValue>
+                <valueName>CC065 - OCUCOAT 1.0ML 6/BX</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Viscoelastics</controllingFieldValue>
+                <valueName>CC065S - Ocucoat Syringe 1ml 6Pk</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Viscoelastics</controllingFieldValue>
+                <valueName>CC100SL - OCUCOAT, 2ML SYRINGE</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Viscoelastics</controllingFieldValue>
+                <valueName>CC100S - Ocucoat (HPMC) - 2ml</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Silicone Oil</controllingFieldValue>
+                <valueName>VRL500 - Oxane 1300 - 10ml</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Silicone Oil</controllingFieldValue>
+                <valueName>VRL600 - Oxane 5700 - 10ml</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Silicone Oil</controllingFieldValue>
+                <valueName>VRL700 - Oxane HD* - 10ml</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Other</controllingFieldValue>
+                <valueName>00035N - EYE SWABS W/HANDLE STER.200/BX</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Other</controllingFieldValue>
+                <valueName>Other - See Comments field</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Other</controllingFieldValue>
+                <valueName>THP2570240-HD - TAKE HOME PACK + HYAL DROPS</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Needles</controllingFieldValue>
+                <valueName>DP8130 - NEEDLE TAPERED HUB 30 DEG. 6/B</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Needles</controllingFieldValue>
+                <valueName>DP8130S - NEEDLE TAPER HUB 30 DEG. STER</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Needles</controllingFieldValue>
+                <valueName>DP8145 - NEEDLE TAPERED HUB 45 DEG. 6/B</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Needles</controllingFieldValue>
+                <valueName>DP8145S - STANDARD NEEDLE, 45 DEG, GOLD</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Needles</controllingFieldValue>
+                <valueName>DP8215 - MICROFLOW PHACO NEEDLE 15 DEG.</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Needles</controllingFieldValue>
+                <valueName>DP8230A - MICROFLOW NDL.ANGLD.30DEG. TIP</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Needles</controllingFieldValue>
+                <valueName>DP8230 - NEEDLE MICROFLOW 30 DEGREE 6/B</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Needles</controllingFieldValue>
+                <valueName>DP8230S - MICROFLW.NDL.30DEG.STER.6/B</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Needles</controllingFieldValue>
+                <valueName>DP8245 - NEEDLE MICROFLOW 45 DEG. 6/BOX</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Needles</controllingFieldValue>
+                <valueName>DP8245S - MICROFLOW, 45 DEGREE, GREEN</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Needles</controllingFieldValue>
+                <valueName>DP8315 - NEEDLE MICROFLOW PLUS 15 DEG.</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Needles</controllingFieldValue>
+                <valueName>DP8330A - MICROFLOW PLUS ANG 30 DEG, 6/B</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Needles</controllingFieldValue>
+                <valueName>DP8330 - NEEDLE MICROFLOW PLUS 30 DEG.</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Needles</controllingFieldValue>
+                <valueName>DP8330S - MICROFLOW PLUS 30 DEG,STER, 6/</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Needles</controllingFieldValue>
+                <valueName>DP8345 - NEEDLE MICROFLOW PLUS 45 DEG.</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Needles</controllingFieldValue>
+                <valueName>DP8430AS - Phaco Needle Pack, DP8430AS</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Needles</controllingFieldValue>
+                <valueName>DP8430 - NEEDLE THIN TIP 30 DEG.  6/BOX</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Needles</controllingFieldValue>
+                <valueName>DP8430S - Phaco Needle Pack, DP8430S</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Needles</controllingFieldValue>
+                <valueName>DP8730 - Needle, Microflow 2.2</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Needles</controllingFieldValue>
+                <valueName>DP8730S - Needle, Microflow 2.2</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Needles</controllingFieldValue>
+                <valueName>DP8930AS - NDL,PHACO,20G,30D,ANG,VORTX,ST</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Knives</controllingFieldValue>
+                <valueName>E7510 - CRESCENT BLADE  ANG BEVUP , 6</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Knives</controllingFieldValue>
+                <valueName>E7515 - 15 DEG. STAB BLADE 6/BOX</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Knives</controllingFieldValue>
+                <valueName>E7519 - 19 GAUGE MVR BLADE 6/B</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Knives</controllingFieldValue>
+                <valueName>E7520 - MVR (STILLETTO) 20 GA KNF 6/BX</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Knives</controllingFieldValue>
+                <valueName>E7522 - 22.5 DEG. STAB BLADE 6/BOX</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Knives</controllingFieldValue>
+                <valueName>E7527 - knf clear cor 2.75mm ang 6/bx</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Knives</controllingFieldValue>
+                <valueName>E7528 - CLEAR CORNEAL ANG 2.85 6/BOX</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Knives</controllingFieldValue>
+                <valueName>E7529 - knf clear cor 3.00mm ang 6/bx</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Knives</controllingFieldValue>
+                <valueName>E7530 - 30 DEG. STAB BLADE 6/BOX</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Knives</controllingFieldValue>
+                <valueName>E7545 - 45 DEG. STAB BLADE 6/BOX</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Knives</controllingFieldValue>
+                <valueName>E7550A - 2.5MM SLIT KNIFE ANG BEVUP, 6/</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Knives</controllingFieldValue>
+                <valueName>E7551A - 2.65MM SLIT KNIFE ANG BEVUP, 6</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Knives</controllingFieldValue>
+                <valueName>E7551ADB - 2.65MM SLIT KNF ANG BI-BV, 6/B</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Knives</controllingFieldValue>
+                <valueName>E7552ADB - 2.8MM SLIT KNF ANG DBL BEV ,6/</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Knives</controllingFieldValue>
+                <valueName>E7553A - 2.85MM SLIT KNIFE ANG, 6/B</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Knives</controllingFieldValue>
+                <valueName>E7556A - 3.0MM SLIT KNIFE ANG BEVUP, 6/</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Knives</controllingFieldValue>
+                <valueName>E7556ADB - 3.0MM SLIT KNF ANG DBL BEV</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Knives</controllingFieldValue>
+                <valueName>E7557A - 3.2MM SLIT KNF BV UP ANG 6/BX</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Knives</controllingFieldValue>
+                <valueName>E7559A - SLIT BLD 2.75MM ANG UP 6/BX</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Knives</controllingFieldValue>
+                <valueName>E7560A - 4.0MM IMP BLADE ANG BEVUP,6/B</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Knives</controllingFieldValue>
+                <valueName>E7561A - 5.2MM IMP BLADE ANG BEVUP,6/B</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Knives</controllingFieldValue>
+                <valueName>E7562 - 3.5MM IMP BLADE ROUND TIP,6/B</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Knives</controllingFieldValue>
+                <valueName>E7572 - 2.75-3.2MM TRAP KNIFE,ANG. 6/B</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Knives</controllingFieldValue>
+                <valueName>E7582 - knf cc&amp;Trap 2.85/3.2 Ang 6/bx</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Knives</controllingFieldValue>
+                <valueName>E7590 - LASEREDGE BLADE TIP HANDLE</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Knives</controllingFieldValue>
+                <valueName>E7594 - 1.3MM Clear Corneal Ang 6/BX</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Knives</controllingFieldValue>
+                <valueName>E7596 - 1.5x2.0MM Parallel SD Ang 6/BX</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Knives</controllingFieldValue>
+                <valueName>E7599 - 1.5MMX1.7MM TRAPEZOID ANG 6/BX</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Knives</controllingFieldValue>
+                <valueName>E7600 - 1.6 mm x 1.8 mm Trapezoid Ang</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Knives</controllingFieldValue>
+                <valueName>E7601 - 2.0 mm x 2.2 mm Trapezoid Ang</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Standing_Order_End_Dt__c</fullName>
+        <description>Used by EMEASU</description>
+        <externalId>false</externalId>
+        <label>Standing Order End Dt</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Standing_Order_Ref__c</fullName>
+        <description>USed by EMEASU</description>
+        <externalId>false</externalId>
+        <label>Standing Order Ref</label>
+        <length>15</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Key Products Other</label>
+    <nameField>
+        <displayFormat>KPO-{000000}</displayFormat>
+        <label>KP Other Auto Ref</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Key Products Other</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

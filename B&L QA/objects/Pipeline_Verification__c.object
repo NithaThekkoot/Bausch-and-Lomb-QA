@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This object is used by sales leaders who manage SES reps to verify that they have reviewed the global equipment pipeline for each SES who report to them.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>Date_Verified__c</fullName>
+        <defaultValue>TODAY()</defaultValue>
+        <description>Date that the Pipeline Verification was done.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the date that Pipeline Verification was completed.</inlineHelpText>
+        <label>Date Verified</label>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Equipment_Pipeline_has_been_verified__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Check the box if the equipment pipeline has been verified on the respective date.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Check the box if the equipment pipeline has been verified on the respective date.</inlineHelpText>
+        <label>Equipment Pipeline has been verified</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Pipeline_Verifcation_Notes__c</fullName>
+        <description>Notes regarding pipeline verification.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter any additional notes about the pipeline verification</inlineHelpText>
+        <label>Pipeline Verifcation Notes</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <label>Pipeline Verification</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>Equipment_Pipeline_has_been_verified__c</columns>
+        <columns>Date_Verified__c</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>My_Pipeline_Verifications</fullName>
+        <columns>NAME</columns>
+        <columns>Equipment_Pipeline_has_been_verified__c</columns>
+        <columns>Date_Verified__c</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <filterScope>Mine</filterScope>
+        <label>My Pipeline Verifications</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <label>Pipeline Verification Name</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Pipeline Verifications</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Equipment_Pipeline_has_been_verified__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Date_Verified__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>OWNER.FIRST_NAME</customTabListAdditionalFields>
+        <customTabListAdditionalFields>OWNER.LAST_NAME</customTabListAdditionalFields>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <lookupDialogsAdditionalFields>Equipment_Pipeline_has_been_verified__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Date_Verified__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>OWNER.FIRST_NAME</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>OWNER.LAST_NAME</lookupDialogsAdditionalFields>
+        <searchFilterFields>OWNER.FIRST_NAME</searchFilterFields>
+        <searchFilterFields>OWNER.LAST_NAME</searchFilterFields>
+        <searchFilterFields>CREATEDBY_USER</searchFilterFields>
+        <searchFilterFields>Date_Verified__c</searchFilterFields>
+        <searchFilterFields>Equipment_Pipeline_has_been_verified__c</searchFilterFields>
+        <searchResultsAdditionalFields>Equipment_Pipeline_has_been_verified__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Date_Verified__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Pipeline_Verifcation_Notes__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>OWNER.FIRST_NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>OWNER.LAST_NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CREATEDBY_USER</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

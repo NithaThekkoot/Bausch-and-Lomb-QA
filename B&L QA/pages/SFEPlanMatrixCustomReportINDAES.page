@@ -1,0 +1,80 @@
+<apex:page standardController="Call_Plan__c" extensions="clsSFEPlanMatrixCustomReportINDAES">
+ <apex:form id="frm">
+        <apex:pageBlock id="pgblock">  
+            <apex:pageBlockButtons location="Top">
+                <apex:commandButton action="{!exportToExcel}" value="Export To Excel" rendered="{!blnIsUserSysAdminSSO}"/>  
+                <apex:commandButton value="Send Report to me..." action="{!SendMailToUserOnly}"/>               
+            </apex:pageBlockButtons>  
+            
+            <!-- Heading added by Kandarp | 18-Feb-14-->
+             <table><tr><td colspan="5" style="font-weight:bold;color:red;font-size:10pt;">SFE Plan Matrix Report</td> </tr></table>
+             
+             <apex:inputCheckbox id="chkHideMasterData" selected="false" value="{!blnIsMasterDataHidden }">
+                <apex:actionSupport event="onchange" action="{!InitCurrentMonth}"  reRender="pnlOutput" status="status"/> 
+                <apex:actionSupport event="onclick" action="{!InitCurrentMonth}"  reRender="pnlOutput" status="status"/> 
+            </apex:inputCheckbox>
+            <apex:outputLabel >Hide Master Data in Report</apex:outputLabel>         
+            <br/>
+            <br/>
+            <apex:actionstatus id="status">            
+                <apex:facet name="start">                
+                    <div class="waitingSearchDiv" id="el_loading" style="background-color: #fbfbfb; height: 100%;opacity:0.65;width:100%;">
+                        <div class="waitingHolder" style="top: 74.2px; width: 91px;">
+                            <img class="waitingImage" src="/img/loading.gif" title="Please Wait..." />
+                            <span class="waitingDescription">Please Wait...</span>                    
+                        </div>  
+                    </div>
+                </apex:facet>
+            </apex:actionstatus>             
+            <!--<div style="height: 600px;width: 1345px; overflow: scroll;">-->          
+            <apex:outputpanel id="pnlOutput">
+            <apex:pageBlockTable id="pgTable" value="{!lstCallSummary}" var="lstAPACCall">   
+             <apex:column headerValue="Manager"> 
+                    <apex:outputText value="{!lstAPACCall.strManagerName}" rendered="{!IF(lstAPACCall.strName != lstAPACCall.strTotal,true,false)}"></apex:outputText>
+                    <!--<apex:outputText value="{!lstAPACCall.strTotal}" rendered="{!IF(lstAPACCall.strName == null,true,false)}" style="font-weight: bold;"></apex:outputText>-->
+                </apex:column>                
+                <apex:column headerValue="Region"> 
+                    <apex:outputText value="{!lstAPACCall.strRegion}" rendered="{!IF(lstAPACCall.strName != lstAPACCall.strTotal,true,false)}"></apex:outputText>
+                    <apex:outputText value="{!lstAPACCall.strTotal}" rendered="{!IF(lstAPACCall.strName == null,true,false)}" style="font-weight: bold;"></apex:outputText>
+                </apex:column> 
+                <apex:column value="{!lstAPACCall.strCity}" headerValue="City"/> 
+                <apex:column value="{!lstAPACCall.strName}" headerValue="SE/SCRM"/>
+                <apex:column headerValue="Doctors (A)" headerClass="text-align: center;" style="text-align: center;" rendered="{!NOT(blnIsMasterDataHidden)}">
+                    <apex:outputText value="{!lstAPACCall.IntTotalAccountsofA}" rendered="{!IF(lstAPACCall.strName != null,true,false)}"></apex:outputText>
+                    <apex:outputText value="{!lstAPACCall.IntTotTotalAccountsofA}" rendered="{!IF(lstAPACCall.strName == null,true,false)}" style="font-weight: bold;"></apex:outputText>
+                </apex:column>
+                <apex:column headerValue="Doctors (B)" headerClass="text-align: center;" style="text-align: center;" rendered="{!NOT(blnIsMasterDataHidden)}">
+                    <apex:outputText value="{!lstAPACCall.IntTotalAccountsofB}" rendered="{!IF(lstAPACCall.strName != null,true,false)}"></apex:outputText>
+                    <apex:outputText value="{!lstAPACCall.IntTotTotalAccountsofB}" rendered="{!IF(lstAPACCall.strName == null,true,false)}" style="font-weight: bold;"></apex:outputText>
+                </apex:column>
+                <apex:column headerValue="Doctors (C)" headerClass="text-align: center;" style="text-align: center;" rendered="{!NOT(blnIsMasterDataHidden)}">
+                    <apex:outputText value="{!lstAPACCall.IntTotalAccountsofC}" rendered="{!IF(lstAPACCall.strName != null,true,false)}"></apex:outputText>
+                    <apex:outputText value="{!lstAPACCall.IntTotTotalAccountsofC}" rendered="{!IF(lstAPACCall.strName == null,true,false)}" style="font-weight: bold;"></apex:outputText>
+                </apex:column>
+                <apex:column headerValue="Doctors (D)" headerClass="text-align: center;" style="text-align: center;" rendered="{!NOT(blnIsMasterDataHidden)}">
+                    <apex:outputText value="{!lstAPACCall.IntTotalAccountsOthers}" rendered="{!IF(lstAPACCall.strName != null,true,false)}"></apex:outputText>
+                    <apex:outputText value="{!lstAPACCall.IntTotTotalAccountsOthers}" rendered="{!IF(lstAPACCall.strName == null,true,false)}" style="font-weight: bold;"></apex:outputText>
+                </apex:column>
+                <apex:column headerValue="Doctors (Total)" headerClass="text-align: center;" style="text-align: center;">
+                    <apex:outputText value="{!lstAPACCall.IntTotalAccounts}" rendered="{!IF(lstAPACCall.strName != null,true,false)}"></apex:outputText>
+                    <apex:outputText value="{!lstAPACCall.IntTotTotalAccounts}" rendered="{!IF(lstAPACCall.strName == null,true,false)}" style="font-weight: bold;"></apex:outputText>
+                </apex:column> 
+                <apex:column headerValue="Field Days"> 
+                    <apex:outputText value="{!lstAPACCall.IntFieldDays}" rendered="{!IF(lstAPACCall.strName != null,true,false)}"></apex:outputText>
+                    <apex:outputText value="{!lstAPACCall.IntTotalFieldDays}" rendered="{!IF(lstAPACCall.strName == null,true,false)}" style="font-weight: bold;"></apex:outputText>
+                </apex:column> 
+                <!--<apex:column value="{!lstAPACCall.strCurrMonth}" headerValue="Month" />-->
+                <apex:column value="{!lstAPACCall.strStatus}" headerValue="Current Status" />
+                <apex:column headerValue="Submitted Planed Calls" style="text-align: center;"> 
+                    <apex:outputText value="{!lstAPACCall.IntSubmittedCallPlans}" rendered="{!IF(lstAPACCall.strName != null,true,false)}"></apex:outputText>
+                    <apex:outputText value="{!lstAPACCall.IntTotalSubmittedCallPlans}" rendered="{!IF(lstAPACCall.strName == null,true,false)}" style="font-weight: bold;"></apex:outputText>
+                </apex:column> 
+                <apex:column headerValue="Avg Calls/day" style="text-align: center;"> 
+                    <apex:outputText value="{!lstAPACCall.IntAvgCallDay}" rendered="{!IF(lstAPACCall.strName != null,true,false)}"></apex:outputText>
+                    <apex:outputText value="{!lstAPACCall.IntTotalAvgCallDay}" rendered="{!IF(lstAPACCall.strName == null,true,false)}" style="font-weight: bold;"></apex:outputText>
+                </apex:column> 
+            </apex:pageBlockTable>
+            </apex:outputpanel>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

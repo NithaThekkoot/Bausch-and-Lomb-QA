@@ -1,0 +1,179 @@
+<apex:page standardController="Account_Phone__c" extensions="CTIMultipleAccountsFoundController" showHeader="true" sidebar="true">
+    
+    <script language="javascript">
+    
+    //navigator which will navigate to the url in both classic and lightning
+    var redirector = {
+        
+        navigateToUrl : function(url){
+            
+            //if redirecting classic view 
+            if("{!$User.UIThemeDisplayed}" =='Theme3'){
+                
+                //set the location
+                location.href = url;
+                
+            }
+            
+            //lightning view or app view
+            else{
+                
+                //if sforce object exist
+                if((typeof sforce != 'undefined') && sforce && (!!sforce.one)){
+                    
+                    sforce.one.navigateToURL(url,false);
+                    
+                }
+                
+            }
+            
+        },
+        navigateToRecord : function(recordId){
+            
+            //if redirecting classic view 
+            if("{!$User.UIThemeDisplayed}" =='Theme3'){
+                
+                //set the location
+                location.href = '/'+recordId;
+                
+            }
+            
+            //lightning view or app view
+            else{
+                
+                //if sforce object exist
+                if((typeof sforce != 'undefined') && sforce && (!!sforce.one)){
+                    
+                    sforce.one.navigateToSObject(recordId,false);
+                    
+                }
+                
+            }
+            
+        },
+        navigateBack : function(){
+            
+            //if redirecting classic view 
+            if("{!$User.UIThemeDisplayed}" =='Theme3'){
+                
+                //set the location
+                history.back();
+                
+            }
+            
+            //lightning view or app view
+            else{
+                
+                //if sforce object exist
+                if((typeof sforce != 'undefined') && sforce && (!!sforce.one)){
+                    
+                    sforce.one.back();
+                    
+                }
+                
+            }
+            
+        }
+        
+    };
+    
+    //SEND TO THE SELECTED ACCOUNT
+    function selectAccount(id) {
+        
+        redirector.navigateToRecord(id);
+        
+    }
+    
+    //GO TO PAGE WITHIN THIS VF PAGE WHERE USER CAN ENTER SHIP TO
+    function associatePhoneWithAccount(ani) {
+        redirector.navigateToUrl("/apex/CTIMultipleAccountsFound?mode=C&ani=" + ani);
+    }
+    
+    //CREATE CASE - GO TO RECORDTYPE SELECTION PAGE INSTEAD OF CASE PAGE - STILL PASS ANI FROM FORM
+    function createProductCase(ani) {
+        var theUrl;
+        theUrl = "/setup/ui/recordtypeselect.jsp?ent=Case&{!phoneId}=" + ani + "&retURL=/500/o&save_new_url=/500/e?retURL=/500/o";
+        redirector.navigateToUrl(theUrl);
+    } 
+    
+    //SEND USER BACK
+    function closeMe() {
+        redirector.navigateBack();
+    }
+    
+    //ALERT THE REFERRING URL
+    //alert('Prev URL: ' + window.document.referrer);
+    
+    
+    </script>
+    <apex:form > 
+        <apex:sectionHeader subtitle="Phone Search Results">
+            <apex:pageMessages />
+            <apex:pageBlock id="noMatchesFound" rendered="{!mode == 'A'}" title="No matches found">
+                <div align="center">  
+                    <br/>
+                    <button type="button" onClick="associatePhoneWithAccount('{!ani}');" class="btn">Link Phone to B+L Account</button>
+                    <br/><br/>
+                </div>
+            </apex:pageBlock>
+            
+            <apex:pageBlock id="matchingAccounts" rendered="{!mode == 'B'}" title="Select an Account">
+                <div align="center">  
+                    <br/>
+                    <button type="button" onClick="associatePhoneWithAccount('{!ani}');" class="btn">Link Phone to B+L Account</button>
+                    <button type="button" onClick="closeMe();" class="btn">Back to List</button>
+                    <br/><br/>
+                </div>   
+                <apex:pageBlockTable value="{!searchResults}" var="acct" width="100%" >
+                    <apex:column headerValue="Select"><a href="#" onClick="selectAccount('{!acct.Account__c}')">Select</a></apex:column>
+                    <apex:column headerValue="Account Number" value="{!acct.Ship_To_Id__c}"/> 
+                    <apex:column headerValue="Name" value="{!acct.Account_Name__c}"/> 
+                    <apex:column headerValue="Address" value="{!acct.Address_1__c}"/> 
+                    <apex:column headerValue="Phone" value="{!acct.Phone__c}"/> 
+                    <apex:column headerValue="SetId" value="{!acct.Setid__c}"/> 
+                </apex:pageBlockTable>
+            </apex:pageBlock>
+            
+            <apex:pageBlock id="enterShipTo" rendered="{!mode == 'C'}" title="Enter Ship To and Phone Number">
+                <div align="center">  
+                    <br/>
+                    <button type="button" onClick="associatePhoneWithAccount('{!ani}');" class="btn">Link Phone to B+L Account</button>
+                    <button type="button" onClick="closeMe();" class="btn">Back to List</button>
+                    <br/><br/>
+                </div> 
+                <apex:pageblocksection >
+                    <apex:pageblockSectionItem >
+                        <apex:outputLabel value="Ship To" for="shipTo" />    
+                        <apex:outputPanel styleClass="requiredInput" layout="block">
+                            <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+                            <apex:inputText value="{!shipTo}" id="shipTo" size="15" maxlength="8" rendered="true"/>
+                        </apex:outputPanel>    
+                    </apex:pageblockSectionItem>
+                </apex:pageblocksection>
+                <apex:pageblockSection >             
+                    <apex:pageblockSectionItem >
+                        <apex:outputLabel value="Phone Number" for="phoneNumber" />    
+                        <apex:outputPanel styleClass="requiredInput" layout="block">
+                            <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+                            <apex:inputText value="{!phoneNumber}" id="phoneNumber" size="15" maxlength="20" />
+                        </apex:outputPanel>    
+                    </apex:pageblockSectionItem>
+                </apex:pageblockSection>
+                <apex:pageblockSection >             
+                    <apex:pageblockSectionItem >
+                        <apex:outputLabel value="SETID" for="setid" />    
+                        <apex:outputPanel styleClass="requiredInput" layout="block">
+                            <apex:selectList value="{!sid}" size="1" id="sid">
+                                <apex:selectOptions value="{!sidValues}" />
+                            </apex:selectList>    
+                        </apex:outputPanel>    
+                    </apex:pageblockSectionItem>
+                </apex:pageblockSection>
+                <div align="center">
+                    <apex:commandButton action="{!saveAndGoToAccount}" title="Save" value="Save"/>
+                </div>
+            </apex:pageBlock>
+            
+        </apex:sectionHeader>
+    </apex:form>
+</apex:page>

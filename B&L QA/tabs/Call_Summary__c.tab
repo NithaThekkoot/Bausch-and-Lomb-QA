@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomTab xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customObject>true</customObject>
+    <description>Created for NAL to capture data from Analytic Snapshots for official sales call reporting. This object is also used by INDSU for call reporting purpose.</description>
+    <mobileReady>false</mobileReady>
+    <motif>Custom18: Form</motif>
+</CustomTab>

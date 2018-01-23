@@ -1,0 +1,55 @@
+<apex:page controller="CtrlHospitalsPhysiciansWithTeam">
+     <apex:outputLabel value="List of Physicians and Hospitals  for you/your team." style="font-weight:bold;color:red"></apex:outputLabel> 
+     <br/><br/>
+     <apex:outputLabel value="{!strMessageRecords}" style="font-weight:bold"></apex:outputLabel> 
+     <br/><br/>
+       <script>
+           function getMCL(){
+               window.open('/apex/MCLData');
+           }
+       </script>
+       
+    <apex:form >
+        <apex:commandButton value="Export Details" onClick="getMCL();" action="{!IntializeData}"/>       
+    </apex:form>
+   
+     <apex:pageBlock rendered="{!list1ContainsData}">  
+        <apex:pageBlockTable value="{!listHospitalWithTeam1}" var="hospitalDetails" rendered="{!list1ContainsData}">   
+                   <apex:column headerValue="Legacy System Id"> 
+                        <apex:outputText value="{!hospitalDetails.strLegacyId}"></apex:outputText>                    
+                    </apex:column>  
+                   <apex:column headerValue="Hospital Name"> 
+                        <apex:outputLink value="/{!hospitalDetails.accountName.Id}"> {!hospitalDetails.accountName.Name} </apex:outputLink>                    
+                    </apex:column> 
+                   <apex:column headerValue="Hosp Seg." value="{!hospitalDetails.accountSegmentation}" />  
+                      <apex:column headerValue="Region"> 
+                        <apex:outputText value="{!hospitalDetails.strAccountRegion}"></apex:outputText>                    
+                    </apex:column>
+                      <apex:column headerValue="Area"> 
+                        <apex:outputText value="{!hospitalDetails.strAccountArea}"></apex:outputText>                    
+                    </apex:column>
+                    <apex:column headerValue="Physician"> 
+                         <apex:outputLink value="/{!hospitalDetails.physicianName.Id}"> {!hospitalDetails.physicianName.Name} </apex:outputLink>                                                      
+                    </apex:column> 
+                    <apex:column headerValue="Dr Seg." value="{!hospitalDetails.doctorSegmentation}" style="word-wrap:normal"/>  
+                    <apex:column headerValue="Gender" value="{!hospitalDetails.strPhysicianGender}" /> 
+                    <apex:column headerValue="Mailing Street" value="{!hospitalDetails.strMailingStreet}" /> 
+                    <apex:column headerValue="Mailing City" value="{!hospitalDetails.strMailingCity}" /> 
+                    <apex:column headerValue="Mailing State" value="{!hospitalDetails.strMailingState}"/> 
+                    <apex:column headerValue="Mailing Country" value="{!hospitalDetails.strMailingCountry}" /> 
+                    <apex:column headerValue="Postal Code" value="{!hospitalDetails.strMailingPostalCode}"/> 
+                    <apex:column headerValue="Email" value="{!hospitalDetails.strEmail}" /> 
+                    <apex:column headerValue="Phone" value="{!hospitalDetails.strPhone}"/> 
+                    
+                     <apex:column headerValue="Manager"> 
+                        <apex:outputText value="{!hospitalDetails.strManagerName}"></apex:outputText>                    
+                    </apex:column>   
+                    <apex:column value="{!hospitalDetails.strTeamMember}" headerValue="SE/SCRM"/>
+            </apex:pageBlockTable> 
+             <apex:outputLabel value="Legend" style="font-weight:bold;color:red"></apex:outputLabel><br/>
+             <apex:outputLabel value="1. Hosp Seg. - Hospital Segmentation"></apex:outputLabel><br/>
+             <apex:outputLabel value="2. Dr Seg. - Doctor Segmentation"></apex:outputLabel>
+  </apex:pageBlock>  
+ 
+ 
+</apex:page>

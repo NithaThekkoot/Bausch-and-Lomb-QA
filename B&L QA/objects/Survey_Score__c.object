@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Capture NPS Willingness to Recommend survey responses</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Account_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Account Name</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Survey Scores</relationshipLabel>
+        <relationshipName>Survey_Scores</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>CS_Specialist__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>This will be populated automatically for you</inlineHelpText>
+        <label>CS Specialist</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Survey_Scores</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Call_ID__c</fullName>
+        <externalId>false</externalId>
+        <label>Call ID</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Legacy_System_Id__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>[Call_ID]-[Q#]</description>
+        <externalId>true</externalId>
+        <inlineHelpText>[Call_ID]-[Question]</inlineHelpText>
+        <label>Legacy System Id</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Opt_Out_Survey__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Survey Scores to indicate that a customer does not want to participate in the survey</description>
+        <externalId>false</externalId>
+        <label>Opt Out Survey</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Survey_Date__c</fullName>
+        <defaultValue>Today()</defaultValue>
+        <externalId>false</externalId>
+        <label>Survey Date</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Survey_Indicator__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(((Today() - Survey_Date__c) &lt; 60), IMAGE( &apos;/resource/RedLight&apos;, &apos;Red&apos;,30,30) , IMAGE( &apos;/resource/GreenLight&apos;, &apos;Green&apos;,30,30) )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Survey Indicator</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Survey_Question__c</fullName>
+        <externalId>false</externalId>
+        <label>Survey Question</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>On a scale of 0-10,  how likely are you to recommend Bausch + Lomb to a friend or colleague ?</fullName>
+                    <default>false</default>
+                    <label>On a scale of 0-10,  how likely are you to recommend Bausch + Lomb to a friend or colleague ?</label>
+                </value>
+                <value>
+                    <fullName>Q1-CS Performance</fullName>
+                    <default>false</default>
+                    <label>Q1-CS Performance</label>
+                </value>
+                <value>
+                    <fullName>Q2-Easy to do business with</fullName>
+                    <default>false</default>
+                    <label>Q2-Easy to do business with</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Survey_Reason__c</fullName>
+        <externalId>false</externalId>
+        <label>Customer Feedback</label>
+        <length>250</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Survey_Score__c</fullName>
+        <externalId>false</externalId>
+        <label>Survey Score</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>0</fullName>
+                    <default>false</default>
+                    <label>0</label>
+                </value>
+                <value>
+                    <fullName>1</fullName>
+                    <default>false</default>
+                    <label>1</label>
+                </value>
+                <value>
+                    <fullName>2</fullName>
+                    <default>false</default>
+                    <label>2</label>
+                </value>
+                <value>
+                    <fullName>3</fullName>
+                    <default>false</default>
+                    <label>3</label>
+                </value>
+                <value>
+                    <fullName>4</fullName>
+                    <default>false</default>
+                    <label>4</label>
+                </value>
+                <value>
+                    <fullName>5</fullName>
+                    <default>false</default>
+                    <label>5</label>
+                </value>
+                <value>
+                    <fullName>6</fullName>
+                    <default>false</default>
+                    <label>6</label>
+                </value>
+                <value>
+                    <fullName>7</fullName>
+                    <default>false</default>
+                    <label>7</label>
+                </value>
+                <value>
+                    <fullName>8</fullName>
+                    <default>false</default>
+                    <label>8</label>
+                </value>
+                <value>
+                    <fullName>9</fullName>
+                    <default>false</default>
+                    <label>9</label>
+                </value>
+                <value>
+                    <fullName>10</fullName>
+                    <default>false</default>
+                    <label>10</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Survey_Source__c</fullName>
+        <externalId>false</externalId>
+        <label>Survey Source</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>CF Phone Survey</fullName>
+                    <default>false</default>
+                    <label>CF Phone Survey</label>
+                </value>
+                <value>
+                    <fullName>Manual</fullName>
+                    <default>true</default>
+                    <label>Manual</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Survey Score</label>
+    <nameField>
+        <displayFormat>{00000000}</displayFormat>
+        <label>Survey Score Record</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Survey Scores</pluralLabel>
+    <recordTypes>
+        <fullName>EMEA_Survey_Record</fullName>
+        <active>true</active>
+        <label>EMEA Survey Record</label>
+        <picklistValues>
+            <picklist>Survey_Question__c</picklist>
+            <values>
+                <fullName>On a scale of 0-10%2C%C2%A0 how likely are you to recommend Bausch %2B Lomb to a friend or colleague %3F</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Survey_Score__c</picklist>
+            <values>
+                <fullName>0</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>6</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>7</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>8</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>9</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Survey_Source__c</picklist>
+            <values>
+                <fullName>CF Phone Survey</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manual</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Prevent_Edit_of_Integrated_Surveys</fullName>
+        <active>true</active>
+        <description>Prevents CS users from editing surveys integrated from Verint</description>
+        <errorConditionFormula>AND( $RecordType.Name  == &quot;EMEA Survey Record&quot; , $User.Alias &lt;&gt; &quot;dinte&quot; ,  CreatedBy.Alias == &quot;dinte&quot; )</errorConditionFormula>
+        <errorMessage>You may not edit a record that has come from the CF Phone Survey software.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Survey_Source_Must_be_Manual_if_CS</fullName>
+        <active>true</active>
+        <description>Ensures the survey source is set to manual if record is not being entered by data integration</description>
+        <errorConditionFormula>IF( AND(  $User.Alias &lt;&gt; &quot;dinte&quot;, $RecordType.Name == &quot;EMEA Survey Record&quot;, NOT(ISPICKVAL(Survey_Source__c,&quot;Manual&quot;) ) ), True, False)</errorConditionFormula>
+        <errorDisplayField>Survey_Source__c</errorDisplayField>
+        <errorMessage>Survey Source must be set to &quot;Manual&quot; for user entered records.</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>NORDCSS: This is the object which holds the line items of orders.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Customer_PO_No__c</fullName>
+        <externalId>false</externalId>
+        <label>Customer PO No.</label>
+        <length>30</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Extended_Price__c</fullName>
+        <externalId>false</externalId>
+        <label>Extended Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Invoice_No__c</fullName>
+        <externalId>false</externalId>
+        <label>Invoice No.</label>
+        <length>8</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Item__c</fullName>
+        <description>Displays the line number for all order line items</description>
+        <externalId>false</externalId>
+        <label>Item No.</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Legacy_System_ID__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>true</externalId>
+        <label>Legacy System ID</label>
+        <length>25</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Lookup_Quantity__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>Lookup to the Inventory table which stores stock information based on Ship From field.</inlineHelpText>
+        <label>Lookup Quantity</label>
+        <referenceTo>Inventory__c</referenceTo>
+        <relationshipLabel>Order Line Items</relationshipLabel>
+        <relationshipName>Order_Line_Items</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Lot_Serial_ID__c</fullName>
+        <description>Populated with ps_bl_ordline_chld.SERIAL_ID for consignment orders.</description>
+        <externalId>false</externalId>
+        <label>Lot/Serial ID</label>
+        <length>30</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Order_Group__c</fullName>
+        <externalId>false</externalId>
+        <label>Order Group</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>STD</fullName>
+                    <default>true</default>
+                    <label>STD</label>
+                </value>
+                <value>
+                    <fullName>CAMP</fullName>
+                    <default>false</default>
+                    <label>CAMP</label>
+                </value>
+                <value>
+                    <fullName>FOC</fullName>
+                    <default>false</default>
+                    <label>FOC</label>
+                </value>
+                <value>
+                    <fullName>FOCRPL</fullName>
+                    <default>false</default>
+                    <label>FOCRPL</label>
+                </value>
+                <value>
+                    <fullName>LEVAVT</fullName>
+                    <default>false</default>
+                    <label>LEVAVT</label>
+                </value>
+                <value>
+                    <fullName>PROMO</fullName>
+                    <default>false</default>
+                    <label>PROMO</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Order_Line_Number__c</fullName>
+        <description>Contains the peoplesoft format line number (order number plus the line number).</description>
+        <externalId>true</externalId>
+        <label>Order Line Number</label>
+        <length>30</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Order_Line_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Order Line Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Open</fullName>
+                    <default>true</default>
+                    <label>Open</label>
+                </value>
+                <value>
+                    <fullName>Closed</fullName>
+                    <default>false</default>
+                    <label>Closed</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Order__c</fullName>
+        <externalId>false</externalId>
+        <label>Order</label>
+        <referenceTo>Order_Header__c</referenceTo>
+        <relationshipLabel>Order Line Items</relationshipLabel>
+        <relationshipName>Order_Line_Items</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Override_Price__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>If overriding the price, please enter an Adjustment Reason</inlineHelpText>
+        <label>Override Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>PS_Product_SKU__c</fullName>
+        <description>This field will be used in integration for pushing the Peoplesoft SKU back into Peoplesoft when new orders are created in Salesforce.</description>
+        <externalId>false</externalId>
+        <label>PS Product SKU</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Patient_Ref_No__c</fullName>
+        <externalId>false</externalId>
+        <label>Patient Ref. No.</label>
+        <length>30</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Product Description</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_SKU2__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Product SKU</label>
+        <referenceTo>Product2</referenceTo>
+        <relationshipLabel>Order Line Items</relationshipLabel>
+        <relationshipName>Order_Line_Items</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Product_SKU__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Product SKU</label>
+        <referenceTo>Product2</referenceTo>
+        <relationshipLabel>Order Line Items</relationshipLabel>
+        <relationshipName>Order_Line_Items1</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Quantity__c</fullName>
+        <externalId>false</externalId>
+        <label>Quantity</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Ship_From__c</fullName>
+        <externalId>false</externalId>
+        <label>Ship From</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>EURLC</fullName>
+                    <default>true</default>
+                    <label>EURLC</label>
+                </value>
+                <value>
+                    <fullName>EURCD</fullName>
+                    <default>false</default>
+                    <label>EURCD</label>
+                </value>
+                <value>
+                    <fullName>VCLSU</fullName>
+                    <default>false</default>
+                    <label>VCLSU</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Unit_Price__c</fullName>
+        <externalId>false</externalId>
+        <label>Unit Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <label>Order Line Item</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>OL-{MM}{000000}</displayFormat>
+        <label>Order Line Item Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Order Line Items</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

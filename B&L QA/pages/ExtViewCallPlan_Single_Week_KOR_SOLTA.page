@@ -1,0 +1,51 @@
+<apex:page id="pageId"  standardController="Call_Plan__c" extensions="ExtViewCallPlan_KOR_SOLTA" action="{!redirectFromNewPage}">
+    <apex:sectionHeader title="{!$Label.Call_Plan_Title}" subTitle="{!objCallPlan.Name}"/>
+    <apex:form id="formId">
+
+        <apex:pageBlock id="pageBlockId">
+        
+            <apex:pageMessages id="ErrorMsgId"/> 
+            <apex:PageBlockButtons id="buttonSectionId">
+                <apex:CommandButton value="{!$Label.Edit}" action="{!edit}" rendered="{!blnIsEditable}"/>
+                <apex:CommandButton value="{!$Label.Schedule_Button}" action="{!schedule}"/>
+                <apex:CommandButton value="{!$Label.Cancel_Button}"  action="{!cancel}" immediate="true"/>
+            </apex:PageBlockButtons>
+            
+            <apex:PageBlockSection id="singleweekcallPlanSectionId" collapsible="false">
+                
+                <apex:outputField value="{!objCallPlan.Name}" />               
+                
+                <apex:PageBlockSectionItem >
+                    <apex:outputLabel value="{!$Label.Owner_Name_Label}"/>
+                    <apex:outputText value="{!strOwner}"/>
+                </apex:PageBlockSectionItem>
+                
+                <!-- <apex:outputField value="{!objCallPlan.Week__c}" /> -->
+                <apex:pageBlockSectionItem >    
+                    <apex:outputlabel value="{!$Label.week_label}"/>
+                    <apex:outputText value="{!strWeek}" />
+                </apex:pageBlockSectionItem>                
+                
+                <apex:PageBlockSectionItem >  
+                    <apex:outputLabel value="{!$ObjectType.Call_Plan__c.fields.Executive_Comments__c.label}"/>                  
+                    <apex:outputField value="{!objCallPlan.Executive_Comments__c}"/>                     
+                </apex:PageBlockSectionItem>
+                
+                <apex:outputField value="{!objCallPlan.Status__c}"/>
+                
+                <apex:PageBlockSectionItem >   
+                    <apex:outputLabel value="{!$ObjectType.Call_Plan__c.fields.Manager_Comments__c.label}"/>
+                    <apex:outputPanel >                        
+                        <apex:outputField value="{!objCallPlan.Manager_Comments__c}"/>
+                    </apex:outputPanel>                     
+                </apex:PageBlockSectionItem>
+                
+            </apex:PageBlockSection>
+            
+        </apex:pageBlock>
+        
+        
+    </apex:form>
+    
+    <apex:relatedList list="Call_Plan_Detail__r" />
+</apex:page>

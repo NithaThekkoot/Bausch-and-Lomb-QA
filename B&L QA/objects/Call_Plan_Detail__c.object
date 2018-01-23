@@ -1,0 +1,3484 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>INDSU Sales/Service team members to upload the monthly call plan Details</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>AES_Product1__c</fullName>
+        <externalId>false</externalId>
+        <label>AES-Product1</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Fraxel DUAL</fullName>
+                    <default>false</default>
+                    <label>Fraxel DUAL</label>
+                </value>
+                <value>
+                    <fullName>Classic VASER Lipo System with VentX Console</fullName>
+                    <default>false</default>
+                    <label>Classic VASER Lipo System with VentX Console</label>
+                </value>
+                <value>
+                    <fullName>Clear+Brilliant system (includes Original Handpiece)</fullName>
+                    <default>false</default>
+                    <label>Clear+Brilliant system (includes Original Handpiece)</label>
+                </value>
+                <value>
+                    <fullName>Clear + Brilliant</fullName>
+                    <default>false</default>
+                    <label>Clear + Brilliant</label>
+                </value>
+                <value>
+                    <fullName>Liposonix</fullName>
+                    <default>false</default>
+                    <label>Liposonix</label>
+                </value>
+                <value>
+                    <fullName>Isolaz</fullName>
+                    <default>false</default>
+                    <label>Isolaz</label>
+                </value>
+                <value>
+                    <fullName>Thermage CPT System (Incl. 1 Face Handpiece, 1 Body Handpiece)</fullName>
+                    <default>false</default>
+                    <label>Thermage CPT System (Incl. 1 Face Handpiece, 1 Body Handpiece)</label>
+                </value>
+                <value>
+                    <fullName>Upgrade from Isolaz / PPx to Isolaz 2 System</fullName>
+                    <default>false</default>
+                    <label>Upgrade from Isolaz / PPx to Isolaz 2 System</label>
+                </value>
+                <value>
+                    <fullName>VASER Lipo System with VentX Console (220V)</fullName>
+                    <default>false</default>
+                    <label>VASER Lipo System with VentX Console (220V)</label>
+                </value>
+                <value>
+                    <fullName>Classic VASER Lipo System with VentX Console (220V)</fullName>
+                    <default>false</default>
+                    <label>Classic VASER Lipo System with VentX Console (220V)</label>
+                </value>
+                <value>
+                    <fullName>New VASER Lipo System Only with Accessories (220V)</fullName>
+                    <default>false</default>
+                    <label>New VASER Lipo System Only with Accessories (220V)</label>
+                </value>
+                <value>
+                    <fullName>Classic VASER Lipo System Only with Accessories (220V)</fullName>
+                    <default>false</default>
+                    <label>Classic VASER Lipo System Only with Accessories (220V)</label>
+                </value>
+                <value>
+                    <fullName>Classic VASER Lipo System Only with Accessories (CPO - 220V)</fullName>
+                    <default>false</default>
+                    <label>Classic VASER Lipo System Only with Accessories (CPO - 220V)</label>
+                </value>
+                <value>
+                    <fullName>VASER Lipo System with VASERsmooth and VentX Console (220V)</fullName>
+                    <default>false</default>
+                    <label>VASER Lipo System with VASERsmooth and VentX Console (220V)</label>
+                </value>
+                <value>
+                    <fullName>VASER Lipo System Only with VASERsmooth (220V)</fullName>
+                    <default>false</default>
+                    <label>VASER Lipo System Only with VASERsmooth (220V)</label>
+                </value>
+                <value>
+                    <fullName>VASERsmooth Upgrade (220V)</fullName>
+                    <default>false</default>
+                    <label>VASERsmooth Upgrade (220V)</label>
+                </value>
+                <value>
+                    <fullName>Thermage 0.25cm, 450 REP</fullName>
+                    <default>false</default>
+                    <label>Thermage 0.25cm, 450 REP</label>
+                </value>
+                <value>
+                    <fullName>Thermage 3.00cm, 600 REP</fullName>
+                    <default>false</default>
+                    <label>Thermage 3.00cm, 600 REP</label>
+                </value>
+                <value>
+                    <fullName>Thermage 3.00cm, 900 REP</fullName>
+                    <default>false</default>
+                    <label>Thermage 3.00cm, 900 REP</label>
+                </value>
+                <value>
+                    <fullName>Thermage 3.00cm, 1200 REP</fullName>
+                    <default>false</default>
+                    <label>Thermage 3.00cm, 1200 REP</label>
+                </value>
+                <value>
+                    <fullName>Fraxel Cool Roller Tip - 1 Large</fullName>
+                    <default>false</default>
+                    <label>Fraxel Cool Roller Tip - 1 Large</label>
+                </value>
+                <value>
+                    <fullName>Fraxel 1550 Roller Tip - 1 Small</fullName>
+                    <default>false</default>
+                    <label>Fraxel 1550 Roller Tip - 1 Small</label>
+                </value>
+                <value>
+                    <fullName>Fraxel 1550 Roller Tip - 1 Large</fullName>
+                    <default>false</default>
+                    <label>Fraxel 1550 Roller Tip - 1 Large</label>
+                </value>
+                <value>
+                    <fullName>Clear+Brilliant Tips, 12-Pack</fullName>
+                    <default>false</default>
+                    <label>Clear+Brilliant Tips, 12-Pack</label>
+                </value>
+                <value>
+                    <fullName>Single Tip (for reference only)</fullName>
+                    <default>false</default>
+                    <label>Single Tip (for reference only)</label>
+                </value>
+                <value>
+                    <fullName>Clear + Brilliant Perméa Tips, 12-Pack</fullName>
+                    <default>false</default>
+                    <label>Clear + Brilliant Perméa Tips, 12-Pack</label>
+                </value>
+                <value>
+                    <fullName>Isolaz 2 Treatment Tip, Acne, Credit (12-tx) (Choose 3 boxes of Tips)</fullName>
+                    <default>false</default>
+                    <label>Isolaz 2 Treatment Tip, Acne, Credit (12-tx) (Choose 3 boxes of Tips)</label>
+                </value>
+                <value>
+                    <fullName>Isolaz 2 Treatment Tip, Profusion Kit, 12-pk</fullName>
+                    <default>false</default>
+                    <label>Isolaz 2 Treatment Tip, Profusion Kit, 12-pk</label>
+                </value>
+                <value>
+                    <fullName>Isolaz 2 Acne and Profusion Tip Bundle (12-tx) (Choose 3 boxes of Tips)</fullName>
+                    <default>false</default>
+                    <label>Isolaz 2 Acne and Profusion Tip Bundle (12-tx) (Choose 3 boxes of Tips)</label>
+                </value>
+                <value>
+                    <fullName>Body Handpiece 16.0</fullName>
+                    <default>false</default>
+                    <label>Body Handpiece 16.0</label>
+                </value>
+                <value>
+                    <fullName>CPT Face Handpiece (Spare)</fullName>
+                    <default>false</default>
+                    <label>CPT Face Handpiece (Spare)</label>
+                </value>
+                <value>
+                    <fullName>0.25cm Skin Marking Paper</fullName>
+                    <default>false</default>
+                    <label>0.25cm Skin Marking Paper</label>
+                </value>
+                <value>
+                    <fullName>3.0cm Skin Marking Paper</fullName>
+                    <default>false</default>
+                    <label>3.0cm Skin Marking Paper</label>
+                </value>
+                <value>
+                    <fullName>3.0cm Skin Marking Paper - Large (19 x 24 cm)</fullName>
+                    <default>false</default>
+                    <label>3.0cm Skin Marking Paper - Large (19 x 24 cm)</label>
+                </value>
+                <value>
+                    <fullName>16.0cm Skin Marking Paper</fullName>
+                    <default>false</default>
+                    <label>16.0cm Skin Marking Paper</label>
+                </value>
+                <value>
+                    <fullName>Coupling Fluid (30mL Bottles)</fullName>
+                    <default>false</default>
+                    <label>Coupling Fluid (30mL Bottles)</label>
+                </value>
+                <value>
+                    <fullName>Coupling Fluid (60mL Bottles)</fullName>
+                    <default>false</default>
+                    <label>Coupling Fluid (60mL Bottles)</label>
+                </value>
+                <value>
+                    <fullName>Return Pads</fullName>
+                    <default>false</default>
+                    <label>Return Pads</label>
+                </value>
+                <value>
+                    <fullName>Cryogen Coolant Canisters</fullName>
+                    <default>false</default>
+                    <label>Cryogen Coolant Canisters</label>
+                </value>
+                <value>
+                    <fullName>Fraxel SR 1500 Upgrade to Fraxel DUAL 1550/1927</fullName>
+                    <default>false</default>
+                    <label>Fraxel SR 1500 Upgrade to Fraxel DUAL 1550/1927</label>
+                </value>
+                <value>
+                    <fullName>Fraxel SR 1500 Add-on Conversion to Fraxel DUAL 1550/1927</fullName>
+                    <default>false</default>
+                    <label>Fraxel SR 1500 Add-on Conversion to Fraxel DUAL 1550/1927</label>
+                </value>
+                <value>
+                    <fullName>Fraxel DUAL 1550/1927 Key</fullName>
+                    <default>false</default>
+                    <label>Fraxel DUAL 1550/1927 Key</label>
+                </value>
+                <value>
+                    <fullName>Fraxel 1550 Laser Arm Cable Guide</fullName>
+                    <default>false</default>
+                    <label>Fraxel 1550 Laser Arm Cable Guide</label>
+                </value>
+                <value>
+                    <fullName>Fraxel Laser DUAL 1550/1927 Travel Case</fullName>
+                    <default>false</default>
+                    <label>Fraxel Laser DUAL 1550/1927 Travel Case</label>
+                </value>
+                <value>
+                    <fullName>Fraxel DUAL 1550/1927 Docking Plate for Zimmer Cryo 6</fullName>
+                    <default>false</default>
+                    <label>Fraxel DUAL 1550/1927 Docking Plate for Zimmer Cryo 6</label>
+                </value>
+                <value>
+                    <fullName>Clear + Brilliant Original Handpiece (spare)</fullName>
+                    <default>false</default>
+                    <label>Clear + Brilliant Original Handpiece (spare)</label>
+                </value>
+                <value>
+                    <fullName>Clear + Brilliant Perméa Handpiece</fullName>
+                    <default>false</default>
+                    <label>Clear + Brilliant Perméa Handpiece</label>
+                </value>
+                <value>
+                    <fullName>Clear + Brilliant Handpieces Case (Stores 2 Handpieces)</fullName>
+                    <default>false</default>
+                    <label>Clear + Brilliant Handpieces Case (Stores 2 Handpieces)</label>
+                </value>
+                <value>
+                    <fullName>TREATMENT KIT, P2.1</fullName>
+                    <default>false</default>
+                    <label>TREATMENT KIT, P2.1</label>
+                </value>
+                <value>
+                    <fullName>ASSEMBLY, HANDPIECE, P2</fullName>
+                    <default>false</default>
+                    <label>ASSEMBLY, HANDPIECE, P2</label>
+                </value>
+                <value>
+                    <fullName>Isolaz 2 Lamp, 400 nm (EA)</fullName>
+                    <default>false</default>
+                    <label>Isolaz 2 Lamp, 400 nm (EA)</label>
+                </value>
+                <value>
+                    <fullName>Isolaz 2 Lamp, 550 nm (EA)</fullName>
+                    <default>false</default>
+                    <label>Isolaz 2 Lamp, 550 nm (EA)</label>
+                </value>
+                <value>
+                    <fullName>Isolaz 2, Tip, Acne, Small (EA)</fullName>
+                    <default>false</default>
+                    <label>Isolaz 2, Tip, Acne, Small (EA)</label>
+                </value>
+                <value>
+                    <fullName>Isolaz 2, Tip, Acne, Medium (EA)</fullName>
+                    <default>false</default>
+                    <label>Isolaz 2, Tip, Acne, Medium (EA)</label>
+                </value>
+                <value>
+                    <fullName>Isolaz 2, Tip, Acne, Large (EA)</fullName>
+                    <default>false</default>
+                    <label>Isolaz 2, Tip, Acne, Large (EA)</label>
+                </value>
+                <value>
+                    <fullName>Isolaz 2 Calibration Tip (EA)</fullName>
+                    <default>false</default>
+                    <label>Isolaz 2 Calibration Tip (EA)</label>
+                </value>
+                <value>
+                    <fullName>Isolaz 2 Tip Spray Cap (EA)</fullName>
+                    <default>false</default>
+                    <label>Isolaz 2 Tip Spray Cap (EA)</label>
+                </value>
+                <value>
+                    <fullName>Isolaz 2, Lamp Storage Box (EA)</fullName>
+                    <default>false</default>
+                    <label>Isolaz 2, Lamp Storage Box (EA)</label>
+                </value>
+                <value>
+                    <fullName>VASER Ultrasonic Footswitch</fullName>
+                    <default>false</default>
+                    <label>VASER Ultrasonic Footswitch</label>
+                </value>
+                <value>
+                    <fullName>New VASER Interconnect Power Cord</fullName>
+                    <default>false</default>
+                    <label>New VASER Interconnect Power Cord</label>
+                </value>
+                <value>
+                    <fullName>VASER Basic Power Cord</fullName>
+                    <default>false</default>
+                    <label>VASER Basic Power Cord</label>
+                </value>
+                <value>
+                    <fullName>New VASER Ultrasonic Handpiece</fullName>
+                    <default>false</default>
+                    <label>New VASER Ultrasonic Handpiece</label>
+                </value>
+                <value>
+                    <fullName>VASERsmooth Handpiece</fullName>
+                    <default>false</default>
+                    <label>VASERsmooth Handpiece</label>
+                </value>
+                <value>
+                    <fullName>Classic VASER Ultrasonic Handpiece</fullName>
+                    <default>false</default>
+                    <label>Classic VASER Ultrasonic Handpiece</label>
+                </value>
+                <value>
+                    <fullName>VHP Cable for New VASER Connection</fullName>
+                    <default>false</default>
+                    <label>VHP Cable for New VASER Connection</label>
+                </value>
+                <value>
+                    <fullName>VHP Cable for Classic VASER Connection</fullName>
+                    <default>false</default>
+                    <label>VHP Cable for Classic VASER Connection</label>
+                </value>
+                <value>
+                    <fullName>New VASER Universal Handpiece Nosecone</fullName>
+                    <default>false</default>
+                    <label>New VASER Universal Handpiece Nosecone</label>
+                </value>
+                <value>
+                    <fullName>VASER Universal Handpiece Nosecome O-Ring</fullName>
+                    <default>false</default>
+                    <label>VASER Universal Handpiece Nosecome O-Ring</label>
+                </value>
+                <value>
+                    <fullName>VASERsmooth Nosecone</fullName>
+                    <default>false</default>
+                    <label>VASERsmooth Nosecone</label>
+                </value>
+                <value>
+                    <fullName>Classic VASER Handpiece Nosecone, 2.2 mm</fullName>
+                    <default>false</default>
+                    <label>Classic VASER Handpiece Nosecone, 2.2 mm</label>
+                </value>
+                <value>
+                    <fullName>Classic VASER Handpiece Nosecone, 2.9 mm</fullName>
+                    <default>false</default>
+                    <label>Classic VASER Handpiece Nosecone, 2.9 mm</label>
+                </value>
+                <value>
+                    <fullName>Classic VASER Handpiece Nosecone, 3.7 mm</fullName>
+                    <default>false</default>
+                    <label>Classic VASER Handpiece Nosecone, 3.7 mm</label>
+                </value>
+                <value>
+                    <fullName>Classic VASER Handpiece Nosecone, 4.5 mm</fullName>
+                    <default>false</default>
+                    <label>Classic VASER Handpiece Nosecone, 4.5 mm</label>
+                </value>
+                <value>
+                    <fullName>New VASER Lipo System Accessory Kit</fullName>
+                    <default>false</default>
+                    <label>New VASER Lipo System Accessory Kit</label>
+                </value>
+                <value>
+                    <fullName>Classic VASER Lipo System Accessory Kit</fullName>
+                    <default>false</default>
+                    <label>Classic VASER Lipo System Accessory Kit</label>
+                </value>
+                <value>
+                    <fullName>VASER Probe, 2.2 mm, 3-Groove, 12 cm</fullName>
+                    <default>false</default>
+                    <label>VASER Probe, 2.2 mm, 3-Groove, 12 cm</label>
+                </value>
+                <value>
+                    <fullName>VASER Probe, 2.2 mm, 3-Groove, 18 cm</fullName>
+                    <default>false</default>
+                    <label>VASER Probe, 2.2 mm, 3-Groove, 18 cm</label>
+                </value>
+                <value>
+                    <fullName>VASER Probe, 2.9 mm, 3-Groove, 11 cm</fullName>
+                    <default>false</default>
+                    <label>VASER Probe, 2.9 mm, 3-Groove, 11 cm</label>
+                </value>
+                <value>
+                    <fullName>VASER Probe, 2.9 mm, 3-Groove, 18 cm</fullName>
+                    <default>false</default>
+                    <label>VASER Probe, 2.9 mm, 3-Groove, 18 cm</label>
+                </value>
+                <value>
+                    <fullName>VASER Probe, 2.9 mm, 3-Groove, 26 cm</fullName>
+                    <default>false</default>
+                    <label>VASER Probe, 2.9 mm, 3-Groove, 26 cm</label>
+                </value>
+                <value>
+                    <fullName>VASER Probe, 3.7 mm, 1-Groove, 26 cm</fullName>
+                    <default>false</default>
+                    <label>VASER Probe, 3.7 mm, 1-Groove, 26 cm</label>
+                </value>
+                <value>
+                    <fullName>VASER Probe, 3.7 mm, 1-Groove, 33.5 cm</fullName>
+                    <default>false</default>
+                    <label>VASER Probe, 3.7 mm, 1-Groove, 33.5 cm</label>
+                </value>
+                <value>
+                    <fullName>VASER Probe, 3.7 mm, 2-Groove, 26 cm</fullName>
+                    <default>false</default>
+                    <label>VASER Probe, 3.7 mm, 2-Groove, 26 cm</label>
+                </value>
+                <value>
+                    <fullName>VASER Probe, 3.7 mm, 2-Groove, 26 cm, sharp</fullName>
+                    <default>false</default>
+                    <label>VASER Probe, 3.7 mm, 2-Groove, 26 cm, sharp</label>
+                </value>
+                <value>
+                    <fullName>VASER Probe, 3.7 mm, 2-Groove, 33.5 cm</fullName>
+                    <default>false</default>
+                    <label>VASER Probe, 3.7 mm, 2-Groove, 33.5 cm</label>
+                </value>
+                <value>
+                    <fullName>VASER Probe, 3.7 mm, 3-Groove, 26 cm</fullName>
+                    <default>false</default>
+                    <label>VASER Probe, 3.7 mm, 3-Groove, 26 cm</label>
+                </value>
+                <value>
+                    <fullName>VASER Probe, 3.7 mm, 3-Groove, 33.5 cm</fullName>
+                    <default>false</default>
+                    <label>VASER Probe, 3.7 mm, 3-Groove, 33.5 cm</label>
+                </value>
+                <value>
+                    <fullName>VASER Probe, 4.5 mm, 2-Groove, 26 cm</fullName>
+                    <default>false</default>
+                    <label>VASER Probe, 4.5 mm, 2-Groove, 26 cm</label>
+                </value>
+                <value>
+                    <fullName>VASERsmooth Probe, 3.7mm x 26cm, 2-Groove, Side Scallop</fullName>
+                    <default>false</default>
+                    <label>VASERsmooth Probe, 3.7mm x 26cm, 2-Groove, Side Scallop</label>
+                </value>
+                <value>
+                    <fullName>VASERsmooth Probe, 2.9mm x 11cm, 2-Groove, Side Scallop</fullName>
+                    <default>false</default>
+                    <label>VASERsmooth Probe, 2.9mm x 11cm, 2-Groove, Side Scallop</label>
+                </value>
+                <value>
+                    <fullName>VASERsmooth Probe, 2.9mm x 18cm, 2-Groove, Side Scallop</fullName>
+                    <default>false</default>
+                    <label>VASERsmooth Probe, 2.9mm x 18cm, 2-Groove, Side Scallop</label>
+                </value>
+                <value>
+                    <fullName>VASERsmooth Probe, 2.9mm x 26cm, 2-Groove, Side Scallop</fullName>
+                    <default>false</default>
+                    <label>VASERsmooth Probe, 2.9mm x 26cm, 2-Groove, Side Scallop</label>
+                </value>
+                <value>
+                    <fullName>VASERsmooth Probe, 4.5mm x 26cm, 3-Groove, V-notch</fullName>
+                    <default>false</default>
+                    <label>VASERsmooth Probe, 4.5mm x 26cm, 3-Groove, V-notch</label>
+                </value>
+                <value>
+                    <fullName>VASER Face Kit</fullName>
+                    <default>false</default>
+                    <label>VASER Face Kit</label>
+                </value>
+                <value>
+                    <fullName>VASER Advanced Instrumentation Kit</fullName>
+                    <default>false</default>
+                    <label>VASER Advanced Instrumentation Kit</label>
+                </value>
+                <value>
+                    <fullName>Hoyos VASER 4D Sculpt Instrument Kit - US (Toomey Syringe Hub)</fullName>
+                    <default>false</default>
+                    <label>Hoyos VASER 4D Sculpt Instrument Kit - US (Toomey Syringe Hub)</label>
+                </value>
+                <value>
+                    <fullName>Hoyos VASER 4D Sculpt Instrument Kit - International (BD Catheter Hub)</fullName>
+                    <default>false</default>
+                    <label>Hoyos VASER 4D Sculpt Instrument Kit - International (BD Catheter Hub)</label>
+                </value>
+                <value>
+                    <fullName>Skin Port Tool and Incision Opener</fullName>
+                    <default>false</default>
+                    <label>Skin Port Tool and Incision Opener</label>
+                </value>
+                <value>
+                    <fullName>Skin Port Starter Kit</fullName>
+                    <default>false</default>
+                    <label>Skin Port Starter Kit</label>
+                </value>
+                <value>
+                    <fullName>Sterilization Tray (standard)</fullName>
+                    <default>false</default>
+                    <label>Sterilization Tray (standard)</label>
+                </value>
+                <value>
+                    <fullName>Sterilization Tray (large)</fullName>
+                    <default>false</default>
+                    <label>Sterilization Tray (large)</label>
+                </value>
+                <value>
+                    <fullName>VASER 3/8&quot; Wrench</fullName>
+                    <default>false</default>
+                    <label>VASER 3/8&quot; Wrench</label>
+                </value>
+                <value>
+                    <fullName>VASER Handpiece Wrench</fullName>
+                    <default>false</default>
+                    <label>VASER Handpiece Wrench</label>
+                </value>
+                <value>
+                    <fullName>Cleaning Brush</fullName>
+                    <default>false</default>
+                    <label>Cleaning Brush</label>
+                </value>
+                <value>
+                    <fullName>New VASER Back Panel Cover</fullName>
+                    <default>false</default>
+                    <label>New VASER Back Panel Cover</label>
+                </value>
+                <value>
+                    <fullName>4.6 mm Corkscrew Skin Port - 4 pack</fullName>
+                    <default>false</default>
+                    <label>4.6 mm Corkscrew Skin Port - 4 pack</label>
+                </value>
+                <value>
+                    <fullName>4.6 mm Corkscrew Skin Port - 12 pack</fullName>
+                    <default>false</default>
+                    <label>4.6 mm Corkscrew Skin Port - 12 pack</label>
+                </value>
+                <value>
+                    <fullName>3.2 mm Skin Port with Orange Disc - 4 pack</fullName>
+                    <default>false</default>
+                    <label>3.2 mm Skin Port with Orange Disc - 4 pack</label>
+                </value>
+                <value>
+                    <fullName>3.2 mm Skin Port with Orange Disc - 12 pack</fullName>
+                    <default>false</default>
+                    <label>3.2 mm Skin Port with Orange Disc - 12 pack</label>
+                </value>
+                <value>
+                    <fullName>3.2 mm Skin Port Replacements Discs - 12 pack</fullName>
+                    <default>false</default>
+                    <label>3.2 mm Skin Port Replacements Discs - 12 pack</label>
+                </value>
+                <value>
+                    <fullName>4.6 mm Skin Port with White Disc - 4 pack</fullName>
+                    <default>false</default>
+                    <label>4.6 mm Skin Port with White Disc - 4 pack</label>
+                </value>
+                <value>
+                    <fullName>4.6 mm Skin Port with White Disc - 12 pack</fullName>
+                    <default>false</default>
+                    <label>4.6 mm Skin Port with White Disc - 12 pack</label>
+                </value>
+                <value>
+                    <fullName>4.6 mm Skin Port Replacements Discs - 12 pack</fullName>
+                    <default>false</default>
+                    <label>4.6 mm Skin Port Replacements Discs - 12 pack</label>
+                </value>
+                <value>
+                    <fullName>3.2 mm Skin Port Plug</fullName>
+                    <default>false</default>
+                    <label>3.2 mm Skin Port Plug</label>
+                </value>
+                <value>
+                    <fullName>4.6 mm Skin Port Plug</fullName>
+                    <default>false</default>
+                    <label>4.6 mm Skin Port Plug</label>
+                </value>
+                <value>
+                    <fullName>Wireless Footswitch System</fullName>
+                    <default>false</default>
+                    <label>Wireless Footswitch System</label>
+                </value>
+                <value>
+                    <fullName>Wireless Footswitch Carrying Case</fullName>
+                    <default>false</default>
+                    <label>Wireless Footswitch Carrying Case</label>
+                </value>
+                <value>
+                    <fullName>Wireless Footswitch Bag Covers - Case of 50</fullName>
+                    <default>false</default>
+                    <label>Wireless Footswitch Bag Covers - Case of 50</label>
+                </value>
+                <value>
+                    <fullName>VASER Shape System with Accessories</fullName>
+                    <default>false</default>
+                    <label>VASER Shape System with Accessories</label>
+                </value>
+                <value>
+                    <fullName>Ultrasound Handpiece</fullName>
+                    <default>false</default>
+                    <label>Ultrasound Handpiece</label>
+                </value>
+                <value>
+                    <fullName>Zonal Massage Handpiece</fullName>
+                    <default>false</default>
+                    <label>Zonal Massage Handpiece</label>
+                </value>
+                <value>
+                    <fullName>Spacer for Zonal Massage Handpiece</fullName>
+                    <default>false</default>
+                    <label>Spacer for Zonal Massage Handpiece</label>
+                </value>
+                <value>
+                    <fullName>Spacer for Membrane</fullName>
+                    <default>false</default>
+                    <label>Spacer for Membrane</label>
+                </value>
+                <value>
+                    <fullName>Main Power Cord</fullName>
+                    <default>false</default>
+                    <label>Main Power Cord</label>
+                </value>
+                <value>
+                    <fullName>Touch Screen Pen (Stylus)</fullName>
+                    <default>false</default>
+                    <label>Touch Screen Pen (Stylus)</label>
+                </value>
+                <value>
+                    <fullName>Blue Zonal Membranes - Pack of 10</fullName>
+                    <default>false</default>
+                    <label>Blue Zonal Membranes - Pack of 10</label>
+                </value>
+                <value>
+                    <fullName>Yellow Zonal Membranes - Pack of 10</fullName>
+                    <default>false</default>
+                    <label>Yellow Zonal Membranes - Pack of 10</label>
+                </value>
+                <value>
+                    <fullName>GP Holistic Massage Oil - Case of 8</fullName>
+                    <default>false</default>
+                    <label>GP Holistic Massage Oil - Case of 8</label>
+                </value>
+                <value>
+                    <fullName>TouchView Imaging Probe</fullName>
+                    <default>false</default>
+                    <label>TouchView Imaging Probe</label>
+                </value>
+                <value>
+                    <fullName>Terason 2000+</fullName>
+                    <default>false</default>
+                    <label>Terason 2000+</label>
+                </value>
+                <value>
+                    <fullName>Infiltration Kit</fullName>
+                    <default>false</default>
+                    <label>Infiltration Kit</label>
+                </value>
+                <value>
+                    <fullName>PowerX Handpiece</fullName>
+                    <default>false</default>
+                    <label>PowerX Handpiece</label>
+                </value>
+                <value>
+                    <fullName>PowerX Footswitch</fullName>
+                    <default>false</default>
+                    <label>PowerX Footswitch</label>
+                </value>
+                <value>
+                    <fullName>PowerX Basic Power Cord</fullName>
+                    <default>false</default>
+                    <label>PowerX Basic Power Cord</label>
+                </value>
+                <value>
+                    <fullName>Aspiration Tubing Coupler</fullName>
+                    <default>false</default>
+                    <label>Aspiration Tubing Coupler</label>
+                </value>
+                <value>
+                    <fullName>Infiltration Tubing Coupler</fullName>
+                    <default>false</default>
+                    <label>Infiltration Tubing Coupler</label>
+                </value>
+                <value>
+                    <fullName>Handpiece Nosecone</fullName>
+                    <default>false</default>
+                    <label>Handpiece Nosecone</label>
+                </value>
+                <value>
+                    <fullName>Triport Cannula, 3mm x 20cm, PowerX Hub</fullName>
+                    <default>false</default>
+                    <label>Triport Cannula, 3mm x 20cm, PowerX Hub</label>
+                </value>
+                <value>
+                    <fullName>Two-Hole Standard Cannula, 3mm x 26cm, PowerX Hub</fullName>
+                    <default>false</default>
+                    <label>Two-Hole Standard Cannula, 3mm x 26cm, PowerX Hub</label>
+                </value>
+                <value>
+                    <fullName>VentX SST-6 Cannula, 3.7mm x 26cm, PowerX Hub</fullName>
+                    <default>false</default>
+                    <label>VentX SST-6 Cannula, 3.7mm x 26cm, PowerX Hub</label>
+                </value>
+                <value>
+                    <fullName>Infiltration Cannula, 2.0mm x  26cm, VentX Specialty Hub for PX</fullName>
+                    <default>false</default>
+                    <label>Infiltration Cannula, 2.0mm x  26cm, VentX Specialty Hub for PX</label>
+                </value>
+                <value>
+                    <fullName>Infiltration Cannula, 3.0mm x  26cm, VentX Specialty Hub for PX</fullName>
+                    <default>false</default>
+                    <label>Infiltration Cannula, 3.0mm x  26cm, VentX Specialty Hub for PX</label>
+                </value>
+                <value>
+                    <fullName>Standard Massage Handpiece</fullName>
+                    <default>false</default>
+                    <label>Standard Massage Handpiece</label>
+                </value>
+                <value>
+                    <fullName>Adapater for Reduced Membrane</fullName>
+                    <default>false</default>
+                    <label>Adapater for Reduced Membrane</label>
+                </value>
+                <value>
+                    <fullName>Spacer for Small Membrane</fullName>
+                    <default>false</default>
+                    <label>Spacer for Small Membrane</label>
+                </value>
+                <value>
+                    <fullName>Power Supply Cable (110V)</fullName>
+                    <default>false</default>
+                    <label>Power Supply Cable (110V)</label>
+                </value>
+                <value>
+                    <fullName>Blue Standard Membranes - Pack of 10</fullName>
+                    <default>false</default>
+                    <label>Blue Standard Membranes - Pack of 10</label>
+                </value>
+                <value>
+                    <fullName>Green Standard Membranes - Pack of 10</fullName>
+                    <default>false</default>
+                    <label>Green Standard Membranes - Pack of 10</label>
+                </value>
+                <value>
+                    <fullName>Yellow Standard Membranes - Pack of 10</fullName>
+                    <default>false</default>
+                    <label>Yellow Standard Membranes - Pack of 10</label>
+                </value>
+                <value>
+                    <fullName>Blue Reduced Membranes - Pack of 10</fullName>
+                    <default>false</default>
+                    <label>Blue Reduced Membranes - Pack of 10</label>
+                </value>
+                <value>
+                    <fullName>Yellow Reduced Membranes - Pack of 10</fullName>
+                    <default>false</default>
+                    <label>Yellow Reduced Membranes - Pack of 10</label>
+                </value>
+                <value>
+                    <fullName>Blue Zonal Membranes with Pin - Pack of 10</fullName>
+                    <default>false</default>
+                    <label>Blue Zonal Membranes with Pin - Pack of 10</label>
+                </value>
+                <value>
+                    <fullName>Green Zonal Membranes with Pin - Pack of 10</fullName>
+                    <default>false</default>
+                    <label>Green Zonal Membranes with Pin - Pack of 10</label>
+                </value>
+                <value>
+                    <fullName>Yellow Zonal Membranes with Pin - Pack of 10</fullName>
+                    <default>false</default>
+                    <label>Yellow Zonal Membranes with Pin - Pack of 10</label>
+                </value>
+                <value>
+                    <fullName>Blue Zonal Membranes without Pin - Pack of 10</fullName>
+                    <default>false</default>
+                    <label>Blue Zonal Membranes without Pin - Pack of 10</label>
+                </value>
+                <value>
+                    <fullName>Green Zonal Membranes without Pin - Pack of 10</fullName>
+                    <default>false</default>
+                    <label>Green Zonal Membranes without Pin - Pack of 10</label>
+                </value>
+                <value>
+                    <fullName>Yellow Zonal Membranes without Pin - Pack of 10</fullName>
+                    <default>false</default>
+                    <label>Yellow Zonal Membranes without Pin - Pack of 10</label>
+                </value>
+                <value>
+                    <fullName>Blue Zonal Open Membranes - Pack of 10</fullName>
+                    <default>false</default>
+                    <label>Blue Zonal Open Membranes - Pack of 10</label>
+                </value>
+                <value>
+                    <fullName>Yellow Zonal Open Membranes - Pack of 10</fullName>
+                    <default>false</default>
+                    <label>Yellow Zonal Open Membranes - Pack of 10</label>
+                </value>
+                <value>
+                    <fullName>Obagi Blue Peel</fullName>
+                    <default>false</default>
+                    <label>Obagi Blue Peel</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>AES_Product2__c</fullName>
+        <externalId>false</externalId>
+        <label>AES-Product2</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>AESProduct2-1</fullName>
+                    <default>false</default>
+                    <label>AESProduct2-1</label>
+                </value>
+                <value>
+                    <fullName>AESProduct2-2</fullName>
+                    <default>false</default>
+                    <label>AESProduct2-2</label>
+                </value>
+                <value>
+                    <fullName>AESProduct2-3</fullName>
+                    <default>false</default>
+                    <label>AESProduct2-3</label>
+                </value>
+                <value>
+                    <fullName>Fraxel DUAL</fullName>
+                    <default>false</default>
+                    <label>Fraxel DUAL</label>
+                </value>
+                <value>
+                    <fullName>Classic VASER Lipo System with VentX Console</fullName>
+                    <default>false</default>
+                    <label>Classic VASER Lipo System with VentX Console</label>
+                </value>
+                <value>
+                    <fullName>Clear+Brilliant system (includes Original Handpiece)</fullName>
+                    <default>false</default>
+                    <label>Clear+Brilliant system (includes Original Handpiece)</label>
+                </value>
+                <value>
+                    <fullName>Clear + Brilliant</fullName>
+                    <default>false</default>
+                    <label>Clear + Brilliant</label>
+                </value>
+                <value>
+                    <fullName>Liposonix</fullName>
+                    <default>false</default>
+                    <label>Liposonix</label>
+                </value>
+                <value>
+                    <fullName>Isolaz</fullName>
+                    <default>false</default>
+                    <label>Isolaz</label>
+                </value>
+                <value>
+                    <fullName>Thermage CPT System (Incl. 1 Face Handpiece, 1 Body Handpiece)</fullName>
+                    <default>false</default>
+                    <label>Thermage CPT System (Incl. 1 Face Handpiece, 1 Body Handpiece)</label>
+                </value>
+                <value>
+                    <fullName>Upgrade from Isolaz / PPx to Isolaz 2 System</fullName>
+                    <default>false</default>
+                    <label>Upgrade from Isolaz / PPx to Isolaz 2 System</label>
+                </value>
+                <value>
+                    <fullName>VASER Lipo System with VentX Console (220V)</fullName>
+                    <default>false</default>
+                    <label>VASER Lipo System with VentX Console (220V)</label>
+                </value>
+                <value>
+                    <fullName>Classic VASER Lipo System with VentX Console (220V)</fullName>
+                    <default>false</default>
+                    <label>Classic VASER Lipo System with VentX Console (220V)</label>
+                </value>
+                <value>
+                    <fullName>New VASER Lipo System Only with Accessories (220V)</fullName>
+                    <default>false</default>
+                    <label>New VASER Lipo System Only with Accessories (220V)</label>
+                </value>
+                <value>
+                    <fullName>Classic VASER Lipo System Only with Accessories (220V)</fullName>
+                    <default>false</default>
+                    <label>Classic VASER Lipo System Only with Accessories (220V)</label>
+                </value>
+                <value>
+                    <fullName>Classic VASER Lipo System Only with Accessories (CPO - 220V)</fullName>
+                    <default>false</default>
+                    <label>Classic VASER Lipo System Only with Accessories (CPO - 220V)</label>
+                </value>
+                <value>
+                    <fullName>VASER Lipo System with VASERsmooth and VentX Console (220V)</fullName>
+                    <default>false</default>
+                    <label>VASER Lipo System with VASERsmooth and VentX Console (220V)</label>
+                </value>
+                <value>
+                    <fullName>VASER Lipo System Only with VASERsmooth (220V)</fullName>
+                    <default>false</default>
+                    <label>VASER Lipo System Only with VASERsmooth (220V)</label>
+                </value>
+                <value>
+                    <fullName>VASERsmooth Upgrade (220V)</fullName>
+                    <default>false</default>
+                    <label>VASERsmooth Upgrade (220V)</label>
+                </value>
+                <value>
+                    <fullName>Thermage 0.25cm, 450 REP</fullName>
+                    <default>false</default>
+                    <label>Thermage 0.25cm, 450 REP</label>
+                </value>
+                <value>
+                    <fullName>Thermage 3.00cm, 600 REP</fullName>
+                    <default>false</default>
+                    <label>Thermage 3.00cm, 600 REP</label>
+                </value>
+                <value>
+                    <fullName>Thermage 3.00cm, 900 REP</fullName>
+                    <default>false</default>
+                    <label>Thermage 3.00cm, 900 REP</label>
+                </value>
+                <value>
+                    <fullName>Thermage 3.00cm, 1200 REP</fullName>
+                    <default>false</default>
+                    <label>Thermage 3.00cm, 1200 REP</label>
+                </value>
+                <value>
+                    <fullName>Fraxel Cool Roller Tip - 1 Large</fullName>
+                    <default>false</default>
+                    <label>Fraxel Cool Roller Tip - 1 Large</label>
+                </value>
+                <value>
+                    <fullName>Fraxel 1550 Roller Tip - 1 Small</fullName>
+                    <default>false</default>
+                    <label>Fraxel 1550 Roller Tip - 1 Small</label>
+                </value>
+                <value>
+                    <fullName>Fraxel 1550 Roller Tip - 1 Large</fullName>
+                    <default>false</default>
+                    <label>Fraxel 1550 Roller Tip - 1 Large</label>
+                </value>
+                <value>
+                    <fullName>Clear+Brilliant Tips, 12-Pack</fullName>
+                    <default>false</default>
+                    <label>Clear+Brilliant Tips, 12-Pack</label>
+                </value>
+                <value>
+                    <fullName>Single Tip (for reference only)</fullName>
+                    <default>false</default>
+                    <label>Single Tip (for reference only)</label>
+                </value>
+                <value>
+                    <fullName>Clear + Brilliant Perméa Tips, 12-Pack</fullName>
+                    <default>false</default>
+                    <label>Clear + Brilliant Perméa Tips, 12-Pack</label>
+                </value>
+                <value>
+                    <fullName>Isolaz 2 Treatment Tip, Acne, Credit (12-tx) (Choose 3 boxes of Tips)</fullName>
+                    <default>false</default>
+                    <label>Isolaz 2 Treatment Tip, Acne, Credit (12-tx) (Choose 3 boxes of Tips)</label>
+                </value>
+                <value>
+                    <fullName>Isolaz 2 Treatment Tip, Profusion Kit, 12-pk</fullName>
+                    <default>false</default>
+                    <label>Isolaz 2 Treatment Tip, Profusion Kit, 12-pk</label>
+                </value>
+                <value>
+                    <fullName>Isolaz 2 Acne and Profusion Tip Bundle (12-tx) (Choose 3 boxes of Tips)</fullName>
+                    <default>false</default>
+                    <label>Isolaz 2 Acne and Profusion Tip Bundle (12-tx) (Choose 3 boxes of Tips)</label>
+                </value>
+                <value>
+                    <fullName>Body Handpiece 16.0</fullName>
+                    <default>false</default>
+                    <label>Body Handpiece 16.0</label>
+                </value>
+                <value>
+                    <fullName>CPT Face Handpiece (Spare)</fullName>
+                    <default>false</default>
+                    <label>CPT Face Handpiece (Spare)</label>
+                </value>
+                <value>
+                    <fullName>0.25cm Skin Marking Paper</fullName>
+                    <default>false</default>
+                    <label>0.25cm Skin Marking Paper</label>
+                </value>
+                <value>
+                    <fullName>3.0cm Skin Marking Paper</fullName>
+                    <default>false</default>
+                    <label>3.0cm Skin Marking Paper</label>
+                </value>
+                <value>
+                    <fullName>3.0cm Skin Marking Paper - Large (19 x 24 cm)</fullName>
+                    <default>false</default>
+                    <label>3.0cm Skin Marking Paper - Large (19 x 24 cm)</label>
+                </value>
+                <value>
+                    <fullName>16.0cm Skin Marking Paper</fullName>
+                    <default>false</default>
+                    <label>16.0cm Skin Marking Paper</label>
+                </value>
+                <value>
+                    <fullName>Coupling Fluid (30mL Bottles)</fullName>
+                    <default>false</default>
+                    <label>Coupling Fluid (30mL Bottles)</label>
+                </value>
+                <value>
+                    <fullName>Coupling Fluid (60mL Bottles)</fullName>
+                    <default>false</default>
+                    <label>Coupling Fluid (60mL Bottles)</label>
+                </value>
+                <value>
+                    <fullName>Return Pads</fullName>
+                    <default>false</default>
+                    <label>Return Pads</label>
+                </value>
+                <value>
+                    <fullName>Cryogen Coolant Canisters</fullName>
+                    <default>false</default>
+                    <label>Cryogen Coolant Canisters</label>
+                </value>
+                <value>
+                    <fullName>Fraxel SR 1500 Upgrade to Fraxel DUAL 1550/1927</fullName>
+                    <default>false</default>
+                    <label>Fraxel SR 1500 Upgrade to Fraxel DUAL 1550/1927</label>
+                </value>
+                <value>
+                    <fullName>Fraxel SR 1500 Add-on Conversion to Fraxel DUAL 1550/1927</fullName>
+                    <default>false</default>
+                    <label>Fraxel SR 1500 Add-on Conversion to Fraxel DUAL 1550/1927</label>
+                </value>
+                <value>
+                    <fullName>Fraxel DUAL 1550/1927 Key</fullName>
+                    <default>false</default>
+                    <label>Fraxel DUAL 1550/1927 Key</label>
+                </value>
+                <value>
+                    <fullName>Fraxel 1550 Laser Arm Cable Guide</fullName>
+                    <default>false</default>
+                    <label>Fraxel 1550 Laser Arm Cable Guide</label>
+                </value>
+                <value>
+                    <fullName>Fraxel Laser DUAL 1550/1927 Travel Case</fullName>
+                    <default>false</default>
+                    <label>Fraxel Laser DUAL 1550/1927 Travel Case</label>
+                </value>
+                <value>
+                    <fullName>Fraxel DUAL 1550/1927 Docking Plate for Zimmer Cryo 6</fullName>
+                    <default>false</default>
+                    <label>Fraxel DUAL 1550/1927 Docking Plate for Zimmer Cryo 6</label>
+                </value>
+                <value>
+                    <fullName>Clear + Brilliant Original Handpiece (spare)</fullName>
+                    <default>false</default>
+                    <label>Clear + Brilliant Original Handpiece (spare)</label>
+                </value>
+                <value>
+                    <fullName>Clear + Brilliant Perméa Handpiece</fullName>
+                    <default>false</default>
+                    <label>Clear + Brilliant Perméa Handpiece</label>
+                </value>
+                <value>
+                    <fullName>Clear + Brilliant Handpieces Case (Stores 2 Handpieces)</fullName>
+                    <default>false</default>
+                    <label>Clear + Brilliant Handpieces Case (Stores 2 Handpieces)</label>
+                </value>
+                <value>
+                    <fullName>TREATMENT KIT, P2.1</fullName>
+                    <default>false</default>
+                    <label>TREATMENT KIT, P2.1</label>
+                </value>
+                <value>
+                    <fullName>ASSEMBLY, HANDPIECE, P2</fullName>
+                    <default>false</default>
+                    <label>ASSEMBLY, HANDPIECE, P2</label>
+                </value>
+                <value>
+                    <fullName>Isolaz 2 Lamp, 400 nm (EA)</fullName>
+                    <default>false</default>
+                    <label>Isolaz 2 Lamp, 400 nm (EA)</label>
+                </value>
+                <value>
+                    <fullName>Isolaz 2 Lamp, 550 nm (EA)</fullName>
+                    <default>false</default>
+                    <label>Isolaz 2 Lamp, 550 nm (EA)</label>
+                </value>
+                <value>
+                    <fullName>Isolaz 2, Tip, Acne, Small (EA)</fullName>
+                    <default>false</default>
+                    <label>Isolaz 2, Tip, Acne, Small (EA)</label>
+                </value>
+                <value>
+                    <fullName>Isolaz 2, Tip, Acne, Medium (EA)</fullName>
+                    <default>false</default>
+                    <label>Isolaz 2, Tip, Acne, Medium (EA)</label>
+                </value>
+                <value>
+                    <fullName>Isolaz 2, Tip, Acne, Large (EA)</fullName>
+                    <default>false</default>
+                    <label>Isolaz 2, Tip, Acne, Large (EA)</label>
+                </value>
+                <value>
+                    <fullName>Isolaz 2 Calibration Tip (EA)</fullName>
+                    <default>false</default>
+                    <label>Isolaz 2 Calibration Tip (EA)</label>
+                </value>
+                <value>
+                    <fullName>Isolaz 2 Tip Spray Cap (EA)</fullName>
+                    <default>false</default>
+                    <label>Isolaz 2 Tip Spray Cap (EA)</label>
+                </value>
+                <value>
+                    <fullName>Isolaz 2, Lamp Storage Box (EA)</fullName>
+                    <default>false</default>
+                    <label>Isolaz 2, Lamp Storage Box (EA)</label>
+                </value>
+                <value>
+                    <fullName>VASER Ultrasonic Footswitch</fullName>
+                    <default>false</default>
+                    <label>VASER Ultrasonic Footswitch</label>
+                </value>
+                <value>
+                    <fullName>New VASER Interconnect Power Cord</fullName>
+                    <default>false</default>
+                    <label>New VASER Interconnect Power Cord</label>
+                </value>
+                <value>
+                    <fullName>VASER Basic Power Cord</fullName>
+                    <default>false</default>
+                    <label>VASER Basic Power Cord</label>
+                </value>
+                <value>
+                    <fullName>New VASER Ultrasonic Handpiece</fullName>
+                    <default>false</default>
+                    <label>New VASER Ultrasonic Handpiece</label>
+                </value>
+                <value>
+                    <fullName>VASERsmooth Handpiece</fullName>
+                    <default>false</default>
+                    <label>VASERsmooth Handpiece</label>
+                </value>
+                <value>
+                    <fullName>Classic VASER Ultrasonic Handpiece</fullName>
+                    <default>false</default>
+                    <label>Classic VASER Ultrasonic Handpiece</label>
+                </value>
+                <value>
+                    <fullName>VHP Cable for New VASER Connection</fullName>
+                    <default>false</default>
+                    <label>VHP Cable for New VASER Connection</label>
+                </value>
+                <value>
+                    <fullName>VHP Cable for Classic VASER Connection</fullName>
+                    <default>false</default>
+                    <label>VHP Cable for Classic VASER Connection</label>
+                </value>
+                <value>
+                    <fullName>New VASER Universal Handpiece Nosecone</fullName>
+                    <default>false</default>
+                    <label>New VASER Universal Handpiece Nosecone</label>
+                </value>
+                <value>
+                    <fullName>VASER Universal Handpiece Nosecome O-Ring</fullName>
+                    <default>false</default>
+                    <label>VASER Universal Handpiece Nosecome O-Ring</label>
+                </value>
+                <value>
+                    <fullName>VASERsmooth Nosecone</fullName>
+                    <default>false</default>
+                    <label>VASERsmooth Nosecone</label>
+                </value>
+                <value>
+                    <fullName>Classic VASER Handpiece Nosecone, 2.2 mm</fullName>
+                    <default>false</default>
+                    <label>Classic VASER Handpiece Nosecone, 2.2 mm</label>
+                </value>
+                <value>
+                    <fullName>Classic VASER Handpiece Nosecone, 2.9 mm</fullName>
+                    <default>false</default>
+                    <label>Classic VASER Handpiece Nosecone, 2.9 mm</label>
+                </value>
+                <value>
+                    <fullName>Classic VASER Handpiece Nosecone, 3.7 mm</fullName>
+                    <default>false</default>
+                    <label>Classic VASER Handpiece Nosecone, 3.7 mm</label>
+                </value>
+                <value>
+                    <fullName>Classic VASER Handpiece Nosecone, 4.5 mm</fullName>
+                    <default>false</default>
+                    <label>Classic VASER Handpiece Nosecone, 4.5 mm</label>
+                </value>
+                <value>
+                    <fullName>New VASER Lipo System Accessory Kit</fullName>
+                    <default>false</default>
+                    <label>New VASER Lipo System Accessory Kit</label>
+                </value>
+                <value>
+                    <fullName>Classic VASER Lipo System Accessory Kit</fullName>
+                    <default>false</default>
+                    <label>Classic VASER Lipo System Accessory Kit</label>
+                </value>
+                <value>
+                    <fullName>VASER Probe, 2.2 mm, 3-Groove, 12 cm</fullName>
+                    <default>false</default>
+                    <label>VASER Probe, 2.2 mm, 3-Groove, 12 cm</label>
+                </value>
+                <value>
+                    <fullName>VASER Probe, 2.2 mm, 3-Groove, 18 cm</fullName>
+                    <default>false</default>
+                    <label>VASER Probe, 2.2 mm, 3-Groove, 18 cm</label>
+                </value>
+                <value>
+                    <fullName>VASER Probe, 2.9 mm, 3-Groove, 11 cm</fullName>
+                    <default>false</default>
+                    <label>VASER Probe, 2.9 mm, 3-Groove, 11 cm</label>
+                </value>
+                <value>
+                    <fullName>VASER Probe, 2.9 mm, 3-Groove, 18 cm</fullName>
+                    <default>false</default>
+                    <label>VASER Probe, 2.9 mm, 3-Groove, 18 cm</label>
+                </value>
+                <value>
+                    <fullName>VASER Probe, 2.9 mm, 3-Groove, 26 cm</fullName>
+                    <default>false</default>
+                    <label>VASER Probe, 2.9 mm, 3-Groove, 26 cm</label>
+                </value>
+                <value>
+                    <fullName>VASER Probe, 3.7 mm, 1-Groove, 26 cm</fullName>
+                    <default>false</default>
+                    <label>VASER Probe, 3.7 mm, 1-Groove, 26 cm</label>
+                </value>
+                <value>
+                    <fullName>VASER Probe, 3.7 mm, 1-Groove, 33.5 cm</fullName>
+                    <default>false</default>
+                    <label>VASER Probe, 3.7 mm, 1-Groove, 33.5 cm</label>
+                </value>
+                <value>
+                    <fullName>VASER Probe, 3.7 mm, 2-Groove, 26 cm</fullName>
+                    <default>false</default>
+                    <label>VASER Probe, 3.7 mm, 2-Groove, 26 cm</label>
+                </value>
+                <value>
+                    <fullName>VASER Probe, 3.7 mm, 2-Groove, 26 cm, sharp</fullName>
+                    <default>false</default>
+                    <label>VASER Probe, 3.7 mm, 2-Groove, 26 cm, sharp</label>
+                </value>
+                <value>
+                    <fullName>VASER Probe, 3.7 mm, 2-Groove, 33.5 cm</fullName>
+                    <default>false</default>
+                    <label>VASER Probe, 3.7 mm, 2-Groove, 33.5 cm</label>
+                </value>
+                <value>
+                    <fullName>VASER Probe, 3.7 mm, 3-Groove, 26 cm</fullName>
+                    <default>false</default>
+                    <label>VASER Probe, 3.7 mm, 3-Groove, 26 cm</label>
+                </value>
+                <value>
+                    <fullName>VASER Probe, 3.7 mm, 3-Groove, 33.5 cm</fullName>
+                    <default>false</default>
+                    <label>VASER Probe, 3.7 mm, 3-Groove, 33.5 cm</label>
+                </value>
+                <value>
+                    <fullName>VASER Probe, 4.5 mm, 2-Groove, 26 cm</fullName>
+                    <default>false</default>
+                    <label>VASER Probe, 4.5 mm, 2-Groove, 26 cm</label>
+                </value>
+                <value>
+                    <fullName>VASERsmooth Probe, 3.7mm x 26cm, 2-Groove, Side Scallop</fullName>
+                    <default>false</default>
+                    <label>VASERsmooth Probe, 3.7mm x 26cm, 2-Groove, Side Scallop</label>
+                </value>
+                <value>
+                    <fullName>VASERsmooth Probe, 2.9mm x 11cm, 2-Groove, Side Scallop</fullName>
+                    <default>false</default>
+                    <label>VASERsmooth Probe, 2.9mm x 11cm, 2-Groove, Side Scallop</label>
+                </value>
+                <value>
+                    <fullName>VASERsmooth Probe, 2.9mm x 18cm, 2-Groove, Side Scallop</fullName>
+                    <default>false</default>
+                    <label>VASERsmooth Probe, 2.9mm x 18cm, 2-Groove, Side Scallop</label>
+                </value>
+                <value>
+                    <fullName>VASERsmooth Probe, 2.9mm x 26cm, 2-Groove, Side Scallop</fullName>
+                    <default>false</default>
+                    <label>VASERsmooth Probe, 2.9mm x 26cm, 2-Groove, Side Scallop</label>
+                </value>
+                <value>
+                    <fullName>VASERsmooth Probe, 4.5mm x 26cm, 3-Groove, V-notch</fullName>
+                    <default>false</default>
+                    <label>VASERsmooth Probe, 4.5mm x 26cm, 3-Groove, V-notch</label>
+                </value>
+                <value>
+                    <fullName>VASER Face Kit</fullName>
+                    <default>false</default>
+                    <label>VASER Face Kit</label>
+                </value>
+                <value>
+                    <fullName>VASER Advanced Instrumentation Kit</fullName>
+                    <default>false</default>
+                    <label>VASER Advanced Instrumentation Kit</label>
+                </value>
+                <value>
+                    <fullName>Hoyos VASER 4D Sculpt Instrument Kit - US (Toomey Syringe Hub)</fullName>
+                    <default>false</default>
+                    <label>Hoyos VASER 4D Sculpt Instrument Kit - US (Toomey Syringe Hub)</label>
+                </value>
+                <value>
+                    <fullName>Hoyos VASER 4D Sculpt Instrument Kit - International (BD Catheter Hub)</fullName>
+                    <default>false</default>
+                    <label>Hoyos VASER 4D Sculpt Instrument Kit - International (BD Catheter Hub)</label>
+                </value>
+                <value>
+                    <fullName>Skin Port Tool and Incision Opener</fullName>
+                    <default>false</default>
+                    <label>Skin Port Tool and Incision Opener</label>
+                </value>
+                <value>
+                    <fullName>Skin Port Starter Kit</fullName>
+                    <default>false</default>
+                    <label>Skin Port Starter Kit</label>
+                </value>
+                <value>
+                    <fullName>Sterilization Tray (standard)</fullName>
+                    <default>false</default>
+                    <label>Sterilization Tray (standard)</label>
+                </value>
+                <value>
+                    <fullName>Sterilization Tray (large)</fullName>
+                    <default>false</default>
+                    <label>Sterilization Tray (large)</label>
+                </value>
+                <value>
+                    <fullName>VASER 3/8&quot; Wrench</fullName>
+                    <default>false</default>
+                    <label>VASER 3/8&quot; Wrench</label>
+                </value>
+                <value>
+                    <fullName>VASER Handpiece Wrench</fullName>
+                    <default>false</default>
+                    <label>VASER Handpiece Wrench</label>
+                </value>
+                <value>
+                    <fullName>Cleaning Brush</fullName>
+                    <default>false</default>
+                    <label>Cleaning Brush</label>
+                </value>
+                <value>
+                    <fullName>New VASER Back Panel Cover</fullName>
+                    <default>false</default>
+                    <label>New VASER Back Panel Cover</label>
+                </value>
+                <value>
+                    <fullName>4.6 mm Corkscrew Skin Port - 4 pack</fullName>
+                    <default>false</default>
+                    <label>4.6 mm Corkscrew Skin Port - 4 pack</label>
+                </value>
+                <value>
+                    <fullName>4.6 mm Corkscrew Skin Port - 12 pack</fullName>
+                    <default>false</default>
+                    <label>4.6 mm Corkscrew Skin Port - 12 pack</label>
+                </value>
+                <value>
+                    <fullName>3.2 mm Skin Port with Orange Disc - 4 pack</fullName>
+                    <default>false</default>
+                    <label>3.2 mm Skin Port with Orange Disc - 4 pack</label>
+                </value>
+                <value>
+                    <fullName>3.2 mm Skin Port with Orange Disc - 12 pack</fullName>
+                    <default>false</default>
+                    <label>3.2 mm Skin Port with Orange Disc - 12 pack</label>
+                </value>
+                <value>
+                    <fullName>3.2 mm Skin Port Replacements Discs - 12 pack</fullName>
+                    <default>false</default>
+                    <label>3.2 mm Skin Port Replacements Discs - 12 pack</label>
+                </value>
+                <value>
+                    <fullName>4.6 mm Skin Port with White Disc - 4 pack</fullName>
+                    <default>false</default>
+                    <label>4.6 mm Skin Port with White Disc - 4 pack</label>
+                </value>
+                <value>
+                    <fullName>4.6 mm Skin Port with White Disc - 12 pack</fullName>
+                    <default>false</default>
+                    <label>4.6 mm Skin Port with White Disc - 12 pack</label>
+                </value>
+                <value>
+                    <fullName>4.6 mm Skin Port Replacements Discs - 12 pack</fullName>
+                    <default>false</default>
+                    <label>4.6 mm Skin Port Replacements Discs - 12 pack</label>
+                </value>
+                <value>
+                    <fullName>3.2 mm Skin Port Plug</fullName>
+                    <default>false</default>
+                    <label>3.2 mm Skin Port Plug</label>
+                </value>
+                <value>
+                    <fullName>4.6 mm Skin Port Plug</fullName>
+                    <default>false</default>
+                    <label>4.6 mm Skin Port Plug</label>
+                </value>
+                <value>
+                    <fullName>Wireless Footswitch System</fullName>
+                    <default>false</default>
+                    <label>Wireless Footswitch System</label>
+                </value>
+                <value>
+                    <fullName>Wireless Footswitch Carrying Case</fullName>
+                    <default>false</default>
+                    <label>Wireless Footswitch Carrying Case</label>
+                </value>
+                <value>
+                    <fullName>Wireless Footswitch Bag Covers - Case of 50</fullName>
+                    <default>false</default>
+                    <label>Wireless Footswitch Bag Covers - Case of 50</label>
+                </value>
+                <value>
+                    <fullName>VASER Shape System with Accessories</fullName>
+                    <default>false</default>
+                    <label>VASER Shape System with Accessories</label>
+                </value>
+                <value>
+                    <fullName>Ultrasound Handpiece</fullName>
+                    <default>false</default>
+                    <label>Ultrasound Handpiece</label>
+                </value>
+                <value>
+                    <fullName>Zonal Massage Handpiece</fullName>
+                    <default>false</default>
+                    <label>Zonal Massage Handpiece</label>
+                </value>
+                <value>
+                    <fullName>Spacer for Zonal Massage Handpiece</fullName>
+                    <default>false</default>
+                    <label>Spacer for Zonal Massage Handpiece</label>
+                </value>
+                <value>
+                    <fullName>Spacer for Membrane</fullName>
+                    <default>false</default>
+                    <label>Spacer for Membrane</label>
+                </value>
+                <value>
+                    <fullName>Main Power Cord</fullName>
+                    <default>false</default>
+                    <label>Main Power Cord</label>
+                </value>
+                <value>
+                    <fullName>Touch Screen Pen (Stylus)</fullName>
+                    <default>false</default>
+                    <label>Touch Screen Pen (Stylus)</label>
+                </value>
+                <value>
+                    <fullName>Blue Zonal Membranes - Pack of 10</fullName>
+                    <default>false</default>
+                    <label>Blue Zonal Membranes - Pack of 10</label>
+                </value>
+                <value>
+                    <fullName>Yellow Zonal Membranes - Pack of 10</fullName>
+                    <default>false</default>
+                    <label>Yellow Zonal Membranes - Pack of 10</label>
+                </value>
+                <value>
+                    <fullName>GP Holistic Massage Oil - Case of 8</fullName>
+                    <default>false</default>
+                    <label>GP Holistic Massage Oil - Case of 8</label>
+                </value>
+                <value>
+                    <fullName>TouchView Imaging Probe</fullName>
+                    <default>false</default>
+                    <label>TouchView Imaging Probe</label>
+                </value>
+                <value>
+                    <fullName>Terason 2000+</fullName>
+                    <default>false</default>
+                    <label>Terason 2000+</label>
+                </value>
+                <value>
+                    <fullName>Infiltration Kit</fullName>
+                    <default>false</default>
+                    <label>Infiltration Kit</label>
+                </value>
+                <value>
+                    <fullName>PowerX Handpiece</fullName>
+                    <default>false</default>
+                    <label>PowerX Handpiece</label>
+                </value>
+                <value>
+                    <fullName>PowerX Footswitch</fullName>
+                    <default>false</default>
+                    <label>PowerX Footswitch</label>
+                </value>
+                <value>
+                    <fullName>PowerX Basic Power Cord</fullName>
+                    <default>false</default>
+                    <label>PowerX Basic Power Cord</label>
+                </value>
+                <value>
+                    <fullName>Aspiration Tubing Coupler</fullName>
+                    <default>false</default>
+                    <label>Aspiration Tubing Coupler</label>
+                </value>
+                <value>
+                    <fullName>Infiltration Tubing Coupler</fullName>
+                    <default>false</default>
+                    <label>Infiltration Tubing Coupler</label>
+                </value>
+                <value>
+                    <fullName>Handpiece Nosecone</fullName>
+                    <default>false</default>
+                    <label>Handpiece Nosecone</label>
+                </value>
+                <value>
+                    <fullName>Triport Cannula, 3mm x 20cm, PowerX Hub</fullName>
+                    <default>false</default>
+                    <label>Triport Cannula, 3mm x 20cm, PowerX Hub</label>
+                </value>
+                <value>
+                    <fullName>Two-Hole Standard Cannula, 3mm x 26cm, PowerX Hub</fullName>
+                    <default>false</default>
+                    <label>Two-Hole Standard Cannula, 3mm x 26cm, PowerX Hub</label>
+                </value>
+                <value>
+                    <fullName>VentX SST-6 Cannula, 3.7mm x 26cm, PowerX Hub</fullName>
+                    <default>false</default>
+                    <label>VentX SST-6 Cannula, 3.7mm x 26cm, PowerX Hub</label>
+                </value>
+                <value>
+                    <fullName>Infiltration Cannula, 2.0mm x  26cm, VentX Specialty Hub for PX</fullName>
+                    <default>false</default>
+                    <label>Infiltration Cannula, 2.0mm x  26cm, VentX Specialty Hub for PX</label>
+                </value>
+                <value>
+                    <fullName>Infiltration Cannula, 3.0mm x  26cm, VentX Specialty Hub for PX</fullName>
+                    <default>false</default>
+                    <label>Infiltration Cannula, 3.0mm x  26cm, VentX Specialty Hub for PX</label>
+                </value>
+                <value>
+                    <fullName>Standard Massage Handpiece</fullName>
+                    <default>false</default>
+                    <label>Standard Massage Handpiece</label>
+                </value>
+                <value>
+                    <fullName>Adapater for Reduced Membrane</fullName>
+                    <default>false</default>
+                    <label>Adapater for Reduced Membrane</label>
+                </value>
+                <value>
+                    <fullName>Spacer for Small Membrane</fullName>
+                    <default>false</default>
+                    <label>Spacer for Small Membrane</label>
+                </value>
+                <value>
+                    <fullName>Power Supply Cable (110V)</fullName>
+                    <default>false</default>
+                    <label>Power Supply Cable (110V)</label>
+                </value>
+                <value>
+                    <fullName>Blue Standard Membranes - Pack of 10</fullName>
+                    <default>false</default>
+                    <label>Blue Standard Membranes - Pack of 10</label>
+                </value>
+                <value>
+                    <fullName>Green Standard Membranes - Pack of 10</fullName>
+                    <default>false</default>
+                    <label>Green Standard Membranes - Pack of 10</label>
+                </value>
+                <value>
+                    <fullName>Yellow Standard Membranes - Pack of 10</fullName>
+                    <default>false</default>
+                    <label>Yellow Standard Membranes - Pack of 10</label>
+                </value>
+                <value>
+                    <fullName>Blue Reduced Membranes - Pack of 10</fullName>
+                    <default>false</default>
+                    <label>Blue Reduced Membranes - Pack of 10</label>
+                </value>
+                <value>
+                    <fullName>Yellow Reduced Membranes - Pack of 10</fullName>
+                    <default>false</default>
+                    <label>Yellow Reduced Membranes - Pack of 10</label>
+                </value>
+                <value>
+                    <fullName>Blue Zonal Membranes with Pin - Pack of 10</fullName>
+                    <default>false</default>
+                    <label>Blue Zonal Membranes with Pin - Pack of 10</label>
+                </value>
+                <value>
+                    <fullName>Green Zonal Membranes with Pin - Pack of 10</fullName>
+                    <default>false</default>
+                    <label>Green Zonal Membranes with Pin - Pack of 10</label>
+                </value>
+                <value>
+                    <fullName>Yellow Zonal Membranes with Pin - Pack of 10</fullName>
+                    <default>false</default>
+                    <label>Yellow Zonal Membranes with Pin - Pack of 10</label>
+                </value>
+                <value>
+                    <fullName>Blue Zonal Membranes without Pin - Pack of 10</fullName>
+                    <default>false</default>
+                    <label>Blue Zonal Membranes without Pin - Pack of 10</label>
+                </value>
+                <value>
+                    <fullName>Green Zonal Membranes without Pin - Pack of 10</fullName>
+                    <default>false</default>
+                    <label>Green Zonal Membranes without Pin - Pack of 10</label>
+                </value>
+                <value>
+                    <fullName>Yellow Zonal Membranes without Pin - Pack of 10</fullName>
+                    <default>false</default>
+                    <label>Yellow Zonal Membranes without Pin - Pack of 10</label>
+                </value>
+                <value>
+                    <fullName>Blue Zonal Open Membranes - Pack of 10</fullName>
+                    <default>false</default>
+                    <label>Blue Zonal Open Membranes - Pack of 10</label>
+                </value>
+                <value>
+                    <fullName>Yellow Zonal Open Membranes - Pack of 10</fullName>
+                    <default>false</default>
+                    <label>Yellow Zonal Open Membranes - Pack of 10</label>
+                </value>
+                <value>
+                    <fullName>Obagi retail products</fullName>
+                    <default>false</default>
+                    <label>Obagi retail products</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Created for KOR SOLTA.</description>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Call Plan Detail</relationshipLabel>
+        <relationshipName>Call_Plan_Detail</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Call_Objective__c</fullName>
+        <description>INDSU filed to collect the objective set for the call</description>
+        <externalId>false</externalId>
+        <label>Call Objective</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Call_Plan__c</fullName>
+        <description>INDSU field to capture the contact the planned visit is for.</description>
+        <externalId>false</externalId>
+        <label>Call Plan</label>
+        <referenceTo>Call_Plan__c</referenceTo>
+        <relationshipLabel>Call Plan Detail</relationshipLabel>
+        <relationshipName>Call_Plan_Detail</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Call__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>INDSU field to indicate if a visits is planned or not.</description>
+        <externalId>false</externalId>
+        <label>Call</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Date__c</fullName>
+        <description>INDSU field to capture the date of the planned visit.</description>
+        <externalId>false</externalId>
+        <label>Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Joint_Call__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>INDSU field to indicate the call as a joint call with manager</description>
+        <externalId>false</externalId>
+        <label>Joint Call</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OT_Hours__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>OT Hours</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Physician_Name__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>INDSU field to capture the contact the planned visit is for.</description>
+        <externalId>false</externalId>
+        <label>Physician Name</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Call Plan Detail</relationshipLabel>
+        <relationshipName>Call_Plan_Detail</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Product1__c</fullName>
+        <externalId>false</externalId>
+        <label>Product1</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Akreos AO</fullName>
+                    <default>false</default>
+                    <label>Akreos AO</label>
+                </value>
+                <value>
+                    <fullName>Akreos Adapt</fullName>
+                    <default>false</default>
+                    <label>Akreos Adapt</label>
+                </value>
+                <value>
+                    <fullName>Akreos MIL</fullName>
+                    <default>false</default>
+                    <label>Akreos MIL</label>
+                </value>
+                <value>
+                    <fullName>enVista</fullName>
+                    <default>false</default>
+                    <label>enVista</label>
+                </value>
+                <value>
+                    <fullName>Crystalens</fullName>
+                    <default>false</default>
+                    <label>Crystalens</label>
+                </value>
+                <value>
+                    <fullName>Stellaris/PC</fullName>
+                    <default>false</default>
+                    <label>Stellaris/PC</label>
+                </value>
+                <value>
+                    <fullName>Millennium</fullName>
+                    <default>false</default>
+                    <label>Millennium</label>
+                </value>
+                <value>
+                    <fullName>Protege</fullName>
+                    <default>false</default>
+                    <label>Protege</label>
+                </value>
+                <value>
+                    <fullName>Thermage</fullName>
+                    <default>false</default>
+                    <label>Thermage</label>
+                </value>
+                <value>
+                    <fullName>Fraxel</fullName>
+                    <default>false</default>
+                    <label>Fraxel</label>
+                </value>
+                <value>
+                    <fullName>Vaser</fullName>
+                    <default>false</default>
+                    <label>Vaser</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Product2__c</fullName>
+        <externalId>false</externalId>
+        <label>Product2</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Akreos AO</fullName>
+                    <default>false</default>
+                    <label>Akreos AO</label>
+                </value>
+                <value>
+                    <fullName>Akreos Adapt</fullName>
+                    <default>false</default>
+                    <label>Akreos Adapt</label>
+                </value>
+                <value>
+                    <fullName>Akreos MIL</fullName>
+                    <default>false</default>
+                    <label>Akreos MIL</label>
+                </value>
+                <value>
+                    <fullName>enVista</fullName>
+                    <default>false</default>
+                    <label>enVista</label>
+                </value>
+                <value>
+                    <fullName>Crystalens</fullName>
+                    <default>false</default>
+                    <label>Crystalens</label>
+                </value>
+                <value>
+                    <fullName>Stellaris/PC</fullName>
+                    <default>false</default>
+                    <label>Stellaris/PC</label>
+                </value>
+                <value>
+                    <fullName>Millennium</fullName>
+                    <default>false</default>
+                    <label>Millennium</label>
+                </value>
+                <value>
+                    <fullName>Protege</fullName>
+                    <default>false</default>
+                    <label>Protege</label>
+                </value>
+                <value>
+                    <fullName>Thermage</fullName>
+                    <default>false</default>
+                    <label>Thermage</label>
+                </value>
+                <value>
+                    <fullName>Fraxel</fullName>
+                    <default>false</default>
+                    <label>Fraxel</label>
+                </value>
+                <value>
+                    <fullName>Vaser</fullName>
+                    <default>false</default>
+                    <label>Vaser</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Remarks__c</fullName>
+        <externalId>false</externalId>
+        <label>Remarks</label>
+        <length>200</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>isFinished__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Created for KOREA SOLTA</description>
+        <externalId>false</externalId>
+        <label>isFinished</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Call Plan Detail</label>
+    <nameField>
+        <displayFormat>CPD{00000000}</displayFormat>
+        <label>Call Plan Detail Number</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Call Plan Detail</pluralLabel>
+    <recordTypes>
+        <fullName>APACSU_Call_Plan_Detail</fullName>
+        <active>true</active>
+        <description>APACSU record type to enter planned call details.</description>
+        <label>APACSU Call Plan Detail</label>
+        <picklistValues>
+            <picklist>AES_Product1__c</picklist>
+            <values>
+                <fullName>Obagi Blue Peel</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>AES_Product2__c</picklist>
+            <values>
+                <fullName>Obagi retail products</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Product1__c</picklist>
+            <values>
+                <fullName>Stellaris%2FPC</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Product2__c</picklist>
+            <values>
+                <fullName>Stellaris%2FPC</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>INDSU_Call_Plan_Detail</fullName>
+        <active>true</active>
+        <description>INDSU record type to enter planned call details</description>
+        <label>INDSU Call Plan Detail</label>
+        <picklistValues>
+            <picklist>AES_Product1__c</picklist>
+            <values>
+                <fullName>Obagi Blue Peel</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>AES_Product2__c</picklist>
+            <values>
+                <fullName>Obagi retail products</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Product1__c</picklist>
+            <values>
+                <fullName>Stellaris%2FPC</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Product2__c</picklist>
+            <values>
+                <fullName>Stellaris%2FPC</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>KOR_SOLTA_CallPlan_Detail</fullName>
+        <active>true</active>
+        <description>KOR SOLTA Record type to enter Planned Call Details</description>
+        <label>KOR SOLTA CallPlan Detail</label>
+        <picklistValues>
+            <picklist>AES_Product1__c</picklist>
+            <values>
+                <fullName>0%2E25cm Skin Marking Paper</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>16%2E0cm Skin Marking Paper</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3%2E0cm Skin Marking Paper</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3%2E0cm Skin Marking Paper - Large %2819 x 24 cm%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3%2E2 mm Skin Port Plug</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3%2E2 mm Skin Port Replacements Discs - 12 pack</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3%2E2 mm Skin Port with Orange Disc - 12 pack</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3%2E2 mm Skin Port with Orange Disc - 4 pack</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4%2E6 mm Corkscrew Skin Port - 12 pack</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4%2E6 mm Corkscrew Skin Port - 4 pack</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4%2E6 mm Skin Port Plug</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4%2E6 mm Skin Port Replacements Discs - 12 pack</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4%2E6 mm Skin Port with White Disc - 12 pack</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4%2E6 mm Skin Port with White Disc - 4 pack</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ASSEMBLY%2C HANDPIECE%2C P2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Adapater for Reduced Membrane</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Aspiration Tubing Coupler</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Blue Reduced Membranes - Pack of 10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Blue Standard Membranes - Pack of 10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Blue Zonal Membranes - Pack of 10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Blue Zonal Membranes with Pin - Pack of 10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Blue Zonal Membranes without Pin - Pack of 10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Blue Zonal Open Membranes - Pack of 10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Body Handpiece 16%2E0</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CPT Face Handpiece %28Spare%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Classic VASER Handpiece Nosecone%2C 2%2E2 mm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Classic VASER Handpiece Nosecone%2C 2%2E9 mm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Classic VASER Handpiece Nosecone%2C 3%2E7 mm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Classic VASER Handpiece Nosecone%2C 4%2E5 mm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Classic VASER Lipo System Accessory Kit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Classic VASER Lipo System Only with Accessories %28220V%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Classic VASER Lipo System Only with Accessories %28CPO - 220V%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Classic VASER Lipo System with VentX Console</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Classic VASER Lipo System with VentX Console %28220V%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Classic VASER Ultrasonic Handpiece</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cleaning Brush</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Clear %2B Brilliant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Clear %2B Brilliant Handpieces Case %28Stores 2 Handpieces%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Clear %2B Brilliant Original Handpiece %28spare%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Clear %2B Brilliant Perméa Handpiece</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Clear %2B Brilliant Perméa Tips%2C 12-Pack</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Clear%2BBrilliant Tips%2C 12-Pack</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Clear%2BBrilliant system %28includes Original Handpiece%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Coupling Fluid %2830mL Bottles%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Coupling Fluid %2860mL Bottles%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cryogen Coolant Canisters</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fraxel 1550 Laser Arm Cable Guide</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fraxel 1550 Roller Tip - 1 Large</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fraxel 1550 Roller Tip - 1 Small</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fraxel Cool Roller Tip - 1 Large</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fraxel DUAL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fraxel DUAL 1550%2F1927 Docking Plate for Zimmer Cryo 6</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fraxel DUAL 1550%2F1927 Key</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fraxel Laser DUAL 1550%2F1927 Travel Case</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fraxel SR 1500 Add-on Conversion to Fraxel DUAL 1550%2F1927</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fraxel SR 1500 Upgrade to Fraxel DUAL 1550%2F1927</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GP Holistic Massage Oil - Case of 8</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Standard Membranes - Pack of 10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Zonal Membranes with Pin - Pack of 10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Zonal Membranes without Pin - Pack of 10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Handpiece Nosecone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hoyos VASER 4D Sculpt Instrument Kit - International %28BD Catheter Hub%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hoyos VASER 4D Sculpt Instrument Kit - US %28Toomey Syringe Hub%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Infiltration Cannula%2C 2%2E0mm x  26cm%2C VentX Specialty Hub for PX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Infiltration Cannula%2C 3%2E0mm x  26cm%2C VentX Specialty Hub for PX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Infiltration Kit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Infiltration Tubing Coupler</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Isolaz</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Isolaz 2 Acne and Profusion Tip Bundle %2812-tx%29 %28Choose 3 boxes of Tips%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Isolaz 2 Calibration Tip %28EA%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Isolaz 2 Lamp%2C 400 nm %28EA%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Isolaz 2 Lamp%2C 550 nm %28EA%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Isolaz 2 Tip Spray Cap %28EA%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Isolaz 2 Treatment Tip%2C Acne%2C Credit %2812-tx%29 %28Choose 3 boxes of Tips%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Isolaz 2 Treatment Tip%2C Profusion Kit%2C 12-pk</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Isolaz 2%2C Lamp Storage Box %28EA%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Isolaz 2%2C Tip%2C Acne%2C Large %28EA%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Isolaz 2%2C Tip%2C Acne%2C Medium %28EA%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Isolaz 2%2C Tip%2C Acne%2C Small %28EA%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Liposonix</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Main Power Cord</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New VASER Back Panel Cover</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New VASER Interconnect Power Cord</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New VASER Lipo System Accessory Kit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New VASER Lipo System Only with Accessories %28220V%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New VASER Ultrasonic Handpiece</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New VASER Universal Handpiece Nosecone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Obagi Blue Peel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Power Supply Cable %28110V%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PowerX Basic Power Cord</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PowerX Footswitch</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PowerX Handpiece</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Return Pads</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Tip %28for reference only%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Skin Port Starter Kit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Skin Port Tool and Incision Opener</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Spacer for Membrane</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Spacer for Small Membrane</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Spacer for Zonal Massage Handpiece</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Standard Massage Handpiece</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sterilization Tray %28large%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sterilization Tray %28standard%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TREATMENT KIT%2C P2%2E1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Terason 2000%2B</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Thermage 0%2E25cm%2C 450 REP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Thermage 3%2E00cm%2C 1200 REP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Thermage 3%2E00cm%2C 600 REP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Thermage 3%2E00cm%2C 900 REP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Thermage CPT System %28Incl%2E 1 Face Handpiece%2C 1 Body Handpiece%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Touch Screen Pen %28Stylus%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TouchView Imaging Probe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Triport Cannula%2C 3mm x 20cm%2C PowerX Hub</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Two-Hole Standard Cannula%2C 3mm x 26cm%2C PowerX Hub</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ultrasound Handpiece</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Upgrade from Isolaz %2F PPx to Isolaz 2 System</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VASER 3%2F8%22 Wrench</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VASER Advanced Instrumentation Kit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VASER Basic Power Cord</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VASER Face Kit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VASER Handpiece Wrench</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VASER Lipo System Only with VASERsmooth %28220V%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VASER Lipo System with VASERsmooth and VentX Console %28220V%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VASER Lipo System with VentX Console %28220V%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VASER Probe%2C 2%2E2 mm%2C 3-Groove%2C 12 cm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VASER Probe%2C 2%2E2 mm%2C 3-Groove%2C 18 cm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VASER Probe%2C 2%2E9 mm%2C 3-Groove%2C 11 cm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VASER Probe%2C 2%2E9 mm%2C 3-Groove%2C 18 cm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VASER Probe%2C 2%2E9 mm%2C 3-Groove%2C 26 cm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VASER Probe%2C 3%2E7 mm%2C 1-Groove%2C 26 cm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VASER Probe%2C 3%2E7 mm%2C 1-Groove%2C 33%2E5 cm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VASER Probe%2C 3%2E7 mm%2C 2-Groove%2C 26 cm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VASER Probe%2C 3%2E7 mm%2C 2-Groove%2C 26 cm%2C sharp</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VASER Probe%2C 3%2E7 mm%2C 2-Groove%2C 33%2E5 cm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VASER Probe%2C 3%2E7 mm%2C 3-Groove%2C 26 cm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VASER Probe%2C 3%2E7 mm%2C 3-Groove%2C 33%2E5 cm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VASER Probe%2C 4%2E5 mm%2C 2-Groove%2C 26 cm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VASER Shape System with Accessories</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VASER Ultrasonic Footswitch</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VASER Universal Handpiece Nosecome O-Ring</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VASERsmooth Handpiece</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VASERsmooth Nosecone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VASERsmooth Probe%2C 2%2E9mm x 11cm%2C 2-Groove%2C Side Scallop</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VASERsmooth Probe%2C 2%2E9mm x 18cm%2C 2-Groove%2C Side Scallop</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VASERsmooth Probe%2C 2%2E9mm x 26cm%2C 2-Groove%2C Side Scallop</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VASERsmooth Probe%2C 3%2E7mm x 26cm%2C 2-Groove%2C Side Scallop</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VASERsmooth Probe%2C 4%2E5mm x 26cm%2C 3-Groove%2C V-notch</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VASERsmooth Upgrade %28220V%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VHP Cable for Classic VASER Connection</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VHP Cable for New VASER Connection</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VentX SST-6 Cannula%2C 3%2E7mm x 26cm%2C PowerX Hub</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wireless Footswitch Bag Covers - Case of 50</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wireless Footswitch Carrying Case</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wireless Footswitch System</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yellow Reduced Membranes - Pack of 10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yellow Standard Membranes - Pack of 10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yellow Zonal Membranes - Pack of 10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yellow Zonal Membranes with Pin - Pack of 10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yellow Zonal Membranes without Pin - Pack of 10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yellow Zonal Open Membranes - Pack of 10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Zonal Massage Handpiece</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>AES_Product2__c</picklist>
+            <values>
+                <fullName>0%2E25cm Skin Marking Paper</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>16%2E0cm Skin Marking Paper</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3%2E0cm Skin Marking Paper</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3%2E0cm Skin Marking Paper - Large %2819 x 24 cm%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3%2E2 mm Skin Port Plug</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3%2E2 mm Skin Port Replacements Discs - 12 pack</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3%2E2 mm Skin Port with Orange Disc - 12 pack</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3%2E2 mm Skin Port with Orange Disc - 4 pack</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4%2E6 mm Corkscrew Skin Port - 12 pack</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4%2E6 mm Corkscrew Skin Port - 4 pack</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4%2E6 mm Skin Port Plug</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4%2E6 mm Skin Port Replacements Discs - 12 pack</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4%2E6 mm Skin Port with White Disc - 12 pack</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4%2E6 mm Skin Port with White Disc - 4 pack</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AESProduct2-1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AESProduct2-2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AESProduct2-3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ASSEMBLY%2C HANDPIECE%2C P2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Adapater for Reduced Membrane</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Aspiration Tubing Coupler</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Blue Reduced Membranes - Pack of 10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Blue Standard Membranes - Pack of 10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Blue Zonal Membranes - Pack of 10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Blue Zonal Membranes with Pin - Pack of 10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Blue Zonal Membranes without Pin - Pack of 10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Blue Zonal Open Membranes - Pack of 10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Body Handpiece 16%2E0</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CPT Face Handpiece %28Spare%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Classic VASER Handpiece Nosecone%2C 2%2E2 mm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Classic VASER Handpiece Nosecone%2C 2%2E9 mm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Classic VASER Handpiece Nosecone%2C 3%2E7 mm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Classic VASER Handpiece Nosecone%2C 4%2E5 mm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Classic VASER Lipo System Accessory Kit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Classic VASER Lipo System Only with Accessories %28220V%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Classic VASER Lipo System Only with Accessories %28CPO - 220V%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Classic VASER Lipo System with VentX Console</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Classic VASER Lipo System with VentX Console %28220V%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Classic VASER Ultrasonic Handpiece</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cleaning Brush</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Clear %2B Brilliant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Clear %2B Brilliant Handpieces Case %28Stores 2 Handpieces%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Clear %2B Brilliant Original Handpiece %28spare%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Clear %2B Brilliant Perméa Handpiece</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Clear %2B Brilliant Perméa Tips%2C 12-Pack</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Clear%2BBrilliant Tips%2C 12-Pack</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Clear%2BBrilliant system %28includes Original Handpiece%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Coupling Fluid %2830mL Bottles%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Coupling Fluid %2860mL Bottles%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cryogen Coolant Canisters</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fraxel 1550 Laser Arm Cable Guide</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fraxel 1550 Roller Tip - 1 Large</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fraxel 1550 Roller Tip - 1 Small</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fraxel Cool Roller Tip - 1 Large</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fraxel DUAL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fraxel DUAL 1550%2F1927 Docking Plate for Zimmer Cryo 6</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fraxel DUAL 1550%2F1927 Key</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fraxel Laser DUAL 1550%2F1927 Travel Case</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fraxel SR 1500 Add-on Conversion to Fraxel DUAL 1550%2F1927</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fraxel SR 1500 Upgrade to Fraxel DUAL 1550%2F1927</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GP Holistic Massage Oil - Case of 8</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Standard Membranes - Pack of 10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Zonal Membranes with Pin - Pack of 10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Green Zonal Membranes without Pin - Pack of 10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Handpiece Nosecone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hoyos VASER 4D Sculpt Instrument Kit - International %28BD Catheter Hub%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hoyos VASER 4D Sculpt Instrument Kit - US %28Toomey Syringe Hub%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Infiltration Cannula%2C 2%2E0mm x  26cm%2C VentX Specialty Hub for PX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Infiltration Cannula%2C 3%2E0mm x  26cm%2C VentX Specialty Hub for PX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Infiltration Kit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Infiltration Tubing Coupler</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Isolaz</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Isolaz 2 Acne and Profusion Tip Bundle %2812-tx%29 %28Choose 3 boxes of Tips%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Isolaz 2 Calibration Tip %28EA%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Isolaz 2 Lamp%2C 400 nm %28EA%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Isolaz 2 Lamp%2C 550 nm %28EA%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Isolaz 2 Tip Spray Cap %28EA%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Isolaz 2 Treatment Tip%2C Acne%2C Credit %2812-tx%29 %28Choose 3 boxes of Tips%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Isolaz 2 Treatment Tip%2C Profusion Kit%2C 12-pk</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Isolaz 2%2C Lamp Storage Box %28EA%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Isolaz 2%2C Tip%2C Acne%2C Large %28EA%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Isolaz 2%2C Tip%2C Acne%2C Medium %28EA%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Isolaz 2%2C Tip%2C Acne%2C Small %28EA%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Liposonix</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Main Power Cord</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New VASER Back Panel Cover</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New VASER Interconnect Power Cord</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New VASER Lipo System Accessory Kit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New VASER Lipo System Only with Accessories %28220V%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New VASER Ultrasonic Handpiece</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New VASER Universal Handpiece Nosecone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Obagi retail products</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Power Supply Cable %28110V%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PowerX Basic Power Cord</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PowerX Footswitch</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PowerX Handpiece</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Return Pads</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Tip %28for reference only%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Skin Port Starter Kit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Skin Port Tool and Incision Opener</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Spacer for Membrane</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Spacer for Small Membrane</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Spacer for Zonal Massage Handpiece</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Standard Massage Handpiece</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sterilization Tray %28large%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sterilization Tray %28standard%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TREATMENT KIT%2C P2%2E1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Terason 2000%2B</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Thermage 0%2E25cm%2C 450 REP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Thermage 3%2E00cm%2C 1200 REP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Thermage 3%2E00cm%2C 600 REP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Thermage 3%2E00cm%2C 900 REP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Thermage CPT System %28Incl%2E 1 Face Handpiece%2C 1 Body Handpiece%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Touch Screen Pen %28Stylus%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TouchView Imaging Probe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Triport Cannula%2C 3mm x 20cm%2C PowerX Hub</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Two-Hole Standard Cannula%2C 3mm x 26cm%2C PowerX Hub</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ultrasound Handpiece</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Upgrade from Isolaz %2F PPx to Isolaz 2 System</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VASER 3%2F8%22 Wrench</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VASER Advanced Instrumentation Kit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VASER Basic Power Cord</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VASER Face Kit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VASER Handpiece Wrench</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VASER Lipo System Only with VASERsmooth %28220V%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VASER Lipo System with VASERsmooth and VentX Console %28220V%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VASER Lipo System with VentX Console %28220V%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VASER Probe%2C 2%2E2 mm%2C 3-Groove%2C 12 cm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VASER Probe%2C 2%2E2 mm%2C 3-Groove%2C 18 cm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VASER Probe%2C 2%2E9 mm%2C 3-Groove%2C 11 cm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VASER Probe%2C 2%2E9 mm%2C 3-Groove%2C 18 cm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VASER Probe%2C 2%2E9 mm%2C 3-Groove%2C 26 cm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VASER Probe%2C 3%2E7 mm%2C 1-Groove%2C 26 cm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VASER Probe%2C 3%2E7 mm%2C 1-Groove%2C 33%2E5 cm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VASER Probe%2C 3%2E7 mm%2C 2-Groove%2C 26 cm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VASER Probe%2C 3%2E7 mm%2C 2-Groove%2C 26 cm%2C sharp</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VASER Probe%2C 3%2E7 mm%2C 2-Groove%2C 33%2E5 cm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VASER Probe%2C 3%2E7 mm%2C 3-Groove%2C 26 cm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VASER Probe%2C 3%2E7 mm%2C 3-Groove%2C 33%2E5 cm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VASER Probe%2C 4%2E5 mm%2C 2-Groove%2C 26 cm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VASER Shape System with Accessories</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VASER Ultrasonic Footswitch</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VASER Universal Handpiece Nosecome O-Ring</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VASERsmooth Handpiece</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VASERsmooth Nosecone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VASERsmooth Probe%2C 2%2E9mm x 11cm%2C 2-Groove%2C Side Scallop</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VASERsmooth Probe%2C 2%2E9mm x 18cm%2C 2-Groove%2C Side Scallop</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VASERsmooth Probe%2C 2%2E9mm x 26cm%2C 2-Groove%2C Side Scallop</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VASERsmooth Probe%2C 3%2E7mm x 26cm%2C 2-Groove%2C Side Scallop</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VASERsmooth Probe%2C 4%2E5mm x 26cm%2C 3-Groove%2C V-notch</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VASERsmooth Upgrade %28220V%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VHP Cable for Classic VASER Connection</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VHP Cable for New VASER Connection</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VentX SST-6 Cannula%2C 3%2E7mm x 26cm%2C PowerX Hub</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wireless Footswitch Bag Covers - Case of 50</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wireless Footswitch Carrying Case</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wireless Footswitch System</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yellow Reduced Membranes - Pack of 10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yellow Standard Membranes - Pack of 10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yellow Zonal Membranes - Pack of 10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yellow Zonal Membranes with Pin - Pack of 10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yellow Zonal Membranes without Pin - Pack of 10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yellow Zonal Open Membranes - Pack of 10</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Zonal Massage Handpiece</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Product1__c</picklist>
+            <values>
+                <fullName>Akreos AO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Akreos Adapt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Akreos MIL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Crystalens</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fraxel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Millennium</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Protege</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stellaris%2FPC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Thermage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vaser</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>enVista</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Product2__c</picklist>
+            <values>
+                <fullName>Akreos AO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Akreos Adapt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Akreos MIL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Crystalens</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fraxel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Millennium</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Protege</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stellaris%2FPC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Thermage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vaser</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>enVista</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>Edit_Call_Plan_Detail</fullName>
+        <availability>online</availability>
+        <description>This button will be used for editing existing call plans for INDSU and KOR SOLTA.</description>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Edit Call Plan Detail</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>//window.parent.location.href = &quot;/apex/CtrlCallPlan_planDetail?id=  //{!Call_Plan__c.Id}&amp;mode=edit&quot; ;
+var UserRoleName = &quot;{!$UserRole.Name}&quot;;
+if({!CONTAINS($UserRole.Name, &apos;KOR&apos;)}){
+window.parent.location.href = &quot;/apex/CallPlan_KOR_SOLTA?id={!Call_Plan__c.Id}&amp;mode=edit&quot;;
+     }
+else{
+window.parent.location.href = &quot;/apex/CtrlCallPlan_planDetail?id={!Call_Plan__c.Id}&amp;mode=edit&quot; ;
+
+    }</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Edit_Schedule</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Edit Schedule</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>/apex/CtrlCallPlanningChinaSU_CallPlan?id={!Call_Plan__c.Id}&amp;mode=edit</url>
+    </webLinks>
+    <webLinks>
+        <fullName>New_Call_Plan_Detail</fullName>
+        <availability>online</availability>
+        <description>This button will be used for creating new call plans for INDSU and KOR SOLTA.</description>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>New Call Plan Detail</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>//window.parent.location.href = &quot;/apex/CtrlCallPlan_planDetail?id=  //{!Call_Plan__c.Id}&amp;mode=new&quot;;
+ var UserRoleName = &quot;{!$UserRole.Name}&quot;;
+if({!CONTAINS($UserRole.Name, &apos;KOR&apos;)}){
+window.parent.location.href = &quot;/apex/CallPlan_KOR_SOLTA?id={!Call_Plan__c.Id}&amp;mode=new&quot;;
+
+}
+else{
+window.parent.location.href = &quot;/apex/CtrlCallPlan_planDetail?id={!Call_Plan__c.Id}&amp;mode=new&quot;;
+
+
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>New_Schedule</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>New Schedule</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>/apex/CtrlCallPlanningChinaSU_CallPlan?id={!Call_Plan__c.Id}&amp;mode=new</url>
+    </webLinks>
+</CustomObject>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomPageWebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <availability>online</availability>
+    <description>IND Aesthetic calling matrix report</description>
+    <displayType>link</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>SFE Calling Matrix Report AES</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>window.open(&apos;/apex/SFECallingMatrixCustomReportINDAES&apos;);</url>
+</CustomPageWebLink>

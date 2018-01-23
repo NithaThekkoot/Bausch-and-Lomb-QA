@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Used by EMEASU to have relevant information on IOL Data and Competitors tracking</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Account__c</fullName>
+        <description>Used by EMEASU</description>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>IOL Detail</relationshipLabel>
+        <relationshipName>IOL_Detail</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Brand__c</fullName>
+        <description>Used by EMEASU</description>
+        <externalId>false</externalId>
+        <label>Brand</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>1st Q</fullName>
+                    <default>false</default>
+                    <label>1st Q</label>
+                </value>
+                <value>
+                    <fullName>Aaren</fullName>
+                    <default>false</default>
+                    <label>Aaren</label>
+                </value>
+                <value>
+                    <fullName>Abbot</fullName>
+                    <default>false</default>
+                    <label>Abbot</label>
+                </value>
+                <value>
+                    <fullName>Accomed</fullName>
+                    <default>false</default>
+                    <label>Accomed</label>
+                </value>
+                <value>
+                    <fullName>Alcon</fullName>
+                    <default>false</default>
+                    <label>Alcon</label>
+                </value>
+                <value>
+                    <fullName>B+L</fullName>
+                    <default>false</default>
+                    <label>B+L</label>
+                </value>
+                <value>
+                    <fullName>B+L - Akreos Adapt</fullName>
+                    <default>false</default>
+                    <label>B+L - Akreos Adapt</label>
+                </value>
+                <value>
+                    <fullName>B+L - Akreos AO</fullName>
+                    <default>false</default>
+                    <label>B+L - Akreos AO</label>
+                </value>
+                <value>
+                    <fullName>B+L - Akreos MICS</fullName>
+                    <default>false</default>
+                    <label>B+L - Akreos MICS</label>
+                </value>
+                <value>
+                    <fullName>B+L - Crystalens AO</fullName>
+                    <default>false</default>
+                    <label>B+L - Crystalens AO</label>
+                </value>
+                <value>
+                    <fullName>B+L - Crystalens HD</fullName>
+                    <default>false</default>
+                    <label>B+L - Crystalens HD</label>
+                </value>
+                <value>
+                    <fullName>B+L - enVista</fullName>
+                    <default>false</default>
+                    <label>B+L - enVista</label>
+                </value>
+                <value>
+                    <fullName>B+L - enVista Toric</fullName>
+                    <default>false</default>
+                    <label>B+L - enVista Toric</label>
+                </value>
+                <value>
+                    <fullName>B+L - INCISE</fullName>
+                    <default>false</default>
+                    <label>B+L - INCISE</label>
+                </value>
+                <value>
+                    <fullName>B+L - PMMA</fullName>
+                    <default>false</default>
+                    <label>B+L - PMMA</label>
+                </value>
+                <value>
+                    <fullName>B+L - SofPort</fullName>
+                    <default>false</default>
+                    <label>B+L - SofPort</label>
+                </value>
+                <value>
+                    <fullName>Croma/Corneal</fullName>
+                    <default>false</default>
+                    <label>Croma/Corneal</label>
+                </value>
+                <value>
+                    <fullName>Domilens</fullName>
+                    <default>false</default>
+                    <label>Domilens</label>
+                </value>
+                <value>
+                    <fullName>Dr. Schmidt</fullName>
+                    <default>false</default>
+                    <label>Dr. Schmidt</label>
+                </value>
+                <value>
+                    <fullName>FranceLens</fullName>
+                    <default>false</default>
+                    <label>FranceLens</label>
+                </value>
+                <value>
+                    <fullName>Hanita</fullName>
+                    <default>false</default>
+                    <label>Hanita</label>
+                </value>
+                <value>
+                    <fullName>Hoya</fullName>
+                    <default>false</default>
+                    <label>Hoya</label>
+                </value>
+                <value>
+                    <fullName>Human Optics</fullName>
+                    <default>false</default>
+                    <label>Human Optics</label>
+                </value>
+                <value>
+                    <fullName>Medicontour</fullName>
+                    <default>false</default>
+                    <label>Medicontour</label>
+                </value>
+                <value>
+                    <fullName>MTO</fullName>
+                    <default>false</default>
+                    <label>MTO</label>
+                </value>
+                <value>
+                    <fullName>Occulentis/Topcon</fullName>
+                    <default>false</default>
+                    <label>Occulentis/Topcon</label>
+                </value>
+                <value>
+                    <fullName>Optha France</fullName>
+                    <default>false</default>
+                    <label>Optha France</label>
+                </value>
+                <value>
+                    <fullName>Others</fullName>
+                    <default>false</default>
+                    <label>Others</label>
+                </value>
+                <value>
+                    <fullName>PhysIOL</fullName>
+                    <default>false</default>
+                    <label>PhysIOL</label>
+                </value>
+                <value>
+                    <fullName>Polytech</fullName>
+                    <default>false</default>
+                    <label>Polytech</label>
+                </value>
+                <value>
+                    <fullName>Prodis</fullName>
+                    <default>false</default>
+                    <label>Prodis</label>
+                </value>
+                <value>
+                    <fullName>Rayner</fullName>
+                    <default>false</default>
+                    <label>Rayner</label>
+                </value>
+                <value>
+                    <fullName>Rumex</fullName>
+                    <default>false</default>
+                    <label>Rumex</label>
+                </value>
+                <value>
+                    <fullName>Sensar</fullName>
+                    <default>false</default>
+                    <label>Sensar</label>
+                </value>
+                <value>
+                    <fullName>USOptics</fullName>
+                    <default>false</default>
+                    <label>USOptics</label>
+                </value>
+                <value>
+                    <fullName>Zeiss</fullName>
+                    <default>false</default>
+                    <label>Zeiss</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Comments__c</fullName>
+        <description>Used by EMEASU</description>
+        <externalId>false</externalId>
+        <label>Comments</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Contract__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used by EMEASU</description>
+        <externalId>false</externalId>
+        <label>Contract?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>End_Date__c</fullName>
+        <description>Used by EMEASU</description>
+        <externalId>false</externalId>
+        <label>End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Estimated_Volume_by_Year__c</fullName>
+        <description>Used by EMEASU</description>
+        <externalId>false</externalId>
+        <label>Estimated Volume by Year</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IOL_Type__c</fullName>
+        <description>Used by EMEASU</description>
+        <externalId>false</externalId>
+        <label>IOL Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Monofocal</fullName>
+                    <default>false</default>
+                    <label>Monofocal</label>
+                </value>
+                <value>
+                    <fullName>Toric</fullName>
+                    <default>false</default>
+                    <label>Toric</label>
+                </value>
+                <value>
+                    <fullName>Accommodating</fullName>
+                    <default>false</default>
+                    <label>Accommodating</label>
+                </value>
+                <value>
+                    <fullName>Multifocal</fullName>
+                    <default>false</default>
+                    <label>Multifocal</label>
+                </value>
+                <value>
+                    <fullName>Toric-multifocal</fullName>
+                    <default>false</default>
+                    <label>Toric-multifocal</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Material__c</fullName>
+        <description>Used by EMEASU</description>
+        <externalId>false</externalId>
+        <label>Material</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Hydrophilic acrylic</fullName>
+                    <default>false</default>
+                    <label>Hydrophilic acrylic</label>
+                </value>
+                <value>
+                    <fullName>Hydrophobic acrylic</fullName>
+                    <default>false</default>
+                    <label>Hydrophobic acrylic</label>
+                </value>
+                <value>
+                    <fullName>Silicone</fullName>
+                    <default>false</default>
+                    <label>Silicone</label>
+                </value>
+                <value>
+                    <fullName>PMMA</fullName>
+                    <default>false</default>
+                    <label>PMMA</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Pre_loaded__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used by EMEASU</description>
+        <externalId>false</externalId>
+        <label>Pre-loaded</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Ranking__c</fullName>
+        <description>Used by EMEASU</description>
+        <externalId>false</externalId>
+        <label>Ranking</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>1st choice</fullName>
+                    <default>false</default>
+                    <label>1st choice</label>
+                </value>
+                <value>
+                    <fullName>2nd choice</fullName>
+                    <default>false</default>
+                    <label>2nd choice</label>
+                </value>
+                <value>
+                    <fullName>3rd choice</fullName>
+                    <default>false</default>
+                    <label>3rd choice</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Start_Date__c</fullName>
+        <description>Used by EMEASU</description>
+        <externalId>false</externalId>
+        <label>Start Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Yellow__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used by EMEASU</description>
+        <externalId>false</externalId>
+        <label>Yellow</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>IOL Detail</label>
+    <nameField>
+        <displayFormat>IOL-{000000}</displayFormat>
+        <label>IOL Detail ID</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>IOL Detail</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,69 @@
+<apex:page id="pageId"  standardController="Call_Plan__c" extensions="ExtCreateCallPlan" action="{!redirectFromNewPage}">
+    <apex:sectionHeader title="{!$Label.Call_Plan_Title}"/>
+    <apex:form id="formId">
+
+        <apex:pageBlock id="pageBlockId">
+        
+            <apex:pageMessages id="ErrorMsgId"/> 
+            <apex:PageBlockButtons id="buttonSectionId">
+                <apex:CommandButton value="{!$Label.Save_Button}" action="{!save}" rendered="{!blnIsEditable}"/>     
+                <apex:CommandButton value="{!$Label.Save_and_Schedule}" rendered="{!NOT(blnIsUpdate)}" action="{!saveAndSchedule}"/>           
+                <apex:CommandButton value="{!$Label.Schedule_Button}" rendered="{!blnIsUpdate}" action="{!schedule}"/>
+                <apex:CommandButton value="{!$Label.Cancel_Button}"  action="{!cancel}" immediate="true"/>
+            </apex:PageBlockButtons>
+            
+            <apex:PageBlockSection id="singleweekcallPlanSectionId" collapsible="false">
+                
+                <apex:outputField value="{!objCallPlan.Name}" rendered="{!blnIsUpdate}"/>               
+                
+                <apex:PageBlockSectionItem >
+                    <apex:outputLabel value="{!$Label.Owner_Name_Label}"/>
+                    <apex:outputText value="{!strOwner}"/>
+                </apex:PageBlockSectionItem>
+                
+                <apex:outputText rendered="{!NOT(blnIsUpdate)}"/>
+                
+                <!--
+                <apex:outputField value="{!objCallPlan.Current_Status__c}" rendered="{!NOT(OR(ISNULL($CurrentPage.parameters.id),ISBLANK($CurrentPage.parameters.id),$CurrentPage.parameters.id = ''))}"/>
+                <apex:outputField value="{!objCallPlan.Status__c}" rendered="{!OR(ISNULL($CurrentPage.parameters.id),ISBLANK($CurrentPage.parameters.id),$CurrentPage.parameters.id = '')}"/>
+                -->
+                
+                
+                <apex:PageBlockSectionItem >                
+                    <apex:outputLabel value="{!$Label.Select_Week_Label}"/>
+                    <apex:outputPanel layout="block" styleClass="requiredInput">
+                        <apex:outputPanel styleClass="requiredBlock"/>
+                        <apex:selectList id="weekId" value="{!strWeekIndex}" size="1" disabled="{!blnHasDetails}">
+                            <apex:selectOptions value="{!allWeeks}"/>
+                        </apex:selectList>
+                     </apex:outputPanel>
+                </apex:PageBlockSectionItem>
+                
+                <apex:PageBlockSectionItem rendered="{!blnCheckRole}">  
+                    <apex:outputLabel value="{!$ObjectType.Call_Plan__c.fields.Executive_Comments__c.label}"/>                  
+                    <apex:outputPanel >                        
+                        <apex:inputField value="{!objCallPlan.Executive_Comments__c}" rendered="{!AND(blnIsEditable,NOT(blnIsManager))}"/>
+                      <!--  <apex:outputField value="{!objCallPlan.Executive_Comments__c}" rendered="{!OR(AND(NOT(blnIsEditable),blnIsManager),AND(NOT(blnIsEditable),NOT(blnIsManager)))}"/> -->
+                      <apex:outputField value="{!objCallPlan.Executive_Comments__c}" rendered="{!OR(blnIsManager,AND(NOT(blnIsEditable),NOT(blnIsManager)))}"/>
+
+                        <!--<apex:outputField value="{!objCallPlan.Executive_Comments__c}"/>=-->
+                    </apex:outputPanel>                     
+                </apex:PageBlockSectionItem>
+                
+                <apex:outputField value="{!objCallPlan.Status__c}"/>
+                
+                <apex:PageBlockSectionItem rendered="{!blnCheckRole}">   
+                    <apex:outputLabel value="{!$ObjectType.Call_Plan__c.fields.Manager_Comments__c.label}"/>
+                    <apex:outputPanel >                        
+                        <apex:outputField value="{!objCallPlan.Manager_Comments__c}"  rendered="{!OR(AND(blnIsEditable,NOT(blnIsManager)),AND(NOT(blnIsEditable),blnIsManager),AND(NOT(blnIsEditable),NOT(blnIsManager)))}"/>                        
+                        <apex:inputField value="{!objCallPlan.Manager_Comments__c}" rendered="{!AND(blnIsStatusSubmitted,blnIsManager)}"/>
+                        <!--<apex:outputField value="{!objCallPlan.Manager_Comments__c}"/>-->
+                    </apex:outputPanel>                     
+                </apex:PageBlockSectionItem>
+                
+            </apex:PageBlockSection>
+            
+        </apex:pageBlock>
+        
+    </apex:form>
+</apex:page>

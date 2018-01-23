@@ -1,0 +1,14 @@
+.THIS.page{
+    background : white;
+}
+.THIS .header{
+    background: #0b2668;
+    padding: 20px;
+    color:white;
+    text-align: center;
+    font-size: 25px;
+}
+.THIS .card{
+    padding: 17px !important;
+    border: solid 1px #dddbda !important;
+}

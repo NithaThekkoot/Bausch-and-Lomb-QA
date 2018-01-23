@@ -1,0 +1,13 @@
+<apex:page controller="CtrlAdminNotifyVisits" tabStyle="Physician_Visit__c" sidebar="false">
+    <apex:form >
+      <apex:pageBlock >
+               <apex:pageBlockSection title="Alert mail Notifications for Open Physician Visits" columns="1" collapsible="false" >
+                     <apex:outputLabel value="Send Report in Mail to Managers for Physician Visits which can not be completed"></apex:outputLabel>
+                     <apex:commandbutton value="Send Mail to Managers" action="{!SendMailManagers}"/> 
+                      <apex:outputLabel value="Send Mail to Sales Reps for Physician Visits,  as an alert for last day to complete"></apex:outputLabel>
+                      <apex:commandbutton value="Send Mail to Sales Reps" action="{!SendMailSalesReps}"/>
+               </apex:pageBlockSection>
+     </apex:pageBlock>
+     </apex:form>
+    
+</apex:page>

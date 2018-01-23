@@ -1,0 +1,1626 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Details of surgical machines installed at a customer location; includes contract and service contract details. Linked to Account Profile.
+Used by EMEA SU. and USSUR</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Account__c</fullName>
+        <description>Used by EMEASU</description>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Machine Details</relationshipLabel>
+        <relationshipName>Machine_Details</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Contract_Type__c</fullName>
+        <description>Type of contract on this machine.
+Used by EMEA SU.</description>
+        <externalId>false</externalId>
+        <label>Contract Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Sold</fullName>
+                    <default>false</default>
+                    <label>Sold</label>
+                </value>
+                <value>
+                    <fullName>Rental</fullName>
+                    <default>false</default>
+                    <label>Rental</label>
+                </value>
+                <value>
+                    <fullName>Per Procedure</fullName>
+                    <default>false</default>
+                    <label>Per Procedure</label>
+                </value>
+                <value>
+                    <fullName>Placement</fullName>
+                    <default>false</default>
+                    <label>Placement</label>
+                </value>
+                <value>
+                    <fullName>Bundling</fullName>
+                    <default>false</default>
+                    <label>Bundling</label>
+                </value>
+                <value>
+                    <fullName>Leased and Sold</fullName>
+                    <default>false</default>
+                    <label>Leased and Sold</label>
+                </value>
+                <value>
+                    <fullName>Service Distributor</fullName>
+                    <default>false</default>
+                    <label>Service Distributor</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>End_Date__c</fullName>
+        <description>The date the machine&apos;s service contract expires.
+Used by EMEA SU.</description>
+        <externalId>false</externalId>
+        <label>Service Contract End Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Install_Date__c</fullName>
+        <description>Used by EMEASU</description>
+        <externalId>false</externalId>
+        <label>Install Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Install_Year__c</fullName>
+        <description>The year this machine was installed.
+Used by EMEA SU.</description>
+        <externalId>false</externalId>
+        <label>Install Year</label>
+        <length>4</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Install_end_date__c</fullName>
+        <description>For when a machine is placed for a set number of years as part of a bundling deal and needs to be either renegotiated or removed when this period ends</description>
+        <externalId>false</externalId>
+        <inlineHelpText>For when a machine is placed for a set number of years as part of a bundling deal and needs to be either renegotiated or removed when this period ends</inlineHelpText>
+        <label>Install end date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Legacy_System_Id__c</fullName>
+        <description>Contains the unique [SetID][SiteID] reference from the Account Profile in PS CRM where the converted records originated. Used by EMEAVC.</description>
+        <externalId>false</externalId>
+        <label>Legacy System Id</label>
+        <length>25</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Machine_Type__c</fullName>
+        <description>Used by EMEA SU and US SUR</description>
+        <externalId>false</externalId>
+        <label>Machine Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>Anterior</fullName>
+                    <default>false</default>
+                    <label>Anterior</label>
+                </value>
+                <value>
+                    <fullName>B+L Demo</fullName>
+                    <default>false</default>
+                    <label>B+L Demo</label>
+                </value>
+                <value>
+                    <fullName>Combined</fullName>
+                    <default>false</default>
+                    <label>Combined</label>
+                </value>
+                <value>
+                    <fullName>ECCIMERI</fullName>
+                    <default>false</default>
+                    <label>ECCIMERI</label>
+                </value>
+                <value>
+                    <fullName>Femto</fullName>
+                    <default>false</default>
+                    <label>Femto</label>
+                </value>
+                <value>
+                    <fullName>Femtolaser Cataract</fullName>
+                    <default>false</default>
+                    <label>Femtolaser Cataract</label>
+                </value>
+                <value>
+                    <fullName>Microscope</fullName>
+                    <default>false</default>
+                    <label>Microscope</label>
+                </value>
+                <value>
+                    <fullName>Phaco</fullName>
+                    <default>false</default>
+                    <label>Phaco</label>
+                </value>
+                <value>
+                    <fullName>Posterior</fullName>
+                    <default>false</default>
+                    <label>Posterior</label>
+                </value>
+                <value>
+                    <fullName>SOLTA</fullName>
+                    <default>false</default>
+                    <label>SOLTA</label>
+                </value>
+                <value>
+                    <fullName>VR</fullName>
+                    <default>false</default>
+                    <label>VR</label>
+                </value>
+                <value>
+                    <fullName>ZDW</fullName>
+                    <default>false</default>
+                    <label>ZDW</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Model__c</fullName>
+        <description>Details the make/model of one machine installed at the site.
+Used by EMEA SU.</description>
+        <externalId>false</externalId>
+        <label>Model</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Machine_Type__c</controllingField>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>ALCON - Accurus</fullName>
+                    <default>false</default>
+                    <label>ALCON - Accurus</label>
+                </value>
+                <value>
+                    <fullName>ALCON - Centurion</fullName>
+                    <default>false</default>
+                    <label>ALCON - Centurion</label>
+                </value>
+                <value>
+                    <fullName>ALCON - Constellation</fullName>
+                    <default>false</default>
+                    <label>ALCON - Constellation</label>
+                </value>
+                <value>
+                    <fullName>ALCON - F200S</fullName>
+                    <default>false</default>
+                    <label>ALCON - F200S</label>
+                </value>
+                <value>
+                    <fullName>ALCON - Infiniti</fullName>
+                    <default>false</default>
+                    <label>ALCON - Infiniti</label>
+                </value>
+                <value>
+                    <fullName>ALCON - Legacy</fullName>
+                    <default>false</default>
+                    <label>ALCON - Legacy</label>
+                </value>
+                <value>
+                    <fullName>ALCON - LensX</fullName>
+                    <default>false</default>
+                    <label>ALCON - LensX</label>
+                </value>
+                <value>
+                    <fullName>ALCON - WaveLight EX500</fullName>
+                    <default>false</default>
+                    <label>ALCON - WaveLight EX500</label>
+                </value>
+                <value>
+                    <fullName>AMO - Catalys</fullName>
+                    <default>false</default>
+                    <label>AMO - Catalys</label>
+                </value>
+                <value>
+                    <fullName>AMO - Intralase</fullName>
+                    <default>false</default>
+                    <label>AMO - Intralase</label>
+                </value>
+                <value>
+                    <fullName>AMO - Signature</fullName>
+                    <default>false</default>
+                    <label>AMO - Signature</label>
+                </value>
+                <value>
+                    <fullName>AMO - Sovereign</fullName>
+                    <default>false</default>
+                    <label>AMO - Sovereign</label>
+                </value>
+                <value>
+                    <fullName>AMO - Sovereign Compact</fullName>
+                    <default>false</default>
+                    <label>AMO - Sovereign Compact</label>
+                </value>
+                <value>
+                    <fullName>AMO - Sovereign Signature</fullName>
+                    <default>false</default>
+                    <label>AMO - Sovereign Signature</label>
+                </value>
+                <value>
+                    <fullName>AMO - Sovereign Whitestar</fullName>
+                    <default>false</default>
+                    <label>AMO - Sovereign Whitestar</label>
+                </value>
+                <value>
+                    <fullName>AMO - Visx</fullName>
+                    <default>false</default>
+                    <label>AMO - Visx</label>
+                </value>
+                <value>
+                    <fullName>B+L - Laser 217</fullName>
+                    <default>false</default>
+                    <label>B+L - Laser 217</label>
+                </value>
+                <value>
+                    <fullName>B+L - Millennium Anterior</fullName>
+                    <default>false</default>
+                    <label>B+L - Millennium Anterior</label>
+                </value>
+                <value>
+                    <fullName>B+L - Millennium Combo</fullName>
+                    <default>false</default>
+                    <label>B+L - Millennium Combo</label>
+                </value>
+                <value>
+                    <fullName>B+L - Millennium with MVE</fullName>
+                    <default>false</default>
+                    <label>B+L - Millennium with MVE</label>
+                </value>
+                <value>
+                    <fullName>B+L - Stellaris</fullName>
+                    <default>false</default>
+                    <label>B+L - Stellaris</label>
+                </value>
+                <value>
+                    <fullName>B+L - Stellaris PC</fullName>
+                    <default>false</default>
+                    <label>B+L - Stellaris PC</label>
+                </value>
+                <value>
+                    <fullName>B+L - Stellaris PC NGX</fullName>
+                    <default>false</default>
+                    <label>B+L - Stellaris PC NGX</label>
+                </value>
+                <value>
+                    <fullName>B+L TENEO</fullName>
+                    <default>false</default>
+                    <label>B+L TENEO</label>
+                </value>
+                <value>
+                    <fullName>B+L - TENEO</fullName>
+                    <default>false</default>
+                    <label>B+L - TENEO</label>
+                </value>
+                <value>
+                    <fullName>B+L - Victus</fullName>
+                    <default>false</default>
+                    <label>B+L - Victus</label>
+                </value>
+                <value>
+                    <fullName>C+B PERMEA</fullName>
+                    <default>false</default>
+                    <label>C+B PERMEA</label>
+                </value>
+                <value>
+                    <fullName>CORNEAL - Open</fullName>
+                    <default>false</default>
+                    <label>CORNEAL - Open</label>
+                </value>
+                <value>
+                    <fullName>DORC - Eva</fullName>
+                    <default>false</default>
+                    <label>DORC - Eva</label>
+                </value>
+                <value>
+                    <fullName>FRAXEL DUAL</fullName>
+                    <default>false</default>
+                    <label>FRAXEL DUAL</label>
+                </value>
+                <value>
+                    <fullName>FRAXEL RE: PAIR</fullName>
+                    <default>false</default>
+                    <label>FRAXEL RE: PAIR</label>
+                </value>
+                <value>
+                    <fullName>FRAXEL RE: STORE</fullName>
+                    <default>false</default>
+                    <label>FRAXEL RE: STORE</label>
+                </value>
+                <value>
+                    <fullName>GEUDER Megatron</fullName>
+                    <default>false</default>
+                    <label>GEUDER Megatron</label>
+                </value>
+                <value>
+                    <fullName>GEUDER - Megatron</fullName>
+                    <default>false</default>
+                    <label>GEUDER - Megatron</label>
+                </value>
+                <value>
+                    <fullName>GEUDER - Megatron S3</fullName>
+                    <default>false</default>
+                    <label>GEUDER - Megatron S3</label>
+                </value>
+                <value>
+                    <fullName>GEUDER - Megatron S4</fullName>
+                    <default>false</default>
+                    <label>GEUDER - Megatron S4</label>
+                </value>
+                <value>
+                    <fullName>GEUDER - Megatron S4 </fullName>
+                    <default>false</default>
+                    <label>GEUDER - Megatron S4 </label>
+                </value>
+                <value>
+                    <fullName>ISOLAZ</fullName>
+                    <default>false</default>
+                    <label>ISOLAZ</label>
+                </value>
+                <value>
+                    <fullName>Legacy	Not Checked</fullName>
+                    <default>false</default>
+                    <label>Legacy	Not Checked</label>
+                </value>
+                <value>
+                    <fullName>Leica</fullName>
+                    <default>false</default>
+                    <label>Leica</label>
+                </value>
+                <value>
+                    <fullName>Leica M220</fullName>
+                    <default>false</default>
+                    <label>Leica M220</label>
+                </value>
+                <value>
+                    <fullName>Leica M620</fullName>
+                    <default>false</default>
+                    <label>Leica M620</label>
+                </value>
+                <value>
+                    <fullName>Leica M820/822</fullName>
+                    <default>false</default>
+                    <label>Leica M820/822</label>
+                </value>
+                <value>
+                    <fullName>Leica M844</fullName>
+                    <default>false</default>
+                    <label>Leica M844</label>
+                </value>
+                <value>
+                    <fullName>LIPOSONIX</fullName>
+                    <default>false</default>
+                    <label>LIPOSONIX</label>
+                </value>
+                <value>
+                    <fullName>Millennium</fullName>
+                    <default>false</default>
+                    <label>Millennium</label>
+                </value>
+                <value>
+                    <fullName>Moeller-Wedel (Haag-Streit)</fullName>
+                    <default>false</default>
+                    <label>Moeller-Wedel (Haag-Streit)</label>
+                </value>
+                <value>
+                    <fullName>OERTLI - OS3</fullName>
+                    <default>false</default>
+                    <label>OERTLI - OS3</label>
+                </value>
+                <value>
+                    <fullName>OERTLI - OS4</fullName>
+                    <default>false</default>
+                    <label>OERTLI - OS4</label>
+                </value>
+                <value>
+                    <fullName>OERTLI - Pharo</fullName>
+                    <default>false</default>
+                    <label>OERTLI - Pharo</label>
+                </value>
+                <value>
+                    <fullName>OPTIKON</fullName>
+                    <default>false</default>
+                    <label>OPTIKON</label>
+                </value>
+                <value>
+                    <fullName>OPTIKON - Assistant</fullName>
+                    <default>false</default>
+                    <label>OPTIKON - Assistant</label>
+                </value>
+                <value>
+                    <fullName>OPTIKON - Pulsar ESP</fullName>
+                    <default>false</default>
+                    <label>OPTIKON - Pulsar ESP</label>
+                </value>
+                <value>
+                    <fullName>OPTIKON - R-evolution</fullName>
+                    <default>false</default>
+                    <label>OPTIKON - R-evolution</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Others</fullName>
+                    <default>false</default>
+                    <label>Others</label>
+                </value>
+                <value>
+                    <fullName>Ruck</fullName>
+                    <default>false</default>
+                    <label>Ruck</label>
+                </value>
+                <value>
+                    <fullName>SCHWIND</fullName>
+                    <default>false</default>
+                    <label>SCHWIND</label>
+                </value>
+                <value>
+                    <fullName>THERMAGE CPT</fullName>
+                    <default>false</default>
+                    <label>THERMAGE CPT</label>
+                </value>
+                <value>
+                    <fullName>THERMAGE NXT</fullName>
+                    <default>false</default>
+                    <label>THERMAGE NXT</label>
+                </value>
+                <value>
+                    <fullName>TOPCON - LensAr</fullName>
+                    <default>false</default>
+                    <label>TOPCON - LensAr</label>
+                </value>
+                <value>
+                    <fullName>TOPCON – Lens_AR</fullName>
+                    <default>false</default>
+                    <label>TOPCON – Lens AR</label>
+                </value>
+                <value>
+                    <fullName>Universal</fullName>
+                    <default>false</default>
+                    <label>Universal</label>
+                </value>
+                <value>
+                    <fullName>ZEISS - MEL 80</fullName>
+                    <default>false</default>
+                    <label>ZEISS - MEL 80</label>
+                </value>
+                <value>
+                    <fullName>ZEISS - MEL 90</fullName>
+                    <default>false</default>
+                    <label>ZEISS - MEL 90</label>
+                </value>
+                <value>
+                    <fullName>ZEISS-RUCK - Pentasys</fullName>
+                    <default>false</default>
+                    <label>ZEISS-RUCK - Pentasys</label>
+                </value>
+                <value>
+                    <fullName>ZEISS - Visalis 500</fullName>
+                    <default>false</default>
+                    <label>ZEISS - Visalis 500</label>
+                </value>
+                <value>
+                    <fullName>ZEISS - Visumax</fullName>
+                    <default>false</default>
+                    <label>ZEISS - Visumax</label>
+                </value>
+                <value>
+                    <fullName>ZIEMER - LDV Z6</fullName>
+                    <default>false</default>
+                    <label>ZIEMER - LDV Z6</label>
+                </value>
+                <value>
+                    <fullName>ZIEMER - LDV Z8</fullName>
+                    <default>false</default>
+                    <label>ZIEMER - LDV Z8</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>SOLTA</controllingFieldValue>
+                <valueName>C+B PERMEA</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>SOLTA</controllingFieldValue>
+                <valueName>FRAXEL DUAL</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>SOLTA</controllingFieldValue>
+                <valueName>FRAXEL RE: PAIR</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>SOLTA</controllingFieldValue>
+                <valueName>FRAXEL RE: STORE</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>SOLTA</controllingFieldValue>
+                <valueName>ISOLAZ</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>SOLTA</controllingFieldValue>
+                <valueName>LIPOSONIX</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>SOLTA</controllingFieldValue>
+                <valueName>THERMAGE CPT</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>SOLTA</controllingFieldValue>
+                <valueName>THERMAGE NXT</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco</controllingFieldValue>
+                <controllingFieldValue>Combined</controllingFieldValue>
+                <controllingFieldValue>Anterior</controllingFieldValue>
+                <valueName>ALCON - Infiniti</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco</controllingFieldValue>
+                <controllingFieldValue>Anterior</controllingFieldValue>
+                <valueName>ALCON - Legacy</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco</controllingFieldValue>
+                <controllingFieldValue>Anterior</controllingFieldValue>
+                <valueName>AMO - Signature</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco</controllingFieldValue>
+                <controllingFieldValue>Anterior</controllingFieldValue>
+                <valueName>AMO - Sovereign</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco</controllingFieldValue>
+                <controllingFieldValue>Anterior</controllingFieldValue>
+                <valueName>AMO - Sovereign Compact</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco</controllingFieldValue>
+                <controllingFieldValue>Anterior</controllingFieldValue>
+                <valueName>AMO - Sovereign Signature</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco</controllingFieldValue>
+                <controllingFieldValue>Anterior</controllingFieldValue>
+                <valueName>AMO - Sovereign Whitestar</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco</controllingFieldValue>
+                <controllingFieldValue>Anterior</controllingFieldValue>
+                <controllingFieldValue>B+L Demo</controllingFieldValue>
+                <valueName>B+L - Millennium Anterior</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco</controllingFieldValue>
+                <controllingFieldValue>Anterior</controllingFieldValue>
+                <controllingFieldValue>B+L Demo</controllingFieldValue>
+                <valueName>B+L - Stellaris</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco</controllingFieldValue>
+                <controllingFieldValue>ECCIMERI</controllingFieldValue>
+                <controllingFieldValue>VR</controllingFieldValue>
+                <controllingFieldValue>Anterior</controllingFieldValue>
+                <controllingFieldValue>Posterior</controllingFieldValue>
+                <controllingFieldValue>Femto</controllingFieldValue>
+                <controllingFieldValue>Microscope</controllingFieldValue>
+                <valueName>Other</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco</controllingFieldValue>
+                <controllingFieldValue>Combined</controllingFieldValue>
+                <valueName>Others</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco</controllingFieldValue>
+                <controllingFieldValue>Anterior</controllingFieldValue>
+                <valueName>Universal</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Phaco</controllingFieldValue>
+                <controllingFieldValue>Combined</controllingFieldValue>
+                <controllingFieldValue>Anterior</controllingFieldValue>
+                <valueName>ZEISS-RUCK - Pentasys</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>ECCIMERI</controllingFieldValue>
+                <valueName>ALCON - WaveLight EX500</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>ECCIMERI</controllingFieldValue>
+                <valueName>AMO - Visx</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>ECCIMERI</controllingFieldValue>
+                <valueName>B+L - Laser 217</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>ECCIMERI</controllingFieldValue>
+                <valueName>B+L TENEO</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>ECCIMERI</controllingFieldValue>
+                <valueName>SCHWIND</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>ECCIMERI</controllingFieldValue>
+                <valueName>ZEISS - MEL 80</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>ECCIMERI</controllingFieldValue>
+                <valueName>ZEISS - MEL 90</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>VR</controllingFieldValue>
+                <controllingFieldValue>Combined</controllingFieldValue>
+                <controllingFieldValue>Posterior</controllingFieldValue>
+                <valueName>ALCON - Accurus</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>VR</controllingFieldValue>
+                <controllingFieldValue>Combined</controllingFieldValue>
+                <controllingFieldValue>Posterior</controllingFieldValue>
+                <valueName>ALCON - Constellation</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>VR</controllingFieldValue>
+                <controllingFieldValue>Combined</controllingFieldValue>
+                <controllingFieldValue>Posterior</controllingFieldValue>
+                <controllingFieldValue>B+L Demo</controllingFieldValue>
+                <valueName>B+L - Millennium with MVE</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Combined</controllingFieldValue>
+                <controllingFieldValue>B+L Demo</controllingFieldValue>
+                <valueName>B+L - Millennium Combo</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Combined</controllingFieldValue>
+                <controllingFieldValue>B+L Demo</controllingFieldValue>
+                <valueName>B+L - Stellaris PC</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Combined</controllingFieldValue>
+                <valueName>B+L - Stellaris PC NGX</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Combined</controllingFieldValue>
+                <valueName>CORNEAL - Open</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Combined</controllingFieldValue>
+                <controllingFieldValue>Posterior</controllingFieldValue>
+                <valueName>DORC - Eva</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Combined</controllingFieldValue>
+                <valueName>GEUDER - Megatron</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Combined</controllingFieldValue>
+                <valueName>GEUDER - Megatron S3</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Combined</controllingFieldValue>
+                <valueName>GEUDER - Megatron S4</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Combined</controllingFieldValue>
+                <valueName>GEUDER - Megatron S4 </valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Combined</controllingFieldValue>
+                <valueName>OERTLI - OS3</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Combined</controllingFieldValue>
+                <valueName>OERTLI - OS4</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Combined</controllingFieldValue>
+                <valueName>OPTIKON - Assistant</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Combined</controllingFieldValue>
+                <valueName>OPTIKON - Pulsar ESP</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Combined</controllingFieldValue>
+                <valueName>OPTIKON - R-evolution</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Combined</controllingFieldValue>
+                <valueName>ZEISS - Visalis 500</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Femtolaser Cataract</controllingFieldValue>
+                <valueName>ALCON - LensX</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Femtolaser Cataract</controllingFieldValue>
+                <valueName>AMO - Catalys</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Femtolaser Cataract</controllingFieldValue>
+                <controllingFieldValue>Femto</controllingFieldValue>
+                <controllingFieldValue>B+L Demo</controllingFieldValue>
+                <valueName>B+L - Victus</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Femtolaser Cataract</controllingFieldValue>
+                <controllingFieldValue>Femto</controllingFieldValue>
+                <valueName>TOPCON - LensAr</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Femtolaser Cataract</controllingFieldValue>
+                <controllingFieldValue>Femto</controllingFieldValue>
+                <valueName>TOPCON – Lens_AR</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Femtolaser Cataract</controllingFieldValue>
+                <controllingFieldValue>Femto</controllingFieldValue>
+                <valueName>ZIEMER - LDV Z8</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Anterior</controllingFieldValue>
+                <valueName>ALCON - Centurion</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Anterior</controllingFieldValue>
+                <valueName>OPTIKON</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Femto</controllingFieldValue>
+                <valueName>ALCON - F200S</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Femto</controllingFieldValue>
+                <valueName>AMO - Intralase</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Femto</controllingFieldValue>
+                <valueName>ZEISS - Visumax</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Femto</controllingFieldValue>
+                <valueName>ZIEMER - LDV Z6</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Microscope</controllingFieldValue>
+                <valueName>Leica</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Microscope</controllingFieldValue>
+                <valueName>Leica M220</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Microscope</controllingFieldValue>
+                <valueName>Leica M620</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Microscope</controllingFieldValue>
+                <valueName>Leica M820/822</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Microscope</controllingFieldValue>
+                <valueName>Leica M844</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Microscope</controllingFieldValue>
+                <valueName>Moeller-Wedel (Haag-Streit)</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Primary_Territory_Manager__c</fullName>
+        <description>Displays the Primary TM from Account Object</description>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(&apos;/&apos; &amp; Account__r.Primary_Sales_Rep__r.Id , Account__r.Primary_Sales_Rep__r.FirstName &amp; &apos; &apos; &amp; Account__r.Primary_Sales_Rep__r.LastName )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Primary Territory Manager</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Serial_Number__c</fullName>
+        <description>Used by EMEASU</description>
+        <externalId>false</externalId>
+        <label>Serial Number</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Service_Contract_Start_Date__c</fullName>
+        <description>Service Contract Start Date</description>
+        <externalId>false</externalId>
+        <label>Service Contract Start Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Service_Contract_Type__c</fullName>
+        <description>If Service Contract? is checked then allow the TM to log whether the cover is fully comprehensive or standard.
+Used by EMEA SU.</description>
+        <externalId>false</externalId>
+        <label>Service Contract Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Service_Contract__c</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Fully comp</fullName>
+                    <default>false</default>
+                    <label>Fully comp</label>
+                </value>
+                <value>
+                    <fullName>Medium</fullName>
+                    <default>false</default>
+                    <label>Medium</label>
+                </value>
+                <value>
+                    <fullName>Standard</fullName>
+                    <default>false</default>
+                    <label>Standard</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>checked</controllingFieldValue>
+                <valueName>Fully comp</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>checked</controllingFieldValue>
+                <valueName>Medium</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>checked</controllingFieldValue>
+                <valueName>Standard</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Service_Contract__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Tracks whether the machine has a service contract.
+Used by EMEA SU.</description>
+        <externalId>false</externalId>
+        <label>Service Contract?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>SetID__c</fullName>
+        <description>Displays SetID from Account Object</description>
+        <externalId>false</externalId>
+        <formula>Account__r.SETID__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>SetID</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Uninstalled__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Whether the machine has been removed/uninstalled. Used by EMEA SU.</description>
+        <externalId>false</externalId>
+        <label>Uninstalled</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Warranty_End_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Warranty End Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Warranty__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Warranty</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Machine Detail</label>
+    <nameField>
+        <displayFormat>M-{000}</displayFormat>
+        <label>Machine Ref</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Machine Details</pluralLabel>
+    <recordTypes>
+        <fullName>APACSU</fullName>
+        <active>true</active>
+        <description>APAC Surgical</description>
+        <label>APACSU</label>
+        <picklistValues>
+            <picklist>Contract_Type__c</picklist>
+            <values>
+                <fullName>Bundling</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Leased and Sold</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Per Procedure</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Placement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rental</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sold</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Machine_Type__c</picklist>
+            <values>
+                <fullName>Combined</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phaco</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Model__c</picklist>
+            <values>
+                <fullName>ALCON - Accurus</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ALCON - Constellation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ALCON - Infiniti</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ALCON - Legacy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AMO - Signature</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AMO - Sovereign Compact</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AMO - Sovereign Whitestar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B%2BL - Millennium Combo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B%2BL - Millennium with MVE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B%2BL - Stellaris</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B%2BL - Stellaris PC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GEUDER - Megatron S4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Others</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Service_Contract_Type__c</picklist>
+            <values>
+                <fullName>Fully comp</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Standard</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>EMEA_SU</fullName>
+        <active>true</active>
+        <description>Machine details record type for EMEA SU.</description>
+        <label>EMEA SU</label>
+        <picklistValues>
+            <picklist>Contract_Type__c</picklist>
+            <values>
+                <fullName>Bundling</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Leased and Sold</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Per Procedure</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Placement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rental</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Service Distributor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sold</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Machine_Type__c</picklist>
+            <values>
+                <fullName>Anterior</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B%2BL Demo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Combined</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ECCIMERI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Femto</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Femtolaser Cataract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Microscope</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Posterior</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SOLTA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZDW</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Model__c</picklist>
+            <values>
+                <fullName>ALCON - Accurus</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ALCON - Centurion</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ALCON - Constellation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ALCON - F200S</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ALCON - Infiniti</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ALCON - Legacy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ALCON - LensX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ALCON - WaveLight EX500</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AMO - Catalys</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AMO - Intralase</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AMO - Signature</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AMO - Sovereign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AMO - Sovereign Compact</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AMO - Sovereign Signature</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AMO - Sovereign Whitestar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AMO - Visx</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B%2BL - Laser 217</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B%2BL - Millennium Anterior</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B%2BL - Millennium Combo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B%2BL - Millennium with MVE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B%2BL - Stellaris</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B%2BL - Stellaris PC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B%2BL - Stellaris PC NGX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B%2BL - TENEO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B%2BL - Victus</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B%2BL TENEO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>C%2BB PERMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CORNEAL - Open</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DORC - Eva</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FRAXEL DUAL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FRAXEL RE%3A PAIR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FRAXEL RE%3A STORE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GEUDER - Megatron</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GEUDER - Megatron S3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GEUDER - Megatron S4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ISOLAZ</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LIPOSONIX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Leica</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Leica M220</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Leica M620</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Leica M820%2F822</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Leica M844</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Moeller-Wedel %28Haag-Streit%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OERTLI - OS3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OERTLI - OS4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OERTLI - Pharo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OPTIKON</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OPTIKON - Assistant</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OPTIKON - Pulsar ESP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OPTIKON - R-evolution</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Others</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SCHWIND</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>THERMAGE CPT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>THERMAGE NXT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TOPCON %E2%80%93 Lens_AR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Universal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZEISS - MEL 80</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZEISS - MEL 90</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZEISS - Visalis 500</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZEISS - Visumax</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZIEMER - LDV Z6</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZIEMER - LDV Z8</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Service_Contract_Type__c</picklist>
+            <values>
+                <fullName>Fully comp</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Standard</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>USSUR</fullName>
+        <active>true</active>
+        <description>US Surgical</description>
+        <label>USSUR</label>
+        <picklistValues>
+            <picklist>Contract_Type__c</picklist>
+            <values>
+                <fullName>Bundling</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Per Procedure</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Placement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rental</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sold</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Machine_Type__c</picklist>
+            <values>
+                <fullName>Phaco</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VR</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Model__c</picklist>
+            <values>
+                <fullName>ALCON - Accurus</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ALCON - Constellation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ALCON - Infiniti</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ALCON - Legacy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AMO - Signature</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AMO - Sovereign Compact</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AMO - Sovereign Whitestar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B%2BL - Millennium with MVE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>B%2BL - Stellaris</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Millennium</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Others</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Service_Contract_Type__c</picklist>
+            <values>
+                <fullName>Fully comp</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Standard</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <lookupDialogsAdditionalFields>Model__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Contract_Type__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Install_Year__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Service_Contract__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Service_Contract_Type__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>End_Date__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Model__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Contract_Type__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Install_Year__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Service_Contract__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Service_Contract_Type__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>End_Date__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Model__c</searchFilterFields>
+        <searchFilterFields>Contract_Type__c</searchFilterFields>
+        <searchFilterFields>Install_Year__c</searchFilterFields>
+        <searchFilterFields>Service_Contract__c</searchFilterFields>
+        <searchFilterFields>Service_Contract_Type__c</searchFilterFields>
+        <searchFilterFields>End_Date__c</searchFilterFields>
+        <searchResultsAdditionalFields>Serial_Number__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Account__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Model__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Contract_Type__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Install_Date__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Install_end_date__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Uninstalled__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Service_Contract__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

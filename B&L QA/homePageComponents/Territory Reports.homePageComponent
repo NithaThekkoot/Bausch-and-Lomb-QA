@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HomePageComponent xmlns="http://soap.sforce.com/2006/04/metadata">
+    <links>Territory_Sales_to_Quota</links>
+    <links>Qtr_Sales_Product</links>
+    <links>YOY_Sales</links>
+    <links>Trial_Lens</links>
+    <pageComponentType>links</pageComponentType>
+</HomePageComponent>

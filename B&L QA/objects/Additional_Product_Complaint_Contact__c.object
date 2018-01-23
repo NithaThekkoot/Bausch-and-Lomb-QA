@@ -1,0 +1,1588 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Junction object that enables many-to-many relationship between Additional Contacts (Person Accounts) and Product Complaints (Cases)</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>Account_Name__c</fullName>
+        <description>Used to create a new person account, or be populated from an existing person of business account as part of the Product Complaint process</description>
+        <externalId>false</externalId>
+        <formula>If( Additional_Contact__r.IsPersonAccount,  Additional_Contact__r.FirstName &amp; &quot; &quot; &amp; Additional_Contact__r.LastName,  Additional_Contact__r.Name)</formula>
+        <label>Account Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Additional_Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Used to create a new person account, or be populated from an existing person of business account as part of the Product Complaint process</description>
+        <externalId>false</externalId>
+        <label>Additional Contact</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Additional Contacts</relationshipLabel>
+        <relationshipName>Additional_Contacts</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Address_2__c</fullName>
+        <description>To be populated from Account as part of the Product Complaint process</description>
+        <externalId>false</externalId>
+        <label>Address 2</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Address__c</fullName>
+        <description>To be populated from Account as part of the Product Complaint process</description>
+        <externalId>false</externalId>
+        <label>Address</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Business_Unit__c</fullName>
+        <description>Used to create a new person account, or be populated from an existing person of business account as part of the Product Complaint process</description>
+        <externalId>false</externalId>
+        <label>Business Unit</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>AUSTR</fullName>
+                    <default>false</default>
+                    <label>AUSTR</label>
+                </value>
+                <value>
+                    <fullName>BELGM</fullName>
+                    <default>false</default>
+                    <label>BELGM</label>
+                </value>
+                <value>
+                    <fullName>BLGRC</fullName>
+                    <default>false</default>
+                    <label>BLGRC</label>
+                </value>
+                <value>
+                    <fullName>BLUSA</fullName>
+                    <default>false</default>
+                    <label>BLUSA</label>
+                </value>
+                <value>
+                    <fullName>CANAD</fullName>
+                    <default>false</default>
+                    <label>CANAD</label>
+                </value>
+                <value>
+                    <fullName>DMBLV</fullName>
+                    <default>false</default>
+                    <label>DMBLV</label>
+                </value>
+                <value>
+                    <fullName>FRANC</fullName>
+                    <default>false</default>
+                    <label>FRANC</label>
+                </value>
+                <value>
+                    <fullName>ITACM</fullName>
+                    <default>false</default>
+                    <label>ITACM</label>
+                </value>
+                <value>
+                    <fullName>NETPR</fullName>
+                    <default>false</default>
+                    <label>NETPR</label>
+                </value>
+                <value>
+                    <fullName>NORDK</fullName>
+                    <default>false</default>
+                    <label>NORDK</label>
+                </value>
+                <value>
+                    <fullName>NORFI</fullName>
+                    <default>false</default>
+                    <label>NORFI</label>
+                </value>
+                <value>
+                    <fullName>NORNO</fullName>
+                    <default>false</default>
+                    <label>NORNO</label>
+                </value>
+                <value>
+                    <fullName>NORSE</fullName>
+                    <default>false</default>
+                    <label>NORSE</label>
+                </value>
+                <value>
+                    <fullName>PHMUS</fullName>
+                    <default>false</default>
+                    <label>PHMUS</label>
+                </value>
+                <value>
+                    <fullName>POLND</fullName>
+                    <default>false</default>
+                    <label>POLND</label>
+                </value>
+                <value>
+                    <fullName>PORTU</fullName>
+                    <default>false</default>
+                    <label>PORTU</label>
+                </value>
+                <value>
+                    <fullName>SPACM</fullName>
+                    <default>false</default>
+                    <label>SPACM</label>
+                </value>
+                <value>
+                    <fullName>SWICM</fullName>
+                    <default>false</default>
+                    <label>SWICM</label>
+                </value>
+                <value>
+                    <fullName>UNKGD</fullName>
+                    <default>false</default>
+                    <label>UNKGD</label>
+                </value>
+                <value>
+                    <fullName>VCUCM</fullName>
+                    <default>false</default>
+                    <label>VCUCM</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>CATSWeb_Complaint_Number__c</fullName>
+        <description>For Product Complaints</description>
+        <externalId>false</externalId>
+        <formula>Case__r.CATSWeb_Complaint_Number__c</formula>
+        <label>CATSWeb Complaint Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Case_ID_18__c</fullName>
+        <description>Brings in the 18-character Case ID for use in the outbound messages, since the Case__c field only provides the 15-character ID.</description>
+        <externalId>false</externalId>
+        <formula>Case__r.ID_18__c</formula>
+        <label>Case ID 18</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Case_Number__c</fullName>
+        <description>For Product Complaints, need to store the value here for use on the mail merge and email templates</description>
+        <externalId>false</externalId>
+        <formula>Case__r.CaseNumber</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Case Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Case_Record_Type__c</fullName>
+        <description>For Product Complaints, the record type so that it can be output on Mail Merge letters</description>
+        <externalId>false</externalId>
+        <formula>Case__r.Record_Type__c</formula>
+        <label>Case Record Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Case__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Case</label>
+        <referenceTo>Case</referenceTo>
+        <relationshipLabel>Additional Contacts</relationshipLabel>
+        <relationshipName>Case_Additional_Contact_Relationships</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>City__c</fullName>
+        <description>Used to create a new person account, or be populated from an existing person of business account as part of the Product Complaint process</description>
+        <externalId>false</externalId>
+        <label>City</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Company_Name__c</fullName>
+        <description>Company Name for the Additional Contact (where applicable)</description>
+        <externalId>false</externalId>
+        <label>Company Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Contact Type</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Practitioner</fullName>
+                    <default>false</default>
+                    <label>Practitioner</label>
+                </value>
+                <value>
+                    <fullName>Consumer</fullName>
+                    <default>false</default>
+                    <label>Consumer</label>
+                </value>
+                <value>
+                    <fullName>Distributor</fullName>
+                    <default>false</default>
+                    <label>Distributor</label>
+                </value>
+                <value>
+                    <fullName>Government Agency</fullName>
+                    <default>false</default>
+                    <label>Government Agency</label>
+                </value>
+                <value>
+                    <fullName>Hospital / Surgery Center</fullName>
+                    <default>false</default>
+                    <label>Hospital / Surgery Center</label>
+                </value>
+                <value>
+                    <fullName>Retail</fullName>
+                    <default>false</default>
+                    <label>Retail</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Sales Representative</fullName>
+                    <default>false</default>
+                    <label>Sales Representative</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Country__c</fullName>
+        <description>Used to create a new person account, or be populated from an existing person of business account as part of the Product Complaint process</description>
+        <externalId>false</externalId>
+        <label>Country</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>United States of America</fullName>
+                    <default>false</default>
+                    <label>United States of America</label>
+                </value>
+                <value>
+                    <fullName>Canada</fullName>
+                    <default>false</default>
+                    <label>Canada</label>
+                </value>
+                <value>
+                    <fullName>Albania</fullName>
+                    <default>false</default>
+                    <label>Albania</label>
+                </value>
+                <value>
+                    <fullName>Andorra</fullName>
+                    <default>false</default>
+                    <label>Andorra</label>
+                </value>
+                <value>
+                    <fullName>Armenia</fullName>
+                    <default>false</default>
+                    <label>Armenia</label>
+                </value>
+                <value>
+                    <fullName>Austria</fullName>
+                    <default>false</default>
+                    <label>Austria</label>
+                </value>
+                <value>
+                    <fullName>Azerbaijan</fullName>
+                    <default>false</default>
+                    <label>Azerbaijan</label>
+                </value>
+                <value>
+                    <fullName>Belarus</fullName>
+                    <default>false</default>
+                    <label>Belarus</label>
+                </value>
+                <value>
+                    <fullName>Belgium</fullName>
+                    <default>false</default>
+                    <label>Belgium</label>
+                </value>
+                <value>
+                    <fullName>Bosnia and Herzegovina</fullName>
+                    <default>false</default>
+                    <label>Bosnia and Herzegovina</label>
+                </value>
+                <value>
+                    <fullName>Bulgaria</fullName>
+                    <default>false</default>
+                    <label>Bulgaria</label>
+                </value>
+                <value>
+                    <fullName>Croatia</fullName>
+                    <default>false</default>
+                    <label>Croatia</label>
+                </value>
+                <value>
+                    <fullName>Cyprus</fullName>
+                    <default>false</default>
+                    <label>Cyprus</label>
+                </value>
+                <value>
+                    <fullName>Czech Republic</fullName>
+                    <default>false</default>
+                    <label>Czech Republic</label>
+                </value>
+                <value>
+                    <fullName>Denmark</fullName>
+                    <default>false</default>
+                    <label>Denmark</label>
+                </value>
+                <value>
+                    <fullName>Estonia</fullName>
+                    <default>false</default>
+                    <label>Estonia</label>
+                </value>
+                <value>
+                    <fullName>Faroe Islands</fullName>
+                    <default>false</default>
+                    <label>Faroe Islands</label>
+                </value>
+                <value>
+                    <fullName>Finland</fullName>
+                    <default>false</default>
+                    <label>Finland</label>
+                </value>
+                <value>
+                    <fullName>France</fullName>
+                    <default>false</default>
+                    <label>France</label>
+                </value>
+                <value>
+                    <fullName>Georgia</fullName>
+                    <default>false</default>
+                    <label>Georgia</label>
+                </value>
+                <value>
+                    <fullName>Germany</fullName>
+                    <default>false</default>
+                    <label>Germany</label>
+                </value>
+                <value>
+                    <fullName>Gibraltar</fullName>
+                    <default>false</default>
+                    <label>Gibraltar</label>
+                </value>
+                <value>
+                    <fullName>Greece</fullName>
+                    <default>false</default>
+                    <label>Greece</label>
+                </value>
+                <value>
+                    <fullName>Hungary</fullName>
+                    <default>false</default>
+                    <label>Hungary</label>
+                </value>
+                <value>
+                    <fullName>Iceland</fullName>
+                    <default>false</default>
+                    <label>Iceland</label>
+                </value>
+                <value>
+                    <fullName>Ireland</fullName>
+                    <default>false</default>
+                    <label>Ireland</label>
+                </value>
+                <value>
+                    <fullName>Italy</fullName>
+                    <default>false</default>
+                    <label>Italy</label>
+                </value>
+                <value>
+                    <fullName>Kazakstan</fullName>
+                    <default>false</default>
+                    <label>Kazakstan</label>
+                </value>
+                <value>
+                    <fullName>Kosovo</fullName>
+                    <default>false</default>
+                    <label>Kosovo</label>
+                </value>
+                <value>
+                    <fullName>Latvia</fullName>
+                    <default>false</default>
+                    <label>Latvia</label>
+                </value>
+                <value>
+                    <fullName>Liechtenstein</fullName>
+                    <default>false</default>
+                    <label>Liechtenstein</label>
+                </value>
+                <value>
+                    <fullName>Lithuania</fullName>
+                    <default>false</default>
+                    <label>Lithuania</label>
+                </value>
+                <value>
+                    <fullName>Luxembourg</fullName>
+                    <default>false</default>
+                    <label>Luxembourg</label>
+                </value>
+                <value>
+                    <fullName>Malta</fullName>
+                    <default>false</default>
+                    <label>Malta</label>
+                </value>
+                <value>
+                    <fullName>Moldova, Republic of</fullName>
+                    <default>false</default>
+                    <label>Moldova, Republic of</label>
+                </value>
+                <value>
+                    <fullName>Monaco</fullName>
+                    <default>false</default>
+                    <label>Monaco</label>
+                </value>
+                <value>
+                    <fullName>Montenegro</fullName>
+                    <default>false</default>
+                    <label>Montenegro</label>
+                </value>
+                <value>
+                    <fullName>Netherlands</fullName>
+                    <default>false</default>
+                    <label>Netherlands</label>
+                </value>
+                <value>
+                    <fullName>Norway</fullName>
+                    <default>false</default>
+                    <label>Norway</label>
+                </value>
+                <value>
+                    <fullName>Poland</fullName>
+                    <default>false</default>
+                    <label>Poland</label>
+                </value>
+                <value>
+                    <fullName>Portugal</fullName>
+                    <default>false</default>
+                    <label>Portugal</label>
+                </value>
+                <value>
+                    <fullName>Romania</fullName>
+                    <default>false</default>
+                    <label>Romania</label>
+                </value>
+                <value>
+                    <fullName>Russian Federation</fullName>
+                    <default>false</default>
+                    <label>Russian Federation</label>
+                </value>
+                <value>
+                    <fullName>San Marino</fullName>
+                    <default>false</default>
+                    <label>San Marino</label>
+                </value>
+                <value>
+                    <fullName>Serbia</fullName>
+                    <default>false</default>
+                    <label>Serbia</label>
+                </value>
+                <value>
+                    <fullName>Slovakia</fullName>
+                    <default>false</default>
+                    <label>Slovakia</label>
+                </value>
+                <value>
+                    <fullName>Slovenia</fullName>
+                    <default>false</default>
+                    <label>Slovenia</label>
+                </value>
+                <value>
+                    <fullName>Spain</fullName>
+                    <default>false</default>
+                    <label>Spain</label>
+                </value>
+                <value>
+                    <fullName>Sweden</fullName>
+                    <default>false</default>
+                    <label>Sweden</label>
+                </value>
+                <value>
+                    <fullName>Switzerland</fullName>
+                    <default>false</default>
+                    <label>Switzerland</label>
+                </value>
+                <value>
+                    <fullName>Turkey</fullName>
+                    <default>false</default>
+                    <label>Turkey</label>
+                </value>
+                <value>
+                    <fullName>Ukraine</fullName>
+                    <default>false</default>
+                    <label>Ukraine</label>
+                </value>
+                <value>
+                    <fullName>United Kingdom</fullName>
+                    <default>false</default>
+                    <label>United Kingdom</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Email__c</fullName>
+        <description>Used to create a new person account, or be populated from an existing person of business account as part of the Product Complaint process</description>
+        <externalId>false</externalId>
+        <label>Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Employee_Assigned_To__c</fullName>
+        <description>For Product Complaints</description>
+        <externalId>false</externalId>
+        <formula>Case__r.Employee_Assigned_To__c</formula>
+        <label>Employee Assigned To</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Fax__c</fullName>
+        <description>For product complaints, a fax number for the Addl Contact</description>
+        <externalId>false</externalId>
+        <label>Fax</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>First_Name__c</fullName>
+        <description>Used to create a new person account, or be populated from an existing person of business account as part of the Product Complaint process</description>
+        <externalId>false</externalId>
+        <label>First Name</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ID_18__c</fullName>
+        <description>Brings in the 18-character ID for use in the outbound messages, since the ID field only provides the 15-character ID.</description>
+        <externalId>false</externalId>
+        <formula>Id&amp;
+CASE(
+IF(CONTAINS(&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;,RIGHT(LEFT(Id,3),1)),4,0)+
+IF(CONTAINS(&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;,RIGHT(LEFT(Id,4),1)),8,0)+
+IF(CONTAINS(&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;,RIGHT(LEFT(Id,5),1)),16,0),
+0,&quot;A&quot;,1,&quot;B&quot;,2,&quot;C&quot;,3,&quot;D&quot;,4,&quot;E&quot;,5,&quot;F&quot;,6,&quot;G&quot;,7,&quot;H&quot;,8,&quot;I&quot;,
+9,&quot;J&quot;,10,&quot;K&quot;,11,&quot;L&quot;,12,&quot;M&quot;,13,&quot;N&quot;,14,&quot;O&quot;,15,&quot;P&quot;,16,&quot;Q&quot;,17,&quot;R&quot;,
+18,&quot;S&quot;,19,&quot;T&quot;,20,&quot;U&quot;,21,&quot;V&quot;,22,&quot;W&quot;,23,&quot;X&quot;,24,&quot;Y&quot;,25,&quot;Z&quot;,26,&quot;0&quot;,
+27,&quot;1&quot;,28,&quot;2&quot;,29,&quot;3&quot;,30,&quot;4&quot;,31,&quot;5&quot;,&quot;0&quot;)&amp;
+&quot;A&quot;&amp;
+CASE(
+IF(CONTAINS(&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;,RIGHT(LEFT(Id,11),1)),1,0)+
+IF(CONTAINS(&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;,RIGHT(LEFT(Id,12),1)),2,0)+
+IF(CONTAINS(&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;,RIGHT(LEFT(Id,13),1)),4,0)+
+IF(CONTAINS(&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;,RIGHT(LEFT(Id,14),1)),8,0)+
+IF(CONTAINS(&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;,RIGHT(LEFT(Id,15),1)),16,0),
+0,&quot;A&quot;,1,&quot;B&quot;,2,&quot;C&quot;,3,&quot;D&quot;,4,&quot;E&quot;,5,&quot;F&quot;,6,&quot;G&quot;,7,&quot;H&quot;,8,&quot;I&quot;,
+9,&quot;J&quot;,10,&quot;K&quot;,11,&quot;L&quot;,12,&quot;M&quot;,13,&quot;N&quot;,14,&quot;O&quot;,15,&quot;P&quot;,16,&quot;Q&quot;,17,&quot;R&quot;,
+18,&quot;S&quot;,19,&quot;T&quot;,20,&quot;U&quot;,21,&quot;V&quot;,22,&quot;W&quot;,23,&quot;X&quot;,24,&quot;Y&quot;,25,&quot;Z&quot;,26,&quot;0&quot;,
+27,&quot;1&quot;,28,&quot;2&quot;,29,&quot;3&quot;,30,&quot;4&quot;,31,&quot;5&quot;,&quot;0&quot;)</formula>
+        <label>ID 18</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Last_Modified_By_Email__c</fullName>
+        <description>Stores the Email address of the current user so that it can be sent with the outbound message for error messages</description>
+        <externalId>false</externalId>
+        <formula>LastModifiedBy.Email</formula>
+        <label>Last Modified By Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Last_Name__c</fullName>
+        <description>Used to create a new person account, or be populated from an existing person of business account as part of the Product Complaint process</description>
+        <externalId>false</externalId>
+        <label>Last Name</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Phone_2__c</fullName>
+        <description>For product complaints, a second phone number for the Addl Contact</description>
+        <externalId>false</externalId>
+        <label>Phone 2</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Phone__c</fullName>
+        <description>Used to create a new person account, or be populated from an existing person of business account as part of the Product Complaint process</description>
+        <externalId>false</externalId>
+        <label>Phone</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Postal_Code__c</fullName>
+        <description>Used to create a new person account, or be populated from an existing person of business account as part of the Product Complaint process</description>
+        <externalId>false</externalId>
+        <label>Postal Code</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Replacement__c</fullName>
+        <description>For Product Complaints, this field holds the value of the Product Replacement field from the related Case so that it can be output to mail merge letters.</description>
+        <externalId>false</externalId>
+        <formula>Case__r.Product_Replacement__c</formula>
+        <label>Product Replacement</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Reason_for_Edit_Prior_Value__c</fullName>
+        <description>Stores the prior value of Reason for Edit for use after the Reason for Edit field is blanked</description>
+        <externalId>false</externalId>
+        <label>Reason for Edit Prior Value</label>
+        <length>10000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Reason_for_Edit__c</fullName>
+        <description>For product complaints, all edits of fields must be give a Reason</description>
+        <externalId>false</externalId>
+        <label>Reason for Edit</label>
+        <length>10000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Record_Type__c</fullName>
+        <description>Record Type Name used in the integration to CATSWeb for product complaints.</description>
+        <externalId>false</externalId>
+        <label>Record Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Salutation__c</fullName>
+        <externalId>false</externalId>
+        <label>Salutation</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Dr.</fullName>
+                    <default>false</default>
+                    <label>Dr.</label>
+                </value>
+                <value>
+                    <fullName>Mr.</fullName>
+                    <default>false</default>
+                    <label>Mr.</label>
+                </value>
+                <value>
+                    <fullName>Mrs.</fullName>
+                    <default>false</default>
+                    <label>Mrs.</label>
+                </value>
+                <value>
+                    <fullName>Ms.</fullName>
+                    <default>false</default>
+                    <label>Ms.</label>
+                </value>
+                <value>
+                    <fullName>Miss</fullName>
+                    <default>false</default>
+                    <label>Miss</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Send_to_CATSWeb__c</fullName>
+        <externalId>false</externalId>
+        <label>Send to CATSWeb</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>true</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>State__c</fullName>
+        <description>Used to create a new person account, or be populated from an existing person of business account as part of the Product Complaint process</description>
+        <externalId>false</externalId>
+        <label>State</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Todays_Date_EN_CA__c</fullName>
+        <externalId>false</externalId>
+        <formula>Case__r.Todays_Date_EN_CA__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Todays Date EN CA</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Todays_Date_EN_UK__c</fullName>
+        <externalId>false</externalId>
+        <formula>Case__r.Todays_Date_UK__c</formula>
+        <label>Todays Date EN UK</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Todays_Date_EN_US__c</fullName>
+        <externalId>false</externalId>
+        <formula>Case__r.Todays_Date_EN_US__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Todays Date EN US</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Todays_Date_FR_CA__c</fullName>
+        <externalId>false</externalId>
+        <formula>Case__r.Todays_Date_FR_CA__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Todays Date FR CA</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Additional Contact</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>{0000}</displayFormat>
+        <label>Additional Contact Number</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Additional Contacts</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Additional_Product_Complaint_Contact</fullName>
+        <active>true</active>
+        <description>Editable Additional Product Complaint Contact</description>
+        <label>Additional Product Complaint Contact</label>
+        <picklistValues>
+            <picklist>Business_Unit__c</picklist>
+            <values>
+                <fullName>CANAD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VCUCM</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Contact_Type__c</picklist>
+            <values>
+                <fullName>Consumer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Distributor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Government Agency</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hospital %2F Surgery Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Practitioner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales Representative</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Country__c</picklist>
+            <values>
+                <fullName>Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>United States of America</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Salutation__c</picklist>
+            <values>
+                <fullName>Dr%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Miss</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mr%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mrs%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ms%2E</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Send_to_CATSWeb__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>EMEA_SU_Additional_Contact</fullName>
+        <active>true</active>
+        <description>Record type for EMEA Surgical Product Complaint Additional Contact</description>
+        <label>EMEA SU Additional Contact</label>
+        <picklistValues>
+            <picklist>Business_Unit__c</picklist>
+            <values>
+                <fullName>AUSTR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BELGM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DMBLV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FRANC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ITACM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NETPR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NORDK</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NORFI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NORNO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>NORSE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>POLND</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PORTU</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SPACM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SWICM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UNKGD</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Contact_Type__c</picklist>
+            <values>
+                <fullName>Consumer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Distributor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Government Agency</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hospital %2F Surgery Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Practitioner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales Representative</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Country__c</picklist>
+            <values>
+                <fullName>Albania</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Andorra</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Armenia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Austria</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Azerbaijan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Belarus</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Belgium</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bosnia and Herzegovina</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bulgaria</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Croatia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cyprus</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Czech Republic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Denmark</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Estonia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Faroe Islands</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Finland</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>France</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Georgia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Germany</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gibraltar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hungary</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Iceland</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ireland</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Italy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kazakstan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kosovo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Latvia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Liechtenstein</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lithuania</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Luxembourg</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Malta</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Moldova%2C Republic of</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Monaco</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Montenegro</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Netherlands</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Norway</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Poland</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Portugal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Romania</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Russian Federation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>San Marino</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Serbia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Slovakia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Slovenia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Spain</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sweden</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Switzerland</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Turkey</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ukraine</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>United Kingdom</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>United States of America</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Salutation__c</picklist>
+            <values>
+                <fullName>Dr%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Miss</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mr%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mrs%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ms%2E</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Send_to_CATSWeb__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>NA_SU_Additional_Contact</fullName>
+        <active>true</active>
+        <description>Record type for NA Surgical Product Complaint Additional Contact</description>
+        <label>NA SU Additional Contact</label>
+        <picklistValues>
+            <picklist>Business_Unit__c</picklist>
+            <values>
+                <fullName>BLUSA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CANAD</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Contact_Type__c</picklist>
+            <values>
+                <fullName>Consumer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Distributor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Government Agency</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hospital %2F Surgery Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Practitioner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales Representative</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Country__c</picklist>
+            <values>
+                <fullName>Canada</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>United States of America</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Salutation__c</picklist>
+            <values>
+                <fullName>Dr%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Miss</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mr%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mrs%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ms%2E</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Send_to_CATSWeb__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <startsWith>Vowel</startsWith>
+    <validationRules>
+        <fullName>ProductComplaintAddlContact_CaseClosed</fullName>
+        <active>true</active>
+        <description>If the related Case is closed, do not allow changes to the connection between the Additional Contact (Account) and the Case.  The Additional Contact itself can still be modified.</description>
+        <errorConditionFormula>and( 
+  $User.Profile__c &lt;&gt; &quot;BL: Integration User&quot;, 
+  IsPickVal(Case__r.Status, &quot;Closed&quot;),
+  NOT(IsNull(Case__r.Complaint_Action_ID__c))
+)</errorConditionFormula>
+        <errorMessage>Once a Product Complaint has been closed, no additional changes may be made. The Product Complaint can be reopened in CATSWeb.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>ProductComplaintAddlContact_PhoneTooLong</fullName>
+        <active>true</active>
+        <description>For Product Complaints, CATSWeb only accepts 30 characters for Phone</description>
+        <errorConditionFormula>LEN( Phone__c ) &gt; 30</errorConditionFormula>
+        <errorDisplayField>Phone__c</errorDisplayField>
+        <errorMessage>This field can only contain 30 characters.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>ProductComplaint_NASU_AddCntct_RFE</fullName>
+        <active>true</active>
+        <description>For Product Complaints, once the related Case has been sent to CW, all edits must have a Reason for Edit.</description>
+        <errorConditionFormula>and (
+  Not($User.Profile__c = &quot;BL: Integration User&quot;),
+  Not(IsNew()),
+  Case__r.CATSWeb_Complaint_Number__c &lt;&gt; &quot;&quot;,
+  Reason_for_Edit_Prior_Value__c = &quot;&quot;
+)</errorConditionFormula>
+        <errorDisplayField>Reason_for_Edit__c</errorDisplayField>
+        <errorMessage>All changes to Additional Contacts require a Reason for Edit once the Product Complaint has been sent to CATSWeb.</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>Generate_Letter</fullName>
+        <availability>online</availability>
+        <description>For Product Complaints, used to generate mail merge letter from Additional Contact</description>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Generate Letter</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>/mail/mmchoose.jsp?id={!Additional_Product_Complaint_Contact__c.Id}&amp;p3=&amp;p7=&amp;retURL=%2F{!Additional_Product_Complaint_Contact__c.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>New_Additional_Contact1</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>New Additional Contact</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/23.0/connection.js&quot;)}
+CaseMapping = &quot;select name,Additional_Contact_Record_Type_Name__c,Case_Note_Record_Type_Name__c,Product_Record_Type_Name__c from Case_Record_Type_Mapping__c&quot;;
+result2=sforce.connection.query(CaseMapping);
+records2 = result2.getArray(&quot;records&quot;);
+//alert(&apos;Result is ----------&gt;&apos; +records2);
+
+qurystr = &quot;select id,name from RecordType where id = &apos;&quot; +&apos;{!Case.RecordTypeId}&apos; +&quot;&apos; limit 1&quot;;
+//alert(&apos;Result is -----------&gt;&apos; +qurystr );
+result=sforce.connection.query(qurystr);
+records = result.getArray(&quot;records&quot;);
+//alert(&apos;Result1 is -----------&gt;&apos; +records[0].Name);
+qurystr1 = &quot;select id,name from RecordType where Name=&quot;;
+for(i=0; i&lt;records2.length; i++)
+{
+//alert(&apos;inside for&apos;  +records2[i].Name);
+if(records[0].Name ==records2[i].Name)
+ {
+  //   alert(&apos;inside if-----&gt;&apos; +records2[i].Name);
+     qurystr1 +=&quot;&apos;&quot; +records2[i].Additional_Contact_Record_Type_Name__c+&quot;&apos;&quot;;
+  }
+}
+qurystr1 += &quot; and sObjectType = &apos;Additional_Product_Complaint_Contact__c&apos; limit 1&quot;;
+//alert(&apos;Second query is --------&gt;&apos; +qurystr1 );
+result1=sforce.connection.query(qurystr1);
+records1 = result1.getArray(&quot;records&quot;);
+//alert(&apos;Second Result is --------&gt;&apos; +records1 );
+if(records1.length&gt;0){
+window.parent.location.href=&quot;/{!$Setup.CATSWeb_Resources__c.Additional_Contact_Object_Id__c}/e?CF{!$Setup.CATSWeb_Resources__c.Addl_Contact_Case_Number_Field_ID__c}={!Case.CaseNumber}&amp;{!$Setup.CATSWeb_Resources__c.Addl_Contact_Case_Number_Field_ID__c}_lkid={!Case.Id}&amp;{!$Setup.CATSWeb_Resources__c.Addl_Contact_Business_Unit_Field_Id__c}={!Case.Business_Unit__c}&amp;RecordType=&quot;+records1[0].Id +&quot;&amp;retURL={!Case.Id}&amp;saveURL={!Case.Id}&quot;;
+}else{
+window.parent.location.href=&quot;/{!$Setup.CATSWeb_Resources__c.Additional_Contact_Object_Id__c}/e?CF{!$Setup.CATSWeb_Resources__c.Addl_Contact_Case_Number_Field_ID__c}={!Case.CaseNumber}&amp;{!$Setup.CATSWeb_Resources__c.Addl_Contact_Case_Number_Field_ID__c}_lkid={!Case.Id}&amp;{!$Setup.CATSWeb_Resources__c.Addl_Contact_Business_Unit_Field_Id__c}={!Case.Business_Unit__c}&amp;retURL={!Case.Id}&amp;saveURL={!Case.Id}&quot;;
+}</url>
+    </webLinks>
+</CustomObject>

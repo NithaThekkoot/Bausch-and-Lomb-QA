@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>INDSU object to collect Primary sales data. This is used to integrate data from ERP.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>Area_CBU__c</fullName>
+        <externalId>false</externalId>
+        <formula>Sales_Executive_Name__r.APAC_Area__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Area/CBU</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Country__c</fullName>
+        <externalId>false</externalId>
+        <formula>Sales_Executive_Name__r.APAC_Country__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Country</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Current_YR_End_Date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Current Year End Date</inlineHelpText>
+        <label>Current YR End Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Current_YR_Start_Date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Current Year Start Date</inlineHelpText>
+        <label>Current YR Start Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>DB_Id_at_ERP__c</fullName>
+        <externalId>false</externalId>
+        <label>DB Id at ERP</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DB_Name__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>DB Name</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Primary Sales</relationshipLabel>
+        <relationshipName>Primary_Sales</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>DB_Profile__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>INDSU reference field for account profile object.</description>
+        <externalId>false</externalId>
+        <label>DB Profile</label>
+        <referenceTo>Account_Profile__c</referenceTo>
+        <relationshipLabel>Primary Sales</relationshipLabel>
+        <relationshipName>Primary_Sales</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>FP_Date__c</fullName>
+        <description>Fiscal Period is generated from year Month data from Oracle and day hard coded as 10. this formula feild will used for all MTD,YTD reporting.</description>
+        <externalId>false</externalId>
+        <formula>DATE( Year__c ,  VALUE(Month__c) ,10)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>FP Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>LY_CM_Revenue__c</fullName>
+        <externalId>false</externalId>
+        <formula>LY_Revenue_USD__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>LY CM Revenue</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LY_Revenue_USD__c</fullName>
+        <externalId>false</externalId>
+        <label>LY Revenue - USD</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>LY_Revenue__c</fullName>
+        <externalId>false</externalId>
+        <label>LY Revenue</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Last_YR_End_Date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Last Year End Date</inlineHelpText>
+        <label>Last YR End Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Last_YR_Start_Date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Last Year Start Date</inlineHelpText>
+        <label>Last YR Start Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Month__c</fullName>
+        <externalId>false</externalId>
+        <label>CURR Month</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Record_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Record Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Region__c</fullName>
+        <externalId>false</externalId>
+        <formula>Sales_Executive_Name__r.APAC_Region__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Region</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Revenue_USD__c</fullName>
+        <externalId>false</externalId>
+        <label>Revenue – USD</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Revenue__c</fullName>
+        <externalId>false</externalId>
+        <label>Revenue</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sales_Executive_Name__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Sales Executive Name</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Primary_Sales</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>TY_CM_Revenue__c</fullName>
+        <externalId>false</externalId>
+        <formula>Revenue_USD__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>TY CM Revenue</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>User_Id_at_ERP__c</fullName>
+        <externalId>false</externalId>
+        <label>User Id at ERP</label>
+        <length>80</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>User_Role__c</fullName>
+        <externalId>false</externalId>
+        <formula>Sales_Executive_Name__r.UserRole.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>User Role</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Year__c</fullName>
+        <externalId>false</externalId>
+        <label>CURR Year</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>external_ID__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>true</externalId>
+        <label>Legacy Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <label>Primary Sales</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Year__c</columns>
+        <columns>Month__c</columns>
+        <columns>Sales_Executive_Name__c</columns>
+        <columns>Region__c</columns>
+        <columns>Revenue_USD__c</columns>
+        <columns>LY_Revenue_USD__c</columns>
+        <columns>OWNER.ALIAS</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>All1</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>P-{00000}</displayFormat>
+        <label>Primary Sales</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Primary Sales</pluralLabel>
+    <recordTypes>
+        <fullName>APACSU_Primary_Sale</fullName>
+        <active>true</active>
+        <description>Primary sale delta data in ERP will be integrated through BIZ Talk to salesforce.com</description>
+        <label>APACSU Primary Sale</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>INDSU_Primary_Sale</fullName>
+        <active>true</active>
+        <label>INDSU Primary Sale</label>
+    </recordTypes>
+    <searchLayouts>
+        <lookupDialogsAdditionalFields>Sales_Executive_Name__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Month__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Year__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Revenue_USD__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Sales_Executive_Name__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Month__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Year__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Revenue_USD__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Sales_Executive_Name__c</searchFilterFields>
+        <searchFilterFields>Month__c</searchFilterFields>
+        <searchFilterFields>Year__c</searchFilterFields>
+        <searchFilterFields>Revenue_USD__c</searchFilterFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

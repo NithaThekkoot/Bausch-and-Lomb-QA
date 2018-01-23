@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApexPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>18.0</apiVersion>
+    <availableInTouch>false</availableInTouch>
+    <confirmationTokenRequired>false</confirmationTokenRequired>
+    <description>INDSU Page for system administrator to schedule Apex Jobs to populate the Call Summary and Effectiveness Summary objects</description>
+    <label>INDSU Apex Scheduler</label>
+</ApexPage>

@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>INDSU object to capture the Effectiveness Summary Information</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>ABC_Classification__c</fullName>
+        <description>INDSU field to capture the store classification of the account the visits made to</description>
+        <externalId>false</externalId>
+        <label>Segmentation</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Academic Medical Centers</fullName>
+                    <default>false</default>
+                    <label>Academic Medical Centers</label>
+                </value>
+                <value>
+                    <fullName>Movers and Shakers</fullName>
+                    <default>false</default>
+                    <label>Movers and Shakers</label>
+                </value>
+                <value>
+                    <fullName>Stars</fullName>
+                    <default>false</default>
+                    <label>Stars</label>
+                </value>
+                <value>
+                    <fullName>Rising Stars</fullName>
+                    <default>false</default>
+                    <label>Rising Stars</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Actual_Calls__c</fullName>
+        <description>INDSU field to capture the no. of visits made on the day</description>
+        <externalId>false</externalId>
+        <label>Actual Calls</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Area__c</fullName>
+        <description>INDSU field to capture the area the visits made to</description>
+        <externalId>false</externalId>
+        <label>Area</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Country__c</fullName>
+        <description>INDSU field to capture the country the visits made to</description>
+        <externalId>false</externalId>
+        <label>Country</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Date__c</fullName>
+        <description>INDSU field to capture the date the visits were made on</description>
+        <externalId>false</externalId>
+        <label>Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>OT_Hours__c</fullName>
+        <externalId>false</externalId>
+        <label>OT Hours</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Objective_Met__c</fullName>
+        <description>INDSU field to capture the no. of stores where objective was met on the day</description>
+        <externalId>false</externalId>
+        <label>Objective Met</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Profile__c</fullName>
+        <description>INDSU field to capture the type of visits.</description>
+        <externalId>false</externalId>
+        <label>Profile</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Sales</fullName>
+                    <default>false</default>
+                    <label>Sales</label>
+                </value>
+                <value>
+                    <fullName>Service</fullName>
+                    <default>false</default>
+                    <label>Service</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Region__c</fullName>
+        <description>INDSU field to capture the region the visits made to</description>
+        <externalId>false</externalId>
+        <label>Region</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Unique__c</fullName>
+        <description>INDSU field to uniquely identify the record. The value will be a combination of Country, Region, Area and Owner.</description>
+        <externalId>true</externalId>
+        <label>Unique</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Effectiveness Summary</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>EF{00000000}</displayFormat>
+        <label>Effectiveness Summary Number</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Effectiveness Summary</pluralLabel>
+    <recordTypes>
+        <fullName>APACSU_Effectiveness_Summary</fullName>
+        <active>true</active>
+        <description>APACSU record type to capture effective summary information for report generation</description>
+        <label>APACSU Effectiveness Summary</label>
+        <picklistValues>
+            <picklist>ABC_Classification__c</picklist>
+            <values>
+                <fullName>Academic Medical Centers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Movers and Shakers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rising Stars</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stars</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Profile__c</picklist>
+            <values>
+                <fullName>Sales</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Service</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Effectiveness_Summary</fullName>
+        <active>true</active>
+        <description>INDSU record type to capture effective summary information for report generation</description>
+        <label>Effectiveness Summary</label>
+        <picklistValues>
+            <picklist>ABC_Classification__c</picklist>
+            <values>
+                <fullName>Academic Medical Centers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Movers and Shakers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rising Stars</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stars</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Profile__c</picklist>
+            <values>
+                <fullName>Sales</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Service</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

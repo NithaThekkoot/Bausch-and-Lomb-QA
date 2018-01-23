@@ -1,0 +1,20 @@
+.THIS .clean svg{
+    fill:rgb(255,255,255,0);
+}
+.THIS .spinnerClass{
+    top: 126%!important;
+    left: 91%!important;
+}
+.THIS .spinner{
+   	width: 24px;
+    position: absolute;
+    left: 3%;
+    top: 29%;
+}
+.THIS .error{
+   	color:red
+}
+.THIS .required , .THIS .required-select .slds-select_container{
+    border-left: solid red !important;
+    border-radius: 4px;
+}

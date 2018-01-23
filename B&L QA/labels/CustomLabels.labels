@@ -1,0 +1,1126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>AM</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AM</shortDescription>
+        <value>AM</value>
+    </labels>
+    <labels>
+        <fullName>APACSU_China_Data_Owner</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>APACSU China Data Owner</shortDescription>
+        <value>dataing_su_own_ch@bausch.com</value>
+    </labels>
+    <labels>
+        <fullName>APACSU_China_Sales_Manager</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>APACSU China Sales Manager</shortDescription>
+        <value>APACSU China Sales Manager</value>
+    </labels>
+    <labels>
+        <fullName>APACSU_Hong_Kong_Data_Owner</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>APACSU Hong Kong Data Owner</shortDescription>
+        <value>dataing_su_own_hkg@bausch.com</value>
+    </labels>
+    <labels>
+        <fullName>APACSU_Korea_Data_Owner</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>APACSU Korea Data Owner</shortDescription>
+        <value>dataing_su_own_kr@bausch.com</value>
+    </labels>
+    <labels>
+        <fullName>APACSU_Malaysia_Data_Owner</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>APACSU Malaysia Data Owner</shortDescription>
+        <value>dataing_su_own_mys@bausch.com.qa</value>
+    </labels>
+    <labels>
+        <fullName>APACSU_Manager_Is_Not_Available</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>APACSU_Manager_Is_Not_Available</shortDescription>
+        <value>Manager is not assigned for approval. You can&apos;t schedule this call plan.</value>
+    </labels>
+    <labels>
+        <fullName>APACSU_Singapore_Data_Owner</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>APACSU Singapore Data Owner</shortDescription>
+        <value>dataing_su_own_sin@bausch.com.qa</value>
+    </labels>
+    <labels>
+        <fullName>APAC_SU_Coaching_Report_Date1_session_should_not_be_empty</fullName>
+        <categories>APAC SU Coaching Report Date1 session should not be empty</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>APAC SU Coaching Report Date1 session should not be empty</shortDescription>
+        <value>Date1 session should not be empty</value>
+    </labels>
+    <labels>
+        <fullName>APAC_SU_Coaching_Report_Date1_should_not_be_empty</fullName>
+        <categories>APAC SU Coaching Report Date1 should not be empty</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>APAC SU Coaching Report Date1 should not be empty</shortDescription>
+        <value>Date1 should not be empty</value>
+    </labels>
+    <labels>
+        <fullName>APAC_SU_Coaching_Report_Date_2_Greater_Than_Date_1</fullName>
+        <categories>APAC SU Coaching Report Date 2 Greater Than Date1</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>APAC SU Coaching Report Date 2 Greater Than Date1</shortDescription>
+        <value>Date 2 should be greater than Date 1.</value>
+    </labels>
+    <labels>
+        <fullName>APAC_SU_Coaching_Report_No_Future_Date</fullName>
+        <categories>APAC SU Coaching Report No Future Date</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>APAC SU Coaching Report No Future Date</shortDescription>
+        <value>Coaching report cannot be prepared for future date.</value>
+    </labels>
+    <labels>
+        <fullName>APAC_SU_Coaching_Report_Reporting</fullName>
+        <categories>APAC SU Coaching Report Reporting</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>APAC SU Coaching Report Reporting</shortDescription>
+        <value>Selected sales rep is not reporting to you.</value>
+    </labels>
+    <labels>
+        <fullName>APAC_SU_Coaching_Report_Session_Must_Be_Valid</fullName>
+        <categories>APAC SU Coaching Report Session Must Be Valid</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>APAC SU Coaching Report Session Must Be Valid</shortDescription>
+        <value>Session of date 2 should be greater than session of date 1.</value>
+    </labels>
+    <labels>
+        <fullName>APASU_ANZ_Data_Owner</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>APASU_ANZ_Data_Owner</shortDescription>
+        <value>dataing_su_own_anz@bausch.com</value>
+    </labels>
+    <labels>
+        <fullName>APASU_Account_Profile_Not_Available</fullName>
+        <categories>APASU Account Profile Not Available</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>APASU Account Profile Not Available</shortDescription>
+        <value>Account Profile information not available for the given user.</value>
+    </labels>
+    <labels>
+        <fullName>APASU_Call_Plan_Saved</fullName>
+        <categories>APASU Call Plan Saved</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>APASU Call Plan Saved</shortDescription>
+        <value>Cannot Save: call plan has already been saved.</value>
+    </labels>
+    <labels>
+        <fullName>APASU_Data_Integration_User_Oracle</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>APAC SU data integation user for the account integrated from Oracle</shortDescription>
+        <value>dataing_su_oracle@bausch.com</value>
+    </labels>
+    <labels>
+        <fullName>APASU_India_Data_Owner</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>APASU_India_Data_Owner</shortDescription>
+        <value>dataing_su_own_in@bausch.com</value>
+    </labels>
+    <labels>
+        <fullName>APASU_Manager_Is_Not_Available</fullName>
+        <categories>APASU Manager Is Not Available</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>APASU_Manager_Is_Not_Available</shortDescription>
+        <value>Manager is not assigned for approval. You can&apos;t schedule this call plan.</value>
+    </labels>
+    <labels>
+        <fullName>APASU_No_Call_Plan_Exists</fullName>
+        <categories>APAVC No Call Plan Exists</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>APASU No Call Plan Exists</shortDescription>
+        <value>No call plan exists for the given Id.</value>
+    </labels>
+    <labels>
+        <fullName>APASU_Rep_Not_Part_Of_Account_Team</fullName>
+        <categories>APASU Rep Not Part Of Account Team</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>APASU Rep Not Part Of Account Team</shortDescription>
+        <value>Given Sales Executive is not part of any Account teams.</value>
+    </labels>
+    <labels>
+        <fullName>Approve_Button</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CHNSU Approve Button</shortDescription>
+        <value>Approve</value>
+    </labels>
+    <labels>
+        <fullName>Bausch_Sfdc_Consignment_Prod_Group</fullName>
+        <categories>URL</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Bausch Sfdc Consignment Prod Group</shortDescription>
+        <value>https://blciprod.bausch.com/sfdcConsignmentProdGroup</value>
+    </labels>
+    <labels>
+        <fullName>Blcipprod_Bausch</fullName>
+        <categories>URL</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Blcipprod Bausch</shortDescription>
+        <value>https://blciprod.bausch.com/sfdcOutMessage</value>
+    </labels>
+    <labels>
+        <fullName>Blcipprod_Bausch_sfdc_Consignment</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Blcipprod Bausch sfdc Consignment</shortDescription>
+        <value>https://blciprod.bausch.com/sfdcConsignment</value>
+    </labels>
+    <labels>
+        <fullName>CHNSU_Data_Integration_User_Direct_Account</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CHNSU Data Integration User Direct Account</shortDescription>
+        <value>dtintg_dir_chsu@bausch.com</value>
+    </labels>
+    <labels>
+        <fullName>CHNSU_Data_Integration_User_Indirect_Account</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CHNSU Data Integration User Indirect Account</shortDescription>
+        <value>dtintg_indir_chsu@bausch.com</value>
+    </labels>
+    <labels>
+        <fullName>CHNSU_Other_Call_Activity_Error_Msg_1</fullName>
+        <categories>CHNSU Error Msg</categories>
+        <language>zh_CN</language>
+        <protected>false</protected>
+        <shortDescription>CHNSU Other Call Activity Error Msg 1</shortDescription>
+        <value>You can&apos;t have more than one activity in half a day. There&apos;s another Activity</value>
+    </labels>
+    <labels>
+        <fullName>CHNSU_Other_Call_Activity_Error_Msg_2</fullName>
+        <categories>CHNSU Error Msg</categories>
+        <language>zh_CN</language>
+        <protected>false</protected>
+        <shortDescription>CHNSU_Other_Call_Activity_Error_Msg_2</shortDescription>
+        <value>from</value>
+    </labels>
+    <labels>
+        <fullName>CHNSU_Other_Call_Activity_Error_Msg_3</fullName>
+        <categories>CHNSU Error Msg</categories>
+        <language>zh_CN</language>
+        <protected>false</protected>
+        <shortDescription>CHNSU_Other_Call_Activity_Error_Msg_3</shortDescription>
+        <value>to</value>
+    </labels>
+    <labels>
+        <fullName>CHNSU_Sales_Manager</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CHNSU Sales Manager</shortDescription>
+        <value>APACSU Sales Manager</value>
+    </labels>
+    <labels>
+        <fullName>Call_Obj_Mandatory</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CHNSU Call Obj Mandatory</shortDescription>
+        <value>Please select all the Call Objectives.</value>
+    </labels>
+    <labels>
+        <fullName>Call_Objective</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CHNSU Call Objective</shortDescription>
+        <value>Call Objective</value>
+    </labels>
+    <labels>
+        <fullName>Call_Plan_Details</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CHNSU Call Plan Details</shortDescription>
+        <value>Call Plan Details</value>
+    </labels>
+    <labels>
+        <fullName>Call_Plan_Error</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Call Plan Error</shortDescription>
+        <value>Doctors does not exist in selected Area/Hospital</value>
+    </labels>
+    <labels>
+        <fullName>Call_Plan_Note</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Call Plan Note</shortDescription>
+        <value>Note - Please hit the &apos;Clear All&apos; button once, before performing any kind of save action to see the all data.</value>
+    </labels>
+    <labels>
+        <fullName>Call_Plan_Number</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Call Plan Number</shortDescription>
+        <value>Call Plan Number.</value>
+    </labels>
+    <labels>
+        <fullName>Call_Plan_Title</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CHNSU Call Plan Title</shortDescription>
+        <value>Call Plan</value>
+    </labels>
+    <labels>
+        <fullName>Call_Submitted_Already</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CHNSU call Submitted Already</shortDescription>
+        <value>Call has been submitted already.</value>
+    </labels>
+    <labels>
+        <fullName>Call_plan_lable_for_Friday</fullName>
+        <categories>Call Plan</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Call plan lable for Friday</shortDescription>
+        <value>F</value>
+    </labels>
+    <labels>
+        <fullName>Call_plan_lable_for_Monday</fullName>
+        <categories>Call Plan</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Call plan lable for Monday</shortDescription>
+        <value>M</value>
+    </labels>
+    <labels>
+        <fullName>Call_plan_lable_for_Saturday</fullName>
+        <categories>Call Plan</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Call plan lable for Saturday</shortDescription>
+        <value>S</value>
+    </labels>
+    <labels>
+        <fullName>Call_plan_lable_for_Sunday</fullName>
+        <categories>Call Plan</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Call plan lable for Sunday</shortDescription>
+        <value>S</value>
+    </labels>
+    <labels>
+        <fullName>Call_plan_lable_for_Thursday</fullName>
+        <categories>Call Plan</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Call plan lable for Thursday</shortDescription>
+        <value>T</value>
+    </labels>
+    <labels>
+        <fullName>Call_plan_lable_for_Tuesday</fullName>
+        <categories>Call Plan</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Call plan lable for Tuesday</shortDescription>
+        <value>T</value>
+    </labels>
+    <labels>
+        <fullName>Call_plan_lable_for_Wednesday</fullName>
+        <categories>Call Plan</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Call plan lable for Wednesday</shortDescription>
+        <value>W</value>
+    </labels>
+    <labels>
+        <fullName>Calls_Planned</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CHNSU Calls Planned</shortDescription>
+        <value>Calls Planned</value>
+    </labels>
+    <labels>
+        <fullName>Calls_planned_for_week</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CHNSU Calls planned for week</shortDescription>
+        <value>Calls planned for week</value>
+    </labels>
+    <labels>
+        <fullName>Cancel_Button</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CHNSU Cancel Button</shortDescription>
+        <value>Cancel</value>
+    </labels>
+    <labels>
+        <fullName>Class_A_Calls_Planned</fullName>
+        <categories>Call Plan</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Class A Calls Planned</shortDescription>
+        <value>Class A Calls Planned</value>
+    </labels>
+    <labels>
+        <fullName>Class_A_Stores_Date</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Class &apos;A&apos; Stores/Date</shortDescription>
+        <value>Class &apos;A&apos; Stores/Date</value>
+    </labels>
+    <labels>
+        <fullName>Class_B_Calls_Planned</fullName>
+        <categories>Call Plan</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Class B Calls Planned</shortDescription>
+        <value>Class B Calls Planned</value>
+    </labels>
+    <labels>
+        <fullName>Class_B_Stores_Date</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Class &apos;B&apos; Stores/Date</shortDescription>
+        <value>Class &apos;B&apos; Stores/Date</value>
+    </labels>
+    <labels>
+        <fullName>Class_C_Calls_Planned</fullName>
+        <categories>Call Plan</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Class C Calls Planned</shortDescription>
+        <value>Class C Calls Planned</value>
+    </labels>
+    <labels>
+        <fullName>Class_C_Stores_Date</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Class &apos;C&apos; Stores/Date</shortDescription>
+        <value>Class &apos;C&apos; Stores/Date.</value>
+    </labels>
+    <labels>
+        <fullName>Class_D_Calls_Planned</fullName>
+        <categories>Call Plan</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Class D Calls Planned</shortDescription>
+        <value>Class D Calls Planned</value>
+    </labels>
+    <labels>
+        <fullName>Class_D_Stores_Date</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Class &apos;D&apos; Stores/Date</shortDescription>
+        <value>Class &apos;D&apos; Stores/Date</value>
+    </labels>
+    <labels>
+        <fullName>Class_N_Calls_Planned</fullName>
+        <categories>Call Plan</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Class N Calls Planned</shortDescription>
+        <value>Class N Calls Planned</value>
+    </labels>
+    <labels>
+        <fullName>Class_N_Stores_Date</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Class &apos;N&apos; Stores/Date</shortDescription>
+        <value>Class &apos;N&apos; Stores/Date</value>
+    </labels>
+    <labels>
+        <fullName>Class_Z_Calls_Planned</fullName>
+        <categories>Call Plan</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Class Z Calls Planned</shortDescription>
+        <value>Class Z Calls Planned</value>
+    </labels>
+    <labels>
+        <fullName>Class_Z_Stores_Date</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Class &apos;Z&apos; Stores/Date</shortDescription>
+        <value>Class &apos;Z&apos; Stores/Date</value>
+    </labels>
+    <labels>
+        <fullName>Country_SFE_Custom_Report</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Country SFE Custom Report</shortDescription>
+        <value>INDIA</value>
+    </labels>
+    <labels>
+        <fullName>Date</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CHNSU Date</shortDescription>
+        <value>Date</value>
+    </labels>
+    <labels>
+        <fullName>Day</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CHNSU Day</shortDescription>
+        <value>Day</value>
+    </labels>
+    <labels>
+        <fullName>DaystoComplete</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Number of Days to Complete a Visit</shortDescription>
+        <value>0</value>
+    </labels>
+    <labels>
+        <fullName>Details_Button</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CHNSU Details Button</shortDescription>
+        <value>Details</value>
+    </labels>
+    <labels>
+        <fullName>Displaying_Contents</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Displaying Contents</shortDescription>
+        <value>Displaying Contents</value>
+    </labels>
+    <labels>
+        <fullName>Duplicate_CallPlan_Error</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CHNSU Duplicate CallPlan Error</shortDescription>
+        <value>Call Plan for the selected week already exists, please select another week</value>
+    </labels>
+    <labels>
+        <fullName>EMEA_Service_Case_Record_Type</fullName>
+        <categories>Case Record Type</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EMEA Service Case Record Type</shortDescription>
+        <value>01280000000YLsB</value>
+    </labels>
+    <labels>
+        <fullName>Edit</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Edit</shortDescription>
+        <value>Edit</value>
+    </labels>
+    <labels>
+        <fullName>EmailCC</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EmailCC</shortDescription>
+        <value>Santosh.Bhilegaonkar@bausch.com</value>
+    </labels>
+    <labels>
+        <fullName>EmailCCDaily</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EmailCCDaily</shortDescription>
+        <value>Santosh.Bhilegaonkar@bausch.com</value>
+    </labels>
+    <labels>
+        <fullName>EmailCCDaily_AES</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EmailCCDaily_AES</shortDescription>
+        <value>Santosh.Bhilegaonkar@bausch.com</value>
+    </labels>
+    <labels>
+        <fullName>EmailCC_AES</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EmailCC_AES</shortDescription>
+        <value>Santosh.Bhilegaonkar@bausch.com</value>
+    </labels>
+    <labels>
+        <fullName>EmailSenderName</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EmailSenderName</shortDescription>
+        <value>Santosh Bhilegaonkar</value>
+    </labels>
+    <labels>
+        <fullName>EmailTo</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EmailTo</shortDescription>
+        <value>Santosh.Bhilegaonkar@bausch.com,Monika.Kane@bausch.com,tarun.adhikari@bausch.com,j.biswas@bausch.com,raghvendra.deepak@bausch.com,shakeel.qureshi@bausch.com,murali.rao@bausch.com,manishankar.ratnu@bausch.com,b.sathish@bausch.com,anurag.sharma@bausch.com,akhilprakash.tyagi@bausch.com,sanjay.bhutani@bausch.com,raghunath.singh@bausch.com,ravi.mittal@bausch.com,vimal.adhia@bausch.com,amit.kulkarni@bausch.com,rahuljagannath.jadhav@bausch.com,mohit.kumar@bausch.com,madhup@bausch.com,iqramul.haque@bausch.com,tanvir.singh@bausch.com,premal.pandya@bausch.com,jyoti.narang@bausch.com</value>
+    </labels>
+    <labels>
+        <fullName>EmailToCCMonthlyAvg</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EmailToCCMonthlyAvg</shortDescription>
+        <value>Santosh.Bhilegaonkar@bausch.com</value>
+    </labels>
+    <labels>
+        <fullName>EmailToCCMonthlyAvg_AES</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EmailToCCMonthlyAvg_AES</shortDescription>
+        <value>Santosh.Bhilegaonkar@bausch.com</value>
+    </labels>
+    <labels>
+        <fullName>EmailToDaily</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EmailToDaily</shortDescription>
+        <value>Santosh.Bhilegaonkar@bausch.com,tarun.adhikari@bausch.com,j.biswas@bausch.com,raghvendra.deepak@bausch.com,shakeel.qureshi@bausch.com,murali.rao@bausch.com,manishankar.ratnu@bausch.com,b.sathish@bausch.com,anurag.sharma@bausch.com,raghunath.singh@bausch.com,ravi.mittal@bausch.com,vimal.adhia@bausch.com,amit.kulkarni@bausch.com,rahuljagannath.jadhav@bausch.com,mohit.kumar@bausch.com,madhup@bausch.com,iqramul.haque@bausch.com,tanvir.singh@bausch.com,premal.pandya@bausch.com,jyoti.narang@bausch.com</value>
+    </labels>
+    <labels>
+        <fullName>EmailToDaily_AES</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EmailToDaily_AES</shortDescription>
+        <value>Santosh.Bhilegaonkar@bausch.com,vipul.nayyar@bausch.com,sanjay.bhutani@bausch.com,monika.kane@bausch.com,premal.pandya@bausch.com</value>
+    </labels>
+    <labels>
+        <fullName>EmailToMonthlyAvg</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EmailToMonthlyAvg</shortDescription>
+        <value>Santosh.Bhilegaonkar@bausch.com,Monika.Kane@bausch.com,tarun.adhikari@bausch.com,j.biswas@bausch.com,raghvendra.deepak@bausch.com,shakeel.qureshi@bausch.com,murali.rao@bausch.com,manishankar.ratnu@bausch.com,b.sathish@bausch.com,anurag.sharma@bausch.com,akhilprakash.tyagi@bausch.com,sanjay.bhutani@bausch.com,raghunath.singh@bausch.com,ravi.mittal@bausch.com,vimal.adhia@bausch.com,amit.kulkarni@bausch.com,rahuljagannath.jadhav@bausch.com,mohit.kumar@bausch.com,madhup@bausch.com,iqramul.haque@bausch.com,tanvir.singh@bausch.com,premal.pandya@bausch.com,jyoti.narang@bausch.com</value>
+    </labels>
+    <labels>
+        <fullName>EmailToMonthlyAvg_AES</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EmailToMonthlyAvg_AES</shortDescription>
+        <value>Santosh.Bhilegaonkar@bausch.com,vipul.nayyar@bausch.com,sanjay.bhutani@bausch.com,monika.kane@bausch.com,premal.pandya@bausch.com</value>
+    </labels>
+    <labels>
+        <fullName>EmailTo_AES</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EmailTo_AES</shortDescription>
+        <value>Santosh.Bhilegaonkar@bausch.com,vipul.nayyar@bausch.com,premal.pandya@bausch.com,sanjay.bhutani@bausch.com,monika.kane@bausch.com</value>
+    </labels>
+    <labels>
+        <fullName>Email_INDAES_Dashborad</fullName>
+        <categories>Users to be send India Aesthetics Dashboard</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Email_INDAES_Dashboard</shortDescription>
+        <value>Santosh.Bhilegaonkar@bausch.com,vipul.nayyar@bausch.com,premal.pandya@bausch.com,sanjay.bhutani@bausch.com,monika.kane@bausch.com</value>
+    </labels>
+    <labels>
+        <fullName>Email_INDSU_Dashborad</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Email_INDSU_Dashborad</shortDescription>
+        <value>Santosh.Bhilegaonkar@bausch.com,sanjay.bhutani@bausch.com,tanvir.singh@bausch.com,premal.pandya@bausch.com,jyoti.narang@bausch.com</value>
+    </labels>
+    <labels>
+        <fullName>Example_Org</fullName>
+        <categories>URL</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Example Org</shortDescription>
+        <value>http://www.example.org/</value>
+    </labels>
+    <labels>
+        <fullName>Executive_Comments</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Executive Comments</shortDescription>
+        <value>Executive Comments</value>
+    </labels>
+    <labels>
+        <fullName>Friday</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CHNSU Friday</shortDescription>
+        <value>F</value>
+    </labels>
+    <labels>
+        <fullName>Hospital</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CHNSU Hospital</shortDescription>
+        <value>Hospital</value>
+    </labels>
+    <labels>
+        <fullName>INDAESEmailSenderName</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>INDAESEmailSenderName</shortDescription>
+        <value>Suresh Sharma</value>
+    </labels>
+    <labels>
+        <fullName>INDAES_OTHrs_Dashboard_Url</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>INDAES_OTHrs_Dashboard_Url</shortDescription>
+        <value>https://na8.salesforce.com/01ZC0000001Omit</value>
+    </labels>
+    <labels>
+        <fullName>INDSU_Data_Integration_User_Direct_Account</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>INDSU Data Integration User Direct Account</shortDescription>
+        <value>dataing_su_dir_in@bausch.com</value>
+    </labels>
+    <labels>
+        <fullName>INDSU_Data_Integration_User_Indirect_Account</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>INDSU Data Integration User Indirect Account</shortDescription>
+        <value>dataing_su_ind_in@bausch.com</value>
+    </labels>
+    <labels>
+        <fullName>INDSU_Other_Call_Activity_Error_Msg_1</fullName>
+        <categories>INDSU Error Msg</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>INDSU Other Call Activity Error Msg 1</shortDescription>
+        <value>You can&apos;t have more than one activity in half a day. There&apos;s another Activity</value>
+    </labels>
+    <labels>
+        <fullName>INDSU_Other_Call_Activity_Error_Msg_2</fullName>
+        <categories>INDSU Error Msg</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>INDSU Other Call Activity Error Msg 2</shortDescription>
+        <value>from</value>
+    </labels>
+    <labels>
+        <fullName>INDSU_Other_Call_Activity_Error_Msg_3</fullName>
+        <categories>INDSU Error Msg</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>INDSU Other Call Activity Error Msg 3</shortDescription>
+        <value>to</value>
+    </labels>
+    <labels>
+        <fullName>IND_OTHrs_Dashboard_Url</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>IND_OTHrs_Dashboard_Url</shortDescription>
+        <value>https://na8.salesforce.com/01ZC0000000zbGI</value>
+    </labels>
+    <labels>
+        <fullName>Joint_Call</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CHNSU Joint Call</shortDescription>
+        <value>Joint Call</value>
+    </labels>
+    <labels>
+        <fullName>KOR_SOLTA_Label</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>KOR SOLTA Label</shortDescription>
+        <value>KOR</value>
+    </labels>
+    <labels>
+        <fullName>KOR_SOLTA_Select_Week</fullName>
+        <categories>KOR SOLTA  Select Week</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>KOR SOLTA Select Week</shortDescription>
+        <value>Please select week.</value>
+    </labels>
+    <labels>
+        <fullName>LAD_Data_Integration_Owner_Brazil</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>LAD Data Integration Owner Brazil</shortDescription>
+        <value>dataing_su_own_brazil@bausch.com</value>
+    </labels>
+    <labels>
+        <fullName>Last_Visit_Date</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Last Visit Date</shortDescription>
+        <value>Store Info</value>
+    </labels>
+    <labels>
+        <fullName>MTD_Calls</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>APACSU MTD Calls</shortDescription>
+        <value>MTD Calls</value>
+    </labels>
+    <labels>
+        <fullName>Manager_Comments</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Manager Comments</shortDescription>
+        <value>Manager Comments</value>
+    </labels>
+    <labels>
+        <fullName>ManagersNotifyDays</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Days upto which managers should be notify</shortDescription>
+        <value>-4</value>
+    </labels>
+    <labels>
+        <fullName>ManagersNotifyDaysAES</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ManagersNotifyDaysAES</shortDescription>
+        <value>-4</value>
+    </labels>
+    <labels>
+        <fullName>ManagersToNotify</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Managers to Notify of Store Visits which cannot be completed</shortDescription>
+        <value>SalesForce.Support@bausch.com</value>
+    </labels>
+    <labels>
+        <fullName>ManagersToNotifyAES</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ManagersToNotifyAES</shortDescription>
+        <value>vipul.nayyar@bausch.com</value>
+    </labels>
+    <labels>
+        <fullName>Monday</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CHNSU Monday</shortDescription>
+        <value>M</value>
+    </labels>
+    <labels>
+        <fullName>Month</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Month</shortDescription>
+        <value>Month</value>
+    </labels>
+    <labels>
+        <fullName>No_of_Visits</fullName>
+        <categories>Call Plan</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>No of Visits</shortDescription>
+        <value>No of Visits</value>
+    </labels>
+    <labels>
+        <fullName>None</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CHNSU None</shortDescription>
+        <value>None</value>
+    </labels>
+    <labels>
+        <fullName>Owner_Name_Label</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CHNSU Owner Name Label</shortDescription>
+        <value>Owner</value>
+    </labels>
+    <labels>
+        <fullName>PM</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PM</shortDescription>
+        <value>PM</value>
+    </labels>
+    <labels>
+        <fullName>Per_Month</fullName>
+        <categories>Call Plan</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Per Month</shortDescription>
+        <value>Per Month</value>
+    </labels>
+    <labels>
+        <fullName>Physician</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CHNSU Physician</shortDescription>
+        <value>Physician</value>
+    </labels>
+    <labels>
+        <fullName>Province</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CHNSU Province</shortDescription>
+        <value>Province</value>
+    </labels>
+    <labels>
+        <fullName>Reject_Button</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CHNSU Reject Button</shortDescription>
+        <value>Reject</value>
+    </labels>
+    <labels>
+        <fullName>SFE_Field_Days</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SFE Field Days</shortDescription>
+        <value>5.5</value>
+    </labels>
+    <labels>
+        <fullName>SL_code</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SL Code</shortDescription>
+        <value>SL Code</value>
+    </labels>
+    <labels>
+        <fullName>Sales_Executive</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CHNSU Sales Executive</shortDescription>
+        <value>Sales Executive</value>
+    </labels>
+    <labels>
+        <fullName>Sample_Items_Left</fullName>
+        <categories>Sample Mangement</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Sample Items Left</shortDescription>
+        <value>The limit of sample items for this product has been reached for doctor {!CustomerName}! You can only give {!itemsLeft} sample items to that doctor!</value>
+    </labels>
+    <labels>
+        <fullName>Sample_Items_Reached</fullName>
+        <categories>Sample Mangement</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Sample Items Reached</shortDescription>
+        <value>The limit of sample items for this product has been reached for doctor {!CustomerName}! No more items can be given to that doctor!</value>
+    </labels>
+    <labels>
+        <fullName>Saturday</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CHNSU Saturday</shortDescription>
+        <value>S</value>
+    </labels>
+    <labels>
+        <fullName>Save_Button</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CHNSU Save Button</shortDescription>
+        <value>Save</value>
+    </labels>
+    <labels>
+        <fullName>Save_and_Schedule</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CHNSU Save and Schedule</shortDescription>
+        <value>Save and Schedule</value>
+    </labels>
+    <labels>
+        <fullName>Schedule_Button</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CHNSU Schedule Button</shortDescription>
+        <value>Schedule</value>
+    </labels>
+    <labels>
+        <fullName>Select_Dates</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CHNSU Select Dates</shortDescription>
+        <value>Select Dates</value>
+    </labels>
+    <labels>
+        <fullName>Select_Week_Label</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CHNSU Select Week Label</shortDescription>
+        <value>Select Week</value>
+    </labels>
+    <labels>
+        <fullName>Status</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Status</shortDescription>
+        <value>Status</value>
+    </labels>
+    <labels>
+        <fullName>Store_Name</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Store Name</shortDescription>
+        <value>Store Name</value>
+    </labels>
+    <labels>
+        <fullName>Submit_Button</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CHNSU Submit Button</shortDescription>
+        <value>Submit</value>
+    </labels>
+    <labels>
+        <fullName>Sunday</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CHNSU Sunday</shortDescription>
+        <value>S</value>
+    </labels>
+    <labels>
+        <fullName>Support_Email</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Support Email</shortDescription>
+        <value>SalesForce.Support@bausch.com</value>
+    </labels>
+    <labels>
+        <fullName>Test_Survey</fullName>
+        <categories>URL</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Test Survey</shortDescription>
+        <value>http://www.test.com/Survey/WEB22CM6M3T3ND</value>
+    </labels>
+    <labels>
+        <fullName>Thursday</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CHNSU Thursday</shortDescription>
+        <value>T</value>
+    </labels>
+    <labels>
+        <fullName>Tier1</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Tier1</shortDescription>
+        <value>Tier 1</value>
+    </labels>
+    <labels>
+        <fullName>Tier2</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Tier2</shortDescription>
+        <value>Tier 2</value>
+    </labels>
+    <labels>
+        <fullName>Tier3</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Tier3</shortDescription>
+        <value>Tier 3</value>
+    </labels>
+    <labels>
+        <fullName>Tier4</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Tier4</shortDescription>
+        <value>Tier 4</value>
+    </labels>
+    <labels>
+        <fullName>Tier5</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Tier5</shortDescription>
+        <value>Tier 5</value>
+    </labels>
+    <labels>
+        <fullName>Total</fullName>
+        <categories>Call Plan</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Total</shortDescription>
+        <value>Total</value>
+    </labels>
+    <labels>
+        <fullName>Total_Calls_Planned</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CHNSU Total Calls Planned</shortDescription>
+        <value>Total Calls Planned</value>
+    </labels>
+    <labels>
+        <fullName>Tuesday</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CHNSU Tuesday</shortDescription>
+        <value>T</value>
+    </labels>
+    <labels>
+        <fullName>USSUR_Wet_Lab_Request_Opportunity_Record_Type</fullName>
+        <categories>Opportunity Record Type</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>USSUR Wet Lab Request Opportunity Record Type</shortDescription>
+        <value>012C0000000GEhi</value>
+    </labels>
+    <labels>
+        <fullName>W3_Xml_Schema</fullName>
+        <categories>URL</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>W3 Xml Schema</shortDescription>
+        <value>http://www.w3.org/2001/XMLSchema</value>
+    </labels>
+    <labels>
+        <fullName>Wednesday</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CHNSU Wednesday</shortDescription>
+        <value>W</value>
+    </labels>
+    <labels>
+        <fullName>Week_Empty_Error</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CHNSU Week Empty Error</shortDescription>
+        <value>Please select Week</value>
+    </labels>
+    <labels>
+        <fullName>Year</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Year</shortDescription>
+        <value>Year</value>
+    </labels>
+    <labels>
+        <fullName>Zoomerang_Survey</fullName>
+        <categories>URL</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Zoomerang Survey</shortDescription>
+        <value>http://www.zoomerang.com/Survey/</value>
+    </labels>
+    <labels>
+        <fullName>manager_label</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>manager label</shortDescription>
+        <value>Manager</value>
+    </labels>
+    <labels>
+        <fullName>to_label</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>to label</shortDescription>
+        <value>to</value>
+    </labels>
+    <labels>
+        <fullName>week_label</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CHNSU week label</shortDescription>
+        <value>Week</value>
+    </labels>
+</CustomLabels>

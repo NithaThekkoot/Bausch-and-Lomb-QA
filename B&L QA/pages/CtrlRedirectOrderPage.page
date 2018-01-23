@@ -1,0 +1,3 @@
+<apex:page standardController="Order_Header__c" extensions="CtrlRedirectOrderPageController" 
+    action="{!nullValue(redir.url, urlFor($Action.Order_Header__c.View, Order_header__c.id, null, true))}">
+</apex:page>

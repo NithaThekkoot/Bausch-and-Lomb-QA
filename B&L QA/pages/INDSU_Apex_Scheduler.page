@@ -1,0 +1,7 @@
+<apex:page controller="CtrlINDSUApexScheduler">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:commandButton value="Schedule Call Summary Population" action="{!populateCallSummary}" />
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

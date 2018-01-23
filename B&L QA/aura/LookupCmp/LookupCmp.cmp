@@ -1,0 +1,56 @@
+<aura:component extends="c:GenericCrudComponent">
+    <aura:attribute name="objectType" type="String" default="Account" description="salesforce object on which search has to be made"/>
+    <aura:attribute name="recordList" type="Object[]" default="[]" description="salesforce object record list which is displayed to user"/>
+    <aura:attribute name="spinnerClass" type="sObject" description="css for spinner"/>
+    <aura:attribute name="class" type="String" default="" description="css class for styling component"/>
+    <aura:attribute name="labelClass" type="String" default="" description="css class for styling label of component"/>
+    <aura:attribute name="displayedIdentifier" type="String" default="" description="text which is displayed in textbox"/>
+    <aura:attribute name="where" type="String" default="" description="filter condition on salesforce object. Starts from AND[SPACE][CONDITION]"/>
+    <aura:attribute name="fields" type="String" default="Id,Name" description="fields of salesforce object on which search has to be made"/>
+    <aura:attribute name="label" type="String" default="Account" description="component label"/>
+    <aura:attribute name="placeholder" type="String" default="" description="placeholder for lookup textbox"/>
+    <aura:attribute name="isSelected" type="Boolean" default="false" description="to check whether the lookup is selected or written in random"/>
+    <aura:attribute name="disabled" type="Boolean" default="false" description="disable/enable the component"/>
+    <aura:attribute name="minCharacters" type="Integer" default="3" description="minimum characters to be typed to show the list of records"/>
+    <aura:attribute name="iterableId" type="Integer" default="0" description="to be used as loop iterator when more using more than one lookup components in same page"/>
+    <aura:attribute name="searchableField" type="String" default="Name" description="which field to be searched"/>
+    <aura:attribute name="orderByField" type="String" default="Name" description="by which field the list should be ordered"/>
+    <aura:attribute name="displayableField" type="String" default="Name" description="which field should be displayed in textbox when lookup selects one record"/>
+    <aura:attribute name="displayableListField" type="String" default="Name" description="which field should be displayed in list"/>
+    <aura:attribute name="searchStarted" type="Boolean" default="false" description="show/hide spinner in textbox"/>
+    <aura:attribute name="showSpinner" type="Boolean" default="true" description="show/hide spinner in textbox"/>
+    <aura:attribute name="doSearchStartsWith" type="Boolean" default="false" description="enable/disable to search with criteria of initials
+                                                                                          i.e. whether the search is on the basis of first letter 
+                                                                                         of searchable field or a letter may appear anywhere in 
+                                                                                          the searchable field"/>
+    
+    
+    <!-- Events -->
+    <aura:registerEvent name="onLookupSelect" type="c:onLookupSelect"/>
+    <aura:registerEvent name="onBlur" type="c:onLookupBlur"/>
+    
+    <div class="slds">
+        <div class="relative">
+            <aura:if isTrue="{!and(v.searchStarted,v.showSpinner)}">
+                <img src="/resource/spinner" class="spinner spinnerClass" />
+            </aura:if>
+            
+            <ui:inputText label="{!v.label}" class="{!(v.class + ' remove-cross')}" disabled="{!v.disabled}" value="{!v.displayedIdentifier}"
+                          placeholder="{!v.placeholder}"  blur="{!c.throwBlur}" focus="{!c.setShowList}"
+                          keyup="{!c.getObjects}" updateOn="keyup" aura:id="lookup-textbox" labelClass="{!v.labelClass}">
+            </ui:inputText>
+        </div>
+        
+        <div class="recordList" style="{!'display :'+ if( (v.recordList.length!=0),'block;','none;')}">
+            <ul class="lookup-un-List">
+                <aura:if isTrue="{!(v.recordList.length!=0)}">
+                    <aura:iteration items="{!v.recordList}" var="obj">
+                        <aura:html tag="li" class="rowX">
+                            <ui:outputText value="{!obj.listProperty}" class="{!obj}" mousedown="{!c.setObject}"/>
+                        </aura:html>
+                    </aura:iteration>
+                </aura:if>
+            </ul>
+        </div>
+    </div>
+</aura:component>

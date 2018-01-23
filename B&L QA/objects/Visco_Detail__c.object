@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Used by EMEASU to track Visco information</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Account__c</fullName>
+        <description>Used by EMEASU</description>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Visco Details</relationshipLabel>
+        <relationshipName>Visco_Details</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Brand__c</fullName>
+        <description>Used by EMEASU</description>
+        <externalId>false</externalId>
+        <label>Brand</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>ALCON - Cellugel</fullName>
+                    <default>false</default>
+                    <label>ALCON - Cellugel</label>
+                </value>
+                <value>
+                    <fullName>ALCON - DisCoVisc</fullName>
+                    <default>false</default>
+                    <label>ALCON - DisCoVisc</label>
+                </value>
+                <value>
+                    <fullName>ALCON - DuoVisc</fullName>
+                    <default>false</default>
+                    <label>ALCON - DuoVisc</label>
+                </value>
+                <value>
+                    <fullName>ALCON - ProVisc</fullName>
+                    <default>false</default>
+                    <label>ALCON - ProVisc</label>
+                </value>
+                <value>
+                    <fullName>ALCON - Viscoat</fullName>
+                    <default>false</default>
+                    <label>ALCON - Viscoat</label>
+                </value>
+                <value>
+                    <fullName>AMO - Dual Pack</fullName>
+                    <default>false</default>
+                    <label>AMO - Dual Pack</label>
+                </value>
+                <value>
+                    <fullName>AMO - Endocoat</fullName>
+                    <default>false</default>
+                    <label>AMO - Endocoat</label>
+                </value>
+                <value>
+                    <fullName>AMO - Healon</fullName>
+                    <default>false</default>
+                    <label>AMO - Healon</label>
+                </value>
+                <value>
+                    <fullName>AMO - Healon 5</fullName>
+                    <default>false</default>
+                    <label>AMO - Healon 5</label>
+                </value>
+                <value>
+                    <fullName>AMO - Healon GV</fullName>
+                    <default>false</default>
+                    <label>AMO - Healon GV</label>
+                </value>
+                <value>
+                    <fullName>B+L</fullName>
+                    <default>false</default>
+                    <label>B+L</label>
+                </value>
+                <value>
+                    <fullName>B+L - Amvisc</fullName>
+                    <default>false</default>
+                    <label>B+L - Amvisc</label>
+                </value>
+                <value>
+                    <fullName>B+L - Amvisc Plus</fullName>
+                    <default>false</default>
+                    <label>B+L - Amvisc Plus</label>
+                </value>
+                <value>
+                    <fullName>B+L - OcuCoat</fullName>
+                    <default>false</default>
+                    <label>B+L - OcuCoat</label>
+                </value>
+                <value>
+                    <fullName>B D - 1,0%</fullName>
+                    <default>false</default>
+                    <label>B D - 1,0%</label>
+                </value>
+                <value>
+                    <fullName>B D - 1,2%</fullName>
+                    <default>false</default>
+                    <label>B D - 1,2%</label>
+                </value>
+                <value>
+                    <fullName>B D - 1,4%</fullName>
+                    <default>false</default>
+                    <label>B D - 1,4%</label>
+                </value>
+                <value>
+                    <fullName>B D - Multivisc</fullName>
+                    <default>false</default>
+                    <label>B D - Multivisc</label>
+                </value>
+                <value>
+                    <fullName>CROMA - EYEFILL BIO II</fullName>
+                    <default>false</default>
+                    <label>CROMA - EYEFILL BIO II</label>
+                </value>
+                <value>
+                    <fullName>CROMA - EYEFILL C</fullName>
+                    <default>false</default>
+                    <label>CROMA - EYEFILL C</label>
+                </value>
+                <value>
+                    <fullName>CROMA - EYEFILL D.C.</fullName>
+                    <default>false</default>
+                    <label>CROMA - EYEFILL D.C.</label>
+                </value>
+                <value>
+                    <fullName>CROMA - EYEFILL H.D.</fullName>
+                    <default>false</default>
+                    <label>CROMA - EYEFILL H.D.</label>
+                </value>
+                <value>
+                    <fullName>CROMA - EYEFILL MEGA I</fullName>
+                    <default>false</default>
+                    <label>CROMA - EYEFILL MEGA I</label>
+                </value>
+                <value>
+                    <fullName>CROMA - EYEFILL S.C.</fullName>
+                    <default>false</default>
+                    <label>CROMA - EYEFILL S.C.</label>
+                </value>
+                <value>
+                    <fullName>FIDIA - IAL</fullName>
+                    <default>false</default>
+                    <label>FIDIA - IAL</label>
+                </value>
+                <value>
+                    <fullName>PhysIOL - PhysioVisc Integral</fullName>
+                    <default>false</default>
+                    <label>PhysIOL - PhysioVisc Integral</label>
+                </value>
+                <value>
+                    <fullName>PhysIOL - PhysioVisc Protect</fullName>
+                    <default>false</default>
+                    <label>PhysIOL - PhysioVisc Protect</label>
+                </value>
+                <value>
+                    <fullName>PhysIOL - PhysioVisc Volume</fullName>
+                    <default>false</default>
+                    <label>PhysIOL - PhysioVisc Volume</label>
+                </value>
+                <value>
+                    <fullName>ZEISS - Acri-Viscose</fullName>
+                    <default>false</default>
+                    <label>ZEISS - Acri-Viscose</label>
+                </value>
+                <value>
+                    <fullName>ZEISS - Endogel</fullName>
+                    <default>false</default>
+                    <label>ZEISS - Endogel</label>
+                </value>
+                <value>
+                    <fullName>ZEISS - Gelbag</fullName>
+                    <default>false</default>
+                    <label>ZEISS - Gelbag</label>
+                </value>
+                <value>
+                    <fullName>ZEISS - Gelbag Plus</fullName>
+                    <default>false</default>
+                    <label>ZEISS - Gelbag Plus</label>
+                </value>
+                <value>
+                    <fullName>ZEISS - Twinvisc</fullName>
+                    <default>false</default>
+                    <label>ZEISS - Twinvisc</label>
+                </value>
+                <value>
+                    <fullName>ZEISS - TwinVisc Cohesive</fullName>
+                    <default>false</default>
+                    <label>ZEISS - TwinVisc Cohesive</label>
+                </value>
+                <value>
+                    <fullName>ZEISS - TwinVisc Dispersive</fullName>
+                    <default>false</default>
+                    <label>ZEISS - TwinVisc Dispersive</label>
+                </value>
+                <value>
+                    <fullName>ZEISS - Visthesia</fullName>
+                    <default>false</default>
+                    <label>ZEISS - Visthesia</label>
+                </value>
+                <value>
+                    <fullName>ZEISS - Visthesia 1,5%</fullName>
+                    <default>false</default>
+                    <label>ZEISS - Visthesia 1,5%</label>
+                </value>
+                <value>
+                    <fullName>ZEISS - Visthesia Light 1,0%</fullName>
+                    <default>false</default>
+                    <label>ZEISS - Visthesia Light 1,0%</label>
+                </value>
+                <value>
+                    <fullName>ZEISS - Z-Hyalin Plus</fullName>
+                    <default>false</default>
+                    <label>ZEISS - Z-Hyalin Plus</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Comments__c</fullName>
+        <description>Used by EMEASU</description>
+        <externalId>false</externalId>
+        <label>Comments</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Contract__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used by EMEASU</description>
+        <externalId>false</externalId>
+        <label>Contract?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>End_Date__c</fullName>
+        <description>Used by EMEASU</description>
+        <externalId>false</externalId>
+        <label>End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Estimated_Volume_by_Year__c</fullName>
+        <description>Used by EMEASU</description>
+        <externalId>false</externalId>
+        <label>Estimated Volume by Year</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Start_Date__c</fullName>
+        <description>Used by EMEASU</description>
+        <externalId>false</externalId>
+        <label>Start Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <description>Used by EMEASU</description>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>Cohesive</fullName>
+                    <default>false</default>
+                    <label>Cohesive</label>
+                </value>
+                <value>
+                    <fullName>Combined</fullName>
+                    <default>false</default>
+                    <label>Combined</label>
+                </value>
+                <value>
+                    <fullName>Dispersive</fullName>
+                    <default>false</default>
+                    <label>Dispersive</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Visco Detail</label>
+    <nameField>
+        <displayFormat>VS-{000000}</displayFormat>
+        <label>Visco Detail Id</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Visco Details</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

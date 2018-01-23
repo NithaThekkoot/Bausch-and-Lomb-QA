@@ -1,0 +1,1343 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>P3 Program in US Surgical for Crystalens</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Ability_to_convert_10_eyes_per_month__c</fullName>
+        <description>USSUR</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Rate from 1 to 5 for the Perfect Profile, 5 = Perfect Match</inlineHelpText>
+        <label>Ability to convert &gt; 10 eyes per month</label>
+        <precision>1</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Account__c</fullName>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Crystalens Premium Partnership Program</relationshipLabel>
+        <relationshipName>Crystalens_Premium_Partnership_Program</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Are_they_asking_the_cataract_questions__c</fullName>
+        <externalId>false</externalId>
+        <label>Are they asking the cataract questions</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Basic_Counseling_Flow__c</fullName>
+        <externalId>false</externalId>
+        <label>Trng Conducted - Basic Counseling Flow</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Biometry__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Current Patient Flow - Rank in Order</inlineHelpText>
+        <label>Biometry</label>
+        <precision>1</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Block_Scheduling__c</fullName>
+        <externalId>false</externalId>
+        <label>Block Scheduling</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Brochure_Provided__c</fullName>
+        <externalId>false</externalId>
+        <label>Brochure Provided</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Cataract_Evals_Separate_on_Schedule__c</fullName>
+        <externalId>false</externalId>
+        <label>Cataract Evals Separate on Schedule</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Celebration_with_Patient__c</fullName>
+        <externalId>false</externalId>
+        <label>Celebration with Patient</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Compliant_to_Converse_With_The_Patient__c</fullName>
+        <externalId>false</externalId>
+        <label>Compliant to Converse With The Patient</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Counselor__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Current Patient Flow - Rank in Order</inlineHelpText>
+        <label>Counselor</label>
+        <precision>1</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Credential_The_Doctor_And_Practice_Surg__c</fullName>
+        <externalId>false</externalId>
+        <label>Credential the Doctor and Practice</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Credential_the_Doctor_and_Practice_Tech__c</fullName>
+        <externalId>false</externalId>
+        <label>Credential the Doctor and Practice</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Credential_the_Equipment__c</fullName>
+        <externalId>false</externalId>
+        <label>Credential the Equipment</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Crystalens_Post_Op_Mgmt_Notes__c</fullName>
+        <externalId>false</externalId>
+        <label>Crystalens Post Op Mgmt Notes</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Crystalens_Post_Op_Mgmt__c</fullName>
+        <externalId>false</externalId>
+        <label>Crystalens Post Op Mgmt</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Crystalens_on_Site__c</fullName>
+        <externalId>false</externalId>
+        <label>Crystalens on Site</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Crystalsert_Loading_Notes__c</fullName>
+        <externalId>false</externalId>
+        <label>Crystalsert Loading Notes</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Crystalsert_Loading__c</fullName>
+        <externalId>false</externalId>
+        <label>Crystalsert Loading</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Current_Pricing_Crystalens__c</fullName>
+        <externalId>false</externalId>
+        <label>Current Pricing - Crystalens</label>
+        <precision>7</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Current_Pricing_Femto__c</fullName>
+        <externalId>false</externalId>
+        <label>Current Pricing - Femto</label>
+        <precision>7</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Current_Pricing_LRI_s__c</fullName>
+        <externalId>false</externalId>
+        <label>Current Pricing - LRI&apos;s</label>
+        <precision>7</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Current_Pricing_Lasik__c</fullName>
+        <externalId>false</externalId>
+        <label>Current Pricing - Lasik</label>
+        <precision>7</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Current_Pricing_Multi_Focal__c</fullName>
+        <externalId>false</externalId>
+        <label>Current Pricing - Multi-Focal</label>
+        <precision>7</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Current_Pricing_Toric__c</fullName>
+        <externalId>false</externalId>
+        <label>Current Pricing - Toric</label>
+        <precision>7</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Current_Process__c</fullName>
+        <externalId>false</externalId>
+        <label>Current Process</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Current_State__c</fullName>
+        <externalId>false</externalId>
+        <label>Current State</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Cust_Srvc_Patient_Journey_Flow_Notes__c</fullName>
+        <externalId>false</externalId>
+        <label>Cust Srvc-Patient Journey Flow Notes</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Cust_Srvc_Patient_Journey_Flow__c</fullName>
+        <externalId>false</externalId>
+        <label>Cust Srvc-Patient Journey Flow</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Explaining_Tests_What_and_Why__c</fullName>
+        <externalId>false</externalId>
+        <label>Explaining Tests - What and Why</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Family_Member__c</fullName>
+        <externalId>false</externalId>
+        <label>Family Member</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Financing_Available__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Financing Available</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Financing__c</fullName>
+        <externalId>false</externalId>
+        <label>Financing</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Flow_Assessment__c</fullName>
+        <externalId>false</externalId>
+        <label>Flow Assessment</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Flow__c</fullName>
+        <externalId>false</externalId>
+        <label>Flow</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Flow_of_Conv_Start_with_Lens_Choice__c</fullName>
+        <externalId>false</externalId>
+        <label>Flow of Conv - Start with Lens Choice</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Focused_on_Growth__c</fullName>
+        <description>USSUR</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Rate from 1 to 5 for the Perfect Profile, 5 = Perfect Match</inlineHelpText>
+        <label>Focused on Growth</label>
+        <precision>1</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Global_fee_for_enhancements__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Global fee for enhancements</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Handling_Objections__c</fullName>
+        <externalId>false</externalId>
+        <label>Trng Conducted - Handling Objections</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ID_ing_Specifics_on_Sched_for_Next_Visit__c</fullName>
+        <externalId>false</externalId>
+        <label>ID&apos;ing Specifics on Sched for Next Visit</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>If_separate_charge_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>If separate charge - Amount</label>
+        <precision>7</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Interruption_While_Couns_With_Patient__c</fullName>
+        <externalId>false</externalId>
+        <label>Interruption While Couns With Patient</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Inviting_Family_Member_Back__c</fullName>
+        <externalId>false</externalId>
+        <label>Inviting Family Member Back</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Inviting_Family_Member__c</fullName>
+        <externalId>false</externalId>
+        <label>Inviting Family Member</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Is_it_in_a_quiet_area__c</fullName>
+        <externalId>false</externalId>
+        <label>Is it in a quiet area</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LRI_Calculator__c</fullName>
+        <defaultValue>&quot;www.lricalculator.com&quot;</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Click to access LRI Calculator</inlineHelpText>
+        <label>LRI Calculator</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Lifestyle_Questionnaire_Utilized__c</fullName>
+        <externalId>false</externalId>
+        <label>Lifestyle Questionnaire Utilized</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Lifestyle_Questions_to_ID_Focal_Lengths__c</fullName>
+        <externalId>false</externalId>
+        <label>Lifestyle Questions to ID Focal Lengths</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Log_Jams__c</fullName>
+        <externalId>false</externalId>
+        <label>Log Jams</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Manage_Expectations_for_Next_Visit__c</fullName>
+        <externalId>false</externalId>
+        <label>Manage Expectations for Next Visit</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Marketing_Materials_Consistent_Stocked__c</fullName>
+        <externalId>false</externalId>
+        <label>Marketing Materials Consistent &amp; Stocked</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Number_of_cataract_surgeries_per_year__c</fullName>
+        <description>USSUR</description>
+        <externalId>false</externalId>
+        <label>Number of cataract surgeries per year</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>On_Crystalens_Surgeon_Locator__c</fullName>
+        <externalId>false</externalId>
+        <label>On Crystalens Surgeon Locator</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Open_to_Change__c</fullName>
+        <description>USSUR</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Rate from 1 to 5 for the Perfect Profile, 5 = Perfect Match</inlineHelpText>
+        <label>Open to Change</label>
+        <precision>1</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Opp_and_Impl_Appt_Sched__c</fullName>
+        <externalId>false</externalId>
+        <label>Opportunity and Implementation Steps</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Oppt_and_Impl_CheckIn_c__c</fullName>
+        <externalId>false</externalId>
+        <label>Opportunity and Implementation Steps</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Oppt_and_Impl_CheckOut__c</fullName>
+        <externalId>false</externalId>
+        <label>Opportunity and Implementation Steps</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Oppt_and_Impl_Dilating_Time__c</fullName>
+        <externalId>false</externalId>
+        <label>Opportunity and Implementation Steps</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Oppt_and_Impl_Doctor_Comm__c</fullName>
+        <externalId>false</externalId>
+        <label>Opportunity and Implementation Steps</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Oppt_and_Impl_LobbyLane__c</fullName>
+        <externalId>false</externalId>
+        <label>Opportunity and Implementation Steps</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Oppt_and_Impl_Schedule__c</fullName>
+        <externalId>false</externalId>
+        <label>Opportunity and Implementation Steps</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Oppt_and_Impl_Surg_Counselor__c</fullName>
+        <externalId>false</externalId>
+        <label>Opportunity and Implementation Steps</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Oppt_and_Impl_Technicians__c</fullName>
+        <externalId>false</externalId>
+        <label>Opportunity and Implementation Steps</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Oppt_and_Impl_Testing_Pod__c</fullName>
+        <externalId>false</externalId>
+        <label>Opportunity and Implementation Steps</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Oppt_and_Impl_Training_Sessions__c</fullName>
+        <externalId>false</externalId>
+        <label>Opportunity and Implementation Steps</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Oppt_and_Impl_Website_Review__c</fullName>
+        <externalId>false</externalId>
+        <label>Opportunity and Implementation Steps</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Options_Available_to_the_Patient__c</fullName>
+        <externalId>false</externalId>
+        <label>Options Available to the Patient</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Other_Curr_Patient_Flow__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Current Patient Flow - Rank in Order</inlineHelpText>
+        <label>Other</label>
+        <precision>1</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Other_Date_1_Notes__c</fullName>
+        <externalId>false</externalId>
+        <label>Other Date 1 Notes</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Other_Date_1__c</fullName>
+        <externalId>false</externalId>
+        <label>Other Date 1</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Other_Date_2_Notes__c</fullName>
+        <externalId>false</externalId>
+        <label>Other Date 2 Notes</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Other_Date_2__c</fullName>
+        <externalId>false</externalId>
+        <label>Other Date 2</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Other_Pct_BL_IOLs__c</fullName>
+        <externalId>false</externalId>
+        <label>Other?</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Overall_Premium_Conversion_Percentage__c</fullName>
+        <externalId>false</externalId>
+        <formula>Pct_of_Cases_Crystalens__c  +  Pct_of_Cases_Crystalens_for_Astig__c  +  Pct_of_Cases_ReStor__c  +  Pct_of_Cases_TMF__c  +  Pct_of_Cases_Toric__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Overall Premium Conversion Percentage</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>P3_Follow_Up_Notes__c</fullName>
+        <externalId>false</externalId>
+        <label>P3 Follow Up Notes</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>P3_Follow_Up__c</fullName>
+        <externalId>false</externalId>
+        <label>P3 Follow Up</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>P3_Implementation_Notes__c</fullName>
+        <externalId>false</externalId>
+        <label>P3 Implementation Notes</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>P3_Implementation__c</fullName>
+        <externalId>false</externalId>
+        <label>P3 Implementation</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Pct_of_Cases_Alcon__c</fullName>
+        <externalId>false</externalId>
+        <label>Pct of Cases - Alcon</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Pct_of_Cases_B_L__c</fullName>
+        <externalId>false</externalId>
+        <label>Pct of Cases - B+L</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Pct_of_Cases_Crystalens__c</fullName>
+        <description>USSUR</description>
+        <externalId>false</externalId>
+        <label>Pct of Cases - Crystalens</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Pct_of_Cases_Crystalens_for_Astig__c</fullName>
+        <description>USSUR</description>
+        <externalId>false</externalId>
+        <label>Pct of Cases - Crystalens for Astig</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Pct_of_Cases_Other__c</fullName>
+        <externalId>false</externalId>
+        <label>Pct of Cases - Other</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Pct_of_Cases_ReStor__c</fullName>
+        <externalId>false</externalId>
+        <label>Pct of Cases - ReStor</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Pct_of_Cases_Staar__c</fullName>
+        <externalId>false</externalId>
+        <label>Pct of Cases - Staar</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Pct_of_Cases_TMF__c</fullName>
+        <externalId>false</externalId>
+        <label>Pct of Cases - TMF</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Pct_of_Cases_Toric__c</fullName>
+        <externalId>false</externalId>
+        <label>Pct of Cases - Toric</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Pre_Visit_Ed_Material_sent_email_mail__c</fullName>
+        <externalId>false</externalId>
+        <label>Pre-Visit Ed Material sent (email/mail)</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Present_Price_Range__c</fullName>
+        <externalId>false</externalId>
+        <label>Present Price Range</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Presenting_Price__c</fullName>
+        <externalId>false</externalId>
+        <label>Presenting Price</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Private_Office__c</fullName>
+        <externalId>false</externalId>
+        <label>Private Office</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Provides_Access__c</fullName>
+        <description>USSUR</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Rate from 1 to 5 for the Perfect Profile, 5 = Perfect Match</inlineHelpText>
+        <label>Provides Access</label>
+        <precision>1</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Refractive_Practice__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>USSUR</description>
+        <externalId>false</externalId>
+        <label>Refractive Practice</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Refractive__c</fullName>
+        <description>USSUR - match to perfect profile - refractive rating</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Rate from 1-5 for the Perfect Profile</inlineHelpText>
+        <label>Refractive</label>
+        <precision>1</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Right_Hand__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Current Patient Flow - Rank in Order</inlineHelpText>
+        <label>Right Hand</label>
+        <precision>1</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Running_Educational_Video__c</fullName>
+        <externalId>false</externalId>
+        <label>Running Educational Video</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Separate_Visit_for_Biometry__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Separate Visit for Biometry</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Shadow_Sheet_Utilized__c</fullName>
+        <externalId>false</externalId>
+        <label>Shadow Sheet Utilized</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sharing_Outcomes_Success__c</fullName>
+        <externalId>false</externalId>
+        <label>Sharing Outcomes Success</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Super_Bill_Matches_the_Schedule__c</fullName>
+        <externalId>false</externalId>
+        <label>Super Bill Matches the Schedule</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Surgeon__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Current Patient Flow - Rank in Order</inlineHelpText>
+        <label>Surgeon</label>
+        <precision>1</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TV_on_What_Channel_Dilating_Time__c</fullName>
+        <externalId>false</externalId>
+        <label>TV on What Channel</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TV_on_What_Channel_LobbyLanes__c</fullName>
+        <externalId>false</externalId>
+        <label>TV on What Channel</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Talking_Points__c</fullName>
+        <externalId>false</externalId>
+        <label>Talking Points</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Technician__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Current Patient Flow - Rank in Order</inlineHelpText>
+        <label>Technician</label>
+        <precision>1</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Technology_Date_Notes__c</fullName>
+        <externalId>false</externalId>
+        <label>Technology Notes</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Technology_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Technology</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Technology__c</fullName>
+        <externalId>false</externalId>
+        <label>Trng Conducted - Technology</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Toric_Calculator__c</fullName>
+        <defaultValue>&quot;http://www.acrysoftoriccalculator.com/Country.aspx&quot;</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Click to access the Bausch + Lomb Toric Calculator</inlineHelpText>
+        <label>Toric Calculator</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Total_Perfect_Profile_25__c</fullName>
+        <description>USSUR Perfect Profile Score</description>
+        <externalId>false</externalId>
+        <formula>Refractive__c  +  Provides_Access__c  +  Focused_on_Growth__c  +  Open_to_Change__c  +  Ability_to_convert_10_eyes_per_month__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total (Perfect Profile = 25)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Using_Shadow_Sheet_Surg_Counselor__c</fullName>
+        <externalId>false</externalId>
+        <label>Using Shadow Sheet</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Using_Shadow_Sheet_Tech__c</fullName>
+        <externalId>false</externalId>
+        <label>Using Shadow Sheet</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Using_Takeaway_Message__c</fullName>
+        <externalId>false</externalId>
+        <label>Using Takeaway Message</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Using_Talk_Tracks__c</fullName>
+        <externalId>false</externalId>
+        <label>Using Talk Tracks</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Videos__c</fullName>
+        <externalId>false</externalId>
+        <label>Videos</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Visuals__c</fullName>
+        <externalId>false</externalId>
+        <label>Visuals</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>What_a_Cataract_Is_and_How_It_Is_Treated__c</fullName>
+        <externalId>false</externalId>
+        <label>What a Cataract Is and How It Is Treated</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>What_is_Patient_Doing__c</fullName>
+        <externalId>false</externalId>
+        <label>What is Patient Doing</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>When_is_Price_Mentioned__c</fullName>
+        <externalId>false</externalId>
+        <label>When is Price Mentioned</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>When_is_collected_for_premium_lenses__c</fullName>
+        <externalId>false</externalId>
+        <label>When is $$ collected for premium lenses</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Where__c</fullName>
+        <externalId>false</externalId>
+        <label>Where</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Where_are_calls_answered__c</fullName>
+        <externalId>false</externalId>
+        <label>Where are calls answered</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Who_answers_calls__c</fullName>
+        <externalId>false</externalId>
+        <label>Who answers calls</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Crystalens Premium Partnership Program</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>CPPP-{00000000}</displayFormat>
+        <label>Crystalens Premium Partnership Program N</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Crystalens Premium Partnership Program</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Ability_to_Convert_Rank_must_be_1_to_5</fullName>
+        <active>true</active>
+        <errorConditionFormula>Ability_to_convert_10_eyes_per_month__c   &gt; 5</errorConditionFormula>
+        <errorDisplayField>Ability_to_convert_10_eyes_per_month__c</errorDisplayField>
+        <errorMessage>Ranking must be between 1 and 5 with 5 being a Perfect Match!</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Check_Overall_Premium_Converstion_Pctg</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND ( 
+($Profile.Name &lt;&gt; &apos;BL: Integration User&apos;),
+( Overall_Premium_Conversion_Percentage__c  &gt; 1)
+)</errorConditionFormula>
+        <errorMessage>Overall Premium Conversion Percentage cannot be higher than 100%.  Adjust individual percentage use of Premium IOLs so that total Overall Premium Conversion Percentage does not exceed 100%.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Focused_on_Growth_Rank_must_be_1_to_5</fullName>
+        <active>true</active>
+        <errorConditionFormula>Focused_on_Growth__c  &gt; 5</errorConditionFormula>
+        <errorDisplayField>Focused_on_Growth__c</errorDisplayField>
+        <errorMessage>Ranking must be between 1 and 5 with 5 being a Perfect Match!</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Open_To_Change_Rank_must_be_1_to_5</fullName>
+        <active>true</active>
+        <errorConditionFormula>Open_to_Change__c  &gt; 5</errorConditionFormula>
+        <errorDisplayField>Open_to_Change__c</errorDisplayField>
+        <errorMessage>Ranking must be between 1 and 5 with 5 being a Perfect Match!</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Provides_Access_Rank_must_be_1_to_5</fullName>
+        <active>true</active>
+        <errorConditionFormula>Provides_Access__c  &gt; 5</errorConditionFormula>
+        <errorDisplayField>Provides_Access__c</errorDisplayField>
+        <errorMessage>Ranking must be between 1 and 5 with 5 being a Perfect Match!</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Refractive_Rank_must_be_1_to_5</fullName>
+        <active>true</active>
+        <errorConditionFormula>Refractive__c &gt; 5</errorConditionFormula>
+        <errorDisplayField>Refractive__c</errorDisplayField>
+        <errorMessage>Ranking must be between 1 and 5 with 5 being a Perfect Match!</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

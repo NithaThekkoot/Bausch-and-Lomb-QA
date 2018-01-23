@@ -1,0 +1,11 @@
+<apex:page controller="CtrlCallPlanErrors">
+  <apex:pageBlock >
+      <apex:pageMessages />
+    <apex:pageBlockTable value="{!list_CallPlanError}" var="callPlan">
+    <apex:column value="{!callPlan.objCallPlanDetail.Physician_Name__r.Account.name}" headerValue="Hospital"/> 
+    <apex:column value="{!callPlan.objCallPlanDetail.Physician_Name__r.name}" headerValue="Physician"/> 
+    <apex:column value="{!callPlan.objCallPlanDetail.Date__c}" headerValue="Planned Date"/> 
+    <apex:column value="{!callPlan.strActual}" headerValue="Actual"/> 
+    </apex:pageBlockTable>
+  </apex:pageBlock>
+</apex:page>

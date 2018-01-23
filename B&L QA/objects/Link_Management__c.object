@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>Defines link and its part for dynamic links in VF pages</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Context__c</fullName>
+        <description>context of the link; where it is displayed/usable</description>
+        <externalId>false</externalId>
+        <label>Context</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Extended_Value__c</fullName>
+        <description>Extension to the value for the link part, if the link exceeds 255 characters.</description>
+        <externalId>false</externalId>
+        <label>Extended_Value</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Value__c</fullName>
+        <description>Determines the value for the link part</description>
+        <externalId>false</externalId>
+        <label>Value</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Link Management</label>
+    <visibility>Public</visibility>
+</CustomObject>

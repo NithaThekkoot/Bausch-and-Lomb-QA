@@ -1,0 +1,37 @@
+<apex:page standardController="Order_Header__c" id="thePage">	
+	<apex:form id="theForm">
+		<apex:includeScript value="/soap/ajax/17.0/connection.js" />	
+		<!-- <apex:includeScript value="{!$Resource.JSTEST}"/> -->
+		<apex:includeScript value="{!$Resource.Base64}"/>
+		<apex:includeScript value="{!$Resource.CacheProducts}"/>
+	
+		<script type="text/javascript">   
+			var previousOnload = window.onload;
+			sforce.connection.sessionId = '{!$Api.Session_ID}';
+			window.onload = function() {
+				if (previousOnload) {
+					//previousOnload();
+				}			
+				//SessionCache.queryProducts();
+				//alert('SessVars: ' + sessvars);			
+		    	
+				queryProductsJS();    
+		    }  
+		    
+		    //sessvars.$.debug();
+	
+		    //alert('Username:' + sessvars.username);
+		    
+
+		</script>
+		<apex:outputText >Products are being stored in memory...</apex:outputText>
+		<br>
+		<apex:image id="theImage" value="/img/waiting_dots.gif" />
+		<br><br>
+		<apex:outputText >Products in already in Memory:</apex:outputText>
+		<apex:outputText id="noproducts"></apex:outputText>
+		<br><br>
+		<apex:outputText >Attachments created:</apex:outputText>
+		<apex:outputText id="noatts"></apex:outputText>
+	</apex:form>
+</apex:page>

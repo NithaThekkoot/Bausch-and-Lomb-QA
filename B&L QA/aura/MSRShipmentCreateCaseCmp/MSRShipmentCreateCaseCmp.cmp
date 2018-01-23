@@ -1,0 +1,26 @@
+<aura:component implements="force:lightningQuickActionWithoutHeader,force:hasRecordId,flexipage:availableForRecordHome">
+    <aura:dependency resource="markup://force:*" type="EVENT"/>
+    <aura:attribute type="Boolean" name="showSpinner" default="false"/>
+    <aura:attribute name="recordId" type="Id"/>
+    <aura:attribute name="record" type="Object" />
+    <aura:attribute name="fields" type="Object" />
+    
+    <force:recordData aura:id="recordHandler"
+                      layoutType="FULL"
+                      recordId="{!v.recordId}"
+                      targetError="{!v.recordError}"
+                      targetRecord="{!v.record}"
+                      targetFields="{!v.fields}"
+                      recordUpdated="{!c.recordLoadAction}"
+                      fields='Lot_Serial_ID__c,PS_Product_SKU__c,MSR_Order__r.Account__c,MSR_Order__r.Order_Date__c,MSR_Order__r.Id,MSR_Order__r.Inventory_Business_Unit__c'
+                      mode="EDIT"
+                      />
+   
+    {!v.body}
+    <div class="slds">
+        <aura:if isTrue="{!v.showSpinner}">
+            <lightning:spinner variant="brand" class="quick-action-contained"/>
+        </aura:if>
+    </div>
+    
+</aura:component>

@@ -1,0 +1,770 @@
+<apex:page standardController="Order_Header__c" extensions="CtrlOrderEntry" id="thePage" showHeader="false" >
+	<apex:form id="theForm"> 
+		<apex:actionFunction name="queryLineItemData" action="{!queryLineItemData}" reRender="itemTable" status="itemStatus" oncomplete="moveFocus('qty',itemNumber);" >
+			<!--  <apex:param name="item" value="getItemNumber();" assignTo="{!actualItem}"/> -->
+		</apex:actionFunction>
+		
+		
+		<script type="text/javascript" src="/soap/ajax/16.0/connection.js" />
+		<script type="text/javascript">
+    		var itemNumber = 0;	
+    		var hashObject = {};
+    		var start; 
+    		var start1;
+    		var start2;
+    		var setTime;
+    		var end;
+    		var callback = {onSuccess: handleSuccess, onFailure: handleFailure};
+    		
+    		function getItemNumber(){
+    			return itemNumber;
+    		}
+    		
+    		function checkProductMemory(item, product){
+    			//itemNumber = parseInt(item);
+    			itemNumber = item;
+      			product = document.getElementById('thePage:theForm:PB:SecOrderItems:itemTable:' + item + ':SKU').value.toUpperCase();
+      			document.getElementById('thePage:theForm:PB:SecOrderItems:itemTable:' + item + ':SKU').value = product;
+      			//alert('Item: ' + item);
+    			//alert('Product: ' + product);
+    			
+    			//Setting hiddenFieldValues for standard LookUp functionality
+    			var SKU_lkid = document.getElementById('thePage:theForm:PB:SecOrderItems:itemTable:' + item + ':SKU_lkid');
+    			SKU_lkid.value = '';
+    			var SKU_mod = document.getElementById('thePage:theForm:PB:SecOrderItems:itemTable:' + item + ':SKU_mod');
+    			SKU_mod.value = '1';
+    			var WarningIcon = document.getElementById('thePage:theForm:PB:SecOrderItems:itemTable:' + item + ':warningIcon');
+				WarningIcon.style.visibility = "visible";
+    			//WarningIcon.style.display = "block";
+    			
+    			if (product in hashObject){
+    				//alert('Product found in Memory');
+    				var record = hashObject[product];
+    				//alert('Product Name: ' + record.Name);
+    				//alert('Product Description: ' + record.Description);
+    				//alert('Product Startegic Value: ' + record.Strategic_Value__c); 
+    				
+    				//Setting value for ProductDescription field
+    				var productId = document.getElementById('thePage:theForm:PB:SecOrderItems:itemTable:' + item + ':productId');
+    				productId.value = record.Id;
+    				
+    				var validSKU = document.getElementById('thePage:theForm:PB:SecOrderItems:itemTable:' + item + ':hiddenValidSKU');
+    				validSKU.value = true;
+    				
+    				//var WarningIcon = document.getElementById('thePage:theForm:PB:SecOrderItems:itemTable:' + item + ':warningIcon');
+					WarningIcon.style.visibility = "hidden";
+					//WarningIcon.style.display = "none";				
+						    				
+    				
+    				var unitOfMeasure = document.getElementById('thePage:theForm:PB:SecOrderItems:itemTable:' + item + ':hiddenUnitMeasure');
+    				//alert('Field UnitofMeasure ' + unitOfMeasrure);
+    				unitOfMeasure.value = record.Unit_of_Measure__c;
+    				
+    				var PSSKU = document.getElementById('thePage:theForm:PB:SecOrderItems:itemTable:' + item + ':hiddenPSSKU');    				
+    				PSSKU.value = record.PS_Product_SKU__c;
+    				
+    				
+    				var DescriptionHidden = document.getElementById('thePage:theForm:PB:SecOrderItems:itemTable:' + item + ':hiddenProductDescription');
+    				DescriptionHidden.value = record.Description;
+    				var Description = document.getElementById('thePage:theForm:PB:SecOrderItems:itemTable:' + item + ':productDescription');
+    				var textValue = document.createTextNode(record.Description);
+  					if (Description.hasChildNodes()) {
+   						Description.replaceChild(textValue, Description.firstChild);
+				  	} else {
+				   		Description.appendChild(textValue);
+				  	}
+				  	
+				  	//if (record.Stock != null){
+				  		//var HiddenMax = document.getElementById('thePage:theForm:PB:SecOrderItems:itemTable:' + item + ':hiddenStock');
+				  		//HiddenMax = record.Stock;
+					  	//var Stock = document.getElementById('thePage:theForm:PB:SecOrderItems:itemTable:' + item + ':stock');
+	    				//var textValue = document.createTextNode(parseInt(record.Stock));
+	  					//if (Stock.hasChildNodes()) {
+	   					//	Stock.replaceChild(textValue, Stock.firstChild);
+					  	//} else {
+					   	//	Stock.appendChild(textValue);
+					  	//}
+					//}
+				  	
+				  	if (record.Maximum_Order_Qty__c != null){
+				  		var HiddenMax = document.getElementById('thePage:theForm:PB:SecOrderItems:itemTable:' + item + ':hiddenMax');
+				  		HiddenMax = record.Maximum_Order_Qty__c;
+				  		var Max = document.getElementById('thePage:theForm:PB:SecOrderItems:itemTable:' + item + ':max');    				
+	    				var textValue = document.createTextNode(parseInt(record.Maximum_Order_Qty__c));
+	  					if (Max.hasChildNodes()) {
+	   						Max.replaceChild(textValue, Max.firstChild);
+					  	} else {
+					   		Max.appendChild(textValue);
+					  	}
+					}
+				  	
+				  	if (record.Multiple_Order_Qty__c != null){
+				  		var HiddenMultiple = document.getElementById('thePage:theForm:PB:SecOrderItems:itemTable:' + item + ':hiddenMultiple');
+				  		HiddenMultiple = record.Multiple_Order_Qty__c;
+				  		var Multiple = document.getElementById('thePage:theForm:PB:SecOrderItems:itemTable:' + item + ':multiple');    				
+	    				var textValue = document.createTextNode(parseInt(record.Multiple_Order_Qty__c));
+	  					if (Multiple.hasChildNodes()) {
+	   						Multiple.replaceChild(textValue, Multiple.firstChild);
+					  	} else {
+					   		Multiple.appendChild(textValue);
+					  	}
+					}
+				  					  					  					  	
+				  	//Move to QuantityField  					 
+  					moveFocus('qty',itemNumber);
+  					  				
+    			} else {
+    				var ActualItem = document.getElementById('thePage:theForm:PB:hiddenActualItem');
+    				ActualItem.value = item; 
+    				queryLineItemData();
+    			}
+    			//moveFocus('qty',item);
+    			
+    			//TEST
+				//var unitOfMeasure1 = document.getElementById('thePage:theForm:PB:SecOrderItems:itemTable:' + item + ':hiddenUnitMeasure');
+    			//unitOfMeasure1.value = 'EA';
+    			//var HiddenMax1 = document.getElementById('thePage:theForm:PB:SecOrderItems:itemTable:' + item + ':hiddenMax');
+				//HiddenMax1.value = '1';
+				
+				moveFocus('qty',item);
+    		}
+    		
+    		function queryProducts(){
+	    		//alert('QUERY PRODUCTS');
+	    		
+	    		start = new Date().getTime();
+	    		
+	    		sforce.connection.sessionId = '{!$Api.Session_ID}';
+	    		//alert('hi: ' + sforce.connection.sessionId);
+	    		
+	    		//var sql = "Select Id, Name, Description, Family, Strategic_Value__c from Product2 where Strategic_Value__c = 'High'";
+				// or Strategic_Value__c = 'Medium')
+				
+				
+				//Select i.Id, i.Name, i.Product_SKU__c, i.Product_SKU__r.Description, i.Product_SKU__r.Family, i.Product_SKU__r.Id, i.Product_SKU__r.IsActive, i.Product_SKU__r.Load_Group__c, i.Product_SKU__r.LoadGroup__c, i.Product_SKU__r.Maximum_Order_Qty__c, i.Product_SKU__r.Multiple_Order_Qty__c, i.Product_SKU__r.Name, i.Product_SKU__r.PS_Product_SKU__c, i.Product_SKU__r.Strategic_Value__c, i.Product_SKU__r.Unit_of_Measure__c, i.Quantity_in_Stock__c, i.Ship_From__c from Inventory__c i where Product_SKU__r.Strategic_Value__c != 'High'
+				
+				var sql1 = "Select p.Description, p.Family, p.Id, p.IsActive, p.Name, p.PS_Product_SKU__c, p.Strategic_Value__c, p.Unit_of_Measure__c, p.Maximum_Order_Qty__c, p.Multiple_Order_Qty__c, (Select Name, Quantity_in_Stock__c, Ship_From__c From Inventory__r) from Product2 p where isActive = true and Strategic_Value__c = 'High'"
+				var sql2 = "Select p.Description, p.Family, p.Id, p.IsActive, p.Name, p.PS_Product_SKU__c, p.Strategic_Value__c, p.Unit_of_Measure__c, p.Maximum_Order_Qty__c, p.Multiple_Order_Qty__c, (Select Name, Quantity_in_Stock__c, Ship_From__c From Inventory__r) from Product2 p where isActive = true and LoadGroup__c = '2'"
+				
+				//var callback = {onSuccess: handleSuccess, onFailure: handleFailure};
+				
+				
+				//alert('#Elements in HASH-TABLE: ' + j);
+				
+				
+				//for (var i=0; i< records.length; i++) {
+				//	var record = records[i];
+				//}
+				//alert('Count i: ' + i);
+								
+								
+				//var callback = {onSuccess: handleSuccess, onFailure: handleFailure};
+				start = new Date().getTime();
+				start1 = new Date().getTime();
+				setTime = 1;
+				sforce.connection.query(sql1, callback);
+				//alert('Call 1 placed');
+				start2 = new Date().getTime();
+				//setTime = 2;
+				//sforce.connection.query(sql2, callback);
+				//alert('Call 2 placed');
+				
+				
+    		}
+    		
+    		function handleFailure(error) {
+				//alert('Error: ' + error);
+				alert("Having issues to load all products. Expect some delay when entering SKUs.");
+			}
+    		
+    		function handleSuccess(result) {
+				//alert('SUCCESS from callback');
+			
+				//var result = sforce.connection.query(sql);
+				//alert('QUERY PRODUCTS - Alert 2');
+				//records = result.getArray("records");
+				
+				//var result = sforce.connection.query("select name, id from account");
+				
+				//var hashObject = {};
+				
+				var queryMore = true;
+				while (queryMore) {
+					var records = result.getArray("records");
+					var sb = new sforce.StringBuffer();
+					for (var i = 0; i < records.length; i++) {
+						//sb.append(records[i].Name).append(",");
+						var record = records[i];
+						hashObject[record.Name] = record;
+					}
+					//alert('Count i: ' + i);
+					//alert('records.length: ' + records.length);
+					//alert('sb.toString(): ' + sb.toString());
+					if (result.getBoolean("done")) {
+						queryMore = false;
+					} else {
+						result = sforce.connection.queryMore(result.queryLocator);
+					}
+				}
+				
+				//var j = 0;
+				//for (k in hashObject) {
+				 // k contains the key
+				 // hashObject[k] contains the value
+				// j = j + 1;
+				//}
+				
+				//var endDate = new Date();
+				end = new Date().getTime();
+				
+				//alert('READY! #Products loaded: ' + j + ' - Time used in ms: ' + (end - start));
+				if (setTime == 1){
+					//alert('Time used for ' + setTime + ' in ms: ' + (end - start1));
+				} else {
+					//alert('Time used for ' + setTime + ' in ms: ' + (end - start2));
+				}
+				//alert('Call READY...');
+			}
+			
+    		var focusField;  
+    		function test(){
+    			var item = '1';
+    			//alert('OnComplete Funtion');
+    			var Field1 = document.getElementById('thePage:theForm:PB:SecOrderItems:itemTable:' + item + ':qty');
+    			//alert(Field1);
+    			Field1.focus();
+    		}
+    		function moveFocus(fieldname, item) {                 
+                //var Field1 = document.getElementById('{!$Component.PB.SecShipToId.SecItem1.iFShipToId}');
+                if(fieldname == 'thePage:theForm:PB:SecOrderHeader:SecItemCustomerPO:customerPO'){
+                	//alert('--> Fieldname: ' + fieldname + '  -->Item: ' + item);
+                }
+                var Field;
+                if (item != '-1'){
+                	Field = document.getElementById('thePage:theForm:PB:SecOrderItems:itemTable:' + item + ':' + fieldname);
+                	//setTimeout("Field.focus();",1);
+					//setTimeout("Field.select();",1);
+                	//setTimeout("document.getElementById('thePage:theForm:PB:SecOrderItems:itemTable:' + item + ':' + fieldname).focus();",1);
+					//setTimeout("document.getElementById('thePage:theForm:PB:SecOrderItems:itemTable:' + item + ':' + fieldname).select();",1);
+                } else {
+                	Field = document.getElementById(fieldname);
+                	//setTimeout("Field.focus();",1);
+					//setTimeout("Field.select();",1);
+                }
+                //alert(Field.name);
+                //alert('thePage:theForm:PB:SecOrderItems:itemTable:' + item + ':qty');
+                //setTimeout("Field.focus()",1);
+                Field.select();
+                Field.focus();
+                //setTimeout("Field.select()",1);
+                //Field.select();
+                setTimeout("Field.focus();",1);
+				setTimeout("Field.select();",1);
+                	
+            }
+            function moveFocusToFirstSKU() {
+            	var Field1 = document.getElementById('thePage:theForm:PB:SecOrderItems:itemTable:0:SKU');                 
+                alert(Field1);
+                Field1.select(); 
+            }
+            function setFocusField(field) {
+            	//alert('Function SetFocus(): ' + field.name);
+            	var setFocusToField = false;
+            	
+            	//Checking for INPUT fields
+            	if (field.name == 'thePage:theForm:PB:SecOrderHeader:SecItemOrderHeaderDetails:SecOrderHeaderDetails:SecItemcustomerPo:customerPo'){
+            		focusField = document.getElementById('thePage:theForm:PB:SecOrderItems:itemTable:0:SKU');
+            		setFocusToField = true; 	
+            	}            	
+            	
+            	//Set Focus to Field when INPUT field was found as a driving element
+            	if (setFocusToField){
+            		setTimeout("focusField.focus();",1);
+            	}
+            }
+            function moveFocusToQTY(item) {                 
+                //var Field1 = document.getElementById('{!$Component.PB.SecShipToId.SecItem1.iFShipToId}');
+                var Field1 = document.getElementById('thePage:theForm:PB:SecOrderItems:itemTable:' + item + ':qty');
+                //alert('thePage:theForm:PB:SecOrderItems:itemTable:' + item + ':qty');
+                Field1.select();
+            }
+            
+        </script>
+		
+		<apex:sectionHeader title="Order Entry" Subtitle="{!Order_Header__c.Name}"/>
+						
+		<apex:pageBlock id="PB">
+		    
+		    <apex:inputHidden value="{!Order_Header__c.SETID__c}" id="hiddenSetId" />
+		    <apex:inputHidden value="{!Order_Header__c.Name}" id="hiddenOrderName" />
+		    <apex:inputHidden value="{!Order_Header__c.Ship_To_Address_1__c}" id="hiddenShipToAdress1" />
+		    <apex:inputHidden value="{!Order_Header__c.SF_Order_Status__c}" id="hiddenOrderSFStatus" />
+		    <apex:inputHidden value="{!Order_Header__c.Freight_Override__c}" id="hiddenFreightOverride" />
+		    <apex:inputHidden value="{!Order_Header__c.CurrencyIsoCode}" id="hiddenOrderCurrency" />
+		    
+		    
+		    <apex:inputHidden value="{!actualItem}" id="hiddenActualItem" />
+		    
+		    <apex:pageBlockButtons location="both">
+	        	<apex:outputPanel id="pageButtons">	        	    
+					<apex:commandButton value="Edit" action="{!edit}" rendered="{!showEditButton}" />
+					<apex:commandButton value="Clone" action="{!cloneOrder}"/>
+					<apex:commandButton value="Goto Order Management" action="{!cancel}"/>										    
+        		</apex:outputPanel>
+        	</apex:pageBlockButtons>	        			
+			
+			<apex:pageMessages id="pageMessages"/>
+			
+			<apex:pageBlockSection showHeader="false" columns="2" id="SecShipToId">											
+				<apex:pageBlockSectionItem rendered="false">
+					<apex:outputLabel value="{!$ObjectType.Order_Header__c.fields.Business_Unit__c.label}" />
+					<apex:outputText value="{!Order_Header__c.Business_Unit__c}" id="iFBU" />
+				</apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem >
+					<apex:outputLabel value="{!$ObjectType.Order_Header__c.fields.Business_Unit__c.label}" />
+					<apex:selectList disabled="true" value="{!Order_Header__c.Business_Unit__c}" title="Choose Business Unit" multiselect="false" size="1" id="SelBusinessUnit" >
+            			<apex:selectOptions value="{!list_BusinessUnits}" />
+            			<apex:actionSupport event="onchange" action="{!changeBusinessUnit}" status="StatusValidateShipToId" reRender="SecOrderHeader, SecShipToId, pageButtons, pageMessages, hiddenSetId"/>
+            		</apex:selectList>
+            	</apex:pageBlockSectionItem>
+        		<apex:pageBlockSectionItem >
+					<apex:outputLabel value="{!$ObjectType.Order_Header__c.fields.Order_Date__c.label}"/>
+					<apex:outputField value="{!Order_Header__c.Order_Date__c}" />
+				</apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem rendered="false">
+					<apex:outputPanel rendered="false" >
+						<apex:outputLabel value="{!$ObjectType.Order_Header__c.fields.Ship_To_ID__c.label}" rendered="{!NOT(renderShipToOptions)}"/>
+						<apex:outputField value="{!Order_Header__c.Ship_To_ID__c}" id="iFShipToId" rendered="{!NOT(renderShipToOptions)}">
+							<apex:actionSupport event="onchange" action="{!queryShipToDetails}" status="StatusValidateShipToId"
+								reRender="PB, pageButtons, SecOrderHeader, SecOrderItems, SecShipToId, SecBillToDetails, SecShipToDetails" />
+						<!-- iFShipToId, Sec1, Sec2, olSelShipToId, SelShipToId, SelOptShipToId, oFShipToAccount1, oFShipToAccount2, oFShipToAdd1, oFShipToAdd2, oFShipToPostalCode, oFShipToCity -->
+						</apex:outputField>	
+						<apex:outputLabel value="{!$ObjectType.Order_Header__c.fields.Ship_To_ID__c.label}" style="color:red" rendered="{!renderShipToOptions}"/>
+						<apex:selectList value="{!selectedShipToId}" title="Choose ShipTo Account" multiselect="false" size="1" id="SelShipToId" rendered="{!renderShipToOptions}" >
+	            			<apex:selectOptions value="{!list_selectableShipToIds}" />        			
+							<apex:actionSupport event="onchange" action="{!processSelectedShipToId}" status="headerStatus"
+								reRender="pageButtons, SecOrderHeader, SecOrderItems, SecShipToId, SecBillToDetails, SecShipToDetails" />
+								<!-- oFShipToAccount1, oFShipToAccount2, oFShipToAdd1, oFShipToAdd2, oFShipToPostalCode, oFShipToCity -->			
+						</apex:selectList>
+					</apex:outputPanel>
+				</apex:pageBlockSectionItem>				
+				<apex:pageBlockSectionItem rendered="{!NOT(renderShipToOptions)}">
+					<apex:outputLabel value="{!$ObjectType.Order_Header__c.fields.Ship_To_ID__c.label}" />
+					<apex:outputField value="{!Order_Header__c.Ship_To_ID__c}" id="iFShipToId">						
+					<!-- iFShipToId, Sec1, Sec2, olSelShipToId, SelShipToId, SelOptShipToId, oFShipToAccount1, oFShipToAccount2, oFShipToAdd1, oFShipToAdd2, oFShipToPostalCode, oFShipToCity -->
+					</apex:outputField>
+				</apex:pageBlockSectionItem>	
+				<apex:pageBlockSectionItem rendered="{!renderShipToOptions}">
+					<apex:outputLabel value="{!$ObjectType.Order_Header__c.fields.Ship_To_ID__c.label}" style="color:red"/>
+					<apex:selectList value="{!selectedShipToId}" title="Choose ShipTo Account" multiselect="false" size="1" id="SelShipToId" >
+            			<apex:selectOptions value="{!list_selectableShipToIds}" />        			
+						<apex:actionSupport event="onchange" action="{!processSelectedShipToId}" status="headerStatus"
+							reRender="pageButtons, SecOrderHeader, SecItemOrderHeaderDetails, SecShipToId, SecBillToDetails, SecShipToDetails" 
+							oncomplete="moveFocus('thePage:theForm:PB:SecOrderHeader:SecItemCallerName:callerName', '-1')" />
+							<!-- oFShipToAccount1, oFShipToAccount2, oFShipToAdd1, oFShipToAdd2, oFShipToPostalCode, oFShipToCity -->			
+					</apex:selectList>
+				</apex:pageBlockSectionItem>				
+				<apex:pageBlockSectionItem >
+					<apex:outputLabel value="{!$ObjectType.Order_Header__c.fields.CreatedById.label}"/>
+					<apex:outputField value="{!Order_Header__c.CreatedById}" />
+				</apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem >				
+					<apex:actionStatus startText=" Validating..." id="StatusValidateShipToId" />
+				</apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem rendered="{!NOT(validShipToId)}">
+					<!-- <apex:outputText style="color:red;font-weight=bolder" value="No valid ShipTo Account found. Please enter a valid ShipTo Id!" rendered="{!NOT(validShipToId)}" />  -->
+				</apex:pageBlockSectionItem>				
+			</apex:pageBlockSection>
+
+			<!--  <apex:pageBlockSection title="Order Header" columns="2" collapsible="true" id="SecOrderHeader" showHeader="false" >  --> 
+			<apex:pageBlockSection title="Header Information" columns="2" collapsible="true" id="SecOrderHeader" >
+				<apex:actionStatus startText=" Refreshing..." id="headerStatus" />
+				
+				<apex:pageBlockSectionItem ></apex:pageBlockSectionItem>												
+				<!-- <apex:pageBlockSectionItem ></apex:pageBlockSectionItem> -->
+				<apex:pageBlockSectionItem id="SecItemCallerName">
+					<apex:outputLabel value="{!$ObjectType.Order_Header__c.fields.Caller_Name__c.label}"/>
+					<apex:outputField value="{!Order_Header__c.Caller_Name__c}"  id="callerName" />
+				</apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem >
+					<apex:outputLabel value="{!$ObjectType.Order_Header__c.fields.Scheduled_Ship_Date__c.label}"/>
+					<apex:outputField value="{!Order_Header__c.Scheduled_Ship_Date__c}" />									
+				</apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem id="SecItemCustomerPO">
+					<apex:outputLabel value="{!$ObjectType.Order_Header__c.fields.Customer_PO_No__c.label}"/>
+					<apex:outputField value="{!Order_Header__c.Customer_PO_No__c}"  id="customerPO"/>							
+				</apex:pageBlockSectionItem>				
+				<apex:pageBlockSectionItem >
+					<apex:outputLabel value="{!$ObjectType.Order_Header__c.fields.Order_Group__c.label}"/>
+					<apex:outputField value="{!Order_Header__c.Order_Group__c}">
+						<apex:actionSupport event="onchange" action="{!overrideAllOrderGroups}" status="itemStatus" reRender="itemTable"/>
+					</apex:outputField>
+				</apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem id="SecItemOrderSource" >
+					<apex:outputLabel value="{!$ObjectType.Order_Header__c.fields.Order_Source__c.label}"/>
+					<apex:outputField value="{!Order_Header__c.Order_Source__c}"  id="orderSource" />
+				</apex:pageBlockSectionItem>
+			</apex:pageBlockSection>
+
+			<apex:pageBlockSection title="ShipTo - BillTo" columns="2" collapsible="true" showHeader="false" id="SecShipToBillTo">
+				<apex:pageBlockSectionItem id="SecItemSecShipToBillTo">				
+					<apex:pageBlockSection title="ShipTo" columns="1" collapsible="true" id="SecShipToAddress">						
+						<apex:actionStatus id="StatusAddressOverride" startText=" Refreshing..." />
+						<apex:pageBlockSectionItem >							
+							<apex:outputLabel value="{!$ObjectType.Order_Header__c.fields.Account__c.label}"/>
+							<!-- <apex:outputLabel value="ShipTo"/> -->
+							<apex:outputField value="{!Order_Header__c.Account__c}" />
+							<!-- <apex:outputText value="{!AccountName}" /> --> 
+						</apex:pageBlockSectionItem>						
+						<apex:pageBlockSectionItem id="SecItemFON">
+							<apex:outputLabel value="{!$ObjectType.Order_Header__c.fields.Telephone__c.label}"/>
+							<apex:outputField value="{!Order_Header__c.Telephone__c}" id="Fon"/>
+						</apex:pageBlockSectionItem>
+						<apex:pageBlockSectionItem id="SecItemFAX">
+							<apex:outputLabel value="{!$ObjectType.Order_Header__c.fields.Fax__c.label}"/>
+							<apex:outputField value="{!Order_Header__c.Fax__c}" id="FAX" />
+						</apex:pageBlockSectionItem>
+						<apex:pageBlockSectionItem id="SecItemDeliveryName">
+							<apex:outputLabel value="{!$ObjectType.Order_Header__c.fields.Delivery_Name__c.label}"/>
+							<apex:outputField value="{!Order_Header__c.Delivery_Name__c}" id="DeliveryName">
+								<apex:actionSupport event="onchange" action="{!overrideAdressFields}" status="itemStatus" reRender="ShipVia, SecShipToAddress, SecShippingFlags" status="StatusAddressOverride" oncomplete="moveFocus('thePage:theForm:PB:SecShipToBillTo:SecItemSecShipToBillTo:SecShipToAddress:SecItemShipToAddress1:ShipToAddress1', '-1')"/>
+							</apex:outputField>	
+						</apex:pageBlockSectionItem>
+						<apex:pageBlockSectionItem id="SecItemShipToAddress1">
+							<apex:outputLabel value="{!$ObjectType.Order_Header__c.fields.Ship_To_Address_1__c.label}"/>
+							<!-- <apex:outputLabel value="Address1"/>  -->
+							<apex:outputField value="{!Order_Header__c.Ship_To_Address_1__c}" id="ShipToAddress1">
+								<apex:actionSupport event="onchange" action="{!overrideAdressFields}"  reRender="ShipVia, Carrier, AdressOverride, HomeDelivery, SecShippingFlags" status="StatusAddressOverride"/>
+							</apex:outputField>	
+						</apex:pageBlockSectionItem>
+						<apex:pageBlockSectionItem id="SecItemShipToAddress2">
+							<apex:outputLabel value="{!$ObjectType.Order_Header__c.fields.Ship_To_Address_2__c.label}"/>
+							<!--<apex:outputLabel value="Address2"/> -->
+							<apex:outputField value="{!Order_Header__c.Ship_To_Address_2__c}" id="ShipToAddress2" >
+								<apex:actionSupport event="onchange" action="{!overrideAdressFields}" status="itemStatus" reRender="ShipVia, SecShipToAddress, SecShippingFlags" status="StatusAddressOverride" oncomplete="moveFocus('thePage:theForm:PB:SecShipToBillTo:SecItemSecShipToBillTo:SecShipToAddress:SecItemShipToPostcode:ShipToPostcode', '-1')"/>
+							</apex:outputField>
+						</apex:pageBlockSectionItem>
+						<apex:pageBlockSectionItem id="SecItemShipToPostcode">
+							<apex:outputLabel value="{!$ObjectType.Order_Header__c.fields.Ship_To_Postcode__c.label}"/>
+							<!--<apex:outputLabel value="PostCode"/> -->
+							<apex:outputField value="{!Order_Header__c.Ship_To_Postcode__c}" id="ShipToPostcode">
+								<apex:actionSupport event="onchange" action="{!overrideAdressFields}" status="itemStatus" reRender="ShipVia, SecShipToAddress, SecShippingFlags" status="StatusAddressOverride" oncomplete="moveFocus('thePage:theForm:PB:SecShipToBillTo:SecItemSecShipToBillTo:SecShipToAddress:SecItemShipToCity:ShipToCity', '-1')"/>
+							</apex:outputField>
+						</apex:pageBlockSectionItem>
+						<apex:pageBlockSectionItem id="SecItemShipToCity">
+							<apex:outputLabel value="{!$ObjectType.Order_Header__c.fields.Ship_To_City__c.label}"/>
+							<!-- <apex:outputLabel value="City"/> -->
+							<apex:outputField value="{!Order_Header__c.Ship_To_City__c}" id="ShipToCity"> 
+								<apex:actionSupport event="onchange" action="{!overrideAdressFields}" status="itemStatus" reRender="ShipVia, SecShipToAddress, SecShippingFlags" status="StatusAddressOverride" oncomplete="moveFocus('SKU', '0')"/>
+							</apex:outputField>
+						</apex:pageBlockSectionItem>																
+						<apex:pageBlockSectionItem >
+							<apex:outputLabel value="{!$ObjectType.Order_Header__c.fields.Address_Override__c.label}"/>
+							<apex:outputField value="{!Order_Header__c.Address_Override__c}" id="AdressOverride"/> 
+						</apex:pageBlockSectionItem>
+						<apex:pageBlockSectionItem >
+							<apex:outputLabel value="{!$ObjectType.Order_Header__c.fields.Home_Delivery__c.label}"/>
+							<apex:outputField value="{!Order_Header__c.Home_Delivery__c}" id="HomeDelivery"/> 
+						</apex:pageBlockSectionItem>
+					</apex:pageBlockSection>
+				</apex:pageBlockSectionItem>
+							
+				<apex:pageBlockSectionItem >				
+					<apex:pageBlockSection title="RightSide" columns="1" collapsible="true" id="SecBillToDetails" showHeader="false">																
+						<apex:pageBlockSectionItem >				
+							<apex:pageBlockSection title="BillTo" columns="1" collapsible="true" id="SecBillToDetails">
+								<apex:pageBlockSectionItem >
+									<apex:outputLabel value="{!$ObjectType.Order_Header__c.fields.Account__c.label}"/>
+									<apex:outputField value="{!Order_Header__c.Bill_To_Account_Name__c}" />
+								</apex:pageBlockSectionItem>
+								<apex:pageBlockSectionItem >
+									<apex:outputLabel value="{!$ObjectType.Order_Header__c.fields.Bill_To_Address_1__c.label}"/>
+									<apex:outputField value="{!Order_Header__c.Bill_To_Address_1__c}" />
+								</apex:pageBlockSectionItem>
+								<apex:pageBlockSectionItem >
+									<apex:outputLabel value="{!$ObjectType.Order_Header__c.fields.Bill_To_Address_2__c.label}"/>
+									<apex:outputField value="{!Order_Header__c.Bill_To_Address_2__c}" />
+								</apex:pageBlockSectionItem>
+								<apex:pageBlockSectionItem >
+									<apex:outputLabel value="{!$ObjectType.Order_Header__c.fields.Bill_To_Postcode__c.label}"/>
+									<apex:outputField value="{!Order_Header__c.Bill_To_Postcode__c}" />
+								</apex:pageBlockSectionItem>
+								<apex:pageBlockSectionItem >
+									<apex:outputLabel value="{!$ObjectType.Order_Header__c.fields.Bill_To_City__c.label}"/>
+									<apex:outputField value="{!Order_Header__c.Bill_To_City__c}" />
+								</apex:pageBlockSectionItem>
+							</apex:pageBlockSection>
+						</apex:pageBlockSectionItem>
+								
+						<apex:pageBlockSectionItem >	
+							<apex:pageBlockSection title="ShipTo Details" collapsible="true" columns="1" >
+								<apex:pageBlockSectionItem >
+									<apex:pageBlockSection title="Domestic" collapsible="false" columns="1">
+										<apex:pageBlockSectionItem >
+											<apex:outputLabel value="{!$ObjectType.Order_Header__c.fields.Carrier__c.label}"/>
+											<apex:outputField value="{!Order_Header__c.Carrier__c}" />
+										</apex:pageBlockSectionItem>
+										<apex:pageBlockSectionItem >
+											<apex:outputLabel value="{!$ObjectType.Order_Header__c.fields.Ship_Via__c.label}"/>
+											<apex:outputField value="{!Order_Header__c.Ship_Via__c}" id="ShipVia" />
+										</apex:pageBlockSectionItem>
+									</apex:pageBlockSection>
+								</apex:pageBlockSectionItem>
+								<apex:pageBlockSectionItem >
+									<apex:pageBlockSection title="Foreign" collapsible="false" rendered="false">
+									</apex:pageBlockSection>
+								</apex:pageBlockSectionItem>
+								<apex:pageBlockSectionItem >
+									<apex:pageBlockSection title="Taxes" collapsible="false" rendered="false">
+									</apex:pageBlockSection>
+								</apex:pageBlockSectionItem>
+								<apex:pageBlockSectionItem >
+									<apex:pageBlockSection title="Shipping Flags" collapsible="false" columns="2" id="SecShippingFlags">
+										<apex:pageBlockSectionItem >
+											<apex:outputLabel value="{!$ObjectType.Order_Header__c.fields.Partial_Order__c.label}"/>
+											<apex:outputField value="{!Order_Header__c.Partial_Order__c}" />
+										</apex:pageBlockSectionItem>
+										<apex:pageBlockSectionItem >
+											<apex:outputLabel value="{!$ObjectType.Order_Header__c.fields.Partials__c.label}"/>
+											<apex:outputField value="{!Order_Header__c.Partials__c}" />
+										</apex:pageBlockSectionItem>
+										<apex:pageBlockSectionItem >
+											<apex:outputLabel value="{!$ObjectType.Order_Header__c.fields.Cancel_Back_Order__c.label}"/>
+											<apex:outputField value="{!Order_Header__c.Cancel_Back_Order__c}" />
+										</apex:pageBlockSectionItem>
+									</apex:pageBlockSection>
+								</apex:pageBlockSectionItem>
+							</apex:pageBlockSection>
+						</apex:pageBlockSectionItem>																						
+					</apex:pageBlockSection>
+				</apex:pageBlockSectionItem>						
+			</apex:pageBlockSection>
+			
+			<apex:pageBlockSection title="Order Line Items" columns="1" id="SecOrderItems">
+				<apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+				<apex:actionStatus startText=" Refreshing..." id="itemStatus"/>
+				
+				<apex:commandLink value="Add Item Lines" id="addItemsTop" action="{!addClsItems}" status="itemStatus" reRender="itemTable" rendered="false"/>		
+				
+				<apex:pageBlockSectionItem rendered="false"></apex:pageBlockSectionItem>
+				 
+				<apex:pageBlockTable value="{!list_clsOlis}" var="item" id="itemTable">					
+					
+					
+					
+					<apex:column >
+						<!--<apex:facet name="header">{!$ObjectType.Order_Line_Item__c.fields.Item__c.label}</apex:facet>-->
+						<apex:facet name="header">#Item</apex:facet>						
+						<apex:outputField value="{!item.oli.Item__c}" />
+					</apex:column> 
+					<apex:column rendered="false">
+						<apex:facet name="header">{!$ObjectType.Order_Line_Item__c.fields.Product_SKU__c.label}</apex:facet>						
+						<apex:outputText id="SKUfield" value="{!item.oli.Product_SKU__c}">
+							<!--  <apex:actionSupport event="onchange" action="{!queryLineItemData}" immediate="true" status="itemStatus" reRender="SecOrderItems, itemTable, SecFocusToQTY">  -->
+								<!--  <apex:param name="item" value="{!item.oli.Item__c - 1}" assignTo="{!actualItem}"/>  -->
+								<!--  <apex:param name="fieldInFocus" value="this" assignTo="{!fieldInFocus}"/>  -->  
+							<!--  </apex:actionSupport> -->
+						</apex:outputText>
+					</apex:column> 
+					<apex:column >	
+						<apex:facet name="header">{!$ObjectType.Order_Line_Item__c.fields.Product_SKU__c.label}</apex:facet>											
+						<apex:outputPanel id="SKUspan" styleClass="lookupInput">
+							<apex:inputHidden value="{!item.UOM}" id="hiddenUnitMeasure" />
+							<apex:inputHidden value="{!item.validSKU}" id="hiddenValidSKU" />
+							<apex:inputHidden value="{!item.oli.PS_Product_SKU__c}" id="hiddenPSSKU" />					
+							<apex:inputHidden value="{!item.oli.CurrencyIsoCode}" id="hiddenItemCurrency" />
+							<apex:inputHidden id="productId" value="{!item.oli.Product_SKU__c}"/>							
+							<apex:inputHidden value="{!item.SKU_oldId}" id="SKU_oldId"/>
+							<apex:inputHidden value="{!item.SKU_lkid}" id="SKU_lkid" />
+							<apex:inputHidden value="{!item.SKU_lkold}" id="SKU_lkold"/>
+							<apex:inputHidden value="{!item.SKU_lktp}" id="SKU_lktp"/>
+							<apex:inputHidden value="{!item.SKU_lspf}" id="SKU_lspf"/>
+							<apex:inputHidden value="{!item.SKU_mod}" id="SKU_mod"/> 
+							<apex:inputHidden value="{!item.productDescription}" id="hiddenProductDescription"/>
+							<apex:inputHidden value="{!item.stock}" id="hiddenStock"/>
+							<apex:inputHidden value="{!item.max}" id="hiddenMax"/>
+							<apex:inputHidden value="{!item.mult}" id="hiddenMultiple"/>
+							
+							<!-- <apex:image id="warningIcon" url="{!$Resource.WarningIcon}" alt="Invalid SKU" width="12" height="12" rendered="{!NOT(item.validSKU)}"/>   -->
+							<!-- <apex:image id="warningIconEmpty" url="/s.gif" alt="Valid SKU" width="12" height="12" rendered="{!item.validSKU}"/>   -->							
+							<apex:outputText id="SKU" value="{!item.SKU_field}"  />
+							<!--  <apex:inputText id="SKU" value="{!item.SKU_field}">   -->
+								<!-- <apex:actionSupport event="onchange" status="itemStatus" oncomplete="moveFocus('qty',{!item.oli.Item__c - 1});" reRender="SKU">  -->
+									<!-- <apex:param name="item" value="{!item.oli.Item__c - 1}" assignTo="{!actualItem}"/>  -->
+									<!-- <apex:param name="lkid" value="" assignTo="{!item.SKU_lkid}"/>  -->
+									<!-- <apex:param name="mod" value="1" assignTo="{!item.SKU_mod}"/>  -->
+								<!-- </apex:actionSupport>  -->
+								<!-- <apex:actionSupport event="onblur" action="{!queryLineItemData}" status="itemStatus" oncomplete="moveFocus('qty',{!item.oli.Item__c - 1});" reRender="itemTable">  -->
+									<!-- <apex:param name="item" value="{!item.oli.Item__c - 1}" assignTo="{!actualItem}"/>  -->
+									<!--  <apex:param name="lkid" value="" assignTo="{!item.SKU_lkid}"/> -->  
+									<!--  <apex:param name="mod" value="1" assignTo="{!item.SKU_mod}"/>  -->
+								<!-- </apex:actionSupport>  -->
+							<!-- </apex:inputText>  -->
+							<!-- <input autocomplete="off" id="thePage:theForm:PB:SecOrderItems:itemTable:0:SKU" maxlength="255" name="thePage:theForm:PB:SecOrderItems:itemTable:0:SKU" onchange="getElementByIdCS('{!$Component.SKU_lkid}').value='';getElementByIdCS('{!$Component.SKU_mod}').value='1';" size="20" value="{!SKU_lkold}" type="text" /> -->
+							<!-- <a href="javascript: openLookup('/_ui/common/data/LookupPage?lkfm=thePage:theForm&lknm=thePage:theForm:PB:SecOrderItems:itemTable:0:SKU&lktp=' + getElementByIdCS('thePage:theForm:PB:SecOrderItems:itemTable:0:SKU_lktp').value,670,'1','&lksrch=SDD+A')" id="thePage:theForm:PB:SecOrderItems:itemTable:0:SKU_lkwgt"> -->  
+							<!-- <a href="javascript: openLookup('/_ui/common/data/LookupPage?lkfm=thePage:theForm&lknm={!$Component.SKU}&lktp=' + getElementByIdCS('{!$Component.SKU_lktp}').value,670,'1','&lksrch=' + encodeURIComponent(getElementByIdCS('{!$Component.SKU}').value.substring(0, 80)))">  --> 
+							 <!-- <a href="javascript: window.open('/_ui/common/data/LookupPage?lkfm=thePage:theForm&lknm=thePage:theForm:PB:SecOrderItems:itemTable:0:SKU&lktp=a0K&lksrch=' + encodeURIComponent('SDD+'))" >  --> 
+								<!-- <img src="/s.gif" class="lookupIcon" onblur="this.className='lookupIcon';" onfocus="this.className='lookupIconOn';" onmouseout="this.className='lookupIcon';" onmouseover="this.className='lookupIconOn';" /> --> 
+							<!-- </a> --> 
+						<!-- onclick="ShowLookup('{!AnyPropertyFromController}');" -->
+						</apex:outputPanel>
+					</apex:column>
+					<apex:column >
+						<apex:facet name="header">{!$ObjectType.Product2.fields.Description.label}</apex:facet>						
+						<!-- <apex:outputField value="{!item.pc.Product_Description__c}" /> -->													
+						<apex:outputField value="{!item.pc.Description}" id="productDescription" />
+					</apex:column>										
+					<apex:column >
+						<apex:facet name="header">{!$ObjectType.Order_Line_Item__c.fields.Quantity__c.label}</apex:facet>						
+						<apex:outputField value="{!item.oli.Quantity__c}" style="width:45px;color:{!item.quantityColor};font-weight:{!IF(item.quantityColor = 'red', 'bold', 'normal')}" id="qty">
+							<apex:actionSupport event="onchange" action="{!changeQuantity}" status="orderSummaryStatus" reRender="ExtendedPrice, OrderValue, FreightAmount" oncomplete="moveFocus('patientRef',{!item.oli.Item__c - 1});">
+								<apex:param name="item" value="{!item.oli.Item__c - 1}" assignTo="{!actualItem}"/>
+							</apex:actionSupport>
+							<!-- <apex:actionSupport event="onchange" action="{!calculateOrderValue}" status="orderSummaryStatus" reRender="SecOrderSummary" /> -->
+						</apex:outputField>
+					</apex:column>
+					<apex:column rendered="false">
+						<apex:image url="{!$Resource.BoxIcon}" alt="Check Quantity" width="20" height="20" />							
+					</apex:column>
+					<apex:column >
+						<!-- <apex:facet name="header">{!$ObjectType.Inventory__c.fields.Quantity_in_Stock__c.label}</apex:facet>-->
+						<apex:facet name="header">Stock</apex:facet>						
+						<apex:outputPanel >
+							<span style="color:{!item.stockColor};font-weight:{!IF(item.stockColor = 'red', 'bold', 'normal')}">
+								<apex:outputField value="{!item.inv.Quantity_In_Stock__c}" style="color:{!item.stockColor}" id="stock"/>
+							</span>
+						</apex:outputPanel>						
+					</apex:column>
+					<apex:column >
+						<!-- <apex:facet name="header">{!$ObjectType.ProductCatalog__c.fields.Maximum_Order_Qty__c.label}</apex:facet>-->
+						<apex:facet name="header">Max</apex:facet>						
+						<apex:outputPanel >
+							<span style="color:{!item.maxColor};font-weight:{!IF(item.maxColor = 'red', 'bold', 'normal')}">
+								<apex:outputField value="{!item.pc.Maximum_Order_Qty__c}" style="color:{!item.maxColor}" id="max"/>
+							</span>
+						</apex:outputPanel>
+					</apex:column>
+					<apex:column >
+						<!-- <apex:facet name="header">{!$ObjectType.ProductCatalog__c.fields.Multiple_Order_Qty__c.label}</apex:facet>-->
+						<apex:facet name="header">Multiple</apex:facet>						
+						<apex:outputPanel >
+							<span style="color:{!item.multipleColor};font-weight:{!IF(item.multipleColor = 'red', 'bold', 'normal')}">
+								<apex:outputField value="{!item.pc.Multiple_Order_Qty__c}" id="multiple"/>
+							</span>
+						</apex:outputPanel>
+					</apex:column>					
+					<apex:column >
+						<apex:facet name="header">{!$ObjectType.Order_Line_Item__c.fields.Patient_Ref_No__c.label}</apex:facet>						
+						<apex:outputField value="{!item.oli.Patient_Ref_No__c}" id="patientRef" />
+					</apex:column>
+					<apex:column rendered="false"> 
+						<apex:facet name="header">{!$ObjectType.Order_Line_Item__c.fields.Customer_PO_No__c.label}</apex:facet>						
+						<apex:outputField value="{!item.oli.Customer_PO_No__c}" />
+					</apex:column>
+					<apex:column rendered="false">
+						<apex:image url="{!$Resource.CoinsIcon}" alt="Calculate Price" width="20" height="20" />							
+					</apex:column>
+					<apex:column >
+						<apex:facet name="header">{!$ObjectType.Order_Line_Item__c.fields.Unit_Price__c.label}</apex:facet>						
+						<apex:outputText value="{!item.custUnitPrice}" />
+					</apex:column>
+					<apex:column >
+						<apex:facet name="header">{!$ObjectType.Order_Line_Item__c.fields.Override_Price__c.label}</apex:facet>						
+						<apex:outputText value="{!item.custOverridePrice}" >
+							<apex:actionSupport event="onchange" action="{!changeOverridePrice}" status="orderSummaryStatus" reRender="SecOrderSummary, ExtendedPrice, OrderValue, FreightAmount">
+								<apex:param name="item" value="{!item.oli.Item__c - 1}" assignTo="{!actualItem}"/>
+							</apex:actionSupport>
+						</apex:outputText>
+					</apex:column>
+					<apex:column >
+						<apex:facet name="header">{!$ObjectType.Order_Line_Item__c.fields.Extended_Price__c.label}</apex:facet>						
+						<apex:outputText value="{!item.custExtendedPrice}" id="ExtendedPrice" />
+					</apex:column>					
+					<apex:column >
+						<apex:facet name="header">{!$ObjectType.Order_Line_Item__c.fields.Ship_From__c.label}</apex:facet>						
+						<apex:outputField value="{!item.oli.Ship_From__c}" >
+							<apex:actionSupport event="onchange" action="{!changeShipFrom}" status="itemStatus" reRender="SecOrderItems, itemTable">
+								<apex:param name="item" value="{!item.oli.Item__c - 1}" assignTo="{!actualItem}"/>
+							</apex:actionSupport>
+						</apex:outputField>
+					</apex:column>
+					<apex:column >
+						<apex:facet name="header">{!$ObjectType.Order_Line_Item__c.fields.Order_Group__c.label}</apex:facet>						
+						<apex:outputField value="{!item.oli.Order_Group__c}" />
+					</apex:column>								
+				</apex:pageBlockTable>
+				
+				<apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem rendered="false">
+					<apex:outputPanel >
+						<apex:commandLink value="Add Item Lines" id="addItemsBottom" action="{!addClsItems}" status="itemStatus" reRender="itemTable"/>
+						&nbsp;&nbsp;&nbsp;
+						<apex:commandLink value="Calculate Prices" id="calculatePricesBottom" action="{!requestPrices}" status="itemStatus" reRender="itemTable, SecOrderSummary"/>
+						&nbsp;&nbsp;&nbsp;
+						<apex:commandLink value="Check Quantities" id="checkQuantitiesBottom" action="{!checkQuantities}" status="itemStatus" reRender="itemTable"/>						
+						&nbsp;&nbsp;&nbsp;
+						<apex:commandLink value="Test Webservice" id="TestWebsrviceBottom" action="{!requestPrices}" status="itemStatus" reRender="itemTable, SecOrderSummary" rendered="false" />
+					</apex:outputPanel>
+				</apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+			
+					<!-- <script type="text/javascript"> -->
+						<!-- //{!ControlToFocus} -->
+					<!-- </script> -->
+			</apex:pageBlockSection>
+			
+			<apex:pageBlockSection title="Order - Summary" columns="2" id="SecOrderSummary">
+				<apex:actionStatus startText=" Refreshing..." id="orderSummaryStatus"/>
+				<apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem >
+					<apex:outputLabel value="Total Net Price"/>
+					<!-- <apex:outputField value="{!Order_Header__c.Order_Amount__c}" id="OrderValue"/>  -->
+					<apex:outputText value="{!custOrderAmount}" id="OrderValue"/> 
+				</apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem > 
+					<apex:outputLabel value="{!$ObjectType.Order_Header__c.fields.Charge_Freight__c.label}"/>
+					<apex:outputField value="{!Order_Header__c.Charge_Freight__c}" id="ChargeFreight">
+						<apex:actionSupport event="onchange" action="{!calculateFreightAmount}" reRender="SecOrderSummary" status="orderSummaryStatus"/>
+					</apex:outputField>									
+				</apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem >
+					<apex:outputLabel value="{!$ObjectType.Order_Header__c.fields.Freight_Amount__c.label}"/>
+					<apex:outputText value="{!custFreightAmount}" id="FreightAmount" >
+						<apex:actionSupport event="onchange" action="{!changeFreightOverride}" status="orderSummaryStatus" />
+					</apex:outputText> 
+				</apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem >
+					<apex:outputLabel value="Total Value"/>
+					<!-- <apex:outputField value="{!Order_Header__c.Total_Value__c}" id="TotalValue"/>  -->
+					<apex:outputText value="{!custTotalValue}" id="TotalValue"/> 
+				</apex:pageBlockSectionItem>
+			</apex:pageBlockSection>
+			
+			<apex:pageBlockSection id="SecFocusToQTY">
+				<!-- <script type="text/javascript"> -->
+					<!-- //{!ControlToFocus} -->
+				<!-- </script> -->
+			</apex:pageBlockSection>
+			<script type="text/javascript">
+				function init() {
+					sforce.connection.sessionId = '{!$Api.Session_ID}';
+					alert('hi: ' + sforce.connection.sessionId);
+				}        
+				var previousOnload = window.onload;
+				window.onload = function() {
+					if (previousOnload) {
+						previousOnload();
+					}
+					//init();
+					//queryProducts();
+			    }
+			</script>
+			
+		</apex:pageBlock>
+
+ 
+	</apex:form>
+	<apex:relatedList list="Cases__r" title="Related Cases" />
+	<apex:relatedList list="Shipping_History__r" title="Related Shipments" />
+</apex:page>

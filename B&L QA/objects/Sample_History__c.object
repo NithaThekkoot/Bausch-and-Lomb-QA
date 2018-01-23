@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>NOT USED BY SURGICAL
+
+Logs all samples by doctor, product and date. For legal purposes this history will keep all sample events over time.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Country__c</fullName>
+        <description>Orginial formula:
+IF(OR(TEXT(Sample_Product__r.Country__c) == &quot;Switzerland&quot;,TEXT(Sample_Product__r.Country__c) == &quot;CHE&quot;), &quot;Switzerland&quot;, &quot;Germany&quot;)</description>
+        <externalId>false</externalId>
+        <formula>&quot;Germany&quot;</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Country</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Customer_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Customer__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Customer Name</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Customer__c</fullName>
+        <externalId>false</externalId>
+        <label>Customer</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Sampling</relationshipLabel>
+        <relationshipName>Sample_History</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Date__c</fullName>
+        <defaultValue>TODAY()</defaultValue>
+        <externalId>false</externalId>
+        <label>Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Mobile_Sample_Id__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Date__c) &amp; &quot; &quot;  &amp;  Sample_Product__r.Name  &amp; &quot;: &quot; &amp;  TEXT(Quantity__c)</formula>
+        <label>Sample</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Type__c</fullName>
+        <description>Original formula:
+TEXT(Sample_Product__r.Type__c)</description>
+        <externalId>false</externalId>
+        <formula>&quot;Product Type&quot;</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Product Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Quantity__c</fullName>
+        <externalId>false</externalId>
+        <label>Quantity</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sample_Product__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Sample Product</label>
+        <referenceTo>Sample_Product__c</referenceTo>
+        <relationshipLabel>Sample History</relationshipLabel>
+        <relationshipName>Sample_History</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Given</fullName>
+                    <default>true</default>
+                    <label>Given</label>
+                </value>
+                <value>
+                    <fullName>Requested</fullName>
+                    <default>false</default>
+                    <label>Requested</label>
+                </value>
+                <value>
+                    <fullName>Sent</fullName>
+                    <default>false</default>
+                    <label>Sent</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Unrestricted_YES_NO__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(OR(Customer__r.ShippingCountry == &quot;Switzerland&quot;, Customer__r.ShippingCountry = &quot;CHE&quot;) &amp;&amp; Customer__r.DASRX_Customer_Type__c == &quot;Kliniker&quot;, &quot;Unrestricted&quot;, &quot;Restricted&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Unrestricted YES/NO</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Year_Customer_Product__c</fullName>
+        <externalId>false</externalId>
+        <label>Year Customer Product</label>
+        <length>42</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Sample History</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>{YYYY}-{MM}-{DD}-{0}</displayFormat>
+        <label>Sample Id</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Sample History</pluralLabel>
+    <recordTypes>
+        <fullName>New_Record</fullName>
+        <active>true</active>
+        <description>Shows only Requested and Given as status. Used for new entry of samples</description>
+        <label>New Record</label>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Given</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Requested</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Read_only</fullName>
+        <active>true</active>
+        <description>Used after record was created to make all fields read-only</description>
+        <label>Read-only</label>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Given</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Sent</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Requested</fullName>
+        <active>true</active>
+        <description>In case sample was not given but requested this record type is used to enable status field</description>
+        <label>Requested</label>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Requested</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sent</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Prevent_Status_Sent_for_Sales_Reps</fullName>
+        <active>true</active>
+        <description>A sales rep should not be able to select Sent for the status field</description>
+        <errorConditionFormula>AND(
+       $UserRole.Name &lt;&gt; &apos;DASRX Sales Admin&apos;,
+        ISPICKVAL(Status__c,&apos;Sent&apos;)
+)</errorConditionFormula>
+        <errorDisplayField>Status__c</errorDisplayField>
+        <errorMessage>Status Sent is not allowed. Please select Requested if not given directly to doctor.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Validate_Product_and_Account_Country</fullName>
+        <active>true</active>
+        <description>As sales admins should have access to sample products from different countries, this validation rule ensures that sample product country and account country matches.</description>
+        <errorConditionFormula>IF( Country__c = &quot;Germany&quot;, 
+        IF( AND(Customer__r.ShippingCountry &lt;&gt; &quot;DEU&quot;,Customer__r.ShippingCountry &lt;&gt; &quot;Germany&quot;), true, false),
+        IF( AND(Customer__r.ShippingCountry &lt;&gt; &quot;CHE&quot;,Customer__r.ShippingCountry &lt;&gt; &quot;Switzerland&quot;), true, false)
+)</errorConditionFormula>
+        <errorDisplayField>Sample_Product__c</errorDisplayField>
+        <errorMessage>Please select a sample product that matches with customer&apos;s country.</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

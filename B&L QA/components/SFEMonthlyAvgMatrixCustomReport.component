@@ -1,0 +1,83 @@
+<apex:component controller="clsSFEMonthlyAvgCustomReport" access="global">
+    <apex:attribute name="dealid" assignTo="{!APACId}" type="String" description="The ID of a APAC Summary for which we want to generate a confirmation."/>
+    
+    <apex:dataTable value="{!lstAPACCallSummary}" var="lstAPACCall" border="0">      
+     <apex:column headerValue="Manager" style=" white-space:nowrap; text-align: left;"> 
+                    <apex:outputText value="{!lstAPACCall.strManagerName}" rendered="{!IF(lstAPACCall.strRegion != null,true,false)}" style="white-space:nowrap;"></apex:outputText>
+                    <!--<apex:outputText value="{!lstAPACCall.strTotalRegion}" rendered="{!IF(lstAPACCall.strTotalRegion== null,true,false)}" style="font-weight: bold;"></apex:outputText> -->
+                </apex:column>        
+            <apex:column headerValue="Region" style=" white-space:nowrap; text-align: left;"> 
+                <apex:outputText value="{!lstAPACCall.strRegion}" rendered="{!IF(lstAPACCall.strRegion != null,true,false)}" style="white-space:nowrap;"></apex:outputText>
+                <apex:outputText value="{!lstAPACCall.strTotalRegion}" rendered="{!IF(lstAPACCall.strTotalRegion != null,true,false)}" style="font-weight: bold;"></apex:outputText>
+            </apex:column>
+            <apex:column value="{!lstAPACCall.strCity}" headerValue="City" style="white-space:nowrap; text-align: left;"/>              
+            <apex:column value="{!lstAPACCall.strName}" headerValue="SE/SCRM" style="white-space:nowrap; text-align: left;"/> 
+           <!-- <apex:column headerValue="Jan - {!IntYearName}" headerClass="align: center;" style="white-space:nowrap; text-align: center;">                    
+                <apex:outputText value="{!lstAPACCall.DecAvgJan}" rendered="{!IF(lstAPACCall.strRegion != null,true,false)}" style="white-space:nowrap;"></apex:outputText>
+                <apex:outputText value="{!lstAPACCall.DecAvgJanColTotal}" rendered="{!IF(lstAPACCall.strTotalRegion != null,true,false)}" style="font-weight: bold;"></apex:outputText>
+            </apex:column>
+            <apex:column headerValue="Feb - {!IntYearName}" rendered="{!IF(MonthNumber >= 2,true,false)}" headerClass="align: center;" style="white-space:nowrap; text-align: center;">                    
+                <apex:outputText value="{!lstAPACCall.DecAvgFeb}" rendered="{!IF(lstAPACCall.strRegion != null,true,false)}" style="white-space:nowrap;"></apex:outputText>
+                <apex:outputText value="{!lstAPACCall.DecAvgFebColTotal}" rendered="{!IF(lstAPACCall.strTotalRegion != null,true,false)}" style="font-weight: bold;"></apex:outputText>
+            </apex:column>
+            <apex:column headerValue="Mar - {!IntYearName}" rendered="{!IF(MonthNumber >= 3,true,false)}" headerClass="align: center;" style="white-space:nowrap; text-align: center;">
+                <apex:outputText value="{!lstAPACCall.DecAvgMar}" rendered="{!IF(lstAPACCall.strRegion != null,true,false)}" style="white-space:nowrap;"></apex:outputText>
+                <apex:outputText value="{!lstAPACCall.DecAvgMarColTotal}" rendered="{!IF(lstAPACCall.strTotalRegion != null,true,false)}" style="font-weight: bold;"></apex:outputText>
+            </apex:column>
+            <apex:column headerValue="Apr - {!IntYearName}" rendered="{!IF(MonthNumber >= 4,true,false)}" headerClass="align: center;" style="white-space:nowrap; text-align: center;">
+                <apex:outputText value="{!lstAPACCall.DecAvgApr}" rendered="{!IF(lstAPACCall.strRegion != null,true,false)}" style="white-space:nowrap;"></apex:outputText>
+                <apex:outputText value="{!lstAPACCall.DecAvgAprColTotal}" rendered="{!IF(lstAPACCall.strTotalRegion != null,true,false)}" style="font-weight: bold;"></apex:outputText>
+            </apex:column>
+            <apex:column headerValue="May - {!IntYearName}" rendered="{!IF(MonthNumber >= 5,true,false)}" headerClass="align: center;" style="white-space:nowrap; text-align: center;">
+                <apex:outputText value="{!lstAPACCall.DecAvgMay}" rendered="{!IF(lstAPACCall.strRegion != null,true,false)}" style="white-space:nowrap;"></apex:outputText>
+                <apex:outputText value="{!lstAPACCall.DecAvgMayColTotal}" rendered="{!IF(lstAPACCall.strTotalRegion != null,true,false)}" style="font-weight: bold;"></apex:outputText>
+            </apex:column>
+            <apex:column headerValue="June - {!IntYearName}" rendered="{!IF(MonthNumber >= 6,true,false)}" headerClass="align: center;" style="white-space:nowrap; text-align: center;">                    
+                <apex:outputText value="{!lstAPACCall.DecAvgJune}" rendered="{!IF(lstAPACCall.strRegion != null,true,false)}" style="white-space:nowrap;"></apex:outputText>
+                <apex:outputText value="{!lstAPACCall.DecAvgJuneColTotal}" rendered="{!IF(lstAPACCall.strTotalRegion != null,true,false)}" style="font-weight: bold;"></apex:outputText>
+            </apex:column>
+            <apex:column headerValue="July - {!IntYearName}" rendered="{!IF(MonthNumber >= 7,true,false)}" headerClass="align: center;" style="white-space:nowrap; text-align: center;">                    
+                <apex:outputText value="{!lstAPACCall.DecAvgJuly}" rendered="{!IF(lstAPACCall.strRegion != null,true,false)}" style="white-space:nowrap;"></apex:outputText>
+                <apex:outputText value="{!lstAPACCall.DecAvgJulyColTotal}" rendered="{!IF(lstAPACCall.strTotalRegion != null,true,false)}" style="font-weight: bold;"></apex:outputText>
+            </apex:column>
+            <apex:column headerValue="Aug - {!IntYearName}" rendered="{!IF(MonthNumber >= 8,true,false)}" headerClass="align: center;" style="white-space:nowrap; text-align: center;">
+                <apex:outputText value="{!lstAPACCall.DecAvgAug}" rendered="{!IF(lstAPACCall.strRegion != null,true,false)}" style="white-space:nowrap;"></apex:outputText>
+                <apex:outputText value="{!lstAPACCall.DecAvgAugColTotal}" rendered="{!IF(lstAPACCall.strTotalRegion != null,true,false)}" style="font-weight: bold;"></apex:outputText>
+            </apex:column>
+            <apex:column headerValue="Sep - {!IntYearName}" rendered="{!IF(MonthNumber >= 9,true,false)}" headerClass="align: center;" style="white-space:nowrap; text-align: center;">
+                <apex:outputText value="{!lstAPACCall.DecAvgSep}" rendered="{!IF(lstAPACCall.strRegion != null,true,false)}" style="white-space:nowrap;"></apex:outputText>
+                <apex:outputText value="{!lstAPACCall.DecAvgSepColTotal}" rendered="{!IF(lstAPACCall.strTotalRegion != null,true,false)}" style="font-weight: bold;"></apex:outputText>
+            </apex:column>
+            <apex:column headerValue="Oct - {!IntYearName}" rendered="{!IF(MonthNumber >= 10,true,false)}" headerClass="align: center;" style="white-space:nowrap; text-align: center;">
+                <apex:outputText value="{!lstAPACCall.DecAvgOct}" rendered="{!IF(lstAPACCall.strRegion != null,true,false)}" style="white-space:nowrap;"></apex:outputText>
+                <apex:outputText value="{!lstAPACCall.DecAvgOctColTotal}" rendered="{!IF(lstAPACCall.strTotalRegion != null,true,false)}" style="font-weight: bold;"></apex:outputText>
+            </apex:column>
+            <apex:column headerValue="Nov - {!IntYearName}" rendered="{!IF(MonthNumber >= 11,true,false)}" headerClass="align: center;" style="white-space:nowrap; text-align: center;">
+                <apex:outputText value="{!lstAPACCall.DecAvgNov}" rendered="{!IF(lstAPACCall.strRegion != null,true,false)}" style="white-space:nowrap;"></apex:outputText>
+                <apex:outputText value="{!lstAPACCall.DecAvgNovColTotal}" rendered="{!IF(lstAPACCall.strTotalRegion != null,true,false)}" style="font-weight: bold;"></apex:outputText>
+            </apex:column>
+            <apex:column headerValue="Dec - {!IntYearName}" rendered="{!IF(MonthNumber >= 12,true,false)}" headerClass="align: center;" style="white-space:nowrap; text-align: center;">
+                <apex:outputText value="{!lstAPACCall.DecAvgDec}" rendered="{!IF(lstAPACCall.strRegion != null,true,false)}" style="white-space:nowrap;"></apex:outputText>
+                <apex:outputText value="{!lstAPACCall.DecAvgDecColTotal}" rendered="{!IF(lstAPACCall.strTotalRegion != null,true,false)}" style="font-weight: bold;"></apex:outputText>
+            </apex:column> -->
+            <!--<apex:column headerValue="Total" headerClass="align: center;" style="white-space:nowrap; text-align: center;">
+                <apex:outputText value="{!lstAPACCall.DecAvgRowTotal}" rendered="{!IF(lstAPACCall.strRegion != null,true,false)}" style="white-space:nowrap;"></apex:outputText>
+                <apex:outputText value="{!lstAPACCall.DecAvgMonthRowTotal}" rendered="{!IF(lstAPACCall.strTotalRegion != null,true,false)}" style="font-weight: bold;"></apex:outputText>
+            </apex:column>--> 
+            <!--Added by Neha Jain, to add one more column for the current month for last year, Now 13 columns will be visible to user Current Month , PY- Current Month, this year -->
+                  <apex:column headerValue="{!currentMonthName}-{!intYearNumber}" headerClass="headerrow" style="white-space:nowrap; text-align: center;">
+                    <apex:outputText value="{!lstAPACCall.DecAvgCurrentMonthPY}" rendered="{!IF(lstAPACCall.strRegion != null,true,false)}" style="white-space:nowrap;"></apex:outputText>
+                    <apex:outputText value="{!lstAPACCall.DecAvgCurrentMonthPYColTotal}" rendered="{!IF(lstAPACCall.strTotalRegion != null,true,false)}" style="font-weight: bold;"></apex:outputText>
+                </apex:column>
+               
+                <!-- All the columns for month except Total commented by Neha Jain on 26/02/2014 to display average for last 12 months. -->
+                   <apex:repeat value="{!monthNames}" var="monthNameValue" id="theRepeat">
+
+                         <apex:column headerValue="{!monthNameValue}" headerClass="headerrow" style="white-space:nowrap; text-align: center;">
+                            <apex:outputText value="{!lstAPACCall.mapMonthAvgValues[monthNameValue]}" rendered="{!IF(lstAPACCall.strRegion != null,true,false)}" style="white-space:nowrap;"></apex:outputText>
+                            <apex:outputText value="{!lstAPACCall.mapMonthAvgTotalValues[monthNameValue]}" rendered="{!IF(lstAPACCall.strTotalRegion != null,true,false)}" style="font-weight: bold;"></apex:outputText>
+                        </apex:column> 
+                
+                    </apex:repeat>
+        </apex:dataTable>
+</apex:component>

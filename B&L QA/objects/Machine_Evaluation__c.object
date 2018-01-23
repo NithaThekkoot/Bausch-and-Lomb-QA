@@ -1,0 +1,472 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Pre-demo and demo check lists to aid SES ensuring all actions have been completed in preparation and during the demo.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>Machine__c</fullName>
+        <description>Machine description.</description>
+        <externalId>false</externalId>
+        <label>Machine</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Stellaris</fullName>
+                    <default>false</default>
+                    <label>Stellaris</label>
+                </value>
+                <value>
+                    <fullName>Stellaris PC</fullName>
+                    <default>false</default>
+                    <label>Stellaris PC</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Opportunity__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The opportunity to which this machine evaluation is related.</description>
+        <externalId>false</externalId>
+        <label>Opportunity</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipName>Machine_Evaluations</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Put_up_evaluation_poster_in_staff_room__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>used by EMEASU</description>
+        <externalId>false</externalId>
+        <label>Put up evaluation poster in staff room?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Reconfirmed_every_step_above__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used by EMEASU</description>
+        <externalId>false</externalId>
+        <label>Reconfirmed every step above?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Recorded_case_history_for_each_course__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>USed by EMEASU</description>
+        <externalId>false</externalId>
+        <label>Recorded case history for each course?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Surgeon__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Contact record of the surgeon.</description>
+        <externalId>false</externalId>
+        <label>Surgeon</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipName>Machine_Evaluations</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Would_use_this_Product_in_the_future__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Would the surgeon agree to use this machine in the future.</description>
+        <externalId>false</externalId>
+        <label>Would use this Product in the future?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>attained_agreement_and_permission__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>USed by EMEASU</description>
+        <externalId>false</externalId>
+        <label>attained agreement and permission</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>checked_operating_lists__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used by EMEASU</description>
+        <externalId>false</externalId>
+        <label>checked operating lists?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>conducted_the_in_service__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used by EMEASU</description>
+        <externalId>false</externalId>
+        <label>conducted the in-service?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>contacted_Electrical_Engineering__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>used by EMEASU</description>
+        <externalId>false</externalId>
+        <label>contacted Electrical Engineering?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>contacted_Sterile_Services__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used by EMEASU</description>
+        <externalId>false</externalId>
+        <label>contacted Sterile Services</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>contacted_all_parties_involved__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used by EMEASU</description>
+        <externalId>false</externalId>
+        <label>contacted all parties involved?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>determined_no_of_cases_for_evaluation__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>used by EMEASU</description>
+        <externalId>false</externalId>
+        <label>determined no. of cases for evaluation?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>determined_specific_rules_for_the_eval__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>used by EMEASU</description>
+        <externalId>false</externalId>
+        <label>determined specific rules for the eval.?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>determined_the_participants_of_eval__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>used by EMEASU</description>
+        <externalId>false</externalId>
+        <label>determined the participants of eval?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>determined_where_the_surgeon_stands__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used by EMEASU</description>
+        <externalId>false</externalId>
+        <label>determined where the surgeon stands?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>documented_throughout_the_case__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Ensure Notes, observations and comments are captured.</inlineHelpText>
+        <label>documented throughout the case?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>emailed_pre_eval_letter_to_staff__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>used by emeasu</description>
+        <externalId>false</externalId>
+        <label>emailed pre-eval. letter to staff?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ensured_everything_is_shipped_on_time__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used by EMEASU</description>
+        <externalId>false</externalId>
+        <label>ensured everything is shipped on time?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ensured_key_decision_makers_attendance__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>USed by EMEASU</description>
+        <externalId>false</externalId>
+        <label>ensured key decision makers attendance?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ensured_purchasing_will_be_present__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used by EMEASU</description>
+        <externalId>false</externalId>
+        <label>ensured purchasing will be present?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>followed_up_on_each_case__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used by EMEASU</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Have you determined the outcome?</inlineHelpText>
+        <label>followed up on each case?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>followed_up_with_other_parties__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used by EMEASU</description>
+        <externalId>false</externalId>
+        <label>followed up with other parties?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>given_presentation_to_clinic_staff__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>given presentation to clinic staff?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>got_the_preliminary_settings__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used by EMEASU</description>
+        <externalId>false</externalId>
+        <label>got the preliminary settings?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>liaised_with_purchasing_for_deliveries__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used by EMEASU</description>
+        <externalId>false</externalId>
+        <label>liaised with purchasing for deliveries?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>observed_surgeries_in_the_OR__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used by EMEASU</description>
+        <externalId>false</externalId>
+        <label>observed surgeries in the OR?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>order_machine_and_disposables__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used by EMEASU</description>
+        <externalId>false</externalId>
+        <label>order machine and disposables?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>pre_programmed_the_equipment__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used by EMEASU</description>
+        <externalId>false</externalId>
+        <label>pre-programmed the equipment?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>reviewed_machine_with_staff_a_final_time__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used by EMEASU</description>
+        <externalId>false</externalId>
+        <label>reviewed machine with staff a final time</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>reviewed_the_account_background_info__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used by EMEASU</description>
+        <externalId>false</externalId>
+        <label>reviewed the account background info?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>saved_surgeon_settings_to_USB_stick__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>used by EMEASU</description>
+        <externalId>false</externalId>
+        <label>saved surgeon settings to USB stick?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>scheduled_the_In_Service__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used by EMEASU</description>
+        <externalId>false</externalId>
+        <label>scheduled the In-Service?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>scheduled_the_post_op_follow_up__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>USed by EMEASU</description>
+        <externalId>false</externalId>
+        <label>scheduled the post op follow up?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>set_expectations_with_surgeon_and_staff__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used by EMEASU</description>
+        <externalId>false</externalId>
+        <label>set expectations with surgeon and staff?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>set_the_final_settings__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used by EMEASU</description>
+        <externalId>false</externalId>
+        <label>set the final settings?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ticked_off_the_evaluation_check_list__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Used by EMEASU</description>
+        <externalId>false</externalId>
+        <label>ticked off the evaluation check list?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>uncovered_all_needs_for_this_account__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>uncovered all needs for this account?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Machine Evaluation Checklist</label>
+    <nameField>
+        <displayFormat>Eval-{00000000}</displayFormat>
+        <label>Machine Evaluation Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Machine Evaluation Checklists</pluralLabel>
+    <recordTypes>
+        <fullName>Evaluation_Check_List</fullName>
+        <active>true</active>
+        <description>Evaluation Check List</description>
+        <label>Evaluation Check List</label>
+        <picklistValues>
+            <picklist>Machine__c</picklist>
+            <values>
+                <fullName>Stellaris</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stellaris PC</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Pre_Evaluation_Check_List</fullName>
+        <active>true</active>
+        <description>Pre-Evaluation Check List</description>
+        <label>Pre-Evaluation Check List</label>
+        <picklistValues>
+            <picklist>Machine__c</picklist>
+            <values>
+                <fullName>Stellaris</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stellaris PC</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

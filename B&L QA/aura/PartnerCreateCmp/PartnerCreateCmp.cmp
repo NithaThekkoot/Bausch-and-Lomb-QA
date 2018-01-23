@@ -1,0 +1,89 @@
+<aura:component extends="c:GenericCrudComponent" implements="flexipage:availableForAllPageTypes,force:hasRecordId,flexipage:availableForRecordHome">
+    <aura:attribute name="recordId" type="Id"/>
+    <aura:attribute name="openModal" type="Boolean"/>
+    <aura:attribute name="partnerList" type="Object[]"/>
+    <aura:attribute name="record" type="Object"/>
+    <aura:attribute name="partner" type="Object"/>
+    <aura:attribute name="fieldError" type="Object"/>
+    <aura:attribute name="partnerFilter" type="String"/>
+    <aura:attribute name="showSpinner" type="Boolean" default="false"/>
+    <aura:attribute name="primaryOptionAvailableForOpportunity" type="Boolean" default="false"/>
+    <aura:handler name="change" action="{!c.modalDisplayAction}" value="{!v.openModal}"/>
+    
+    <aura:dependency resource="markup://force:*" type="EVENT"/>
+    <aura:registerEvent type="c:PartnerCreatedEvent" name="partnerCreated"/>
+    
+    <div class="modal">
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading" 
+                 aria-modal="true" aria-describedby="modal-content" aura:id="createPartnerModal" class="slds-modal">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header slds-is-relative">
+                    
+                    <h2 id="modal-heading" class="slds-text-heading_medium slds-hyphenate">Create Partner</h2>
+               
+                </header>
+                <div class="slds-modal__content slds-p-around_medium">
+                    
+                    <div class="slds-grid slds-wrap">
+                        <div class="slds-p-around_large slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_12-of-12 slds-large-size_12-of-12">
+                            <c:LookupCmp label="Partner" class="slds-input required"
+                                         spinnerClass="{!'spinnerClass'}"
+                                         onBlur="{!c.validateField}"
+                                         aura:id="partner"
+                                         where='{!v.partnerFilter}'
+                                         onLookupSelect="{!c.fillLookup}"
+                                         />
+                            <aura:if isTrue="{!v.fieldError.partner!=''}">
+                                <span class="error" >{!v.fieldError.partner}</span>
+                            </aura:if>
+                        </div>
+                        <div class="slds-p-around_large slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_12-of-12 slds-large-size_12-of-12">
+                            <lightning:select name="selectItem" label="Role" 
+                                              value="{!v.partner.Role}" 
+                                              aura:id="role" 
+                                              class="required-select"
+                                              onchange="{!c.validateField}">
+                                <option value="">-None-</option>
+                                <option value="System Integrator">System Integrator</option>
+                                <option value="Agency">Agency</option>
+                                <option value="Advertiser">Advertiser</option>
+                                <option value="VAR/Reseller">VAR/Reseller</option>
+                                <option value="Distributor">Distributor</option>
+                                <option value="Developer">Developer</option>
+                                <option value="Broker">Broker</option>
+                                <option value="Lender">Lender</option>
+                                <option value="Supplier">Supplier</option>
+                                <option value="Institution">Institution</option>
+                                <option value="Contractor">Contractor</option>
+                                <option value="Dealer">Dealer</option>
+                                <option value="Consultant">Consultant</option>
+                            </lightning:select>
+                            <aura:if isTrue="{!v.fieldError.role!=''}">
+                                <span class="error" >{!v.fieldError.role}</span>
+                            </aura:if>
+                        </div>
+                    	<aura:if isTrue="{!v.primaryOptionAvailableForOpportunity}">
+                        <div class="slds-p-around_large slds-size_12-of-12 slds-small-size_12-of-12 slds-medium-size_12-of-12 slds-large-size_12-of-12">
+                            
+                            <lightning:input type="checkbox" label="Is Primary?" checked="{!v.partner.IsPrimary}"/>
+                            
+                        </div>
+                        </aura:if>
+                    </div>
+                    
+                    
+                </div>
+                <footer class="slds-modal__footer slds-is-relative">
+                    <aura:if isTrue="{!v.showSpinner}">
+                        <img src="/resource/spinner" class="spinner slds-is-absolute" />
+                    </aura:if>
+                    <lightning:button variant="destructive" label="Cancel" aura:id="cancel" onclick="{!c.cancel}"/>
+                    <lightning:button variant="brand" label="Save" aura:id="save" onclick="{!c.save}"/>
+                    
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop" aura:id="createPartnerModal-backdrop"></div>
+    </div>
+    
+</aura:component>

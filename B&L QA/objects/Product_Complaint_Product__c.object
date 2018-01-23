@@ -1,0 +1,1606 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <content>Product_Complaint_Product_Edit</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <content>Product_Complaint_Product_View</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Contains the Products that are associated with Product Complaints (Product Cases)</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>CATSWeb_Complaint_Number__c</fullName>
+        <description>For Product Complaints, pull this data in from the related Case so that it can be displayed on email alerts.</description>
+        <externalId>false</externalId>
+        <formula>Case__r.CATSWeb_Complaint_Number__c</formula>
+        <label>CATSWeb Complaint Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Carton_Lot_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Carton Lot Number</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Case_ID_18__c</fullName>
+        <description>Brings in the 18-character Case ID for use in the outbound messages, since the Case__c field only provides the 15-character ID.</description>
+        <externalId>false</externalId>
+        <formula>Case__r.ID_18__c</formula>
+        <label>Case ID 18</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Case__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Case</label>
+        <referenceTo>Case</referenceTo>
+        <relationshipName>Product_Complaint_Products</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Comments</label>
+        <length>10000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>2</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Complaint_Quantity_Int__c</fullName>
+        <description>Integer version to for integration</description>
+        <externalId>false</externalId>
+        <label>Complaint Quantity Int</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Complaint_Quantity__c</fullName>
+        <externalId>false</externalId>
+        <label>Complaint Quantity</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Date_Received_Subsidiary__c</fullName>
+        <externalId>false</externalId>
+        <label>Date Received Subsidiary</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Date_Received__c</fullName>
+        <externalId>false</externalId>
+        <label>Date Received</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Date_of_Manufacture__c</fullName>
+        <description>Populated when a valid Lot Number is found in query to FSCM</description>
+        <externalId>false</externalId>
+        <label>Date of Manufacture</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Delete_Trigger__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>For Product Complaints, this field indicates whether or not the record has been deleted so that the before delete trigger knows whether or not to send the SOAP message to CW to delete the record.  True = it has been deleted already, false = it has NOT been deleted, and is the default value.</description>
+        <externalId>false</externalId>
+        <label>Delete Trigger</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Employee_Assigned_To__c</fullName>
+        <description>For Product Complaints, pull this data in from the related Case so that it can be displayed on email alerts.</description>
+        <externalId>false</externalId>
+        <formula>Case__r.Employee_Assigned_To__c</formula>
+        <label>Employee Assigned To</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Expiration_Date__c</fullName>
+        <description>Value of this field is brought back when the Product Lot Number query from FSCM is returned</description>
+        <externalId>false</externalId>
+        <label>Expiration Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Fill_Size__c</fullName>
+        <externalId>false</externalId>
+        <label>Fill Size</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>1 gm</fullName>
+                    <default>false</default>
+                    <label>1 gm</label>
+                </value>
+                <value>
+                    <fullName>3.5 gm</fullName>
+                    <default>false</default>
+                    <label>3.5 gm</label>
+                </value>
+                <value>
+                    <fullName>0.5 mL</fullName>
+                    <default>false</default>
+                    <label>0.5 mL</label>
+                </value>
+                <value>
+                    <fullName>1 mL</fullName>
+                    <default>false</default>
+                    <label>1 mL</label>
+                </value>
+                <value>
+                    <fullName>2 mL</fullName>
+                    <default>false</default>
+                    <label>2 mL</label>
+                </value>
+                <value>
+                    <fullName>2.5 mL</fullName>
+                    <default>false</default>
+                    <label>2.5 mL</label>
+                </value>
+                <value>
+                    <fullName>5 mL</fullName>
+                    <default>false</default>
+                    <label>5 mL</label>
+                </value>
+                <value>
+                    <fullName>10 mL</fullName>
+                    <default>false</default>
+                    <label>10 mL</label>
+                </value>
+                <value>
+                    <fullName>15 mL</fullName>
+                    <default>false</default>
+                    <label>15 mL</label>
+                </value>
+                <value>
+                    <fullName>30 mL</fullName>
+                    <default>false</default>
+                    <label>30 mL</label>
+                </value>
+                <value>
+                    <fullName>118 mL</fullName>
+                    <default>false</default>
+                    <label>118 mL</label>
+                </value>
+                <value>
+                    <fullName>N/A</fullName>
+                    <default>false</default>
+                    <label>N/A</label>
+                </value>
+                <value>
+                    <fullName>36 Capsules</fullName>
+                    <default>false</default>
+                    <label>36 Capsules</label>
+                </value>
+                <value>
+                    <fullName>28 Count</fullName>
+                    <default>false</default>
+                    <label>28 Count</label>
+                </value>
+                <value>
+                    <fullName>32 Count</fullName>
+                    <default>false</default>
+                    <label>32 Count</label>
+                </value>
+                <value>
+                    <fullName>30 Soft Gels</fullName>
+                    <default>false</default>
+                    <label>30 Soft Gels</label>
+                </value>
+                <value>
+                    <fullName>50 Soft Gels</fullName>
+                    <default>false</default>
+                    <label>50 Soft Gels</label>
+                </value>
+                <value>
+                    <fullName>60 Soft Gels</fullName>
+                    <default>false</default>
+                    <label>60 Soft Gels</label>
+                </value>
+                <value>
+                    <fullName>120 Soft Gels</fullName>
+                    <default>false</default>
+                    <label>120 Soft Gels</label>
+                </value>
+                <value>
+                    <fullName>150 Soft Gels</fullName>
+                    <default>false</default>
+                    <label>150 Soft Gels</label>
+                </value>
+                <value>
+                    <fullName>180 Soft Gels</fullName>
+                    <default>false</default>
+                    <label>180 Soft Gels</label>
+                </value>
+                <value>
+                    <fullName>50 Tablets</fullName>
+                    <default>false</default>
+                    <label>50 Tablets</label>
+                </value>
+                <value>
+                    <fullName>60 Tablets</fullName>
+                    <default>false</default>
+                    <label>60 Tablets</label>
+                </value>
+                <value>
+                    <fullName>120 Tablets</fullName>
+                    <default>false</default>
+                    <label>120 Tablets</label>
+                </value>
+                <value>
+                    <fullName>240 Tablets</fullName>
+                    <default>false</default>
+                    <label>240 Tablets</label>
+                </value>
+                <value>
+                    <fullName>300 Tablets</fullName>
+                    <default>false</default>
+                    <label>300 Tablets</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ID_18__c</fullName>
+        <description>Brings in the 18-character ID for use in the outbound messages, since the ID field only provides the 15-character ID.</description>
+        <externalId>false</externalId>
+        <formula>Id&amp;
+CASE(
+IF(CONTAINS(&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;,RIGHT(LEFT(Id,3),1)),4,0)+
+IF(CONTAINS(&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;,RIGHT(LEFT(Id,4),1)),8,0)+
+IF(CONTAINS(&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;,RIGHT(LEFT(Id,5),1)),16,0),
+0,&quot;A&quot;,1,&quot;B&quot;,2,&quot;C&quot;,3,&quot;D&quot;,4,&quot;E&quot;,5,&quot;F&quot;,6,&quot;G&quot;,7,&quot;H&quot;,8,&quot;I&quot;,
+9,&quot;J&quot;,10,&quot;K&quot;,11,&quot;L&quot;,12,&quot;M&quot;,13,&quot;N&quot;,14,&quot;O&quot;,15,&quot;P&quot;,16,&quot;Q&quot;,17,&quot;R&quot;,
+18,&quot;S&quot;,19,&quot;T&quot;,20,&quot;U&quot;,21,&quot;V&quot;,22,&quot;W&quot;,23,&quot;X&quot;,24,&quot;Y&quot;,25,&quot;Z&quot;,26,&quot;0&quot;,
+27,&quot;1&quot;,28,&quot;2&quot;,29,&quot;3&quot;,30,&quot;4&quot;,31,&quot;5&quot;,&quot;0&quot;)&amp;
+&quot;A&quot;&amp;
+CASE(
+IF(CONTAINS(&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;,RIGHT(LEFT(Id,11),1)),1,0)+
+IF(CONTAINS(&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;,RIGHT(LEFT(Id,12),1)),2,0)+
+IF(CONTAINS(&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;,RIGHT(LEFT(Id,13),1)),4,0)+
+IF(CONTAINS(&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;,RIGHT(LEFT(Id,14),1)),8,0)+
+IF(CONTAINS(&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;,RIGHT(LEFT(Id,15),1)),16,0),
+0,&quot;A&quot;,1,&quot;B&quot;,2,&quot;C&quot;,3,&quot;D&quot;,4,&quot;E&quot;,5,&quot;F&quot;,6,&quot;G&quot;,7,&quot;H&quot;,8,&quot;I&quot;,
+9,&quot;J&quot;,10,&quot;K&quot;,11,&quot;L&quot;,12,&quot;M&quot;,13,&quot;N&quot;,14,&quot;O&quot;,15,&quot;P&quot;,16,&quot;Q&quot;,17,&quot;R&quot;,
+18,&quot;S&quot;,19,&quot;T&quot;,20,&quot;U&quot;,21,&quot;V&quot;,22,&quot;W&quot;,23,&quot;X&quot;,24,&quot;Y&quot;,25,&quot;Z&quot;,26,&quot;0&quot;,
+27,&quot;1&quot;,28,&quot;2&quot;,29,&quot;3&quot;,30,&quot;4&quot;,31,&quot;5&quot;,&quot;0&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>ID 18</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Initial_Request_for_Product__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Required if Product Avalability = &quot;Requested&quot;</inlineHelpText>
+        <label>Initial Request for Product</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Justification_for_No_Product_Return__c</fullName>
+        <description>Required for Pharma if Product Availability = &quot;Return not Required&quot;</description>
+        <externalId>false</externalId>
+        <label>Justification for No Product Return</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Labeled_Axis__c</fullName>
+        <externalId>false</externalId>
+        <label>Labeled Axis</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Labeled_Base_Curve__c</fullName>
+        <externalId>false</externalId>
+        <label>Labeled Base Curve</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Labeled_Cylinder__c</fullName>
+        <externalId>false</externalId>
+        <label>Labeled Cylinder</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Labeled_Power__c</fullName>
+        <externalId>false</externalId>
+        <label>Labeled Power</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Last_Modified_By_Email__c</fullName>
+        <description>Stores the Email address of the current user so that it can be sent with the outbound message for error messages</description>
+        <externalId>false</externalId>
+        <formula>LastModifiedBy.Email</formula>
+        <label>Last Modified By Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Lens_Type_Used__c</fullName>
+        <description>For VC Product Complaints, captures the Lens Type Used for LENSCARE complaints for mapping to CATSWeb.</description>
+        <externalId>false</externalId>
+        <label>Lens Type Used</label>
+        <length>40</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Line_of_Business__c</fullName>
+        <description>For Product Complaints, pulling LOB from Case to send to Product Line Item in CW</description>
+        <externalId>false</externalId>
+        <formula>Text(Case__r.Line_of_Business__c)</formula>
+        <label>Line of Business</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Local_Comments__c</fullName>
+        <description>For Product Complaints, this will contain the comments in the user&apos;s native language, if they don&apos;t speak English.  It will then have to be translated into English in the &quot;Comments&quot; field</description>
+        <externalId>false</externalId>
+        <label>Local Comments</label>
+        <length>10000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Manufacturing_Site__c</fullName>
+        <description>This picklist should be filtered based on Product Type, which is an Apex-populated picklist.</description>
+        <externalId>false</externalId>
+        <label>Manufacturing Site</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Controlled by Apex</fullName>
+                    <default>true</default>
+                    <label>Controlled by Apex</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Peroxide_System_Lens_Case_Returned__c</fullName>
+        <description>For VC Product Complaints where Global Name Product = EasySept - Onesept and Product Availability = Returned. For mapping to CATSWeb.</description>
+        <externalId>false</externalId>
+        <label>Peroxide System Lens Case Returned</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Primary_and_Second_Lot__c</fullName>
+        <externalId>false</externalId>
+        <label>Primary and Secondary Pkg - Same Lot #</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>N/A</fullName>
+                    <default>false</default>
+                    <label>N/A</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Private_Label_Account__c</fullName>
+        <externalId>false</externalId>
+        <label>Private Label Account</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>1-800-Contacts</fullName>
+                    <default>false</default>
+                    <label>1-800-Contacts</label>
+                </value>
+                <value>
+                    <fullName>Big Lots</fullName>
+                    <default>false</default>
+                    <label>Big Lots</label>
+                </value>
+                <value>
+                    <fullName>CVS</fullName>
+                    <default>false</default>
+                    <label>CVS</label>
+                </value>
+                <value>
+                    <fullName>Dollar General</fullName>
+                    <default>false</default>
+                    <label>Dollar General</label>
+                </value>
+                <value>
+                    <fullName>Kmart</fullName>
+                    <default>false</default>
+                    <label>Kmart</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>RiteAid</fullName>
+                    <default>false</default>
+                    <label>RiteAid</label>
+                </value>
+                <value>
+                    <fullName>Safeway</fullName>
+                    <default>false</default>
+                    <label>Safeway</label>
+                </value>
+                <value>
+                    <fullName>SiHy 50E</fullName>
+                    <default>false</default>
+                    <label>SiHy 50E</label>
+                </value>
+                <value>
+                    <fullName>Target</fullName>
+                    <default>false</default>
+                    <label>Target</label>
+                </value>
+                <value>
+                    <fullName>Unilens</fullName>
+                    <default>false</default>
+                    <label>Unilens</label>
+                </value>
+                <value>
+                    <fullName>Walgreens</fullName>
+                    <default>false</default>
+                    <label>Walgreens</label>
+                </value>
+                <value>
+                    <fullName>Wal-Mart</fullName>
+                    <default>false</default>
+                    <label>Wal-Mart</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Product_Availability__c</fullName>
+        <externalId>false</externalId>
+        <label>Product Availability</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Returned</fullName>
+                    <default>false</default>
+                    <label>Returned</label>
+                </value>
+                <value>
+                    <fullName>Requested</fullName>
+                    <default>false</default>
+                    <label>Requested</label>
+                </value>
+                <value>
+                    <fullName>Not Available</fullName>
+                    <default>false</default>
+                    <label>Not Available</label>
+                </value>
+                <value>
+                    <fullName>Return Not Required</fullName>
+                    <default>false</default>
+                    <label>Return Not Required</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Product_Category__c</fullName>
+        <externalId>false</externalId>
+        <formula>Text(Case__r.Product_Category__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Product Category</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Description__c</fullName>
+        <description>Populated by Local Name from the Product Complaint Product Type field</description>
+        <externalId>false</externalId>
+        <label>Product Description</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Value 1</fullName>
+                    <default>false</default>
+                    <label>Value 1</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Product_Lot_Number__c</fullName>
+        <description>Value of this field is verified to FSCM in the ps_lot_control_inv table for validity</description>
+        <externalId>false</externalId>
+        <label>Product Lot Number</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Product Number (or unknown)</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Type__c</fullName>
+        <description>Automatically populated when user selects value of Product Description.  Apex used to obtain the value from the Product Complaint Product Type object.</description>
+        <externalId>false</externalId>
+        <label>Global Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Quantity_Received_Int__c</fullName>
+        <description>Integer version to for integration</description>
+        <externalId>false</externalId>
+        <label>Quantity Received Int</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Quantity_Received_Open_Int__c</fullName>
+        <description>Integer version to for integration</description>
+        <externalId>false</externalId>
+        <label>Quantity Received Open Int</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Quantity_Received_Open__c</fullName>
+        <externalId>false</externalId>
+        <label>Quantity Received Open</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Quantity_Received_Sealed_Int__c</fullName>
+        <description>Integer version to for integration</description>
+        <externalId>false</externalId>
+        <label>Quantity Received Sealed Int</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Quantity_Received_Sealed__c</fullName>
+        <externalId>false</externalId>
+        <label>Quantity Received Sealed</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Quantity_Received__c</fullName>
+        <externalId>false</externalId>
+        <label>Quantity Received</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Quantity_to_be_Returned_Int__c</fullName>
+        <description>Integer version to for integration</description>
+        <externalId>false</externalId>
+        <label>Quantity to be Returned Int</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Quantity_to_be_Returned__c</fullName>
+        <externalId>false</externalId>
+        <label>Quantity to be Returned</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Reason_for_Edit_Prior_Value__c</fullName>
+        <description>Holds the prior value of the Reason for Edit field, so that the value can be used once the Reason for Edit is blanked.</description>
+        <externalId>false</externalId>
+        <label>Reason for Edit Prior Value</label>
+        <length>10000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Reason_for_Edit__c</fullName>
+        <description>When Case ha been sent to catsweb, all changes must have a reason for edit.</description>
+        <externalId>false</externalId>
+        <label>Reason for Edit</label>
+        <length>10000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Record_Type__c</fullName>
+        <description>Record Type Name used in the integration to CATSWeb for product complaints.</description>
+        <externalId>false</externalId>
+        <label>Record Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Send_to_CATSWeb__c</fullName>
+        <externalId>false</externalId>
+        <label>Send to CATSWeb</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>true</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Serial_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Serial Number</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Time_in_Use__c</fullName>
+        <externalId>false</externalId>
+        <label>Time in Use</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Initial Use</fullName>
+                    <default>false</default>
+                    <label>Initial Use</label>
+                </value>
+                <value>
+                    <fullName>Unknown</fullName>
+                    <default>false</default>
+                    <label>Unknown</label>
+                </value>
+                <value>
+                    <fullName>Not Used</fullName>
+                    <default>false</default>
+                    <label>Not Used</label>
+                </value>
+                <value>
+                    <fullName>Re-Use</fullName>
+                    <default>false</default>
+                    <label>Re-Use</label>
+                </value>
+                <value>
+                    <fullName>&lt; 1 Month</fullName>
+                    <default>false</default>
+                    <label>&lt; 1 Month</label>
+                </value>
+                <value>
+                    <fullName>1-3 Months</fullName>
+                    <default>false</default>
+                    <label>1-3 Months</label>
+                </value>
+                <value>
+                    <fullName>4-6 Months</fullName>
+                    <default>false</default>
+                    <label>4-6 Months</label>
+                </value>
+                <value>
+                    <fullName>7-12 Months</fullName>
+                    <default>false</default>
+                    <label>7-12 Months</label>
+                </value>
+                <value>
+                    <fullName>&gt; 1 Year</fullName>
+                    <default>false</default>
+                    <label>&gt; 1 Year</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Product</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>{0000}</displayFormat>
+        <label>Product Number</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Products</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>EMEA_SU_Product</fullName>
+        <active>true</active>
+        <description>Record type for EMEA Surgical Product</description>
+        <label>EMEA SU Product</label>
+        <picklistValues>
+            <picklist>Fill_Size__c</picklist>
+            <values>
+                <fullName>0%2E5 mL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1 gm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1 mL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10 mL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>118 mL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>120 Soft Gels</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>120 Tablets</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>15 mL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>150 Soft Gels</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2 mL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2%2E5 mL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>240 Tablets</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>28 Count</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3%2E5 gm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>30 mL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>300 Tablets</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>32 Count</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>36 Capsules</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5 mL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>50 Soft Gels</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>50 Tablets</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>60 Soft Gels</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>60 Tablets</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>N%2FA</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Manufacturing_Site__c</picklist>
+            <values>
+                <fullName>Controlled by Apex</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Peroxide_System_Lens_Case_Returned__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Primary_and_Second_Lot__c</picklist>
+            <values>
+                <fullName>N%2FA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Private_Label_Account__c</picklist>
+            <values>
+                <fullName>1-800-Contacts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Big Lots</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CVS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dollar General</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kmart</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RiteAid</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Safeway</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SiHy 50E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Target</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unilens</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wal-Mart</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Walgreens</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Product_Availability__c</picklist>
+            <values>
+                <fullName>Not Available</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Requested</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Return Not Required</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Returned</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Product_Description__c</picklist>
+            <values>
+                <fullName>Value 1</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Send_to_CATSWeb__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Time_in_Use__c</picklist>
+            <values>
+                <fullName>%3C 1 Month</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%3E 1 Year</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1-3 Months</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4-6 Months</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>7-12 Months</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Initial Use</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Used</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Re-Use</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unknown</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>NA_SU_Product</fullName>
+        <active>true</active>
+        <description>Record type for NA Surgical Product</description>
+        <label>NA SU Product</label>
+        <picklistValues>
+            <picklist>Fill_Size__c</picklist>
+            <values>
+                <fullName>0%2E5 mL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1 gm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1 mL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>10 mL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>118 mL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>120 Soft Gels</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>120 Tablets</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>15 mL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>150 Soft Gels</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2 mL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2%2E5 mL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>240 Tablets</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>28 Count</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3%2E5 gm</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>30 mL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>300 Tablets</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>32 Count</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>36 Capsules</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5 mL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>50 Soft Gels</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>50 Tablets</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>60 Soft Gels</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>60 Tablets</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>N%2FA</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Manufacturing_Site__c</picklist>
+            <values>
+                <fullName>Controlled by Apex</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Peroxide_System_Lens_Case_Returned__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Primary_and_Second_Lot__c</picklist>
+            <values>
+                <fullName>N%2FA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Private_Label_Account__c</picklist>
+            <values>
+                <fullName>1-800-Contacts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Big Lots</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CVS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dollar General</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kmart</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RiteAid</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Safeway</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SiHy 50E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Target</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unilens</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wal-Mart</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Walgreens</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Product_Availability__c</picklist>
+            <values>
+                <fullName>Not Available</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Requested</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Return Not Required</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Returned</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Product_Description__c</picklist>
+            <values>
+                <fullName>Value 1</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Send_to_CATSWeb__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Time_in_Use__c</picklist>
+            <values>
+                <fullName>%3C 1 Month</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%3E 1 Year</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1-3 Months</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4-6 Months</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>7-12 Months</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Initial Use</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Used</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Re-Use</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unknown</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>Delete</fullName>
+        <availability>online</availability>
+        <description>For Product Complaints, sets the Mark for Delete field = -1, which deletes the record in CW and initiates the after update trigger in sfdc that will delete the record there.</description>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Delete</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/21.0/connection.js&quot;)} 
+
+var strQur = &quot;Select id, Mark_for_Delete__c, Case__c, Reason_for_Edit_Prior_Value__c from Product_Complaint_Product__c where Id = &apos;&quot; +&apos;{!Product_Complaint_Product__c.ID_18__c}&apos;+&quot;&apos;&quot; ; 
+strResult = sforce.connection.query(strQur); 
+records4 = strResult.getArray(&quot;records&quot;); 
+
+records4[0].Mark_for_Delete__c = &apos;-1&apos;; 
+records4[0].Reason_for_Edit_Prior_Value__c = &apos;Product deleted in Salesforce.com&apos;; 
+records4[0].Id = records4[0].Id; 
+result = sforce.connection.update([records4[0]]); 
+
+if (result[0].getBoolean(&quot;success&quot;)){ 
+  window.location = &quot;/&quot; +&apos;{!Product_Complaint_Product__c.Case_ID_18__c}&apos;; 
+  //alert(&apos;Save was successful.&apos;); 
+} 
+else { 
+  alert(&apos;Delete was not successful.&apos;); 
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>New_Product</fullName>
+        <availability>online</availability>
+        <description>Creates a new Product Complaint Product, and returns the user to the Product Complaint.</description>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>New Product Custom</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>/{!$Setup.CATSWeb_Resources__c.Product_Object_Id__c}/e?CF{!$Setup.CATSWeb_Resources__c.Product_Case_Number_Field_ID__c}={!Case.CaseNumber}&amp;CF{!$Setup.CATSWeb_Resources__c.Product_Case_Number_Field_ID__c}_lkid={!Case.Id}&amp;scontrolCaching=1&amp;retURL=%2F{!Case.Id}&amp;sfdc.override=1</url>
+    </webLinks>
+    <webLinks>
+        <fullName>New_Product_Custom1</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>New Product</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/23.0/connection.js&quot;)}
+CaseMapping = &quot;select name,Additional_Contact_Record_Type_Name__c,Case_Note_Record_Type_Name__c,Product_Record_Type_Name__c from Case_Record_Type_Mapping__c&quot;;
+result2=sforce.connection.query(CaseMapping);
+records2 = result2.getArray(&quot;records&quot;);
+//alert(&apos;Result is ----------&gt;&apos; +records2);
+
+qurystr = &quot;select id,name from RecordType where id = &apos;&quot; +&apos;{!Case.RecordTypeId}&apos; +&quot;&apos; limit 1&quot;;
+//alert(&apos;Result is -----------&gt;&apos; +qurystr );
+result=sforce.connection.query(qurystr);
+records = result.getArray(&quot;records&quot;);
+//alert(&apos;Result1 is -----------&gt;&apos; +records[0].Name);
+qurystr1 = &quot;select id,name from RecordType where Name=&quot;;
+for(i=0; i&lt;records2.length; i++)
+{
+//alert(&apos;inside for&apos;  +records2[i].Name);
+if(records[0].Name ==records2[i].Name)
+ {
+  //   alert(&apos;inside if-----&gt;&apos; +records2[i].Name);
+     qurystr1 +=&quot;&apos;&quot; +records2[i].Product_Record_Type_Name__c+&quot;&apos;&quot;;
+  }
+}
+qurystr1 += &quot;and sObjectType = &apos;Product_Complaint_Product__c&apos; limit 1&quot;; 
+//alert(&apos;Second query is --------&gt;&apos; +qurystr1 ); 
+result1=sforce.connection.query(qurystr1); 
+records1 = result1.getArray(&quot;records&quot;); 
+//alert(&apos;Second Result is --------&gt;&apos; +records1 ); 
+if(records1.length&gt;0){ 
+window.parent.location.href=&quot;/apex/Product_Complaint_Product_New?CF{!$Setup.CATSWeb_Resources__c.Product_Case_Number_Field_ID__c}={!Case.CaseNumber}&amp;CF{!$Setup.CATSWeb_Resources__c.Product_Case_Number_Field_ID__c}_lkid={!Case.Id}&amp;RecordType=&quot;+records1[0].Id +&quot;&amp;retURL={!Case.Id}&amp;saveURL={!Case.Id}&amp;save_new=1&amp;scontrolCaching=1&amp;sfdc.override=1&quot;; 
+}else{ 
+window.parent.location.href=&quot;/apex/Product_Complaint_Product_New?CF{!$Setup.CATSWeb_Resources__c.Product_Case_Number_Field_ID__c}={!Case.CaseNumber}&amp;{!$Setup.CATSWeb_Resources__c.Product_Case_Number_Field_ID__c}_lkid={!Case.Id}&amp;retURL={!Case.Id}&amp;saveURL={!Case.Id}&quot;; 
+}</url>
+    </webLinks>
+</CustomObject>

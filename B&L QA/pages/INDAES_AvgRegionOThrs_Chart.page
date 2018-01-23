@@ -1,0 +1,16 @@
+<apex:page controller="CtrlINDAesthetics_Dashboard">
+<div style="float: center;">
+<apex:chart height="400" width="300" data="{!data}">
+          <apex:axis type="Numeric" position="left" fields="OTAvg"  margin="10" minimum="0"
+            title="Average OT Hrs" grid="true"/>
+                    
+          <apex:axis type="Category" position="bottom" fields="strRegion1" 
+            title="Region"/>                   
+            
+            <apex:barSeries orientation="vertical" axis="left" xField="strRegion1" yField="OTAvg">
+            <apex:chartLabel display="outside" font="18px Helvetica, sans-serif"/>
+           </apex:barSeries>             
+</apex:chart>
+</div>
+ <!--<c:INDSU_Dashborad_OTHrs ></c:INDSU_Dashborad_OTHrs>-->
+</apex:page>

@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Used by EMEASU. Used to log the key products that an account orders.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Used by EMEASU</description>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Key Products IOLs</relationshipLabel>
+        <relationshipName>Key_Products_IOLs</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Comments__c</fullName>
+        <description>To detail any comments about the customers IOL choice. Used by EMEASU</description>
+        <externalId>false</externalId>
+        <label>Comments</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Consignment_Location__c</fullName>
+        <description>USed by EMEASU to store the PS consignment location.</description>
+        <externalId>false</externalId>
+        <label>Consignment Location</label>
+        <length>5</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IOL_Model__c</fullName>
+        <description>Available IOL Models. Used by EMEASU</description>
+        <externalId>false</externalId>
+        <label>IOL Model</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Akreos Adapt - 3171xxx</fullName>
+                    <default>false</default>
+                    <label>Akreos Adapt - 3171xxx</label>
+                </value>
+                <value>
+                    <fullName>Akreos AO - ADAPTAOxxxx</fullName>
+                    <default>false</default>
+                    <label>Akreos AO - ADAPTAOxxxx</label>
+                </value>
+                <value>
+                    <fullName>Akreos MICS - MI60Gxxxx</fullName>
+                    <default>false</default>
+                    <label>Akreos MICS - MI60Gxxxx</label>
+                </value>
+                <value>
+                    <fullName>Crystalens AO - AT50AO-xxxx / AT52AO-xxxx</fullName>
+                    <default>false</default>
+                    <label>Crystalens AO - AT50AO-xxxx / AT52AO-xxxx</label>
+                </value>
+                <value>
+                    <fullName>Crystalens HD - HD500-xxxx / HD520-xxxx</fullName>
+                    <default>false</default>
+                    <label>Crystalens HD - HD500-xxxx / HD520-xxxx</label>
+                </value>
+                <value>
+                    <fullName>EZE 55 - 7Wxxx</fullName>
+                    <default>false</default>
+                    <label>EZE 55 - 7Wxxx</label>
+                </value>
+                <value>
+                    <fullName>EZE 60 - 8Axxx</fullName>
+                    <default>false</default>
+                    <label>EZE 60 - 8Axxx</label>
+                </value>
+                <value>
+                    <fullName>EZE 65 - 8Nxxx</fullName>
+                    <default>false</default>
+                    <label>EZE 65 - 8Nxxx</label>
+                </value>
+                <value>
+                    <fullName>L122UV - 8Uxxx</fullName>
+                    <default>false</default>
+                    <label>L122UV - 8Uxxx</label>
+                </value>
+                <value>
+                    <fullName>Sofport - LI61AORxxxx</fullName>
+                    <default>false</default>
+                    <label>Sofport - LI61AORxxxx</label>
+                </value>
+                <value>
+                    <fullName>PMMA - All Models</fullName>
+                    <default>false</default>
+                    <label>PMMA - All Models</label>
+                </value>
+                <value>
+                    <fullName>EnVista - MX60Axxxx</fullName>
+                    <default>false</default>
+                    <label>EnVista - MX60Axxxx</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>IOL_Price__c</fullName>
+        <description>Used to detail IOL price. Used by EMEASU</description>
+        <externalId>false</externalId>
+        <label>IOL Price</label>
+        <precision>7</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Injector_Model__c</fullName>
+        <description>used by EMEASU to advise which injector is coupled with a given IOL. dependant on IOL chosen</description>
+        <externalId>false</externalId>
+        <label>Injector Model</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>IOL_Model__c</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>AI-28</fullName>
+                    <default>false</default>
+                    <label>AI-28</label>
+                </value>
+                <value>
+                    <fullName>CI-28</fullName>
+                    <default>false</default>
+                    <label>CI-28</label>
+                </value>
+                <value>
+                    <fullName>EZ-28</fullName>
+                    <default>false</default>
+                    <label>EZ-28</label>
+                </value>
+                <value>
+                    <fullName>LP604350</fullName>
+                    <default>false</default>
+                    <label>LP604350</label>
+                </value>
+                <value>
+                    <fullName>PS-27</fullName>
+                    <default>false</default>
+                    <label>PS-27</label>
+                </value>
+                <value>
+                    <fullName>Rigid - No Injector Required</fullName>
+                    <default>false</default>
+                    <label>Rigid - No Injector Required</label>
+                </value>
+                <value>
+                    <fullName>LP604500</fullName>
+                    <default>false</default>
+                    <label>LP604500</label>
+                </value>
+                <value>
+                    <fullName>LP604350 EACH</fullName>
+                    <default>false</default>
+                    <label>LP604350 EACH</label>
+                </value>
+                <value>
+                    <fullName>LP604500EACH</fullName>
+                    <default>false</default>
+                    <label>LP604500EACH</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>L122UV - 8Uxxx</controllingFieldValue>
+                <controllingFieldValue>PMMA - All Models</controllingFieldValue>
+                <controllingFieldValue>EZE 55 - 7Wxxx</controllingFieldValue>
+                <controllingFieldValue>EZE 60 - 8Axxx</controllingFieldValue>
+                <controllingFieldValue>EZE 65 - 8Nxxx</controllingFieldValue>
+                <valueName>Rigid - No Injector Required</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Akreos Adapt - 3171xxx</controllingFieldValue>
+                <controllingFieldValue>Akreos AO - ADAPTAOxxxx</controllingFieldValue>
+                <valueName>AI-28</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Akreos Adapt - 3171xxx</controllingFieldValue>
+                <controllingFieldValue>Akreos AO - ADAPTAOxxxx</controllingFieldValue>
+                <valueName>PS-27</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Sofport - LI61AORxxxx</controllingFieldValue>
+                <valueName>EZ-28</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Akreos AO - ADAPTAOxxxx</controllingFieldValue>
+                <controllingFieldValue>Akreos MICS - MI60Gxxxx</controllingFieldValue>
+                <valueName>LP604350 EACH</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Akreos MICS - MI60Gxxxx</controllingFieldValue>
+                <valueName>LP604350</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>EnVista - MX60Axxxx</controllingFieldValue>
+                <valueName>LP604500</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>EnVista - MX60Axxxx</controllingFieldValue>
+                <valueName>LP604500EACH</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Crystalens AO - AT50AO-xxxx / AT52AO-xxxx</controllingFieldValue>
+                <controllingFieldValue>Crystalens HD - HD500-xxxx / HD520-xxxx</controllingFieldValue>
+                <valueName>CI-28</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Injector_Price__c</fullName>
+        <description>Used to store the injector price. Used by EMEASU</description>
+        <externalId>false</externalId>
+        <label>Injector Price</label>
+        <precision>7</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Order_Invoice_Specialities__c</fullName>
+        <description>Used by EMEASU, used to determine what type or order or invoice process is required for the product</description>
+        <externalId>false</externalId>
+        <label>Order / Invoice Specialities</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Replenishment Only (AK)</fullName>
+                    <default>false</default>
+                    <label>Replenishment Only (AK)</label>
+                </value>
+                <value>
+                    <fullName>Invoice only (VK)</fullName>
+                    <default>false</default>
+                    <label>Invoice only (VK)</label>
+                </value>
+                <value>
+                    <fullName>Invoice + Replenishment (AK/VK)</fullName>
+                    <default>false</default>
+                    <label>Invoice + Replenishment (AK/VK)</label>
+                </value>
+                <value>
+                    <fullName>See request on order</fullName>
+                    <default>false</default>
+                    <label>See request on order</label>
+                </value>
+                <value>
+                    <fullName>Invoice only (N/A)</fullName>
+                    <default>false</default>
+                    <label>Invoice only (N/A)</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Price_Type__c</fullName>
+        <description>Used by EMEASU. Used to define the different prices for different type of german orders</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Only required for Germany</inlineHelpText>
+        <label>Price Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Private Only</fullName>
+                    <default>false</default>
+                    <label>Private Only</label>
+                </value>
+                <value>
+                    <fullName>Private Ambulant</fullName>
+                    <default>false</default>
+                    <label>Private Ambulant</label>
+                </value>
+                <value>
+                    <fullName>Private Stationaer</fullName>
+                    <default>false</default>
+                    <label>Private Stationaer</label>
+                </value>
+                <value>
+                    <fullName>Kasse Only</fullName>
+                    <default>false</default>
+                    <label>Kasse Only</label>
+                </value>
+                <value>
+                    <fullName>Kasse Ambulant</fullName>
+                    <default>false</default>
+                    <label>Kasse Ambulant</label>
+                </value>
+                <value>
+                    <fullName>Kasse Stationaer</fullName>
+                    <default>false</default>
+                    <label>Kasse Stationaer</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Size__c</fullName>
+        <description>Consignment Size used by EMEASU CS to identify the IOLs range</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Used to identify consignment order size</inlineHelpText>
+        <label>Size</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>A</fullName>
+                    <default>false</default>
+                    <label>A</label>
+                </value>
+                <value>
+                    <fullName>B</fullName>
+                    <default>false</default>
+                    <label>B</label>
+                </value>
+                <value>
+                    <fullName>C</fullName>
+                    <default>false</default>
+                    <label>C</label>
+                </value>
+                <value>
+                    <fullName>Premium</fullName>
+                    <default>false</default>
+                    <label>Premium</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Standing_Order_End_Dt__c</fullName>
+        <description>Used by EMEASU. Used to store the standing order end date.</description>
+        <externalId>false</externalId>
+        <label>Standing Order End Dt</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Standing_Order_Ref__c</fullName>
+        <description>Used to store the standing order reference number if applicable. Used by EMEASU.</description>
+        <externalId>false</externalId>
+        <label>Standing Order Ref</label>
+        <length>15</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Key Products IOLs</label>
+    <nameField>
+        <displayFormat>KPI-{000000}</displayFormat>
+        <label>KP IOL Auto Ref</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Key Products IOLs</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

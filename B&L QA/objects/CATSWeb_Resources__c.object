@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <description>Used to handle instance-specific data, like links to CATSWeb for Dev, QA, and PD instances.</description>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Action_ID_Field_ID__c</fullName>
+        <description>The field ID of the Action_ID__c field on the Case object, used to pass to the Clone page as a blank field.</description>
+        <externalId>false</externalId>
+        <label>Action ID Field ID</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Additional_Contact_Object_Id__c</fullName>
+        <description>For Product Complaints, Add Additional Contact custom button</description>
+        <externalId>false</externalId>
+        <label>Additional Contact Object Id</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Addl_Contact_Business_Unit_Field_Id__c</fullName>
+        <description>For product complaints, need to use the field ID for the custom &quot;New Additional Contact&quot; button</description>
+        <externalId>false</externalId>
+        <label>Addl Contact Business Unit Field Id</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Addl_Contact_Case_Number_Field_ID__c</fullName>
+        <description>For product complaints, need to use the field ID for the custom &quot;New Additional Contact&quot; button</description>
+        <externalId>false</externalId>
+        <label>Addl Contact Case Number Field ID</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Address_2_Field_ID__c</fullName>
+        <description>For Product Complaints, the ID of the Address 2 field so that it can be set to empty on clone.</description>
+        <externalId>false</externalId>
+        <label>Address 2 Field ID</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Address_Field_ID__c</fullName>
+        <description>For Product Complaints, the ID of the Address field so that it can be set to empty on clone.</description>
+        <externalId>false</externalId>
+        <label>Address Field ID</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CATSWeb_Complaint_Number_Field_ID__c</fullName>
+        <description>The field ID of the CATSWeb_Complaint_Number__c field on the Case object, used to pass to the Clone page as a blank field.</description>
+        <externalId>false</externalId>
+        <label>CATSWeb Complaint Number Field ID</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CATSWeb_URL__c</fullName>
+        <description>The URL to CATSWeb that conincides with this instance of SFDC.</description>
+        <externalId>false</externalId>
+        <label>CATSWeb URL</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Case_Note_Case_Number_Field_ID__c</fullName>
+        <description>For Product Complaints, Case Number field ID for custom New Case Note button</description>
+        <externalId>false</externalId>
+        <label>Case Note Case Number Field ID</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Case_Note_Object_Id__c</fullName>
+        <description>The ID of the Case Note object to be used in the custom New Case Note button</description>
+        <externalId>false</externalId>
+        <label>Case Note Object Id</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>City_Field_ID__c</fullName>
+        <description>For Product Complaints, the ID of the City field so that it can be set to empty on clone.</description>
+        <externalId>false</externalId>
+        <label>City Field ID</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Complaint_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Complaint Type</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Country_Field_ID__c</fullName>
+        <description>For Product Complaints, the ID of the Country field so that it can be set to empty on clone.</description>
+        <externalId>false</externalId>
+        <label>Country Field ID</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Current_Instance_Domain__c</fullName>
+        <description>The current instance domain, to be used by the Attachments in SFDC Link field</description>
+        <externalId>false</externalId>
+        <label>Current Instance Domain</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Department_Assigned_To_Field_ID__c</fullName>
+        <description>For Product Complaints, this field ID is needed to blank out the field when using the Clone button</description>
+        <externalId>false</externalId>
+        <label>Department Assigned To Field ID</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Email_Field_ID__c</fullName>
+        <description>For Product Complaints, the ID of the Email field so that it can be set to empty on clone.</description>
+        <externalId>false</externalId>
+        <label>Email Field ID</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Employee_Assigned_To_Field_ID__c</fullName>
+        <description>For Product Complaints, this field ID is needed to blank out the field when using the Clone button</description>
+        <externalId>false</externalId>
+        <label>Employee Assigned To Field ID</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Fax_Number_Field_ID__c</fullName>
+        <description>For Product Complaints, the ID of the Fax Number field so that it can be set to empty on clone.</description>
+        <externalId>false</externalId>
+        <label>Fax Number Field ID</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>First_Name_Field_ID__c</fullName>
+        <description>For Product Complaints, the ID of the First Name field so that it can be set to empty on clone.</description>
+        <externalId>false</externalId>
+        <label>First Name Field ID</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Last_Name_Field_ID__c</fullName>
+        <description>For Product Complaints, the ID of the Last Name field so that it can be set to empty on clone.</description>
+        <externalId>false</externalId>
+        <label>Last Name Field ID</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Level_Field_ID__c</fullName>
+        <description>For Product Complaints, the ID of the Last Name field so that it can be set to empty on clone.</description>
+        <externalId>false</externalId>
+        <label>Level Field ID</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Manual_Override_of_Lookup_Field_ID__c</fullName>
+        <description>For Product Complaints, the ID of the Last Name field so that it can be set to empty on clone.</description>
+        <externalId>false</externalId>
+        <label>Manual Override of Lookup Field ID</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Phone_Number_Field_ID__c</fullName>
+        <externalId>false</externalId>
+        <label>Phone Number Field ID</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Postal_Code_Field_ID__c</fullName>
+        <description>For Product Complaints, the ID of the Postal Code field so that it can be set to empty on clone.</description>
+        <externalId>false</externalId>
+        <label>Postal Code Field ID</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Case_Number_Field_ID__c</fullName>
+        <description>For Product Complaints, holds the Case Number for the Add Product custom button</description>
+        <externalId>false</externalId>
+        <label>Product Case Number Field ID</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Object_Id__c</fullName>
+        <description>For Product Complaints, stores the object ID for the custom New Product button</description>
+        <externalId>false</externalId>
+        <label>Product Object Id</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Reason_for_Edit_Field_ID__c</fullName>
+        <description>For Product Complaints, field ID of the Reason for Edit field so that when a Case is cloned it is blank</description>
+        <externalId>false</externalId>
+        <label>Reason for Edit Field ID</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Reason_for_Edit_Prior_Value_Field_ID__c</fullName>
+        <description>The field ID of the Reason_for_Edit_Prior_Value__c field on the Case object, which should be blank on the Clone page for Product Complaint Cases.</description>
+        <externalId>false</externalId>
+        <label>Reason for Edit Prior Value Field ID</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SOAP_Message_Enterprise_URL__c</fullName>
+        <description>For Product Complaints, this value holds the Enterprise URL for the SOAP message used to delete records from CATSWeb</description>
+        <externalId>false</externalId>
+        <label>SOAP Message Enterprise URL</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SOAP_Message_Notification_ID_Add_Contact__c</fullName>
+        <description>For Product Complaints, the value of the notification ID for Additional Contact to delete from CATSWeb</description>
+        <externalId>false</externalId>
+        <label>SOAP Message Notification ID Add Contact</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SOAP_Message_Notification_ID_Case_Note__c</fullName>
+        <description>For Product Complaints, the value of the notification ID for Case Notes to delete from CATSWeb</description>
+        <externalId>false</externalId>
+        <label>SOAP Message Notification ID Case Note</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SOAP_Message_Notification_ID_Product__c</fullName>
+        <description>For Product Complaints, the notification ID for the Product object that gets put into the SOAP message to delete records from CATSWeb</description>
+        <externalId>false</externalId>
+        <label>SOAP Message Notification ID Product</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SOAP_Message_Partner_URL__c</fullName>
+        <description>For Product Complaints, this value holds the Partner URL for the SOAP message used to delete records from CATSWeb</description>
+        <externalId>false</externalId>
+        <label>SOAP Message Partner URL</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Salutation_Field_ID__c</fullName>
+        <description>Product complaint field ID for Salutation</description>
+        <externalId>false</externalId>
+        <label>Salutation Field ID</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Send_to_CATSWeb_Field_ID__c</fullName>
+        <description>The ID of the Send to CW field on the Case page, so that a clone can be used, but Send to CW should always be &quot;No&quot; for new Cases</description>
+        <externalId>false</externalId>
+        <label>Send to CATSWeb Field ID</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>State_Field_ID__c</fullName>
+        <description>For Product Complaints, the ID of the State field so that it can be set to empty on clone.</description>
+        <externalId>false</externalId>
+        <label>State Field ID</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>CATSWeb Resources</label>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,389 @@
+<apex:page id="pageId" standardController="Consignment_Search_Data__c" action="{!deleteAllConsignmentDataAndpopulateProductGroupOnLoad}"  recordSetVar="ConsignmentSearchData" extensions="ConsignmentInventorySearch"  sidebar="true">    
+    <apex:sectionHeader title="Consignment Inventory" subtitle="Search"/>
+    
+    <script type="text/javascript"> 
+    
+    //navigator which will navigate to the url in both classic and lightning
+    var redirector = {
+        
+        navigateToUrl : function(url){
+            
+            //if redirecting classic view 
+            if("{!$User.UIThemeDisplayed}" =='Theme3'){
+                
+                //set the location
+                location.href = url;
+                
+            }
+            
+            //lightning view or app view
+            else{
+                
+                //if sforce object exist
+                if((typeof sforce != 'undefined') && sforce && (!!sforce.one)){
+                    
+                    sforce.one.navigateToURL(url,false);
+                    
+                }
+                
+            }
+            
+        },
+        navigateToRecord : function(recordId){
+            
+            //if redirecting classic view 
+            if("{!$User.UIThemeDisplayed}" =='Theme3'){
+                
+                //set the location
+                location.href = '/'+recordId;
+                
+            }
+            
+            //lightning view or app view
+            else{
+                
+                //if sforce object exist
+                if((typeof sforce != 'undefined') && sforce && (!!sforce.one)){
+                    
+                    sforce.one.navigateToSObject(recordId,false);
+                    
+                }
+                
+            }
+            
+        },
+        navigateBack : function(){
+            
+            //if redirecting classic view 
+            if("{!$User.UIThemeDisplayed}" =='Theme3'){
+                
+                //set the location
+                history.back();
+                
+            }
+            
+            //lightning view or app view
+            else{
+                
+                //if sforce object exist
+                if((typeof sforce != 'undefined') && sforce && (!!sforce.one)){
+                    
+                    sforce.one.back();
+                    
+                }
+                
+            }
+            
+        }
+        
+    };
+    
+    function  searchConsignmentJS(){         
+        //alert('IsSearchBillConsingmentBtn'+'{!isSearchBillConsignmentBtn}');
+        //alert(document.getElementById('pageId:formId:pb1:pbsec1:pbsecItem4:inputTextId1'));                            
+        var r=confirm("Click OK to begin your search.");
+        if(r==true){
+            if(document.getElementById('pageId:formId:pb1:pbsec1:pbsecItem4:inputTextId1')!=null)
+                document.getElementById('pageId:formId:inputHiddenserialNumberId').value = document.getElementById('pageId:formId:pb1:pbsec1:pbsecItem4:inputTextId1').value;
+            makeprogressMessage();
+            searchConsignment();
+        }
+        //alert('bye');
+    }
+    function  searchBilledConsignmentJS(){
+        //alert(document.getElementById('pageId:formId:pb1:pbsec1:pbsecItem4:inputTextId1').value);
+        var r=confirm("Click OK to begin your search.");
+        if(r==true){
+            if(document.getElementById('pageId:formId:pb1:pbsec1:pbsecItem4:inputTextId1')!=null)            
+                document.getElementById('pageId:formId:inputHiddenserialNumberId').value = document.getElementById('pageId:formId:pb1:pbsec1:pbsecItem4:inputTextId1').value;
+            makeprogressMessage();
+            searchBilledConsignment();
+        }
+    }
+    function  searchTransactionHistoryJS(){
+        //alert(document.getElementById('pageId:formId:pb1:pbsec1:pbsecItem4:inputTextId1').value);
+        var r=confirm("Click OK to begin your search.");
+        if(r==true){
+            if(document.getElementById('pageId:formId:pb1:pbsec1:pbsecItem4:inputTextId1')!=null)            
+                document.getElementById('pageId:formId:inputHiddenserialNumberId').value = document.getElementById('pageId:formId:pb1:pbsec1:pbsecItem4:inputTextId1').value;
+            makeprogressMessage();
+            searchTransactionHistory();
+        }
+    }
+    function  searchUnbilledConsignmentJS(){
+        //alert(document.getElementById('pageId:formId:pb1:pbsec1:pbsecItem4:inputTextId1').value);
+        var r=confirm("Click OK to begin your search.");
+        if(r==true){
+            if(document.getElementById('pageId:formId:pb1:pbsec1:pbsecItem4:inputTextId1')!=null)            
+                document.getElementById('pageId:formId:inputHiddenserialNumberId').value = document.getElementById('pageId:formId:pb1:pbsec1:pbsecItem4:inputTextId1').value;
+            makeprogressMessage();
+            searchUnbilledConsignment();
+        }
+    }     
+    function cancelSearh(){            
+        var shiptoVar='';
+        var serialNumberVar='';
+        var productNameVar='';
+        var productIdVar='';
+        var expirationStDateVar='';
+        var expirationEndDateVar='';
+        //alert('1');
+        if(document.getElementById('pageId:formId:pb1:pbsec1:pbsecItem3:inputTextid')!=null)                        
+            shiptoVar = document.getElementById('pageId:formId:pb1:pbsec1:pbsecItem3:inputTextid').value; 
+        //alert('2');
+        if(document.getElementById('pageId:formId:pb1:pbsec1:pbsecItem4:inputTextId1')!=null)                        
+            serialNumberVar = document.getElementById('pageId:formId:pb1:pbsec1:pbsecItem4:inputTextId1').value;
+        //alert('3');
+        if(document.getElementById('pageId:formId:pb1:pbsec1:selIdProName')!=null)                        
+            productNameVar = document.getElementById('pageId:formId:pb1:pbsec1:selIdProName').value;
+        //alert('4');
+        if(document.getElementById('pageId:formId:pb1:pbsec1:inputTextId2')!=null)      
+            productIdVar = document.getElementById('pageId:formId:pb1:pbsec1:inputTextId2').value;
+        //alert('5');
+        if(document.getElementById('pageId:formId:pb1:pbsec1:pbsecItem5:startDate')!=null)      
+            expirationStDateVar = document.getElementById('pageId:formId:pb1:pbsec1:pbsecItem5:startDate').value; 
+        //alert('6');
+        if(document.getElementById('pageId:formId:pb1:pbsec1:pbsecItem6:endDate')!=null)      
+            expirationEndDateVar = document.getElementById('pageId:formId:pb1:pbsec1:pbsecItem6:endDate').value; 
+        //alert('check');                                   
+        //alert('hi');
+        //cancelSearch();
+        
+        var url = '/apex/Consignment_Inventory_Search?accid={!accountId}&serialNumber='+serialNumberVar+'&productgroup='+productNameVar+'&productId='+productIdVar+'&expirationStDate='+expirationStDateVar+'&expirationEndDate='+expirationEndDateVar;
+        redirector.redirectToUrl(url);
+               
+        //alert('Bye');
+    }
+    
+    function accountNameJS(){
+        accountName();
+    }
+    
+    </script>
+    
+    <apex:form id="formId" style="width:1000px"> 
+        <apex:pageMessages />
+        
+        <apex:inputHidden value="{!inputHiddenserialNumber}" id="inputHiddenserialNumberId"/>       
+        <!--<apex:inputHidden value="{!inputHiddenProductGroup}" id="inputHiddenProductGroupId"/>
+<apex:inputHidden value="{!inputHiddenpProductId}" id="inputHiddenpProductIdId"/>
+<apex:inputHidden value="{!inputHiddenExpirationStartDate}" id="inputHiddenExpirationStartDateId"/>
+<apex:inputHidden value="{!inputHiddenExpirationEndDate}" id="inputHiddenExpirationEndDateId"/>     
+-->       
+        
+        <!--<apex:actionFunction name="cancelSearch" action="{!cancelSearch}" reRender="formId,outPanl"/>-->
+        <apex:actionFunction name="accountName" action="{!accountName}"  reRender="formId" status="loadingStatus"/>
+        <apex:actionFunction name="changeType" action="{!changeType}"  reRender="formId"/>                             
+        <apex:actionFunction name="enableSeachTransactionHistory"  action="{!enableSeachTransactionHistory}"  reRender="formId" />     
+        <apex:actionFunction name="makeprogressMessage"  action="{!makeprogressMessage}"  reRender="formId" />
+        
+        
+        <div width="100%" align="center" style="margin-top:30px">
+            <apex:actionStatus id="sts1" style="margin-left:600px;" startText="Loading...">       
+                <apex:facet name="start">
+                    <apex:image value="/img/loading.gif" title="Processing..." style="align:center;"/>
+                </apex:facet>
+                <apex:facet name="stop"></apex:facet>
+            </apex:actionStatus>                                             
+        </div>
+        
+        
+        <apex:pageBlock mode="detail" id="pb1">
+            
+            <apex:pageblockButtons id="pageblockbtns">        
+                <apex:panelGroup id="outputPanalIdForBtn"> 
+                    <apex:commandButton id="btnShowSearched" value="Show Searches" action="{!showSearchButtons}" reRender="formId" status="sts1" disabled="{!isShowSearchBtn}"/>
+                    <apex:commandButton id="btnModifySearch" value="Modify Search" action="{!modifySearch}" status="sts1" reRender="formId,outPanl,op3" disabled="{!isModifySearchFieldBtn}"/>
+                    <apex:commandButton id="btnCancelSearch" value="Cancel Search" onClick="return cancelSearh();" reRender="formId,outputPanalIdForBtn,outPanl,panalGridId,working" disabled="{!isCancelSearchRenderBtn}"/><br/>                                          
+                    <apex:commandButton id="btnSearchConsignment" value="Search Consignment" onclick="return searchConsignmentJS();" reRender="formId,outputPanalIdForBtn,outPanl,panalGridId,working" disabled="{!isSearchConsignmmentBtn}"/>
+                    <apex:commandButton id="btnSearchBilled" value="Search Billed Consignment" onclick="return searchBilledConsignmentJS();" reRender="formId,outputPanalIdForBtn,outPanl,panalGridId,working" disabled="{!isSearchBillConsignmentBtn}"/>
+                    <apex:commandButton id="btnSearchBilledHistory" value="Search Transaction History" onclick="return searchTransactionHistoryJS();" reRender="formId,outputPanalIdForBtn,outPanl,panalGridId,working" disabled="{!isSearchTransactionSearchBtn}"/>
+                    <apex:commandButton id="btnSearch" value="Search Unbilled Consignment" onclick="return searchUnbilledConsignmentJS();" reRender="formId,outputPanalIdForBtn,outPanl,panalGridId,working" disabled="{!isSearchunbilledConsignmentBtn}"/>                                       
+                </apex:panelGroup>
+            </apex:pageblockButtons>
+            
+            <div  style="margin-top:0px;margin-left:10px;">
+                <apex:actionStatus id="loadingStatus"  startText="Processing...">                                             
+                </apex:actionStatus>                                             
+            </div>
+            <apex:pageBlockSection id="pbsec1" rendered="{!pageBolckSectionEditable}">
+                
+                <apex:pageBlockSectionItem id="pbsecItem1">
+                    <apex:outputLabel ><b>Ship To</b></apex:outputLabel>                                                                             
+                </apex:pageBlockSectionItem>    
+                
+                <apex:pageBlockSectionItem id="pbsecItem2">
+                    <apex:outputLabel title="Serial Number" ><b>Serial Number</b></apex:outputLabel>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem id="pbsecItem3">
+                    <apex:outputPanel id="outPanalId">
+                        <apex:inputText maxlength="8" value="{!shipTo}" id="inputTextid"  onblur="accountName();return false;"/>  
+                        <span style="margin-left:10px;" > 
+                            <apex:outputPanel id="op1" rendered="{!isAccountName}"> {!AccountName} </apex:outputPanel>                                
+                            <apex:outputPanel id="op2" rendered="{!isAccountNull}"> {!msgAccountNotFound} </apex:outputPanel>
+                            
+                        </span>
+                    </apex:outputPanel>  
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem id="pbsecItem4">
+                    <apex:outputPanel id="op3">     
+                        <apex:selectList id="type" value="{!type}" size="1" onchange="changeType();return false;">                     
+                            <apex:selectOptions value="{!op}"></apex:selectOptions>                                                
+                        </apex:selectList>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                        <apex:outputPanel id="op4">                                                                                                                                          
+                            <apex:inputText value="{!serialNumber}" id="inputTextId1"/>                                                                                       
+                        </apex:outputPanel>
+                    </apex:outputPanel> 
+                </apex:pageBlockSectionItem>
+                
+                <apex:outputLabel id="opl1"><b>Product Group</b></apex:outputLabel>
+                
+                <apex:outputLabel id="opl2"><b>Product Id</b></apex:outputLabel>
+                
+                <apex:selectList id="selIdProName" value="{!productName}" multiselect="false" size="1" disabled="{!disableField}"> 
+                    <apex:selectOptions value="{!lstProductGroup}"/>
+                </apex:selectList>
+                
+                <apex:inputText id="inputTextId2" value="{!ProductId}" />
+                
+                <apex:outputLabel id="opl3"><b>Expiration Start Date</b></apex:outputLabel>   
+                <apex:outputLabel id="opl4"><b>Expiration End Date</b></apex:outputLabel>
+                <apex:pageBlockSectionItem id="pbsecItem5">
+                    <apex:inputField value="{!objectConsignementSearchDate.Expiration_Start_Date__c}" id="startDate"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem id="pbsecItem6">
+                    <apex:inputField value="{!objectConsignementSearchDate.Expiration_End_Date__c}" id="endDate"/>
+                </apex:pageBlockSectionItem>   
+                
+            </apex:pageblockSection>
+            
+            
+            <apex:pageBlockSection id="pbsec2" rendered="{!pageBolckSectionReadOnly}">              
+                <apex:pageBlockSectionItem id="pbsecItem1">
+                    <apex:outputLabel ><b>Ship To</b></apex:outputLabel>                                                                             
+                </apex:pageBlockSectionItem>    
+                
+                <apex:pageBlockSectionItem id="pbsecItem2">
+                    <apex:outputLabel title="Serial Number" ><b>Serial Number</b></apex:outputLabel>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem id="pbsecItem3">
+                    <apex:outputPanel id="outPanalId">
+                        <apex:outputText value="{!shipTo}" id="outputTextid" />  
+                        <span style="margin-left:10px;" > 
+                            <apex:outputPanel id="op1" rendered="{!isAccountName}"> {!AccountName} </apex:outputPanel>
+                            <apex:outputPanel id="op2" rendered="{!isAccountNull}"> {!msgAccountNotFound} </apex:outputPanel> 
+                        </span>
+                    </apex:outputPanel>  
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem id="pbsecItem4">
+                    <apex:outputPanel id="op3">     
+                        <apex:selectList id="type" value="{!type}" size="1"  disabled="true">                     
+                            <apex:selectOptions value="{!op}"></apex:selectOptions>                                                
+                        </apex:selectList>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                        <apex:outputPanel id="op4">                             
+                            <!-- <apex:image url="{!$Resource.RequiredField}" style="height:15px;width:3px;align:bottom;" rendered="{!isSerialNumberRequired}"/> -->                                                                                 
+                            <apex:outputText value="{!serialNumber}" id="inputTextId1"/>                                                                                        
+                        </apex:outputPanel>
+                    </apex:outputPanel> 
+                </apex:pageBlockSectionItem>
+                
+                <apex:outputLabel id="opl1"><b>Product Group</b></apex:outputLabel>
+                
+                <apex:outputLabel id="opl2"><b>Product Id</b></apex:outputLabel>
+                
+                <apex:selectList id="selIdProName" value="{!productName}" multiselect="false" size="1" disabled="true">
+                    <apex:selectOptions value="{!lstProductGroup}"/>
+                </apex:selectList>
+                
+                <apex:outputText id="outputTextId2" value="{!ProductId}"/>
+                
+                <apex:outputLabel id="opl3"><b>Expiration Start Date</b></apex:outputLabel>   
+                <apex:outputLabel id="opl4"><b>Expiration End Date</b></apex:outputLabel>
+                <apex:pageBlockSectionItem id="pbsecItem5">
+                    <apex:outputField value="{!objectConsignementSearchDate.Expiration_Start_Date__c}" id="startDate"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem id="pbsecItem6">
+                    <apex:outputField value="{!objectConsignementSearchDate.Expiration_End_Date__c}" id="endDate" />
+                </apex:pageBlockSectionItem>   
+                
+            </apex:pageblockSection>
+            
+        </apex:pageBlock>
+        
+        
+        <!-- <apex:actionFunction name="searchAgain" action="{!searchAgain}" status="sts" reRender="formId,outPanl"/>  --> 
+        <!-- <apex:actionFunction name="modifySearch" /> -->          
+        <apex:actionFunction name="searchConsignment" action="{!searchConsignment}" reRender="formId,outputPanalIdForBtn,outPanl,panalGridId,working"/>
+        <apex:actionFunction name="searchBilledConsignment" action="{!searchBilledConsignment}" reRender="formId,outputPanalIdForBtn,outPanl,panalGridId,working"/>
+        <apex:actionFunction name="searchTransactionHistory" action="{!searchTransactionHistory}" reRender="formId,outputPanalIdForBtn,outPanl,panalGridId,working"/>
+        <apex:actionFunction name="searchUnbilledConsignment" action="{!searchUnbilledConsignment}" reRender="formId,outputPanalIdForBtn,outPanl,panalGridId,working"/>          
+        
+        
+        <!--<div width="100%" align="center" style="margin-top:30px">
+<apex:actionStatus id="sts" style="margin-left:600px;" startText="Loading...">       
+<apex:facet name="start">
+<apex:image value="/img/loading.gif" title="Processing..." style="align:center;"/>
+</apex:facet>
+<apex:facet name="stop"></apex:facet>
+</apex:actionStatus>                                            
+</div>
+-->
+        
+        <div width="100%" align="center" style="margin-top:30px">
+            <apex:outputPanel rendered="{!isworking}" id="working"> 
+                <apex:image value="/img/loading.gif" title="Processing..." style="margin-left:20px;" rendered="{!isworking}"/>    
+            </apex:outputPanel>                                             
+        </div>
+        
+        
+        
+        <script>
+        
+        var shipTo = document.getElementById('pageId:formId:pb1:pbsec1:pbsecItem3:inputTextid').value ;
+        var accName = '{!AccountName}';
+        var checkShipToLenght = parseInt(shipTo.length);         
+        if(shipTo=='' || accName=='' || checkShipToLenght!=8){                      
+            //document.getElementById('pageId:formId:pb1:pbsec1:pbsecItem5:startDate').disabled = true;
+            //document.getElementById('pageId:formId:pb1:pbsec1:pbsecItem6:endDate').disabled = true;
+            document.getElementById('pageId:formId:pb1:pbsec1:selIdProName').disabled = true;
+            //document.getElementById('pageId:formId:pb1:pbsec1:inputTextId2').disabled = true;
+            //document.getElementById('pageId:formId:pb1:pbsec1:pbsecItem4:type').disabled = true;                                              
+        }else{
+            //document.getElementById('pageId:formId:pb1:pbsec1:pbsecItem5:startDate').disabled = false;
+            //document.getElementById('pageId:formId:pb1:pbsec1:pbsecItem6:endDate').disabled = false;
+            document.getElementById('pageId:formId:pb1:pbsec1:selIdProName').disabled = false;
+            //document.getElementById('pageId:formId:pb1:pbsec1:inputTextId2').disabled = false;
+            //document.getElementById('pageId:formId:pb1:pbsec1:pbsecItem4:type').disabled = false;             
+        }
+        
+        </script>    
+        
+    </apex:form>    
+    
+    
+    <apex:outputPanel id="outPanl" layout="block">   
+        <apex:form rendered="{!isExport}">
+            <apex:outputLink value="/apex/Consignment_Inventory_Search_Export_CSV?Header={!pageHeaderValue}" target="_blank">Export to CSV</apex:outputLink>&nbsp;&nbsp;&nbsp;&nbsp;<apex:outputLink value="/apex/Consignment_Inventory_Search_Export_Exl?Header={!pageHeaderValue}" target="_blank">Export to Excel</apex:outputLink>
+        </apex:form> 
+        
+        <apex:outputPanel id="panalGridId1" layout="block" rendered="{!isShowBlanklist}">
+            <div style="visibility:{!divVisibility}">            
+                <apex:enhancedList listId="{!listViewBlankId}" height="400" rowsPerPage="10" id="listViewId1" customizable="false" reRender="Consignment_Search_Data__c"/>
+            </div>
+        </apex:outputPanel>    
+        
+        <apex:outputPanel id="panalGridId" layout="block">         
+            <apex:enhancedList listId="{!listViewId}" height="400" rowsPerPage="10" id="listViewId" customizable="false" rendered="{!showSearchResult}"/>                
+        </apex:outputPanel>
+        
+    </apex:outputPanel>  
+    
+    
+    <!--<apex:enhancedList type="Consignment_Search_Data__c" height="300" rowsPerPage="25" id="LeadList" customizable="False" /> -->  
+    <!--<apex:enhancedList type="Lead"  height="400" rowsPerPage="10"  width="2000"  id="listViewId2" customizable="false"/>-->  <!--listId="00B80000007D0rV"-->
+    
+</apex:page>

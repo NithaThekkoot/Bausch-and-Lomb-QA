@@ -1,0 +1,769 @@
+<apex:page controller="CtrlOrderTracking"  id="thePage">
+    <!-- tabStyle="Order_Management__tab" --> 
+    <apex:includeScript value="{!$Resource.TreeViewJS}"/>
+    <apex:stylesheet value="{!$Resource.TreeViewCSS}"/>
+    <apex:form >
+        <apex:actionFunction name="search" action="{!search}" status="status" />
+        <script type="text/javascript">
+        
+        //navigator which will navigate to the url in both classic and lightning
+        var redirector = {
+            
+            navigateTo : function(url){
+                
+                //if redirecting classic view 
+                if("{!$User.UIThemeDisplayed}" =='Theme3'){
+                    
+                    //set the location
+                    location.href = url;
+                    
+                }
+                
+                //lightning view or app view
+                else{
+                    
+                    //if sforce object exist
+                    if((typeof sforce != 'undefined') && sforce && (!!sforce.one)){
+                        
+                        sforce.one.navigateToURL(url,false);
+                        
+                    }
+                    
+                }
+                
+            }
+            
+        };
+        
+        function checkKeyDown (input, e) {
+            //onKeyDown="return checkKeyDown(this, event, item, fieldname)"
+            var key;
+            var shiftKey;
+            var ctrlKey;
+            var keychar;
+            var isCtrlKey = false;
+            //alert('START');
+            if (e){
+                //alert('Windows Event');
+                key = e.keyCode;
+                shiftKey = e.shiftKey;
+                ctrlKey = e.ctrlKey;
+            }
+            else if (e){
+                key = e.which;
+                shiftKey = e.shiftKey;
+                ctrlKey = e.ctrlKey;
+                if (key == 17) {
+                    isCtrlKey = true;
+                }
+            }
+                else
+                    return true;
+            
+            keychar = String.fromCharCode(key);
+            //alert('Key: ' + key);
+            // control keys
+            if ((key == null) || (key == 0) || (key == 8) || 
+                (key == 13) || (key == 27) )
+                return true;
+            
+            else if (key == 81 && ctrlKey == true){
+                search();
+                return false;
+            } 
+                else
+                    return true;
+        }
+       
+        </script>
+        
+        <apex:outputPanel id="Search">    
+            
+            <apex:pageBlock id="PBSearch" rendered="{!displaySearch}" rendered="{!displaySearch}">
+                
+                <apex:actionStatus startText=" Searching..." id="status" />
+                
+                <apex:pageBlockButtons location="both">
+                    <apex:commandButton value="Search" action="{!search}" status="status" />
+                    <apex:commandButton value="Clear Search Fields" action="{!clearSearchFields}" status="status" />                     
+                    <input type="button" value="PS Order" class="btn" onclick="redirector.navigateTo('{!PSOrderCreationLink}')" />
+                    <input type="button" value="PS RMA" class="btn" onclick="redirector.navigateTo('{!PSRMALink}')" />
+                    <input type="button" value="PS RMA Worksheet" class="btn" onclick="redirector.navigateTo('{!PSRMAWorksheetLink}')" />
+                    <input type="button" value="Optum" class="btn" onclick="redirector.navigateTo('{!WMSLink}')" />
+                    <apex:commandButton value="Find Account" action="{!SOSLsearch}" status="status" rendered="false"/>                                                                                    
+                </apex:pageBlockButtons>                                
+                
+                <apex:pageBlockSection columns="2">                 
+                    <apex:pageBlockSectionItem >
+                        <apex:pageBlockSection columns="1">
+                            <apex:pageBlockSectionItem >                                
+                                <apex:outputPanel >
+                                    <!--apex:outputLabel value="Account Search" for="searchField" rendered="false"/--> 
+                                    <apex:inputText id="searchField" value="{!searchField}" />
+                                    <apex:commandLink value="Find Account" action="{!SOSLsearch}" status="status" />
+                                </apex:outputPanel>
+                            </apex:pageBlockSectionItem>
+                        </apex:pageBlockSection>
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem >    
+                        <apex:pageBlockSection columns="1">
+                        </apex:pageBlockSection>
+                    </apex:pageBlockSectionItem> 
+                </apex:pageBlockSection>                                
+                
+                <apex:pageMessages id="messages" rendered="true"/>
+                
+                <apex:pageBlockTable rendered="{!displayAccountList}" value="{!list_accs}" var="acc" rowClasses="odd,even">
+                    <apex:actionSupport event="onRowClick" action="{!RowClicked}" reRender="Search">
+                        <apex:param name="shiptoIdParam" value="{!acc.Ship_To_Id__c}" assignTo="{!shipToId}" />
+                    </apex:actionSupport>
+                    <apex:column value="{!acc.Name}"/>
+                    <apex:column value="{!acc.Ship_To_Id__c}"/>
+                    <apex:column value="{!acc.ShippingStreet}"/>
+                    <apex:column value="{!acc.ShippingCity}"/>
+                    <apex:column value="{!acc.Phone}"/>                 
+                </apex:pageBlockTable>
+                
+                <apex:pageBlockSection columns="2">                                     
+                    <apex:pageBlockSectionItem >
+                        <apex:pageBlockSection columns="1">
+                            <apex:pageBlockSectionItem >
+                                <apex:outputLabel value="ShipTo Id" for="shipToId"/>
+                                <apex:inputText id="shipToId" value="{!shipToId}" onKeyDown="return checkKeyDown(this, event)" tabindex="0"/> 
+                            </apex:pageBlockSectionItem>
+                            <apex:pageBlockSectionItem >
+                                <apex:outputLabel value="ShipTo Account Name" for="shipToAccountName"/>                                             
+                                <apex:inputText id="shipToAccountName" value="{!shipToAccountName}" onKeyDown="return checkKeyDown(this, event)"/>
+                            </apex:pageBlockSectionItem> 
+                            <apex:pageBlockSectionItem >
+                                <apex:outputLabel value="ShipTo City" for="shipToCity"/>                                                
+                                <apex:inputText id="shipToCity" value="{!shipToCity}" onKeyDown="return checkKeyDown(this, event)"/>
+                            </apex:pageBlockSectionItem>
+                            <apex:pageBlockSectionItem >
+                                <apex:outputLabel value="ShipTo PostCode" for="shipToPostCode"/>                                                
+                                <apex:inputText id="shipToPostCode" value="{!shipToPostCode}" onKeyDown="return checkKeyDown(this, event)"/>
+                            </apex:pageBlockSectionItem> 
+                            <apex:pageBlockSectionItem > 
+                                <apex:outputLabel value="Ref Order No." for="refOrderNumber"/>                                             
+                                <apex:inputText id="refOrderNumber" value="{!refOrderNumber}" onKeyDown="return checkKeyDown(this, event)"/>
+                            </apex:pageBlockSectionItem>                            
+                        </apex:pageBlockSection>
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem >    
+                        <apex:pageBlockSection columns="1"> 
+                            <apex:pageBlockSectionItem >
+                                <apex:outputLabel value="Order No." for="orderNoPanel"/>                                             
+                                <apex:outputPanel id="orderNoPanel">
+                                    <!-- <apex:inputField value="{!dummyHeaderFrom.Business_Unit__c}" onKeyDown="return checkKeyDown(this, event)"/>  -->
+                                    <apex:selectList value="{!businessUnit}" multiselect="false" size="1">
+                                        <apex:selectOptions value="{!possibleBusinessUnits}"/>
+                                    </apex:selectList>                                  
+                                    <apex:outputText value="  -  " /> 
+                                    <apex:inputText id="orderNo" value="{!orderNo}" onKeyDown="return checkKeyDown(this, event)"/>
+                                </apex:outputPanel>
+                            </apex:pageBlockSectionItem>
+                            <apex:pageBlockSectionItem >
+                                <apex:outputLabel value="from Order Date" for="fromOrderDate"/>
+                                <apex:inputField id="fromOrderDate" value="{!dummyHeaderFrom.Order_Date__c}" onKeyDown="return checkKeyDown(this, event)"/>
+                            </apex:pageBlockSectionItem>
+                            <apex:pageBlockSectionItem >
+                                <apex:outputLabel value="to Order Date" for="toOrderDate"/>
+                                <apex:inputField id="fromOrderDate" value="{!dummyHeaderTo.Order_Date__c}" onKeyDown="return checkKeyDown(this, event)"/>
+                            </apex:pageBlockSectionItem>
+                            <apex:pageBlockSectionItem />
+                            <apex:pageBlockSectionItem >
+                                <apex:outputLabel value="Entered By" for="enteredBy"/>
+                                <apex:inputText id="enteredBy" required="false" value="{!enteredBy}" onKeyDown="return checkKeyDown(this, event)"/>
+                            </apex:pageBlockSectionItem>
+                        </apex:pageBlockSection>
+                    </apex:pageBlockSectionItem>    
+                    <apex:pageBlockSectionItem >
+                        <apex:pageBlockSection columns="1">
+                            <apex:pageBlockSectionItem >
+                                <apex:outputLabel value="Customer PO (HDR)" for="customerPO"/>
+                                <apex:inputText id="customerPO" value="{!customerPo}" onKeyDown="return checkKeyDown(this, event)"/>
+                            </apex:pageBlockSectionItem>
+                            <apex:pageBlockSectionItem >
+                                <apex:outputLabel value="SKU" for="SKU"/>
+                                <apex:inputText id="SKU" value="{!SKU}" onKeyDown="return checkKeyDown(this, event)"/>
+                            </apex:pageBlockSectionItem>                            
+                        </apex:pageBlockSection>
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem >
+                        <apex:pageBlockSection columns="1">                                                                                 
+                            <apex:pageBlockSectionItem >
+                                <apex:outputLabel value="Customer PO (Line)" for="customerPoLine"/>
+                                <apex:inputText id="customerPoLine" value="{!customerPoLine}" onKeyDown="return checkKeyDown(this, event)"/>
+                            </apex:pageBlockSectionItem>
+                            <apex:pageBlockSectionItem >
+                                <apex:outputLabel value="Patient Reference" for="patientReference"/>
+                                <apex:inputText id="patientReference" value="{!patientReference}" onKeyDown="return checkKeyDown(this, event)"/>
+                            </apex:pageBlockSectionItem>
+                        </apex:pageBlockSection>                    
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem >
+                        <apex:pageBlockSection columns="1">                         
+                            <apex:pageBlockSectionItem >
+                                <apex:outputLabel value="Invoice Number" for="invoiceNumber"/>
+                                <apex:inputText id="invoiceNumber" value="{!invoiceNumber}" onKeyDown="return checkKeyDown(this, event)"/>
+                            </apex:pageBlockSectionItem>
+                        </apex:pageBlockSection>
+                    </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem >
+                        <apex:pageBlockSection columns="1">
+                            <apex:pageBlockSectionItem >
+                                <apex:outputLabel value="Pack List No." for="packListNo"/>
+                                <apex:inputText id="packListNo" value="{!packListNo}" onKeyDown="return checkKeyDown(this, event)"/>
+                            </apex:pageBlockSectionItem>
+                        </apex:pageBlockSection>                    
+                    </apex:pageBlockSectionItem>
+                </apex:pageBlockSection>        
+                
+            </apex:pageBlock>
+        </apex:outputPanel>            
+        <!-- <c:CtrlOrderTracking_TreeComponent /> -->  
+        
+        <apex:outputPanel id="Results">  
+            <apex:actionStatus startText=" (refreshing...)" id="ResultStatus"/>
+            
+            <apex:pageBlock id="PBTree" rendered="{!NOT(displaySearch)}">       
+                
+                <!-- <apex:outputText value="{!ListSize}" /> -->
+                <apex:pageBlockButtons >
+                    <apex:commandButton value="Modify Search" action="{!modifySearch}" status="status" />
+                    <apex:commandButton value="{!expandAllButtonLabel}" action="{!expandAll}"  status="ResultStatus" />   
+                    <input type="button" value="PS Order" class="btn" onclick="redirector.navigateTo('{!PSOrderCreationLink}')" />
+                    <input type="button" value="PS RMA" class="btn" onclick="redirector.navigateTo('{!PSRMALink}')" />
+                    <input type="button" value="PS RMA Worksheet" class="btn" onclick="redirector.navigateTo('{!PSRMAWorksheetLink}')" />
+                    <input type="button" value="Optum" class="btn" onclick="redirector.navigateTo('{!WMSLink}{!useForOptumButton}')" /> 
+                </apex:pageBlockButtons>
+                
+                <apex:outputPanel layout="inline" id="PanrecordStatus" >
+                    <apex:commandLink value="First" rendered="{!startRecord > 1}" action="{!first}" status="ResultStatus" />
+                    &nbsp;
+                    <apex:commandLink value="Previous" rendered="{!startRecord > 1}" action="{!previous}" status="ResultStatus" />
+                    &nbsp;<apex:outputText value="{!RecordStatus}" />&nbsp;
+                    <apex:commandLink value="Next" rendered="{!endRecord != noRecords}" action="{!next}" status="ResultStatus" />
+                    &nbsp;
+                    <apex:commandLink value="Last" rendered="{!endRecord != noRecords}" action="{!last}"  status="ResultStatus" />
+                </apex:outputPanel>
+                
+                <apex:outputPanel styleClass="bodyDiv" id="bodyDiv_setup" layout="block">
+                    <!-- <table class="outer" width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td class="oLeft"> -->
+                    <apex:outputPanel styleClass="TreeView" layout="block">
+                        <apex:outputPanel id="treeInformation" style="display: none;" layout="block"></apex:outputPanel>
+                        
+                        <apex:outputPanel styleClass="setupNavtree" layout="block">
+                            <h2>
+                                <apex:outputPanel styleClass="treeSection" layout="block">
+                                    <apex:outputText >Order Tracking</apex:outputText>
+                                </apex:outputPanel>
+                                <br />
+                            </h2>
+                            
+                        </apex:outputPanel>
+                        
+                        <!-- END TreeHeadline --> 
+                        <!-- Order Status   Business Unit   Order No    Order Date  Ship to Cust id Ship to Cust Name   Bill to cust id PO  
+Order source    Carrier code    Order Group Freight -->                             
+                        <apex:outputPanel styleClass="treeLeaf" layout="block">
+                            <apex:dataTable value="{!TreeHeadline}" var="TreeHeadline" border="0" cellspacing="0" cellpadding="0" 
+                                            columnsWidth="10px,50px,70px,120px,100px,100px,120px,100px,100px,80px,50px,50px,100px,100px"
+                                            style="font-weight: bold; border-bottom-style:solid; border-color:#CCCCCC; border-bottom-width:1px; margin: 1px 1px 1px 1px; background-color: #EEECD1;">                                               
+                                <apex:column ><apex:image value="/s.gif" width="9" height="9" styleClass="treeImage"/></apex:column>
+                                <apex:column >Order Status</apex:column>
+                                <apex:column >Business Unit</apex:column>                                       
+                                <apex:column >Order No.</apex:column>
+                                <apex:column >Order Date</apex:column>
+                                <apex:column >Ship To Id</apex:column>
+                                <apex:column >Ship To Name</apex:column>
+                                <apex:column >Bill To Id</apex:column>
+                                <apex:column >PO No. (HDR)</apex:column>
+                                <apex:column >Order<br />Source</apex:column>
+                                <apex:column >Order<br />Ref. No.</apex:column>
+                                <!-- <apex:column >Carrier<br />Code</apex:column>  -->
+                                <apex:column >Order<br />Group</apex:column>                                  
+                                <apex:column >Freight</apex:column>
+                                <apex:column rendered="{!showMSRNumber}">MSR No.</apex:column>
+                                <apex:column >Case Creation</apex:column>
+                            </apex:dataTable>
+                        </apex:outputPanel>
+                        <!-- END TreeHeadline -->
+                        
+                        <!-- <apex:repeat value="{!list_clsHeaders}" var="header" id="level1Repeat">  -->
+                        <apex:repeat value="{!AccordingHeaderList}" var="header" id="level1Repeat">                                 
+                            
+                            <apex:outputPanel id="level1" styleClass="parent" layout="block" >
+                                <apex:outputPanel layout="block" styleClass="treeLeaf"><!-- styleClass="treeFolder" -->                                                                                                                                                                                                 
+                                    <apex:dataTable value="{!header.headerList}" var="headerRec" border="0" cellspacing="0" cellpadding="0" 
+                                                    columnsWidth="10px,50px,70px,120px,100px,100px,120px,100px,100px,80px,50px,50px,100px,100px" 
+                                                    style="border-bottom-style:solid; border-color:#CCCCCC; border-bottom-width:1px; margin: 1px 1px 1px 1px; background-color: #EEECD1;"
+                                                    onRowMouseOver="hiOn(this);" onRowMouseOut="hiOff(this);">                                              
+                                        <apex:column >
+                                            <apex:image value="{!startPic}" alt="Expand" width="9" height="9" styleClass="treeImage" title="Expand" onclick="ITBTreeNode.prototype.toggleHTMLTree('{!$Component.level1}')" rendered="{!header.hasChild}"/>
+                                            <apex:image value="/s.gif" width="9" height="9" styleClass="treeImage" rendered="{!NOT(header.hasChild)}" />
+                                        </apex:column>
+                                        <apex:column style="background-color: {!header.OrderStatusColor}">
+                                            <apex:outputText value="{!header.header.Order_Status__c}" />
+                                        </apex:column>
+                                        <apex:column >
+                                            <apex:outputText value="{!header.header.Business_Unit__c}" />                                    
+                                        </apex:column>                                              
+                                        <apex:column >                                                                                          
+                                            <apex:outputLink value="{!IF(AND(ISBLANK(header.header.MSR_No__c),ISBLANK(msrNumber)),IF(showSerialLotID,PSConsignmentLink,PSOrderCreationLink),PSConsignmentLink)}&action=U&BUSINESS_UNIT={!header.header.Business_Unit__c}&SHIP_TO_CUST_ID={!header.header.Ship_To_ID__c}&{!IF(ISBLANK(msrNumber),'BILL_TO_CUST_ID','SOLD_TO_CUST_ID')}={!header.header.Bill_To_ID__c}&ORDER_NO={!MID(header.header.Name,7,LEN(header.header.Name))}" id="OrderLink1" target="_blank">{!header.header.Name}</apex:outputLink>
+                                            <!--apex:outputText value="{!header.header.Name}" id="OrderLink1" /-->
+                                        </apex:column>
+                                        <apex:column >                                      
+                                            <!-- <apex:outputText value="{!header.OrderDate}" /> -->
+                                            <apex:outputField value="{!header.header.Order_Date__c}" />
+                                        </apex:column>
+                                        <apex:column >
+                                            <!-- Add ShipTo Link START -->
+                                            <apex:outputLink value="/{!header.header.Account__r.Id}" id="ShipToLink1" target="_blank"> 
+                                                <apex:outputText value="{!header.header.Ship_To_ID__c}" />
+                                            </apex:outputLink>
+                                            <!--apex:outputText value="{!header.header.Ship_To_ID__c}" /-->
+                                            <!-- Add ShipTo Link END -->
+                                            
+                                        </apex:column>
+                                        <apex:column >
+                                            <apex:outputText value="{!header.header.Account__r.Name}" />
+                                        </apex:column>
+                                        <apex:column >
+                                            <!-- Add BillTo Link START -->
+                                            <apex:outputLink value="/{!header.header.Account__r.Bill_To_Account__c}" id="BillToLink1" target="_blank"> 
+                                                <apex:outputText value="{!header.header.Bill_To_ID__c}" />
+                                            </apex:outputLink>
+                                            <!--apex:outputText value="{!header.header.Bill_To_ID__c}" /-->
+                                            <!-- Add BillTo Link END -->
+                                            
+                                            
+                                        </apex:column>
+                                        <apex:column >
+                                            <apex:outputText value="{!header.header.Customer_PO_No__c}" />
+                                        </apex:column>
+                                        <apex:column >
+                                            <apex:outputText value="{!header.header.Order_Source__c}" />
+                                        </apex:column>
+                                        <apex:column >
+                                            <apex:outputText value="{!header.header.Ref_Order_Number__c}" />
+                                        </apex:column>
+                                        <apex:column rendered="false">
+                                            <apex:outputText value="{!header.header.Carrier__r.Name}" />
+                                        </apex:column>
+                                        <apex:column >
+                                            <apex:outputText value="{!header.header.Order_Group__c}" />
+                                        </apex:column>
+                                        <apex:column >
+                                            <apex:outputText value="{!header.custFreightAmount}" />
+                                        </apex:column>
+                                        <apex:column rendered="{!IF(showMSRNumber,IF(ISBLANK(msrNumber),False,True),False)}">
+                                            <apex:outputLink value="{!linkToMsrRecord}" id="linkToMsrRecord">{!msrNumber}</apex:outputLink>
+                                        </apex:column>
+                                        <apex:column rendered="{!IF(showMSRNumber,IF(ISBLANK(msrNumber),True,False),False)}">
+                                            <apex:outputText value="{!header.header.MSR_No__c}" />
+                                        </apex:column>
+                                        <apex:column >
+                                            <apex:outputLink value="/500/e?retURL=%2F500%2Fo&{!CaseLinkAccount}={!URLENCODE(header.header.Account__r.Name)}&{!CaseLinkAccount}_lkid={!header.AccountId}&{!CaseLinkOrder}={!URLENCODE(header.header.Name)}&{!CaseLinkOrderDate}={!header.header.Order_Date__c}" target="_blank" id="CaseFromItem">Create Case</apex:outputLink>
+                                            <!-- PD <apex:outputLink value="/500/e?retURL=%2F500%2Fo&cas4={!URLENCODE(header.header.Account__r.Name)}&cas4_lkid={!header.AccountId}&CF00N80000004EKG7={!header.header.Name}&CF00N80000004EKG7_lkid={!header.header.Id}}" target="_blank" id="CaseFromItem">Create Case</apex:outputLink> -->
+                                        </apex:column>
+                                    </apex:dataTable>                                                                                                                                                                                                                               
+                                </apex:outputPanel>
+                                
+                                <!-- 
+<apex:outputPanel layout="inline" id="PanrecordStatusTest" style="margin-left:400px">
+<apex:commandLink value="First" rendered="true" action="{!firstLineItem}" status="ResultStatus" />
+&nbsp;
+<apex:commandLink value="Previous" rendered="true" action="{!previous}" status="ResultStatus" />
+&nbsp;<apex:outputText value="Put Start And Last Index Of Line Item" />&nbsp;
+<apex:commandLink value="Next" rendered="true" action="{!nextLineItem}" status="ResultStatus" /> 
+&nbsp;
+<apex:commandLink value="Last" rendered="true" action="{!last}"  status="ResultStatus" />
+</apex:outputPanel>
+--> 
+                                
+                                <apex:outputPanel id="level1_child" styleClass="childContainer" style="display: {!expandStyle};" layout="block" rendered="{!header.hasChild}">  
+                                    
+                                    <apex:outputPanel styleClass="treeLeaf" layout="block" rendered="{!header.hasItemChild}">
+                                        <apex:dataTable value="{!TreeHeadline}" var="TreeHeadline" border="0" cellspacing="0" cellpadding="0" 
+                                                        columnsWidth="10px,50px,50px,120px,120px,30px,120px,120px,100px,100px,100px,100px,100px" 
+                                                        style="font-weight:bold; border-bottom-style:solid; border-color:#CCCCCC; border-bottom-width:1px; margin: 1px 1px 1px 1px; background-color: #E1DFD3;" >                                                                                                   
+                                            <apex:column ><apex:image value="/s.gif" width="9" height="9" styleClass="treeImage"/></apex:column>
+                                            <apex:column >Line Status</apex:column>
+                                            <apex:column >Line No.</apex:column>                                        
+                                            <apex:column >Product ID</apex:column>
+                                            <apex:column >Product Description</apex:column>
+                                            <apex:column >Qty</apex:column>
+                                            <apex:column rendered="{!showSerialLotID}">Lot/Serial ID</apex:column>
+                                            <apex:column >Unit Price</apex:column>
+                                            <apex:column >Extended Price</apex:column>
+                                            <apex:column >Pat. Ref.</apex:column>
+                                            <apex:column >PO No.(Line)</apex:column>
+                                            <apex:column >Order<br />Group</apex:column>
+                                            <apex:column >Warehouse</apex:column>
+                                            <apex:column >Case Creation</apex:column>                                                                                                                                           
+                                            <apex:column >ATP</apex:column>                                                    
+                                        </apex:dataTable>
+                                    </apex:outputPanel>
+                                    
+                                    <apex:repeat value="{!header.list_items}" var="item" id="level1ChildReapeatItem">                                                                                               
+                                        
+                                        <apex:outputPanel id="level2item" styleClass="parent" layout="block">
+                                            <apex:outputPanel layout="block" styleClass="treeLeaf">                                                                                                                                                                             
+                                                <apex:dataTable value="{!item.itemList}" var="itemRec" border="0" cellspacing="0" cellpadding="0" 
+                                                                columnsWidth="10px,50px,50px,120px,120px,30px,120px,120px,100px,100px,100px,100px,100px" bgcolor="#E1DFD3"
+                                                                style="border-bottom-style:solid; border-color:#CCCCCC; border-bottom-width:1px; margin: 1px 1px 1px 1px;"
+                                                                onRowMouseOver="hiOn(this);" onRowMouseOut="hiOff(this);">                                              
+                                                    <apex:column >                                      
+                                                        <apex:image value="{!startPic}" alt="Expand" width="9" height="9" styleClass="treeImage" rendered="{!item.hasChild}" title="Expand" onclick="ITBTreeNode.prototype.toggleHTMLTree('{!$Component.level2item}')" />
+                                                        <apex:image value="/s.gif" width="9" height="9" styleClass="treeImage" rendered="{!NOT(item.hasChild)}"/>
+                                                    </apex:column>
+                                                    <apex:column >
+                                                        <apex:outputField value="{!item.item.Order_Line_Status__c}" />
+                                                    </apex:column>
+                                                    <apex:column >
+                                                        <!-- <apex:outputLink value="/{!item.item.Id}" id="OrderLineItemLink1" target="_blank"> -->
+                                                        <apex:outputField value="{!item.item.Item__c}" />
+                                                        <!-- </apex:outputLink> -->
+                                                        <!-- <apex:outputField value="{!item.item.Item__c}" /> -->
+                                                    </apex:column>
+                                                    <apex:column >
+                                                        <apex:outputField value="{!item.item.PS_Product_SKU__c}" />
+                                                    </apex:column>
+                                                    <apex:column >
+                                                        <apex:outputField value="{!item.item.Product_Description__c}" />
+                                                    </apex:column>
+                                                    <apex:column >
+                                                        <apex:outputField value="{!item.item.Quantity__c}" />
+                                                    </apex:column>
+                                                    <apex:column rendered="{!showSerialLotID}">
+                                                        <apex:outputField value="{!item.item.Lot_Serial_ID__c}" />
+                                                    </apex:column>
+                                                    <apex:column >
+                                                        <apex:outputText value="{!item.custUnitPrice}" />
+                                                    </apex:column>
+                                                    <apex:column >
+                                                        <apex:outputText value="{!item.custExtendedPrice}" />
+                                                    </apex:column>
+                                                    <apex:column rendered="true">
+                                                        <apex:outputField value="{!item.item.Patient_Ref_No__c}" />
+                                                    </apex:column>
+                                                    <apex:column >
+                                                        <apex:outputField value="{!item.item.Customer_PO_No__c}" />
+                                                    </apex:column>                                                            
+                                                    <apex:column >
+                                                        <apex:outputField value="{!item.item.Order_Group__c}" />
+                                                    </apex:column>
+                                                    <apex:column >
+                                                        <apex:outputField value="{!item.item.Ship_From__c}" />
+                                                    </apex:column>
+                                                    <apex:column >
+                                                        <!--<apex:outputLink value="/500/e?retURL=%2F500%2Fo&{!CaseLinkAccount}={!URLENCODE(header.header.Account__r.Name)}&{!CaseLinkAccount}_lkid={!header.AccountId}&{!CaseLinkOrder}={!header.header.Name}&{!CaseLinkProduct}={!URLENCODE(item.item.Product_SKU__r.PS_Product_SKU__c)}&{!CaseLinkShippedFrom}={!item.item.Ship_From__c}&{!CaseLinkOrderDate}={!header.header.Order_Date__c}&{!CaseLinkSerialLotID}={!item.item.Lot_Serial_ID__c}" target="_blank" id="CaseFromItem">Create Case</apex:outputLink>-->
+                                                        <!--<apex:outputLink value="/500/e?retURL=%2F500%2Fo&cas4={!URLENCODE(header.header.Account__r.Name)}&cas4_lkid={!header.AccountId}&CF00N80000004EKG7={!header.header.Name}&CF00N80000004EKG7_lkid={!header.header.Id}&CF00N80000004EKG6={!item.item.Name}&CF00N80000004EKG6_lkid={!item.item.Id}&00N80000004EKGC={!item.item.Product_SKU__r.PS_Product_SKU__c}" target="_blank" id="CaseFromItem">Create Case</apex:outputLink>-->
+                                                        <apex:outputLink value="/500/e?retURL=%2F500%2Fo&{!CaseLinkAccount}={!URLENCODE(header.header.Account__r.Name)}&{!CaseLinkAccount}_lkid={!header.AccountId}&{!CaseLinkOrder}={!header.header.Name}&{!CaseLinkProduct}={!URLENCODE(item.item.PS_Product_SKU__c)}&{!CaseLinkShippedFrom}={!item.item.Ship_From__c}&{!CaseLinkOrderDate}={!header.header.Order_Date__c}&{!CaseLinkSerialLotID}={!item.item.Lot_Serial_ID__c}" target="_blank" id="CaseFromItem">Create Case</apex:outputLink>
+                                                        <!--<apex:outputLink value="/500/e?retURL=%2F500%2Fo&cas4={!URLENCODE(header.header.Account__r.Name)}&cas4_lkid={!header.AccountId}&CF00N80000004EKG7={!header.header.Name}&CF00N80000004EKG7_lkid={!header.header.Id}&CF00N80000004EKG6={!item.item.Name}&CF00N80000004EKG6_lkid={!item.item.Id}&00N80000004EKGC={!item.item.PS_Product_SKU__c}" target="_blank" id="CaseFromItem">Create Case</apex:outputLink>-->
+                                                    </apex:column>                                                  
+                                                    <apex:column >
+                                                        <apex:outputLink value="http://blaprocrdc71:90/ATP/get_ATP.jsp?itemid={!item.item.PS_Product_SKU__c}&inbu={!item.item.Ship_From__c}" target="_blank" id="ATP">ATP</apex:outputLink>
+                                                    </apex:column>
+                                                </apex:dataTable>                                               
+                                            </apex:outputPanel> 
+                                            
+                                            <apex:outputPanel id="level2item_child" styleClass="childContainer" style="display: {!expandStyle};" layout="block" rendered="{!item.hasChild}">    
+                                                <apex:outputPanel styleClass="treeLeaf" layout="block" >
+                                                    <apex:dataTable value="{!item.itemList}" var="ShipmentRec" border="0" cellspacing="0" cellpadding="0" 
+                                                                    columnsWidth="10px,100px,100px,80px,120px,120px,120px,120px,100px" bgcolor="#F3F3EC"
+                                                                    style="font-weight:bold; border-bottom-style:solid; border-color:#CCCCCC; border-bottom-width:1px; margin: 1px 1px 1px 1px; background-color: #CCCCCC;"
+                                                                    onRowMouseOver="hiOn(this);" onRowMouseOut="hiOff(this);" >                                                                                                                                                                                                         
+                                                        
+                                                        <apex:column ><apex:image value="/s.gif" width="9" height="9" styleClass="treeImage"/></apex:column>
+                                                        <apex:column >Ship Status</apex:column>
+                                                        <apex:column >Ship Date</apex:column>
+                                                        <apex:column >Carrier</apex:column>
+                                                        <apex:column >Ship ID</apex:column>
+                                                        <!-- <apex:column >Pack List No.</apex:column>   -->  <!-- Ship ID -->
+                                                        <apex:column >Invoice No.</apex:column>
+                                                        <apex:column >Qty Shipped</apex:column>
+                                                        <apex:column rendered="false">Qty Backordered</apex:column>
+                                                        <apex:column rendered="false">Qty Allocated</apex:column>
+                                                        <apex:column >Tracking Reference</apex:column>
+                                                        <apex:column rendered="{!IF(showShippingBox && header.header.Business_Unit__c!='VCUCM' && header.header.Business_Unit__c!='CANAD' && header.header.Business_Unit__c!='BLUSA' && header.header.Business_Unit__c!='PHMUS',True,False)}" >Boxes</apex:column>
+                                                        <apex:column >Case Creation</apex:column>
+                                                    </apex:dataTable>
+                                                    
+                                                </apex:outputPanel>
+                                                
+                                                <apex:repeat value="{!item.list_shipments}" var="ship" id="level2ChildReapeatShip">
+                                                    <apex:outputPanel styleClass="treeLeaf" layout="block" >
+                                                        <apex:dataTable value="{!item.itemList}" var="ShipmentRec" border="0" cellspacing="0" cellpadding="0" 
+                                                                        columnsWidth="10px,100px,100px,80px,120px,120px,120px,120px,120px,120px,100px" bgcolor="#F3F3EC"
+                                                                        style="border-bottom-style:solid; border-color:#CCCCCC; border-bottom-width:1px; margin: 1px 1px 1px 1px; background-color: #CCCCCC;"
+                                                                        onRowMouseOver="hiOn(this);" onRowMouseOut="hiOff(this);">                                                                                                                                                                                                          
+                                                            <apex:column >                                      
+                                                                <apex:image value="{!startPic}" alt="Expand" width="9" height="9" styleClass="treeImage" rendered="{!ship.hasMultipleItems}" title="Expand" onclick="ITBTreeNode.prototype.toggleHTMLTree('{!$Component.level2}')" />
+                                                                <apex:image value="/s.gif" width="9" height="9" styleClass="treeImage" rendered="{!NOT(ship.hasMultipleItems)}"/>
+                                                            </apex:column>
+                                                            <apex:column >                                      
+                                                                <!-- <apex:facet name="header">Ship Status</apex:facet> -->
+                                                                <apex:outputField value="{!ship.shipment.Shipment_Status__c}" />
+                                                            </apex:column>
+                                                            <apex:column >                                      
+                                                                <!-- <apex:facet name="header">Ship Date</apex:facet> -->
+                                                                <apex:outputField value="{!ship.shipment.Shipment_Date__c}" />
+                                                            </apex:column>
+                                                            <apex:column >                                      
+                                                                <!-- <apex:facet name="header">Ship Date</apex:facet> -->
+                                                                <apex:outputField value="{!ship.shipment.Carrier__c}" />
+                                                            </apex:column>
+                                                            <apex:column rendered="false">                                       
+                                                                <!-- <apex:facet name="header">Ship ID</apex:facet> -->
+                                                                <!-- <apex:outputLink value="/{!ship.shipment.Id}" id="ShippingHistoryLink" target="_blank"> -->
+                                                                <apex:outputField value="{!ship.shipment.Name}" />
+                                                                <!-- </apex:outputLink> -->
+                                                            </apex:column>
+                                                            <apex:column rendered="true">                                      
+                                                                <!-- <apex:facet name="header">Ship ID</apex:facet> -->
+                                                                <apex:outputField value="{!ship.shipment.Pack_List_No__c}" />
+                                                            </apex:column>
+                                                            <apex:column >                                      
+                                                                <!-- <apex:facet name="header">Ship ID</apex:facet> -->
+                                                                <apex:outputField value="{!ship.shipment.Invoice_No__c}" />
+                                                            </apex:column>
+                                                            <apex:column >                                      
+                                                                <!-- <apex:facet name="header">Qty Shipped</apex:facet> -->
+                                                                <apex:outputField value="{!ship.shipment.Quantity_Shipped__c}" />
+                                                            </apex:column>
+                                                            <apex:column rendered="false">                                      
+                                                                <!-- <apex:facet name="header">Qty Backordered</apex:facet> -->
+                                                                <apex:outputField value="{!ship.shipment.Quantity_Backordered__c}" /> 
+                                                            </apex:column>
+                                                            <apex:column rendered="false">                                      
+                                                                <!-- <apex:facet name="header">Qty Allocated</apex:facet> -->
+                                                                <apex:outputField value="{!ship.shipment.Quantity_Allocated__c}" /> 
+                                                            </apex:column>
+                                                            <apex:column >                                      
+                                                                <!-- <apex:facet name="header">Tracking Reference</apex:facet> -->
+                                                                <apex:outputLink value="{!ship.trackingURL}" id="TrackingURL" target="_blank" rendered="{!NOT(ship.emptyTrackingWebsite)}">
+                                                                    <apex:outputField value="{!ship.shipment.Tracking_No__c}" />
+                                                                </apex:outputLink>
+                                                                <apex:outputField value="{!ship.shipment.Tracking_No__c}" rendered="{!ship.emptyTrackingWebsite}" />                                                                
+                                                            </apex:column>
+                                                            <apex:column rendered="{!IF(showShippingBox && header.header.Business_Unit__c!='VCUCM' && header.header.Business_Unit__c!='CANAD' && header.header.Business_Unit__c!='BLUSA' && header.header.Business_Unit__c!='PHMUS',True,False)}" >                                      
+                                                                <apex:outputLink value="{!ShippingBoxReport}?pv0={!header.header.Name}&pv1={!ship.shipment.Tracking_No__c}" target="_blank" id="BoxesFromShipment">View Boxes</apex:outputLink>
+                                                            </apex:column>
+                                                            <apex:column >
+                                                                <!--<apex:outputLink value="/500/e?retURL=%2F500%2Fo&{!CaseLinkAccount}={!URLENCODE(header.header.Account__r.Name)}&{!CaseLinkAccount}_lkid={!header.AccountId}&{!CaseLinkOrder}={!header.header.Name}&{!CaseLinkProduct}={!URLENCODE(item.item.Product_SKU__r.PS_Product_SKU__c)}&{!CaseLinkOrderDate}={!header.header.Order_Date__c}&{!CaseLinkShippedFrom}={!item.item.Ship_From__c}&{!CaseLinkShipment}={!ship.shipment.Pack_List_No__c}" target="_blank" id="CaseFromItem">Create Case</apex:outputLink>-->
+                                                                <!--<apex:outputLink value="/500/e?retURL=%2F500%2Fo&cas4={!URLENCODE(header.header.Account__r.Name)}&cas4_lkid={!header.AccountId}&CF00N80000004EKG7={!header.header.Name}&CF00N80000004EKG7_lkid={!header.header.Id}&CF00N80000004EKG6={!item.item.Name}&CF00N80000004EKG6_lkid={!item.item.Id}&CF00N80000004EKGJ={!ship.shipment.Name}&CF00N80000004EKGJ_lkid={!ship.shipment.Id}&00N80000004EKGC={!item.item.Product_SKU__r.PS_Product_SKU__c}" target="_blank" id="CaseFromItem">Create Case</apex:outputLink>-->                                                                       
+                                                                <!--<apex:outputLink value="/500/e?retURL=%2F500%2Fo&{!CaseLinkAccount}={!URLENCODE(header.header.Account__r.Name)}&{!CaseLinkAccount}_lkid={!header.AccountId}&{!CaseLinkOrder}={!header.header.Name}&{!CaseLinkProduct}={!URLENCODE(item.item.PS_Product_SKU__c)}&{!CaseLinkOrderDate}={!header.header.Order_Date__c}&{!CaseLinkShippedFrom}={!item.item.Ship_From__c}&{!CaseLinkShipment}={!ship.shipment.Pack_List_No__c}" target="_blank" id="CaseFromItem">Create Case</apex:outputLink>-->
+                                                                <!--<apex:outputLink value="/500/e?retURL=%2F500%2Fo&cas4={!URLENCODE(header.header.Account__r.Name)}&cas4_lkid={!header.AccountId}&CF00N80000004EKG7={!header.header.Name}&CF00N80000004EKG7_lkid={!header.header.Id}&CF00N80000004EKG6={!item.item.Name}&CF00N80000004EKG6_lkid={!item.item.Id}&CF00N80000004EKGJ={!ship.shipment.Name}&CF00N80000004EKGJ_lkid={!ship.shipment.Id}&00N80000004EKGC={!item.item.PS_Product_SKU__c}" target="_blank" id="CaseFromItem">Create Case</apex:outputLink>-->
+                                                                <apex:outputLink value="/500/e?retURL=%2F500%2Fo&{!CaseLinkAccount}={!URLENCODE(header.header.Account__r.Name)}&{!CaseLinkAccount}_lkid={!header.AccountId}&{!CaseLinkOrder}={!URLENCODE(header.header.Name)}&{!CaseLinkOrderDate}={!header.header.Order_Date__c}&{!CaseLinkProduct}={!URLENCODE(item.item.PS_Product_SKU__c)}&{!CaseLinkShippedFrom}={!item.item.Ship_From__c}&{!CaseLinkShipment}={!ship.shipment.Pack_List_No__c}&{!CaseLinkInvoice}={!URLENCODE(ship.shipment.Invoice_No__c)}&{!CaseLinkCarrierID}={!URLENCODE(ship.shipment.Carrier__r.name)}" target="_blank" id="CaseFromItem">Create Case</apex:outputLink>
+                                                            </apex:column>
+                                                        </apex:dataTable>                                                               
+                                                    </apex:outputPanel> 
+                                                </apex:repeat>                                                      
+                                            </apex:outputPanel>
+                                        </apex:outputPanel>
+                                    </apex:repeat>
+                                    
+                                    <apex:outputPanel styleClass="treeLeaf" layout="block" rendered="{!header.hasShipmentChild}">
+                                        <apex:dataTable value="{!TreeHeadline}" var="TreeHeadline" border="0" cellspacing="0" cellpadding="0" 
+                                                        columnsWidth="10px,100px,100px,80px,120px,120px,120px,120px,100px" bgcolor="#F3F3EC"
+                                                        style="font-weight:bold; border-bottom-style:solid; border-color:#CCCCCC; border-bottom-width:1px; margin: 1px 1px 1px 1px; background-color: #CCCCCC;"
+                                                        onRowMouseOver="hiOn(this);" onRowMouseOut="hiOff(this);" >                                                                                                                                                                                                         
+                                            
+                                            <apex:column ><apex:image value="/s.gif" width="9" height="9" styleClass="treeImage"/></apex:column>
+                                            <apex:column >Ship Status</apex:column>
+                                            <apex:column >Ship Date</apex:column>
+                                            <apex:column >Carrier</apex:column>
+                                            <!-- <apex:column >Ship ID</apex:column>  -->
+                                            <apex:column >Ship ID</apex:column> <!-- Pack List No. -->
+                                            <apex:column >Invoice No.</apex:column>
+                                            <apex:column >Qty Shipped</apex:column>
+                                            <apex:column rendered="false">Qty Backordered</apex:column>
+                                            <apex:column rendered="false">Qty Allocated</apex:column>
+                                            <apex:column >Tracking Reference</apex:column>
+                                            <apex:column rendered="{!IF(showShippingBox && header.header.Business_Unit__c!='VCUCM' && header.header.Business_Unit__c!='CANAD' && header.header.Business_Unit__c!='BLUSA' && header.header.Business_Unit__c!='PHMUS',True,False)}" >Boxes</apex:column>
+                                            <apex:column >Case Creation</apex:column>
+                                        </apex:dataTable>   
+                                        
+                                    </apex:outputPanel>
+                                    
+                                    <apex:repeat value="{!header.list_shipments}" var="ship" id="level1ChildReapeatShip" >                                                                                               
+                                        
+                                        <apex:outputPanel id="level2shipment" styleClass="parent" layout="block">                                                
+                                            <apex:outputPanel layout="block" styleClass="treeLeaf" >                                                                                                                                                                             
+                                                <apex:dataTable value="{!ship.shipmentList}" var="ShipmentRec" border="0" cellspacing="0" cellpadding="0" 
+                                                                columnsWidth="10px,100px,100px,80px,120px,120px,120px,120px,120px,120px,100px" bgcolor="#F3F3EC"
+                                                                style="border-bottom-style:solid; border-color:#CCCCCC; border-bottom-width:1px; margin: 1px 1px 1px 1px; background-color: #CCCCCC;"
+                                                                onRowMouseOver="hiOn(this);" onRowMouseOut="hiOff(this);" >                                                                                                                                                                                                                                                                      
+                                                    
+                                                    <apex:column >                                      
+                                                        <apex:image value="{!startPic}" alt="Expand" width="9" height="9" styleClass="treeImage" rendered="{!ship.hasMultipleItems}" title="Expand" onclick="ITBTreeNode.prototype.toggleHTMLTree('{!$Component.level2shipment}')" />
+                                                        <apex:image value="/s.gif" width="9" height="9" styleClass="treeImage" rendered="{!NOT(ship.hasMultipleItems)}"/>
+                                                    </apex:column>
+                                                    <apex:column >                                      
+                                                        <!-- <apex:facet name="header">Ship Status</apex:facet> -->
+                                                        <apex:outputField value="{!ship.shipment.Shipment_Status__c}" />
+                                                    </apex:column>
+                                                    <apex:column >                                      
+                                                        <!-- <apex:facet name="header">Ship Date</apex:facet> -->
+                                                        <apex:outputField value="{!ship.shipment.Shipment_Date__c}" />
+                                                    </apex:column>
+                                                    <apex:column >                                      
+                                                        <!-- <apex:facet name="header">Ship Date</apex:facet> -->
+                                                        <apex:outputField value="{!ship.shipment.Carrier__c}" />
+                                                    </apex:column>
+                                                    <apex:column rendered="false">                                        
+                                                        <!-- <apex:facet name="header">Ship ID</apex:facet> -->
+                                                        <!-- <apex:outputLink value="/{!ship.shipment.Id}" id="ShippingHistoryLink" target="_blank"> -->
+                                                        <apex:outputField value="{!ship.shipment.Name}" />
+                                                        <!-- </apex:outputLink> -->
+                                                    </apex:column>
+                                                    <apex:column >                                      
+                                                        <!-- <apex:facet name="header">Ship ID</apex:facet> -->
+                                                        <apex:outputField value="{!ship.shipment.Pack_List_No__c}" />
+                                                    </apex:column>
+                                                    <apex:column >                                      
+                                                        <!-- <apex:facet name="header">Ship ID</apex:facet> -->
+                                                        <apex:outputField value="{!ship.shipment.Invoice_No__c}" />
+                                                    </apex:column>
+                                                    <apex:column >                                      
+                                                        <!-- <apex:facet name="header">Qty Shipped</apex:facet> -->
+                                                        <apex:outputField value="{!ship.shipment.Quantity_Shipped__c}" />
+                                                    </apex:column>
+                                                    <apex:column rendered="false">                                      
+                                                        <!-- <apex:facet name="header">Qty Backordered</apex:facet> -->
+                                                        <apex:outputField value="{!ship.shipment.Quantity_Backordered__c}" /> 
+                                                    </apex:column>
+                                                    <apex:column rendered="false">                                      
+                                                        <!-- <apex:facet name="header">Qty Backordered</apex:facet> -->
+                                                        <apex:outputField value="{!ship.shipment.Quantity_Allocated__c}" /> 
+                                                    </apex:column>
+                                                    <apex:column >                                      
+                                                        <!-- <apex:facet name="header">Tracking Reference</apex:facet> -->
+                                                        <apex:outputLink value="{!ship.trackingURL}" id="TrackingURL" target="_blank" rendered="{!NOT(ship.emptyTrackingWebsite)}">
+                                                            <apex:outputField value="{!ship.shipment.Tracking_No__c}" />
+                                                        </apex:outputLink>
+                                                        <apex:outputField value="{!ship.shipment.Tracking_No__c}" rendered="{!ship.emptyTrackingWebsite}" />
+                                                    </apex:column>
+                                                    <apex:column rendered="{!IF(showShippingBox && header.header.Business_Unit__c!='VCUCM' && header.header.Business_Unit__c!='CANAD' && header.header.Business_Unit__c!='BLUSA' && header.header.Business_Unit__c!='PHMUS',True,False)}" >                                      
+                                                        <apex:outputLink value="{!ShippingBoxReport}?pv0={!header.header.Name}&pv1={!ship.shipment.Tracking_No__c}" target="_blank" id="BoxesFromShipment">View Boxes</apex:outputLink>
+                                                    </apex:column>
+                                                    <apex:column >
+                                                        <!--<apex:outputLink value="/500/e?retURL=%2F500%2Fo&{!CaseLinkAccount}={!URLENCODE(header.header.Account__r.Name)}&{!CaseLinkAccount}_lkid={!header.AccountId}&{!CaseLinkOrder}={!header.header.Name}&{!CaseLinkShipment}={!ship.shipment.Pack_List_No__c}&{!CaseLinkOrderDate}={!header.header.Order_Date__c}" target="_blank" id="CaseFromItem">Create Case</apex:outputLink>-->
+                                                        <!-- PD <apex:outputLink value="/500/e?retURL=%2F500%2Fo&cas4={!URLENCODE(header.header.Account__r.Name)}&cas4_lkid={!header.AccountId}&CF00N80000004EKG7={!header.header.Name}&CF00N80000004EKG7_lkid={!header.header.Id}&CF00N80000004EKGJ={!ship.shipment.Name}&CF00N80000004EKGJ_lkid={!ship.shipment.Id}}" target="_blank" id="CaseFromItem">Create Case</apex:outputLink> -->                                                                      
+                                                        <apex:outputLink value="/500/e?retURL=%2F500%2Fo&{!CaseLinkAccount}={!URLENCODE(header.header.Account__r.Name)}&{!CaseLinkAccount}_lkid={!header.AccountId}&{!CaseLinkOrder}={!URLENCODE(header.header.Name)}&{!CaseLinkOrderDate}={!header.header.Order_Date__c}&{!CaseLinkShipment}={!ship.shipment.Pack_List_No__c}&{!CaseLinkInvoice}={!URLENCODE(ship.shipment.Invoice_No__c)}&{!CaseLinkCarrierID}={!URLENCODE(ship.shipment.Carrier__r.name)}" target="_blank" id="CaseFromItem">Create Case</apex:outputLink>
+                                                    </apex:column>
+                                                </apex:dataTable>
+                                                
+                                            </apex:outputPanel>                                                         
+                                            
+                                            <apex:outputPanel id="level2shipment_child" styleClass="childContainer" style="display: {!expandStyle};" layout="block" rendered="{!ship.hasMultipleItems}">    
+                                                <apex:outputPanel styleClass="treeLeaf" layout="block" >
+                                                    <apex:dataTable value="{!ship.shipmentList}" var="ItemRec" border="0" cellspacing="0" cellpadding="0"                                                            
+                                                                    columnsWidth="10px,50px,50px,120px,120px,30px,120px,120px,100px,100px,100px,100px,100px" 
+                                                                    style="font-weight:bold; border-bottom-style:solid; border-color:#CCCCCC; border-bottom-width:1px; margin: 1px 1px 1px 1px; background-color: #E1DFD3;" >                                                                                                   
+                                                        <apex:column ><apex:image value="/s.gif" width="9" height="9" styleClass="treeImage"/></apex:column>
+                                                        <apex:column >Line Status</apex:column>
+                                                        <apex:column >Line No.</apex:column>                                        
+                                                        <apex:column >Product ID</apex:column>
+                                                        <apex:column >Product Description</apex:column>
+                                                        <apex:column >Qty</apex:column>
+                                                        <apex:column rendered="{!showSerialLotID}">Lot/Serial ID</apex:column>
+                                                        <apex:column >Unit Price</apex:column>
+                                                        <apex:column >Extended Price</apex:column>
+                                                        <apex:column >Pat. Ref.</apex:column>
+                                                        <apex:column >PO No.(Line)</apex:column>
+                                                        <apex:column >Order<br />Group</apex:column>
+                                                        <apex:column >Warehouse</apex:column>
+                                                        <apex:column >Case Creation</apex:column>
+                                                        <apex:column >ATP</apex:column>                                                                                                                                           
+                                                    </apex:dataTable>
+                                                </apex:outputPanel>
+                                                
+                                                <apex:repeat value="{!ship.list_items}" var="item" id="level2ChildReapeatItem">                                                                                                                                                         
+                                                    <apex:outputPanel id="level2" styleClass="parent" layout="block">
+                                                        <apex:outputPanel layout="block" styleClass="treeLeaf">                                                                                                                                                                             
+                                                            <apex:dataTable value="{!ship.shipmentList}" var="itemRec" border="0" cellspacing="0" cellpadding="0" 
+                                                                            columnsWidth="10px,50px,50px,120px,120px,30px,120px,120px,100px,100px,100px,100px,100px" bgcolor="#E1DFD3"
+                                                                            style="border-bottom-style:solid; border-color:#CCCCCC; border-bottom-width:1px; margin: 1px 1px 1px 1px;"
+                                                                            onRowMouseOver="hiOn(this);" onRowMouseOut="hiOff(this);">                                              
+                                                                <apex:column >                                      
+                                                                    <!-- <apex:image value="{!startPic}" alt="Expand" width="9" height="9" styleClass="treeImage" title="Expand" onclick="ITBTreeNode.prototype.toggleHTMLTree('{!$Component.level2}')" />  -->
+                                                                    <apex:image value="/s.gif" width="9" height="9" styleClass="treeImage" />
+                                                                </apex:column>
+                                                                <apex:column >
+                                                                    <apex:outputField value="{!item.item.Order_Line_Status__c}" />
+                                                                </apex:column>
+                                                                <apex:column >
+                                                                    <!--<apex:outputLink value="/{!item.item.Id}" id="OrderLineItemLink1" target="_blank"> -->
+                                                                    <apex:outputField value="{!item.item.Item__c}" />
+                                                                    <!-- </apex:outputLink> -->
+                                                                    <!-- <apex:outputField value="{!item.item.Item__c}" /> -->
+                                                                </apex:column>
+                                                                <apex:column >
+                                                                    <apex:outputField value="{!item.item.PS_Product_SKU__c}" />
+                                                                </apex:column>
+                                                                <apex:column >
+                                                                    <!--apex:outputField value="{!item.item.Product_SKU__r.Description}" / -->
+                                                                    <apex:outputField value="{!item.item.Product_Description__c}" />
+                                                                </apex:column>
+                                                                <apex:column >
+                                                                    <apex:outputField value="{!item.item.Quantity__c}" />
+                                                                </apex:column>
+                                                                <apex:column rendered="{!showSerialLotID}">
+                                                                    <apex:outputField value="{!item.item.Lot_Serial_ID__c}" />
+                                                                </apex:column>
+                                                                <apex:column > 
+                                                                    <apex:outputText value="{!item.custUnitPrice}" />
+                                                                </apex:column>
+                                                                <apex:column >
+                                                                    <apex:outputText value="{!item.custExtendedPrice}" />
+                                                                </apex:column>
+                                                                <apex:column rendered="true">
+                                                                    <apex:outputField value="{!item.item.Patient_Ref_No__c}" />
+                                                                </apex:column>
+                                                                <apex:column >
+                                                                    <apex:outputField value="{!item.item.Customer_PO_No__c}" />
+                                                                </apex:column>                                                                        
+                                                                <apex:column >
+                                                                    <apex:outputField value="{!item.item.Order_Group__c}" />
+                                                                </apex:column>
+                                                                <apex:column >
+                                                                    <apex:outputField value="{!item.item.Ship_From__c}" />
+                                                                </apex:column>
+                                                                <apex:column >
+                                                                    <!--apex:outputLink value="/500/e?retURL=%2F500%2Fo&{!CaseLinkAccount}={!URLENCODE(header.header.Account__r.Name)}&{!CaseLinkAccount}_lkid={!header.AccountId}&{!CaseLinkOrder}={!header.header.Name}&{!CaseLinkShipment}={!ship.shipment.Pack_List_No__c}&{!CaseLinkProduct}={!URLENCODE(item.item.Product_SKU__r.PS_Product_SKU__c)}&{!CaseLinkShippedFrom}={!item.item.Ship_From__c}&{!CaseLinkOrderDate}={!header.header.Order_Date__c}&{!CaseLinkSerialLotID}={!item.item.Lot_Serial_ID__c}" target="_blank" id="CaseFromItem">Create Case<--/apex:outputLink-->
+                                                                    <!-- PD <!--apex:outputLink value="/500/e?retURL=%2F500%2Fo&cas4={!URLENCODE(header.header.Account__r.Name)}&cas4_lkid={!header.AccountId}&CF00N80000004EKG7={!header.header.Name}&CF00N80000004EKG7_lkid={!header.header.Id}&CF00N80000004EKG6={!item.item.Name}&CF00N80000004EKG6_lkid={!item.item.Id}&CF00N80000004EKGJ={!ship.shipment.Name}&CF00N80000004EKGJ_lkid={!ship.shipment.Id}&00N80000004EKGC={!URLENCODE(item.item.Product_SKU__r.PS_Product_SKU__c)}" target="_blank" id="CaseFromItem">Create Case<--/apex:outputLink> -->
+                                                                    <apex:outputLink value="/500/e?retURL=%2F500%2Fo&{!CaseLinkAccount}={!URLENCODE(header.header.Account__r.Name)}&{!CaseLinkAccount}_lkid={!header.AccountId}&{!CaseLinkOrder}={!header.header.Name}&{!CaseLinkShipment}={!ship.shipment.Pack_List_No__c}&{!CaseLinkProduct}={!URLENCODE(item.item.PS_Product_SKU__c)}&{!CaseLinkShippedFrom}={!item.item.Ship_From__c}&{!CaseLinkOrderDate}={!header.header.Order_Date__c}&{!CaseLinkSerialLotID}={!item.item.Lot_Serial_ID__c}" target="_blank" id="CaseFromItem">Create Case</apex:outputLink>
+                                                                    <!-- PD <apex:outputLink value="/500/e?retURL=%2F500%2Fo&cas4={!URLENCODE(header.header.Account__r.Name)}&cas4_lkid={!header.AccountId}&CF00N80000004EKG7={!header.header.Name}&CF00N80000004EKG7_lkid={!header.header.Id}&CF00N80000004EKG6={!item.item.Name}&CF00N80000004EKG6_lkid={!item.item.Id}&CF00N80000004EKGJ={!ship.shipment.Name}&CF00N80000004EKGJ_lkid={!ship.shipment.Id}&00N80000004EKGC={!URLENCODE(item.item.PS_Product_SKU__c)}" target="_blank" id="CaseFromItem">Create Case</apex:outputLink> -->
+                                                                </apex:column>                                                  
+                                                                <apex:column >
+                                                                    <apex:outputLink value="http://blaprocrdc71:90/ATP/get_ATP.jsp?itemid={!item.item.PS_Product_SKU__c}&inbu={!item.item.Ship_From__c}" target="_blank" id="ATP">ATP</apex:outputLink>
+                                                                </apex:column>                                                                        
+                                                            </apex:dataTable>                                               
+                                                        </apex:outputPanel>
+                                                    </apex:outputPanel>
+                                                </apex:repeat>
+                                                
+                                            </apex:outputPanel>
+                                        </apex:outputPanel>
+                                    </apex:repeat>
+                                    
+                                </apex:outputPanel>                                 
+                            </apex:outputPanel>                     
+                        </apex:repeat>
+                        
+                    </apex:outputPanel>
+                </apex:outputPanel> 
+                
+                <script type="text/javascript">
+                ITBTreeNode.prototype.populateTheTreeInformation('{!$Component.treeInformation}','_font','_child','_icon','_leaf','Expand','Collapse','/img/setup_plus.gif','/img/setup_minus.gif','treeHighlightLeaf','treeLeaf');
+                </script>
+            </apex:pageBlock>
+        </apex:outputPanel>     
+        
+    </apex:form>
+</apex:page>

@@ -1,0 +1,203 @@
+<apex:page controller="CtrlHospitalsPhysiciansWithTeam" contentType="application/vnd.ms-excel#MCL(HospitalsAndPhysicians).xls">
+    <apex:outputLabel value="List of Physicians and Hospitals  for you/your team." style="font-weight:bold"></apex:outputLabel> 
+     <br/>
+     <apex:outputLabel value="Total records : {!totalRecords}" style="font-weight:bold"></apex:outputLabel> 
+     <br/><br/>
+     
+   
+     <apex:pageBlock >  
+        <apex:pageBlockTable value="{!listHospitalWithTeam1}" var="hospitalDetails" rendered="{!list1ContainsData}">   
+                   <apex:column headerValue="Legacy System Id"> 
+                        <apex:outputText value="{!hospitalDetails.strLegacyId}"></apex:outputText>                    
+                    </apex:column>  
+                   <apex:column headerValue="Hospital Name"> 
+                        <apex:outputLink value="/{!hospitalDetails.accountName.Id}"> {!hospitalDetails.accountName.Name} </apex:outputLink>                    
+                    </apex:column> 
+                   <apex:column headerValue="Segmentation" value="{!hospitalDetails.accountSegmentation}" />  
+                      <apex:column headerValue="Region"> 
+                        <apex:outputText value="{!hospitalDetails.strAccountRegion}"></apex:outputText>                    
+                    </apex:column>
+                      <apex:column headerValue="Area"> 
+                        <apex:outputText value="{!hospitalDetails.strAccountArea}"></apex:outputText>                    
+                    </apex:column>
+                    <apex:column headerValue="Physician"> 
+                         <apex:outputLink value="/{!hospitalDetails.physicianName.Id}"> {!hospitalDetails.physicianName.Name} </apex:outputLink>                                                      
+                    </apex:column> 
+                    <apex:column headerValue="Dr Segmentation" value="{!hospitalDetails.doctorSegmentation}" style="word-wrap:normal"/>  
+                    <apex:column headerValue="Gender" value="{!hospitalDetails.strPhysicianGender}" /> 
+                    <apex:column headerValue="Mailing Street" value="{!hospitalDetails.strMailingStreet}" /> 
+                    <apex:column headerValue="Mailing City" value="{!hospitalDetails.strMailingCity}" /> 
+                    <apex:column headerValue="Mailing State" value="{!hospitalDetails.strMailingState}"/> 
+                    <apex:column headerValue="Mailing Country" value="{!hospitalDetails.strMailingCountry}" /> 
+                    <apex:column headerValue="Postal Code" value="{!hospitalDetails.strMailingPostalCode}"/> 
+                    <apex:column headerValue="Email" value="{!hospitalDetails.strEmail}" /> 
+                    <apex:column headerValue="Phone" value="{!hospitalDetails.strPhone}"/> 
+                    
+                     <apex:column headerValue="Manager"> 
+                        <apex:outputText value="{!hospitalDetails.strManagerName}"></apex:outputText>                    
+                    </apex:column>   
+                    <apex:column value="{!hospitalDetails.strTeamMember}" headerValue="SE/SCRM"/>
+            </apex:pageBlockTable> 
+             <apex:pageBlockTable value="{!listHospitalWithTeam2}" var="hospitalDetails" rendered="{!list2ContainsData}">   
+                   <apex:column headerValue="Legacy System Id"> 
+                        <apex:outputText value="{!hospitalDetails.strLegacyId}"></apex:outputText>                    
+                    </apex:column>  
+                   <apex:column headerValue="Hospital Name"> 
+                        <apex:outputLink value="/{!hospitalDetails.accountName.Id}"> {!hospitalDetails.accountName.Name} </apex:outputLink>                    
+                    </apex:column> 
+                   <apex:column headerValue="Segmentation" value="{!hospitalDetails.accountSegmentation}" />  
+                      <apex:column headerValue="Region"> 
+                        <apex:outputText value="{!hospitalDetails.strAccountRegion}"></apex:outputText>                    
+                    </apex:column>
+                      <apex:column headerValue="Area"> 
+                        <apex:outputText value="{!hospitalDetails.strAccountArea}"></apex:outputText>                    
+                    </apex:column>
+                    <apex:column headerValue="Physician"> 
+                         <apex:outputLink value="/{!hospitalDetails.physicianName.Id}"> {!hospitalDetails.physicianName.Name} </apex:outputLink>                                                      
+                    </apex:column> 
+                    <apex:column headerValue="Dr Segmentation" value="{!hospitalDetails.doctorSegmentation}" style="word-wrap:normal"/>  
+                    <apex:column headerValue="Gender" value="{!hospitalDetails.strPhysicianGender}" /> 
+                    <apex:column headerValue="Mailing Street" value="{!hospitalDetails.strMailingStreet}" /> 
+                    <apex:column headerValue="Mailing City" value="{!hospitalDetails.strMailingCity}" /> 
+                    <apex:column headerValue="Mailing State" value="{!hospitalDetails.strMailingState}"/> 
+                    <apex:column headerValue="Mailing Country" value="{!hospitalDetails.strMailingCountry}" /> 
+                    <apex:column headerValue="Postal Code" value="{!hospitalDetails.strMailingPostalCode}"/> 
+                    <apex:column headerValue="Email" value="{!hospitalDetails.strEmail}" /> 
+                    <apex:column headerValue="Phone" value="{!hospitalDetails.strPhone}"/> 
+                    
+                     <apex:column headerValue="Manager"> 
+                        <apex:outputText value="{!hospitalDetails.strManagerName}"></apex:outputText>                    
+                    </apex:column>   
+                    <apex:column value="{!hospitalDetails.strTeamMember}" headerValue="SE/SCRM"/>
+            </apex:pageBlockTable> 
+            <apex:pageBlockTable value="{!listHospitalWithTeam3}" var="hospitalDetails" rendered="{!list3ContainsData}">   
+                   <apex:column headerValue="Legacy System Id"> 
+                        <apex:outputText value="{!hospitalDetails.strLegacyId}"></apex:outputText>                    
+                    </apex:column>  
+                   <apex:column headerValue="Hospital Name"> 
+                        <apex:outputLink value="/{!hospitalDetails.accountName.Id}"> {!hospitalDetails.accountName.Name} </apex:outputLink>                    
+                    </apex:column> 
+                   <apex:column headerValue="Segmentation" value="{!hospitalDetails.accountSegmentation}" />  
+                      <apex:column headerValue="Region"> 
+                        <apex:outputText value="{!hospitalDetails.strAccountRegion}"></apex:outputText>                    
+                    </apex:column>
+                      <apex:column headerValue="Area"> 
+                        <apex:outputText value="{!hospitalDetails.strAccountArea}"></apex:outputText>                    
+                    </apex:column>
+                    <apex:column headerValue="Physician"> 
+                         <apex:outputLink value="/{!hospitalDetails.physicianName.Id}"> {!hospitalDetails.physicianName.Name} </apex:outputLink>                                                      
+                    </apex:column> 
+                    <apex:column headerValue="Dr Segmentation" value="{!hospitalDetails.doctorSegmentation}" style="word-wrap:normal"/>  
+                    <apex:column headerValue="Gender" value="{!hospitalDetails.strPhysicianGender}" /> 
+                    <apex:column headerValue="Mailing Street" value="{!hospitalDetails.strMailingStreet}" /> 
+                    <apex:column headerValue="Mailing City" value="{!hospitalDetails.strMailingCity}" /> 
+                    <apex:column headerValue="Mailing State" value="{!hospitalDetails.strMailingState}"/> 
+                    <apex:column headerValue="Mailing Country" value="{!hospitalDetails.strMailingCountry}" /> 
+                    <apex:column headerValue="Postal Code" value="{!hospitalDetails.strMailingPostalCode}"/> 
+                    <apex:column headerValue="Email" value="{!hospitalDetails.strEmail}" /> 
+                    <apex:column headerValue="Phone" value="{!hospitalDetails.strPhone}"/> 
+                    
+                     <apex:column headerValue="Manager"> 
+                        <apex:outputText value="{!hospitalDetails.strManagerName}"></apex:outputText>                    
+                    </apex:column>   
+                    <apex:column value="{!hospitalDetails.strTeamMember}" headerValue="SE/SCRM"/>
+            </apex:pageBlockTable> 
+             <apex:pageBlockTable value="{!listHospitalWithTeam4}" var="hospitalDetails" rendered="{!list4ContainsData}">   
+                   <apex:column headerValue="Legacy System Id"> 
+                        <apex:outputText value="{!hospitalDetails.strLegacyId}"></apex:outputText>                    
+                    </apex:column>  
+                   <apex:column headerValue="Hospital Name"> 
+                        <apex:outputLink value="/{!hospitalDetails.accountName.Id}"> {!hospitalDetails.accountName.Name} </apex:outputLink>                    
+                    </apex:column> 
+                   <apex:column headerValue="Segmentation" value="{!hospitalDetails.accountSegmentation}" />  
+                      <apex:column headerValue="Region"> 
+                        <apex:outputText value="{!hospitalDetails.strAccountRegion}"></apex:outputText>                    
+                    </apex:column>
+                      <apex:column headerValue="Area"> 
+                        <apex:outputText value="{!hospitalDetails.strAccountArea}"></apex:outputText>                    
+                    </apex:column>
+                    <apex:column headerValue="Physician"> 
+                         <apex:outputLink value="/{!hospitalDetails.physicianName.Id}"> {!hospitalDetails.physicianName.Name} </apex:outputLink>                                                      
+                    </apex:column> 
+                    <apex:column headerValue="Dr Segmentation" value="{!hospitalDetails.doctorSegmentation}" style="word-wrap:normal"/>  
+                    <apex:column headerValue="Gender" value="{!hospitalDetails.strPhysicianGender}" /> 
+                    <apex:column headerValue="Mailing Street" value="{!hospitalDetails.strMailingStreet}" /> 
+                    <apex:column headerValue="Mailing City" value="{!hospitalDetails.strMailingCity}" /> 
+                    <apex:column headerValue="Mailing State" value="{!hospitalDetails.strMailingState}"/> 
+                    <apex:column headerValue="Mailing Country" value="{!hospitalDetails.strMailingCountry}" /> 
+                    <apex:column headerValue="Postal Code" value="{!hospitalDetails.strMailingPostalCode}"/> 
+                    <apex:column headerValue="Email" value="{!hospitalDetails.strEmail}" /> 
+                    <apex:column headerValue="Phone" value="{!hospitalDetails.strPhone}"/> 
+                    
+                     <apex:column headerValue="Manager"> 
+                        <apex:outputText value="{!hospitalDetails.strManagerName}"></apex:outputText>                    
+                    </apex:column>   
+                    <apex:column value="{!hospitalDetails.strTeamMember}" headerValue="SE/SCRM"/>
+            </apex:pageBlockTable> 
+             <apex:pageBlockTable value="{!listHospitalWithTeam5}" var="hospitalDetails" rendered="{!list5ContainsData}">   
+                   <apex:column headerValue="Legacy System Id"> 
+                        <apex:outputText value="{!hospitalDetails.strLegacyId}"></apex:outputText>                    
+                    </apex:column>  
+                   <apex:column headerValue="Hospital Name"> 
+                        <apex:outputLink value="/{!hospitalDetails.accountName.Id}"> {!hospitalDetails.accountName.Name} </apex:outputLink>                    
+                    </apex:column> 
+                   <apex:column headerValue="Segmentation" value="{!hospitalDetails.accountSegmentation}" />  
+                      <apex:column headerValue="Region"> 
+                        <apex:outputText value="{!hospitalDetails.strAccountRegion}"></apex:outputText>                    
+                    </apex:column>
+                      <apex:column headerValue="Area"> 
+                        <apex:outputText value="{!hospitalDetails.strAccountArea}"></apex:outputText>                    
+                    </apex:column>
+                    <apex:column headerValue="Physician"> 
+                         <apex:outputLink value="/{!hospitalDetails.physicianName.Id}"> {!hospitalDetails.physicianName.Name} </apex:outputLink>                                                      
+                    </apex:column> 
+                    <apex:column headerValue="Dr Segmentation" value="{!hospitalDetails.doctorSegmentation}" style="word-wrap:normal"/>  
+                    <apex:column headerValue="Gender" value="{!hospitalDetails.strPhysicianGender}" /> 
+                    <apex:column headerValue="Mailing Street" value="{!hospitalDetails.strMailingStreet}" /> 
+                    <apex:column headerValue="Mailing City" value="{!hospitalDetails.strMailingCity}" /> 
+                    <apex:column headerValue="Mailing State" value="{!hospitalDetails.strMailingState}"/> 
+                    <apex:column headerValue="Mailing Country" value="{!hospitalDetails.strMailingCountry}" /> 
+                    <apex:column headerValue="Postal Code" value="{!hospitalDetails.strMailingPostalCode}"/> 
+                    <apex:column headerValue="Email" value="{!hospitalDetails.strEmail}" /> 
+                    <apex:column headerValue="Phone" value="{!hospitalDetails.strPhone}"/> 
+                    
+                     <apex:column headerValue="Manager"> 
+                        <apex:outputText value="{!hospitalDetails.strManagerName}"></apex:outputText>                    
+                    </apex:column>   
+                    <apex:column value="{!hospitalDetails.strTeamMember}" headerValue="SE/SCRM"/>
+            </apex:pageBlockTable> 
+             <apex:pageBlockTable value="{!listHospitalWithTeam6}" var="hospitalDetails" rendered="{!list6ContainsData}">   
+                   <apex:column headerValue="Legacy System Id"> 
+                        <apex:outputText value="{!hospitalDetails.strLegacyId}"></apex:outputText>                    
+                    </apex:column>  
+                   <apex:column headerValue="Hospital Name"> 
+                        <apex:outputLink value="/{!hospitalDetails.accountName.Id}"> {!hospitalDetails.accountName.Name} </apex:outputLink>                    
+                    </apex:column> 
+                   <apex:column headerValue="Segmentation" value="{!hospitalDetails.accountSegmentation}" />  
+                      <apex:column headerValue="Region"> 
+                        <apex:outputText value="{!hospitalDetails.strAccountRegion}"></apex:outputText>                    
+                    </apex:column>
+                      <apex:column headerValue="Area"> 
+                        <apex:outputText value="{!hospitalDetails.strAccountArea}"></apex:outputText>                    
+                    </apex:column>
+                    <apex:column headerValue="Physician"> 
+                         <apex:outputLink value="/{!hospitalDetails.physicianName.Id}"> {!hospitalDetails.physicianName.Name} </apex:outputLink>                                                      
+                    </apex:column> 
+                    <apex:column headerValue="Dr Segmentation" value="{!hospitalDetails.doctorSegmentation}" style="word-wrap:normal"/>  
+                    <apex:column headerValue="Gender" value="{!hospitalDetails.strPhysicianGender}" /> 
+                    <apex:column headerValue="Mailing Street" value="{!hospitalDetails.strMailingStreet}" /> 
+                    <apex:column headerValue="Mailing City" value="{!hospitalDetails.strMailingCity}" /> 
+                    <apex:column headerValue="Mailing State" value="{!hospitalDetails.strMailingState}"/> 
+                    <apex:column headerValue="Mailing Country" value="{!hospitalDetails.strMailingCountry}" /> 
+                    <apex:column headerValue="Postal Code" value="{!hospitalDetails.strMailingPostalCode}"/> 
+                    <apex:column headerValue="Email" value="{!hospitalDetails.strEmail}" /> 
+                    <apex:column headerValue="Phone" value="{!hospitalDetails.strPhone}"/> 
+                    
+                     <apex:column headerValue="Manager"> 
+                        <apex:outputText value="{!hospitalDetails.strManagerName}"></apex:outputText>                    
+                    </apex:column>   
+                    <apex:column value="{!hospitalDetails.strTeamMember}" headerValue="SE/SCRM"/>
+            </apex:pageBlockTable> 
+  </apex:pageBlock>  
+ 
+</apex:page>

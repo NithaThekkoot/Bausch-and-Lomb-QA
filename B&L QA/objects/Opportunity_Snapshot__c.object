@@ -1,0 +1,664 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>USSUR Created for capturing analytic snapshot data for use in reporting</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>Account_SETID__c</fullName>
+        <externalId>false</externalId>
+        <label>Account SETID</label>
+        <length>5</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Acct_Name__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>USSUR Account Name</description>
+        <externalId>false</externalId>
+        <label>Acct Name</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Opportunity Snapshots</relationshipLabel>
+        <relationshipName>Opportunity_Snapshots</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Anterior_Disp_Monthly_Units__c</fullName>
+        <description>USSUR Anterior Disp Monthy Units</description>
+        <externalId>false</externalId>
+        <label>Anterior Disp Monthly Units</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Anterior_Disp_Price_each__c</fullName>
+        <description>USSUR Anterior Disp Price Each</description>
+        <externalId>false</externalId>
+        <label>Anterior Disp Price (each)</label>
+        <precision>9</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Avg_Price_of_Handpieces__c</fullName>
+        <externalId>false</externalId>
+        <label>Avg Price of Handpieces</label>
+        <precision>9</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Close_Date__c</fullName>
+        <description>USSUR Close Date</description>
+        <externalId>false</externalId>
+        <label>Close Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Contract_Term__c</fullName>
+        <description>USSUR Contract Term</description>
+        <externalId>false</externalId>
+        <label>Contract Term</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>12</fullName>
+                    <default>false</default>
+                    <label>12</label>
+                </value>
+                <value>
+                    <fullName>24</fullName>
+                    <default>false</default>
+                    <label>24</label>
+                </value>
+                <value>
+                    <fullName>36</fullName>
+                    <default>false</default>
+                    <label>36</label>
+                </value>
+                <value>
+                    <fullName>48</fullName>
+                    <default>false</default>
+                    <label>48</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Created_Date__c</fullName>
+        <description>USSUR Created Date</description>
+        <externalId>false</externalId>
+        <label>Created Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Eval_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Eval Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>GPO_Buying_Affiliation__c</fullName>
+        <externalId>false</externalId>
+        <label>GPO Buying Affiliation</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Machine_Revenue__c</fullName>
+        <description>USSUR Machine Revenue</description>
+        <externalId>false</externalId>
+        <label>Machine Revenue</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Opp_Name__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>USSUR Opp name - lookup for linking</description>
+        <externalId>false</externalId>
+        <label>Opp Name</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Opportunity Snapshots</relationshipLabel>
+        <relationshipName>Opportunity_Snapshots</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Owner__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>USSUR Opportunity Owner</description>
+        <externalId>false</externalId>
+        <label>Opportunity Owner</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Opportunity_Snapshots</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Posterior_Disp_Monthly_Units__c</fullName>
+        <description>USSUR Posterior Disp Monthly</description>
+        <externalId>false</externalId>
+        <label>Posterior Disp Monthly Units</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Posterior_Disp_Price_each__c</fullName>
+        <description>USSUR Posterior Disp Price each</description>
+        <externalId>false</externalId>
+        <label>Posterior Disp Price (each)</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Primary_Reason_Lost__c</fullName>
+        <externalId>false</externalId>
+        <label>Primary Reason Lost</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Primary_Reason_Won__c</fullName>
+        <externalId>false</externalId>
+        <label>Primary Reason Won</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Probability__c</fullName>
+        <description>USSUR Probability</description>
+        <externalId>false</externalId>
+        <label>Probability</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Program_Opp_Type__c</fullName>
+        <description>USSUR Program Opp Type</description>
+        <externalId>false</externalId>
+        <label>Program/Opp Type</label>
+        <length>30</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Projected_Annual_Revenue__c</fullName>
+        <description>base field on Oppt is a formula field - no edit</description>
+        <externalId>false</externalId>
+        <label>Projected Annual Revenue</label>
+        <precision>9</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Qualified_Lead_from_STM__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Qualified Lead from STM</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Reason_Lost_comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Reason Lost comments</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Secondary_Reason_Lost__c</fullName>
+        <externalId>false</externalId>
+        <label>Secondary Reason Lost</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Secondary_Reason_Won__c</fullName>
+        <externalId>false</externalId>
+        <label>Secondary Reason Won</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Ship_To_ID__c</fullName>
+        <description>USSUR Ship To ID</description>
+        <externalId>false</externalId>
+        <label>Ship To ID</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Snapshot_Date__c</fullName>
+        <description>USSUR Date of Snapshot</description>
+        <externalId>false</externalId>
+        <label>Snapshot Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Stage__c</fullName>
+        <description>USSUR Opportunity Stage</description>
+        <externalId>false</externalId>
+        <label>Stage</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Stellaris_PC_Plan_Op_Lease_Units__c</fullName>
+        <externalId>false</externalId>
+        <label>Stellaris PC Plan - Op Lease Units</label>
+        <precision>6</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Stellaris_PC_Plan_Revenue__c</fullName>
+        <externalId>false</externalId>
+        <label>Stellaris PC Plan - Revenue</label>
+        <precision>9</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Stellaris_PC_Plan_Sales_Units__c</fullName>
+        <externalId>false</externalId>
+        <label>Stellaris PC Plan - Sales Units</label>
+        <precision>6</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Stellaris_PC_Price_each__c</fullName>
+        <description>USSUR Stellaris PC Price each</description>
+        <externalId>false</externalId>
+        <label>Stellaris PC Price (each)</label>
+        <precision>9</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Stellaris_PC_Revenue_Fcst_Unwtd__c</fullName>
+        <externalId>false</externalId>
+        <label>Stellaris PC Revenue Fcst - Unweighted</label>
+        <precision>9</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Stellaris_PC_Revenue_Fcst_Wtd__c</fullName>
+        <externalId>false</externalId>
+        <label>Stellaris PC Revenue Fcst - Weighted</label>
+        <precision>9</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Stellaris_PC_Units_Fcst_Wtd__c</fullName>
+        <externalId>false</externalId>
+        <label>Stellaris PC Units Fcst - Weighted</label>
+        <precision>7</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Stellaris_PC_Units_Op_Lease__c</fullName>
+        <description>USSUR Stellaris PC Units Op Lease</description>
+        <externalId>false</externalId>
+        <label>Stellaris PC Units - Op Lease</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Stellaris_PC_Units__c</fullName>
+        <description>USSUR Stellaris PC Units</description>
+        <externalId>false</externalId>
+        <label>Stellaris PC Units</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Stellaris_Plan_Op_Lease_Units__c</fullName>
+        <externalId>false</externalId>
+        <label>Stellaris Plan - Op Lease Units</label>
+        <precision>6</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Stellaris_Plan_Revenue__c</fullName>
+        <externalId>false</externalId>
+        <label>Stellaris Plan - Revenue</label>
+        <precision>9</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Stellaris_Plan_Sales_Units__c</fullName>
+        <externalId>false</externalId>
+        <label>Stellaris Plan - Sales Units</label>
+        <precision>6</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Stellaris_Price_each__c</fullName>
+        <description>USSUR Stellaris Price each</description>
+        <externalId>false</externalId>
+        <label>Stellaris Price (each)</label>
+        <precision>9</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Stellaris_Revenue_Fcst_Unwtd__c</fullName>
+        <externalId>false</externalId>
+        <label>Stellaris Revenue Fcst Unweighted</label>
+        <precision>9</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Stellaris_Revenue_Fcst_Wtd__c</fullName>
+        <externalId>false</externalId>
+        <label>Stellaris Revenue Fcst - Weighted</label>
+        <precision>9</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Stellaris_Units_Fcst_Wtd__c</fullName>
+        <externalId>false</externalId>
+        <label>Stellaris Units Fcst-Weighted</label>
+        <precision>7</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Stellaris_Units_Op_Lease__c</fullName>
+        <description>USSUR Stellaris Units</description>
+        <externalId>false</externalId>
+        <label>Stellaris Units - Op Lease</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Stellaris_Units__c</fullName>
+        <description>USSUR Stellaris Units</description>
+        <externalId>false</externalId>
+        <label>Stellaris Units</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Tertiary_Reason_Lost__c</fullName>
+        <externalId>false</externalId>
+        <label>Tertiary Reason Lost</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Tertiary_Reason_Won__c</fullName>
+        <externalId>false</externalId>
+        <label>Tertiary Reason Won</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Type_of_Financing__c</fullName>
+        <description>USSUR Type of Financing</description>
+        <externalId>false</externalId>
+        <label>Type of Financing</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>of_Additional_Handpieces__c</fullName>
+        <externalId>false</externalId>
+        <label># of Additional Handpieces</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>of_Scopes__c</fullName>
+        <externalId>false</externalId>
+        <label># of Scopes</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Opportunity Snapshot</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Acct_Name__c</columns>
+        <columns>Opp_Name__c</columns>
+        <columns>Created_Date__c</columns>
+        <columns>RECORDTYPE</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>Stellaris_PC_Price_each__c</columns>
+        <columns>Stellaris_PC_Units__c</columns>
+        <columns>Stellaris_PC_Units_Op_Lease__c</columns>
+        <columns>Stellaris_Price_each__c</columns>
+        <columns>Stellaris_Units__c</columns>
+        <columns>Stellaris_Units_Op_Lease__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <label>Opportunity Snapshot Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Opportunity Snapshots</pluralLabel>
+    <recordTypes>
+        <fullName>USSUR_SES</fullName>
+        <active>true</active>
+        <description>USSUR Equipment</description>
+        <label>USSUR SES</label>
+        <picklistValues>
+            <picklist>Contract_Term__c</picklist>
+            <values>
+                <fullName>12</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>24</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>36</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>48</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <startsWith>Vowel</startsWith>
+    <visibility>Public</visibility>
+</CustomObject>

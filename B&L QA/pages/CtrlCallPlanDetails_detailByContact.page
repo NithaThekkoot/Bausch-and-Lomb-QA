@@ -1,0 +1,127 @@
+<apex:page controller="CtrlCallPlanDetails" tabStyle="Call_Plan__c" showHeader="false" sidebar="false">
+<apex:form >
+    <script>
+       function closeWindow()
+       {
+                
+            var checkCountry = '{!$CurrentPage.parameters.country}';
+            parent.window.close();
+            if(checkCountry == 'india')
+            {
+                parent.window.opener.location.href = '/apex/CtrlCallPlan_planDetail?mode=edit&id=' + "{!idCallPlan}";
+            }
+            if(checkCountry == 'APACSU')
+            {
+                parent.window.opener.location.href = '/apex/CtrlCallPlanningChinaSU_CallPlan?mode=edit&id=' + "{!idCallPlan}";
+            }
+
+        }
+    </script>
+    <apex:pageMessages />
+  <apex:PageBlock >
+      <apex:pageblockSection title="{!$Label.Call_Plan_Details}" columns="1">
+      <!--
+        <table width="900px" border="1">
+            <tr>
+                <th width="180px">
+                    Hospital
+                </th    >
+                <th width="180px">
+                    Physician
+                </th>
+                <th width="180px">
+                    Date
+                </th>
+                <th width="315px">
+                    Call Objective
+                </th>
+                <th width="45px">
+                    Joint Call
+                </th>
+            </tr>
+            <apex:repeat value="{!objCallPlanDetail}" var="details"> 
+                <tr>
+                    <td width="180px">
+                        <apex:outputField value="{!details.Physician_Name__r.Account.name}" />
+                    </td>
+                    <td width="180px">
+                        <apex:outputField value="{!details.Physician_Name__r.name}" />
+                    </td>
+                    <td width="180px">
+                        <apex:outputField value="{!details.Date__c}" />
+                    </td>
+                    <td width="315px">
+                        <apex:inputField value="{!details.Call_Objective__c}" rendered="{!$CurrentPage.parameters.country == 'india'}"/>
+                        <apex:selectList value="{!details.Call_Objective__c}" rendered="{!$CurrentPage.parameters.country == 'APACSU'}" size="1">
+                            <apex:selectOptions value="{!ObjectiveOptions}"/>
+                         </apex:selectList>
+                    </td>
+                    <td width="45px">
+                        <apex:inputCheckbox value="{!details.Joint_Call__c}" disabled="{!!blnisManager}"/>
+                    </td>
+                </tr>
+            </apex:repeat>
+            </table>    
+            -->        
+           
+          <apex:pageBlockTable value="{!objCallPlanDetail}" var="details">
+              <apex:column headerValue="{!$Label.Hospital}">
+                  <apex:outputField value="{!details.Physician_Name__r.AccountId}"/>
+              </apex:column>
+              <apex:column headerValue="{!$Label.Physician}">
+                  <apex:outputField value="{!details.Physician_Name__c}"/>
+              </apex:column>
+              <apex:column value="{!details.Date__c}" headerValue="{!$Label.Date}"/>
+              
+              <apex:column headerValue="{!$Label.Call_Objective}" rendered="{!blnHideCallObj}">
+          
+                   <apex:inputField value="{!details.Call_Objective__c}" rendered="{!$CurrentPage.parameters.country == 'india'}"/>
+                   <apex:outputPanel rendered="{!$CurrentPage.parameters.country == 'APACSU'}">
+                        <apex:outputPanel styleClass="requiredInput" layout="block">
+                            
+                            <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+                            
+                        <apex:selectList value="{!details.Call_Objective__c}"  size="1" rendered="{!NOT(OR(AND(NOT(blnisManager),strStatus == 'Submitted'),strStatus == 'Approved',strStatus == 'Rejected',AND(blnisManager,strStatus == 'Draft')))}">
+                            <apex:selectOptions value="{!ObjectiveOptions}"/>
+                         </apex:selectList>
+                         
+                         </apex:outputPanel>
+                         <apex:outputField value="{!details.Call_Objective__c}" rendered="{!OR(AND(NOT(blnisManager),strStatus == 'Submitted'),strStatus == 'Approved',strStatus == 'Rejected',AND(blnisManager,strStatus == 'Draft'))}"/>
+                    </apex:outputPanel>
+              </apex:column> 
+              
+              <apex:column rendered="{!!blnCheckRole || blnCheckRoleAES}"  headerValue="OT Hours">
+                  <apex:inputField value="{!details.OT_Hours__c}"/>
+               </apex:column>    
+              <apex:column rendered="{!!blnCheckRole}" headerValue="Product 1">
+                   <apex:inputField value="{!details.Product1__c}" />
+               </apex:column> 
+              <apex:column rendered="{!!blnCheckRole}" headerValue="Product 2">
+                   <apex:inputField value="{!details.Product2__c}"/>
+               </apex:column>
+               <!--Products added for India Aesthetic-->
+                <apex:column rendered="{!blnCheckRoleAES}" headerValue="Product 1" style="width:150px;">
+                   <apex:inputField value="{!details.AES_Product1__c}" style="width:150px;"/>
+               </apex:column> 
+              <apex:column rendered="{!blnCheckRoleAES}" headerValue="Product 2" style="width:150px;">
+                   <apex:inputField value="{!details.AES_Product2__c}" style="width:150px;"/>
+               </apex:column>
+                <apex:column rendered="{!!blnCheckRole || blnCheckRoleAES}" headerValue="Remarks">
+                   <apex:inputField value="{!details.Remarks__c}"/>
+               </apex:column>
+              <apex:column headerValue="{!$Label.Joint_Call}">
+                  <apex:inputCheckBox value="{!details.Joint_Call__c}" disabled="{!OR(NOT(blnisManager),strStatus == 'Draft',strStatus == 'Approved',strStatus == 'Rejected')}"/>
+              </apex:column>                
+
+          </apex:pageBlockTable>
+ 
+      </apex:pageblockSection>
+    <apex:outputLabel rendered="{!blnCheckRoleAES}" style="font-weight:bold">Note:- OT Hours/ Procedure Time </apex:outputLabel>
+        <apex:pageBlockButtons >    
+            <apex:commandButton value="{!$Label.Save_Button}" action="{!save}"/>
+            <apex:commandButton value="{!$Label.Submit_Button}" action="{!submit}" rendered="{!AND(NOT(blnIsManager),strStatus='Draft')}"/>
+            <apex:commandButton value="{!$Label.Cancel_Button}" action="{!cancel}"/>
+        </apex:pageBlockButtons>
+  </apex:PageBlock>
+  </apex:form>
+</apex:page>

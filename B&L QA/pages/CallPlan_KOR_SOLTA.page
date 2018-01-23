@@ -1,0 +1,1301 @@
+<apex:page controller="CtrlCallPlanning_KOR_SOLTA" sidebar="false" id="mainPage" tabStyle="Call_Plan__c">
+<style type="text/css">
+table.sample {
+    border-width: 1px;
+    border-spacing: 1px;
+    border-style: inset;
+    border-color: gray;
+    border-collapse: collapse;
+    background-color: white;
+}
+table.sample th {
+    border-width: 1px;
+    padding: 1px;
+    border-style: inset;
+    border-color: gray;
+    background-color: white;
+    -moz-border-radius: 0px 0px 0px 0px;
+}
+table.sample td {
+    border-width: 1px;
+    padding: 1px;
+    border-style: inset;
+    border-color: gray;
+    background-color: white;
+    -moz-border-radius: 0px 0px 0px 0px;
+}
+
+#overlay {
+    z-index:1000;
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    width:100%;
+    background:#000;
+    opacity:0.50;
+    -moz-opacity:0.50;
+    filter:alpha(opacity=50);
+    visibility:hidden;
+}
+#showLoad{
+    z-index:1001;
+    position:absolute;
+    top:50%;
+    left:50%;
+    background:#000;
+    visibility:hidden;
+    font-size:200%;
+    opacity:0.90;
+    -moz-opacity:0.90;
+    filter:alpha(opacity=90);
+    color:white;
+    width:150px;
+    height:40px;
+}
+
+</style>
+    <apex:form id="mainForm">
+    <script>
+        var monthTotal = 0;
+        var classATotal = 0;
+        var classBTotal = 0;
+        var classCTotal = 0;
+        var classDTotal = 0;
+        var classNTotal = 0;
+        var classZTotal = 0;
+        var countCols = 0;
+        var rowASum = 0;
+        var rowAFlag = false;
+        var rowBSum = 0;
+        var rowBFlag = false;
+        var rowCSum = 0;
+        var rowCFlag = false;
+        var rowDSum = 0;
+        var rowDFlag = false;
+        var rowNSum = 0;
+        var rowNFlag = false;
+        var rowZSum = 0;
+        var rowZFlag = false;
+        function setValues(ids)
+        {
+            document.getElementById(ids).value = true;
+        }
+        function rowSumCalculation(imageA, classA, classType) {
+            var imageClassA = document.getElementById(imageA);
+            var checkClassA = document.getElementById(classA);
+            if(imageClassA != null || (checkClassA != null && checkClassA.checked == true))
+            {
+                flag = true;
+                var str = '';
+                var sumDiv = '';
+                if (classType == 'A') {
+                    str =   new String(imageA);
+                    sumDiv = document.getElementById("sumA" + str.split(":")[6]);
+                }
+                if (classType == 'B') {
+                    str =   new String(imageA);
+                    sumDiv = document.getElementById("sumB" + str.split(":")[6]);
+                }
+                if (classType == 'C') {
+                    str =   new String(imageA);
+                    sumDiv = document.getElementById("sumC" + str.split(":")[6]);
+                }
+                if (classType == 'D') {
+                    str =   new String(imageA);
+                    sumDiv = document.getElementById("sumD" + str.split(":")[6]);
+                }
+                if (classType == 'N') {
+                    str =   new String(imageA);
+                    sumDiv = document.getElementById("sumN" + str.split(":")[6]);
+                }
+                
+                if (classType == 'Z') {
+                    str =   new String(imageA);
+                    sumDiv = document.getElementById("sumZ" + str.split(":")[6]);
+                }
+                //alert("sumA" + str.split(":")[6] + 1);
+                if(sumDiv != null)
+                {
+                    var sum;
+                    if(sumDiv.innerHTML == "0")
+                    {
+                        sum = 0;
+                    }
+                    else
+                    {
+                        sum = sumDiv.innerHTML * 1;
+                    }
+                    sum = sum + 1;
+                    monthTotal = monthTotal + 1;
+                    if (classType == 'D') {
+                        classDTotal = classDTotal + 1;
+                        rowDSum = rowDSum + 1;
+                    }
+                    if (classType == 'A') {
+                        classATotal = classATotal + 1;
+                        rowASum = rowASum + 1;
+                    }
+                    if (classType == 'B') {
+                        classBTotal = classBTotal + 1;
+                        rowBSum = rowBSum + 1;
+                    }
+                    if (classType == 'C') {
+                        classCTotal = classCTotal + 1;
+                        rowCSum = rowCSum + 1;
+                    }
+                    if (classType == 'N') {
+                        classNTotal = classNTotal + 1;
+                        rowNSum = rowNSum + 1;
+                    }
+                    if (classType == 'Z') {
+                        classZTotal = classZTotal + 1;
+                        rowZSum = rowZSum + 1;
+                    }
+                    sumDiv.innerHTML = sum;
+                }
+            }
+        }
+        function showOverlay() {
+            var o = document.getElementById('overlay');
+            o.style.visibility = 'visible';
+            var ob = document.getElementById('showLoad');
+            ob.style.visibility = 'visible';
+        }
+        function hideOverlay() {
+            var o = document.getElementById('overlay');
+            o.style.visibility = 'hidden';
+            var o = document.getElementById('showLoad');
+            o.style.visibility = 'hidden';
+        }
+       
+        function NZcustoermsdisplay() {
+           if({!blnKoruser} == false){
+                var o = document.getElementById('classNTable');
+                o.style.display = 'visible';
+                var o = document.getElementById('classZTable');
+                o.style.display = 'visible';
+            }
+            
+
+                }
+    </script>
+        <div id="overlay"><!--<apex:image value="/img/loading.gif" title="Processing..."/>Loading....--></div>
+        <div id="showLoad" valign="middle" align="center"><apex:image value="/img/loading.gif" title="Processing..."/>Loading....</div>
+        <script>
+            showOverlay();
+        </script>
+        <apex:pageMessages />
+            <apex:pageBlock id="mainBlock">
+            <apex:inputHidden id="ih1" value="{!blnisSaveFlag}"/>
+                    <apex:inputHidden id="ih2" value="{!blnisSubmitFlag}"/>
+                    <apex:inputHidden id="ih3" value="{!blnisApproveFlag}"/>
+                    <apex:inputHidden id="ih4" value="{!blnisRejectFlag}"/>
+                        <!-- Section displaying the call plan information-->
+                <apex:pageBlockSection collapsible="false" title="{!$Label.Call_Plan_Number} : {!objCallPlan.name}" columns="2">
+                    <apex:pageBlockSectionItem >
+                        <apex:outputlabel value="{!$Label.Sales_Executive}"/>
+                        <apex:outputText value="{!objUser.name}"/>
+                    </apex:pageBlockSectionItem>                
+                    
+                    
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel >{!$Label.Total} :</apex:outputLabel>
+                        <div id="totalDiv"/>
+                    </apex:pageBlockSectionItem>
+                    
+                    <apex:pageBlockSectionItem >    
+                        <apex:outputlabel value="{!$Label.week_label}"/>
+                        <apex:outputText value="{!strWeek}"/>
+                    </apex:pageBlockSectionItem>
+                    
+                    <apex:pageBlockSectionItem >
+                        <apex:outputlabel value="{!$Label.Status}"/>
+                        <apex:outputField value="{!objCallPlan.Status__c}"/>
+                    </apex:pageBlockSectionItem> 
+                    
+                    <apex:pageBlockSectionItem >    
+                        <apex:outputlabel value="{!$Label.Month}"/>
+                        <apex:outputText value="{!strDispMonth}"/>
+                    </apex:pageBlockSectionItem>
+                    
+                    <apex:pageBlockSectionItem >
+                        <apex:outputlabel value="{!$Label.Year}"/>
+                        <apex:outputText value="{!strDispYear}"/>                       
+                    </apex:pageBlockSectionItem>
+                    
+                    <apex:pageBlockSectionItem >
+                        <apex:outputlabel value="{!$Label.Executive_Comments}"/>
+                        <apex:panelGroup >
+                            <apex:outputField value="{!objCallPlan.Executive_Comments__c}" rendered="{!!blnShowSave}"/>
+                            <apex:inputField value="{!objCallPlan.Executive_Comments__c}" rendered="{!blnShowSave}"/>
+                        </apex:panelGroup>            
+                    </apex:pageBlockSectionItem>
+                    
+                    <apex:pageBlockSectionItem >
+                        <apex:outputlabel value="{!$Label.Manager_Comments}"/>
+                        <apex:panelGroup >
+                            <apex:outputField value="{!objCallPlan.Manager_Comments__c}" rendered="{!!bShowApprovalFunctions}"/>
+                            <apex:inputField value="{!objCallPlan.Manager_Comments__c}" rendered="{!bShowApprovalFunctions}"/>
+                        </apex:panelGroup>            
+                    </apex:pageBlockSectionItem>
+                    
+                </apex:pageBlockSection>
+                            <!-- Section for planning the call plan details -->
+                <apex:pageBlockSection title="{!$Label.Displaying_Contents}" rendered="{!blnisDisplayCallPlanDetail}" collapsible="false"/>
+                
+                <br/>      
+                
+                <table class="sample" id="topTable" width="99%">
+                     <tr>                        
+                        <th width="64%" colspan="3">
+                            {!$Label.Date}
+                        </th>                        
+                        <apex:repeat var="dts" value="{!objCurrentCallPlandisplay.list_RBDmonthDates}" >
+                            <th style="background-color: #E0FFFF;text-align:center" width="4%">
+                                <apex:outputlabel value="{!DAY(dts)}" style="color:blue"/>&nbsp;&nbsp;  
+                            </th>
+                        </apex:repeat>  
+                        <td width="4%" align="center">&nbsp;</td>
+                    </tr>
+                    <!--Start : Day Row -->
+                    <tr>
+                        <th width="64%" colspan="3">
+                            {!$Label.Day}
+                        </th>
+                        <th style="background-color: #8BB381;text-align:center" width="4%">{!$Label.Call_plan_lable_for_Monday}</th>
+                        <th style="background-color: #8BB381;text-align:center" width="4%">{!$Label.Call_plan_lable_for_Tuesday}</th>
+                        <th style="background-color: #8BB381;text-align:center" width="4%">{!$Label.Call_plan_lable_for_Wednesday}</th>
+                        <th style="background-color: #8BB381;text-align:center" width="4%">{!$Label.Call_plan_lable_for_Thursday}</th>
+                        <th style="background-color: #8BB381;text-align:center" width="4%">{!$Label.Call_plan_lable_for_Friday}</th>
+                        <th style="background-color: #8BB381;text-align:center" width="4%">{!$Label.Call_plan_lable_for_Saturday}</th>
+                        <th style="background-color: #8BB381;text-align:center" width="4%">{!$Label.Call_plan_lable_for_Sunday}</th>     
+                        
+                        <td width="4%" align="center">&nbsp;</td>
+                    </tr>
+                    <!--End : Day Row -->
+                    <!-- Start : Day Wise Sum for all Classes -->
+                    <apex:variable var="counter" value="{!VALUE('0')}"/>  <!-- Initialize Counter -->
+                        <tr>
+                            <th width="64%" colspan="3">{!$Label.Total_Calls_Planned}</th>
+                             <apex:repeat var="dts" value="{!objCurrentCallPlandisplay.list_RBDmonthDates}" >
+                                <th style="background-color: #F4A460;text-align:center" width="4%">
+                                    <div id="daySum{!FLOOR(counter)}">0</div>
+                                    <apex:variable var="counter" value="{!counter+1}"/> <!-- Increment Counter -->
+                                    <script>
+                                        countCols = countCols + 1;
+                                    </script>
+                                </th>
+                            </apex:repeat> 
+                            <th width="4%">&nbsp;</th>
+                        </tr>
+                        <!-- End : Day Wise Sum for all Classes -->
+                        <!-- Start : Sum Row A -->
+                        <apex:variable var="counter" value="{!VALUE('0')}"/>  <!-- Initialize Counter -->
+                        <tr>
+                            <th width="64%" colspan="3">{!$Label.Class_A_Calls_Planned}</th>
+                             <apex:repeat var="dts" value="{!objCurrentCallPlandisplay.list_RBDmonthDates}" >
+                                <th style="background-color: #FFF68F;text-align:center" width="4%">
+                                    <div id="sumA{!FLOOR(counter)}">0</div>
+                                    <apex:variable var="counter" value="{!counter+1}"/> <!-- Increment Counter -->
+                                </th>
+                            </apex:repeat> 
+                            <th width="4%" style="background-color: #FF4500;text-align:center"><div id="classATotal"/></th>
+                        </tr>
+                        <!-- End : Sum Row A -->
+                        <!-- Start : Sum Row B -->
+                        <apex:variable var="counter" value="{!VALUE('0')}"/>  <!-- Initialize Counter -->
+                        <tr>
+                            <th width="64%" colspan="3">{!$Label.Class_B_Calls_Planned}</th>
+                             <apex:repeat var="dts" value="{!objCurrentCallPlandisplay.list_RBDmonthDates}" >
+                                <th style="background-color: #FFF68F;text-align:center" width="4%">
+                                    <div id="sumB{!FLOOR(counter)}">0</div>
+                                    <apex:variable var="counter" value="{!counter+1}"/> <!-- Increment Counter -->
+                                </th>
+                            </apex:repeat> 
+                            <th width="4%" style="background-color: #FF4500;text-align:center"><div id="classBTotal"/></th>
+                        </tr>
+                        <!-- End : Sum Row B -->
+                        <!-- Start : Sum Row C -->
+                        <apex:variable var="counter" value="{!VALUE('0')}"/>  <!-- Initialize Counter -->
+                        <tr>
+                            <th width="64%" colspan="3">{!$Label.Class_C_Calls_Planned}</th>
+                             <apex:repeat var="dts" value="{!objCurrentCallPlandisplay.list_RBDmonthDates}" >
+                                <th style="background-color: #FFF68F;text-align:center" width="4%">
+                                    <div id="sumC{!FLOOR(counter)}">0</div>
+                                    <apex:variable var="counter" value="{!counter+1}"/> <!-- Increment Counter -->
+                                </th>
+                            </apex:repeat> 
+                            <th width="4%" style="background-color: #FF4500;text-align:center"><div id="classCTotal"/></th>
+                        </tr>
+                        <!-- End : Sum Row C -->
+                        <!-- Start : Sum Row D -->
+                        <apex:variable var="counter" value="{!VALUE('0')}"/>  <!-- Initialize Counter -->
+                        <tr>
+                            <th width="64%" colspan="3">{!$Label.Class_D_Calls_Planned}</th>
+                             <apex:repeat var="dts" value="{!objCurrentCallPlandisplay.list_RBDmonthDates}" >
+                                <th style="background-color: #FFF68F;text-align:center" width="4%">
+                                    <div id="sumD{!FLOOR(counter)}">0</div>
+                                    <apex:variable var="counter" value="{!counter+1}"/> <!-- Increment Counter -->
+                                </th>
+                            </apex:repeat> 
+                            <th width="4%" style="background-color: #FF4500;text-align:center"><div id="classDTotal"/></th>
+                        </tr>
+                        <!-- End : Sum Row D -->
+                        <!-- Start : Sum Row N -->
+                        <apex:variable var="counter" value="{!VALUE('0')}"/>  <!-- Initialize Counter -->
+                        <tr>
+                            <th width="64%" colspan="3">{!$Label.Class_N_Calls_Planned}</th>
+                             <apex:repeat var="dts" value="{!objCurrentCallPlandisplay.list_RBDmonthDates}" >
+                                <th style="background-color: #FFF68F;text-align:center" width="4%">
+                                    <div id="sumN{!FLOOR(counter)}">0</div>
+                                    <apex:variable var="counter" value="{!counter+1}"/> <!-- Increment Counter -->
+                                </th>
+                            </apex:repeat> 
+                            <th width="4%" style="background-color: #FF4500;text-align:center"><div id="classNTotal"/></th>
+                        </tr>
+                        <!-- End : Sum Row N -->
+                        <!-- Start : Sum Row Z -->
+                        <apex:variable var="counter" value="{!VALUE('0')}"/>  <!-- Initialize Counter -->
+                        <tr>
+                            <th width="64%" colspan="3">{!$Label.Class_Z_Calls_Planned}</th>
+                             <apex:repeat var="dts" value="{!objCurrentCallPlandisplay.list_RBDmonthDates}" >
+                                <th style="background-color: #FFF68F;text-align:center" width="4%">
+                                    <div id="sumZ{!FLOOR(counter)}">0</div>
+                                    <apex:variable var="counter" value="{!counter+1}"/> <!-- Increment Counter -->
+                                </th>
+                            </apex:repeat> 
+                            <th width="4%" style="background-color: #FF4500;text-align:center"><div id="classZTotal"/></th>
+                        </tr>
+                        <!-- End : Sum Row Z -->
+                </table>
+                
+                <br/>
+                
+                 <!-- Code written by Sandeep Kumar Gaddam on 05 Sept 2012 -->
+                <div>
+                <table width="100%"><tr>
+           
+                        <!-- Display the accounts names in Picklist start --->
+             <td width="30%"><center>
+                    <apex:outputLabel ><b>Account</b></apex:outputLabel>&nbsp;&nbsp;&nbsp;&nbsp;                    
+                        <apex:selectList id="accId" value="{!getAcct}" size="1" style="width:400px">
+                            <apex:selectOptions value="{!Acct}"/>                           
+                        </apex:selectList> </center>            
+                </td> 
+                
+       <!-- No need of disply the area names on VF Page -->        
+               <!-- <td width="30%"><center>
+                    <apex:outputLabel ><b>Area</b></apex:outputLabel>&nbsp;&nbsp;&nbsp;&nbsp;                    
+                        <apex:selectList id="areaId" value="{!getarea}" size="1" style="width:400px">
+                            <apex:selectOptions value="{!area}"/>                           
+                        </apex:selectList> </center>             
+                </td> -->
+               <!-- Dipslay the Classification like A,B,C,D end -->
+                <td width="40%">
+                <center>
+                     <apex:outputLabel ><b>Classification </b></apex:outputLabel>&nbsp;&nbsp;&nbsp;&nbsp;                     
+                        <apex:selectList id="classId" value="{!getClass}" size="1" style="width:300px">
+                            <apex:selectOptions value="{!Classifictn}" />
+                        </apex:selectList>
+                        </center>   </td>  
+           
+             
+             <!-- Dipslay the Segmentation start -->
+               <!-- <td width="30%">
+                <center>
+                     <apex:outputLabel ><b>Segmentation</b></apex:outputLabel>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <apex:selectList id="segmId" value="{!getSegm}" size="1" style="width:300px">
+                            <apex:selectOptions value="{!segmtion}" />
+                        </apex:selectList>
+                        </center>   </td>  -->
+
+             
+             <!-- Dipslay the Segmentation end -->
+                    <td width="25%"><apex:commandButton value="Go" action="{!go}" style="width:50px"/>&nbsp;&nbsp; 
+                    <apex:commandButton value="ClearAll" action="{!clearAll}" style="width:50px" /></td>
+                </tr></table><br/><br/><br/>
+                </div>
+                
+                <!-- End -->
+                
+                <div style="height:500px;overflow:scroll">
+                        <apex:variable var="colorVar" value="{!VALUE('0')}"/> <!-- Initialize colorVar -->
+                    <table class="sample" id="classATable" width="100%">
+
+                        <apex:variable var="counter" value="{!VALUE('0')}"/>  <!-- Initialize Counter -->
+                        
+                        <tr>                        
+                            <th width="25%"  >{!$label.Store_Name}</th>
+                            <th width="13%" style="text-align:center">{!$Label.SL_code}</th> <!-- Code written by Sandeep Kumar Gaddam on 05 Sept 2012 -->
+                            <th width="13%" style="text-align:center">{!$label.MTD_Calls}</th>
+                          <!------   <th width="13%" style="text-align:center">{!$label.Last_Visit_Date}</th> ------>
+                                       <th width="13%" style="text-align:center">
+                               
+                                <apex:outputLabel value="{!$Label.No_of_Visits}"/><br/>
+                                <apex:outputLabel value="{!$Label.Per_Month}"/>
+                            </th>
+                            <apex:repeat var="dts" value="{!objCurrentCallPlandisplay.list_RBDmonthDates}" >
+                                <th style="background-color: #E0FFFF;text-align:center" width="4%">
+                                    <apex:outputlabel value="{!DAY(dts)}" style="color:blue"/>&nbsp;&nbsp;    
+                                </th>
+                            </apex:repeat>   
+                            <td width="4%" style="text-align:center">&nbsp;</td>
+                        </tr>   
+                        
+                        <!--Start : Day Row -->
+                        <tr>
+                            <th width="20%" >{!$label.Class_A_Stores_Date}</th>                       
+                            <td width="13%" style="text-align:center">&nbsp;</td>
+                            <td width="13%" style="text-align:center">&nbsp;</td>
+                            <td width="13%" style="text-align:center">&nbsp;</td>
+                            <!---<td width="10%" style="text-align:center">&nbsp;</td>------->
+                            <th style="background-color: #8BB381;text-align:center" width="4%">{!$Label.Call_plan_lable_for_Monday}</th>
+                            <th style="background-color: #8BB381;text-align:center" width="4%">{!$Label.Call_plan_lable_for_Tuesday}</th>
+                            <th style="background-color: #8BB381;text-align:center" width="4%">{!$Label.Call_plan_lable_for_Wednesday}</th>
+                            <th style="background-color: #8BB381;text-align:center" width="4%">{!$Label.Call_plan_lable_for_Thursday}</th>
+                            <th style="background-color: #8BB381;text-align:center" width="4%">{!$Label.Call_plan_lable_for_Friday}</th>
+                            <th style="background-color: #8BB381;text-align:center" width="4%">{!$Label.Call_plan_lable_for_Saturday}</th>
+                            <th style="background-color: #8BB381;text-align:center" width="4%">{!$Label.Call_plan_lable_for_Sunday}</th>
+                            <td width="4%">&nbsp;</td>
+                        </tr>
+                        <!--End : Day Row -->
+                        
+                        <apex:variable var="counter" value="{!VALUE('1')}"/>  <!-- Initialize Counter -->
+                        <apex:repeat value="{!objCurrentCallPlandisplay.list_callPlanDetailClassA}" var="clasA">                  
+                        <tr>
+                            <td width="25%">
+                                <apex:outputLink value="/{!clasA.idAccount}" target="_blank">{!clasA.strStoreName}</apex:outputLink>
+                            </td>
+                            <td width="10%" >
+                               <center> <apex:outputText value="{!clasA.legacyid}"/></center> <!-- Code written by Sandeep Kumar Gaddam on 05 Sept 2012 -->
+                            </td>
+                            <td width="10%" style="text-align:center">
+                                <apex:outputText value="{!clasA.intMTDCalls}"/>
+                            </td>
+                          <!------  <td width="10%" style="text-align:center;background-color:{!IF(clasA.blnHighLightStoreInfoColumn,'#C24641','none')};"> ------->
+                                <!--<apex:outputPanel rendered="{!clasA.blnHasStoreInfo}">-->
+                                   <!-- <apex:outputField value="{!clasA.objStoreVisit.Store_Info__c}"/> -->
+                                <!--</apex:outputPanel>-->
+                                <!--{!clasA.objStInfo.Name}-->
+                        <!----    </td>----->
+                            <td width="10%" style="text-align:center;background-color:{!IF(clasA.blnHighLightVisitsColumn,'#C24641','none')};">{!FLOOR(clasA.dcmNoOfVisitsPerMonth)}</td>
+                            <script>
+                                var rowSum = 0;
+                                var flag = false;
+                                rowASum = 0;
+                                rowAFlag = false;
+                            </script>
+                            <apex:variable var="weekendTracker" value="{!VALUE('1')}"/>  <!-- Initialize weekendTracker -->
+                            <apex:repeat value="{!clasA.list_objDays}" var="dys" >
+                                <td width="4%" style="text-align:center;align:center;background-color:{!IF(OR(MOD(weekendTracker + 1,7)==0,MOD(weekendTracker,7)==0),'#8A9EBE;opacity:0.50;-moz-opacity:0.50;filter:alpha(opacity=50);','none')}">
+                                    <apex:inputCheckbox id="classA" value="{!dys.blnisbSelected}" disabled="{!blnisDisable}" rendered="{!NOT(AND(dys.blnisbSelected,blnisDisable))}" onclick="calculateRowColSum('{!$Component.classA}','A')"/>
+                                    <apex:image value="{!$Resource.CheckboxChecked}" rendered="{!AND(dys.blnisbSelected,blnisDisable)}" id="imageA"/>
+                                    <script>
+                                        rowSumCalculation("{!$Component.imageA}", "{!$Component.classA}", 'A');
+                                    </script>                                                                   
+                                </td>
+                                <apex:variable var="weekendTracker" value="{!weekendTracker+1}"/> <!-- Increment weekendTracker -->
+                            </apex:repeat>
+                            <td style="font-weight:bold;background-color: #FFF68F;text-align:center" width="4%">
+                                <div id="sumColA{!FLOOR(counter - 1)}"/>
+                                <script>
+                                    //document.write(rowSum);
+                                    //alert(rowSum);
+                                    document.getElementById("sumColA{!FLOOR(counter - 1)}").innerHTML = rowASum;
+                                </script>
+                            </td>   
+                        </tr>
+                                
+                                <!-- Row Start -->
+                                <!--Saranya
+                                <apex:outputPanel rendered="{!MOD(counter,10)==0}">                                
+                                <tr>
+                                     <td width="255px">&nbsp;</td>
+                                     <td width="80px">&nbsp;</td>
+                                     <td width="70px">&nbsp;</td>
+                                    <apex:repeat var="dts" value="{!objCurrentCallPlandisplay.list_RBDmonthDates}">
+                                         <td style="background-color: #E0FFFF;text-align:center" width="23px">
+                                             <apex:outputText value="{!DAY(dts)}" style="font-weight:bold;color:blue"/>&nbsp;&nbsp;                                             
+                                        </td>                                       
+                                    </apex:repeat> 
+                                    <td width="23px">&nbsp;</td>
+                                </tr>
+                                Start : Day Row 
+                                
+                                <tr>
+                                    <td width="255px"></td>
+                                    <td width="80px">&nbsp;</td>
+                                    <td width="70px">&nbsp;</td>
+                                    <apex:variable var="dayTracker" value="{!VALUE('0')}"/>  Initialize dayTracker
+                                    <apex:repeat var="dts" value="{!objCurrentCallPlandisplay.list_RBDmonthDates}" >
+                                        <th style="background-color: #8BB381;text-align:center" width="23px">
+                                            {!CASE( 
+                                            MOD(FLOOR(dayTracker),7), 
+                                0,$Label.Call_plan_lable_for_Monday,
+                                1,$Label.Call_plan_lable_for_Tuesday,
+                                2,$Label.Call_plan_lable_for_Wednesday,
+                                3,$Label.Call_plan_lable_for_Thursday,
+                                4,$Label.Call_plan_lable_for_Friday,
+                                5,$Label.Call_plan_lable_for_Saturday,
+                                6,$Label.Call_plan_lable_for_Sunday," ")}
+                                        </th>
+                                        <apex:variable var="dayTracker" value="{!dayTracker+1}"/>  Increment dayTracker 
+                                    </apex:repeat>  
+                                    <td width="23px">&nbsp;</td>
+                                </tr>
+                                End : Day Row
+                                </apex:outputPanel>-->
+                                <!-- Row End -->
+                                <apex:variable var="counter" value="{!counter+1}"/>
+                            </apex:repeat>                        
+                    </table >
+                    
+                    <!-- Start : Class B -->
+                    
+                    <apex:variable var="counter" value="{!VALUE('0')}"/>                    
+                    <br/>
+                    <table class="sample" id="classBTable" width="100%">
+                        <tr>
+                            <th width="25%">{!$Label.Store_Name}</th>
+                            <th width="13%" style="text-align:center">{!$Label.SL_code}</th> <!-- Code written by Sandeep Kumar Gaddam on 05 Sept 2012 -->
+                            <th width="13%" style="text-align:center">{!$Label.MTD_Calls}</th>
+                            <!-----<th width="10%" style="text-align:center">{!$Label.Last_Visit_Date}</th>--------->
+                            <th width="13%" style="text-align:center">
+                                <!--<apex:outputLabel value="{!$ObjectType.Account_Profile__c.fields.No_Of_Visits_Per_Month__c.label}"/>-->
+                                <apex:outputLabel value="{!$Label.No_of_Visits}"/><br/>
+                                <apex:outputLabel value="{!$Label.Per_Month}"/>
+                            </th>
+                            <apex:repeat var="dts" value="{!objCurrentCallPlandisplay.list_RBDmonthDates}">
+                                <th style="background-color: #E0FFFF;text-align:center" width="4%">
+                                    <apex:outputlabel value="{!DAY(dts)}"  style="color:blue"/>&nbsp;&nbsp;                                    
+                                </th>
+                            </apex:repeat>  
+                            <td width="4%" style="text-align:center">&nbsp;</td>
+                        </tr>
+                        <!--Start : Day Row -->
+                        <tr>
+                            <th width="20%">{!$label.Class_B_Stores_Date} </th>
+                            <td width="10%" style="text-align:center">&nbsp;</td>
+                            <td width="10%" style="text-align:center">&nbsp;</td>
+                            <td width="10%" style="text-align:center">&nbsp;</td>
+                           <!-------- <td width="10%" style="text-align:center">&nbsp;</td>   ------->                          
+                            <th style="background-color: #8BB381;text-align:center" width="4%">{!$Label.Call_plan_lable_for_Monday}</th>
+                            <th style="background-color: #8BB381;text-align:center" width="4%">{!$Label.Call_plan_lable_for_Tuesday}</th>
+                            <th style="background-color: #8BB381;text-align:center" width="4%">{!$Label.Call_plan_lable_for_Wednesday}</th>
+                            <th style="background-color: #8BB381;text-align:center" width="4%">{!$Label.Call_plan_lable_for_Thursday}</th>
+                            <th style="background-color: #8BB381;text-align:center" width="4%">{!$Label.Call_plan_lable_for_Friday}</th>
+                            <th style="background-color: #8BB381;text-align:center" width="4%">{!$Label.Call_plan_lable_for_Saturday}</th>
+                            <th style="background-color: #8BB381;text-align:center" width="4%">{!$Label.Call_plan_lable_for_Sunday}</th>
+                            <td width="4%" style="text-align:center">&nbsp;</td>
+                        </tr>
+                        <!--End : Day Row -->
+                        
+                        <apex:variable var="counter" value="{!VALUE('1')}"/>
+                        <apex:repeat value="{!objCurrentCallPlandisplay.list_callPlanDetailClassB}" var="clasB">                        
+                                <tr>
+                                    <td width="25%">
+                                        <apex:outputLink value="/{!clasB.idAccount}" target="_blank">{!clasB.strStoreName}</apex:outputLink>
+                                    </td>
+                                    <td width="10%" >
+                                <center><apex:outputText value="{!clasB.legacyid}"/></center> <!-- Code written by Sandeep Kumar Gaddam on 05 Sept 2012 -->
+                                 </td>
+                                    <td width="10%" style="text-align:center">
+                                        <apex:outputText value="{!clasB.intMTDCalls}"/>
+                                    </td>
+                                    <!---------- Nikhil---------------><td></td>
+                                  <!--cvsr  <td width="10%" style="text-align:center;background-color:{!IF(clasB.blnHighLightStoreInfoColumn,'#C24641','none')};"><apex:outputField value="{!clasB.objStoreVisit.Store_Info__c}"/></td> -->
+                                   <!-----Nikhil-- <td width="10%" style="text-align:center;background-color:{!IF(clasB.blnHighLightVisitsColumn,'#C24641','none')};">{!FLOOR(clasB.dcmNoOfVisitsPerMonth)}</td>------>
+                                    <script>
+                                        var rowSum = 0;
+                                        var flag = false;
+                                        rowBSum = 0;
+                                        rowBFlag = false;
+
+                                    </script>
+                                    <apex:variable var="weekendTracker" value="{!VALUE('1')}"/>  <!-- Initialize weekendTracker -->
+                                    <apex:repeat value="{!clasB.list_objDays}" var="dys">
+
+                                        <td width="4%" style="text-align:center;align:center;background-color:{!IF(OR(MOD(weekendTracker + 1,7)==0,MOD(weekendTracker,7)==0),'#8A9EBE;opacity:0.50;-moz-opacity:0.50;filter:alpha(opacity=50);','none')}">
+                                            <apex:inputCheckbox value="{!dys.blnisbSelected}" disabled="{!blnisDisable}" rendered="{!NOT(AND(dys.blnisbSelected,blnisDisable))}" id="classB" onclick="calculateRowColSum('{!$Component.classB}','B')"/>
+                                            <apex:image value="{!$Resource.CheckboxChecked}" rendered="{!AND(dys.blnisbSelected,blnisDisable)}" id="imageB"/>
+                                            <script>
+                                                rowSumCalculation("{!$Component.imageB}", "{!$Component.classB}", 'B');
+                                            </script> 
+                                        </td>
+                                        <apex:variable var="weekendTracker" value="{!weekendTracker+1}"/> <!-- Increment weekendTracker -->
+                                    </apex:repeat>
+                                    <td style="font-weight:bold;background-color: #FFF68F;text-align:center" width="4%">
+                                        <div id="sumColB{!FLOOR(counter - 1)}"/>
+                                        <script>
+                                            //document.write(rowSum);
+                                            document.getElementById("sumColB{!FLOOR(counter - 1)}").innerHTML = rowBSum;
+                                        </script>
+                                    </td>
+                                </tr>
+                                
+                                <!--Saranya
+                                 Row Start
+                                 <apex:outputPanel rendered="{!MOD(counter,10)==0}">
+                                 <apex:variable var="colorVar" value="{!VALUE('0')}"/>
+                                <tr>  
+                                    <td width="255px">&nbsp;</td>
+                                    <td width="80px">&nbsp;</td>
+                                    <td width="70px">&nbsp;</td>
+                                    <apex:repeat var="dts" value="{!objCurrentCallPlandisplay.list_RBDmonthDates}">
+                                         <td style="background-color: #E0FFFF;text-align:center" width="23px">
+                                             <apex:outputText value="{!DAY(dts)}" style="font-weight:bold;color:{!IF(MOD(FLOOR(colorVar/7),2)==0,'red','blue')}"/>&nbsp;&nbsp;
+                                             <apex:variable var="colorVar" value="{!colorVar+1}"/>
+                                        </td>
+                                    </apex:repeat> 
+                                    <td width="23px">&nbsp;</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td width="255px"></td>
+                                    <td width="80px">&nbsp;</td>
+                                    <td width="70px">&nbsp;</td>
+                                    <apex:variable var="dayTracker" value="{!VALUE('0')}"/>
+                                    <apex:repeat var="dts" value="{!objCurrentCallPlandisplay.list_RBDmonthDates}" >
+                                        <th style="background-color: #8BB381;text-align:center" width="23px">
+                                            {!CASE( 
+                                            MOD(FLOOR(dayTracker),7), 
+                                0,$Label.Call_plan_lable_for_Monday,
+                                1,$Label.Call_plan_lable_for_Tuesday,
+                                2,$Label.Call_plan_lable_for_Wednesday,
+                                3,$Label.Call_plan_lable_for_Thursday,
+                                4,$Label.Call_plan_lable_for_Friday,
+                                5,$Label.Call_plan_lable_for_Saturday,
+                                6,$Label.Call_plan_lable_for_Sunday," ")}
+                                        </th>
+                                        <apex:variable var="dayTracker" value="{!dayTracker+1}"/>
+                                    </apex:repeat>  
+                                    <td width="23px">&nbsp;</td>
+                                </tr>
+                                
+                                </apex:outputPanel> -->
+                                <!-- Row End -->
+                                <apex:variable var="counter" value="{!counter+1}"/> <!-- Increment Counter -->
+                            </apex:repeat>  
+                    </table >
+                    
+                    <!-- End : Class B -->
+                    
+                    
+                    <br/>
+                    <apex:variable var="counter" value="{!VALUE('0')}"/>
+                    
+                    <table class="sample" id="classCTable" width="100%">
+                        <tr>                       
+                            <th width="25%">{!$Label.Store_Name}</th>
+                            <th width="13%" style="text-align:center">{!$Label.SL_code}</th>
+                            <th width="13%" style="text-align:center">{!$Label.MTD_Calls}</th> <!-- Code written by Sandeep Kumar Gaddam on 05 Sept 2012 -->
+                            <!-----<th width="10%" style="text-align:center">{!$Label.Last_Visit_Date}</th>-------->
+                            <th width="13%" style="text-align:center">
+                                <!--<apex:outputLabel value="{!$ObjectType.Account_Profile__c.fields.No_Of_Visits_Per_Month__c.label}"/>-->
+                                <apex:outputLabel value="{!$Label.No_of_Visits}"/><br/>
+                                <apex:outputLabel value="{!$Label.Per_Month}"/>
+                            </th>
+                            <apex:repeat var="dts" value="{!objCurrentCallPlandisplay.list_RBDmonthDates}">
+                                <th style="background-color: #E0FFFF;text-align:center" width="4%">
+                                    <apex:outputlabel value="{!DAY(dts)}" style="color:blue"/>&nbsp;&nbsp;                                    
+                                </th>
+                            </apex:repeat>  
+                            <td width="4%" style="text-align:center">&nbsp;</td>
+                        </tr>
+                        <!--Start : Day Row -->
+                        <tr>
+                            <th width="20%">{!$label.Class_C_Stores_Date}</th>
+                            <td width="10%" style="text-align:center">&nbsp;</td>
+                            <td width="10%" style="text-align:center">&nbsp;</td>
+                            <td width="10%" style="text-align:center">&nbsp;</td>
+                            <!--------<td width="10%" style="text-align:center">&nbsp;</td> --------------------->                            
+                            <th style="background-color: #8BB381;text-align:center" width="4%">{!$Label.Call_plan_lable_for_Monday}</th>
+                            <th style="background-color: #8BB381;text-align:center" width="4%">{!$Label.Call_plan_lable_for_Tuesday}</th>
+                            <th style="background-color: #8BB381;text-align:center" width="4%">{!$Label.Call_plan_lable_for_Wednesday}</th>
+                            <th style="background-color: #8BB381;text-align:center" width="4%">{!$Label.Call_plan_lable_for_Thursday}</th>
+                            <th style="background-color: #8BB381;text-align:center" width="4%">{!$Label.Call_plan_lable_for_Friday}</th>
+                            <th style="background-color: #8BB381;text-align:center" width="4%">{!$Label.Call_plan_lable_for_Saturday}</th>
+                            <th style="background-color: #8BB381;text-align:center" width="4%">{!$Label.Call_plan_lable_for_Sunday}</th>                              
+                            <td width="4%" style="text-align:center">&nbsp;</td>
+                        </tr>
+                        <!--End : Day Row -->
+                            <apex:variable var="counter" value="{!VALUE('1')}"/>
+                            <apex:repeat value="{!objCurrentCallPlandisplay.list_callPlanDetailClassC}" var="clasC">
+                            <!--<apex:variable var="counter" value="{!counter+1}"/>-->
+                                <tr>
+                                    <td width="25%">
+                                        <apex:outputLink value="/{!clasC.idAccount}" target="_blank">{!clasC.strStoreName}</apex:outputLink>
+                                    </td>
+                                    <td width="10%" >
+                               <center> <apex:outputText value="{!clasC.legacyid}"/></center>
+                            </td>
+                                    <td width="10%" style="text-align:center">
+                                        <apex:outputText value="{!clasC.intMTDCalls}"/>
+                                    </td>
+                                    
+                                    <!----Nikhil---->
+                                    <td></td>
+                                   <!-- <td width="10%" style="text-align:center;background-color:{!IF(clasC.blnHighLightStoreInfoColumn,'#C24641','none')};"><apex:outputField value="{!clasC.objStoreVisit.Store_Info__c}"/></td> -->
+                                <!----Nikhil ---    <td width="10%" style="text-align:center;background-color:{!IF(clasC.blnHighLightVisitsColumn,'#C24641','none')};">{!FLOOR(clasC.dcmNoOfVisitsPerMonth)}</td>----->
+                                    <script>
+                                        var rowSum = 0;
+                                        var flag = false;
+                                        rowCSum = 0;
+                                        rowCFlag = false;
+                                    </script>
+                                    <apex:variable var="weekendTracker" value="{!VALUE('1')}"/>  <!-- Initialize weekendTracker -->
+                                    <apex:repeat value="{!clasC.list_objDays}" var="dys">
+                                    
+                                    <!---------Nikhil------------------------->
+                                        <td width="4%" style="align:center;text-align:center;background-color:{!IF(OR(MOD(weekendTracker + 1,7)==0,MOD(weekendTracker,7)==0),'#8A9EBE;opacity:0.50;-moz-opacity:0.50;filter:alpha(opacity=50);','none')}">
+                                            <apex:inputCheckbox value="{!dys.blnisbSelected}" disabled="{!blnisDisable}" rendered="{!NOT(AND(dys.blnisbSelected,blnisDisable))}" id="classC" onclick="calculateRowColSum('{!$Component.classC}','C')"/>
+                                            <apex:image value="{!$Resource.CheckboxChecked}" rendered="{!AND(dys.blnisbSelected,blnisDisable)}" id="imageC"/>
+                                            <script>
+                                                rowSumCalculation("{!$Component.imageC}", "{!$Component.classC}", 'C');
+                                            </script> 
+                                        </td>
+                                        <apex:variable var="weekendTracker" value="{!weekendTracker+1}"/> <!-- Increment weekendTracker -->
+                                    </apex:repeat>
+                                    <td style="font-weight:bold;background-color: #FFF68F;text-align:center" width="4%">
+                                        <div id="sumColC{!FLOOR(counter - 1)}"/>
+                                        <script>
+                                            document.getElementById("sumColC{!FLOOR(counter - 1)}").innerHTML = rowCSum;
+                                        </script>                           
+                                    </td>                                   
+                                </tr>
+                                
+                                <!--Saranya                               
+                                 
+                                <apex:outputPanel rendered="{!MOD(counter,10)==0}">
+                                <tr>
+                                     <td width="255px">&nbsp;</td>
+                                     <td width="80px">&nbsp;</td>
+                                     <td width="70px">&nbsp;</td>
+                                    <apex:repeat var="dts" value="{!objCurrentCallPlandisplay.list_RBDmonthDates}">
+                                         <td style="background-color: #E0FFFF;text-align:center" width="23px">
+                                             <apex:outputText value="{!DAY(dts)}" style="font-weight:bold;color:{!IF(MOD(FLOOR(colorVar/7),2)==0,'red','blue')}"/>&nbsp;&nbsp;
+                                             <apex:variable var="colorVar" value="{!colorVar+1}"/>
+                                        </td>
+                                    </apex:repeat> 
+                                    <td width="23px">&nbsp;</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td width="255px"></td>
+                                    <td width="80px">&nbsp;</td>
+                                    <td width="70px">&nbsp;</td>
+                                    <apex:variable var="dayTracker" value="{!VALUE('0')}"/> 
+                                    <apex:repeat var="dts" value="{!objCurrentCallPlandisplay.list_RBDmonthDates}" >
+                                        <th style="background-color: #8BB381;text-align:center" width="23px">
+                                            {!CASE( 
+                                            MOD(FLOOR(dayTracker),7), 
+                                0,$Label.Call_plan_lable_for_Monday,
+                                1,$Label.Call_plan_lable_for_Tuesday,
+                                2,$Label.Call_plan_lable_for_Wednesday,
+                                3,$Label.Call_plan_lable_for_Thursday,
+                                4,$Label.Call_plan_lable_for_Friday,
+                                5,$Label.Call_plan_lable_for_Saturday,
+                                6,$Label.Call_plan_lable_for_Sunday," ")}
+                                        </th>
+                                        <apex:variable var="dayTracker" value="{!dayTracker+1}"/> 
+                                    </apex:repeat>  
+                                    <td width="23px">&nbsp;</td>
+                                </tr>
+                                
+                                </apex:outputPanel> -->                              
+                                
+                                <apex:variable var="counter" value="{!counter+1}"/> <!-- Increment Counter -->
+                            </apex:repeat>  
+                    </table >
+                    
+                    <br/>
+                    
+                    <apex:variable var="counter" value="{!VALUE('0')}"/>                    
+                    <table class="sample" id="classDTable" width="100%">
+                         <tr>
+                            <th width="25%">{!$Label.Store_Name}</th>
+                            <th width="13%" style="text-align:center">{!$Label.SL_code}</th> <!-- Code written by Sandeep Kumar Gaddam on 05 Sept 2012 -->
+                            <th width="13%" style="text-align:center">{!$Label.MTD_Calls}</th>
+                          <!-----  <th width="10%" style="text-align:center">{!$Label.Last_Visit_Date}</th>------>
+                            <th width="10%" style="text-align:center">
+                                <!--<apex:outputLabel value="{!$ObjectType.Account_Profile__c.fields.No_Of_Visits_Per_Month__c.label}"/>-->
+                                <apex:outputLabel value="{!$Label.No_of_Visits}"/><br/>
+                                <apex:outputLabel value="{!$Label.Per_Month}"/>
+                            </th>
+                            <!-- <th>&nbsp;</th> -->
+                             <apex:repeat var="dts" value="{!objCurrentCallPlandisplay.list_RBDmonthDates}">
+                                <th style="background-color: #E0FFFF;text-align:center" width="4%">
+                                    <apex:outputlabel value="{!DAY(dts)}" style="color:blue"/>&nbsp;&nbsp;
+                                </th>
+                            </apex:repeat>  
+                            <td width="4%" style="text-align:center">&nbsp;</td>
+                        </tr>
+                        <!--Start : Day Row -->
+                        <tr>
+                            <th width="20%">{!$label.Class_D_Stores_Date}</th>
+                            <td width="13%" style="text-align:center">&nbsp;</td>
+                            <td width="13%" style="text-align:center">&nbsp;</td>
+                            <td width="13%" style="text-align:center">&nbsp;</td>
+                           <!----- <td width="10%" style="text-align:center">&nbsp;</td>----->
+                            <th style="background-color: #8BB381;text-align:center" width="4%">{!$Label.Call_plan_lable_for_Monday}</th>
+                            <th style="background-color: #8BB381;text-align:center" width="4%">{!$Label.Call_plan_lable_for_Tuesday}</th>
+                            <th style="background-color: #8BB381;text-align:center" width="4%">{!$Label.Call_plan_lable_for_Wednesday}</th>
+                            <th style="background-color: #8BB381;text-align:center" width="4%">{!$Label.Call_plan_lable_for_Thursday}</th>
+                            <th style="background-color: #8BB381;text-align:center" width="4%">{!$Label.Call_plan_lable_for_Friday}</th>
+                            <th style="background-color: #8BB381;text-align:center" width="4%">{!$Label.Call_plan_lable_for_Saturday}</th>
+                            <th style="background-color: #8BB381;text-align:center" width="4%">{!$Label.Call_plan_lable_for_Sunday}</th>
+                            <td width="4%" style="text-align:center">&nbsp;</td>
+                        </tr>
+                        <!--End : Day Row -->
+                            
+                            <apex:variable var="counter" value="{!VALUE('1')}"/>
+                            <apex:repeat value="{!objCurrentCallPlandisplay.list_callPlanDetailClassD}" var="clasD">
+                             <!--<apex:variable var="counter" value="{!counter+1}"/> -->
+                                <tr>
+                                    <td width="25%">
+                                        <apex:outputLink value="/{!clasD.idAccount}" target="_blank">{!clasD.strStoreName}</apex:outputLink>
+                                    </td>
+                                    <td width="10%" >
+                               <center> <apex:outputText value="{!clasD.legacyid}"/></center>
+                            </td>
+                                    <td width="10%" style="text-align:center">
+                                        <apex:outputText value="{!clasD.intMTDCalls}"/>
+                                    </td>
+                                   <!--cvsr <td width="10%" style="text-align:center;background-color:{!IF(clasD.blnHighLightStoreInfoColumn,'#C24641','none')};"><apex:outputField value="{!clasD.objStoreVisit.Store_Info__c}"/></td> -->
+                                   <!------ <td width="10%" style="text-align:center;background-color:{!IF(clasD.blnHighLightVisitsColumn,'#C24641','none')};">{!FLOOR(clasD.dcmNoOfVisitsPerMonth)}</td>---->
+                                    <!---- Nikhil  --------><td></td>
+                                    <script>
+                                        var rowSum = 0;
+                                        var flag = false;
+                                        rowDSum = 0;
+                                        rowDFlag = false;
+                                    </script>
+                                    <apex:variable var="weekendTracker" value="{!VALUE('1')}"/>  <!-- Initialize weekendTracker -->
+                                    <apex:repeat value="{!clasD.list_objDays}" var="dys">
+                                        <td width="4%" style="align:center;text-align:center;background-color:{!IF(OR(MOD(weekendTracker + 1,7)==0,MOD(weekendTracker,7)==0),'#8A9EBE;opacity:0.50;-moz-opacity:0.50;filter:alpha(opacity=50);','none')}">
+                                            <apex:inputCheckbox value="{!dys.blnisbSelected}" disabled="{!blnisDisable}" rendered="{!NOT(AND(dys.blnisbSelected,blnisDisable))}" id="classD" onclick="calculateRowColSum('{!$Component.classD}','D')"/>
+                                            <apex:image value="{!$Resource.CheckboxChecked}" rendered="{!AND(dys.blnisbSelected,blnisDisable)}" id="imageD"/>
+                                            <script>
+                                                rowSumCalculation("{!$Component.imageD}", "{!$Component.classD}", 'D');
+                                            </script>
+                                        </td>
+                                        <apex:variable var="weekendTracker" value="{!weekendTracker+1}"/> <!-- Increment weekendTracker -->
+                                    </apex:repeat>
+                                    
+                                    <td style="font-weight:bold;background-color: #FFF68F;text-align:center;" width="4%">
+                                        <div id="sumColD{!FLOOR(counter - 1)}"/>
+                                        <script>
+                                            //document.write(rowSum);
+                                            document.getElementById("sumColD{!FLOOR(counter - 1)}").innerHTML = rowDSum;
+                                        </script>
+                                    </td>
+                                </tr>
+                                
+                                 <!--Saranya
+                                 <apex:outputPanel rendered="{!MOD(counter,10)==0}">
+                                <tr>
+                                    <td width="255px">&nbsp;</td>
+                                    <td width="80px">&nbsp;</td>
+                                    <td width="70px">&nbsp;</td>
+                                    <apex:repeat var="dts" value="{!objCurrentCallPlandisplay.list_RBDmonthDates}">
+                                         <td style="background-color: #E0FFFF;text-align:center" width="23px">
+                                             <apex:outputText value="{!DAY(dts)}" style="font-weight:bold;color:{!IF(MOD(FLOOR(colorVar/7),2)==0,'red','blue')}"/>&nbsp;&nbsp;
+                                             <apex:variable var="colorVar" value="{!colorVar+1}"/>
+                                        </td>
+                                    </apex:repeat> 
+                                    <td width="23px">&nbsp;</td>
+                                </tr>                               
+                                
+                                <tr>
+                                    <td width="255px"></td>
+                                    <td width="80px">&nbsp;</td>
+                                    <td width="70px">&nbsp;</td>
+                                    <apex:variable var="dayTracker" value="{!VALUE('0')}"/>  
+                                    
+                                    <apex:repeat var="dts" value="{!objCurrentCallPlandisplay.list_RBDmonthDates}" >
+                                        <th style="background-color: #8BB381;text-align:center" width="23px">
+                                            {!CASE( 
+                                            MOD(FLOOR(dayTracker),7), 
+                                0,$Label.Call_plan_lable_for_Monday,
+                                1,$Label.Call_plan_lable_for_Tuesday,
+                                2,$Label.Call_plan_lable_for_Wednesday,
+                                3,$Label.Call_plan_lable_for_Thursday,
+                                4,$Label.Call_plan_lable_for_Friday,
+                                5,$Label.Call_plan_lable_for_Saturday,
+                                6,$Label.Call_plan_lable_for_Sunday," ")}
+                                        </th>
+                                        <apex:variable var="dayTracker" value="{!dayTracker+1}"/>
+                                        
+                                    </apex:repeat>  
+                                    <td width="23px">&nbsp;</td>
+                                </tr>                              
+                                
+                                </apex:outputPanel>-->                               
+                                
+                                <apex:variable var="counter" value="{!counter+1}"/> <!-- Increment Counter -->
+                            </apex:repeat>   
+                    </table>
+                    
+                     <!-- Start : Class N --> <!-- Code written by Raviteja Kumar on 17 Apr 2013 -->
+                    
+                    <apex:variable var="counter" value="{!VALUE('0')}"/>                    
+                    <br/>
+                    <table class="sample isKoruser" id="classNTable" width="100%">
+                        <tr>
+                            <th width="25%">{!$Label.Store_Name} </th>
+                            <th width="13%" style="text-align:center">{!$Label.SL_code}</th> 
+                            <th width="13%" style="text-align:center">{!$Label.MTD_Calls}</th>
+                           <!-- <th width="13%" style="text-align:center">{!$Label.Last_Visit_Date}</th> -->
+                            <th width="10%" style="text-align:center">
+                                <!--<apex:outputLabel value="{!$ObjectType.Account_Profile__c.fields.No_Of_Visits_Per_Month__c.label}"/>-->
+                                <apex:outputLabel value="{!$Label.No_of_Visits}"/><br/>
+                                <apex:outputLabel value="{!$Label.Per_Month}"/>
+                            </th>
+                            <apex:repeat var="dts" value="{!objCurrentCallPlandisplay.list_RBDmonthDates}">
+                                <th style="background-color: #E0FFFF;text-align:center" width="4%">
+                                    <apex:outputlabel value="{!DAY(dts)}"  style="color:blue"/>&nbsp;&nbsp;                                    
+                                </th>
+                            </apex:repeat>  
+                            <td width="4%" style="text-align:center">&nbsp;</td>
+                        </tr>
+                        <!--Start : Day Row -->
+                        <tr>
+                            <th width="20%">{!$label.Class_N_Stores_Date} </th>
+                            <td width="10%" style="text-align:center">&nbsp;</td>
+                            <td width="10%" style="text-align:center">&nbsp;</td>
+                            <!-- <td width="10%" style="text-align:center">&nbsp;</td> -->
+                            <td width="10%" style="text-align:center">&nbsp;</td>                             
+                            <th style="background-color: #8BB381;text-align:center" width="4%">{!$Label.Call_plan_lable_for_Monday}</th>
+                            <th style="background-color: #8BB381;text-align:center" width="4%">{!$Label.Call_plan_lable_for_Tuesday}</th>
+                            <th style="background-color: #8BB381;text-align:center" width="4%">{!$Label.Call_plan_lable_for_Wednesday}</th>
+                            <th style="background-color: #8BB381;text-align:center" width="4%">{!$Label.Call_plan_lable_for_Thursday}</th>
+                            <th style="background-color: #8BB381;text-align:center" width="4%">{!$Label.Call_plan_lable_for_Friday}</th>
+                            <th style="background-color: #8BB381;text-align:center" width="4%">{!$Label.Call_plan_lable_for_Saturday}</th>
+                            <th style="background-color: #8BB381;text-align:center" width="4%">{!$Label.Call_plan_lable_for_Sunday}</th>
+                            <td width="4%" style="text-align:center">&nbsp;</td>
+                        </tr>
+                        <!--End : Day Row -->
+                        
+                        <apex:variable var="counter" value="{!VALUE('1')}"/>
+                        <apex:repeat Value="{!objCurrentCallPlandisplay.list_callPlanDetailClassN}" var="clasN">                        
+                                <tr>
+                                    <td width="25%">
+                                        <apex:outputLink value="/{!clasN.idAccount}" target="_blank">{!clasN.strStoreName}</apex:outputLink>
+                                    </td>
+                                    <td width="10%" >
+                                <center><apex:outputText value="{!clasN.legacyid}"/></center> <!-- Code written by Sandeep Kumar Gaddam on 05 Sept 2012 -->
+                                 </td>
+                                    <td width="10%" style="text-align:center">
+                                        <apex:outputText value="{!clasN.intMTDCalls}"/>
+                                    </td>
+                                   <!-- <td width="10%" style="text-align:center;background-color:{!IF(clasN.blnHighLightStoreInfoColumn,'#C24641','none')};"><apex:outputField value="{!clasN.objStoreVisit.Store_Info__c}"/></td> -->
+                                    <td width="10%" style="text-align:center;background-color:{!IF(clasN.blnHighLightVisitsColumn,'#C24641','none')};">{!FLOOR(clasN.dcmNoOfVisitsPerMonth)}</td>
+                                    <script>
+                                        var rowSum = 0;
+                                        var flag = false;
+                                        rowNSum = 0;
+                                        rowBFlag = false;
+
+                                    </script>
+                                    <apex:variable var="weekendTracker" value="{!VALUE('1')}"/>  <!-- Initialize weekendTracker -->
+                                    <apex:repeat value="{!clasN.list_objDays}" var="dys">
+                                        <td width="4%" style="text-align:center;align:center;background-color:{!IF(OR(MOD(weekendTracker + 1,7)==0,MOD(weekendTracker,7)==0),'#8A9EBE;opacity:0.50;-moz-opacity:0.50;filter:alpha(opacity=50);','none')}">
+                                            <apex:inputCheckbox value="{!dys.blnisbSelected}" disabled="{!blnisDisable}" rendered="{!NOT(AND(dys.blnisbSelected,blnisDisable))}" id="classN" onclick="calculateRowColSum('{!$Component.classN}','N')"/>
+                                            <apex:image value="{!$Resource.CheckboxChecked}" rendered="{!AND(dys.blnisbSelected,blnisDisable)}" id="imageN"/>
+                                            <script>
+                                                rowSumCalculation("{!$Component.imageN}", "{!$Component.classN}", 'N');
+                                            </script> 
+                                        </td>
+                                        <apex:variable var="weekendTracker" value="{!weekendTracker+1}"/> <!-- Increment weekendTracker -->
+                                    </apex:repeat>
+                                    <td style="font-weight:bold;background-color: #FFF68F;text-align:center" width="4%">
+                                        <div id="sumColN{!FLOOR(counter - 1)}"/>
+                                        <script>
+                                            //document.write(rowSum);
+                                            document.getElementById("sumColN{!FLOOR(counter - 1)}").innerHTML = rowNSum;
+                                        </script>
+                                    </td>
+                                </tr>
+                                
+                                <!--Saranya
+                                 Row Start
+                                 <apex:outputPanel rendered="{!MOD(counter,10)==0}">
+                                 <apex:variable var="colorVar" value="{!VALUE('0')}"/>
+                                <tr>  
+                                    <td width="255px">&nbsp;</td>
+                                    <td width="80px">&nbsp;</td>
+                                    <td width="70px">&nbsp;</td>
+                                    <apex:repeat var="dts" value="{!objCurrentCallPlandisplay.list_RBDmonthDates}">
+                                         <td style="background-color: #E0FFFF;text-align:center" width="23px">
+                                             <apex:outputText value="{!DAY(dts)}" style="font-weight:bold;color:{!IF(MOD(FLOOR(colorVar/7),2)==0,'red','blue')}"/>&nbsp;&nbsp;
+                                             <apex:variable var="colorVar" value="{!colorVar+1}"/>
+                                        </td>
+                                    </apex:repeat> 
+                                    <td width="23px">&nbsp;</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td width="255px"></td>
+                                    <td width="80px">&nbsp;</td>
+                                    <td width="70px">&nbsp;</td>
+                                    <apex:variable var="dayTracker" value="{!VALUE('0')}"/>
+                                    <apex:repeat var="dts" value="{!objCurrentCallPlandisplay.list_RBDmonthDates}" >
+                                        <th style="background-color: #8BB381;text-align:center" width="23px">
+                                            {!CASE( 
+                                            MOD(FLOOR(dayTracker),7), 
+                                0,$Label.Call_plan_lable_for_Monday,
+                                1,$Label.Call_plan_lable_for_Tuesday,
+                                2,$Label.Call_plan_lable_for_Wednesday,
+                                3,$Label.Call_plan_lable_for_Thursday,
+                                4,$Label.Call_plan_lable_for_Friday,
+                                5,$Label.Call_plan_lable_for_Saturday,
+                                6,$Label.Call_plan_lable_for_Sunday," ")}
+                                        </th>
+                                        <apex:variable var="dayTracker" value="{!dayTracker+1}"/>
+                                    </apex:repeat>  
+                                    <td width="23px">&nbsp;</td>
+                                </tr>
+                                
+                                </apex:outputPanel> -->
+                                <!-- Row End -->
+                                <apex:variable var="counter" value="{!counter+1}"/> <!-- Increment Counter -->
+                            </apex:repeat>  
+                    </table >
+                    <!-- End : Class N -->
+                <!-- Start : Class Z --> <!-- Code written by Raviteja Kumar on 17 Apr 2013 -->
+                    
+                    <apex:variable var="counter" value="{!VALUE('0')}"/>                    
+                    <br/>
+                    <table class="sample" id="classZTable" width="100%">
+                        <tr> 
+                            <th width="25%">{!$Label.Store_Name}</th>
+                            <th width="10%" style="text-align:center">{!$Label.SL_code}</th> 
+                            <th width="10%" style="text-align:center">{!$Label.MTD_Calls}</th>
+                           <!-- <th width="10%" style="text-align:center">{!$Label.Last_Visit_Date}</th> -->
+                            <th width="10%" style="text-align:center">
+                                <!--<apex:outputLabel value="{!$ObjectType.Account_Profile__c.fields.No_Of_Visits_Per_Month__c.label}"/>-->
+                                <apex:outputLabel value="{!$Label.No_of_Visits}"/><br/>
+                                <apex:outputLabel value="{!$Label.Per_Month}"/>
+                            </th>
+                            <apex:repeat var="dts" value="{!objCurrentCallPlandisplay.list_RBDmonthDates}">
+                                <th style="background-color: #E0FFFF;text-align:center" width="4%">
+                                    <apex:outputlabel value="{!DAY(dts)}"  style="color:blue"/>&nbsp;&nbsp;                                    
+                                </th>
+                            </apex:repeat>  
+                            <td width="4%" style="text-align:center">&nbsp;</td>
+                        </tr>
+                        <!--Start : Day Row -->
+                        <tr>
+                            <th width="20%">{!$label.Class_Z_Stores_Date} </th>
+                            <td width="10%" style="text-align:center">&nbsp;</td>
+                            <td width="10%" style="text-align:center">&nbsp;</td>
+                          <!--  <td width="10%" style="text-align:center">&nbsp;</td> -->
+                            <td width="10%" style="text-align:center">&nbsp;</td>                             
+                            <th style="background-color: #8BB381;text-align:center" width="4%">{!$Label.Call_plan_lable_for_Monday}</th>
+                            <th style="background-color: #8BB381;text-align:center" width="4%">{!$Label.Call_plan_lable_for_Tuesday}</th>
+                            <th style="background-color: #8BB381;text-align:center" width="4%">{!$Label.Call_plan_lable_for_Wednesday}</th>
+                            <th style="background-color: #8BB381;text-align:center" width="4%">{!$Label.Call_plan_lable_for_Thursday}</th>
+                            <th style="background-color: #8BB381;text-align:center" width="4%">{!$Label.Call_plan_lable_for_Friday}</th>
+                            <th style="background-color: #8BB381;text-align:center" width="4%">{!$Label.Call_plan_lable_for_Saturday}</th>
+                            <th style="background-color: #8BB381;text-align:center" width="4%">{!$Label.Call_plan_lable_for_Sunday}</th>
+                            <td width="4%" style="text-align:center">&nbsp;</td>
+                        </tr>
+                        <!--End : Day Row -->
+                        
+                        <apex:variable var="counter" value="{!VALUE('1')}"/>
+                        <apex:repeat value="{!objCurrentCallPlandisplay.list_callPlanDetailclassZ}" var="clasZ">                        
+                                <tr>
+                                    <td width="25%">
+                                        <apex:outputLink value="/{!clasZ.idAccount}" target="_blank">{!clasZ.strStoreName}</apex:outputLink>
+                                    </td>
+                                    <td width="10%" >
+                                <center><apex:outputText value="{!clasZ.legacyid}"/></center> <!-- Code written by Sandeep Kumar Gaddam on 05 Sept 2012 -->
+                                 </td>
+                                    <td width="10%" style="text-align:center">
+                                        <apex:outputText value="{!clasZ.intMTDCalls}"/>
+                                    </td>
+                                <!--cvsr    <td width="10%" style="text-align:center;background-color:{!IF(clasZ.blnHighLightStoreInfoColumn,'#C24641','none')};"><apex:outputField value="{!clasZ.objStoreVisit.Store_Info__c}"/></td> -->
+                                    <td width="10%" style="text-align:center;background-color:{!IF(clasZ.blnHighLightVisitsColumn,'#C24641','none')};">{!FLOOR(clasZ.dcmNoOfVisitsPerMonth)}</td>
+                                    <script>
+                                        var rowSum = 0;
+                                        var flag = false;
+                                        rowZSum = 0;
+                                        rowZFlag = false;
+
+                                    </script>
+                                    <apex:variable var="weekendTracker" value="{!VALUE('1')}"/>  <!-- Initialize weekendTracker -->
+                                    <apex:repeat value="{!clasZ.list_objDays}" var="dys">
+                                        <td width="4%" style="text-align:center;align:center;background-color:{!IF(OR(MOD(weekendTracker + 1,7)==0,MOD(weekendTracker,7)==0),'#8A9EBE;opacity:0.50;-moz-opacity:0.50;filter:alpha(opacity=50);','none')}">
+                                            <apex:inputCheckbox value="{!dys.blnisbSelected}" disabled="{!blnisDisable}" rendered="{!NOT(AND(dys.blnisbSelected,blnisDisable))}" id="classZ" onclick="calculateRowColSum('{!$Component.classZ}','Z')"/>
+                                            <apex:image value="{!$Resource.CheckboxChecked}" rendered="{!AND(dys.blnisbSelected,blnisDisable)}" id="imageZ"/>
+                                            <script>
+                                                rowSumCalculation("{!$Component.imageZ}", "{!$Component.classZ}", 'Z');
+                                            </script> 
+                                        </td>
+                                        <apex:variable var="weekendTracker" value="{!weekendTracker+1}"/> <!-- Increment weekendTracker -->
+                                    </apex:repeat>
+                                    <td style="font-weight:bold;background-color: #FFF68F;text-align:center" width="4%">
+                                        <div id="sumColZ{!FLOOR(counter - 1)}"/>
+                                        <script>
+                                            //document.write(rowSum);
+                                            document.getElementById("sumColZ{!FLOOR(counter - 1)}").innerHTML = rowZSum;
+                                        </script>
+                                    </td>
+                                </tr>
+                                
+                                <!--Saranya
+                                 Row Start
+                                 <apex:outputPanel rendered="{!MOD(counter,10)==0}">
+                                 <apex:variable var="colorVar" value="{!VALUE('0')}"/>
+                                <tr>  
+                                    <td width="255px">&nbsp;</td>
+                                    <td width="80px">&nbsp;</td>
+                                    <td width="70px">&nbsp;</td>
+                                    <apex:repeat var="dts" value="{!objCurrentCallPlandisplay.list_RBDmonthDates}">
+                                         <td style="background-color: #E0FFFF;text-align:center" width="23px">
+                                             <apex:outputText value="{!DAY(dts)}" style="font-weight:bold;color:{!IF(MOD(FLOOR(colorVar/7),2)==0,'red','blue')}"/>&nbsp;&nbsp;
+                                             <apex:variable var="colorVar" value="{!colorVar+1}"/>
+                                        </td>
+                                    </apex:repeat> 
+                                    <td width="23px">&nbsp;</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td width="255px"></td>
+                                    <td width="80px">&nbsp;</td>
+                                    <td width="70px">&nbsp;</td>
+                                    <apex:variable var="dayTracker" value="{!VALUE('0')}"/>
+                                    <apex:repeat var="dts" value="{!objCurrentCallPlandisplay.list_RBDmonthDates}" >
+                                        <th style="background-color: #8BB381;text-align:center" width="23px">
+                                            {!CASE( 
+                                            MOD(FLOOR(dayTracker),7), 
+                                0,$Label.Call_plan_lable_for_Monday,
+                                1,$Label.Call_plan_lable_for_Tuesday,
+                                2,$Label.Call_plan_lable_for_Wednesday,
+                                3,$Label.Call_plan_lable_for_Thursday,
+                                4,$Label.Call_plan_lable_for_Friday,
+                                5,$Label.Call_plan_lable_for_Saturday,
+                                6,$Label.Call_plan_lable_for_Sunday," ")}
+                                        </th>
+                                        <apex:variable var="dayTracker" value="{!dayTracker+1}"/>
+                                    </apex:repeat>  
+                                    <td width="23px">&nbsp;</td>
+                                </tr>
+                                
+                                </apex:outputPanel> -->
+                                <!-- Row End -->
+                                <apex:variable var="counter" value="{!counter+1}"/> <!-- Increment Counter -->
+                            </apex:repeat>  
+                    </table >
+                    <!-- End : Class Z -->                         
+            </div>
+                
+            <apex:pageBlockButtons location="bottom" rendered="{!blnisDisplayCallPlanDetail}">
+                <apex:commandButton onclick="setValues('{!$Component.ih1}')" action="{!save}" value="{!$Label.Save_Button}" rendered="{!blnShowSave}"/>
+                <apex:commandButton onclick="setValues('{!$Component.ih2}')" action="{!save}" disabled="" value="{!$Label.Submit_Button}" rendered="{!blnShowSave}"/>                        
+                <apex:commandButton onclick="setValues('{!$Component.ih3}')" rendered="{!bShowApprovalFunctions}" action="{!save}" value="{!$Label.Approve_Button}"/>
+                <apex:commandButton onclick="setValues('{!$Component.ih4}')" rendered="{!bShowApprovalFunctions}" action="{!save}" value="{!$Label.Reject_Button}"/>
+                <apex:commandButton action="{!cancel}"  value="{!$Label.Cancel_Button}" />
+            </apex:pageBlockButtons>
+            <apex:pageBlockButtons location="bottom" rendered="{!blnError}">
+                <apex:commandButton action="{!cancel}"  value="{!$Label.Cancel_Button}" />
+            </apex:pageBlockButtons>
+                
+        </apex:pageBlock>
+    </apex:form>
+    <script>
+    // function inactive - not being used
+    function autoPopulate(tableId)
+    { 
+        var table = document.getElementById(tableId);
+        var rowsCount = table.rows.length;
+        alert(rowsCount); 
+    }
+    
+    // type can be A,B,C or D (N & Z for Korea)
+    function calculateRowColSum(boxId,type)
+    {
+        //alert(boxId);
+        var checkBox = document.getElementById(boxId);
+        var storeClass;
+        var colSum = document.getElementById("sumCol" + type + boxId.split(":")[4]);
+        //alert("sumCol" + type + boxId.split(":")[4]);
+        var rowSum = document.getElementById("sum" + type + boxId.split(":")[6]);
+        //alert("sum" + type + boxId.split(":")[6]);
+        //alert(colSum.innerHTML);
+        if(colSum.innerHTML == "0")
+        {           
+            colSum.innerHTML = "1"; 
+        }
+        else
+        {
+            colSum.innerHTML = (colSum.innerHTML * 1) + (checkBox.checked ? 1 : -1);
+        }
+        var rowtemp = (rowSum.innerHTML * 1) + (checkBox.checked ? 1 : -1);
+        rowSum.innerHTML = rowtemp < 0 ? 0 : rowtemp;
+        //rowSum.innerHTML = (rowSum.innerHTML * 1) + (checkBox.checked ? 1 : -1);
+        
+        // Updating main total
+        var maintemp = document.getElementById("totalDiv").innerHTML * 1 + (checkBox.checked ? 1 : -1)
+        document.getElementById("totalDiv").innerHTML = maintemp < 0 ? 0 : maintemp;
+        
+        // Updating individual class total
+        var singleClasstemp = document.getElementById("class" + type + "Total").innerHTML * 1 + (checkBox.checked ? 1 : -1)
+        document.getElementById("class" + type + "Total").innerHTML = singleClasstemp < 0 ? 0 : singleClasstemp;
+        
+        // Updating day wise totals     
+        calculateDaySums();
+    }
+    // Assigning value to total Div element
+    document.getElementById("totalDiv").innerHTML = monthTotal;
+    
+    // Assigning values to class wise total Div elements
+    document.getElementById("classATotal").innerHTML = classATotal;
+    document.getElementById("classBTotal").innerHTML = classBTotal;
+    document.getElementById("classCTotal").innerHTML = classCTotal;
+    document.getElementById("classDTotal").innerHTML = classDTotal;
+    document.getElementById("classNTotal").innerHTML = classNTotal;
+    document.getElementById("classZTotal").innerHTML = classZTotal;
+    
+    
+    function calculateDaySums()
+    {
+        var tempTotal = 0;
+        for (var i=0; i < countCols ; i++)
+        {
+            tempTotal = 0;
+            
+            // Updating for store class A
+            var classAtemp = document.getElementById("sumA" + i).innerHTML * 1;
+            tempTotal = tempTotal + classAtemp;
+            
+            // Updating for store class B
+            var classBtemp = document.getElementById("sumB" + i).innerHTML * 1;
+            tempTotal = tempTotal + classBtemp;
+            
+            // Updating for store class C
+            var classCtemp = document.getElementById("sumC" + i).innerHTML * 1;
+            tempTotal = tempTotal + classCtemp;
+            
+            // Updating for store class D
+            var classDtemp = document.getElementById("sumD" + i).innerHTML * 1;
+            tempTotal = tempTotal + classDtemp; 
+            
+            // Updating for store class N
+            var classNtemp = document.getElementById("sumN" + i).innerHTML * 1;
+            tempTotal = tempTotal + classNtemp; 
+            
+             // Updating for store class Z
+            var classZtemp = document.getElementById("sumZ" + i).innerHTML * 1;
+            tempTotal = tempTotal + classZtemp; 
+            
+            document.getElementById("daySum" + i).innerHTML =  tempTotal;
+        }
+    }
+    // Assigning values to day wise total Div elements
+    calculateDaySums();
+    hideOverlay();
+    NZcustoermsdisplay();
+    </script>
+</apex:page>

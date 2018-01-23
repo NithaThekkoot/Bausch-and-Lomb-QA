@@ -1,0 +1,326 @@
+<apex:page standardController="Account_Profile__c" extensions="AccountProfileCntrl" sidebar="false" showHeader="false"  renderAs="pdf" applyBodyTag="false">
+   <head>
+      <style> 
+         .account-details,.account-profile-details{ border : 1px solid; margin-top:10px; padding:10px;width:100%; background:#f0f8ff;}
+         .numberLabel{ text-align:left;width:70% }
+         .container{ background:#f0f8ff;}
+         .label{ text-align:left;border-right: 1px solid;width:50% }
+         .output{ text-align:left;padding-left:10px;width:50%; }
+         .border-down{border-bottom: 1px solid;}
+         .section-break{ height:1px;padding:10px;background:white}
+         .heading{ color: #4a96ab;font-size: 1.2rem;padding: 6px; }
+         .bold{font-weight: 600;}
+         .datatable{font-size:12px;width:100%;margin-top:10px;}
+         .detail-heading,.section-heading{ padding:4px;font-size:18px;font-weight:600;background-color:#4995ab;color:white }
+         .footer{ padding:30px 10px 0px 10px; font-size:10px; }
+         .borderBottom{ border-bottom:solid 1px; }
+         .borderLeft{ border-left:solid #6196b1 1px; }
+         .borderRight{ border-right:solid #6196b1 1px; }
+         .paddingLeft{ padding-left:3px; }
+         .tableContainer{padding:3px;}
+         .removePadding{padding:0px;}
+         .oneFourth{width:25%}
+      </style>
+   </head>
+   <body>
+      <div class="main-page">
+         <img src="{!$Resource.BauschAndLombLogo}" style="width:200px"/>
+         <center class="heading">
+            <h2><u>Strategic Account Profile ( {!Account_Profile__c.RecordType.Name})</u></h2>
+         </center>
+         <div class="container">
+            <!-- Account details -->
+            <div class="detail-heading">Account Information</div>
+            <table class="account-details" border='0' cellpadding='0' cellspacing='0'>
+               <tr>
+                  <td class="label"><b>Account Name</b></td>
+                  <td class="output">{!accountInfo.Name}</td>
+               </tr>
+               <tr>
+                  <td class="label"><b>Date</b></td>
+                  <td class="output">
+                     <apex:outputText value="{0,date,dd - MMMM - YYYY}">
+                        <apex:param value="{!NOW()}" />
+                     </apex:outputText>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="label"><b>Street</b></td>
+                  <td class="output">
+                     <apex:outputText value="{!accountInfo.BillingStreet}"></apex:outputText>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="label"><b>City</b></td>
+                  <td class="output">
+                     <apex:outputText value="{!accountInfo.BillingCity}"></apex:outputText>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="label"><b>State</b></td>
+                  <td class="output">
+                     <apex:outputText value="{!accountInfo.BillingState}"></apex:outputText>
+                  </td>
+               </tr>
+            </table>
+         </div>
+      </div>
+      
+      
+      <!-- Account Profile Fields -->
+      
+      <!-- Basic Details -->
+      <div class="container">
+      <apex:pageblock >
+         <div class="section-break"/>
+         <div class="section-break"/>
+            <div class="detail-heading">Basic Details</div>
+            <table class="account-profile-details removePadding" border='0' cellpadding='4' cellspacing='0'>
+               <tr>
+                  <td class="oneFourth">
+                     <b>Account Profile Name</b>
+                  </td>
+                  <td class="oneFourth borderRight">
+                      
+                     {!Account_Profile__c.Name}
+                  
+                     
+                  </td>
+                  <td class="oneFourth">
+                     <b>Fiscal Year End</b>
+                  </td>
+                  <td class="oneFourth">
+                      
+                     <apex:outputText value="{0,date,MMMM}">
+                        <apex:param value="{!IF(Account_Profile__c.Fiscal_Year_End__c==null,null,Account_Profile__c.Fiscal_Year_End__c)}" />
+                     </apex:outputText>
+                  
+                     
+                  </td>
+                  
+               </tr>
+               <tr>
+                  <td class="oneFourth">
+                     <b>Contract Expiration Date</b>
+                  </td>
+                  <td class="oneFourth borderRight">
+                      <apex:outputText value="{0,date,DD - MMMM - YYYY}">
+                        <apex:param value="{!IF(Account_Profile__c.Contract_Expiration_Date__c==null,null,Account_Profile__c.Contract_Expiration_Date__c)}" />
+                     </apex:outputText>
+                     
+                  </td>
+                  <td class="oneFourth">
+                     <b>Equipment Budgeted</b>
+                  </td>
+                  <td class="oneFourth">
+                     {!IF(Account_Profile__c.Equipment_Budgeted__c==true,'Yes','No')}
+                  </td>
+               </tr>
+              
+            </table>
+      </apex:pageblock>
+      </div>
+     
+      
+      
+      <!-- NO. of surgeons -->
+      
+      <!--
+      <div class="container">
+      <apex:pageblock >
+         <div class="section-break"/>
+         <div class="section-break"/>
+            <div class="detail-heading"># Of Surgeons</div>
+            <table class="account-profile-details removePadding" border='0' cellpadding='4' cellspacing='0'>
+               <tr>
+                  <td>
+                     <b>Number Of Surgeons for retina</b>
+                  </td>
+                  <td class="borderRight">
+                     {!IF(Account_Profile__c.Number_Of_Surgeons_For_Retina__c==null, '-',Account_Profile__c.Number_Of_Surgeons_For_Retina__c)}
+                  </td>
+                  <td>
+                     <b>Number Of Surgeons for Refractive</b>
+                  </td>
+                  <td>
+                     {!IF(Account_Profile__c.Number_Of_Surgeons_For_Refractive__c==null,'-',Account_Profile__c.Number_Of_Surgeons_For_Refractive__c)}
+                  </td>
+               </tr>
+               <tr>
+                  <td>
+                     <b>Number Of Surgeons for Plastics</b>
+                  </td>
+                  <td class="borderRight">
+                     {!IF(Account_Profile__c.Number_Of_Surgeons_For_Plastics__c==null,'-',Account_Profile__c.Number_Of_Surgeons_For_Plastics__c)}
+                  </td>
+                  <td>
+                     <b>Number Of Surgeons for Glaucoma</b>
+                  </td>
+                  <td>
+                     {!IF(Account_Profile__c.Number_Of_Surgeons_For_Glaucoma__c==null,'-',Account_Profile__c.Number_Of_Surgeons_For_Glaucoma__c)}
+                  </td>
+               </tr>
+               <tr>
+                  <td>
+                     <b>Number Of Surgeons for Cataract</b>
+                  </td>
+                  <td class="borderRight">
+                     {!IF(Account_Profile__c.Number_Of_Surgeons_For_Cataract__c==null,'-',Account_Profile__c.Number_Of_Surgeons_For_Cataract__c)}
+                  </td>
+               </tr>
+            </table>
+      </apex:pageblock>
+      </div>
+     -->
+      
+      <!-- B+L Advantage -->
+      <div class="container">
+      <apex:pageblock >
+         <div class="section-break"/>
+         <div class="section-break"/>
+            <div class="detail-heading">B+L Advantage</div>
+            <table class="account-profile-details removePadding" border='0' cellpadding='4' cellspacing='0'>
+               <tr>
+                  <td class="oneFourth">
+                     <b>Product</b>
+                  </td>
+                  <td class="oneFourth borderRight">
+                     {!IF(Account_Profile__c.Advantage_Product__c==null,'-',Account_Profile__c.Advantage_Product__c)}
+                  </td>
+                  <td class="oneFourth">
+                     <b>Price</b>
+                  </td>
+                  <td class="oneFourth">
+                     {!IF(Account_Profile__c.Advantage_Price__c==null,'-',Account_Profile__c.Advantage_Price__c)}
+                  </td>
+               </tr>
+               <tr>
+                  <td class="oneFourth">
+                     <b>Relationship</b>
+                  </td>
+                  <td class="oneFourth borderRight">
+                     {!IF(Account_Profile__c.Advantage_Relationship__c==null,'-',Account_Profile__c.Advantage_Relationship__c)}
+                  </td>
+                  <td class="oneFourth">
+                     <b>Service</b>
+                  </td>
+                  <td class="oneFourth">
+                     {!IF(Account_Profile__c.Advantage_Service__c==null,'-',Account_Profile__c.Advantage_Service__c)}
+                  </td>
+               </tr>
+            </table>
+      </apex:pageblock>
+      </div>
+      
+      
+      
+      <!-- Related List of parent account --> 
+      <!-- Key Decision Maker List -->
+      <div class="container">
+      <apex:pageBlock rendered="{!keydecisionMakerList!=null && keydecisionMakerList.size!=0}">
+         <div class="section-break"/>
+         <div class="section-break"/>
+            <div class="section-heading">Key Decision Makers</div>
+            <apex:pageBlockTable value="{!keydecisionMakerList}" var="decisionMaker" styleclass="datatable"
+               cellpadding="5" cellspacing="0" border="1">
+               <apex:column value="{!decisionMaker.Name}" />
+               <apex:column value="{!decisionMaker.External__c}"/>
+               <apex:column value="{!decisionMaker.Contact_Role__c}" />
+               <apex:column value="{!decisionMaker.Contact_Title__c}"/>
+               <apex:column value="{!decisionMaker.Sphere_of_Influence__c}"/>
+            </apex:pageBlockTable>
+      </apex:pageBlock>
+      </div>
+      <!-- Key Account Contact List -->
+      <div class="container">
+      <apex:pageBlock rendered="{!allContactList!=null && allContactList.size!=0}">
+         <div class="section-break"/>
+         <div class="section-break"/>
+            <div class="section-heading">Key Account Contacts</div>
+            <apex:pageBlockTable value="{!allContactList}" var="contact" styleclass="datatable"
+               cellpadding="5" cellspacing="0" border="1">
+               <apex:column value="{!contact.Name}" />
+               <apex:column value="{!contact.External__c}"/>
+               <apex:column value="{!contact.Contact_Role__c}"/>
+               <apex:column value="{!contact.Contact_Title__c}"/>
+               <apex:column value="{!contact.Sphere_of_Influence__c}"/>
+            </apex:pageBlockTable>
+      </apex:pageBlock>
+      </div>
+      <!-- Account Team List -->
+      <div class="container">
+      <apex:pageBlock rendered="{!accountTeamList!=null && accountTeamList.size!=0}">
+         <div class="section-break"/>
+         <div class="section-break"/>
+            <div class="section-heading">B&amp;L Contacts</div>
+            <apex:pageBlockTable value="{!accountTeamList}" var="teamMember" styleclass="datatable" cellpadding="5" cellspacing="0" border="1">
+               <apex:column value="{!teamMember.User.name}"/>
+               <apex:column value="{!teamMember.TeamMemberRole}"/>
+               <apex:column value="{!teamMember.AccountAccessLevel}"/>
+               <apex:column value="{!teamMember.CaseAccessLevel}"/>
+               <apex:column value="{!teamMember.ContactAccessLevel}"/>
+               <apex:column value="{!teamMember.OpportunityAccessLevel}"/>
+            </apex:pageBlockTable>
+      </apex:pageBlock>
+      </div>
+      <!-- Account Customer Group List -->
+      <div class="container relatedList">
+      <apex:pageBlock rendered="{!customerGroupList!=null && customerGroupList.size!=0}">
+         <div class="section-break"/>
+         <div class="section-break"/>
+            <div class="section-heading">GPO Affiliations</div>
+            <apex:pageBlockTable value="{!customerGroupList}" var="customerGroup" styleclass="datatable" cellpadding="5" cellspacing="0" border="1">
+               <apex:column value="{!customerGroup.Customer_Group__c}"/>
+               <apex:column value="{!customerGroup.Customer_Group_Type__c }"/>
+            </apex:pageBlockTable>
+      </apex:pageBlock>
+      </div>
+      <!-- Opportunity List -->
+      <div class="container">
+      <apex:pageBlock rendered="{!opportunityList!=null && opportunityList.size!=0}">
+         <div class="section-break"/>
+         <div class="section-break"/>
+            <div class="section-heading">Revenue Goals Opportunity</div>
+            <apex:pageBlockTable value="{!opportunityList}" var="opportunity" styleclass="datatable" cellpadding="5" cellspacing="0" border="1">
+               <apex:column value="{!opportunity.Name}" />
+               <apex:column value="{!opportunity.StageName}"/>
+               <apex:column value="{!opportunity.Amount}" headerValue="Potential Value"/>
+               <apex:column value="{!opportunity.CloseDate}" headerValue="Estimated Close"/>
+            </apex:pageBlockTable>
+      </apex:pageBlock>
+      </div>
+      <!-- Related List of Account Profile -->
+      <!-- Sales History List -->
+      <div class="container">
+      <apex:pageBlock rendered="{!salesHistoryList!=null && salesHistoryList.size!=0}">
+         <div class="section-break"/>
+         <div class="section-break"/>
+            <div class="section-heading">B&amp;L Sales History</div>
+            <apex:pageBlockTable value="{!salesHistoryList}" var="salesHistory" styleclass="datatable" cellpadding="5" cellspacing="0" border="1">
+               <apex:column value="{!salesHistory.Sales_Type__c}"/>
+               <apex:column value="{!salesHistory.Total_Sales__c }"/>
+               <apex:column value="{!salesHistory.Sales_Date__c}"/>
+            </apex:pageBlockTable>
+      </apex:pageBlock>
+      </div>
+      <!-- current Product Preference List -->
+      <div class="container">
+      <apex:pageBlock rendered="{!blPrductList!=null && blPrductList.size!=0}">
+         <div class="section-break"/>
+         <div class="section-break"/>
+            <div class="section-heading">{!Account_Profile__c.RecordType.Name} - Current Product Preference</div>
+            <apex:pageBlockTable value="{!blPrductList}" var="blProduct" styleclass="datatable" cellpadding="5" cellspacing="0" border="1">
+               <apex:column value="{!blProduct.Name}"/>
+               <apex:column value="{!blProduct.Type__c}"/>
+               <apex:column value="{!blProduct.Price__c}"/>
+               <apex:column value="{!blProduct.Equipment_Age__c}"/>
+               <apex:column value="{!blProduct.Annual_Volume__c}"/>
+            </apex:pageBlockTable>
+      </apex:pageBlock>
+      </div>
+      <div class="footer">
+         © 2018 Bausch &amp; Lomb Incorporated.
+         All information and materials on this site pertain to the U.S. only,&nbsp; unless otherwise indicated.
+      </div>
+   </body>
+</apex:page>

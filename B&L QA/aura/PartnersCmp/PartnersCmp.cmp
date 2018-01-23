@@ -1,0 +1,94 @@
+<aura:component extends="c:GenericCrudComponent" implements="flexipage:availableForAllPageTypes,force:hasRecordId,flexipage:availableForRecordHome">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>	
+    <aura:attribute name="partnerList" type="Object[]"/>
+    <aura:attribute name="recordId" type="Id"/>
+    <aura:attribute name="recordError" type="String"/>
+    <aura:attribute name="record" type="Object"/>
+    <aura:attribute name="fields" type="Object"/>
+    <aura:dependency resource="markup://force:*" type="EVENT"/>
+    <aura:handler event="c:PartnerCreatedEvent" name="partnerCreated" 
+                  action="{!c.updatePartnerListAction}"/>
+    
+    <!-- Record Load -->
+    <force:recordData aura:id="record"
+                      layoutType="FULL"
+                      recordId="{!v.recordId}"
+                      targetError="{!v.recordError}"
+                      targetRecord="{!v.record}"
+                      targetFields="{!v.fields}"
+                      mode="VIEW"
+                      recordUpdated="{!c.doInit}"
+                      />
+    
+    <div class="slds">
+        
+        <div class="main-body">
+            <lightning:card class="card">
+                <aura:set attribute="title">
+                    <lightning:icon iconName="action:new_person_account" size="small"/>Partners
+                </aura:set>
+                <aura:set attribute="actions">
+                    <lightning:button label="New" onclick="{!c.createNewPartner}"/>
+                </aura:set>
+                <aura:if isTrue="{!and(v.partnerList!=null , v.partnerList.length!=0)}">
+                    <p class="slds-p-horizontal_small">
+                        
+                        <table class="slds-table slds-table_bordered slds-max-medium-table_stacked-horizontal">
+                            <thead>
+                                <tr class="slds-text-title--caps">
+                                    <th class="slds-cell-shrink" scope="col">
+                                        <div class="slds-resizable" >Action</div>
+                                    </th>
+                                    <th class="slds-cell-shrink" scope="col">
+                                        <div class="slds-resizable">Partner</div>
+                                    </th>
+                                    <th class="slds-cell-shrink" scope="col">
+                                        <div class="slds-resizable" >Roles</div>
+                                    </th>
+                                    <aura:if isTrue="{!v.record.apiName!='Account'}">
+                                    <th class="slds-cell-shrink" scope="col">
+                                        <div class="slds-resizable" >Is Primary?</div>
+                                    </th>
+                                    </aura:if>
+                                    
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <aura:iteration var="partner" items="{!v.partnerList}" indexVar="i">
+                                    <tr class="slds-hint-parent">
+                                        <td  data-label="" class="slds-cell-wrap">
+                                            <lightning:buttonIcon iconName="utility:delete" 
+                                                                  variant="bare" alternativeText="Settings" 
+                                                                  iconClass="dark"
+                                                                  onclick="{!c.deletePartnerAction}"
+                                                                  value="{!partner.Id}"
+                                                                  />
+                                           
+                                        </td>
+                                        <td data-label="Partner" class="slds-cell-wrap">
+                                            <ui:outputText value="{!partner.AccountTo.Name}"/>
+                                        </td>
+                                        <td  data-label="Roles" class="slds-cell-wrap">
+                                            <ui:outputText value="{!partner.Role}"/>
+                                        </td>
+                                        <aura:if isTrue="{!v.record.apiName!='Account'}">
+                                        <td  data-label="Is Primary?" class="slds-cell-wrap">
+                                            <ui:outputCheckbox value="{!partner.IsPrimary}"/>
+                                        </td>
+                                        </aura:if>
+                                        
+                                    </tr>
+                                </aura:iteration>
+                                
+                            </tbody>
+                        </table>
+                     </p>
+                </aura:if>
+            </lightning:card>
+            
+            <c:PartnerCreateCmp aura:id="partnerCreate" recordId='{!v.recordId}' record="{!v.record}"/>
+           
+        </div>
+    </div>
+    
+</aura:component>

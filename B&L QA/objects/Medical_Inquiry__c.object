@@ -1,0 +1,2192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Medical_Inquiry_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <fields>
+        <fullName>Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Medical Inquiries</relationshipLabel>
+        <relationshipName>Medical_Inquiries</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Address__c</fullName>
+        <externalId>false</externalId>
+        <formula>Account__r.ShippingStreet</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Address</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Adverse_Event_Contact__c</fullName>
+        <externalId>false</externalId>
+        <formula>&quot;If this request related to a potential Adverse Event, please contact BLReturns@bausch.com&quot;</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Adverse Event Contact</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Adverse_Event__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Note: Do not check it if the case already has been filed, or will be filed separately.</inlineHelpText>
+        <label>Adverse Event?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Anticipated_Surgery_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Anticipated Surgery Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Best_Time_to_Call__c</fullName>
+        <externalId>false</externalId>
+        <label>Best Time to Call</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Morning (8:00AM - 12:00PM)</fullName>
+                    <default>false</default>
+                    <label>Morning (8:00AM - 12:00PM)</label>
+                </value>
+                <value>
+                    <fullName>Afternoon (12:PM - 5:00PM)</fullName>
+                    <default>false</default>
+                    <label>Afternoon (12:PM - 5:00PM)</label>
+                </value>
+                <value>
+                    <fullName>Evening (5:00PM - 9:00PM)</fullName>
+                    <default>false</default>
+                    <label>Evening (5:00PM - 9:00PM)</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Billed_Minutes__c</fullName>
+        <externalId>false</externalId>
+        <label>Billed Minutes</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>15</fullName>
+                    <default>false</default>
+                    <label>15</label>
+                </value>
+                <value>
+                    <fullName>30</fullName>
+                    <default>false</default>
+                    <label>30</label>
+                </value>
+                <value>
+                    <fullName>45</fullName>
+                    <default>false</default>
+                    <label>45</label>
+                </value>
+                <value>
+                    <fullName>60</fullName>
+                    <default>false</default>
+                    <label>60</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Billed_Time__c</fullName>
+        <externalId>false</externalId>
+        <label>Billed Time</label>
+        <precision>7</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>City__c</fullName>
+        <externalId>false</externalId>
+        <formula>Account__r.ShippingCity</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>City</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Class__c</fullName>
+        <externalId>false</externalId>
+        <formula>Text(Contact__r.Medical_Title__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Class</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Consultant_Email__c</fullName>
+        <externalId>false</externalId>
+        <formula>Requested_Consultant_1__r.Email</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Consultant Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Consultant_FirstName__c</fullName>
+        <externalId>false</externalId>
+        <formula>Requested_Consultant_1__r.FirstName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Consultant FirstName</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Consultant_LastName__c</fullName>
+        <externalId>false</externalId>
+        <formula>SUBSTITUTE( Requested_Consultant_1__r.LastName , &quot;-CON&quot;, &quot;&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Consultant LastName</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Consultant_NPI__c</fullName>
+        <externalId>false</externalId>
+        <formula>Requested_Consultant_1__r.NPID__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Consultant NPI</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Contact__r.FirstName  &amp; &quot; &quot;   &amp; Contact__r.LastName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Contact Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <description>Surgeon or HCP</description>
+        <externalId>false</externalId>
+        <label>Surgeon</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Medical Inquiries</relationshipLabel>
+        <relationshipName>Medical_Inquiries</relationshipName>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Contact_first_name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Contact__r.FirstName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Contact first name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Date_of_Service__c</fullName>
+        <externalId>false</externalId>
+        <label>Date of Service</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Delivery_Method__c</fullName>
+        <externalId>false</externalId>
+        <label>Preferred Delivery Method</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Inquiry_Type__c</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Email</fullName>
+                    <default>false</default>
+                    <label>Email</label>
+                </value>
+                <value>
+                    <fullName>Phone</fullName>
+                    <default>false</default>
+                    <label>Phone</label>
+                </value>
+                <value>
+                    <fullName>Fax</fullName>
+                    <default>false</default>
+                    <label>Fax</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Consultant Request</controllingFieldValue>
+                <controllingFieldValue>Mentor Request</controllingFieldValue>
+                <valueName>Phone</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Medical Information Request</controllingFieldValue>
+                <valueName>Email</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Description_of_Services__c</fullName>
+        <externalId>false</externalId>
+        <label>Description of Services</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Email_Invoice_to_Medical_Affairs__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Email Invoice to Medical Affairs</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Fax__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( ISPICKVAL( Delivery_Method__c , &quot;Fax&quot;) ,  Specify_Phone__c , &quot;&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Fax</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Inquiry_Details__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( ISPICKVAL( Inquiry_Type__c ,&quot;Consultant Request&quot;)  ||  ISPICKVAL( Inquiry_Type__c ,&quot;Mentor Request&quot;) , &quot;Requested Consultant:&quot;  &amp; Requested_Name_1__c  &amp; &quot; OR &quot; &amp; Requested_Name_2__c &amp;  MID( $Setup.BauschSettings__c.LineFeed__c, 6, 2) &amp; &quot; Anpicipated Surgery Date: &quot; &amp;  text(Anticipated_Surgery_Date__c) &amp; Mid($Setup.BauschSettings__c.LineFeed__c, 6, 2) &amp; &quot;Best time to call: &quot; &amp;  Text(Best_Time_to_Call__c) &amp; Mid($Setup.BauschSettings__c.LineFeed__c, 6, 2) &amp; &quot; Time Zone: &quot; &amp; Text(Time_Zone__c) &amp; Mid($Setup.BauschSettings__c.LineFeed__c, 6, 2) &amp;  Inquiry_Text__c  , Inquiry_Text__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Inquiry Details</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Inquiry_Text__c</fullName>
+        <externalId>false</externalId>
+        <label>Inquiry Text</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Inquiry_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Inquiry Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Consultant Request</fullName>
+                    <default>false</default>
+                    <label>Consultant Request</label>
+                </value>
+                <value>
+                    <fullName>Mentor Request</fullName>
+                    <default>false</default>
+                    <label>Mentor Request</label>
+                </value>
+                <value>
+                    <fullName>Medical Information Request</fullName>
+                    <default>false</default>
+                    <label>Medical Information Request</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Invoice_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>Invoice Amount</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>KOL_Mentor_Flag__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( ISPICKVAL( Inquiry_Type__c , &quot;KOL Consultation&quot;) , &quot;K&quot;, IF( ISPICKVAL( Inquiry_Type__c , &quot;Surgical Mentor Call&quot;),&quot;M&quot;,&quot;I&quot;))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>KOL/Mentor Flag</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NPID__c</fullName>
+        <externalId>false</externalId>
+        <formula>Requested_Consultant_1__r.NPID__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>NPID</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Phone__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( ISPICKVAL( Delivery_Method__c , &quot;Phone&quot;) ,  Specify_Email__c ,&quot;&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Phone</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Practice_Addres__c</fullName>
+        <externalId>false</externalId>
+        <formula>Requested_Consultant_1__r.Primary_Practice_Name__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Practice Addres</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Practice_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Requested_Consultant_1__r.Account.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Practice Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Practice_address_1__c</fullName>
+        <externalId>false</externalId>
+        <formula>Requested_Consultant_1__r.MailingStreet</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Practice address 1</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Practice_address_2__c</fullName>
+        <externalId>false</externalId>
+        <formula>Requested_Consultant_1__r.MailingCity  &amp;  Requested_Consultant_1__r.MailingState  &amp;  Requested_Consultant_1__r.MailingPostalCode</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Practice address 2</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product2__c</fullName>
+        <externalId>false</externalId>
+        <formula>SUBSTITUTE( Text(Product__c) ,&quot;Stellaris.&quot;, &quot;Stellaris&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Product2</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Category__c</fullName>
+        <description>Controlling field for Product</description>
+        <externalId>false</externalId>
+        <label>Product Category</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>IOLs</fullName>
+                    <default>false</default>
+                    <label>IOLs</label>
+                </value>
+                <value>
+                    <fullName>Equipment</fullName>
+                    <default>false</default>
+                    <label>Equipment</label>
+                </value>
+                <value>
+                    <fullName>Viscoelastics</fullName>
+                    <default>false</default>
+                    <label>Viscoelastics</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Product__c</fullName>
+        <externalId>false</externalId>
+        <label>Product</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Product_Category__c</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Crystalens</fullName>
+                    <default>false</default>
+                    <label>Crystalens</label>
+                </value>
+                <value>
+                    <fullName>Trulign</fullName>
+                    <default>false</default>
+                    <label>Trulign</label>
+                </value>
+                <value>
+                    <fullName>SofPort</fullName>
+                    <default>false</default>
+                    <label>SofPort</label>
+                </value>
+                <value>
+                    <fullName>Akreos</fullName>
+                    <default>false</default>
+                    <label>Akreos</label>
+                </value>
+                <value>
+                    <fullName>enVista</fullName>
+                    <default>false</default>
+                    <label>enVista</label>
+                </value>
+                <value>
+                    <fullName>Victus - Cataract</fullName>
+                    <default>false</default>
+                    <label>Victus - Cataract</label>
+                </value>
+                <value>
+                    <fullName>Stellaris.</fullName>
+                    <default>false</default>
+                    <label>Stellaris.</label>
+                </value>
+                <value>
+                    <fullName>Stellaris PC (Vit - Ret)</fullName>
+                    <default>false</default>
+                    <label>Stellaris PC (Vit - Ret)</label>
+                </value>
+                <value>
+                    <fullName>Victus - Flap</fullName>
+                    <default>false</default>
+                    <label>Victus - Flap</label>
+                </value>
+                <value>
+                    <fullName>Excimer/Diagnostics</fullName>
+                    <default>false</default>
+                    <label>Excimer/Diagnostics</label>
+                </value>
+                <value>
+                    <fullName>Amvisc</fullName>
+                    <default>false</default>
+                    <label>Amvisc</label>
+                </value>
+                <value>
+                    <fullName>Amvisc Plus</fullName>
+                    <default>false</default>
+                    <label>Amvisc Plus</label>
+                </value>
+                <value>
+                    <fullName>OcuCoat</fullName>
+                    <default>false</default>
+                    <label>OcuCoat</label>
+                </value>
+                <value>
+                    <fullName>Hoya</fullName>
+                    <default>false</default>
+                    <label>Hoya</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>IOLs</controllingFieldValue>
+                <valueName>Crystalens</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IOLs</controllingFieldValue>
+                <valueName>Trulign</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IOLs</controllingFieldValue>
+                <valueName>SofPort</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IOLs</controllingFieldValue>
+                <valueName>Akreos</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>IOLs</controllingFieldValue>
+                <valueName>enVista</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Equipment</controllingFieldValue>
+                <valueName>Victus - Cataract</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Equipment</controllingFieldValue>
+                <valueName>Stellaris.</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Equipment</controllingFieldValue>
+                <valueName>Stellaris PC (Vit - Ret)</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Equipment</controllingFieldValue>
+                <valueName>Victus - Flap</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Equipment</controllingFieldValue>
+                <valueName>Excimer/Diagnostics</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Viscoelastics</controllingFieldValue>
+                <valueName>Amvisc</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Viscoelastics</controllingFieldValue>
+                <valueName>Amvisc Plus</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Viscoelastics</controllingFieldValue>
+                <valueName>OcuCoat</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Rep_Type__c</fullName>
+        <externalId>false</externalId>
+        <formula>Owner:User.Title</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Rep Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Requested_Consultant_1__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Requested Consultant 1st Choice</label>
+        <lookupFilter>
+            <active>true</active>
+            <booleanFilter>((1 AND 2) OR (3 AND 4))</booleanFilter>
+            <filterItems>
+                <field>Contact.KOL_Flag__c</field>
+                <operation>equals</operation>
+                <valueField>$Source.Inquiry_Type__c</valueField>
+            </filterItems>
+            <filterItems>
+                <field>Contact.KOL_Product_Area__c</field>
+                <operation>contains</operation>
+                <valueField>$Source.Product__c</valueField>
+            </filterItems>
+            <filterItems>
+                <field>Contact.Mentor_Flag__c</field>
+                <operation>equals</operation>
+                <valueField>$Source.Inquiry_Type__c</valueField>
+            </filterItems>
+            <filterItems>
+                <field>Contact.Mentor_Product_Area__c</field>
+                <operation>contains</operation>
+                <valueField>$Source.Product__c</valueField>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Medical Inquiries (Requested Consultant 1st Choice)</relationshipLabel>
+        <relationshipName>Medical_Inquiries1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Requested_Consultant_2__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Requested Consultant 2nd Choice</label>
+        <lookupFilter>
+            <active>true</active>
+            <booleanFilter>((1 AND 2) OR (3 AND 4))</booleanFilter>
+            <filterItems>
+                <field>Contact.KOL_Flag__c</field>
+                <operation>equals</operation>
+                <valueField>$Source.Inquiry_Type__c</valueField>
+            </filterItems>
+            <filterItems>
+                <field>Contact.KOL_Product_Area__c</field>
+                <operation>contains</operation>
+                <valueField>$Source.Product__c</valueField>
+            </filterItems>
+            <filterItems>
+                <field>Contact.Mentor_Product_Area__c</field>
+                <operation>contains</operation>
+                <valueField>$Source.Product__c</valueField>
+            </filterItems>
+            <filterItems>
+                <field>Contact.Mentor_Flag__c</field>
+                <operation>equals</operation>
+                <valueField>$Source.Inquiry_Type__c</valueField>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Medical Inquiries (Requested Consultant 2nd Choice)</relationshipLabel>
+        <relationshipName>Medical_Inquiries2</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Requested_Name_1__c</fullName>
+        <externalId>false</externalId>
+        <formula>Requested_Consultant_1__r.FirstName  &amp; &quot; &quot;  &amp;  SUBSTITUTE(Requested_Consultant_1__r.LastName, &quot;-CON&quot;, &quot;&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Requested Name 1</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Requested_Name_2__c</fullName>
+        <externalId>false</externalId>
+        <formula>Requested_Consultant_2__r.FirstName &amp; &quot; &quot; &amp; Requested_Consultant_2__r.LastName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Requested Name 2</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Requesting_Representative__c</fullName>
+        <externalId>false</externalId>
+        <formula>Owner:User.FirstName  &amp; &quot; &quot;  &amp;  Owner:User.LastName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Requesting Representative</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sent_to_IRMS__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>checked  to indicate sent to IRMS.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Used in workflow to sent email to IRMS id unchecked - then updated to checked - to indicate sent.</inlineHelpText>
+        <label>Sent to IRMS</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Specify_Email__c</fullName>
+        <externalId>false</externalId>
+        <label>Contact Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Specify_Fax__c</fullName>
+        <externalId>false</externalId>
+        <label>Contact Fax</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Specify_Phone__c</fullName>
+        <externalId>false</externalId>
+        <label>Mobile Phone</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>State_License__c</fullName>
+        <externalId>false</externalId>
+        <formula>Requested_Consultant_1__r.State_License__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>State License</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>State__c</fullName>
+        <externalId>false</externalId>
+        <formula>Account__r.ShippingState</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>State</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Sent to IRMS</fullName>
+                    <default>false</default>
+                    <label>Sent to IRMS</label>
+                </value>
+                <value>
+                    <fullName>Request Approved</fullName>
+                    <default>false</default>
+                    <label>Request Approved</label>
+                </value>
+                <value>
+                    <fullName>Complete</fullName>
+                    <default>false</default>
+                    <label>Complete</label>
+                </value>
+                <value>
+                    <fullName>Billing Approved</fullName>
+                    <default>false</default>
+                    <label>Billing Approved</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Territory__c</fullName>
+        <externalId>false</externalId>
+        <formula>Owner:User.Territory_Id__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Territory</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Time_Zone__c</fullName>
+        <externalId>false</externalId>
+        <label>Time Zone</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Eastern</fullName>
+                    <default>false</default>
+                    <label>Eastern</label>
+                </value>
+                <value>
+                    <fullName>Central</fullName>
+                    <default>false</default>
+                    <label>Central</label>
+                </value>
+                <value>
+                    <fullName>Mountain</fullName>
+                    <default>false</default>
+                    <label>Mountain</label>
+                </value>
+                <value>
+                    <fullName>Pacific</fullName>
+                    <default>false</default>
+                    <label>Pacific</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Use_email_number_from_Contact__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Check to auto populate the Phone, Fax or Email from the Contact record OR enter a new email or number below for contact method.</inlineHelpText>
+        <label>Use email/number from Contact</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Vendor_Id__c</fullName>
+        <externalId>false</externalId>
+        <formula>Requested_Consultant_1__r.Vendor_Id__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Vendor Id</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Zip__c</fullName>
+        <externalId>false</externalId>
+        <formula>Account__r.ShippingPostalCode</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Zip</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>contact_last_name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Contact__r.LastName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>contact last name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Medical Inquiry</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Contact__c</columns>
+        <columns>Product__c</columns>
+        <columns>Inquiry_Text__c</columns>
+        <columns>Requested_Name_1__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <displayFormat>SMI-{0000}</displayFormat>
+        <label>Medical Inquiry Id</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Medical Inquiries</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>KOL_Consultation</fullName>
+        <active>true</active>
+        <description>KOL Consultation</description>
+        <label>KOL Consultation</label>
+        <picklistValues>
+            <picklist>Best_Time_to_Call__c</picklist>
+            <values>
+                <fullName>Afternoon %2812%3APM - 5%3A00PM%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Evening %285%3A00PM - 9%3A00PM%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Morning %288%3A00AM - 12%3A00PM%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Billed_Minutes__c</picklist>
+            <values>
+                <fullName>15</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>30</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>45</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>60</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Delivery_Method__c</picklist>
+            <values>
+                <fullName>Phone</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Inquiry_Type__c</picklist>
+            <values>
+                <fullName>Consultant Request</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Product_Category__c</picklist>
+            <values>
+                <fullName>Equipment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IOLs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Viscoelastics</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Product__c</picklist>
+            <values>
+                <fullName>Akreos</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Amvisc</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Amvisc Plus</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Crystalens</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Excimer%2FDiagnostics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OcuCoat</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SofPort</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stellaris PC %28Vit - Ret%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stellaris%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trulign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Victus - Cataract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Victus - Flap</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>enVista</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Billing Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Request Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sent to IRMS</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Time_Zone__c</picklist>
+            <values>
+                <fullName>Central</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Eastern</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mountain</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pacific</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Medical_Information_Request</fullName>
+        <active>true</active>
+        <description>Medical Information Request</description>
+        <label>Medical Information Request</label>
+        <picklistValues>
+            <picklist>Best_Time_to_Call__c</picklist>
+            <values>
+                <fullName>Afternoon %2812%3APM - 5%3A00PM%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Evening %285%3A00PM - 9%3A00PM%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Morning %288%3A00AM - 12%3A00PM%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Billed_Minutes__c</picklist>
+            <values>
+                <fullName>15</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>30</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>45</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>60</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Delivery_Method__c</picklist>
+            <values>
+                <fullName>Email</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Inquiry_Type__c</picklist>
+            <values>
+                <fullName>Medical Information Request</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Product_Category__c</picklist>
+            <values>
+                <fullName>Equipment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IOLs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Viscoelastics</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Product__c</picklist>
+            <values>
+                <fullName>Akreos</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Amvisc</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Amvisc Plus</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Crystalens</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Excimer%2FDiagnostics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hoya</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OcuCoat</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SofPort</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stellaris PC %28Vit - Ret%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stellaris%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trulign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Victus - Cataract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Victus - Flap</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>enVista</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sent to IRMS</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Time_Zone__c</picklist>
+            <values>
+                <fullName>Central</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Eastern</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mountain</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pacific</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>New_KOL</fullName>
+        <active>true</active>
+        <description>Editable PL for creation of Request</description>
+        <label>New KOL</label>
+        <picklistValues>
+            <picklist>Best_Time_to_Call__c</picklist>
+            <values>
+                <fullName>Afternoon %2812%3APM - 5%3A00PM%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Evening %285%3A00PM - 9%3A00PM%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Morning %288%3A00AM - 12%3A00PM%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Billed_Minutes__c</picklist>
+            <values>
+                <fullName>15</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>30</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>45</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>60</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Delivery_Method__c</picklist>
+            <values>
+                <fullName>Phone</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Inquiry_Type__c</picklist>
+            <values>
+                <fullName>Consultant Request</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Product_Category__c</picklist>
+            <values>
+                <fullName>Equipment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IOLs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Viscoelastics</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Product__c</picklist>
+            <values>
+                <fullName>Akreos</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Amvisc</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Amvisc Plus</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Crystalens</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Excimer%2FDiagnostics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OcuCoat</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SofPort</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stellaris PC %28Vit - Ret%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stellaris%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trulign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Victus - Cataract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Victus - Flap</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>enVista</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Billing Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Request Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sent to IRMS</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Time_Zone__c</picklist>
+            <values>
+                <fullName>Central</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Eastern</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mountain</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pacific</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>New_MIR</fullName>
+        <active>true</active>
+        <description>Editable PL for creation of Request</description>
+        <label>New MIR</label>
+        <picklistValues>
+            <picklist>Best_Time_to_Call__c</picklist>
+            <values>
+                <fullName>Afternoon %2812%3APM - 5%3A00PM%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Evening %285%3A00PM - 9%3A00PM%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Morning %288%3A00AM - 12%3A00PM%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Billed_Minutes__c</picklist>
+            <values>
+                <fullName>15</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>30</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>45</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>60</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Delivery_Method__c</picklist>
+            <values>
+                <fullName>Email</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Inquiry_Type__c</picklist>
+            <values>
+                <fullName>Medical Information Request</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Product_Category__c</picklist>
+            <values>
+                <fullName>Equipment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IOLs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Viscoelastics</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Product__c</picklist>
+            <values>
+                <fullName>Akreos</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Amvisc</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Amvisc Plus</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Crystalens</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Excimer%2FDiagnostics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hoya</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OcuCoat</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SofPort</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stellaris PC %28Vit - Ret%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stellaris%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trulign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Victus - Cataract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Victus - Flap</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>enVista</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sent to IRMS</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Time_Zone__c</picklist>
+            <values>
+                <fullName>Central</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Eastern</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mountain</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pacific</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>New_Mentor</fullName>
+        <active>true</active>
+        <description>Editable PL for creation of Request</description>
+        <label>New Mentor</label>
+        <picklistValues>
+            <picklist>Best_Time_to_Call__c</picklist>
+            <values>
+                <fullName>Afternoon %2812%3APM - 5%3A00PM%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Evening %285%3A00PM - 9%3A00PM%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Morning %288%3A00AM - 12%3A00PM%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Billed_Minutes__c</picklist>
+            <values>
+                <fullName>15</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>30</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>45</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>60</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Delivery_Method__c</picklist>
+            <values>
+                <fullName>Phone</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Inquiry_Type__c</picklist>
+            <values>
+                <fullName>Mentor Request</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Product_Category__c</picklist>
+            <values>
+                <fullName>Equipment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IOLs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Viscoelastics</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Product__c</picklist>
+            <values>
+                <fullName>Akreos</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Amvisc</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Amvisc Plus</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Crystalens</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Excimer%2FDiagnostics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OcuCoat</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SofPort</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stellaris PC %28Vit - Ret%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stellaris%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trulign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Victus - Cataract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Victus - Flap</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>enVista</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Billing Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Request Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sent to IRMS</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Time_Zone__c</picklist>
+            <values>
+                <fullName>Central</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Eastern</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mountain</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pacific</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Surgical_Mentor_Call</fullName>
+        <active>true</active>
+        <description>Surgical Mentor Call</description>
+        <label>Surgical Mentor Call</label>
+        <picklistValues>
+            <picklist>Best_Time_to_Call__c</picklist>
+            <values>
+                <fullName>Afternoon %2812%3APM - 5%3A00PM%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Evening %285%3A00PM - 9%3A00PM%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Morning %288%3A00AM - 12%3A00PM%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Billed_Minutes__c</picklist>
+            <values>
+                <fullName>15</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>30</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>45</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>60</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Delivery_Method__c</picklist>
+            <values>
+                <fullName>Phone</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Inquiry_Type__c</picklist>
+            <values>
+                <fullName>Mentor Request</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Product_Category__c</picklist>
+            <values>
+                <fullName>Equipment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IOLs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Viscoelastics</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Product__c</picklist>
+            <values>
+                <fullName>Akreos</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Amvisc</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Amvisc Plus</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Crystalens</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Excimer%2FDiagnostics</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OcuCoat</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SofPort</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stellaris PC %28Vit - Ret%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stellaris%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trulign</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Victus - Cataract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Victus - Flap</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>enVista</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Billing Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Complete</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Request Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sent to IRMS</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Time_Zone__c</picklist>
+            <values>
+                <fullName>Central</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Eastern</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mountain</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pacific</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>Account__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CREATED_DATE</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Sent_to_IRMS__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Inquiry_Type__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Account__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CREATED_DATE</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Sent_to_IRMS__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Inquiry_Type__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Account__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CREATED_DATE</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Sent_to_IRMS__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Inquiry_Type__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Account__c</searchFilterFields>
+        <searchFilterFields>CREATED_DATE</searchFilterFields>
+        <searchFilterFields>Sent_to_IRMS__c</searchFilterFields>
+        <searchFilterFields>Inquiry_Type__c</searchFilterFields>
+        <searchResultsAdditionalFields>Account__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CREATED_DATE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Sent_to_IRMS__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Inquiry_Type__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+    <validationRules>
+        <fullName>Cannot_Change_Surgeon</fullName>
+        <active>true</active>
+        <errorConditionFormula>ISCHANGED( Contact__c )</errorConditionFormula>
+        <errorDisplayField>Contact__c</errorDisplayField>
+        <errorMessage>You Cannot change the Surgeon Field</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Email_Requied</fullName>
+        <active>true</active>
+        <description>A Email Address is required if the Delivery Method is Email</description>
+        <errorConditionFormula>ISPICKVAL( Delivery_Method__c , &quot;Email&quot;)  &amp;&amp; ( ISBLANK( Specify_Email__c )  ||  ISNULL(Specify_Email__c ))</errorConditionFormula>
+        <errorDisplayField>Specify_Email__c</errorDisplayField>
+        <errorMessage>A Email Address is required if the Delivery Method is Email</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Fax_Requied</fullName>
+        <active>true</active>
+        <description>A FAX number is required if the Delivery Method is Fax</description>
+        <errorConditionFormula>ISPICKVAL( Delivery_Method__c , &quot;Fax&quot;)  &amp;&amp; ( ISBLANK( Specify_Fax__c )  ||  ISNULL(Specify_Fax__c ))</errorConditionFormula>
+        <errorDisplayField>Specify_Fax__c</errorDisplayField>
+        <errorMessage>A Fax number is required if the Delivery Method is Fax</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Phone_Requied</fullName>
+        <active>true</active>
+        <description>A phone number is required if the Delivery Method is phone</description>
+        <errorConditionFormula>ISPICKVAL( Delivery_Method__c , &quot;Phone&quot;)  &amp;&amp; ( ISBLANK( Specify_Phone__c )  ||  ISNULL(Specify_Phone__c ))</errorConditionFormula>
+        <errorDisplayField>Specify_Phone__c</errorDisplayField>
+        <errorMessage>A phone number is required if the Delivery Method is phone</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>Generate_Invoice</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Generate Invoice</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>/mail/mmchoose.jsp?id={!Medical_Inquiry__c.Id}&amp;p7=0&amp;p8=01Hc0000000CjfK&amp;retURL=%2F{!Medical_Inquiry__c.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>MIR_Disclosure</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>MIR Disclosure</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/apex/dsfs__DocuSign_JavaScript&quot;)}
+//********* Option Declarations (Do not modify )*********// 
+var RC = &apos;&apos;;var RSL=&apos;&apos;;var RSRO=&apos;&apos;;var RROS=&apos;&apos;;var CCRM=&apos;&apos;;var CCTM=&apos;&apos;;var CCNM=&apos;&apos;;var CRCL=&apos;&apos;;var CRL=&apos;&apos;;var OCO=&apos;&apos;;var DST=&apos;&apos;;var LA=&apos;&apos;;var CEM=&apos;&apos;;var CES=&apos;&apos;;var STB=&apos;&apos;;var SSB=&apos;&apos;;var SES=&apos;&apos;;var SEM=&apos;&apos;;var SRS=&apos;&apos;;var SCS =&apos;&apos;;var RES=&apos;&apos;; 
+//*************************************************// 
+//** DocuSign Template ID **//
+DST = &apos;19674A26-F2A1-4707-8948-9461C7D289D3&apos;;
+
+//** Load Attachments = Yes **// 
+LA=&apos;1&apos;; 
+//** Show send button **//
+SSB=&apos;1&apos;; 
+//** Show Email Subject **//
+SES=&apos;1&apos;; 
+CES=&apos;MIR Disclaimer&apos;; 
+//** Show Email Message **//
+SEM=&apos;1&apos;; 
+CEM=&apos;By signing the attached document you hereby certify that the foregoing is an unsolicited request for information.&apos;;
+
+
+// custom contact type map (maps the roles defined in the CRL) 
+
+CCTM=&apos;Customer~Sign In Person&apos;; 
+
+
+// custom contact role map (If templates are being used, the CCRM option can be used //to map Salesforce Role names to DocuSign roles. For example: 
+CCRM=&apos;Customer~Customer;Doctor~Doctor&apos;; 
+
+//** CCRM=&apos;1~Customer&apos;; **// 
+// Get Related Content
+//** RC = GetRelContentIDs(&quot;{!Medical_Inquiry__c.Id}&quot;); **//
+
+CRL= &apos;Email~{!User.Email};Role~Customer;FirstName~{!User.FirstName};LastName~{!User.LastName};SignNow~1;SignInPersonName~{!Medical_Inquiry__c.Contact_Name__c},Email~{!Medical_Inquiry__c.Specify_Email__c};FirstName~{!Medical_Inquiry__c.Contact_first_name__c};LastName~{!Medical_Inquiry__c.contact_last_name__c};Role~Doctor&apos;
+
+
+window.location.href = &quot;/apex/dsfs__DocuSign_CreateEnvelope?DSEID=0&amp;SourceID={!Medical_Inquiry__c.Id}&amp;RC=&quot;+RC+&quot;&amp;RSL=&quot;+RSL+&quot;&amp;RSRO=&quot;+RSRO+&quot;&amp;RROS=&quot;+RROS+&quot;&amp;CCRM=&quot;+CCRM+&quot;&amp;CCTM=&quot;+CCTM+&quot;&amp;CRCL=&quot;+CRCL+&quot;&amp;CRL=&quot;+CRL+&quot;&amp;OCO=&quot;+OCO+&quot;&amp;DST=&quot;+DST+&quot;&amp;CCNM=&quot;+CCNM+&quot;&amp;LA=&quot;+LA+&quot;&amp;CEM=&quot;+CEM+&quot;&amp;CES=&quot;+CES+&quot;&amp;SRS=&quot;+SRS+&quot;&amp;STB=&quot;+STB+&quot;&amp;SSB=&quot;+SSB+&quot;&amp;SES=&quot;+SES+&quot;&amp;SEM=&quot;+SEM+&quot;&amp;SRS=&quot;+SRS+&quot;&amp;SCS=&quot;+SCS+&quot;&amp;RES=&quot;+RES;
+//*******************************************//</url>
+    </webLinks>
+    <webLinks>
+        <fullName>New_Consultant_Request</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>New Consultant Request</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>/a28/e?CF00NC0000006VwXY={!Contact.Salutation}+{!Contact.FirstName}+{!Contact.LastName}&amp;CF00NC0000006VwXY_lkid={!Contact.Id}&amp;00NC0000006VwY2={!Contact.MobilePhone}&amp;00NC0000006VwY1={!Contact.Fax}&amp;00NC0000006VwY0={!Contact.Email}&amp;CF00NC0000006VwXJ={!Account.Name_of_Account__c}&amp;RecordType=&quot;012C0000000QdPp&quot;&amp;CF00NC0000006VwXJ_lkid={!Account.Id}&amp;retURL={!Contact.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>New_Medical_Inquiry</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>New Medical Information Request</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>/a28/e?CF00NC0000006VwXY={!Contact.Salutation}+{!Contact.FirstName}+{!Contact.LastName}&amp;CF00NC0000006VwXY_lkid={!Contact.Id}&amp;00NC0000006VwY2={!Contact.MobilePhone}&amp;00NC0000006VwY1={!Contact.Fax}&amp;00NC0000006VwY0={!Contact.Email}&amp;CF00NC0000006VwXJ={!Account.Name_of_Account__c}&amp;RecordType=&quot;012C0000000QdPq&quot;&amp;CF00NC0000006VwXJ_lkid={!Account.Id}&amp;retURL={!Contact.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>New_Mentor_Request</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>New Mentor Request</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>/a28/e?CF00NC0000006VwXY={!Contact.Salutation}+{!Contact.FirstName}+{!Contact.LastName}&amp;CF00NC0000006VwXY_lkid={!Contact.Id}&amp;00NC0000006VwY2={!Contact.MobilePhone}&amp;00NC0000006VwY1={!Contact.Fax}&amp;00NC0000006VwY0={!Contact.Email}&amp;CF00NC0000006VwXJ={!Account.Name_of_Account__c}&amp;RecordType=&quot;012C0000000QdPr&quot;&amp;CF00NC0000006VwXJ_lkid={!Account.Id}&amp;retURL={!Contact.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Send_Invoice</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Send Invoice</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/apex/dsfs__DocuSign_JavaScript&quot;)} 
+//********* Option Declarations (Do not modify )*********// 
+var RC = &apos;&apos;;var RSL=&apos;&apos;;var RSRO=&apos;&apos;;var RROS=&apos;&apos;;var CCRM=&apos;&apos;;var CCTM=&apos;&apos;;var CCNM=&apos;&apos;;var CRCL=&apos;&apos;;var CRL=&apos;&apos;;var OCO=&apos;&apos;;var DST=&apos;&apos;;var LA=&apos;&apos;;var CEM=&apos;&apos;;var CES=&apos;&apos;;var STB=&apos;&apos;;var SSB=&apos;&apos;;var SES=&apos;&apos;;var SEM=&apos;&apos;;var SRS=&apos;&apos;;var SCS =&apos;&apos;;var RES=&apos;&apos;; 
+//*************************************************// 
+//** DocuSign Template ID **// 
+DST = &apos;4618C403-01B3-4370-B4EB-9E0878FA57C9&apos;; 
+
+//** Load Attachments = Yes **// 
+LA=&apos;1&apos;; 
+//** Show send button **// 
+SSB=&apos;1&apos;; 
+//** Show Email Subject **// 
+SES=&apos;1&apos;; 
+CES=&apos;Consultant Invoice&apos;; 
+//** Show Email Message **// 
+SEM=&apos;1&apos;; 
+CEM=&apos;When Service is Complete please provide billing information in the forms Detail Grid Section.&apos;; 
+
+CCRM=&apos;1~Customer;2~Bausch&apos;; 
+
+//First Role should come from the send form, Second Role is Val Kolesnitchenko (MACC) as //Bausch + Lomb. 
+//This is the Custom Recipient List 
+
+CRL= &apos;Email~{!Medical_Inquiry__c.Consultant_Email__c};LastName~{!Medical_Inquiry__c.Consultant_LastName__c};RoutingOrder~1;Role~1,Email~Valeri.Kolesnitchenko@bausch.com;FirstName~Valeri;LastName~Kolesnitchenko;RoutingOrder~2;Role~2;RecipientNote~”This Invoice is ready for your approval”&apos;
+ 
+window.location.href = &quot;/apex/dsfs__DocuSign_CreateEnvelope?DSEID=0&amp;SourceID={!Medical_Inquiry__c.Id}&amp;RC=&quot;+RC+&quot;&amp;RSL=&quot;+RSL+&quot;&amp;RSRO=&quot;+RSRO+&quot;&amp;RROS=&quot;+RROS+&quot;&amp;CCRM=&quot;+CCRM+&quot;&amp;CCTM=&quot;+CCTM+&quot;&amp;CRCL=&quot;+CRCL+&quot;&amp;CRL=&quot;+CRL+&quot;&amp;OCO=&quot;+OCO+&quot;&amp;DST=&quot;+DST+&quot;&amp;CCNM=&quot;+CCNM+&quot;&amp;LA=&quot;+LA+&quot;&amp;CEM=&quot;+CEM+&quot;&amp;CES=&quot;+CES+&quot;&amp;SRS=&quot;+SRS+&quot;&amp;STB=&quot;+STB+&quot;&amp;SSB=&quot;+SSB+&quot;&amp;SES=&quot;+SES+&quot;&amp;SEM=&quot;+SEM+&quot;&amp;SRS=&quot;+SRS+&quot;&amp;SCS=&quot;+SCS+&quot;&amp;RES=&quot;+RES;
+//*******************************************//</url>
+    </webLinks>
+</CustomObject>

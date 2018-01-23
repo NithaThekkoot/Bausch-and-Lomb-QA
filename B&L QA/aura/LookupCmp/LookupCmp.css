@@ -1,0 +1,82 @@
+.THIS .rowX{
+    background: #2070d0;
+    cursor: pointer;
+    color: white;
+    border: solid;
+    border-width: 1px;	
+    font-size:initial;
+}
+
+
+.THIS .remove-cross::-ms-clear{
+    display: none;
+}
+
+
+.THIS .rowX>span{
+    display:block;
+    padding: 10px;
+    word-wrap: break-word;
+}
+
+.THIS .delete{
+    position: absolute;
+    top: 53%;
+    right: 11px;
+    cursor:pointer;
+}
+
+.THIS .rowX>div{
+    background:rgba(255,255,255,0);
+}
+.THIS .pointer{
+    cursor:pointer;
+}
+
+.THIS .rowX:hover{
+    background: #1a315b;;
+}
+
+.THIS .lookup-list{
+    opacity:1;
+}
+
+.THIS .show{
+    display:block;
+}
+
+.THIS .hide{
+    display:none;
+}
+
+.THIS .recordList{
+    z-index: 1200;
+    position: absolute;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 360px;
+    width:250px;
+}
+.THIS .lookup-check{
+    display:none;
+}
+
+.THIS .remove-cross{
+    border:double rgba(128,128,128,0.41) !important;
+}
+.THIS .relative{
+    position:relative;
+}
+.THIS .spinner{
+   	width: 24px;
+    position: absolute;
+    top: 60%;
+    left: 90%;
+}
+@media screen and (max-width: 400px) {
+    
+    .THIS .objectList{
+        width:50%;
+    }
+    
+}

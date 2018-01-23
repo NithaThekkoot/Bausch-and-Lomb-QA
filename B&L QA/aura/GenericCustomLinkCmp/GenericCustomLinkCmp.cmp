@@ -1,0 +1,6 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" >
+    <aura:attribute name="urlValue" type="String" default="http://www.google.com" description="It will recieve the url value and will redirect to the page"/>
+    <aura:attribute name="linkLabel" type="String" description="to display the label for link"/>
+    <ui:outputURL value="{!v.urlValue}" label="{!v.linkLabel}" target="_blank"/>
+
+</aura:component>

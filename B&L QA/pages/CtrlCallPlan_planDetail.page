@@ -1,0 +1,157 @@
+<apex:page controller="CtrlCallPlan">
+    <apex:form >
+    <script>
+        function setValues(ids)
+        {
+            document.getElementById(ids).value = true;
+        }
+        
+        function showPage1(idPlan,idCon)
+        {
+            var sw = (screen.width -20);
+            var sh = (screen.height - 20);
+            var URL_STRING = '/apex/CtrlCallPlanDetails_detailByContact?id=' + idPlan + '&conId=' + idCon ;
+            window.open(URL_STRING,"_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=yes, copyhistory=yes, width=" + sw + ", height=" + sh);
+        }
+        
+        function showPage2(idPlan)
+        {
+            var sw = (screen.width -20);
+            var sh = (screen.height - 20);
+            var URL_STRING = '/apex/CtrlCallPlanDetails_detailByContact?id=' + idPlan ;
+            window.open(URL_STRING,"_blank","toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=yes, copyhistory=yes, width=" + sw + ", height=" + sh);
+        }
+    </script>
+        <apex:pageMessages />
+            <apex:pageBlock >
+            <apex:inputHidden id="ih1" value="{!blnisSaveFlag}"/>
+                    <apex:inputHidden id="ih2" value="{!blnisSubmitFlag}"/>
+                    <apex:inputHidden id="ih3" value="{!blnisApproveFlag}"/>
+                    <apex:inputHidden id="ih4" value="{!blnisRejectFlag}"/>
+                        <!-- Section displaying the call plan information-->
+                <apex:pageBlockSection collapsible="false" title="Call Plan Number :{!objCurrentCallPlan.name}">
+                    
+                    <apex:outputPanel >
+                        <table width= "900px">
+                            <tr >
+                                <td width="300px">
+                                    <apex:outputlabel value="Sales Executive" style="display:inline" /> <b> :&nbsp;&nbsp;&nbsp;<apex:outputText value="{!objUser.name}" style="display:inline" /></b>
+                                </td>
+                                <td width="300px">
+                                    <apex:outputlabel value="Month"/> <b> :&nbsp;&nbsp;&nbsp;
+                                    <apex:outputField value="{!objCurrentCallPlan.Month__c}" rendered="{!!blnisClone}"/></b>
+                                    <apex:selectList value="{!strSelectedMonth}" size="1" multiselect="false" rendered="{!blnisClone}">
+                                        <apex:selectOptions value="{!MonthsSelected}"/>
+                                    </apex:selectList>
+                                    
+                                </td>
+                                <td width="300px">
+                                    <apex:outputlabel value="Year"/> <b> :&nbsp;&nbsp;&nbsp;<apex:outputField value="{!objCurrentCallPlan.Year__c}"/></b>
+                                    <apex:commandButton style="float:right" value="Go" action="{!doCloneAfterChoosingMonth}" rendered="{!AND(!blnisDisplayCallPlanDetail,blnisShowGo)}"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="300px">
+                                    <div style="display:inline">
+                                        <div valign="top" style="float:left">
+                                            <apex:outputlabel value="Executive Comments" />
+                                        </div>
+										<apex:outputPanel rendered="{!!blnisDisableAllButtons}">
+											<b> &nbsp;&nbsp;&nbsp;<apex:outputField style="float:right" value="{!objCurrentCallPlan.Executive_Comments__c}" rendered="{!blnisManager}"/></b>
+											<b> &nbsp;&nbsp;&nbsp;<apex:inputField style="float:right;width:100px;" value="{!objCurrentCallPlan.Executive_Comments__c}" rendered="{!!blnisManager}"/></b>
+										</apex:outputPanel>
+										<apex:outputPanel rendered="{!blnisDisableAllButtons}">
+											<b> &nbsp;&nbsp;&nbsp;<apex:outputField value="{!objCurrentCallPlan.Executive_Comments__c}"/></b>
+										</apex:outputPanel>
+                                    </div>
+                                </td>
+                                <td width="300px">
+                                    <div style="display:inline">
+                                        <div valign="top" style="float:left">
+                                            <apex:outputlabel value="Manager Comments"/>
+                                        </div>
+										<apex:outputPanel rendered="{!!blnisDisableAllButtons}">
+											<b> &nbsp;&nbsp;&nbsp;<apex:outputField value="{!objCurrentCallPlan.Manager_Comments__c}" rendered="{!!blnisManager}"/></b>
+											<b> &nbsp;&nbsp;&nbsp;<apex:inputField value="{!objCurrentCallPlan.Manager_Comments__c}" rendered="{!blnisManager}"/></b>
+										</apex:outputPanel>
+										<apex:outputPanel rendered="{!blnisDisableAllButtons}">
+											<b> &nbsp;&nbsp;&nbsp;<apex:outputField value="{!objCurrentCallPlan.Manager_Comments__c}"/></b>
+										</apex:outputPanel>
+                                    </div>
+                                </td>
+                                <td width="300px">
+                                    <apex:outputlabel value="Status" />
+                                    <b> :&nbsp;&nbsp;&nbsp;<apex:outputField value="{!objCurrentCallPlan.Status__c}" /></b>
+                                </td>
+                            </tr>
+                        </table>
+                    </apex:outputPanel>
+                </apex:pageBlockSection>
+                            <!-- Section for planning the call plan details -->
+                <apex:pageBlockSection title="Displaying Contents" rendered="{!blnisDisplayCallPlanDetail}" collapsible="false">
+                    <table width="900px" cellspacing="0px">
+                        <tr>
+                            <th width="100px">
+                                HOSPITAL
+                            </th>
+                            <th width="100px">
+                                PHYSICIAN
+                            </th>
+                            <apex:repeat var="dts" value="{!list_RBDmonthDates}">
+                                <th>
+                                    <apex:outputText value="{!TEXT(dts)}"/>&nbsp;&nbsp;
+                                </th>
+                            </apex:repeat>  
+                        </tr>
+                        
+                            <apex:repeat value="{!list_callPlanDetailRecord}" var="detailRecord">
+                                <tr>
+                                    
+                                    <apex:outputPanel rendered="{!detailRecord.blnisInError}">
+                                        <td width="100px" bgcolor="#CC1100">
+                                            <apex:outputField value="{!detailRecord.objAccount.Name}" />
+                                        </td>
+                                        <td width="100px" bgcolor="#CC1100">
+                                            <apex:outputLink value="/apex/CtrlCallPlanErrors_reportLastMonth?conId={!detailRecord.objContact.Id}&start={!strLastMonthStartDate}&end={!strLastMonthEndDate}" ><apex:outputField value="{!detailRecord.objContact.Name}" /></apex:outputLink>
+                                        </td>
+                                    </apex:outputPanel>
+                                    <apex:outputPanel rendered="{!!detailRecord.blnisInError}">
+                                        <td width="100px">
+                                            <apex:outputField value="{!detailRecord.objAccount.Name}" />
+                                        </td>
+                                        <td width="100px">
+                                            <apex:outputField value="{!detailRecord.objContact.Name}" />
+                                        </td>
+                                    </apex:outputPanel>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <apex:repeat value="{!detailRecord.list_objDays}" var="dys" >
+                                        <td>
+                                            <apex:inputCheckbox value="{!dys.blnisbSelected}" disabled="{!blnisDisable}"/>
+                                        </td>
+                                    </apex:repeat>
+                                    <td>
+                                   	 <apex:outputPanel rendered="{!!blnisDisableAllButtons}">
+										<apex:outputPanel rendered="{!!blnisClone}">
+											<apex:commandButton value="Details" onclick="showPage1('{!objCurrentCallPlan.Id}','{!detailRecord.objContact}')"  rendered="{!blnisShowDetail}"/>
+										</apex:outputPanel>
+                                      </apex:outputPanel>
+                                    </td>
+                                </tr>
+                            </apex:repeat>  
+                    </table>
+                </apex:pageBlockSection>
+                <apex:pageBlockSection rendered="{!blnisDisplayCallPlanDetail}">
+                    <apex:outputPanel rendered="{!!blnisDisableAllButtons}">
+                        <apex:commandButton onclick="setValues('{!$Component.ih1}')" action="{!save}" value="Save" />
+                        <apex:commandButton onclick="setValues('{!$Component.ih4}')" rendered="{!blnisManager}" action="{!save}" value="Reject"/>
+                        <apex:commandButton onclick="setValues('{!$Component.ih3}')" rendered="{!blnisManager}" action="{!save}" value="Approve"/>
+                        <apex:commandButton onclick="setValues('{!$Component.ih2}')" action="{!save}" disabled="" value="Submit" rendered="{!!blnisManager}" />
+						<apex:outputPanel rendered="{!!blnisClone}">
+							<apex:commandButton value="Details" onclick="showPage2('{!objCurrentCallPlan.Id}')" rendered="{!blnisShowDetail}"/>                       
+						</apex:outputPanel>
+                    </apex:outputPanel>
+                </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

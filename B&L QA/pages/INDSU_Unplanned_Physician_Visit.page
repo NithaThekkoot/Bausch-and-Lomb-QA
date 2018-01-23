@@ -1,0 +1,108 @@
+<apex:page standardController="Physician_Visit__c" sidebar="False" extensions="CtrlINDSUUnplannedPhysicianVisit" >
+    
+     <apex:sectionHeader title="Unplanned Physician Visit"/>
+    
+     <apex:pageMessages id="errMsg"/> 
+    
+    <apex:form >
+        <apex:pageBlock >
+            <apex:actionstatus id="status">            
+                <apex:facet name="start">                
+                    <div class="waitingSearchDiv" id="el_loading" style="background-color: #fbfbfb; height: 100%;opacity:0.65;width:100%;">
+                        <div class="waitingHolder" style="top: 74.2px; width: 91px;">
+                            <img class="waitingImage" src="/img/loading.gif" title="Please Wait..." />
+                            <span class="waitingDescription">Please Wait...</span>                    
+                        </div>  
+                    </div>
+                </apex:facet>
+            </apex:actionstatus>    
+            
+            <apex:pageBlockButtons location="top">
+                <apex:commandButton value="{!$Label.Save_Button}" action="{!Save}" reRender="pnl,errMsg" status="status"/>                
+                <apex:commandButton value="{!$Label.Cancel_Button}" action="{!Cancel}"/>
+            </apex:pageBlockButtons>
+            <apex:outputLabel style="color:red;">Please provide Date, Doctor, Session, Active User, Lens Used for the Week to create Unplanned Physician Visit.</apex:outputLabel>
+         
+           <apex:pageBlockTable id="tblCallLog" value="{!list_Physicianvisitcapture}" var="pv"  width="100px">  
+           
+                    <!--<apex:column headerValue="Visit Call" headerClass="headerbackgroundgrey"  breakBefore="true" >
+                         <apex:inputCheckbox id="visitStore" value="{!pv.Visit_Call__c}" />
+                    </apex:column> -->                  
+
+                    <apex:column headerValue="Date" rendered="{!(isIndiaUser)}" >                        
+                       <apex:outputPanel layout="block" styleClass="requiredInput" >
+                            <apex:outputPanel styleClass="requiredBlock"/>
+                            <apex:inputField value="{!pv.Activity_Date__c}" />
+                        </apex:outputPanel>
+                    </apex:column> 
+                    
+                    <apex:column headerValue="Doctor" >                       
+                        <apex:outputPanel layout="block" styleClass="requiredInput"  >
+                             <apex:outputPanel styleClass="requiredBlock"/>  
+                             <apex:inputField value="{!pv.Physician__c}" />  
+                         </apex:outputPanel>   
+                    </apex:column>   
+                    
+                 <!--    START of Code added by SRIDHAR ALURU   --> 
+                    
+                    <apex:column headerValue="Active User" rendered="{!(isIndiaUser)}" >                        
+                       <apex:outputPanel layout="block" styleClass="requiredInput" >
+                            <apex:outputPanel styleClass="requiredBlock"/>
+                            <apex:inputField value="{!pv.Active_User_IND__c}" />
+                        </apex:outputPanel>
+                    </apex:column> 
+                    
+                    <apex:column headerValue="Lens Used for the Week" rendered="{!(isIndiaUser)}" >                        
+                       <apex:outputPanel layout="block">
+                            <apex:outputPanel />
+                            <apex:inputField value="{!pv.Lens_usage_for_the_Week_IND__c}" />
+                        </apex:outputPanel>
+                    </apex:column>  
+                   
+                 
+                 <!--    END of Code added by SRIDHAR ALURU   --> 
+                 
+                    
+                    <apex:column headerValue="Session"  rendered="{!isservicerep}">                       
+                        <apex:outputPanel layout="block" styleClass="requiredInput" >
+                             <apex:outputPanel styleClass="requiredBlock"/>                              
+                             <apex:inputField value="{!pv.Session__c}" style="width:80px;"/>   
+                         </apex:outputPanel>   
+                    </apex:column>     
+                    
+               </apex:pageBlockTable>
+               
+               <!-- Previous code BEGINS Commented on 19-Nov-13 after CR from Suresh Sharma-->
+        <!--    <apex:pageBlockSection columns="2" collapsible="false">            
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="{!$ObjectType.Physician_Visit__c.fields.Activity_Date__c.label}" style="font-weight:bold"/>
+                    <apex:outputPanel layout="block" styleClass="requiredInput" >
+                        <apex:outputPanel styleClass="requiredBlock"/>
+                        <apex:inputField value="{!objPhysicianvisit.Activity_Date__c}"/>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem> 
+                
+                   <apex:pageBlockSectionItem labelStyle="">
+                   <apex:outputLabel value="{!$ObjectType.Physician_Visit__c.fields.Session__c.label}" style="font-weight:bold"/>
+                        
+                      <apex:inputField value="{!objPhysicianvisit.Session__c}"/>                   
+                </apex:pageBlockSectionItem> 
+                
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection columns="1" collapsible="false">               
+                <apex:pageBlockSectionItem >
+                     <apex:outputLabel value="{!$ObjectType.Physician_Visit__c.fields.Physician_Name__c.label}" style="font-weight:bold"/>   
+                     <apex:outputPanel layout="block" styleClass="requiredInput" >
+                         <apex:outputPanel styleClass="requiredBlock"/>  
+                         <apex:inputField value="{!objPhysicianvisit.Physician__c}"/>  
+                     </apex:outputPanel>              
+            </apex:pageBlockSectionItem> 
+                
+            </apex:pageBlockSection> -->
+            
+        </apex:pageBlock>
+        
+    </apex:form> 
+    
+</apex:page>

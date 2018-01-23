@@ -1,0 +1,32 @@
+<apex:component controller="clsSFEMonthlyAvgCustomReportINDAES" access="global">
+    <apex:attribute name="dealid" assignTo="{!APACId}" type="String" description="The ID of a APAC Summary for which we want to generate a confirmation."/>
+    
+    <apex:dataTable value="{!lstAPACCallSummary}" var="lstAPACCall" border="0">      
+     <apex:column headerValue="Manager" style=" white-space:nowrap; text-align: left;"> 
+                    <apex:outputText value="{!lstAPACCall.strManagerName}" rendered="{!IF(lstAPACCall.strManagerName!= null,true,false)}" style="white-space:nowrap;"></apex:outputText>
+                    <!--<apex:outputText value="{!lstAPACCall.strTotalRegion}" rendered="{!IF(lstAPACCall.strTotalRegion== null,true,false)}" style="font-weight: bold;"></apex:outputText> -->
+                </apex:column>        
+            <apex:column headerValue="Region" style=" white-space:nowrap; text-align: left;"> 
+                <apex:outputText value="{!lstAPACCall.strRegion}" rendered="{!IF(lstAPACCall.strRegion != null,true,false)}" style="white-space:nowrap;"></apex:outputText>
+                <apex:outputText value="{!lstAPACCall.strTotalRegion}" rendered="{!IF(lstAPACCall.strTotalRegion != null,true,false)}" style="font-weight: bold;"></apex:outputText>
+            </apex:column>
+            <apex:column value="{!lstAPACCall.strCity}" headerValue="City" style="white-space:nowrap; text-align: left;"/>              
+            <apex:column value="{!lstAPACCall.strName}" headerValue="SE/SCRM" style="white-space:nowrap; text-align: left;"/> 
+          
+            <!--Added by Neha Jain, to add one more column for the current month for last year, Now 13 columns will be visible to user Current Month , PY- Current Month, this year -->
+                  <apex:column headerValue="{!currentMonthName}-{!intYearNumber}" headerClass="headerrow" style="white-space:nowrap; text-align: center;">
+                    <apex:outputText value="{!lstAPACCall.DecAvgCurrentMonthPY}" rendered="{!IF(lstAPACCall.strRegion != null,true,false)}" style="white-space:nowrap;"></apex:outputText>
+                    <apex:outputText value="{!lstAPACCall.DecAvgCurrentMonthPYColTotal}" rendered="{!IF(lstAPACCall.strTotalRegion != null,true,false)}" style="font-weight: bold;"></apex:outputText>
+                </apex:column>
+               
+                <!-- All the columns for month except Total commented by Neha Jain on 26/02/2014 to display average for last 12 months. -->
+                   <apex:repeat value="{!monthNames}" var="monthNameValue" id="theRepeat">
+
+                         <apex:column headerValue="{!monthNameValue}" headerClass="headerrow" style="white-space:nowrap; text-align: center;">
+                            <apex:outputText value="{!lstAPACCall.mapMonthAvgValues[monthNameValue]}" rendered="{!IF(lstAPACCall.strRegion != null,true,false)}" style="white-space:nowrap;"></apex:outputText>
+                            <apex:outputText value="{!lstAPACCall.mapMonthAvgTotalValues[monthNameValue]}" rendered="{!IF(lstAPACCall.strTotalRegion != null,true,false)}" style="font-weight: bold;"></apex:outputText>
+                        </apex:column> 
+                
+                    </apex:repeat>
+        </apex:dataTable>
+</apex:component>

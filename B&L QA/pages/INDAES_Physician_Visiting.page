@@ -1,0 +1,200 @@
+<apex:page controller="CtrlINDAESPhysicianVisiting" sidebar="False" TAbStyle="Physician_Visiting__tab" id="pageId">
+    
+  <style>
+    .headerbackgroundgrey {font-family: Arial, Helvetica, sans-serif;font-size: 11px;background-color:pINK;color: #000000;font-weight:bold;}
+    .headerRow .headerStyle{background-color:pink; color:red}
+    .headerRow .TableTitle {background-color:pink; color: #CC0000 !important;}
+    .col1 {background-color:#FEFCFF;font-size:12px;solid #3f7f00; }  
+     table.borderline td    {border-left:1px solid #eee; height:25px}
+    .tablecls input[type="text"] {width:40px;}
+    /*.tablecls tr td:first-child input[type="checkbox"]:checked {background:gold}*/
+    .tablecls tr    {background:green !important}
+    .tablecls td input[type="text"].productwidth    {width:80px;}
+    .tablecls td.Hospitalname, .tablecls th.Hospitalname {width:200px; word-break:break-all; white-space:normal}
+    .wrapword{
+            white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
+            white-space: -pre-wrap;      /* Opera 4-6 */
+            white-space: -o-pre-wrap;    /* Opera 7 */
+            white-space: pre-wrap;       /* css-3 */
+            word-wrap: break-word;       /* Internet Explorer 5.5+ */
+            word-break: break-all;
+            white-space: normal;
+            }
+
+
+  </style>
+  
+  <apex:form >
+       <apex:sectionHeader title="Open Physician Visits"/>   
+       <apex:outputLabel value="{!strMessage}" id="lblLoadMsg" rendered="true" style="display:none;"/> 
+        <apex:panelGrid columns="1">               
+        <apex:outputLabel style="font-weight: bold; color: red;" value="Open physician visit for Current Week."/>
+           <!-- <apex:outputPanel >            
+                  <apex:outputLabel value="Physician Visit for : " style="font-weight:bold; hieght:20"/>                   
+                  <apex:selectList multiselect="false" size="1" value="{!intSelectedDays}">
+                    <apex:actionSupport event="onchange" action="{!getPhysicianVisitDetails}"/>
+                    <apex:selectOptions value="{!ViewOptions}"/>
+                  </apex:selectList>                     
+            </apex:outputPanel> -->           
+        </apex:panelGrid>        
+        <apex:outputLabel style="font-weight: bold; color: red;" value="Please click on New Unplanned Visits button to make unplanned Visits."/>
+       <apex:pagemessages ></apex:pagemessages>
+       <apex:pageBlock mode="edit" id="commentForm" >   
+            <apex:actionstatus id="status">            
+                <apex:facet name="start">                
+                    <div class="waitingSearchDiv" id="el_loading" style="background-color: #fbfbfb; height: 100%;opacity:0.65;width:100%;">
+                        <div class="waitingHolder" style="top: 74.2px; width: 91px;">
+                            <img class="waitingImage" src="/img/loading.gif" title="Please Wait..." />
+                            <span class="waitingDescription">Please Wait...</span>                    
+                        </div>  
+                    </div>
+                </apex:facet>
+            </apex:actionstatus>  
+              
+           <apex:pageblockButtons location="top">
+                <apex:commandButton value="New Unplanned Visits" action="{!newUnplannedvisit}" />
+                <apex:commandButton value="Save" action="{!Save}" status="status"/>                                
+           </apex:pageblockButtons> 
+           <div  style= "width:1390px;  overflow-x:scroll;  height:430px; overflow-y:scroll;" > 
+       <!--    <html>
+               <table  border="0" cellpadding="0" cellspacing="0" class="borderline" >
+                <tr>
+                    <td width="433px">&nbsp;</td>
+                    <td width="245px" align="center"  style="background:#fdfced; font-weight:bold;">Implant B+L</td>                   
+                    <td width="432px" align="center" style="background:#f2ffff; font-weight:bold;" >Implant Competition</td>
+                    <td width="146px" align="center"  style="background:#fdfced; font-weight:bold; ">OPD</td>                   
+                    <td style="font-weight:bold; ">&nbsp;</td>                   
+               </tr>               
+              </table>
+            </html>-->
+           
+               <apex:pageBlockTable first="" border="0" style="width:100%; white-space:nowrap" styleClass="tablecls" id="tblCallLogPh" columnClasses="col1" value="{!list_PhysicianVisitDetails}" var="pv">              
+                    
+                    <!--<apex:column headerValue="Visit Call" breakBefore="true"  >   -->
+                    <apex:column >
+                    <apex:facet name="header"  >
+                                Visit <br/>
+                                Call
+                             </apex:facet>
+                    
+                                 
+                         <apex:inputCheckbox id="visitph" value="{!pv.Visit_Call__c}"  />
+                    </apex:column>                 
+
+                    <!--<apex:column headerValue="Visit Date" >-->
+                    <apex:column > 
+                            <apex:facet name="header"  >
+                                Visit<br/>
+                                Date
+                             </apex:facet>   
+                        <apex:outputText value="{0,date,dd'-'MMM}" style="font-weight:bold;" >
+                            <apex:param value="{!pv.Activity_Date__c}" />
+                       </apex:outputText> 
+                    </apex:column>
+                     
+                    <apex:column headerValue="Day" >
+                        <apex:outputText value="{0,date,E}" style="font-weight:bold;">
+                            <apex:param value="{!pv.Activity_Date__c}"  />
+                       </apex:outputText>                     
+                    </apex:column>
+                    
+                <!--   <apex:column headerValue="Planned Call" >      -->  
+                    <apex:column > 
+                            <apex:facet name="header"  >
+                                Plan <br/>
+                                Call
+                             </apex:facet>            
+                           <apex:outputField value="{!pv.Planned_Call__c}" />
+                    </apex:column>
+                    
+                    <!-- Commented Status to reduce page size -10/12/2013
+                    <apex:column headerValue="Status" style="font-weight:bold;"  >
+                        <apex:outputText value="{!pv.Status__c}" />                                            
+                    </apex:column>-->
+                     
+                   <apex:column headerValue="Hospital Name"  style="width:200px;background:#fdfced;">                    
+                      <!-- <apex:outputText value=" {!pv.Hospital_Name__c}"  style="font-weight:bold; white-space:pre-wrap; width:1000px;"  escape="false" />  <br />           -->
+                      <apex:outputText value=" {!pv.Hospital_Name__c}" style="font-weight:bold; white-space:pre-wrap; -webkit- white-space:wrap; word-wrap:break-word; display: block; width:150px; " /> 
+                    </apex:column>              
+                    
+                    <apex:column headerValue="Doctor Name" >
+                      <!--   <apex:outputText value="{!pv.Physician_Name__c}" style="font-weight:bold; white-space:normal; width:100px; word-wrap:break-word;" escape="false"  /> -->
+                      <apex:outputText value=" {!pv.Physician_Name__c}" style="font-weight:bold; white-space:pre-wrap; -webkit- white-space:wrap; word-wrap:break-word; display: block; width:150px; " /> 
+                    </apex:column>                                                      
+                    
+                  <apex:column >
+                        <apex:facet name="header"  >
+                                OT<br/>
+                                Hrs
+                        </apex:facet> 
+                        <apex:inputCheckbox id="OTvisit" value="{!pv.OT_Hours__c}" />
+                    </apex:column>
+                    
+               <!--   <apex:column headerValue="Hours in Surgery" > -->
+                    <apex:column style="width:40px">
+                        <apex:facet name="header"  >
+                                Hours<br/>
+                                in <br/> Surgery
+                        </apex:facet>  
+                        <apex:inputField value="{!pv.Hours_in_Surgery__c}" style="width:40px"/>  
+                    </apex:column>
+                    
+                    <apex:column headerValue="Product 1" style="width:100px;background:#fdfced;" >                     
+                        <apex:inputField value="{!pv.Product_1__c}" styleClass="productwidth" style="width:80px"/>
+                    </apex:column>
+                    
+                   <apex:column headerValue="Product 2" style="width:100px;background:#fdfced;">
+                        <apex:inputField value="{!pv.Product_2__c}" styleClass="productwidth" style="width:80px"/>
+                    </apex:column>
+                    
+                    <apex:column headerValue="Remarks" width="100px" >
+                        <apex:inputField value="{!pv.Remarks__c}" style="width:120px"  />
+                    </apex:column>               
+
+               </apex:pageBlockTable>
+           </div>
+            <apex:outputLabel style="font-weight:bold">Note:- OT Hours/ Procedure Time </apex:outputLabel>
+       </apex:pageBlock>
+  </apex:form>
+
+    <script type="text/javascript"> 
+        $(document).ready(function() {
+             
+            $('[id$=commentForm]').validate();             
+             
+            $('[id$=productnumber]').rules("add",{
+                required: true,
+                maxlength: 2
+            });     
+            
+                
+            
+            /* Customised the messages */
+            jQuery.validator.messages.required = "You better have entered a value.. or else!"; 
+            jQuery.validator.messages.equalTo = "No silly, you're supposed to type the same set of characters AGAIN.";                                                
+        });
+        
+    </script>   
+    <script>
+        var selected = {};
+    
+        function validate(obj)
+        {
+      //  alert(" validate method : "+document.getElementById(obj).value);
+           if(document.getElementById(obj).value.length > 3)
+          {
+          // alert("Error: Number is too large.");
+          }
+        }
+        
+        var previousOnload = window.onload;        
+        window.onload = function() { 
+        if (previousOnload) { 
+            previousOnload();
+        }
+        var tempvar = document.getElementById('pageId:j_id1:lblLoadMsg');
+        alert(tempvar.innerHTML);
+        
+        }
+      </script>
+</apex:page>

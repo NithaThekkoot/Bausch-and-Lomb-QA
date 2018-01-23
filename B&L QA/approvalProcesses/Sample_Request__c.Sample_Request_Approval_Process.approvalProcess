@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <allowRecall>false</allowRecall>
+    <allowedSubmitters>
+        <submitter>EMEASUUsers</submitter>
+        <type>group</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>Name</field>
+        <field>Account__c</field>
+        <field>Ship_To_ID__c</field>
+        <field>Ship_To_Address__c</field>
+        <field>Contact__c</field>
+        <field>Date_Request_Submitted__c</field>
+        <field>Requested_By__c</field>
+        <field>Request_Status__c</field>
+        <field>Frequency__c</field>
+        <field>Request_Notes__c</field>
+        <field>Owner</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <approvalActions>
+            <action>
+                <name>Set_Approver_on_Request</name>
+                <type>FieldUpdate</type>
+            </action>
+        </approvalActions>
+        <assignedApprover>
+            <approver>
+                <name>SampleRequestApprovers</name>
+                <type>queue</type>
+            </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
+        </assignedApprover>
+        <description>Requires a manager&apos;s approval to submit this request, if submitted by TMs or SES. (KAMs and Regional Managers are members of this queue.)</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>User.Profile</field>
+                <operation>equals</operation>
+                <value>EMEASU Territory Manager</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>ApproveRecord</ifCriteriaNotMet>
+        <label>Manager Approval</label>
+        <name>Manager_Approval</name>
+        <rejectionActions>
+            <action>
+                <name>Set_Approver_on_Request</name>
+                <type>FieldUpdate</type>
+            </action>
+        </rejectionActions>
+    </approvalStep>
+    <description>Sends sample requests to the TM&apos;s manager for Approval, prior to sending it to Customer Services to create the order. 
+Used by EMEA SU.</description>
+    <emailTemplate>EMEA_SU/EMEASU_Sample_Request_Approval</emailTemplate>
+    <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
+    <entryCriteria>
+        <criteriaItems>
+            <field>Sample_Request__c.RecordType</field>
+            <operation>equals</operation>
+            <value>EMEA SU Sample Request</value>
+        </criteriaItems>
+    </entryCriteria>
+    <finalApprovalActions>
+        <action>
+            <name>Notification_of_Sample_Request_Approval_to_Submitter</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>Notification_to_customer_svc</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>Update_Sample_Request_Status_Fulfilled</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalApprovalActions>
+    <finalApprovalRecordLock>true</finalApprovalRecordLock>
+    <finalRejectionActions>
+        <action>
+            <name>Notification_of_Sample_Request_Rejection_to_Submitter</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>Update_Sample_Request_Status_Issue</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalRejectionActions>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <initialSubmissionActions>
+        <action>
+            <name>Populate_CSS_Email_Address</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Update_Status_to_Submitted</name>
+            <type>FieldUpdate</type>
+        </action>
+    </initialSubmissionActions>
+    <label>Sample Request Approval Process</label>
+    <recordEditability>AdminOrCurrentApprover</recordEditability>
+    <showApprovalHistory>true</showApprovalHistory>
+</ApprovalProcess>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApexPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>24.0</apiVersion>
+    <availableInTouch>false</availableInTouch>
+    <confirmationTokenRequired>false</confirmationTokenRequired>
+    <description>Enable user of the CTI screen pop to select the Account to use in case the incoming number matches multiple accounts.</description>
+    <label>CTIMultipleAccountsFound</label>
+</ApexPage>

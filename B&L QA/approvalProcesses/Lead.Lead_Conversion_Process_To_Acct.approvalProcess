@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApprovalProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <allowRecall>true</allowRecall>
+    <allowedSubmitters>
+        <type>owner</type>
+    </allowedSubmitters>
+    <approvalPageFields>
+        <field>Name</field>
+        <field>Owner</field>
+    </approvalPageFields>
+    <approvalStep>
+        <allowDelegate>false</allowDelegate>
+        <assignedApprover>
+            <approver>
+                <type>adhoc</type>
+            </approver>
+        </assignedApprover>
+        <description>INDSU approval step to notify sales manager when lead record is submitted for approval by sales rep</description>
+        <entryCriteria>
+            <criteriaItems>
+                <field>Lead.Status</field>
+                <operation>equals</operation>
+                <value>Gain commitment to evaluate</value>
+            </criteriaItems>
+            <criteriaItems>
+                <field>Lead.RecordType</field>
+                <operation>equals</operation>
+                <value>INDSU Lead</value>
+            </criteriaItems>
+        </entryCriteria>
+        <ifCriteriaNotMet>ApproveRecord</ifCriteriaNotMet>
+        <label>INDSU Notify Sales Manager</label>
+        <name>INDSU_Notify_Sales_Manager</name>
+    </approvalStep>
+    <description>INDSU approval process sent to sales manager when lead has to be converted into an indirect/ direct account.</description>
+    <emailTemplate>unfiled$public/ContactFollowUpSAMPLE</emailTemplate>
+    <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
+    <entryCriteria>
+        <criteriaItems>
+            <field>Lead.Status</field>
+            <operation>equals</operation>
+            <value>Gain commitment to evaluate</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Lead.RecordType</field>
+            <operation>equals</operation>
+            <value>INDSU Lead</value>
+        </criteriaItems>
+    </entryCriteria>
+    <finalApprovalActions>
+        <action>
+            <name>Convert_Lead</name>
+            <type>Task</type>
+        </action>
+        <action>
+            <name>INDSU_email_sent_to_sales_admin_and_sales_rep_when_lead_record_submitted_for_app</name>
+            <type>Alert</type>
+        </action>
+    </finalApprovalActions>
+    <finalApprovalRecordLock>true</finalApprovalRecordLock>
+    <finalRejectionActions>
+        <action>
+            <name>INDSU_email_sent_to_sales_rep_when_lead_record_submitted_for_approval_is_rejecte</name>
+            <type>Alert</type>
+        </action>
+    </finalRejectionActions>
+    <finalRejectionRecordLock>false</finalRejectionRecordLock>
+    <label>Lead Conversion Process To Acct</label>
+    <recordEditability>AdminOnly</recordEditability>
+    <showApprovalHistory>false</showApprovalHistory>
+</ApprovalProcess>

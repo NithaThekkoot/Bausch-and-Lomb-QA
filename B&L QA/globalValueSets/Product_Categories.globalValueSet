@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Accessories</fullName>
+        <default>false</default>
+        <label>Accessories</label>
+    </customValue>
+    <customValue>
+        <fullName>DDMS</fullName>
+        <default>false</default>
+        <label>DDMS</label>
+    </customValue>
+    <customValue>
+        <fullName>Disposables Sales</fullName>
+        <default>false</default>
+        <label>Disposables Sales</label>
+    </customValue>
+    <customValue>
+        <fullName>Equipment Sales</fullName>
+        <default>false</default>
+        <label>Equipment Sales</label>
+    </customValue>
+    <customValue>
+        <fullName>Instruments</fullName>
+        <default>false</default>
+        <label>Instruments</label>
+    </customValue>
+    <customValue>
+        <fullName>Laser Probes</fullName>
+        <default>false</default>
+        <label>Laser Probes</label>
+    </customValue>
+    <customValue>
+        <fullName>Monofocal IOLs</fullName>
+        <default>false</default>
+        <label>Monofocal IOLs</label>
+    </customValue>
+    <customValue>
+        <fullName>Other</fullName>
+        <default>false</default>
+        <label>Other</label>
+    </customValue>
+    <customValue>
+        <fullName>Pinnacle</fullName>
+        <default>false</default>
+        <label>Pinnacle</label>
+    </customValue>
+    <customValue>
+        <fullName>Premium IOLs</fullName>
+        <default>false</default>
+        <label>Premium IOLs</label>
+    </customValue>
+    <customValue>
+        <fullName>Retina Products</fullName>
+        <default>false</default>
+        <label>Retina Products</label>
+    </customValue>
+    <masterLabel>Product Categories</masterLabel>
+    <sorted>true</sorted>
+</GlobalValueSet>

@@ -1,0 +1,7 @@
+<apex:page controller="Ctl_contact" action="{!getAcctname}">
+    <apex:form >
+    <apex:pageBlock >
+       
+    </apex:pageBlock>
+        </apex:form>
+</apex:page>

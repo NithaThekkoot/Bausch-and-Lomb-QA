@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>QuoteLineItem</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>BundleDescr__c</fullName>
+        <description>Concatenation of descriptions (user input names) of bundles the product appears in.</description>
+        <externalId>false</externalId>
+        <label>Bundle Description</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Bundle_Id__c</fullName>
+        <description>Bundle that this product is part of</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Bundle that this product is part of</inlineHelpText>
+        <label>Bundle Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ContractTerm__c</fullName>
+        <externalId>false</externalId>
+        <label>ContractTerm</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ContractedPrice__c</fullName>
+        <externalId>false</externalId>
+        <label>ContractedPrice</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Current_PeopleSoft_Price__c</fullName>
+        <description>PeopleSoft Price retrieved using a Web Service</description>
+        <externalId>false</externalId>
+        <label>Current PeopleSoft Price</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Current_PeopleSoft_Price_per_Unit__c</fullName>
+        <description>PeopleSoft Retrieved Price divided by the Units Per Box Field</description>
+        <externalId>false</externalId>
+        <label>Current PeopleSoft Price per Unit</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Discount__c</fullName>
+        <externalId>false</externalId>
+        <label>Discount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Discount_off_PeopleSoft_Pct__c</fullName>
+        <description>Discount % between current PS price and contracted price</description>
+        <externalId>false</externalId>
+        <formula>IF (Current_PeopleSoft_Price_per_Unit__c &gt; 0, ((Current_PeopleSoft_Price_per_Unit__c  -  ContractedPrice__c )/  Current_PeopleSoft_Price_per_Unit__c), null)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Discount off PeopleSoft price in %</inlineHelpText>
+        <label>Discount off PeopleSoft %</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Discount_off_PeopleSoft_dollars__c</fullName>
+        <description>Discounted PeopleSoft $ calculated as Current PeopleSoft Price minus Contracted Price</description>
+        <externalId>false</externalId>
+        <formula>Current_PeopleSoft_Price_per_Unit__c  -  ContractedPrice__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Discounted $ from the PeopleSoft Price</inlineHelpText>
+        <label>Discount off PeopleSoft $</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Id__c</fullName>
+        <externalId>false</externalId>
+        <label>Quote ID</label>
+        <referenceTo>CameleonCPQ__Quote__c</referenceTo>
+        <relationshipName>CPQ_QuoteLineItem</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Line_Approval__c</fullName>
+        <description>Shows the approval information for each product.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Shows the approval information for each product.</inlineHelpText>
+        <label>Line Approval</label>
+        <length>55</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Margin__c</fullName>
+        <description>Margin on Product Line</description>
+        <externalId>false</externalId>
+        <label>Margin</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Non_Discounted_Floor_Price__c</fullName>
+        <description>Non Discounted Floor Price (passed from Cameleon)</description>
+        <externalId>false</externalId>
+        <label>Non Discounted Floor Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>PeopleSoft_Price_As_Of_Date__c</fullName>
+        <description>Date Time that the PS Price was populated</description>
+        <externalId>false</externalId>
+        <label>PeopleSoft Price As Of Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>PeopleSoft_Price_Success_Flag__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Price Success Flag</description>
+        <externalId>false</externalId>
+        <label>PeopleSoft Price Success Flag</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Price_Erosion__c</fullName>
+        <description>Displays a Green box if the Discount PeopleSoft $ &gt;= 0, else displays Red</description>
+        <externalId>false</externalId>
+        <formula>IF(
+Discount_off_PeopleSoft_dollars__c &lt;= 0.00,
+IMAGE(&quot;/img/samples/light_green.gif&quot;,&quot;Green&quot;), 
+IMAGE(&quot;/img/samples/light_red.gif&quot;,&quot;Red&quot;)
+)</formula>
+        <inlineHelpText>Displays a Green box if the Discount PeopleSoft $ &gt;= 0, else displays Red</inlineHelpText>
+        <label>Price Erosion</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ProductCode__c</fullName>
+        <externalId>false</externalId>
+        <label>ProductCode</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ProductFamily__c</fullName>
+        <externalId>false</externalId>
+        <label>ProductFamily</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ProductType__c</fullName>
+        <externalId>false</externalId>
+        <label>Product Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Product Description</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Quantity__c</fullName>
+        <externalId>false</externalId>
+        <label>Annual Quantity</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TotalPrice__c</fullName>
+        <externalId>false</externalId>
+        <label>Annual Revenue</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_cost__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Contract Cost</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>UOM__c</fullName>
+        <description>UOM for this opportunity product</description>
+        <externalId>false</externalId>
+        <inlineHelpText>UOM for this opportunity product</inlineHelpText>
+        <label>Unit of Measure</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Box</fullName>
+                    <default>false</default>
+                    <label>Box</label>
+                </value>
+                <value>
+                    <fullName>EA</fullName>
+                    <default>false</default>
+                    <label>EA</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>UnitsPerBox__c</fullName>
+        <description>If sold as a box, how many units are in the box?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If sold as a box, how many units are in the box?</inlineHelpText>
+        <label>Units Per Box</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>CameleonQuoteLineItem</label>
+    <nameField>
+        <label>QuoteLineItem</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>QuoteLineItem</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

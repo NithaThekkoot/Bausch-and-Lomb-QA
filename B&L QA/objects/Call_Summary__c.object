@@ -1,0 +1,614 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Created for NAL to capture data from Analytic Snapshots for official sales call reporting</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <fields>
+        <fullName>Actual_Average_Calls_per_Day__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(Actual_Days_Available__c = 0, 0, Total_Calls__c  /  Actual_Days_Available__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Actual Average Calls per Day</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Actual_Calls__c</fullName>
+        <description>INDSU field to capture the no. of visits made on the day</description>
+        <externalId>false</externalId>
+        <label>Actual Calls</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Actual_Days_Available__c</fullName>
+        <externalId>false</externalId>
+        <formula>Total_Days__c -  Total_Days_Available_Subtractor__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Actual Days Available</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Area__c</fullName>
+        <description>INDSU field to capture the area the visits made to</description>
+        <externalId>false</externalId>
+        <label>Area</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Business_Day_or_not__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>INDSU field to capture If the day is business day</description>
+        <externalId>false</externalId>
+        <label>Business Day or not</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Country__c</fullName>
+        <description>INDSU field to capture the country the visits made to</description>
+        <externalId>false</externalId>
+        <label>Country</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Date__c</fullName>
+        <description>INDSU field to capture the date the visits were made on</description>
+        <externalId>false</externalId>
+        <label>Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Expected_Average_Calls_per_Day__c</fullName>
+        <defaultValue>6</defaultValue>
+        <externalId>false</externalId>
+        <label>Expected Average Calls per Day</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Field_Days__c</fullName>
+        <externalId>false</externalId>
+        <formula>1</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Field Days</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Non_field_working_days__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Non field working days</description>
+        <externalId>false</externalId>
+        <label>Non-field working days</label>
+        <precision>6</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OT_Hours__c</fullName>
+        <externalId>false</externalId>
+        <label>OT Hours</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Planned_Calls_Others__c</fullName>
+        <externalId>false</externalId>
+        <label>Planned Calls Others</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Planned_Calls__c</fullName>
+        <description>INDSU field to capture the no. of visits planned for the day</description>
+        <externalId>false</externalId>
+        <label>Planned Calls</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Planned_Calls_of_A__c</fullName>
+        <externalId>false</externalId>
+        <label>Planned Calls of A</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Planned_Calls_of_B__c</fullName>
+        <externalId>false</externalId>
+        <label>Planned Calls of B</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Planned_Calls_of_C__c</fullName>
+        <externalId>false</externalId>
+        <label>Planned Calls of C</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Profile__c</fullName>
+        <description>INDSU field to capture the type of visits</description>
+        <externalId>false</externalId>
+        <label>Profile</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Sales</fullName>
+                    <default>false</default>
+                    <label>Sales</label>
+                </value>
+                <value>
+                    <fullName>Service</fullName>
+                    <default>false</default>
+                    <label>Service</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>RegionINDSU__c</fullName>
+        <description>INDSU field to capture the region the visits made to</description>
+        <externalId>false</externalId>
+        <label>Region1</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Region_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Region Code</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Region__c</fullName>
+        <description>NAL formula field to convert numeric region code to a recognizable name because there is no way to load a text field into an analytic snapshot except for 1 grouping field and name of the snapshot</description>
+        <externalId>false</externalId>
+        <formula>IF (Sales_Team_Snapshot__c =&quot;USECS Call Summary Snapshot&quot;,( CASE( Region_Code__c, 1, &quot;Northeast&quot;, 2,&quot;Southeast&quot; ,3, &quot;South Central&quot;,4,&quot;North Central&quot;,5,&quot;West&quot;,&quot;&quot;)),&quot;&quot;)</formula>
+        <label>Region</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Rep_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Rep Name</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sales_Team_Snapshot__c</fullName>
+        <description>Created for ECS for use in the official sales report to only pull records for one team</description>
+        <externalId>false</externalId>
+        <label>Sales Team Snapshot</label>
+        <length>30</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Targeted_Calls_Others__c</fullName>
+        <externalId>false</externalId>
+        <label>Targeted Calls Others</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Targeted_Calls__c</fullName>
+        <description>INDSU field to capture the no. of visits made on the day that were planned.</description>
+        <externalId>false</externalId>
+        <label>Targeted Calls</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Targeted_Calls_of_A__c</fullName>
+        <externalId>false</externalId>
+        <label>Targeted Calls of A</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Targeted_Calls_of_B__c</fullName>
+        <externalId>false</externalId>
+        <label>Targeted Calls of B</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Targeted_Calls_of_C__c</fullName>
+        <externalId>false</externalId>
+        <label>Targeted Calls of C</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Calls__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Calls</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Customers__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Customers</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Customers_of_A__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Customers of A</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Customers_of_B__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Customers of B</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Customers_of_C__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Customers of C</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Customers_of_Others__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Customers of Others</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Days_Available_Subtractor__c</fullName>
+        <externalId>false</externalId>
+        <label>Out of Territory Days</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Days__c</fullName>
+        <defaultValue>5</defaultValue>
+        <externalId>false</externalId>
+        <label>Total Days</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Unique__c</fullName>
+        <description>INDSU field to uniquely identify the record. The value will be a combination of Country, Region, Area and Owner.</description>
+        <externalId>true</externalId>
+        <label>Unique</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Unplanned_Calls_Others__c</fullName>
+        <externalId>false</externalId>
+        <label>Unplanned Calls Others</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Unplanned_Calls__c</fullName>
+        <externalId>false</externalId>
+        <formula>Actual_Calls__c  -  Targeted_Calls__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Unplanned Calls</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Unplanned_Calls_of_A__c</fullName>
+        <externalId>false</externalId>
+        <label>Unplanned Calls of A</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Unplanned_Calls_of_B__c</fullName>
+        <externalId>false</externalId>
+        <label>Unplanned Calls of B</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Unplanned_Calls_of_C__c</fullName>
+        <externalId>false</externalId>
+        <label>Unplanned Calls of C</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Variance_Calls_per_Day__c</fullName>
+        <externalId>false</externalId>
+        <formula>Actual_Average_Calls_per_Day__c  -  Expected_Average_Calls_per_Day__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Variance Calls per Day</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Week_Ending__c</fullName>
+        <defaultValue>TODAY() - 2</defaultValue>
+        <externalId>false</externalId>
+        <label>Week Ending</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <label>Call Summary</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>CREATED_DATE</columns>
+        <columns>NAME</columns>
+        <columns>Rep_Name__c</columns>
+        <columns>Total_Calls__c</columns>
+        <columns>Total_Days__c</columns>
+        <columns>Total_Days_Available_Subtractor__c</columns>
+        <columns>Actual_Days_Available__c</columns>
+        <columns>Actual_Average_Calls_per_Day__c</columns>
+        <columns>Expected_Average_Calls_per_Day__c</columns>
+        <columns>Variance_Calls_per_Day__c</columns>
+        <columns>Week_Ending__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>{00000}</displayFormat>
+        <label>Call Summary ID</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Calls Summary</pluralLabel>
+    <recordTypes>
+        <fullName>APACSU_Call_Summary</fullName>
+        <active>true</active>
+        <description>APACSU record type to capture call summary information to generate reports</description>
+        <label>APACSU Call Summary</label>
+        <picklistValues>
+            <picklist>Profile__c</picklist>
+            <values>
+                <fullName>Sales</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Service</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>INDSU_Call_Summary</fullName>
+        <active>true</active>
+        <description>INDSU record type to capture call summary information to generate reports</description>
+        <label>INDSU Call Summary</label>
+        <picklistValues>
+            <picklist>Profile__c</picklist>
+            <values>
+                <fullName>Sales</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Service</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>Private</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

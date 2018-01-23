@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>N/I</fullName>
+        <default>false</default>
+        <label>N/I</label>
+    </customValue>
+    <customValue>
+        <fullName>Essential</fullName>
+        <default>false</default>
+        <label>Essential</label>
+    </customValue>
+    <customValue>
+        <fullName>Proficient</fullName>
+        <default>false</default>
+        <label>Proficient</label>
+    </customValue>
+    <customValue>
+        <fullName>Mastery</fullName>
+        <default>false</default>
+        <label>Mastery</label>
+    </customValue>
+    <customValue>
+        <fullName>Not Observed</fullName>
+        <default>false</default>
+        <label>Not Observed</label>
+    </customValue>
+    <masterLabel>FCR Ratings</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

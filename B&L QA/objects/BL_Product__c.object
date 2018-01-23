@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>true</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>BL_Product_USSR</fullName>
+        <fields>Name</fields>
+        <fields>Annual_Volume__c</fields>
+        <fields>Product_Family__c</fields>
+        <fields>Type__c</fields>
+        <fields>Equipment_Age__c</fields>
+        <fields>Price__c</fields>
+        <label>BL Product USSR</label>
+    </compactLayouts>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>Account_Profile__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Account Profile</label>
+        <referenceTo>Account_Profile__c</referenceTo>
+        <relationshipLabel>Current Product Preference</relationshipLabel>
+        <relationshipName>B_L_Products</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Current Product Preference</relationshipLabel>
+        <relationshipName>B_L_Products</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Annual_Volume__c</fullName>
+        <externalId>false</externalId>
+        <label>Annual Volume</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Equipment_Age__c</fullName>
+        <externalId>false</externalId>
+        <label>Equipment Age (Years)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Price__c</fullName>
+        <externalId>false</externalId>
+        <label>Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Product_Family__c</fullName>
+        <externalId>false</externalId>
+        <label>Product Family</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Retina</fullName>
+                    <default>false</default>
+                    <label>Retina</label>
+                </value>
+                <value>
+                    <fullName>Cataract</fullName>
+                    <default>false</default>
+                    <label>Cataract</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Product_Name__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <externalId>false</externalId>
+        <label>Product Name</label>
+        <length>255</length>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Product__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Standard Product</label>
+        <referenceTo>Product2</referenceTo>
+        <relationshipLabel>B&amp;L Products</relationshipLabel>
+        <relationshipName>B_L_Products</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Equipment</fullName>
+                    <default>false</default>
+                    <label>Equipment</label>
+                </value>
+                <value>
+                    <fullName>Laser Probe</fullName>
+                    <default>false</default>
+                    <label>Laser Probe</label>
+                </value>
+                <value>
+                    <fullName>DDMS</fullName>
+                    <default>false</default>
+                    <label>DDMS</label>
+                </value>
+                <value>
+                    <fullName>Soft tip</fullName>
+                    <default>false</default>
+                    <label>Soft tip</label>
+                </value>
+                <value>
+                    <fullName>Oil</fullName>
+                    <default>false</default>
+                    <label>Oil</label>
+                </value>
+                <value>
+                    <fullName>Disp Inst</fullName>
+                    <default>false</default>
+                    <label>Disp Inst</label>
+                </value>
+                <value>
+                    <fullName>Pack,  Needle, IA</fullName>
+                    <default>false</default>
+                    <label>Pack,  Needle, IA</label>
+                </value>
+                <value>
+                    <fullName>Monofocal IOL</fullName>
+                    <default>false</default>
+                    <label>Monofocal IOL</label>
+                </value>
+                <value>
+                    <fullName>PIOL</fullName>
+                    <default>false</default>
+                    <label>PIOL</label>
+                </value>
+                <value>
+                    <fullName>Toric IOL</fullName>
+                    <default>false</default>
+                    <label>Toric IOL</label>
+                </value>
+                <value>
+                    <fullName>OVD</fullName>
+                    <default>false</default>
+                    <label>OVD</label>
+                </value>
+                <value>
+                    <fullName>CTR</fullName>
+                    <default>false</default>
+                    <label>CTR</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>B&amp;L Product</label>
+    <nameField>
+        <displayFormat>BL-PRO-{0000000000}</displayFormat>
+        <label>BL Product Number</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>B&amp;L Products</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

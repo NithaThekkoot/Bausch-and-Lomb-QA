@@ -1,0 +1,50 @@
+<apex:page standardController="Product_Complaint_Product__c" tabStyle="Product_Complaint_Product__c" extensions="Product_Complaint_Product_View"> 
+  <apex:sectionHeader title="Product View" subtitle="View Product" id="sheader"/>
+<apex:message />
+  <apex:form id="form1">
+  <apex:actionFunction action="{!DeleteRecord}" name="DeleteRecord"></apex:actionFunction>
+  <apex:pageBlock title="Product" id="block1">
+    <apex:pageBlockButtons >
+            <apex:commandButton value="Edit" action="{!edit}" id="EditButton" rendered="{!isClosed}"/>
+            <apex:commandButton value="Delete"   id="deleteButton" onclick="if(confirm('Are you sure?')) return DeleteRecord(); else return false;" /> 
+<!--  
+<apex:commandButton value="Save" action="{!saveclick}" id="SaveButton" />
+<apex:commandButton value="Cancel" onclick="resetInlineEdit()" id="CancelButton" />
+-->
+    
+</apex:pageBlockButtons>
+  <apex:pageMessages />
+
+  <apex:pageBlockSection title="Product Information" id="sec1">
+          <apex:outputField value="{!PCP.Product_Description__c}"/ >
+          <apex:outputField value="{!PCP.Product_Type__c}" id="out1"/>  
+          <apex:outputField value="{!PCP.Product_Lot_Number__c}" />
+          <apex:outputField value="{!PCP.Expiration_Date__c}"/>
+          <apex:outputField value="{!PCP.Serial_Number__c}" />
+          <apex:outputField value="{!PCP.Product_Number__c}" />         
+          <apex:outputField value="{!PCP.Complaint_Quantity__c}" />
+           <apex:outputField value="{!PCP.Quantity_to_be_Returned__c}" />
+ </apex:pageBlockSection>  
+ <apex:pageBlockSection showHeader="false">        
+          <apex:outputField value="{!PCP.Manufacturing_Site__c}" rendered="{!isManufacturingSite}"/> 
+  </apex:pageBlockSection>
+  <apex:pageBlockSection showHeader="false"> 
+          <apex:outputField value="{!PCP.Product_Availability__c}"/>
+    </apex:pageBlockSection>    
+    <apex:pageBlockSection showHeader="false">             
+          <apex:outputField value="{!PCP.Comments__c}" />     
+  </apex:pageBlockSection>
+ <apex:pageBlockSection title="Return Information">
+           <apex:outputfield value="{!PCP.Quantity_Received__c}"/> 
+            <apex:outputfield value="{!PCP.Date_Received__c}"/> 
+            <apex:outputfield value="{!PCP.Date_Received_Subsidiary__c}"/>
+  </apex:pageBlockSection>
+
+ <apex:pageBlockSection title="Case Information"> 
+  <apex:outputField value="{!PCP.Case__c}"/>
+ </apex:pageBlockSection>
+   </apex:pageBlock>
+
+  </apex:form>
+  
+</apex:page>

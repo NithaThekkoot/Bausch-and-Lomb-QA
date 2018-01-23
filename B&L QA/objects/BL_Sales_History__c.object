@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>true</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>Account_Profile__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Account Profile</label>
+        <referenceTo>Account_Profile__c</referenceTo>
+        <relationshipLabel>B&amp;L Sales Histories</relationshipLabel>
+        <relationshipName>B_L_Sales_Histories</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>B&amp;L Sales Histories</relationshipLabel>
+        <relationshipName>B_L_Sales_Histories</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Sales_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Sales Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Sales_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Sales Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Equipment</fullName>
+                    <default>false</default>
+                    <label>Equipment</label>
+                </value>
+                <value>
+                    <fullName>Laser Probe</fullName>
+                    <default>false</default>
+                    <label>Laser Probe</label>
+                </value>
+                <value>
+                    <fullName>DDMS</fullName>
+                    <default>false</default>
+                    <label>DDMS</label>
+                </value>
+                <value>
+                    <fullName>Soft tip</fullName>
+                    <default>false</default>
+                    <label>Soft tip</label>
+                </value>
+                <value>
+                    <fullName>Sil OIL</fullName>
+                    <default>false</default>
+                    <label>Sil OIL</label>
+                </value>
+                <value>
+                    <fullName>Pinnacle</fullName>
+                    <default>false</default>
+                    <label>Pinnacle</label>
+                </value>
+                <value>
+                    <fullName>Eq Disposable</fullName>
+                    <default>false</default>
+                    <label>Eq Disposable</label>
+                </value>
+                <value>
+                    <fullName>Premium</fullName>
+                    <default>false</default>
+                    <label>Premium</label>
+                </value>
+                <value>
+                    <fullName>IOL</fullName>
+                    <default>false</default>
+                    <label>IOL</label>
+                </value>
+                <value>
+                    <fullName>OVD</fullName>
+                    <default>false</default>
+                    <label>OVD</label>
+                </value>
+                <value>
+                    <fullName>Instruments</fullName>
+                    <default>false</default>
+                    <label>Instruments</label>
+                </value>
+                <value>
+                    <fullName>Custom Pack</fullName>
+                    <default>false</default>
+                    <label>Custom Pack</label>
+                </value>
+                <value>
+                    <fullName>Crystalens</fullName>
+                    <default>false</default>
+                    <label>Crystalens</label>
+                </value>
+                <value>
+                    <fullName>Trulign</fullName>
+                    <default>false</default>
+                    <label>Trulign</label>
+                </value>
+                <value>
+                    <fullName>EnVista</fullName>
+                    <default>false</default>
+                    <label>EnVista</label>
+                </value>
+                <value>
+                    <fullName>Akreos</fullName>
+                    <default>false</default>
+                    <label>Akreos</label>
+                </value>
+                <value>
+                    <fullName>SofPort</fullName>
+                    <default>false</default>
+                    <label>SofPort</label>
+                </value>
+                <value>
+                    <fullName>CTR</fullName>
+                    <default>false</default>
+                    <label>CTR</label>
+                </value>
+                <value>
+                    <fullName>Cap Guard</fullName>
+                    <default>false</default>
+                    <label>Cap Guard</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Total_Sales__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Sales</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <label>B&amp;L Sales History</label>
+    <nameField>
+        <displayFormat>BL-SALES-{0000000000}</displayFormat>
+        <label>B&amp;L Sales History Name</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>B&amp;L Sales Histories</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <description>custom object for CPQ approval process</description>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>CataractMarginDirectorMin__c</fullName>
+        <externalId>false</externalId>
+        <label>Cataract Margin Director Min</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>RetinaMarginDirectorMin__c</fullName>
+        <externalId>false</externalId>
+        <label>Retina Margin Director Min</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>TotalDealMarginDirectorMin__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Deal Margin Director Min</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>TotalDealMarginRBDMax__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Deal Margin RBD Max</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>TotalDealMarginRBDMin__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Deal Margin RBD Min</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>TotalDealMargin_Allowed_NonDiscFlrPrice__c</fullName>
+        <description>TotalDealMargin_Allowed%Under non Discounted Floor Price</description>
+        <externalId>false</externalId>
+        <label>TotalDealMargin_Allowed%NonDiscFlrPrice</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <label>CPQ Business Validation Rules</label>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,29 @@
+<aura:component extends="c:GenericCrudComponent" 
+                implements="force:lightningQuickActionWithoutHeader,force:hasRecordId,flexipage:availableForRecordHome" 
+                controller="JavascriptButtonCntrl">
+    <aura:dependency resource="markup://force:*" type="EVENT"/>
+    <aura:attribute type="Boolean" name="showSpinner" default="true"/>
+    <aura:attribute name="recordId" type="Id"/>
+    <aura:attribute name="record" type="Object" />
+    <aura:attribute name="fields" type="Object" />
+    <ltng:require scripts="{!$Resource.docusign}" />
+  
+    <force:recordData aura:id="recordHandler"
+                      layoutType="FULL"
+                      recordId="{!v.recordId}"
+                      targetError="{!v.recordError}"
+                      targetRecord="{!v.record}"
+                      fields="Contact_Name__c,contact_last_name__c,Contact_first_name__c,Specify_Email__c,Consultant_Email__c,Consultant_LastName__c"
+                      targetFields="{!v.fields}"
+                      mode="VIEW"
+                      recordUpdated="{!c.recordLoadAction}"
+                      />
+   
+    {!v.body}
+    <div class="slds">
+        <aura:if isTrue="{!v.showSpinner}">
+            <lightning:spinner variant="brand" class="quick-action-contained"/>
+        </aura:if>
+    </div>
+    
+</aura:component>

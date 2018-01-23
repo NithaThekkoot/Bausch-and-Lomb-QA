@@ -1,0 +1,14 @@
+.THIS.slds{
+    position:relative !important;
+}
+.THIS .alertbox, .THIS .absolute{
+    position:absolute !important;
+}
+.THIS .aligner{
+    height: 22vh;
+    
+    text-align: center;
+}
+.THIS .no-outline{
+    outline:none !important;
+}

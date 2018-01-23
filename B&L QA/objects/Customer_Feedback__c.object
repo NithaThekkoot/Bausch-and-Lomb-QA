@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Capture Customer responses to questionairs</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Account_Name__c</fullName>
+        <description>Account Name</description>
+        <externalId>false</externalId>
+        <label>Account Name</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Customer Feedbacks</relationshipLabel>
+        <relationshipName>Customer_Feedbacks</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Additional_Comments__c</fullName>
+        <description>Did the Customer leave additional comments voice mail comments</description>
+        <externalId>false</externalId>
+        <label>Additional Comments</label>
+        <length>250</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Answer__c</fullName>
+        <description>Rating customer gave as an answer</description>
+        <externalId>false</externalId>
+        <label>Answer</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>1</fullName>
+                    <default>false</default>
+                    <label>1</label>
+                </value>
+                <value>
+                    <fullName>2</fullName>
+                    <default>false</default>
+                    <label>2</label>
+                </value>
+                <value>
+                    <fullName>3</fullName>
+                    <default>false</default>
+                    <label>3</label>
+                </value>
+                <value>
+                    <fullName>4</fullName>
+                    <default>false</default>
+                    <label>4</label>
+                </value>
+                <value>
+                    <fullName>5</fullName>
+                    <default>false</default>
+                    <label>5</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>CS_Specialist__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Customer Service Rep the customer talked to</description>
+        <externalId>false</externalId>
+        <label>CS Specialist</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Customer_Feedbacks</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Call_Date__c</fullName>
+        <description>Date of telephone Survey</description>
+        <externalId>false</externalId>
+        <label>Call Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Call_ID__c</fullName>
+        <description>Avaya Call Id</description>
+        <externalId>false</externalId>
+        <label>Call ID</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact_Name__c</fullName>
+        <description>Name of Customer Declining Survey</description>
+        <externalId>false</externalId>
+        <label>Contact Name</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Legacy_System_ID__c</fullName>
+        <description>External Id Field</description>
+        <externalId>true</externalId>
+        <label>Legacy System ID</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Participation_Response__c</fullName>
+        <description>Customer&apos;s Response to questionaire request</description>
+        <externalId>false</externalId>
+        <label>Participation Response</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>No - One Time</fullName>
+                    <default>false</default>
+                    <label>No - One Time</label>
+                </value>
+                <value>
+                    <fullName>Do Not Ask Again</fullName>
+                    <default>false</default>
+                    <label>Do Not Ask Again</label>
+                </value>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Question__c</fullName>
+        <description>Contains the text associate with the questions asked</description>
+        <externalId>false</externalId>
+        <label>Question</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Source__c</fullName>
+        <externalId>false</externalId>
+        <label>Source</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>CF Phone Feedback</fullName>
+                    <default>false</default>
+                    <label>CF Phone Feedback</label>
+                </value>
+                <value>
+                    <fullName>Manual</fullName>
+                    <default>true</default>
+                    <label>Manual</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Customer Feedback</label>
+    <nameField>
+        <displayFormat>{00000000}</displayFormat>
+        <label>Customer Feedback Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Customer Feedbacks</pluralLabel>
+    <recordTypes>
+        <fullName>CRC_Customer_Feedback</fullName>
+        <active>true</active>
+        <description>Record Type used to capture feedback for SU phone questionaire</description>
+        <label>CRC Customer Feedback</label>
+        <picklistValues>
+            <picklist>Answer__c</picklist>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Participation_Response__c</picklist>
+            <values>
+                <fullName>Do Not Ask Again</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No - One Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Source__c</picklist>
+            <values>
+                <fullName>CF Phone Feedback</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manual</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Manual</fullName>
+        <active>true</active>
+        <description>Used when customer declines phone survey</description>
+        <label>Manual</label>
+        <picklistValues>
+            <picklist>Answer__c</picklist>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>5</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Participation_Response__c</picklist>
+            <values>
+                <fullName>Do Not Ask Again</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No - One Time</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Source__c</picklist>
+            <values>
+                <fullName>CF Phone Feedback</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manual</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Prevent_Edit_of_Integration_Records</fullName>
+        <active>true</active>
+        <description>Prevents CS users from editing surveys integrated from Verint</description>
+        <errorConditionFormula>AND( $RecordType.Name == &quot;CRC Customer Survey&quot; , !Contains($Profile.Name ,&quot;Integration&quot;), !Contains($Profile.Name ,&quot;System Admin&quot;))</errorConditionFormula>
+        <errorMessage>You may not edit a record that has come from the CF Phone Survey software.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Response_Required</fullName>
+        <active>true</active>
+        <description>If Record Type = Manual Decline, then Participation Response is required</description>
+        <errorConditionFormula>$RecordType.DeveloperName = &apos;Manual&apos; &amp;&amp; text(Participation_Response__c) = &quot;&quot;</errorConditionFormula>
+        <errorDisplayField>Participation_Response__c</errorDisplayField>
+        <errorMessage>You Must Select A Participation Response</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>New_Feedback</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>New Feedback</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>/a1V/e?CF00NC0000005chuc={!Account.Name}&amp;CF00NC0000005chuc_lkid={!Account.Id}&amp;retURL=%2F{!Account.Id}&amp;saveURL=%2F{!Account.Id}</url>
+    </webLinks>
+</CustomObject>

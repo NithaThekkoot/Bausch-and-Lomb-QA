@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HomePageComponent xmlns="http://soap.sforce.com/2006/04/metadata">
+    <links>SFE_Calling_Report</links>
+    <links>SFE_Calling_Matrix_Report</links>
+    <links>SFE_Daily_Calling_report</links>
+    <links>SFE_Monthly_Average_Report</links>
+    <links>SFE_Plan_Matrix_Report</links>
+    <pageComponentType>links</pageComponentType>
+</HomePageComponent>

@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Alows the TM to submit requests for samples to be sent to the contact or account. 
+Originally created for ECS team. Now changed and used by EMEA SU.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Used by EMEA SU.</description>
+        <externalId>false</externalId>
+        <label>Customer Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Sample Requests</relationshipLabel>
+        <relationshipName>Sample_Requests</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Approver__c</fullName>
+        <description>Updated as part of the approval process, to the name of the manager who approved or rejected the request. Used by EMEA SU.</description>
+        <externalId>false</externalId>
+        <label>Approved/Rejected By</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Sample Requests</relationshipLabel>
+        <relationshipName>Sample_Requests</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Courier__c</fullName>
+        <description>The TM&apos;s preferred courier for this sample delivery. Used by EMEA SU.</description>
+        <externalId>false</externalId>
+        <label>Courier</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>Bring Parcel</fullName>
+                    <default>false</default>
+                    <label>Bring Parcel</label>
+                </value>
+                <value>
+                    <fullName>DHL</fullName>
+                    <default>false</default>
+                    <label>DHL</label>
+                </value>
+                <value>
+                    <fullName>ParcelForce</fullName>
+                    <default>false</default>
+                    <label>ParcelForce</label>
+                </value>
+                <value>
+                    <fullName>Polarspeed</fullName>
+                    <default>false</default>
+                    <label>Polarspeed</label>
+                </value>
+                <value>
+                    <fullName>UPS</fullName>
+                    <default>false</default>
+                    <label>UPS</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Customer_Svc_Email_Address__c</fullName>
+        <defaultValue>&quot;crc_sales_support@bausch.com&quot;</defaultValue>
+        <externalId>false</externalId>
+        <label>Customer Svc Email Address</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Date_Request_Fulfilled__c</fullName>
+        <externalId>false</externalId>
+        <label>Date Request Fulfilled</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Date_Request_Submitted__c</fullName>
+        <externalId>false</externalId>
+        <label>Date Request Submitted</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Deliver_to_the_Customer__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Indicates whether the sample/s should be delivered directly to the customer. If unchecked the default is for samples to be shipped to the Sales Rep. Used by EMEA SU.</description>
+        <externalId>false</externalId>
+        <label>Deliver to the Customer?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Delivery_by__c</fullName>
+        <description>Date the delivery needs to have been made. Used by EMEA SU.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter the date that you need the samples delivered by.</inlineHelpText>
+        <label>Delivery by</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Frequency__c</fullName>
+        <externalId>false</externalId>
+        <label>Frequency</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>One Time</fullName>
+                    <default>true</default>
+                    <label>One Time</label>
+                </value>
+                <value>
+                    <fullName>Weekly</fullName>
+                    <default>false</default>
+                    <label>Weekly</label>
+                </value>
+                <value>
+                    <fullName>Monthly</fullName>
+                    <default>false</default>
+                    <label>Monthly</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Request_Notes__c</fullName>
+        <externalId>false</externalId>
+        <label>Request Notes</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Request_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Request Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Request Submitted</fullName>
+                    <default>false</default>
+                    <label>Request Submitted</label>
+                </value>
+                <value>
+                    <fullName>Request Fulfilled</fullName>
+                    <default>false</default>
+                    <label>Request Fulfilled</label>
+                </value>
+                <value>
+                    <fullName>Request Issue</fullName>
+                    <default>false</default>
+                    <label>Request Issue</label>
+                </value>
+                <value>
+                    <fullName>New</fullName>
+                    <default>true</default>
+                    <label>New</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Requested_By__c</fullName>
+        <externalId>false</externalId>
+        <formula>CreatedBy.FirstName &amp; &quot; &quot; &amp;  CreatedBy.LastName</formula>
+        <label>Requested By</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Ship_To_Address__c</fullName>
+        <externalId>false</externalId>
+        <formula>Account__r.ShippingStreet &amp; &quot;, &quot; &amp;  Account__r.ShippingCity &amp; &quot;, &quot; &amp;  Account__r.ShippingState &amp; &quot;  &quot; &amp;  Account__r.ShippingPostalCode</formula>
+        <label>Ship To Address</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Ship_To_ID__c</fullName>
+        <description>Ship To ID of the Account. Used by EMEA SU.</description>
+        <externalId>false</externalId>
+        <formula>Account__r.Ship_To_Id__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Ship To ID</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Submit_for_Approval__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Triggers the workflow that populates the appropriate CS email address and sends the request email. Used by EMEA SU.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Only check this box once you have added all of the required Sample Products to the request</inlineHelpText>
+        <label>Submit to Customer Services</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Territory_Manager_Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The personal account of the Territory Manager who is placing the sample request order and to whom the order should be shipped. Used by EMEA SU.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Account of the Territory Manager placing the sample request order.</inlineHelpText>
+        <label>Territory Manager Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Sample Requests (Delivery Account)</relationshipLabel>
+        <relationshipName>Sample_Requests1</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>Sample Request</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Account__c</columns>
+        <columns>Contact__c</columns>
+        <columns>Date_Request_Submitted__c</columns>
+        <columns>Date_Request_Fulfilled__c</columns>
+        <columns>Request_Status__c</columns>
+        <columns>Frequency__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>All1</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>Customer_Service</fullName>
+        <columns>Requested_By__c</columns>
+        <columns>Date_Request_Submitted__c</columns>
+        <columns>Account__c</columns>
+        <columns>Contact__c</columns>
+        <columns>Frequency__c</columns>
+        <columns>Request_Status__c</columns>
+        <filterScope>Queue</filterScope>
+        <filters>
+            <field>Request_Status__c</field>
+            <operation>equals</operation>
+            <value>Request Submitted</value>
+        </filters>
+        <label>Customer Service</label>
+        <queue>NALCustomerService</queue>
+    </listViews>
+    <nameField>
+        <displayFormat>{000000}</displayFormat>
+        <label>Sample Request ID</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Sample Requests</pluralLabel>
+    <recordTypes>
+        <fullName>EMEA_SU_Sample_Request</fullName>
+        <active>true</active>
+        <description>Product Sample Request form for EMEA Surgical</description>
+        <label>EMEA SU Sample Request</label>
+        <picklistValues>
+            <picklist>Courier__c</picklist>
+            <values>
+                <fullName>Bring Parcel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DHL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ParcelForce</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Polarspeed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UPS</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Frequency__c</picklist>
+            <values>
+                <fullName>Monthly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>One Time</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Weekly</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Request_Status__c</picklist>
+            <values>
+                <fullName>New</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Request Fulfilled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Request Issue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Request Submitted</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <lookupDialogsAdditionalFields>Account__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Ship_To_ID__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Contact__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Date_Request_Submitted__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Requested_By__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Request_Status__c</lookupDialogsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

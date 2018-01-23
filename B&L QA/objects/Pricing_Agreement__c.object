@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>EMEA SU</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Account to which this price set / pricing agreement is related. EMEA SU.</description>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Pricing Agreements</relationshipLabel>
+        <relationshipName>Pricing_Agreements</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Bill_To_Address__c</fullName>
+        <description>EMEA SU</description>
+        <externalId>false</externalId>
+        <formula>Account__r.BillingStreet &amp; BR() &amp; Account__r.BillingCity &amp; BR() &amp; Account__r.BillingState &amp; BR() &amp; Account__r.BillingPostalCode &amp; BR() &amp; Account__r.BillingCountry</formula>
+        <label>Bill To Address</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contract__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Contract to which this price set / pricing agreement is related. EMEA SU.</description>
+        <externalId>false</externalId>
+        <label>Contract</label>
+        <referenceTo>Contract</referenceTo>
+        <relationshipLabel>Pricing Agreements</relationshipLabel>
+        <relationshipName>Pricing_Agreements</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Customer_Group__c</fullName>
+        <description>EMEA SU</description>
+        <externalId>false</externalId>
+        <label>Customer Group</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>BMI - UKPRCGMB</fullName>
+                    <default>false</default>
+                    <label>BMI - UKPRCGMB</label>
+                </value>
+                <value>
+                    <fullName>Spire - UKSU001</fullName>
+                    <default>false</default>
+                    <label>Spire - UKSU001</label>
+                </value>
+                <value>
+                    <fullName>Ramsay - UKPRCGRH</fullName>
+                    <default>false</default>
+                    <label>Ramsay - UKPRCGRH</label>
+                </value>
+                <value>
+                    <fullName>Nuffield - UKPRCGMC</fullName>
+                    <default>false</default>
+                    <label>Nuffield - UKPRCGMC</label>
+                </value>
+                <value>
+                    <fullName>Care UK - UKSU002</fullName>
+                    <default>false</default>
+                    <label>Care UK - UKSU002</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>End_Date__c</fullName>
+        <description>EMEA SU</description>
+        <externalId>false</externalId>
+        <label>End Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Search_Information__c</fullName>
+        <description>Contains info like ship to id so that price agreements are returned in global searches</description>
+        <externalId>false</externalId>
+        <label>Search Information</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Start_Date__c</fullName>
+        <description>EMEA SU</description>
+        <externalId>false</externalId>
+        <label>Start Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <label>Pricing Agreement</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Account__c</columns>
+        <columns>Bill_To_Address__c</columns>
+        <columns>Contract__c</columns>
+        <columns>Customer_Group__c</columns>
+        <columns>Start_Date__c</columns>
+        <columns>End_Date__c</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+        <sharedTo>
+            <group>EMEASUContractManagers</group>
+            <group>EMEASU_Tender_Office_Group</group>
+        </sharedTo>
+    </listViews>
+    <nameField>
+        <label>Price Agreement Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Pricing Agreements</pluralLabel>
+    <recordTypes>
+        <fullName>EMEASU_Price_Agreement</fullName>
+        <active>true</active>
+        <description>EMEASU RT</description>
+        <label>EMEASU Price Agreement</label>
+        <picklistValues>
+            <picklist>Customer_Group__c</picklist>
+            <values>
+                <fullName>BMI - UKPRCGMB</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Care UK - UKSU002</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nuffield - UKPRCGMC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ramsay - UKPRCGRH</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Spire - UKSU001</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>Account__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Contract__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Customer_Group__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Start_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>End_Date__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Account__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Contract__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Customer_Group__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Start_Date__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>End_Date__c</lookupDialogsAdditionalFields>
+        <searchResultsAdditionalFields>Account__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Contract__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Customer_Group__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Start_Date__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>End_Date__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>Populate_Product_Groups</fullName>
+        <availability>online</availability>
+        <description>Populate Product Groups in Pricing for Contracts</description>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Populate Product Groups</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>http://161.242.117.249/Populate_Product_Groups?PAGR1={!Pricing_Agreement__c.Id}</url>
+    </webLinks>
+</CustomObject>

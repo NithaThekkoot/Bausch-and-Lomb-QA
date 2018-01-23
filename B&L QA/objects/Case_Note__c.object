@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>For Product Complaints, synchronizes with the Notes table in CW.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>CATSWeb_Complaint_Number__c</fullName>
+        <description>For Product Complaints</description>
+        <externalId>false</externalId>
+        <formula>Case__r.CATSWeb_Complaint_Number__c</formula>
+        <label>CATSWeb Complaint Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Case_ID_18__c</fullName>
+        <description>For Product Complaints, need the 18-digit ID for the related case to send in Outbound Messages.</description>
+        <externalId>false</externalId>
+        <formula>Case__r.ID_18__c</formula>
+        <label>Case ID 18</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Case__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup to Case</description>
+        <externalId>false</externalId>
+        <label>Case (Do not edit)</label>
+        <referenceTo>Case</referenceTo>
+        <relationshipLabel>Case Notes</relationshipLabel>
+        <relationshipName>Case_Notes</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Employee_Assigned_To__c</fullName>
+        <description>For Product Complaints</description>
+        <externalId>false</externalId>
+        <formula>Case__r.Employee_Assigned_To__c</formula>
+        <label>Employee Assigned To</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ID_18__c</fullName>
+        <description>For Product Complaints, need the 18-digit value of the ID for outbound messages</description>
+        <externalId>false</externalId>
+        <formula>Id&amp;
+CASE(
+IF(CONTAINS(&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;,RIGHT(LEFT(Id,3),1)),4,0)+
+IF(CONTAINS(&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;,RIGHT(LEFT(Id,4),1)),8,0)+
+IF(CONTAINS(&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;,RIGHT(LEFT(Id,5),1)),16,0),
+0,&quot;A&quot;,1,&quot;B&quot;,2,&quot;C&quot;,3,&quot;D&quot;,4,&quot;E&quot;,5,&quot;F&quot;,6,&quot;G&quot;,7,&quot;H&quot;,8,&quot;I&quot;,
+9,&quot;J&quot;,10,&quot;K&quot;,11,&quot;L&quot;,12,&quot;M&quot;,13,&quot;N&quot;,14,&quot;O&quot;,15,&quot;P&quot;,16,&quot;Q&quot;,17,&quot;R&quot;,
+18,&quot;S&quot;,19,&quot;T&quot;,20,&quot;U&quot;,21,&quot;V&quot;,22,&quot;W&quot;,23,&quot;X&quot;,24,&quot;Y&quot;,25,&quot;Z&quot;,26,&quot;0&quot;,
+27,&quot;1&quot;,28,&quot;2&quot;,29,&quot;3&quot;,30,&quot;4&quot;,31,&quot;5&quot;,&quot;0&quot;)&amp;
+&quot;A&quot;&amp;
+CASE(
+IF(CONTAINS(&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;,RIGHT(LEFT(Id,11),1)),1,0)+
+IF(CONTAINS(&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;,RIGHT(LEFT(Id,12),1)),2,0)+
+IF(CONTAINS(&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;,RIGHT(LEFT(Id,13),1)),4,0)+
+IF(CONTAINS(&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;,RIGHT(LEFT(Id,14),1)),8,0)+
+IF(CONTAINS(&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;,RIGHT(LEFT(Id,15),1)),16,0),
+0,&quot;A&quot;,1,&quot;B&quot;,2,&quot;C&quot;,3,&quot;D&quot;,4,&quot;E&quot;,5,&quot;F&quot;,6,&quot;G&quot;,7,&quot;H&quot;,8,&quot;I&quot;,
+9,&quot;J&quot;,10,&quot;K&quot;,11,&quot;L&quot;,12,&quot;M&quot;,13,&quot;N&quot;,14,&quot;O&quot;,15,&quot;P&quot;,16,&quot;Q&quot;,17,&quot;R&quot;,
+18,&quot;S&quot;,19,&quot;T&quot;,20,&quot;U&quot;,21,&quot;V&quot;,22,&quot;W&quot;,23,&quot;X&quot;,24,&quot;Y&quot;,25,&quot;Z&quot;,26,&quot;0&quot;,
+27,&quot;1&quot;,28,&quot;2&quot;,29,&quot;3&quot;,30,&quot;4&quot;,31,&quot;5&quot;,&quot;0&quot;)</formula>
+        <label>ID 18</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Last_Modified_By_Email__c</fullName>
+        <description>For Product Complaints, need to know the Last Modified By email address, so that any errors can be sent to the user who needs them</description>
+        <externalId>false</externalId>
+        <formula>LastModifiedBy.Email</formula>
+        <label>Last Modified By Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Note_Body_Local__c</fullName>
+        <externalId>false</externalId>
+        <label>Note Body (Local)</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Note_Body__c</fullName>
+        <externalId>false</externalId>
+        <label>Note Body</label>
+        <length>32768</length>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>15</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Reason_for_Edit_Prior_Value__c</fullName>
+        <description>Holds the prior value of the Reason for Edit</description>
+        <externalId>false</externalId>
+        <label>Reason for Edit Prior Value</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Reason_for_Edit__c</fullName>
+        <externalId>false</externalId>
+        <label>Reason for Edit</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Send_to_CATSWeb__c</fullName>
+        <description>For Product Complaints, this tells the workflow whether or not to send the record to CATSWeb.  Value set to Yes when Case is sent to CW and a CW Complaint Number is returned.</description>
+        <externalId>false</externalId>
+        <label>Send to CATSWeb</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>true</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Case Note</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>{0000}</displayFormat>
+        <label>Case Note Number</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Case Notes</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Note_Body__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Reason_for_Edit_Prior_Value__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CREATEDBY_USER</customTabListAdditionalFields>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <lookupDialogsAdditionalFields>Note_Body__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Note_Body__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Reason_for_Edit_Prior_Value__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CREATEDBY_USER</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Case__c</searchFilterFields>
+        <searchFilterFields>CREATEDBY_USER</searchFilterFields>
+        <searchResultsAdditionalFields>Note_Body__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Reason_for_Edit_Prior_Value__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CREATEDBY_USER</searchResultsAdditionalFields>
+        <searchResultsCustomButtons>New_Case_Note</searchResultsCustomButtons>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>ProductComplaint_CaseClosed</fullName>
+        <active>true</active>
+        <description>If the Case is closed, then no Notes can be added or modified.</description>
+        <errorConditionFormula>and(
+  $User.Profile__c &lt;&gt; &quot;BL: Integration User&quot;,
+  IsPickVal(Case__r.Status, &quot;Closed&quot;),
+  NOT(IsNull(Case__r.Complaint_Action_ID__c))
+)</errorConditionFormula>
+        <errorMessage>Once a Product Complaint has been closed, no additional changes may be made. The Product Complaint can be reopened in CATSWeb.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>ProductComplaint_EditDeleteNotAllowed</fullName>
+        <active>true</active>
+        <description>For product complaint notes, only allow the user that created the note update or delete it.</description>
+        <errorConditionFormula>and (
+  Not(IsNew()), 
+  CreatedBy.Id &lt;&gt; $User.Id, 
+  Not($User.Profile__c = &quot;BL: Integration User&quot;),
+  Not($User.Profile__c = &quot;BL: System Admin SSO&quot;)
+)</errorConditionFormula>
+        <errorDisplayField>Note_Body__c</errorDisplayField>
+        <errorMessage>Only the person that created this Case Note can modify or delete it.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>ProductComplaint_ReasonForEditRequired</fullName>
+        <active>true</active>
+        <description>For Product Complaints, all changes to Case Notes require a Reason for Edit to be Entered.</description>
+        <errorConditionFormula>and (
+  Not($User.Profile__c = &quot;BL: Integration User&quot;),
+  Not(IsNew()),
+  Case__r.CATSWeb_Complaint_Number__c &lt;&gt; &quot;&quot;,
+  Reason_for_Edit_Prior_Value__c = &quot;&quot; 
+)</errorConditionFormula>
+        <errorDisplayField>Reason_for_Edit__c</errorDisplayField>
+        <errorMessage>All changes to Case Notes require a Reason for Edit once the Complaint has been sent to CATSWeb.</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+    <webLinks>
+        <fullName>New_Case_Note</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>New Case Note</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>/{!$Setup.CATSWeb_Resources__c.Case_Note_Object_Id__c}/e?&amp;CF{!$Setup.CATSWeb_Resources__c.Case_Note_Case_Number_Field_ID__c}={!Case.CaseNumber}&amp;&amp;CF{!$Setup.CATSWeb_Resources__c.Case_Note_Case_Number_Field_ID__c}_lkid={!Case.Id}&amp;retURL={!Case.Id}&amp;saveURL={!Case.Id}</url>
+    </webLinks>
+</CustomObject>

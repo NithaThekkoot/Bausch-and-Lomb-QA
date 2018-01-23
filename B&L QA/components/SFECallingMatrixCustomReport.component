@@ -1,0 +1,120 @@
+<apex:component controller="clsSFECallingMatrixCustomReport" access="global">
+    <apex:attribute name="dealid" assignTo="{!APACId}" type="String" description="The ID of a APAC Summary for which we want to generate a confirmation."/>
+    
+    <apex:dataTable value="{!lstCallSummary}" var="lstAPACCall" border="0">
+            <!--<apex:column>
+                <apex:facet name="header">Name</apex:facet>
+                {!contact.Name}
+            </apex:column>-->
+             <apex:column headerValue="Manager" style="text-align: left;"> 
+                <apex:outputText value="{!lstAPACCall.strManagerName}" rendered="{!IF(lstAPACCall.strRegion != null,true,false)}" style="white-space:nowrap;"></apex:outputText>
+                <!--<apex:outputText value="{!lstAPACCall.strTotalRegion}" rendered="{!IF(lstAPACCall.strTotalRegion != null,true,false)}" style="font-weight: bold; white-space:nowrap;"></apex:outputText>-->
+            </apex:column>
+            <apex:column headerValue="Region" style="text-align: left;"> 
+                <apex:outputText value="{!lstAPACCall.strRegion}" rendered="{!IF(lstAPACCall.strRegion != null,true,false)}" style="white-space:nowrap;"></apex:outputText>
+                <apex:outputText value="{!lstAPACCall.strTotalRegion}" rendered="{!IF(lstAPACCall.strTotalRegion != null,true,false)}" style="font-weight: bold; white-space:nowrap;"></apex:outputText>
+            </apex:column>
+            <apex:column value="{!lstAPACCall.strCity}" headerValue="City" style="white-space:nowrap; text-align: left;"/>              
+            <apex:column value="{!lstAPACCall.strName}" headerValue="SE/SCRM" style="white-space:nowrap; text-align: left;"/> 
+            <apex:column headerValue="Master Call List (A)" headerClass="align: center;" style="text-align: center;">
+                <apex:outputText value="{!lstAPACCall.IntTotalAccountsofA}" rendered="{!IF(lstAPACCall.strRegion != null,true,false)}" style="white-space:nowrap;"></apex:outputText>
+                <apex:outputText value="{!lstAPACCall.IntTotalTotAccountsofA}" rendered="{!IF(lstAPACCall.strTotalRegion != null,true,false)}" style="font-weight: bold;"></apex:outputText>
+            </apex:column>
+            <apex:column headerValue="Master Call List (B)" headerClass="align: center;" style="text-align: center;">
+                <apex:outputText value="{!lstAPACCall.IntTotalAccountsofB}" rendered="{!IF(lstAPACCall.strRegion != null,true,false)}" style="white-space:nowrap;"></apex:outputText>                    
+                <apex:outputText value="{!lstAPACCall.IntTotalTotAccountsofB}" rendered="{!IF(lstAPACCall.strTotalRegion != null,true,false)}" style="font-weight: bold;"></apex:outputText>                    
+            </apex:column>
+            <apex:column headerValue="Master Call List (C)" headerClass="align: center;" style="text-align: center;">
+                <apex:outputText value="{!lstAPACCall.IntTotalAccountsofC}" rendered="{!IF(lstAPACCall.strRegion != null,true,false)}" style="white-space:nowrap;"></apex:outputText>
+                <apex:outputText value="{!lstAPACCall.IntTotalTotAccountsofC}" rendered="{!IF(lstAPACCall.strTotalRegion != null,true,false)}" style="font-weight: bold;"></apex:outputText>
+            </apex:column>
+            <apex:column headerValue="Master Call List (D)" headerClass="align: center;" style="text-align: center;">
+                <apex:outputText value="{!lstAPACCall.IntTotalAccountsOthers}" rendered="{!IF(lstAPACCall.strRegion != null,true,false)}" style="white-space:nowrap;"></apex:outputText>
+                <apex:outputText value="{!lstAPACCall.IntTotalTotAccountsOthers}" rendered="{!IF(lstAPACCall.strTotalRegion != null,true,false)}" style="font-weight: bold;"></apex:outputText>
+            </apex:column>
+            <apex:column headerValue="Master Call List (Total)" headerClass="align: center;" style="text-align: center;">
+                <apex:outputText value="{!lstAPACCall.IntTotalAccounts}" rendered="{!IF(lstAPACCall.strRegion != null,true,false)}" style="white-space:nowrap;"></apex:outputText>
+                <apex:outputText value="{!lstAPACCall.IntTotalTotAccounts}" rendered="{!IF(lstAPACCall.strTotalRegion != null,true,false)}" style="font-weight: bold;"></apex:outputText>
+            </apex:column>
+            <apex:column headerValue="Field Days" headerClass="align: center;" style="text-align: center;">  
+                <apex:outputText value="{!lstAPACCall.IntFieldDays}" rendered="{!IF(lstAPACCall.strRegion != null,true,false)}" style="white-space:nowrap;"></apex:outputText>
+                <apex:outputText value="{!lstAPACCall.IntTotalFieldDays}" rendered="{!IF(lstAPACCall.strTotalRegion != null,true,false)}" style="font-weight: bold;"></apex:outputText>
+            </apex:column>
+            <apex:column headerValue="Planned Calls (A)" headerClass="align: center;" style="text-align: center;">
+                <apex:outputText value="{!lstAPACCall.IntPlannedCallsofA}" rendered="{!IF(lstAPACCall.strRegion != null,true,false)}" style="white-space:nowrap;"></apex:outputText>
+                <apex:outputText value="{!lstAPACCall.IntTotalPlannedCallsofA}" rendered="{!IF(lstAPACCall.strTotalRegion != null,true,false)}" style="font-weight: bold;"></apex:outputText>
+            </apex:column>
+            <apex:column headerValue="Planned Calls (B)" headerClass="align: center;" style="text-align: center;">
+                <apex:outputText value="{!lstAPACCall.IntPlannedCallsofB}" rendered="{!IF(lstAPACCall.strRegion != null,true,false)}" style="white-space:nowrap;"></apex:outputText>
+                <apex:outputText value="{!lstAPACCall.IntTotalPlannedCallsofB}" rendered="{!IF(lstAPACCall.strTotalRegion != null,true,false)}" style="font-weight: bold;"></apex:outputText>
+            </apex:column>
+            <apex:column headerValue="Planned Calls (C)" headerClass="align: center;" style="text-align: center;">
+                <apex:outputText value="{!lstAPACCall.IntPlannedCallsofC}" rendered="{!IF(lstAPACCall.strRegion != null,true,false)}" style="white-space:nowrap;"></apex:outputText>
+                <apex:outputText value="{!lstAPACCall.IntTotalPlannedCallsofC}" rendered="{!IF(lstAPACCall.strTotalRegion != null,true,false)}" style="font-weight: bold;"></apex:outputText>
+            </apex:column>
+            <apex:column headerValue="Planned Calls (D)" headerClass="align: center;" style="text-align: center;">
+                <apex:outputText value="{!lstAPACCall.IntPlannedCallsOthers}" rendered="{!IF(lstAPACCall.strRegion != null,true,false)}" style="white-space:nowrap;"></apex:outputText>
+                <apex:outputText value="{!lstAPACCall.IntTotalPlannedCallsOthers}" rendered="{!IF(lstAPACCall.strTotalRegion != null,true,false)}" style="font-weight: bold;"></apex:outputText>
+            </apex:column>
+            <apex:column headerValue="Planned Calls (Total)" headerClass="align: center;" style="text-align: center;">
+                <apex:outputText value="{!lstAPACCall.IntPlannedCalls}" rendered="{!IF(lstAPACCall.strRegion != null,true,false)}" style="white-space:nowrap;"></apex:outputText>
+                <apex:outputText value="{!lstAPACCall.IntTotalPlannedCalls}" rendered="{!IF(lstAPACCall.strTotalRegion != null,true,false)}" style="font-weight: bold;"></apex:outputText>
+            </apex:column>
+            <apex:column headerValue="Actual Planned Calls (A)" headerClass="align: center;" style="text-align: center;">              
+                <apex:outputText value="{!lstAPACCall.IntTargetCallsofA}" rendered="{!IF(lstAPACCall.strRegion != null,true,false)}" style="white-space:nowrap;"></apex:outputText>
+                <apex:outputText value="{!lstAPACCall.IntTotalTargetCallsofA}" rendered="{!IF(lstAPACCall.strTotalRegion != null,true,false)}" style="font-weight: bold;"></apex:outputText>
+            </apex:column>
+            <apex:column headerValue="Actual Planned Calls (B)" headerClass="align: center;" style="text-align: center;">              
+                <apex:outputText value="{!lstAPACCall.IntTargetCallsofB}" rendered="{!IF(lstAPACCall.strRegion != null,true,false)}" style="white-space:nowrap;"></apex:outputText>
+                <apex:outputText value="{!lstAPACCall.IntTotalTargetCallsofB}" rendered="{!IF(lstAPACCall.strTotalRegion != null,true,false)}" style="font-weight: bold;"></apex:outputText>
+            </apex:column>
+            <apex:column headerValue="Actual Planned Calls (C)" headerClass="align: center;" style="text-align: center;">              
+                <apex:outputText value="{!lstAPACCall.IntTargetCallsofC}" rendered="{!IF(lstAPACCall.strRegion != null,true,false)}" style="white-space:nowrap;"></apex:outputText>
+                <apex:outputText value="{!lstAPACCall.IntTotalTargetCallsofC}" rendered="{!IF(lstAPACCall.strTotalRegion != null,true,false)}" style="font-weight: bold;"></apex:outputText>
+            </apex:column>
+            <apex:column headerValue="Actual Planned Calls (D)" headerClass="align: center;" style="text-align: center;">              
+                <apex:outputText value="{!lstAPACCall.IntTargetCallsOthers}" rendered="{!IF(lstAPACCall.strRegion != null,true,false)}" style="white-space:nowrap;"></apex:outputText>
+                <apex:outputText value="{!lstAPACCall.IntTotalTargetCallsOthers}" rendered="{!IF(lstAPACCall.strTotalRegion != null,true,false)}" style="font-weight: bold;"></apex:outputText>
+            </apex:column>
+            <apex:column headerValue="Actual Planned Calls (Total)" headerClass="align: center;" style="text-align: center;">              
+                <apex:outputText value="{!lstAPACCall.IntTargetCalls}" rendered="{!IF(lstAPACCall.strRegion != null,true,false)}" style="white-space:nowrap;"></apex:outputText>
+                <apex:outputText value="{!lstAPACCall.IntTotalTargetCalls}" rendered="{!IF(lstAPACCall.strTotalRegion != null,true,false)}" style="font-weight: bold;"></apex:outputText>
+            </apex:column>
+            <apex:column headerValue="Unplanned Calls (A)" headerClass="align: center;" style="text-align: center;">
+                <apex:outputText value="{!lstAPACCall.IntUnplannedCallsofA}" rendered="{!IF(lstAPACCall.strRegion != null,true,false)}" style="white-space:nowrap;"></apex:outputText>
+                <apex:outputText value="{!lstAPACCall.IntTotalUnplannedCallsofA}" rendered="{!IF(lstAPACCall.strTotalRegion != null,true,false)}" style="font-weight: bold;"></apex:outputText>
+            </apex:column>
+            <apex:column headerValue="Unplanned Calls (B)" headerClass="align: center;" style="text-align: center;">
+                <apex:outputText value="{!lstAPACCall.IntUnplannedCallsofB}" rendered="{!IF(lstAPACCall.strRegion != null,true,false)}" style="white-space:nowrap;"></apex:outputText>
+                <apex:outputText value="{!lstAPACCall.IntTotalUnplannedCallsofB}" rendered="{!IF(lstAPACCall.strTotalRegion != null,true,false)}" style="font-weight: bold;"></apex:outputText>
+            </apex:column>
+            <apex:column headerValue="Unplanned Calls (C)" headerClass="align: center;" style="text-align: center;">
+                <apex:outputText value="{!lstAPACCall.IntUnplannedCallsofC}" rendered="{!IF(lstAPACCall.strRegion != null,true,false)}" style="white-space:nowrap;"></apex:outputText>
+                <apex:outputText value="{!lstAPACCall.IntTotalUnplannedCallsofC}" rendered="{!IF(lstAPACCall.strTotalRegion != null,true,false)}" style="font-weight: bold;"></apex:outputText>
+            </apex:column>
+            <apex:column headerValue="Unplanned Calls (D)" headerClass="align: center;" style="text-align: center;">
+                <apex:outputText value="{!lstAPACCall.IntUnplannedCallsOthers}" rendered="{!IF(lstAPACCall.strRegion != null,true,false)}" style="white-space:nowrap;"></apex:outputText>
+                <apex:outputText value="{!lstAPACCall.IntTotalUnplannedCallsOthers}" rendered="{!IF(lstAPACCall.strTotalRegion != null,true,false)}" style="font-weight: bold;"></apex:outputText>
+            </apex:column>
+            <apex:column headerValue="Unplanned Calls (Total)" headerClass="align: center;" style="text-align: center;">
+                <apex:outputText value="{!lstAPACCall.IntUnplannedCalls}" rendered="{!IF(lstAPACCall.strRegion != null,true,false)}" style="white-space:nowrap;"></apex:outputText>
+                <apex:outputText value="{!lstAPACCall.IntTotalUnplannedCalls}" rendered="{!IF(lstAPACCall.strTotalRegion != null,true,false)}" style="font-weight: bold;"></apex:outputText>
+            </apex:column>
+            <apex:column headerValue="Total Calls" headerClass="align: center;" style="text-align: center;">
+                <apex:outputText value="{!lstAPACCall.IntActualCalls}" rendered="{!IF(lstAPACCall.strRegion != null,true,false)}" style="white-space:nowrap;"></apex:outputText>
+                <apex:outputText value="{!lstAPACCall.IntTotalActualCalls}" rendered="{!IF(lstAPACCall.strTotalRegion != null,true,false)}" style="font-weight: bold;"></apex:outputText>
+            </apex:column>
+            <apex:column headerValue="Call% to planned" headerClass="align: center;" style="text-align: center;">                
+                <apex:outputText value="{!lstAPACCall.IntCallstoPlan}" rendered="{!IF(lstAPACCall.strRegion != null,true,false)}" style="white-space:nowrap;"></apex:outputText>
+                <apex:outputText value="{!lstAPACCall.IntTotalCallstoPlan}" rendered="{!IF(lstAPACCall.strTotalRegion != null,true,false)}" style="font-weight: bold;"></apex:outputText>
+            </apex:column>
+            <apex:column headerValue="Avg Calls/day" headerClass="align: center;" style="text-align: center;">
+                <apex:outputText value="{!lstAPACCall.IntAvgCallPerDay}" rendered="{!IF(lstAPACCall.strRegion != null,true,false)}" style="white-space:nowrap;"></apex:outputText>
+                <apex:outputText value="{!lstAPACCall.IntTotalAvgCallPerDay}" rendered="{!IF(lstAPACCall.strTotalRegion != null,true,false)}" style="font-weight: bold;"></apex:outputText>
+            </apex:column>
+            <apex:column headerValue="Total OT Hours" headerClass="align: center;" style="text-align: center;">
+                <apex:outputText value="{!lstAPACCall.IntOTHours}" rendered="{!IF(lstAPACCall.strRegion != null,true,false)}" style="white-space:nowrap;"></apex:outputText>
+                <apex:outputText value="{!lstAPACCall.IntTotalOTHours}" rendered="{!IF(lstAPACCall.strTotalRegion != null,true,false)}" style="font-weight: bold;"></apex:outputText>
+            </apex:column>
+        </apex:dataTable>
+</apex:component>

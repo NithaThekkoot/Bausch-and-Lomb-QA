@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>To store summarized Ship To Sales data, by Ship To, for all Ship Tos related to a Doorway</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Doorway_Account_Id__c</fullName>
+        <description>This will be populated with Doorway SFDC Account Id</description>
+        <externalId>false</externalId>
+        <label>Doorway</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Sales Data By Ship To (Doorway)</relationshipLabel>
+        <relationshipName>Ship_To_Sales_Data</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Legacy_System_Id__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>true</externalId>
+        <label>Legacy System Id</label>
+        <length>25</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Legacy_System_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Legacy System Name</label>
+        <length>25</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Prior_Year_QTD__c</fullName>
+        <externalId>false</externalId>
+        <label>Prior Year Qtr.</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Prior_Year_YTD__c</fullName>
+        <externalId>false</externalId>
+        <label>Full Prior Year</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>QTD__c</fullName>
+        <externalId>false</externalId>
+        <label>Current QTD</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Ship_To_Account_Id__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>This will be populated with Ship To SFDC Account Id</description>
+        <externalId>false</externalId>
+        <label>Ship To</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Sales Data By Ship To (Ship To)</relationshipLabel>
+        <relationshipName>Ship_To_Sales_Data1</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Units_Prior_QTD__c</fullName>
+        <externalId>false</externalId>
+        <label>Units Prior QTD</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Units_Prior_YTD__c</fullName>
+        <externalId>false</externalId>
+        <label>Units Prior YTD</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Units_QTD__c</fullName>
+        <externalId>false</externalId>
+        <label>Units QTD</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Units_YTD__c</fullName>
+        <externalId>false</externalId>
+        <label>Units YTD</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>YTD__c</fullName>
+        <externalId>false</externalId>
+        <label>Current YTD</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <label>Sales Data By Ship To</label>
+    <nameField>
+        <displayFormat>SD{0000000000}</displayFormat>
+        <label>Sales Data Id</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Sales Data By Ship To</pluralLabel>
+    <searchLayouts>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <lookupDialogsAdditionalFields>Doorway_Account_Id__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Ship_To_Account_Id__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>YTD__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Prior_Year_YTD__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>QTD__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Prior_Year_QTD__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>LAST_UPDATE</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Doorway_Account_Id__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Ship_To_Account_Id__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>YTD__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Prior_Year_YTD__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>QTD__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Prior_Year_QTD__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>LAST_UPDATE</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Doorway_Account_Id__c</searchFilterFields>
+        <searchFilterFields>Ship_To_Account_Id__c</searchFilterFields>
+        <searchFilterFields>YTD__c</searchFilterFields>
+        <searchFilterFields>Prior_Year_YTD__c</searchFilterFields>
+        <searchFilterFields>QTD__c</searchFilterFields>
+        <searchFilterFields>Prior_Year_QTD__c</searchFilterFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

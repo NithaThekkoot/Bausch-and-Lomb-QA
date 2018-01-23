@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>Defines values for a picklist based on UserRole</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Context__c</fullName>
+        <description>Contains the user context for the selected picklist values - i.e. the user role</description>
+        <externalId>false</externalId>
+        <label>Context</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Values__c</fullName>
+        <description>Contains the picklist values to display in this context</description>
+        <externalId>false</externalId>
+        <label>Values</label>
+        <length>150</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Picklist_Management</label>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>NORDCSS: Stores the inventory for product items in Salesforce.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Read</externalSharingModel>
+    <fields>
+        <fullName>Name_ShipFrom__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>Unique External ID - concatenation of SKU and Ship From Location. Populated by CI.</description>
+        <externalId>true</externalId>
+        <label>Name - ShipFrom</label>
+        <length>27</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>PS_Product_SKU__c</fullName>
+        <description>This is the product SKU as stored in Peoplesoft.</description>
+        <externalId>false</externalId>
+        <label>PS Product SKU</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Group_ID__c</fullName>
+        <description>INDSU field to collect Reference field to map in salesforce.com</description>
+        <externalId>false</externalId>
+        <label>Product Group ID</label>
+        <length>30</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Group__c</fullName>
+        <description>INDSU field to collect Product family details related to Product Group ID</description>
+        <externalId>false</externalId>
+        <label>Product Group</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_SKU__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Product SKU</label>
+        <referenceTo>Product2</referenceTo>
+        <relationshipLabel>Inventory</relationshipLabel>
+        <relationshipName>Inventory</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Quantity_In_Stock__c</fullName>
+        <externalId>false</externalId>
+        <label>Quantity In Stock</label>
+        <precision>10</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Record_Date__c</fullName>
+        <description>INDSU field to collect the date on which the record is pulled from Oracle ERP</description>
+        <externalId>false</externalId>
+        <label>Record Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>SKU_ID__c</fullName>
+        <description>INDSU field to collect Unique id maintained for the product</description>
+        <externalId>false</externalId>
+        <label>SKU ID</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Ship_From__c</fullName>
+        <externalId>false</externalId>
+        <label>Ship From</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>EURLC</fullName>
+                    <default>true</default>
+                    <label>EURLC</label>
+                </value>
+                <value>
+                    <fullName>NORDC</fullName>
+                    <default>false</default>
+                    <label>NORDC</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Stock_Point_Name_SKU_ID__c</fullName>
+        <description>INDSU field to capture the SKU Id and the stock point name, the unique id for the product</description>
+        <externalId>true</externalId>
+        <label>Stock Point Name-SKU ID</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Stock_Point__c</fullName>
+        <description>INDSU field to collect IDC Stock details</description>
+        <externalId>false</externalId>
+        <label>Stock Point</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Inventory Item</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Product_SKU__c</columns>
+        <columns>Quantity_In_Stock__c</columns>
+        <columns>Ship_From__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Product SKU</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Inventory</pluralLabel>
+    <recordTypes>
+        <fullName>APACSU_Inventory_Item_Record_Type</fullName>
+        <active>true</active>
+        <description>APACSU record type used to display IDC stock details from BPCS ERP</description>
+        <label>APACSU Inventory Item Record Type</label>
+        <picklistValues>
+            <picklist>Ship_From__c</picklist>
+            <values>
+                <fullName>EURLC</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>NORDC</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>INDSU_Inventory_Item_Record_Type</fullName>
+        <active>true</active>
+        <description>INDSU record type used to display IDC stock details from Oracle ERP</description>
+        <label>INDSU Inventory Item Record Type</label>
+        <picklistValues>
+            <picklist>Ship_From__c</picklist>
+            <values>
+                <fullName>EURLC</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>NORDC</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>Product_SKU__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Ship_From__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Quantity_In_Stock__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Ship_From__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Quantity_In_Stock__c</lookupDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>PS_Product_SKU__c</searchFilterFields>
+        <searchFilterFields>Ship_From__c</searchFilterFields>
+        <searchResultsAdditionalFields>Ship_From__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Quantity_In_Stock__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Read</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

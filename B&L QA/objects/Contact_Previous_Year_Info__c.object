@@ -1,0 +1,572 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Contact Previous Year Information will be used to capture previous years statistics of the APACSU physician/surgeon i.e. BnL products usage, competitor products usage, Choice of BnL Equipment and choice of competitor equipment.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>Accurus__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>APACSU will use this field to identify if the competitor’s Equipment is installed.</description>
+        <externalId>false</externalId>
+        <label>Accurus</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Acrysof_3_Piece__c</fullName>
+        <externalId>false</externalId>
+        <label>Acrysof 3 Piece</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Acrysof_IQ__c</fullName>
+        <description>APACSSU field to indentify number of Competitor IOL used in the last year</description>
+        <externalId>false</externalId>
+        <label>Acrysof IQ</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Acrysof_ReStor__c</fullName>
+        <description>APACSSU field to indentify number of Competitor IOL used in the last year</description>
+        <externalId>false</externalId>
+        <label>Acrysof ReStor</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Acrysof_Single_Piece__c</fullName>
+        <externalId>false</externalId>
+        <label>Acrysof Single Piece</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Acrysof_Toric__c</fullName>
+        <description>APACSSU field to indentify number of Competitor IOL used in the last year</description>
+        <externalId>false</externalId>
+        <label>Acrysof Toric</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Akreos_AO__c</fullName>
+        <description>APACSU field to indentify number of B+L IOL used in the last year</description>
+        <externalId>false</externalId>
+        <label>Akreos AO</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Akreos_Adapt__c</fullName>
+        <description>APACSU field to indentify number of B+L IOL used in the last year</description>
+        <externalId>false</externalId>
+        <label>Akreos Adapt</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Akreos_MI_60__c</fullName>
+        <description>APACSU field to indentify number of B+L IOL used in the last year</description>
+        <externalId>false</externalId>
+        <label>Akreos MI-60</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>B_L_Share__c</fullName>
+        <externalId>false</externalId>
+        <formula>(( Akreos_AO__c + Akreos_MI_60__c + Akreos_Adapt__c + LI61SE__c + LI61AO__c + Envista__c ))/(Akreos_AO__c + Akreos_MI_60__c + Akreos_Adapt__c + LI61SE__c + LI61AO__c + Envista__c+ Acrysof_Single_Piece__c + Acrysof_3_Piece__c + Acrysof_IQ__c + Acrysof_ReStor__c + Acrysof_Toric__c + Canon_Staar__c + Hoya__c + ReZoom__c + Sensar__c + Tecnis__c + Tecnis_Multifocal__c + Others_Implantation__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>B+L Share</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>CX3000__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>APACSU will use this field to identify if the Equipment is installed.</description>
+        <externalId>false</externalId>
+        <label>CX3000</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CX_1000__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>APACSU will use this field to identify if the Equipment is installed.</description>
+        <externalId>false</externalId>
+        <label>CX 1000</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CX_2000__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>APACSU will use this field to identify if the Equipment is installed.</description>
+        <externalId>false</externalId>
+        <label>CX 2000</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Canon_Staar__c</fullName>
+        <description>APACSSU field to indentify number of Competitor IOL used in the last year</description>
+        <externalId>false</externalId>
+        <label>Canon-Staar</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Compact__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>APACSU will use this field to identify if the competitor’s Equipment is installed.</description>
+        <externalId>false</externalId>
+        <label>Compact</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Constellation__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>APACSU will use this field to identify if the competitor’s Equipment is installed.</description>
+        <externalId>false</externalId>
+        <label>Constellation</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Contact_Profile__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Contact Profile</label>
+        <referenceTo>Contact_Profile__c</referenceTo>
+        <relationshipName>Contact_Additional_Information1</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Contact Previous Year Info</relationshipLabel>
+        <relationshipName>Contact_Additional_Information</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Envista__c</fullName>
+        <externalId>false</externalId>
+        <label>Envista</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Hoya__c</fullName>
+        <description>APACSSU field to indentify number of Competitor IOL used in the last year</description>
+        <externalId>false</externalId>
+        <label>Hoya</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Identification_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Identification Number</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Infiniti__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>APACSU will use this field to identify if the competitor’s Equipment is installed.</description>
+        <externalId>false</externalId>
+        <label>Infiniti</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LI61AO__c</fullName>
+        <description>APACSU field to indentify number of B+L IOL used in the last year</description>
+        <externalId>false</externalId>
+        <label>LI61AO</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LI61SE__c</fullName>
+        <description>APACSU field to indentify number of B+L IOL used in the last year</description>
+        <externalId>false</externalId>
+        <label>LI61SE</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LY_Cataract_Procedure_Vol_In_Hospital__c</fullName>
+        <externalId>false</externalId>
+        <label>LY: Cataract Procedure Vol - In Hospital</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LY_Cataract_Procedure_Vol_Out_of_Hospi__c</fullName>
+        <externalId>false</externalId>
+        <label>LY: Cataract Procedure Vol -Out of Hospi</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LY_Cataract_Procedure_Volume_MICS__c</fullName>
+        <externalId>false</externalId>
+        <label>LY: Cataract Procedure Volume - MICS</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LY_Cataract_Procedure_Volume_Standard__c</fullName>
+        <externalId>false</externalId>
+        <label>LY: Cataract Procedure Volume - Standard</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LY_VR_Procedures_Performed_20G__c</fullName>
+        <externalId>false</externalId>
+        <label>LY: VR Procedures Performed - 20G</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LY_VR_Procedures_Performed_23G__c</fullName>
+        <externalId>false</externalId>
+        <label>LY: VR Procedures Performed - 23G</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LY_VR_Procedures_Performed_25G__c</fullName>
+        <externalId>false</externalId>
+        <label>LY: VR Procedures Performed - 25G</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Laureatte__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>APACSU will use this field to identify if the competitor’s Equipment is installed.</description>
+        <externalId>false</externalId>
+        <label>Laureatte</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Legacy__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>APACSU will use this field to identify if the competitor’s Equipment is installed.</description>
+        <externalId>false</externalId>
+        <label>Legacy</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Millenium__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Millenium</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Others_Equipment__c</fullName>
+        <description>APACSU will use this field to identify if the competitor’s Equipment is installed.</description>
+        <externalId>false</externalId>
+        <label>Others (Equipment)</label>
+        <length>30</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Others_Implantation__c</fullName>
+        <description>APACSSU field to indentify number of Competitor IOL used in the last year</description>
+        <externalId>false</externalId>
+        <label>Others (Implantation)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PMMA__c</fullName>
+        <description>APACSU field to indentify number of B+L IOL used in the last year</description>
+        <externalId>false</externalId>
+        <label>PMMA</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Premiere__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>APACSU will use this field to identify if the Equipment is installed.</description>
+        <externalId>false</externalId>
+        <label>Premiere</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Prot_g__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>APACSU will use this field to identify if the Equipment is installed.</description>
+        <externalId>false</externalId>
+        <label>Protégé</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ReZoom__c</fullName>
+        <description>APACSSU field to indentify number of Competitor IOL used in the last year</description>
+        <externalId>false</externalId>
+        <label>ReZoom</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sensar__c</fullName>
+        <description>APACSSU field to indentify number of Competitor IOL used in the last year</description>
+        <externalId>false</externalId>
+        <label>Sensar</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Signature__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>APACSU will use this field to identify if the competitor’s Equipment is installed.</description>
+        <externalId>false</externalId>
+        <label>Signature</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Souverign__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>APACSU will use this field to identify if the competitor’s Equipment is installed.</description>
+        <externalId>false</externalId>
+        <label>Souverign</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Stellaris_PC__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Stellaris PC</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Stellaris__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>APACSU will use this field to identify if the Equipment is installed.</description>
+        <externalId>false</externalId>
+        <label>Stellaris</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Tecnis_Multifocal__c</fullName>
+        <description>APACSSU field to indentify number of Competitor IOL used in the last year</description>
+        <externalId>false</externalId>
+        <label>Tecnis Multifocal</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Tecnis__c</fullName>
+        <description>APACSSU field to indentify number of Competitor IOL used in the last year</description>
+        <externalId>false</externalId>
+        <label>Tecnis</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Contact Previous Year Info</label>
+    <nameField>
+        <label>Year (Eg: 2009)</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Contact Previous Year Info</pluralLabel>
+    <recordTypes>
+        <fullName>APACSU_Contact_Previous_Year_Info</fullName>
+        <active>true</active>
+        <description>APACSU record type to allow recording contact details related to previous year.</description>
+        <label>APACSU Contact Previous Year Info</label>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

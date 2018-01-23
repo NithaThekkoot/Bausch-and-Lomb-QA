@@ -1,0 +1,17 @@
+<apex:page controller="CtrlINDAesthetics_Dashboard">
+
+<div style="float: center;">
+<apex:chart height="400" width="300" data="{!lstAvgCallsData}">
+          <apex:axis type="Numeric" position="left" fields="avgCalls"  margin="10" minimum="0"
+            title="Average Calls" grid="true"/>
+                    
+          <apex:axis type="Category" position="bottom" fields="strRegion1" 
+            title="Region"/>                   
+            
+            <apex:barSeries orientation="vertical" axis="left" xField="strRegion1" yField="avgCalls">
+                <apex:chartLabel display="outside" font="18px Helvetica, sans-serif"/>
+           </apex:barSeries>             
+</apex:chart>
+</div>
+
+</apex:page>

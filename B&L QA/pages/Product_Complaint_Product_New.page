@@ -1,0 +1,122 @@
+<apex:page standardController="Product_Complaint_Product__c" tabStyle="Product_Complaint_Product__c" extensions="Product_Complaint_Product_Controller"> 
+<apex:sectionHeader title="Product New" subtitle="New Product" id="sheader"/>
+<script type="text/javascript">
+  function LocalNamechange(abc){
+     
+     var lname = abc.value;
+       getvaluefn(lname);                                               
+    return true;
+  } 
+   function reqswitch(xyz){
+   var poductAv = xyz.value;
+    getvaluefn1(poductAv);
+     return true;
+   } 
+
+
+  </script>
+  <apex:form id="form1">
+ <apex:pageBlock title="Product New" id="block1">
+    <apex:pageBlockButtons >
+    <apex:commandButton value="Save" action="{!savemethod}" id="saveButton"/>
+    <apex:commandButton value="Save & New" action="{!SaveAndNewMethod}" id="saveAndNewButton" />
+    <apex:commandButton value="Cancel" action="{!Cancel}" id="cancelButton"/>     
+    </apex:pageBlockButtons>
+  <apex:pageMessages />
+  <apex:pageBlockSection title="Product Information" id="sec1"> 
+  
+    <apex:pageBlockSectionItem >   
+        <apex:outputLabel value="Product Description"> </apex:outputLabel>
+             <apex:outputPanel styleClass="requiredInput" layout="block" id="pwPanel" >
+                 <apex:outputPanel styleClass="requiredBlock" layout="block"/>
+                 <apex:selectList id="chooseLocalName" value="{!LocalName}" size="1" onchange=" return LocalNamechange(this);">                                        
+                        <apex:selectOptions value="{!LocalNames}" id="chooseLocalName1" />
+                 </apex:selectList>
+                 <apex:actionStatus id="sts" style="align:center;">
+                 <apex:facet name="start">
+                       <apex:image value="/img/loading.gif" title="Processing..."/>
+                 </apex:facet>
+                <apex:facet name="stop"></apex:facet>
+                </apex:actionStatus> 
+            </apex:outputPanel> 
+   </apex:pageBlockSectionItem>
+
+  <apex:inputField value="{!PCP.Product_Type__c}" id="out1"/>
+  <apex:inputField value="{!PCP.Product_Lot_Number__c}"  />
+  <apex:inputField value="{!PCP.Expiration_Date__c}"/>
+  <apex:inputField value="{!PCP.Serial_Number__c}" />
+  <apex:inputField value="{!PCP.Product_Number__c}" required="true" />
+  <apex:inputField value="{!PCP.Complaint_Quantity__c}" required="true"/>
+  <apex:inputField value="{!PCP.Quantity_to_be_Returned__c}" required="{!quantityToBeReturned}" id="sec1000"/> 
+  
+</apex:pageBlockSection>
+
+  <apex:outputPanel id="outputPanalMauFacSite">
+   <apex:pageBlockSection showHeader="false"  id="sec3" columns="1" >
+       <apex:pageBlockSectionItem rendered="{!valueExist}" labelStyle="padding-left:30px; text-align:right; " dataStyle="padding-right:300px;">
+         <apex:outputLabel value="Manufacturing Site" > </apex:outputLabel>
+         <apex:outputPanel styleClass="requiredInput" layout="block" id="pwPanel1" >
+             <apex:outputPanel styleClass="requiredBlock" layout="block"/> 
+             <apex:selectList id="chooseSiteName" value="{!SiteName}" size="1">                          
+                  <apex:selectOptions value="{!ManSites}" id="chooseSiteName1" />
+             </apex:selectList>
+         </apex:outputPanel>      
+       </apex:pageBlockSectionItem>
+                 
+   </apex:pageBlockSection>
+ </apex:outputPanel>
+ 
+  <apex:pageBlockSection showHeader="false">
+  
+  <apex:pageBlockSectionItem id="sec100">
+      <apex:outputLabel value="Product Availability" > </apex:outputLabel>
+      <apex:outputPanel >         
+        <apex:inputField value="{!PCP.Product_Availability__c}" onchange=" return reqswitch(this);" required="true"/>       
+        <apex:actionStatus id="sts1" style="align:right;">       
+        <apex:facet name="start">
+               <apex:image value="/img/loading.gif" title="Processing..."/>
+         </apex:facet>
+        <apex:facet name="stop"></apex:facet>
+        </apex:actionStatus>             
+        </apex:outputPanel>            
+  </apex:pageBlockSectionItem>
+   </apex:pageBlockSection>
+ <apex:pageBlockSection showHeader="false">
+   
+   <apex:inputField value="{!PCP.Comments__c}" id="comId" style="width: 460px; height:50px; "/> 
+ 
+ </apex:pageBlockSection>
+ 
+<apex:outputPanel id="sec899" >
+    <apex:pageBlockSection title="Return Information" rendered="{!inputReturned}"> 
+        <apex:inputField value="{!PCP.Quantity_Received__c}" required="{!isReturned}" id="input11"/> 
+        <apex:inputField value="{!PCP.Date_Received__c}" /> 
+        <apex:inputField value="{!PCP.Date_Received_Subsidiary__c}"/>
+    </apex:pageBlockSection>   
+</apex:outputPanel>
+ 
+ <apex:outputPanel id="sec89">
+     <apex:pageBlockSection showHeader="true" id="sec88" rendered="{!isNotReturned}" title="Return Information">
+              <apex:outputfield value="{!PCP.Quantity_Received__c}"/> 
+            <apex:outputfield value="{!PCP.Date_Received__c}" /> 
+            <apex:outputfield value="{!PCP.Date_Received_Subsidiary__c}"/>
+     </apex:pageBlockSection>
+ </apex:outputPanel>
+
+ <apex:pageBlockSection title="Case Information"> 
+  <apex:outputField value="{!PCP.Case__c}"/>
+ </apex:pageBlockSection>
+</apex:pageBlock>
+   
+   <apex:actionRegion >
+        <apex:actionFunction name="getvaluefn" action="{!getGlobalName}" rerender="out1,chooseSiteName,sec3,outputPanalMauFacSite,chooseSiteName1,pwPanel1" status="sts">
+        <apex:param name="one" value="" />
+        </apex:actionFunction>
+        </apex:actionRegion>
+    <apex:actionRegion >
+        <apex:actionFunction name="getvaluefn1" action="{!requiredSwitch}" rerender="sec899,sec88,sec89,sec1000,sec40" status="sts1">
+        <apex:param name="first" value="" />
+        </apex:actionFunction>
+    </apex:actionRegion>               
+  </apex:form>
+</apex:page>

@@ -1,0 +1,15 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:dependency resource="markup://force:*" type="EVENT"/>
+    
+    
+    <div class="sidebar">
+        <lightning:verticalNavigation shaded="false">
+            <lightning:verticalNavigationSection label="US Surgical Links" >
+                <lightning:verticalNavigationItem label="Complemar" name="Complemar" href='http://bauschsurgical.complemar.com'/>
+                <lightning:verticalNavigationItem label="B+L App Store" name="B+L App Store" href='http://blapps.bausch.com/'/>
+            </lightning:verticalNavigationSection>
+        </lightning:verticalNavigation>
+        
+    </div>        
+    
+</aura:component>

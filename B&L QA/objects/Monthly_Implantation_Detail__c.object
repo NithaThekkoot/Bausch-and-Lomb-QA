@@ -1,0 +1,1164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>APACSU object used to capture and calculate market share for B&amp;L and Competitor Products.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>AKREOS_ADAPT__c</fullName>
+        <description>APACSU field to collect implantation done for Akreos Adapt</description>
+        <externalId>false</externalId>
+        <label>AKREOS ADAPT</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AKREOS_AO__c</fullName>
+        <description>INDSU field to collect implantation done for AKREOS AO</description>
+        <externalId>false</externalId>
+        <label>AKREOS AO</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AKREOS_MIL__c</fullName>
+        <description>INDSU field to collect implantation done for AKREOS MIL</description>
+        <externalId>false</externalId>
+        <label>AKREOS MIL</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AKREOS_MI_60__c</fullName>
+        <description>APACSU field to collect implantations done for Akreos MI-60</description>
+        <externalId>false</externalId>
+        <label>AKREOS MI-60</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AKREOS__c</fullName>
+        <description>INDSU field to collect implantation done for AKREOS</description>
+        <externalId>false</externalId>
+        <label>AKREOS</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Acrysof_ReStor__c</fullName>
+        <description>APACSU field to collect implantation done for No of IOLs   Acrysof ReStor</description>
+        <externalId>false</externalId>
+        <label>Acrysof ReStor</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Acrysof_Toric__c</fullName>
+        <description>APACSU field to collect implantation done for No of IOLs Acrysof Toric</description>
+        <externalId>false</externalId>
+        <label>Acrysof Toric</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Bundling_Competitor__c</fullName>
+        <description>Competition Bundling</description>
+        <externalId>false</externalId>
+        <label>Bundling Competitor</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>AMO</fullName>
+                    <default>false</default>
+                    <label>AMO</label>
+                </value>
+                <value>
+                    <fullName>Alcon</fullName>
+                    <default>false</default>
+                    <label>Alcon</label>
+                </value>
+                <value>
+                    <fullName>Ziess</fullName>
+                    <default>false</default>
+                    <label>Ziess</label>
+                </value>
+                <value>
+                    <fullName>Others</fullName>
+                    <default>false</default>
+                    <label>Others</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Canon_Staar__c</fullName>
+        <description>APACSU field to collect implantation done for No of IOLs  Canon-Staar</description>
+        <externalId>false</externalId>
+        <label>Canon-Staar</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Crystalens__c</fullName>
+        <description>INDSU field to collect implantation details for Crystalens</description>
+        <externalId>false</externalId>
+        <label>Crystalens</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Current_Total_Implantations_Done__c</fullName>
+        <externalId>false</externalId>
+        <formula>Sum_of_Alcon_Product_implantations__c + Sum_of_AMO_Product_implantations__c + Sum_of_B_L_Product_implantations__c + Canon_Staar__c + Hoya__c + No_of_IOLs_OTHERS__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Current Total Implantations Done</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Current_Total_Implantations__c</fullName>
+        <description>INDSU field to collect current total implantations (Imported Foldable Implant) done by the physician in the month</description>
+        <externalId>false</externalId>
+        <label>Current Total Implantations</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Envista__c</fullName>
+        <externalId>false</externalId>
+        <label>Envista</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Expiry_Date__c</fullName>
+        <description>Bundling Competitor Expiry Date</description>
+        <externalId>false</externalId>
+        <label>Expiry Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Hoya__c</fullName>
+        <description>APACSU field to collect implantation done for No of IOLs Hoya</description>
+        <externalId>false</externalId>
+        <label>Hoya</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LI61AOV__c</fullName>
+        <description>INDSU field to collect implantation done for LI61AOV</description>
+        <externalId>false</externalId>
+        <label>LI61AOV</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LI61_AO__c</fullName>
+        <description>INDSU field to collect implantation done for LI61 AO</description>
+        <externalId>false</externalId>
+        <label>LI61 AO</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>LI61_SE__c</fullName>
+        <description>INDSU field to collect implantation done for LI61 SE</description>
+        <externalId>false</externalId>
+        <label>LI61 SE</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Mkt_Share_AKREOS_AO__c</fullName>
+        <description>INDSU field to calculate market share of AKREOS AO</description>
+        <externalId>false</externalId>
+        <formula>AKREOS_AO__c / Current_Total_Implantations__c *100</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Mkt Share AKREOS AO</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Mkt_Share_AKREOS__c</fullName>
+        <description>INDSU field to calculate market share of AKREOS</description>
+        <externalId>false</externalId>
+        <formula>AKREOS__c / Current_Total_Implantations__c *100</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Mkt Share AKREOS</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Mkt_Share_AMO__c</fullName>
+        <description>INDSU field to calculate market share of AMO</description>
+        <externalId>false</externalId>
+        <formula>No_of_IOLs_AMO__c / Current_Total_Implantations__c *100</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Mkt Share AMO</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Mkt_Share_Acrysof_3_piece__c</fullName>
+        <description>INDSU field to calculate market share of Acrysof 3 piece</description>
+        <externalId>false</externalId>
+        <formula>No_of_IOLs_Acrysof_3_piece__c / Current_Total_Implantations__c *100</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Mkt Share Acrysof 3 piece</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Mkt_Share_Acrysof_IQ__c</fullName>
+        <description>INDSU field to calculate market share of Acrysof IQ</description>
+        <externalId>false</externalId>
+        <formula>No_of_IOLs_Acrysof_IQ__c / Current_Total_Implantations__c *100</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Mkt Share Acrysof- IQ</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Mkt_Share_Acrysof_ReStor__c</fullName>
+        <externalId>false</externalId>
+        <formula>Acrysof_ReStor__c / Current_Total_Implantations__c *100</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Mkt Share Acrysof ReStor</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Mkt_Share_Acrysof_Single_piece__c</fullName>
+        <description>INDSU field to calculate market share of Acrysof Single piece</description>
+        <externalId>false</externalId>
+        <formula>No_of_IOLs_Acrysof_3_piece__c / Current_Total_Implantations__c *100</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Mkt Share Acrysof Single piece</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Mkt_Share_Acrysof_Toric__c</fullName>
+        <externalId>false</externalId>
+        <formula>Acrysof_Toric__c / Current_Total_Implantations__c *100</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Mkt Share Acrysof Toric</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Mkt_Share_Akreos_Adapt__c</fullName>
+        <externalId>false</externalId>
+        <formula>AKREOS_ADAPT__c / Current_Total_Implantations__c *100</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Mkt Share - Akreos Adapt</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Mkt_Share_Akreos_MIL__c</fullName>
+        <description>INDSU field to calculate Akreos MIL market share</description>
+        <externalId>false</externalId>
+        <formula>AKREOS_MIL__c / Current_Total_Implantations__c *100</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Mkt Share - Akreos MIL</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Mkt_Share_Akreos_MI_60__c</fullName>
+        <externalId>false</externalId>
+        <formula>AKREOS_MI_60__c /  Current_Total_Implantations__c*100</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Mkt Share Akreos MI-60</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Mkt_Share_Canon_Staar__c</fullName>
+        <externalId>false</externalId>
+        <formula>Canon_Staar__c / Current_Total_Implantations__c *100</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Mkt Share Canon-Staar</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Mkt_Share_Crystalens__c</fullName>
+        <description>INDSU formula field to calculate market share of Crystalens</description>
+        <externalId>false</externalId>
+        <formula>(Crystalens__c / Current_Total_Implantations__c *100)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Mkt Share - Crystalens</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Mkt_Share_Envista__c</fullName>
+        <externalId>false</externalId>
+        <formula>Envista__c  / Current_Total_Implantations__c*100</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Mkt Share Envista</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Mkt_Share_HANITTA__c</fullName>
+        <description>INDSU field to calculate market share of Hanitta</description>
+        <externalId>false</externalId>
+        <formula>No_of_IOLs_HANITTA__c / Current_Total_Implantations__c *100</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Mkt Share HANITTA</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Mkt_Share_Hoya__c</fullName>
+        <externalId>false</externalId>
+        <formula>Hoya__c / Current_Total_Implantations__c *100</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Mkt Share Hoya</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Mkt_Share_LI61AOV__c</fullName>
+        <description>INDSU field to calculate market share of LI61AOV</description>
+        <externalId>false</externalId>
+        <formula>LI61AOV__c / Current_Total_Implantations__c *100</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Mkt Share LI61AOV</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Mkt_Share_LI61_AO__c</fullName>
+        <description>INDSU field to calculate market share of LI61 AO</description>
+        <externalId>false</externalId>
+        <formula>LI61_AO__c / Current_Total_Implantations__c *100</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Mkt Share LI61 AO</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Mkt_Share_LI61_SE__c</fullName>
+        <description>INDSU field to calculate market share of LI61 SE</description>
+        <externalId>false</externalId>
+        <formula>LI61_SE__c / Current_Total_Implantations__c *100</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Mkt Share LI61 SE</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Mkt_Share_OTHERS__c</fullName>
+        <description>INDSU field to calculate market share of Other products</description>
+        <externalId>false</externalId>
+        <formula>No_of_IOLs_OTHERS__c / Current_Total_Implantations__c *100</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Mkt Share OTHERS</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Mkt_Share_Rayner__c</fullName>
+        <description>INDSU field to calculate market share of Rayner</description>
+        <externalId>false</externalId>
+        <formula>No_of_IOLs_Rayner__c / Current_Total_Implantations__c *100</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Mkt Share Rayner</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Mkt_Share_ReZoom__c</fullName>
+        <externalId>false</externalId>
+        <formula>ReZoom__c / Current_Total_Implantations__c *100</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Mkt Share ReZoom</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Mkt_Share_Sensar__c</fullName>
+        <description>INDSU field to calculate market share of Sensar</description>
+        <externalId>false</externalId>
+        <formula>No_of_IOLs_Sensar__c / Current_Total_Implantations__c *100</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Mkt Share  Sensar</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Mkt_Share_Tecnis_Acrylic__c</fullName>
+        <description>INDSU field to calculate market share of Tecnis Acrylic</description>
+        <externalId>false</externalId>
+        <formula>No_of_IOLs_Tecnis_Acrylic__c / Current_Total_Implantations__c *100</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Mkt Share Tecnis Acrylic</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Mkt_Share_Tecnis_Multifocal__c</fullName>
+        <externalId>false</externalId>
+        <formula>Tecnis_Multifocal__c / Current_Total_Implantations__c *100</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Mkt Share Tecnis Multifocal</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Mkt_Share_Tecnis__c</fullName>
+        <externalId>false</externalId>
+        <formula>Tecnis__c / Current_Total_Implantations__c *100</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Mkt Share Tecnis</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Mkt_Share_ZEISS__c</fullName>
+        <description>INDSU field to calculate market share of ZEISS</description>
+        <externalId>false</externalId>
+        <formula>No_of_IOLs_ZEISS__c / Current_Total_Implantations__c *100</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Mkt Share ZEISS</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Month__c</fullName>
+        <description>APACSU field to capture month name for which the record is created.</description>
+        <externalId>false</externalId>
+        <label>Month</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>No_of_IOLs_AMO__c</fullName>
+        <description>INDSU field to collect implantation done for No of IOLs AMO</description>
+        <externalId>false</externalId>
+        <label>No of IOLs AMO</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>No_of_IOLs_Acrysof_3_piece__c</fullName>
+        <description>INDSU field to collect implantation done for No of IOLs Acrysof 3 piece</description>
+        <externalId>false</externalId>
+        <label>No of IOLs   Acrysof 3 piece</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>No_of_IOLs_Acrysof_IQ__c</fullName>
+        <description>INDSU field to collect implantation done for No of IOLs   Acrysof 3 piece</description>
+        <externalId>false</externalId>
+        <label>No of IOLs  Acrysof- IQ</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>No_of_IOLs_Acrysof_Single_piece__c</fullName>
+        <description>INDSU field to collect implantation done for No of IOLs Acrysof Single piece</description>
+        <externalId>false</externalId>
+        <label>No of IOLs Acrysof Single piece</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>No_of_IOLs_HANITTA__c</fullName>
+        <description>INDSU field to collect implantation done for No of IOLs  HANITTA</description>
+        <externalId>false</externalId>
+        <label>No of IOLs  HANITTA</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>No_of_IOLs_OTHERS__c</fullName>
+        <description>INDSU field to collect implantation done for No of IOLs  OTHERS</description>
+        <externalId>false</externalId>
+        <label>No of IOLs  OTHERS</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>No_of_IOLs_Rayner__c</fullName>
+        <description>INDSU field to collect implantation done for No of IOLs  Rayner</description>
+        <externalId>false</externalId>
+        <label>No of IOLs  Rayner</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>No_of_IOLs_Sensar__c</fullName>
+        <description>INDSU field to collect implantation done for No of IOLs Sensar</description>
+        <externalId>false</externalId>
+        <label>No of IOLs Sensar</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>No_of_IOLs_Tecnis_Acrylic__c</fullName>
+        <description>INDSU field to collect implantation done for No of IOLs  Tecnis Acrylic</description>
+        <externalId>false</externalId>
+        <label>No of IOLs  Tecnis Acrylic</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>No_of_IOLs_ZEISS__c</fullName>
+        <description>INDSU field to collect implantation done for No of IOLs  ZEISS</description>
+        <externalId>false</externalId>
+        <label>No of IOLs  ZEISS</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>No_of_OT_Hours__c</fullName>
+        <externalId>false</externalId>
+        <label>No of OT Hours</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Physician_Name__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>INDSU field to collect physician details</description>
+        <externalId>false</externalId>
+        <label>Physician Name</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipName>Competitor_Products</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ReZoom__c</fullName>
+        <description>APACSU field to collect implantation done for No of IOLs  ReZoom</description>
+        <externalId>false</externalId>
+        <label>ReZoom</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Role_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>CreatedBy.UserRole.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Role Name</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sum_of_AMO_Product_implantations__c</fullName>
+        <description>APACSU field to display sum of AMO product implantations</description>
+        <externalId>false</externalId>
+        <formula>IF( $RecordType.Name   =  &quot;INDSU Monthly Implantation Detail&quot; , No_of_IOLs_Sensar__c + No_of_IOLs_Tecnis_Acrylic__c + No_of_IOLs_AMO__c, IF( $RecordType.Name   =  &quot;APACSU Monthly Implantation Detail&quot; , No_of_IOLs_Sensar__c +  ReZoom__c  +  Tecnis__c  +  Tecnis_Multifocal__c  ,0) )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Sum of AMO Product implantations</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sum_of_Alcon_Product_implantations__c</fullName>
+        <description>APACSU field to display sum of Alcon product implantations</description>
+        <externalId>false</externalId>
+        <formula>IF( $RecordType.Name   =  &quot;INDSU Monthly Implantation Detail&quot; , No_of_IOLs_Acrysof_3_piece__c + No_of_IOLs_Acrysof_IQ__c + No_of_IOLs_Acrysof_Single_piece__c, IF( $RecordType.Name   =  &quot;APACSU Monthly Implantation Detail&quot; ,No_of_IOLs_Acrysof_Single_piece__c  +  No_of_IOLs_Acrysof_3_piece__c  +  No_of_IOLs_Acrysof_IQ__c  +  Acrysof_ReStor__c  +  Acrysof_Toric__c,0) )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Sum of Alcon Product implantations</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sum_of_B_L_Product_implantations__c</fullName>
+        <description>APACSU field to display sum of B&amp;L product implantations</description>
+        <externalId>false</externalId>
+        <formula>IF( $RecordType.Name   =  &quot;INDSU Monthly Implantation Detail&quot; , AKREOS__c + AKREOS_AO__c + AKREOS_MIL__c + Crystalens__c + LI61_AO__c + LI61AOV__c + LI61_SE__c, IF( $RecordType.Name   =  &quot;APACSU Monthly Implantation Detail&quot; ,  AKREOS_MI_60__c  +  AKREOS_AO__c  +  AKREOS_ADAPT__c  +  LI61_AO__c  +  LI61_SE__c   ,0) )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Sum of B&amp;L Product implantations</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Tecnis_Multifocal__c</fullName>
+        <description>APACSU field to collect implantation done for No of IOLs  Tecnis Multifocal</description>
+        <externalId>false</externalId>
+        <label>Tecnis Multifocal</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Tecnis__c</fullName>
+        <description>APACSU field to collect implantation done for No of IOLs Tecnis</description>
+        <externalId>false</externalId>
+        <label>Tecnis</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>X1_8mm_AMO__c</fullName>
+        <externalId>false</externalId>
+        <label>1.8mm - AMO</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>X1_8mm_Alcon__c</fullName>
+        <externalId>false</externalId>
+        <label>1.8mm - Alcon</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>X1_8mm_B_L__c</fullName>
+        <externalId>false</externalId>
+        <label>1.8mm - B&amp;L</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>X1_8mm_HumanOptics__c</fullName>
+        <externalId>false</externalId>
+        <label>1.8mm - HumanOptics</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>X1_8mm_Others__c</fullName>
+        <externalId>false</externalId>
+        <label>1.8mm - Others</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>X1_8mm_Zeiss__c</fullName>
+        <externalId>false</externalId>
+        <label>1.8mm - Zeiss</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>X2_2mm_AMO__c</fullName>
+        <externalId>false</externalId>
+        <label>2.2mm - AMO</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>X2_2mm_Alcon__c</fullName>
+        <externalId>false</externalId>
+        <label>2.2mm - Alcon</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>X2_2mm_B_L__c</fullName>
+        <externalId>false</externalId>
+        <label>2.2mm - B&amp;L</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>X2_2mm_HumanOptics__c</fullName>
+        <externalId>false</externalId>
+        <label>2.2mm - HumanOptics</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>X2_2mm_Others__c</fullName>
+        <externalId>false</externalId>
+        <label>2.2mm - Others</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>X2_2mm_Zeiss__c</fullName>
+        <externalId>false</externalId>
+        <label>2.2mm - Zeiss</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>X2_8mm_AMO__c</fullName>
+        <externalId>false</externalId>
+        <label>2.8mm - AMO</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>X2_8mm_Alcon__c</fullName>
+        <externalId>false</externalId>
+        <label>2.8mm - Alcon</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>X2_8mm_B_L__c</fullName>
+        <externalId>false</externalId>
+        <label>2.8mm - B&amp;L</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>X2_8mm_HumanOptics__c</fullName>
+        <externalId>false</externalId>
+        <label>2.8mm - HumanOptics</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>X2_8mm_Others__c</fullName>
+        <externalId>false</externalId>
+        <label>2.8mm - Others</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>X2_8mm_Zeiss__c</fullName>
+        <externalId>false</externalId>
+        <label>2.8mm - Zeiss</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Year__c</fullName>
+        <description>INDSU field to capture year details</description>
+        <externalId>false</externalId>
+        <label>Year</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Monthly Implantation Detail</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Physician_Name__c</columns>
+        <columns>Month__c</columns>
+        <columns>Year__c</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>CP- {00000000}</displayFormat>
+        <label>Monthly Implantation Detail</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Monthly Implantation Detail</pluralLabel>
+    <recordTypes>
+        <fullName>APACSU_Monthly_Implantation_Detail</fullName>
+        <active>true</active>
+        <description>APACSU record type to capture implantation details for B&amp;L and Competitor Products based on Month and Physician combination</description>
+        <label>APACSU Monthly Implantation Detail</label>
+    </recordTypes>
+    <recordTypes>
+        <fullName>INDSU_Monthly_Implantation_Detail</fullName>
+        <active>true</active>
+        <description>INDSU record type to capture implantation details for B&amp;L and Competitor Products based on Month and Physician combination</description>
+        <label>INDSU Monthly Implantation Detail</label>
+        <picklistValues>
+            <picklist>Bundling_Competitor__c</picklist>
+            <values>
+                <fullName>AMO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Alcon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Others</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ziess</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

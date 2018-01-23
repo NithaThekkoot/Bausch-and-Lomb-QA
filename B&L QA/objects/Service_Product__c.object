@@ -1,0 +1,2067 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Analysis_and_Treatment__c</fullName>
+        <description>APAC CHNSU field:Analysis and treatment of  Engineer Service Visit</description>
+        <externalId>false</externalId>
+        <label>Analysis and Treatment</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Blank1__c</fullName>
+        <externalId>false</externalId>
+        <formula>TRIM(&apos;&apos;)</formula>
+        <label>.</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Blank2__c</fullName>
+        <externalId>false</externalId>
+        <formula>TRIM(&apos;&apos;)</formula>
+        <label>.</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Breakdown_Type__c</fullName>
+        <description>APAC CHNSU field:Breakdown reason of the machine</description>
+        <externalId>false</externalId>
+        <label>Breakdown Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Not failure</fullName>
+                    <default>false</default>
+                    <label>Not failure</label>
+                </value>
+                <value>
+                    <fullName>IAV/VFM</fullName>
+                    <default>false</default>
+                    <label>IAV/VFM</label>
+                </value>
+                <value>
+                    <fullName>PER/AFM</fullName>
+                    <default>false</default>
+                    <label>PER/AFM</label>
+                </value>
+                <value>
+                    <fullName>Software</fullName>
+                    <default>false</default>
+                    <label>Software</label>
+                </value>
+                <value>
+                    <fullName>Ultrasound</fullName>
+                    <default>false</default>
+                    <label>Ultrasound</label>
+                </value>
+                <value>
+                    <fullName>Computer</fullName>
+                    <default>false</default>
+                    <label>Computer</label>
+                </value>
+                <value>
+                    <fullName>Foot Control</fullName>
+                    <default>false</default>
+                    <label>Foot Control</label>
+                </value>
+                <value>
+                    <fullName>IV Pole</fullName>
+                    <default>false</default>
+                    <label>IV Pole</label>
+                </value>
+                <value>
+                    <fullName>Compressor</fullName>
+                    <default>false</default>
+                    <label>Compressor</label>
+                </value>
+                <value>
+                    <fullName>Scissors/Air</fullName>
+                    <default>false</default>
+                    <label>Scissors/Air</label>
+                </value>
+                <value>
+                    <fullName>Illumination</fullName>
+                    <default>false</default>
+                    <label>Illumination</label>
+                </value>
+                <value>
+                    <fullName>Power</fullName>
+                    <default>false</default>
+                    <label>Power</label>
+                </value>
+                <value>
+                    <fullName>Laser</fullName>
+                    <default>false</default>
+                    <label>Laser</label>
+                </value>
+                <value>
+                    <fullName>Viscous Fluid</fullName>
+                    <default>false</default>
+                    <label>Viscous Fluid</label>
+                </value>
+                <value>
+                    <fullName>High Speed Vit</fullName>
+                    <default>false</default>
+                    <label>High Speed Vit</label>
+                </value>
+                <value>
+                    <fullName>Coagulation</fullName>
+                    <default>false</default>
+                    <label>Coagulation</label>
+                </value>
+                <value>
+                    <fullName>Application</fullName>
+                    <default>false</default>
+                    <label>Application</label>
+                </value>
+                <value>
+                    <fullName>Multimedia</fullName>
+                    <default>false</default>
+                    <label>Multimedia</label>
+                </value>
+                <value>
+                    <fullName>Hand Piece</fullName>
+                    <default>false</default>
+                    <label>Hand Piece</label>
+                </value>
+                <value>
+                    <fullName>Base</fullName>
+                    <default>false</default>
+                    <label>Base</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Call_Objective1__c</fullName>
+        <externalId>false</externalId>
+        <label>Call Objective</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Surgery for sample</fullName>
+                    <default>false</default>
+                    <label>Surgery for sample</label>
+                </value>
+                <value>
+                    <fullName>Surgery for sell</fullName>
+                    <default>false</default>
+                    <label>Surgery for sell</label>
+                </value>
+                <value>
+                    <fullName>Bidding support</fullName>
+                    <default>false</default>
+                    <label>Bidding support</label>
+                </value>
+                <value>
+                    <fullName>Product introduction</fullName>
+                    <default>false</default>
+                    <label>Product introduction</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Call_Objective2__c</fullName>
+        <externalId>false</externalId>
+        <label>Call Objective</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Surgery for sample</fullName>
+                    <default>false</default>
+                    <label>Surgery for sample</label>
+                </value>
+                <value>
+                    <fullName>Surgery for sell</fullName>
+                    <default>false</default>
+                    <label>Surgery for sell</label>
+                </value>
+                <value>
+                    <fullName>Bidding support</fullName>
+                    <default>false</default>
+                    <label>Bidding support</label>
+                </value>
+                <value>
+                    <fullName>Product introduction</fullName>
+                    <default>false</default>
+                    <label>Product introduction</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Call_Objective__c</fullName>
+        <description>APAC CHNSU field:Call purpose of Engineer Service Visit</description>
+        <externalId>false</externalId>
+        <label>Call Objective</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Inst/dism</fullName>
+                    <default>false</default>
+                    <label>Inst/dism</label>
+                </value>
+                <value>
+                    <fullName>Upgrade</fullName>
+                    <default>false</default>
+                    <label>Upgrade</label>
+                </value>
+                <value>
+                    <fullName>Application</fullName>
+                    <default>false</default>
+                    <label>Application</label>
+                </value>
+                <value>
+                    <fullName>PM</fullName>
+                    <default>false</default>
+                    <label>PM</label>
+                </value>
+                <value>
+                    <fullName>Repair</fullName>
+                    <default>false</default>
+                    <label>Repair</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Call_Result1__c</fullName>
+        <externalId>false</externalId>
+        <label>Call Result</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>need follow up</fullName>
+                    <default>false</default>
+                    <label>need follow up</label>
+                </value>
+                <value>
+                    <fullName>satisfaction, don&apos;t need follow up</fullName>
+                    <default>false</default>
+                    <label>satisfaction, don&apos;t need follow up</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Call_Result2__c</fullName>
+        <externalId>false</externalId>
+        <label>Call Result</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>need follow up</fullName>
+                    <default>false</default>
+                    <label>need follow up</label>
+                </value>
+                <value>
+                    <fullName>satisfaction, don&apos;t need follow up</fullName>
+                    <default>false</default>
+                    <label>satisfaction, don&apos;t need follow up</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Call_Type__c</fullName>
+        <description>APAC CHNSU field:Call type of Engineer Service Visit</description>
+        <externalId>false</externalId>
+        <label>Call Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Warranty</fullName>
+                    <default>false</default>
+                    <label>Warranty</label>
+                </value>
+                <value>
+                    <fullName>Contract</fullName>
+                    <default>false</default>
+                    <label>Contract</label>
+                </value>
+                <value>
+                    <fullName>Billable</fullName>
+                    <default>false</default>
+                    <label>Billable</label>
+                </value>
+                <value>
+                    <fullName>Free</fullName>
+                    <default>false</default>
+                    <label>Free</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Comments__c</fullName>
+        <description>APAC CHNSU field:Comments  of the Engineer after provide service</description>
+        <externalId>false</externalId>
+        <label>Comments</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Customer_Feedback__c</fullName>
+        <description>APAC CHNSU field:The Feed Back of Engineer Service Visit</description>
+        <externalId>false</externalId>
+        <label>Customer Feedback</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Equipment_used_by_Dr1__c</fullName>
+        <externalId>false</externalId>
+        <label>Equipment used by Dr</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Equipment_used_by_Dr2__c</fullName>
+        <externalId>false</externalId>
+        <label>Equipment used by Dr</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Experiences1__c</fullName>
+        <externalId>false</externalId>
+        <label>Experiences</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Experiences2__c</fullName>
+        <externalId>false</externalId>
+        <label>Experiences</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>FirstUpdate__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>FirstUpdate</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>I_A_B_H1__c</fullName>
+        <externalId>false</externalId>
+        <label>I/A - B/H</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>I_A_B_H2__c</fullName>
+        <externalId>false</externalId>
+        <label>I/A - B/H</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>I_A_U_S1__c</fullName>
+        <externalId>false</externalId>
+        <label>I/A - U/S</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>I_A_U_S2__c</fullName>
+        <externalId>false</externalId>
+        <label>I/A - U/S</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>I_A_Vac1__c</fullName>
+        <externalId>false</externalId>
+        <label>I/A - Vac</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>I_A_Vac2__c</fullName>
+        <externalId>false</externalId>
+        <label>I/A - Vac</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IsValidServiceProduct__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(
+          
+	
+		 
+		AND
+	  	(		
+		 NOT(OR(ISBLANK(Text(Call_Result1__c)),ISBLANK(TEXT(Call_Objective1__c)),ISBLANK( TEXT(Product1__c) ),ISBLANK(Experiences1__c)    )),                   
+
+      
+
+          
+	
+		
+			OR(
+			
+	        		NOT(OR(	ISBLANK(TEXT(Call_Result2__c)),ISBLANK(TEXT(Call_Objective2__c)),ISBLANK(TEXT(Product1__c)),ISBLANK(Experiences2__c) )),
+	
+				AND(ISBLANK(Equipment_used_by_Dr2__c),ISBLANK(Operation_Characteristic2__c),ISBLANK(Experiences2__c),
+				    ISBLANK(Objective_Description2__c),ISBLANK(Phaco_1_8_B_H2__c),
+				    ISBLANK(Phaco_1_8_Vac2__c),ISBLANK(Phaco_1_8_U_S2__c),ISBLANK(Phaco_2_2_B_H2__c),ISBLANK(Phaco_2_2_U_S2__c),
+				    ISBLANK(Phaco_2_2_Vac2__c),ISBLANK(Phaco_2_8_B_H2__c),ISBLANK(Phaco_2_8_U_S2__c),
+				    ISBLANK(Phaco_2_8_Vac2__c),ISBLANK(Solution_in_Operation2__c),ISBLANK(Matters_in_Operation2__c),
+			            ISBLANK(Operation_Feedback2__c),ISBLANK(I_A_B_H2__c),ISBLANK(I_A_U_S2__c),ISBLANK(I_A_Vac2__c),ISBLANK(TEXT(Product2__c)),
+			 	    ISBLANK(TEXT(Call_Objective2__c)),ISBLANK(TEXT(Call_Result2__c)))
+		  		        
+			 )
+			
+		)
+		
+	 
+
+
+
+
+
+	,1,0
+
+
+
+)</formula>
+        <label>IsValidServiceProduct</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Machine_Purpose__c</fullName>
+        <description>APAC CHNSU field:Machine purpose of Engineer Service Visit</description>
+        <externalId>false</externalId>
+        <label>Machine Purpose</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>High</fullName>
+                    <default>false</default>
+                    <label>High</label>
+                </value>
+                <value>
+                    <fullName>Low</fullName>
+                    <default>false</default>
+                    <label>Low</label>
+                </value>
+                <value>
+                    <fullName>Halt</fullName>
+                    <default>false</default>
+                    <label>Halt</label>
+                </value>
+                <value>
+                    <fullName>BL Demo</fullName>
+                    <default>false</default>
+                    <label>BL Demo</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Machine_Serial_No__c</fullName>
+        <description>APAC CHNSU field:Machine serial number of Engineer Service Visit</description>
+        <externalId>false</externalId>
+        <label>Machine Serial No.</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Machine_Status_after_Service__c</fullName>
+        <description>APAC CHNSU field:Condition of the machine after  Engineer Service Visit</description>
+        <externalId>false</externalId>
+        <label>Machine Status after Service</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Up</fullName>
+                    <default>false</default>
+                    <label>Up</label>
+                </value>
+                <value>
+                    <fullName>Part Down</fullName>
+                    <default>false</default>
+                    <label>Part Down</label>
+                </value>
+                <value>
+                    <fullName>Down</fullName>
+                    <default>false</default>
+                    <label>Down</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Machine__c</fullName>
+        <description>APAC CHNSU field:Machine name of Engineer Service Visit</description>
+        <externalId>false</externalId>
+        <label>Machine</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Stellaris</fullName>
+                    <default>false</default>
+                    <label>Stellaris</label>
+                </value>
+                <value>
+                    <fullName>Stellaris PC</fullName>
+                    <default>false</default>
+                    <label>Stellaris PC</label>
+                </value>
+                <value>
+                    <fullName>CX1000</fullName>
+                    <default>false</default>
+                    <label>CX1000</label>
+                </value>
+                <value>
+                    <fullName>CX2000</fullName>
+                    <default>false</default>
+                    <label>CX2000</label>
+                </value>
+                <value>
+                    <fullName>CX3000</fullName>
+                    <default>false</default>
+                    <label>CX3000</label>
+                </value>
+                <value>
+                    <fullName>Protege</fullName>
+                    <default>false</default>
+                    <label>Protege</label>
+                </value>
+                <value>
+                    <fullName>Premiere</fullName>
+                    <default>false</default>
+                    <label>Premiere</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Matters_in_Operation1__c</fullName>
+        <externalId>false</externalId>
+        <label>Matters in Operation</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Matters_in_Operation2__c</fullName>
+        <externalId>false</externalId>
+        <label>Matters in Operation</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Objective_Description1__c</fullName>
+        <externalId>false</externalId>
+        <label>Objective Description</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Objective_Description2__c</fullName>
+        <externalId>false</externalId>
+        <label>Objective Description</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Operation_Characteristic1__c</fullName>
+        <externalId>false</externalId>
+        <label>Operation Characteristic</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Operation_Characteristic2__c</fullName>
+        <externalId>false</externalId>
+        <label>Operation Characteristic</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Operation_Feedback1__c</fullName>
+        <externalId>false</externalId>
+        <label>Operation Feedback</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Operation_Feedback2__c</fullName>
+        <externalId>false</externalId>
+        <label>Operation Feedback</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Phaco_1_8_B_H1__c</fullName>
+        <externalId>false</externalId>
+        <label>Phaco 1.8 - B/H</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Phaco_1_8_B_H2__c</fullName>
+        <externalId>false</externalId>
+        <label>Phaco 1.8 - B/H</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Phaco_1_8_U_S1__c</fullName>
+        <externalId>false</externalId>
+        <label>Phaco 1.8 - U/S</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Phaco_1_8_U_S2__c</fullName>
+        <externalId>false</externalId>
+        <label>Phaco 1.8 - U/S</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Phaco_1_8_Vac1__c</fullName>
+        <externalId>false</externalId>
+        <label>Phaco 1.8 - Vac</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Phaco_1_8_Vac2__c</fullName>
+        <externalId>false</externalId>
+        <label>Phaco 1.8 - Vac</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Phaco_2_2_B_H1__c</fullName>
+        <externalId>false</externalId>
+        <label>Phaco 2.2 - B/H</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Phaco_2_2_B_H2__c</fullName>
+        <externalId>false</externalId>
+        <label>Phaco 2.2 - B/H</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Phaco_2_2_U_S1__c</fullName>
+        <externalId>false</externalId>
+        <label>Phaco 2.2 - U/S</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Phaco_2_2_U_S2__c</fullName>
+        <externalId>false</externalId>
+        <label>Phaco 2.2 - U/S</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Phaco_2_2_Vac1__c</fullName>
+        <externalId>false</externalId>
+        <label>Phaco 2.2 - Vac</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Phaco_2_2_Vac2__c</fullName>
+        <externalId>false</externalId>
+        <label>Phaco 2.2 - Vac</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Phaco_2_8_B_H1__c</fullName>
+        <externalId>false</externalId>
+        <label>Phaco 2.8 - B/H</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Phaco_2_8_B_H2__c</fullName>
+        <externalId>false</externalId>
+        <label>Phaco 2.8 - B/H</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Phaco_2_8_U_S1__c</fullName>
+        <externalId>false</externalId>
+        <label>Phaco 2.8 - U/S</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Phaco_2_8_U_S2__c</fullName>
+        <externalId>false</externalId>
+        <label>Phaco 2.8 - U/S</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Phaco_2_8_Vac1__c</fullName>
+        <externalId>false</externalId>
+        <label>Phaco 2.8 - Vac</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Phaco_2_8_Vac2__c</fullName>
+        <externalId>false</externalId>
+        <label>Phaco 2.8 - Vac</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Physician_Visit__c</fullName>
+        <description>APAC CHNSU field:The related Engineer Physician Visit of the service product.</description>
+        <externalId>false</externalId>
+        <label>Physician Visit</label>
+        <referenceTo>Physician_Visit__c</referenceTo>
+        <relationshipLabel>Service Products</relationshipLabel>
+        <relationshipName>Service_Products</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Product1__c</fullName>
+        <externalId>false</externalId>
+        <label>Product</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Stellaris</fullName>
+                    <default>false</default>
+                    <label>Stellaris</label>
+                </value>
+                <value>
+                    <fullName>Stellaris PC</fullName>
+                    <default>false</default>
+                    <label>Stellaris PC</label>
+                </value>
+                <value>
+                    <fullName>CX1000</fullName>
+                    <default>false</default>
+                    <label>CX1000</label>
+                </value>
+                <value>
+                    <fullName>CX2000</fullName>
+                    <default>false</default>
+                    <label>CX2000</label>
+                </value>
+                <value>
+                    <fullName>CX3000</fullName>
+                    <default>false</default>
+                    <label>CX3000</label>
+                </value>
+                <value>
+                    <fullName>Protege</fullName>
+                    <default>false</default>
+                    <label>Protege</label>
+                </value>
+                <value>
+                    <fullName>Premiere</fullName>
+                    <default>false</default>
+                    <label>Premiere</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Product2__c</fullName>
+        <externalId>false</externalId>
+        <label>Product</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Stellaris</fullName>
+                    <default>false</default>
+                    <label>Stellaris</label>
+                </value>
+                <value>
+                    <fullName>Stellaris PC</fullName>
+                    <default>false</default>
+                    <label>Stellaris PC</label>
+                </value>
+                <value>
+                    <fullName>CX1000</fullName>
+                    <default>false</default>
+                    <label>CX1000</label>
+                </value>
+                <value>
+                    <fullName>CX2000</fullName>
+                    <default>false</default>
+                    <label>CX2000</label>
+                </value>
+                <value>
+                    <fullName>CX3000</fullName>
+                    <default>false</default>
+                    <label>CX3000</label>
+                </value>
+                <value>
+                    <fullName>Protege</fullName>
+                    <default>false</default>
+                    <label>Protege</label>
+                </value>
+                <value>
+                    <fullName>Premiere</fullName>
+                    <default>false</default>
+                    <label>Premiere</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>SRG__c</fullName>
+        <description>APAC CHNSU field:SRG of Engineer Service Visit Machine</description>
+        <externalId>false</externalId>
+        <label>SRG</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Site_Conditions__c</fullName>
+        <description>APAC CHNSU field:The Site Condition of Engineer Service Visit Machine</description>
+        <externalId>false</externalId>
+        <label>Site Conditions</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Solution_in_Operation1__c</fullName>
+        <externalId>false</externalId>
+        <label>Solution in Operation</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Solution_in_Operation2__c</fullName>
+        <externalId>false</externalId>
+        <label>Solution in Operation</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>X1_8mm_AMO__c</fullName>
+        <externalId>false</externalId>
+        <label>1.8mm - AMO</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>X1_8mm_Alcon__c</fullName>
+        <externalId>false</externalId>
+        <label>1.8mm - Alcon</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>X1_8mm_B_L__c</fullName>
+        <externalId>false</externalId>
+        <label>1.8mm - B&amp;L</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>X1_8mm_HumanOptics__c</fullName>
+        <externalId>false</externalId>
+        <label>1.8mm - HumanOptics</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>X1_8mm_Others__c</fullName>
+        <externalId>false</externalId>
+        <label>1.8mm - Others</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>X1_8mm_Total__c</fullName>
+        <externalId>false</externalId>
+        <formula>X1_8mm_Alcon__c  +  X1_8mm_AMO__c  +  X1_8mm_B_L__c  +  X1_8mm_HumanOptics__c  +  X1_8mm_Others__c  +  X1_8mm_Zeiss__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>1.8mm - Total</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>X1_8mm_Zeiss__c</fullName>
+        <externalId>false</externalId>
+        <label>1.8mm - Zeiss</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>X2_2mm_AMO__c</fullName>
+        <externalId>false</externalId>
+        <label>2.2mm - AMO</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>X2_2mm_Alcon__c</fullName>
+        <externalId>false</externalId>
+        <label>2.2mm - Alcon</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>X2_2mm_B_L__c</fullName>
+        <externalId>false</externalId>
+        <label>2.2mm - B&amp;L</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>X2_2mm_HumanOptics__c</fullName>
+        <externalId>false</externalId>
+        <label>2.2mm - HumanOptics</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>X2_2mm_Others__c</fullName>
+        <externalId>false</externalId>
+        <label>2.2mm - Others</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>X2_2mm_Total__c</fullName>
+        <externalId>false</externalId>
+        <formula>X2_2mm_Alcon__c + X2_2mm_AMO__c + X2_2mm_B_L__c + X2_2mm_HumanOptics__c + X2_2mm_Others__c + X2_2mm_Zeiss__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>2.2mm - Total</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>X2_2mm_Zeiss__c</fullName>
+        <externalId>false</externalId>
+        <label>2.2mm - Zeiss</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>X2_8mm_AMO__c</fullName>
+        <externalId>false</externalId>
+        <label>2.8mm - AMO</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>X2_8mm_Alcon__c</fullName>
+        <externalId>false</externalId>
+        <label>2.8mm - Alcon</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>X2_8mm_B_L__c</fullName>
+        <externalId>false</externalId>
+        <label>2.8mm - B&amp;L</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>X2_8mm_HumanOptics__c</fullName>
+        <externalId>false</externalId>
+        <label>2.8mm - HumanOptics</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>X2_8mm_Others__c</fullName>
+        <externalId>false</externalId>
+        <label>2.8mm - Others</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>X2_8mm_Total__c</fullName>
+        <externalId>false</externalId>
+        <formula>X2_8mm_Alcon__c + X2_8mm_AMO__c + X2_8mm_B_L__c + X2_8mm_HumanOptics__c + X2_8mm_Others__c + X2_8mm_Zeiss__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>2.8mm - Total</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>X2_8mm_Zeiss__c</fullName>
+        <externalId>false</externalId>
+        <label>2.8mm - Zeiss</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Service Product</label>
+    <nameField>
+        <displayFormat>SP-{00000}</displayFormat>
+        <label>Service Product Name</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Service Products</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>APACSU_Engineer_Service_Product</fullName>
+        <active>true</active>
+        <label>APACSU Engineer Service Product</label>
+        <picklistValues>
+            <picklist>Breakdown_Type__c</picklist>
+            <values>
+                <fullName>Application</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Base</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Coagulation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Compressor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Computer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Foot Control</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hand Piece</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>High Speed Vit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IAV%2FVFM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IV Pole</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Illumination</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Laser</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Multimedia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not failure</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PER%2FAFM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Power</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Scissors%2FAir</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Software</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ultrasound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Viscous Fluid</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Call_Objective1__c</picklist>
+            <values>
+                <fullName>Bidding support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product introduction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Surgery for sample</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Surgery for sell</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Call_Objective2__c</picklist>
+            <values>
+                <fullName>Bidding support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product introduction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Surgery for sample</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Surgery for sell</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Call_Objective__c</picklist>
+            <values>
+                <fullName>Application</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inst%2Fdism</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Repair</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Upgrade</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Call_Result1__c</picklist>
+            <values>
+                <fullName>need follow up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>satisfaction%2C don%27t need follow up</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Call_Result2__c</picklist>
+            <values>
+                <fullName>need follow up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>satisfaction%2C don%27t need follow up</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Call_Type__c</picklist>
+            <values>
+                <fullName>Billable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Free</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Warranty</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Machine_Purpose__c</picklist>
+            <values>
+                <fullName>BL Demo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Halt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Machine_Status_after_Service__c</picklist>
+            <values>
+                <fullName>Down</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Part Down</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Up</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Machine__c</picklist>
+            <values>
+                <fullName>CX1000</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CX2000</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CX3000</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Premiere</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Protege</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stellaris</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stellaris PC</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Product1__c</picklist>
+            <values>
+                <fullName>CX1000</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CX2000</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CX3000</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Premiere</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Protege</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stellaris</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stellaris PC</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Product2__c</picklist>
+            <values>
+                <fullName>CX1000</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CX2000</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CX3000</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Premiere</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Protege</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stellaris</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stellaris PC</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>APACSU_Service_Rep_Product</fullName>
+        <active>true</active>
+        <label>APACSU Service Rep Product</label>
+        <picklistValues>
+            <picklist>Breakdown_Type__c</picklist>
+            <values>
+                <fullName>Application</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Base</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Coagulation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Compressor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Computer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Foot Control</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hand Piece</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>High Speed Vit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IAV%2FVFM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IV Pole</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Illumination</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Laser</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Multimedia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not failure</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PER%2FAFM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Power</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Scissors%2FAir</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Software</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ultrasound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Viscous Fluid</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Call_Objective1__c</picklist>
+            <values>
+                <fullName>Bidding support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product introduction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Surgery for sample</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Surgery for sell</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Call_Objective2__c</picklist>
+            <values>
+                <fullName>Bidding support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product introduction</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Surgery for sample</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Surgery for sell</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Call_Objective__c</picklist>
+            <values>
+                <fullName>Application</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inst%2Fdism</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Repair</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Upgrade</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Call_Result1__c</picklist>
+            <values>
+                <fullName>need follow up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>satisfaction%2C don%27t need follow up</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Call_Result2__c</picklist>
+            <values>
+                <fullName>need follow up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>satisfaction%2C don%27t need follow up</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Call_Type__c</picklist>
+            <values>
+                <fullName>Billable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Free</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Warranty</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Machine_Purpose__c</picklist>
+            <values>
+                <fullName>BL Demo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Halt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Machine_Status_after_Service__c</picklist>
+            <values>
+                <fullName>Down</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Part Down</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Up</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Machine__c</picklist>
+            <values>
+                <fullName>CX1000</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CX2000</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CX3000</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Premiere</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Protege</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stellaris</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stellaris PC</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Product1__c</picklist>
+            <values>
+                <fullName>CX1000</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CX2000</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CX3000</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Premiere</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Protege</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stellaris</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stellaris PC</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Product2__c</picklist>
+            <values>
+                <fullName>CX1000</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CX2000</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CX3000</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Premiere</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Protege</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stellaris</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stellaris PC</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>APACSU_Check_Service_Product_Quality</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( $RecordType.Name =&apos;APACSU Service Rep Product&apos;, IsValidServiceProduct__c =0,FirstUpdate__c=True)</errorConditionFormula>
+        <errorMessage>Please check your service product and fill in &apos;Product&apos;,&apos;Call Result&apos;,&apos;Call Objective&apos; and &apos;Experiences&apos;.</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

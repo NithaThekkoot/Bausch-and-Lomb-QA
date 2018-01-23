@@ -1,0 +1,780 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Related list on the account for Customers Action plan</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>Account__c</fullName>
+        <description>Ties the action plan to an account</description>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Action Plans</relationshipLabel>
+        <relationshipName>Action_Plans</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Actions__c</fullName>
+        <externalId>false</externalId>
+        <label>Actions</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Action Plans</relationshipLabel>
+        <relationshipName>Action_Plans</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Contact_and_Month__c</fullName>
+        <externalId>false</externalId>
+        <formula>Contact__r.FirstName &amp; &quot; &quot; &amp; Contact__r.LastName &amp; &quot; - &quot; &amp; TEXT(Month__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Contact and Month</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Customer_Strategy_Objectives__c</fullName>
+        <externalId>false</externalId>
+        <label>Customer Strategy/Objectives</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Month__c</fullName>
+        <externalId>false</externalId>
+        <label>Month</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>January</fullName>
+                    <default>false</default>
+                    <label>January</label>
+                </value>
+                <value>
+                    <fullName>February</fullName>
+                    <default>false</default>
+                    <label>February</label>
+                </value>
+                <value>
+                    <fullName>March</fullName>
+                    <default>false</default>
+                    <label>March</label>
+                </value>
+                <value>
+                    <fullName>April</fullName>
+                    <default>false</default>
+                    <label>April</label>
+                </value>
+                <value>
+                    <fullName>May</fullName>
+                    <default>false</default>
+                    <label>May</label>
+                </value>
+                <value>
+                    <fullName>June</fullName>
+                    <default>false</default>
+                    <label>June</label>
+                </value>
+                <value>
+                    <fullName>July</fullName>
+                    <default>false</default>
+                    <label>July</label>
+                </value>
+                <value>
+                    <fullName>August</fullName>
+                    <default>false</default>
+                    <label>August</label>
+                </value>
+                <value>
+                    <fullName>September</fullName>
+                    <default>false</default>
+                    <label>September</label>
+                </value>
+                <value>
+                    <fullName>October</fullName>
+                    <default>false</default>
+                    <label>October</label>
+                </value>
+                <value>
+                    <fullName>November</fullName>
+                    <default>false</default>
+                    <label>November</label>
+                </value>
+                <value>
+                    <fullName>December</fullName>
+                    <default>false</default>
+                    <label>December</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Objective__c</fullName>
+        <externalId>false</externalId>
+        <label>Objective</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Primary_Territory_Manager__c</fullName>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(&apos;/&apos; &amp; Account__r.Primary_Sales_Rep__r.Id , Account__r.Primary_Sales_Rep__r.FirstName &amp; &apos; &apos; &amp; Account__r.Primary_Sales_Rep__r.LastName )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Primary Territory Manager</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Focus__c</fullName>
+        <externalId>false</externalId>
+        <label>Product Focus</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>ANT - Instruments</fullName>
+                    <default>false</default>
+                    <label>ANT - Instruments</label>
+                </value>
+                <value>
+                    <fullName>ANT - Millennium Anterior</fullName>
+                    <default>false</default>
+                    <label>ANT - Millennium Anterior</label>
+                </value>
+                <value>
+                    <fullName>ANT - Stellaris Anterior</fullName>
+                    <default>false</default>
+                    <label>ANT - Stellaris Anterior</label>
+                </value>
+                <value>
+                    <fullName>FEMTO - Victus</fullName>
+                    <default>false</default>
+                    <label>FEMTO - Victus</label>
+                </value>
+                <value>
+                    <fullName>IOL - Akreos  Adapt</fullName>
+                    <default>false</default>
+                    <label>IOL - Akreos  Adapt</label>
+                </value>
+                <value>
+                    <fullName>IOL - Akreos AO</fullName>
+                    <default>false</default>
+                    <label>IOL - Akreos AO</label>
+                </value>
+                <value>
+                    <fullName>IOL - Akreos MICS</fullName>
+                    <default>false</default>
+                    <label>IOL - Akreos MICS</label>
+                </value>
+                <value>
+                    <fullName>IOL - Crystalens AO</fullName>
+                    <default>false</default>
+                    <label>IOL - Crystalens AO</label>
+                </value>
+                <value>
+                    <fullName>IOL - Crystalens HD</fullName>
+                    <default>false</default>
+                    <label>IOL - Crystalens HD</label>
+                </value>
+                <value>
+                    <fullName>IOL - enVista</fullName>
+                    <default>false</default>
+                    <label>IOL - enVista</label>
+                </value>
+                <value>
+                    <fullName>IOL - enVista Toric</fullName>
+                    <default>false</default>
+                    <label>IOL - enVista Toric</label>
+                </value>
+                <value>
+                    <fullName>IOL - INCISE</fullName>
+                    <default>false</default>
+                    <label>IOL - INCISE</label>
+                </value>
+                <value>
+                    <fullName>IOL - Other</fullName>
+                    <default>false</default>
+                    <label>IOL - Other</label>
+                </value>
+                <value>
+                    <fullName>IOL - PMMA</fullName>
+                    <default>false</default>
+                    <label>IOL - PMMA</label>
+                </value>
+                <value>
+                    <fullName>IOL - SofPort</fullName>
+                    <default>false</default>
+                    <label>IOL - SofPort</label>
+                </value>
+                <value>
+                    <fullName>MEX enVista Platform</fullName>
+                    <default>false</default>
+                    <label>MEX enVista Platform</label>
+                </value>
+                <value>
+                    <fullName>MEX Incise Platform</fullName>
+                    <default>false</default>
+                    <label>MEX Incise Platform</label>
+                </value>
+                <value>
+                    <fullName>MEX TSV Platform</fullName>
+                    <default>false</default>
+                    <label>MEX TSV Platform</label>
+                </value>
+                <value>
+                    <fullName>MEX Victus Platform</fullName>
+                    <default>false</default>
+                    <label>MEX Victus Platform</label>
+                </value>
+                <value>
+                    <fullName>OTHER - Balanced Salt Solutions</fullName>
+                    <default>false</default>
+                    <label>OTHER - Balanced Salt Solutions</label>
+                </value>
+                <value>
+                    <fullName>OTHER - Custom Pack/Trays</fullName>
+                    <default>false</default>
+                    <label>OTHER - Custom Pack/Trays</label>
+                </value>
+                <value>
+                    <fullName>Other - Eye Order</fullName>
+                    <default>false</default>
+                    <label>Other - Eye Order</label>
+                </value>
+                <value>
+                    <fullName>Other - IOL Physiol</fullName>
+                    <default>false</default>
+                    <label>Other - IOL Physiol</label>
+                </value>
+                <value>
+                    <fullName>Other - Leica Microscope</fullName>
+                    <default>false</default>
+                    <label>Other - Leica Microscope</label>
+                </value>
+                <value>
+                    <fullName>POST - Millennium Posterior</fullName>
+                    <default>false</default>
+                    <label>POST - Millennium Posterior</label>
+                </value>
+                <value>
+                    <fullName>POST - MVE</fullName>
+                    <default>false</default>
+                    <label>POST - MVE</label>
+                </value>
+                <value>
+                    <fullName>POST - PF DK-line/Okta-line</fullName>
+                    <default>false</default>
+                    <label>POST - PF DK-line/Okta-line</label>
+                </value>
+                <value>
+                    <fullName>POST - Silicone Oil</fullName>
+                    <default>false</default>
+                    <label>POST - Silicone Oil</label>
+                </value>
+                <value>
+                    <fullName>POST - Stellaris Posterior</fullName>
+                    <default>false</default>
+                    <label>POST - Stellaris Posterior</label>
+                </value>
+                <value>
+                    <fullName>POST - Vitreoretinal Instruments</fullName>
+                    <default>false</default>
+                    <label>POST - Vitreoretinal Instruments</label>
+                </value>
+                <value>
+                    <fullName>VISCO - Amvisc</fullName>
+                    <default>false</default>
+                    <label>VISCO - Amvisc</label>
+                </value>
+                <value>
+                    <fullName>VISCO - Amvisc Plus</fullName>
+                    <default>false</default>
+                    <label>VISCO - Amvisc Plus</label>
+                </value>
+                <value>
+                    <fullName>VISCO - Ocucoat</fullName>
+                    <default>false</default>
+                    <label>VISCO - Ocucoat</label>
+                </value>
+                <value>
+                    <fullName>OTHER</fullName>
+                    <default>false</default>
+                    <label>OTHER</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Quarter__c</fullName>
+        <externalId>false</externalId>
+        <label>Quarter</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>2013/Q1</fullName>
+                    <default>false</default>
+                    <label>2013/Q1</label>
+                </value>
+                <value>
+                    <fullName>2013/Q2</fullName>
+                    <default>false</default>
+                    <label>2013/Q2</label>
+                </value>
+                <value>
+                    <fullName>2013/Q3</fullName>
+                    <default>false</default>
+                    <label>2013/Q3</label>
+                </value>
+                <value>
+                    <fullName>2013/Q4</fullName>
+                    <default>false</default>
+                    <label>2013/Q4</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Quarter_and_Product_Focus__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT (Quarter__c) &amp; &quot; - &quot; &amp; TEXT (Product_Focus__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Quarter and Product Focus</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Review_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Review Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Review__c</fullName>
+        <externalId>false</externalId>
+        <label>Review</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>SetID__c</fullName>
+        <description>Displays the SetID from Account Object</description>
+        <externalId>false</externalId>
+        <formula>Account__r.SETID__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>SetID</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Not Started</fullName>
+                    <default>false</default>
+                    <label>Not Started</label>
+                </value>
+                <value>
+                    <fullName>In Progress</fullName>
+                    <default>false</default>
+                    <label>In Progress</label>
+                </value>
+                <value>
+                    <fullName>Achieved</fullName>
+                    <default>false</default>
+                    <label>Achieved</label>
+                </value>
+                <value>
+                    <fullName>Not Achieved</fullName>
+                    <default>false</default>
+                    <label>Not Achieved</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Action Plan</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>A-{000}</displayFormat>
+        <label>Action Plan Ref</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Action Plans</pluralLabel>
+    <recordTypes>
+        <fullName>EMEASU</fullName>
+        <active>true</active>
+        <label>EMEASU</label>
+        <picklistValues>
+            <picklist>Month__c</picklist>
+            <values>
+                <fullName>April</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>August</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>December</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>February</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>January</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>July</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>June</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>March</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>May</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>November</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>October</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>September</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Product_Focus__c</picklist>
+            <values>
+                <fullName>ANT - Instruments</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ANT - Millennium Anterior</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ANT - Stellaris Anterior</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>FEMTO - Victus</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IOL - Akreos  Adapt</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IOL - Akreos AO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IOL - Akreos MICS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IOL - Crystalens AO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IOL - Crystalens HD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IOL - INCISE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IOL - Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IOL - PMMA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IOL - SofPort</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IOL - enVista</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IOL - enVista Toric</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MEX Incise Platform</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MEX TSV Platform</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MEX Victus Platform</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MEX enVista Platform</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OTHER</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OTHER - Balanced Salt Solutions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>OTHER - Custom Pack%2FTrays</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other - Eye Order</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other - IOL Physiol</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other - Leica Microscope</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>POST - MVE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>POST - Millennium Posterior</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>POST - PF DK-line%2FOkta-line</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>POST - Silicone Oil</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>POST - Stellaris Posterior</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>POST - Vitreoretinal Instruments</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VISCO - Amvisc</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VISCO - Amvisc Plus</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VISCO - Ocucoat</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Quarter__c</picklist>
+            <values>
+                <fullName>2013%2FQ1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2013%2FQ2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2013%2FQ3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2013%2FQ4</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Achieved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Achieved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Started</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>Primary_Territory_Manager__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Quarter__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Product_Focus__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Review_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Status__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Month__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Contact__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>LAST_UPDATE</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Primary_Territory_Manager__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Quarter__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Product_Focus__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Review_Date__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Status__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Month__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Contact__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>LAST_UPDATE</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Primary_Territory_Manager__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Quarter__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Product_Focus__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Review_Date__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Status__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Month__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Contact__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>LAST_UPDATE</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Primary_Territory_Manager__c</searchFilterFields>
+        <searchFilterFields>Quarter__c</searchFilterFields>
+        <searchFilterFields>Product_Focus__c</searchFilterFields>
+        <searchFilterFields>Review_Date__c</searchFilterFields>
+        <searchFilterFields>Status__c</searchFilterFields>
+        <searchFilterFields>Month__c</searchFilterFields>
+        <searchFilterFields>Contact__c</searchFilterFields>
+        <searchFilterFields>LAST_UPDATE</searchFilterFields>
+        <searchResultsAdditionalFields>Primary_Territory_Manager__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Quarter__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Product_Focus__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Review_Date__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Status__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Month__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Contact__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>LAST_UPDATE</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

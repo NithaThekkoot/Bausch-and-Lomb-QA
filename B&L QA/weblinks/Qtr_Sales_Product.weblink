@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomPageWebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <availability>online</availability>
+    <description>Qtr Over Qtr Sales - Major Product Group</description>
+    <displayType>link</displayType>
+    <height>600</height>
+    <linkType>sControl</linkType>
+    <masterLabel>Qtr Sales - Product</masterLabel>
+    <openType>sidebar</openType>
+    <protected>false</protected>
+    <scontrol>QTR_Sales_Product_Group</scontrol>
+</CustomPageWebLink>

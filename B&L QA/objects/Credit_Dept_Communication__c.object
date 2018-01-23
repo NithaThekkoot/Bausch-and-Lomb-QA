@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Used by the Credit Department to keep a record of their communications with customers. EMEAVC.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ReadWrite</externalSharingModel>
+    <fields>
+        <fullName>Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>The customer this communication relates to. EMEA VC.</description>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Credit Dept Communications</relationshipLabel>
+        <relationshipName>Credit_Dept_Communications</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Communication_Type__c</fullName>
+        <description>Details the type of communication. EMEA VC.</description>
+        <externalId>false</externalId>
+        <label>Communication Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>Bankrupt / Attorney</fullName>
+                    <default>false</default>
+                    <label>Bankrupt / Attorney</label>
+                </value>
+                <value>
+                    <fullName>Cheque Payment</fullName>
+                    <default>false</default>
+                    <label>Cheque Payment</label>
+                </value>
+                <value>
+                    <fullName>Collection Efforts</fullName>
+                    <default>false</default>
+                    <label>Collection Efforts</label>
+                </value>
+                <value>
+                    <fullName>Credit Card Payment</fullName>
+                    <default>false</default>
+                    <label>Credit Card Payment</label>
+                </value>
+                <value>
+                    <fullName>Credit Limit</fullName>
+                    <default>false</default>
+                    <label>Credit Limit</label>
+                </value>
+                <value>
+                    <fullName>Credit Note Query</fullName>
+                    <default>false</default>
+                    <label>Credit Note Query</label>
+                </value>
+                <value>
+                    <fullName>CSD Conversation</fullName>
+                    <default>false</default>
+                    <label>CSD Conversation</label>
+                </value>
+                <value>
+                    <fullName>CSD Pricing Conversation</fullName>
+                    <default>false</default>
+                    <label>CSD Pricing Conversation</label>
+                </value>
+                <value>
+                    <fullName>CSD Service Note</fullName>
+                    <default>false</default>
+                    <label>CSD Service Note</label>
+                </value>
+                <value>
+                    <fullName>Deductions</fullName>
+                    <default>false</default>
+                    <label>Deductions</label>
+                </value>
+                <value>
+                    <fullName>Email Address</fullName>
+                    <default>false</default>
+                    <label>Email Address</label>
+                </value>
+                <value>
+                    <fullName>Incorrect P.O</fullName>
+                    <default>false</default>
+                    <label>Incorrect P.O</label>
+                </value>
+                <value>
+                    <fullName>Invoices</fullName>
+                    <default>false</default>
+                    <label>Invoices</label>
+                </value>
+                <value>
+                    <fullName>Miscellaneous</fullName>
+                    <default>false</default>
+                    <label>Miscellaneous</label>
+                </value>
+                <value>
+                    <fullName>P.O.D Request</fullName>
+                    <default>false</default>
+                    <label>P.O.D Request</label>
+                </value>
+                <value>
+                    <fullName>Payment Query</fullName>
+                    <default>false</default>
+                    <label>Payment Query</label>
+                </value>
+                <value>
+                    <fullName>Refund</fullName>
+                    <default>false</default>
+                    <label>Refund</label>
+                </value>
+                <value>
+                    <fullName>Service Agreement Query</fullName>
+                    <default>false</default>
+                    <label>Service Agreement Query</label>
+                </value>
+                <value>
+                    <fullName>Wrong Freight Charge</fullName>
+                    <default>false</default>
+                    <label>Wrong Freight Charge</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Communication__c</fullName>
+        <description>Main body of information regarding this communication. EMEA VC.</description>
+        <externalId>false</externalId>
+        <label>Communication</label>
+        <length>32000</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Integrated_from_PS__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This checkbox will be ticked when a conversation has been integrated from PS</description>
+        <externalId>false</externalId>
+        <label>Integrated from PS</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Credit Dept Communication</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Communication Summary</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Credit Dept Communications</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

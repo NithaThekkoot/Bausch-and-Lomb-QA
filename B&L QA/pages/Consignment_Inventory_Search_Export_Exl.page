@@ -1,0 +1,136 @@
+<apex:page controller="exportExcel" cache="true" action="{!exportToExcel}" readOnly="true" contentType="application/vnd.ms-excel#ConsignmentSearchData.xls">
+      
+  
+        <apex:dataTable value="{!lstwrapper}" var="x" rendered="{!IF(headerValue='SearchConsignmentResult',True, False)}">
+           <apex:column headerValue="ShipTo">
+                {!x.shipTo}
+            </apex:column>            
+             <apex:column headerValue="AccountName">
+                {!x.accountName}
+            </apex:column>
+             <apex:column headerValue="Location">
+                {!x.Location}
+            </apex:column>            
+                                     
+             <apex:column headerValue="ProductId">
+                {!x.ProductID}
+            </apex:column>
+            <apex:column headerValue="Serialnumber">
+                {!x.SerialNumber}
+            </apex:column>
+             <apex:column headerValue="ExpirationDate">
+                {!x.expirationDate}
+            </apex:column>
+             <apex:column headerValue="ImplantDate ">
+               {!x.implantDate}
+            </apex:column>
+            <apex:column headerValue="Physician Id">
+               {!x.PhysicianID}
+            </apex:column>
+        </apex:dataTable>        
+        
+        <apex:dataTable value="{!lstwrapper}" var="x" rendered="{!IF(headerValue='SearchBilledConsignmentResult',True, False)}">
+           <apex:column headerValue="ShipTo">
+                {!x.shipTo}
+            </apex:column>
+             <apex:column headerValue="InvoiceNumber">
+                {!x.invoiceNumber}
+            </apex:column>             
+             <apex:column headerValue="InvoiceDate">
+                {!x.invoiceDate}
+            </apex:column>
+             <apex:column headerValue="PONumber">
+                {!x.PONumber}
+            </apex:column>
+            <apex:column headerValue="OrderNumber">
+                {!x.OrderNumber}
+            </apex:column>
+             <apex:column headerValue="ProductID">
+                {!x.ProductID}
+            </apex:column>
+            <apex:column headerValue="SerialNumber">
+                {!x.SerialNumber}
+            </apex:column>
+             <apex:column headerValue="ImplantDate">
+                {!x.implantDate}
+            </apex:column>
+            <apex:column headerValue="Physician ID">
+                {!x.PhysicianId}
+            </apex:column>
+            
+        </apex:dataTable>
+
+        <apex:dataTable value="{!lstwrapper}" var="x" rendered="{!IF(headerValue='SearchTransactionHistoryResult',True, False)}">
+           <apex:column headerValue="Date/Time">
+                {!x.dateval}
+            </apex:column>
+           <apex:column headerValue="shipTo">
+                {!x.shipTo}
+            </apex:column>             
+             <apex:column headerValue="PONumber">
+                {!x.PONumber}
+            </apex:column>
+             <apex:column headerValue="OrderNumber">
+                {!x.OrderNumber}
+            </apex:column>
+            <apex:column headerValue="ProductID">
+                {!x.ProductID}
+            </apex:column>
+             <apex:column headerValue="SerialNumber">
+                {!x.SerialNumber}
+            </apex:column>
+            <apex:column headerValue="BusinessUnit">
+                {!x.businessUnit}
+            </apex:column>
+             <apex:column headerValue="Location">
+                {!x.Location}
+            </apex:column>
+            <apex:column headerValue="To Location">
+                {!x.ToLocation}
+            </apex:column>                        
+            <!--<apex:column headerValue="Date">
+               {!x.dateval}
+            </apex:column>-->
+             <apex:column headerValue="UserName">
+                {!x.UserName}
+            </apex:column>
+             <apex:column headerValue="Type">
+                {!x.type}
+            </apex:column>
+            <apex:column headerValue="ImplantDate">
+                {!x.implantDate}
+            </apex:column>
+             <apex:column headerValue="Physician ID">
+                {!x.PhysicianId}
+            </apex:column>
+            
+        </apex:dataTable>
+
+        <apex:dataTable value="{!lstwrapper}" var="x" rendered="{!IF(headerValue='SearchUnbilledConsignmentResult',True, False)}">>
+           <apex:column headerValue="shipTo">
+                {!x.shipTo}
+            </apex:column>
+             <apex:column headerValue="AccountName">
+                {!x.accountName}
+            </apex:column>
+             <apex:column headerValue="Location">
+                {!x.Location}
+            </apex:column>
+             <apex:column headerValue="ProductID">
+                {!x.ProductID}
+            </apex:column>
+             <apex:column headerValue="SerialNumber">
+                {!x.SerialNumber}
+            </apex:column>
+            <apex:column headerValue="ExpirationDate">
+                {!x.expirationDate}
+            </apex:column>
+             <apex:column headerValue="ImplantDate">
+                {!x.implantDate}
+            </apex:column>  
+             <apex:column headerValue="Physician ID">
+                {!x.PhysicianId}
+            </apex:column>
+                     
+        </apex:dataTable>
+</apex:page>

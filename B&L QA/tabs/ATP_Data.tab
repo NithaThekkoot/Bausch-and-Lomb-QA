@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomTab xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Available to Promise application</description>
+    <frameHeight>600</frameHeight>
+    <hasSidebar>false</hasSidebar>
+    <label>ATP Data</label>
+    <mobileReady>false</mobileReady>
+    <motif>Custom20: Airplane</motif>
+    <url>http://blaprocrdc71:90/ATP</url>
+    <urlEncodingKey>UTF-8</urlEncodingKey>
+</CustomTab>

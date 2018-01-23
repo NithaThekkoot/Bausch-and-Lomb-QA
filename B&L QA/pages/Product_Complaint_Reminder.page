@@ -1,0 +1,3 @@
+<apex:page standardController="Case" extensions="Product_Complaint_Reminder" sidebar="false">
+    <p><b><font color="#ff0000">{!message}</font></b></p>                                                      
+</apex:page>

@@ -1,0 +1,5 @@
+<apex:component controller="clsSFEPlanMatrixCustomReport" access="global">
+    <apex:attribute name="dealid" assignTo="{!APACId}" type="String" description="The ID of a APAC Summary for which we want to generate a confirmation."/>
+    
+    <apex:outputText value="{!strEndDate}"></apex:outputText>
+</apex:component>
